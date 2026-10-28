@@ -1,0 +1,241 @@
+URL: https://m3.material.io/
+REA evidence: ev_0770a7e5418adf3699f932b8eac5d76547974734ad17d1f162473c3e5b4a56a8
+Step: home_ready
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Material Design" [level=1]
+      - text: Material Design 3 is Google’s open-source design system for building beautiful, usable products.
+      - link "Get started":
+        - /url: /get-started
+        - button "Get started"
+      - figure:
+        - button "Pause Video": pause
+      - tabpanel:
+        - region:
+          - text: link Copy link
+          - heading "Material at Google I/O 2026" [level=2]
+        - region:
+          - text: link Copy link
+          - link "What’s new at Google I/O 2026":
+            - /url: /blog/whats-new-at-io26?utm_source=homepage&utm_medium=referral&utm_campaign=IO26
+            - text: May 19, 2026 What’s new at Google I/O 2026
+            - paragraph: Material’s latest updates make it easier to create expressive, adaptive products
+        - region:
+          - text: link Copy link
+          - link "Material Android is Compose-first":
+            - /url: /blog/material-is-compose-first?utm_source=homepage&utm_medium=referral&utm_campaign=IO26
+            - text: May 19, 2026 Material Android is Compose-first
+            - paragraph: Start migrating to Compose to get the latest from Material
+          - link "Google I/O 2026":
+            - /url: https://io.google/2026/
+            - text: Google I/O 2026
+            - paragraph: Check out all the announcements, keynotes, sessions, and fireside chats on the main site for Google I/O 2026
+        - region:
+          - text: link Copy link
+          - 'heading "M3 Expressive: Design with emotion" [level=2]'
+          - paragraph:
+            - text: Build more usable and engaging products with emotion-driven UX. M3 Expressive adds vibrant
+            - link "colors":
+              - /url: https://m3.material.io/styles/color/system/overview?utm_source=homepage&utm_medium=referral&utm_campaign=IO26
+            - text: ", intuitive"
+            - link "motion":
+              - /url: https://m3.material.io/styles/motion/overview?utm_source=homepage&utm_medium=referral&utm_campaign=IO26
+            - text: ", adaptive"
+            - link "components":
+              - /url: https://m3.material.io/components?utm_source=homepage&utm_medium=referral&utm_campaign=IO26
+            - text: ", flexible"
+            - link "typography":
+              - /url: https://m3.material.io/styles/typography/overview?utm_source=homepage&utm_medium=referral&utm_campaign=IO26
+            - text: ", and contrasting"
+            - link "shapes":
+              - /url: https://m3.material.io/styles/shape/overview-principles?utm_source=homepage&utm_medium=referral&utm_campaign=IO26
+            - text: .
+        - region:
+          - text: link Copy link
+          - 'link "Updated: Figma M3 Design Kit"':
+            - /url: https://www.figma.com/community/file/1035203688168086460
+            - text: "Updated: Figma M3 Design Kit"
+            - paragraph: Quickly create design mockups and prototypes with the latest Material 3 Expressive components and styles
+          - 'link "New: Motion physics"':
+            - /url: /styles/motion/overview?utm_source=homepage&utm_medium=referral&utm_campaign=IO25
+            - text: "New: Motion physics"
+            - paragraph: Easier-to-implement motion system for more customizable transitions—powered by tokens
+        - region:
+          - text: link Copy link
+          - 'link "Expanded: Shape library"':
+            - /url: /styles/shape/overview-principles?utm_source=homepage&utm_medium=referral&utm_campaign=IO25
+            - text: "Expanded: Shape library"
+            - paragraph: New set of 35 shapes to add decorative visual elements, with built-in shape morph motion
+          - 'link "Blog: Guide to our latest update"':
+            - /url: /blog/building-with-m3-expressive?utm_source=homepage&utm_medium=referral&utm_campaign=IO25
+            - text: "Blog: Guide to our latest update"
+            - paragraph: Get a full introduction to the latest evolution of Material, including new components and style updates
+          - 'link "Google Design: Making Google Sans Flex"':
+            - /url: https://design.google/library/google-sans-flex-font
+            - text: "Google Design: Making Google Sans Flex"
+            - paragraph: How seven design problems shaped Google’s iconic typeface — from inception to going open-source
+        - region:
+          - text: link Copy link
+          - heading "Expressive components" [level=2]
+        - region:
+          - text: link Copy link
+          - 'link "New: Toolbars"':
+            - /url: /components/toolbars/overview?utm_source=homepage&utm_medium=referral&utm_campaign=IO25
+            - text: "New: Toolbars"
+            - paragraph: Flexible component to display frequently used actions. Toolbars hold a variety of controls like buttons, and can also be paired with a FAB.
+          - 'link "New: Split button"':
+            - /url: /components/split-button/overview?utm_source=homepage&utm_medium=referral&utm_campaign=IO25
+            - text: "New: Split button"
+            - paragraph: Pair a button with related actions in a connected menu. Split buttons leverage expressive shape and motion strategies.
+        - region:
+          - text: link Copy link
+          - 'link "Updated: Progress indicators"':
+            - /url: /components/progress-indicators/overview?utm_source=homepage&utm_medium=referral&utm_campaign=IO25
+            - text: "Updated: Progress indicators"
+            - paragraph: An eye-catching way to show the status of a process in real time. Customize waveform and thickness to show progress with style.
+          - 'link "New: Button groups"':
+            - /url: /components/button-groups/overview?utm_source=homepage&utm_medium=tile&utm_campaign=IO25
+            - text: "New: Button groups"
+            - paragraph: A new way to organize related buttons—with shape-shifting buttons that bump and react to each other
+          - link "See all expressive components":
+            - /url: /blog/building-with-m3-expressive?utm_source=get-started&utm_medium=referral&utm_campaign=IO25#what-rsquo-s-in-the-update
+            - text: See all expressive components
+            - paragraph: Check out all 14 new and updated M3 Expressive components
+        - region:
+          - text: link Copy link
+          - heading "How to apply M3 Expressive" [level=2]
+        - region:
+          - text: link Copy link
+          - 'link "Blog: Using motion physics"':
+            - /url: /blog/m3-expressive-motion-theming?utm_source=homepage&utm_medium=tile&utm_campaign=IO25
+            - text: "Blog: Using motion physics"
+            - paragraph: Learn how the motion scheme works, the changes to existing APIs, and what you need to know to leverage it
+          - 'link "Watch: Build with M3 Expressive"':
+            - /url: https://io.google/2025/explore/technical-session-24?utm_source=homepage&utm_medium=referral&utm_campaign=IO25
+            - text: "Watch: Build with M3 Expressive"
+            - paragraph: Discover how to use Material’s emotional design patterns to boost usability and desire for your product
+        - region:
+          - text: link Copy link
+          - heading "Latest in Material & Google Design" [level=2]
+        - region:
+          - text: link Copy link
+          - link "Material Design blog":
+            - /url: /blog?utm_source=homepage&utm_medium=referral&utm_campaign=IO26
+            - text: Material Design blog
+            - paragraph: Discover what’s new, tutorials, and inspiration from the Material team
+          - link "Google Design":
+            - /url: https://design.google/
+            - text: Google Design
+            - paragraph: Learn about the craft of design at Google, with articles written by designers and developers, how-to guides, and podcasts
+        - region:
+          - text: link Copy link
+          - heading "Next steps" [level=2]
+        - region:
+          - text: link Copy link
+          - link "Get started":
+            - /url: /get-started
+            - text: Get started
+            - paragraph: Guides, videos, and tools to start building with Material
+          - link "Figma M3 Design Kit":
+            - /url: https://www.figma.com/community/file/1035203688168086460
+            - text: Figma M3 Design Kit
+            - paragraph: Customizable styles and components to help you design with Material 3
+        - region:
+          - text: link Copy link
+          - link "Develop":
+            - /url: /develop
+            - text: Develop
+            - paragraph: Code and developer documentation for building with Material
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

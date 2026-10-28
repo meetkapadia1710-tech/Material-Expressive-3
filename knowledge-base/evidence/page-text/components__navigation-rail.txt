@@ -1,0 +1,755 @@
+# Navigation rail
+Source ID: P070
+Public page: https://m3.material.io/components/navigation-rail
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/98fe42bd-9bb1-4307-9e92-e61e57c3e9da.json
+Retrieved: 2026-10-28T07:43:20.401017+00:00
+Source SHA-256: d33e560852f066798a55c2d71b7dc8ebfac803fb9c247d8e68207d3ca8858a07
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+
+
+## Overview
+
+- Use navigation rails in medium, expanded, large, or extra-large window sizes
+
+- Can contain 3-7 destinations plus an optional FAB
+
+- Always put the rail in the same place, even on different screens of an app
+
+Collapsed and expanded navigation rails can transition between each other on any device, including: 
+
+1. Large or medium window size classes like tablets
+2. Compact window size classes like phones in portrait orientation
+Media alternative text: Navigation rail with 4 destinations, 1 active, and FAB.
+
+Availability & resources
+Dynamic module reference: {"source_id": "P070", "page_url": "https://m3.material.io/components/navigation-rail", "section": "Overview", "type": "STATUS_TABLE", "resource": "designSystems/030656e0a1083ef1/components/6073fa0062bb7074", "configuration": null}
+
+M3 Expressive update
+
+May 2025
+
+A collapsed and expanded navigation rail have been introduced to replace the baseline nav rail. The expanded nav rail is meant to replace the navigation drawer. More on M3 Expressive
+
+Variants and naming:
+
+- 
+The baseline navigation rail is no longer recommended
+
+- 
+Added two wider navigation rails:
+
+- 
+Collapsed: replaces baseline nav rail
+
+- 
+Expanded: replaces navigation drawer
+
+Configurations:
+
+- 
+Expanded rail modality:
+
+- 
+Non-modal
+
+- 
+Modal
+
+- 
+Expanded behavior:
+
+- 
+Transition to collapsed navigation rail
+
+- 
+Hide when collapsed
+
+- 
+Color:
+
+- 
+Active label on vertical items changed from on surface variant to secondary
+
+The collapsed and expanded navigation rails match visually and can transition into each other
+Media alternative text: A collapsed and expanded navigation rail.
+
+Differences from M2
+
+- Behavior: Predictive back interaction
+
+- Color: New color mappings and compatibility with dynamic color
+
+- States: The active destination can be indicated with a pill shape in a contrasting color
+
+M2: The navigation rail uses icon color, weight, and fill to communicate which destination is active
+Media alternative text: M2 navigation rail with 1 colored and filled icon showing the active state and 3 inactive icons.
+
+M3: The navigation rail uses a pill-shaped active indicator to communicate which destination is active
+Media alternative text: M3 navigation rail with 1 icon surrounded by a pill shape in contrasting color to show the active state.
+
+## Specs
+
+Variants
+
+- 
+Collapsed navigation rail
+
+- 
+Expanded navigation rail
+Media alternative text: 2 variants of navigation rails.
+
+Baseline variants
+
+The baseline navigation rail is no longer recommended, and should be replaced by the collapsed navigation rail. View baseline tokens
+
+- 
+The baseline navigation rail is no longer recommended
+Media alternative text: Baseline navigation rail.
+
+| 
+Variant
+ | 
+M3
+ | 
+M3 Expressive
+
+ | 
+Collapsed navigation rail
+
+ | 
+--
+ | 
+Available
+
+ | 
+Expanded navigation rail 
+
+ | 
+--
+ | 
+Available
+
+ | 
+Navigation rail (baseline)
+
+ | 
+Available
+ | 
+Not recommended.
+
+Use collapsed navigation rail.
+
+Configurations
+
+- Expanded layout: standard
+
+- Expanded layout: modal
+Media alternative text: Standard and modal layouts of navigation rail.
+
+| 
+Category
+ | 
+Configuration
+ | 
+M3
+ | 
+      M3 Expressive
+
+ | 
+Expanded layout
+ | 
+Standard (default)
+ | 
+Available as navigation drawer
+
+ | 
+Available
+
+ | 
+Modal
+ | 
+Available as navigation drawer
+
+ | 
+Available
+
+ | 
+Expanded behavior
+ | 
+Hide when collapsed
+ | 
+--
+ | 
+Available
+
+Tokens & specs
+
+Browse the component elements, attributes, tokens, and their values. Learn about design tokens
+Dynamic module reference: {"source_id": "P070", "page_url": "https://m3.material.io/components/navigation-rail", "section": "Specs", "type": "TOKEN_TABLE", "resource": "designSystems/20543ce18892f7d9/components/5b55bd7cc1ea6e29", "configuration": {"tokenSets": ["Nav rail - Common", "Nav rail - Collapsed", "Nav rail - Expanded", "Nav rail item - Common", "Nav rail item - Vertical", "Nav rail item - Horizontal"], "contextTags": ["None", "Medium contrast", "Default", "High contrast", "3P", "Android", "Dark", "Light"], "tokenSetOrder": ["Navigation rail (baseline)", "Nav rail - Common", "Nav rail - Collapsed", "Nav rail - Expanded", "Nav rail item - Common", "Nav rail item - Vertical", "Nav rail item - Horizontal"], "hideSearchField": false, "hideVersionName": true}}
+
+Anatomy
+
+Collapsed and expanded navigation rail elements:
+
+- Container
+
+- Menu (optional)
+
+- FAB or Extended FAB (optional)
+
+- Icon
+
+- Active indicator
+
+- Label text
+
+- Large badge (optional)
+
+- Large badge label (optional)
+
+- Small badge (optional)
+Media alternative text: 9 elements of collapsed and expanded navigation rails.
+
+Color
+
+Color values are implemented through design tokens. For designers, this means working with color values that correspond with tokens; in implementation, a color value will be a token that references a value. Learn more about design tokens
+
+Navigation rail color roles used for light and dark schemes:
+
+- 
+Surface container (optional)
+
+- 
+On secondary container
+
+- 
+Secondary container
+
+- 
+Secondary (vertical), On secondary container (horizontal)
+
+- 
+On surface variant
+
+- 
+On surface variant
+
+- 
+Error
+
+- 
+On error
+
+- 
+Error
+Media alternative text: Color roles of 9 elements of collapsed and expanded navigation rails in light and dark color schemes.
+
+States
+
+States are visual representations used to communicate the status of a component or an interactive element.
+
+The navigation item’s target area always spans the full width of the nav rail, even if the item container hugs its contents.
+Media alternative text: 4 states of collapsed navigation rails.
+
+- Enabled
+
+- Hovered
+
+- Focused
+
+- Pressed
+Media alternative text: 4 states of expanded navigation rails.
+
+Measurements
+
+Navigation rail padding and size measurements
+Media alternative text: Padding and measurements for expanded and collapsed navigation rails.
+
+Common layouts
+Media alternative text: 4 common layouts of collapsed navigation rail.
+
+- Three navigation items 
+
+- Three navigation items with a menu
+
+- Three navigation items with a FAB
+
+- Three navigation items with a menu and FAB
+Media alternative text: 4 common layouts of expanded navigation rail.
+
+Baseline navigation rail
+
+- Container
+
+- Menu icon (optional)
+
+- Icon
+
+- Active indicator
+
+- Label text
+
+- Large badge label (optional)
+
+- Large badge (optional)
+
+- Badge (optional)
+Media alternative text: 8 elements of baseline navigation rail.
+
+Tokens & specs
+Dynamic module reference: {"source_id": "P070", "page_url": "https://m3.material.io/components/navigation-rail", "section": "Specs", "type": "TOKEN_TABLE", "resource": "designSystems/20543ce18892f7d9/components/5b55bd7cc1ea6e29", "configuration": {"tokenSets": ["Navigation rail (baseline)", "Nav rail item - Horizontal", "Nav rail item - Common", "Nav rail - Common", "Nav rail - Collapsed", "Nav rail - Expanded", "Nav rail item - Vertical"], "tokenSetOrder": ["Navigation rail (baseline)", "Nav rail item - Horizontal", "Nav rail item - Common", "Nav rail - Common", "Nav rail - Collapsed", "Nav rail - Expanded", "Nav rail item - Vertical"]}}
+
+Color
+
+Color values are implemented through design tokens. For design, this means working with color values that correspond with tokens. For implementation, a color value will be a token that references a value. Learn more about design tokens
+
+Navigation rail color roles used for light and dark themes:
+
+- On secondary container
+
+- Secondary container
+
+- On surface
+
+- On surface variant
+
+- On surface variant
+
+- Error
+
+- On error
+
+- Error
+Media alternative text: 8 color roles of baseline navigation rail.
+
+States
+
+States are visual representations used to communicate the status of a component or interactive element.
+
+Navigation rail states:
+
+- Enabled (on active destination)
+
+- Hovered (on active destination)
+
+- Focused (on active destination)
+
+- Pressed (on active destination)
+
+- Enabled (on inactive destination)
+
+- Hovered (on inactive destination)
+
+- Focused (on inactive destination)
+
+- Pressed (on inactive destination)
+Media alternative text: 8 states of baseline navigation rail.
+
+Measurements
+
+Navigation rail size measurements
+Media alternative text: Baseline nav rail size measurements.
+
+Navigation rail padding and margin measurements
+Media alternative text: Baseline nav rail padding and margin measurements.
+
+Configurations
+
+Common arrangements of elements within a navigation rail.
+
+- With a menu
+
+- With a FAB
+
+- With menu and FAB, without labels
+
+- All destinations with text labels
+
+- With menu, FAB, and label text for all destinations
+Media alternative text: 5 configurations of the baseline navigation rail.
+
+## Guidelines
+
+Use the menu icon to transition between collapsed and expanded navigation rails
+Media alternative text: Colorful, purple navigation rail shown collapsed and expanded.
+
+Usage
+
+The navigation rail can display navigation items, a menu, and a floating action button (FAB) in a vertical orientation.
+
+There are two variants of navigation rails, collapsed and expanded, which can easily transform into each other when the menu button is selected.
+
+Collapsed
+
+The collapsed nav rail runs along the leading edge of the window, and should contain 3–7 navigation items. It should not be hidden.
+
+It can be used in medium to extra large breakpoints, such as tablets and desktop. In  medium windows with few destinations, consider using a navigation bar instead. Compact windows should always use a navigation bar.
+
+A navigation rail should be the only visible navigation element
+Media alternative text: Collapsed navigation rail with “timer” icon on FAB.
+
+Expanded
+
+The expanded navigation rail can be standard or modal, and should always open from a menu icon. An expanded rail can reveal secondary destinations not visible when collapsed.
+
+The standard configuration is placed beside body content. It’s best for larger windows with lots of available space.
+
+The modal configuration overlaps the body content, and should be opened from a menu icon. Use the modal configuration for:
+
+- Information dense layouts where space is limited
+
+- Products with many navigation items
+
+A navigation rail can be expanded by default on larger screen sizes, or can be expanded over content on smaller screen sizes
+Media alternative text: Expanded navigation rail shown expanded by default and expanded over screen content.
+
+In immersive experiences, the expanded navigation rail can be hidden entirely, appearing only when the menu icon is selected.
+
+The collapsed navigation rail should not be hidden.
+
+The expanded navigation rail can also be hidden, appearing only when the menu icon is selected
+Media alternative text: Navigation rail and hidden navigation rail with menu icon button for expansion.
+
+Anatomy
+
+- Container
+
+- Menu (optional)
+
+- Floating action button (FAB) (optional)
+
+- Icon - active
+
+- Label text - active
+
+- Active indicator
+
+- Icon - inactive
+
+- Large badge (optional)
+
+- Large badge label
+
+- Small badge
+
+- Label text - inactive
+Media alternative text: 10 elements of expanded and collapsed navigation rails.
+
+Container
+
+The navigation rail should be placed on the leading edge of the window. This is the left side for left-to-right languages, and the right side for right-to-left languages.
+
+The container fill can be turned off so the nav rail appears directly on the surface. When doing this, make sure all items have a minimum of 3:1 color contrast.
+
+The navigation rail should be placed on the leading edge of the window
+Media alternative text: Right-to-left navigation rail in Hebrew, and left-to-right navigation rail in English.
+
+The navigation rail should always run vertically along the side of a layout. Don’t make it horizontal.
+
+Use a navigation bar for horizontal navigation.
+
+Don’t use the navigation rail horizontally. Use a navigation bar instead.
+Media alternative text: Horizontal navigation rail on timer screen.
+
+Navigation rail items can be aligned as a group to the top or center of a layout. On tablets, use center alignment to make it easier to reach items.
+
+The menu icon and FAB should always be top-aligned.
+
+Top and center aligned rail destination placement
+Media alternative text: Navigation rails with different alignments.
+
+Menu (optional)
+
+The menu button can transition between the collapsed and expanded navigation rails.
+
+Once expanded, the rail can reveal secondary destinations.
+
+When the navigation rail is expanded, the menu icon should change to represent that it can be collapsed.
+
+A navigation rail can expand to reveal more destinations
+Media alternative text: Expanded and collapsed navigation rails controlled by a menu icon button.
+
+Floating action button (FAB) (optional)
+
+The container of the navigation rail is ideal for anchoring the FAB to the top of a screen, placing the app’s key action above navigation destinations.
+
+When nested within another component, such as the navigation rail, the FAB's resting elevation should be level 0.
+
+A top-aligned FAB in the navigation rail
+Media alternative text: Navigation rail with a FAB button at the top of the screen.
+
+Avoid placing the FAB below navigation items
+Media alternative text: Navigation rail with a FAB button at the bottom of the screen.
+
+The top of the rail can also be used for a logo, however avoid using logos that could be mistaken as buttons.
+
+Don’t use a logo as a menu button to expand the navigation rail.
+
+Use caution when placing logos in the rail where they might be confused with an action or destination
+Media alternative text: Navigation rail with Material design logo at the top of the screen.
+
+Active indicator
+
+The active indicator shows which page is being displayed.
+
+Use the active indicator only for the current open page
+Media alternative text: Navigation rail with active indicators present for the current screen.
+
+Don’t use the active indicator for more than one navigation item at a time
+Media alternative text: Navigation rail with active indicators present for all navigation items.
+
+The active indicator hugs the label text in the expanded nav rail. To achieve a similar style to the baseline navigation drawer, consider modifying the active indicator to fill the container.
+
+The target area should always span the full width.
+
+The active indicator hugs contents in the expanded nav rail
+Media alternative text: Navigation rail with active indicator that hugs the text and icon.
+
+Override the indicator to fill the container to more closely resemble the baseline navigation drawer
+Media alternative text: Navigation rail with active indicator that is larger than the content within it.
+
+Icons
+
+Navigation rail items must use icons that symbolize the content of their page. Browse popular icons on Google Fonts.
+
+Icons should symbolize the content of the page they open
+Media alternative text: Navigation rail with icons that fit the destinations, like a timer icon and label leading to a timer feature.
+
+When a destination is selected, the icon fills and changes color. An active indicator appears behind the icon.
+
+Selected navigation items have an active indicator, a filled icon, and a more prominent color
+Media alternative text: Icons with and without an active indicator.
+
+Label text
+
+The label text should be a short, meaningful description of each navigation destination and another way for users to understand an icon’s meaning.
+
+All navigation items require a one word label text.
+
+Write clear and concise labels that describe the destination page
+Media alternative text: Navigation rail with clear text labels.
+
+Avoid wrapping long labels when possible. If necessary, create a line break between words, or hyphenate longer words.
+
+Break up longer phrases into two text lines if necessary
+Media alternative text: Navigation rail with lengthy text labels.
+
+Labels should be short enough to not be truncated. Don’t shrink the type scale to fit longer text labels.
+
+Don’t truncate or display an ellipsis in place of label text
+Media alternative text: Navigation rail with truncated text label with ellipses. 
+
+Don’t reduce the type size to fit more characters into a destination label
+Media alternative text: Navigation rail with small text label.
+
+Badges
+
+Navigation rail icons can include badges to communicate dynamic information about the  destination, such as counts or status.
+
+In compact nav rails, the badge is placed in the upper right corner of the icon. In expanded nav rails, the badge should be placed next to the label text.
+
+1. Small badge on a rail destination 
+2. Large badge with a number
+3. Large badge with a maximum character count
+Media alternative text: Navigation rail with badges on each icon.
+
+Divider (optional)
+
+A vertical divider can help separate the rail from app content. The divider should be positioned on the edge of the rail container that’s adjacent to the app’s content area.
+
+A divider can make the navigation rail container distinct from other on-screen content
+Media alternative text: Navigation rail with divider separating it from screen content.
+
+Placement
+
+In adaptive layouts, the navigation rail should be placed outside any panes, always along the leading edge of the window. Don’t place it within body content.
+
+When the navigation rail is hidden, the body content can fill in the remaining space as long as the menu icon is still accessible.
+
+Tabs can be used alongside a navigation rail to create an extra layer of visible navigation.
+
+Expanded navigation rails can open from menu buttons on mobile
+Media alternative text: Navigation rail collapsed next to screen content, and expanded overlaying screen content with secondary destinations.
+
+Adaptive design
+
+For more, see adaptive design.
+
+Resizing
+
+When moving from a large screen to a small screen, a navigation rail can transform into a navigation bar, providing the same quick access in a configuration that’s easier to use on smaller displays. Never use the navigation rail and navigation bar simultaneously. 
+
+Only use navigation rails for medium breakpoints and larger. Don’t use a navigation bar. If there are more than five destinations, consider using a modal expanded nav rail instead.
+
+Compact: Don’t use a standard navigation rail for compact layouts due to space constraints. Use a navigation bar instead.
+
+Medium: Use a navigation rail, especially if prioritizing persistent vertical navigation over maximizing vertical content space.
+
+Expanded to extra-large: Use a navigation rail, not a navigation bar. Consider available horizontal space and the number of destinations when choosing between standard and modal.
+
+On smaller devices, use a navigation bar. On larger displays, use a navigation rail.
+Media alternative text: Navigation bar on a phone screen and navigation rail on a tablet screen.
+
+Presentation
+
+When the navigation rail transitions from collapsed to expanded, the contents of the page should automatically adjust to fit.
+
+The contents of the navigation rail also expand to fill the space. For example, the FAB should transition into an extended FAB. 
+
+Extra destinations can be shown in an expanded nav rail.
+
+Use a standard expanded rail when there are secondary destinations or actions that have lower priority than the main navigation items
+Media alternative text: Extra destinations in an expanded navigation rail.
+
+Behavior
+
+Scrolling
+
+Destinations in the navigation rail should remain visible and fixed when scrolling vertically.
+
+Rail destinations remain fixed while on-screen content scrolls vertically
+Media alternative text: Screen content scrolls while rails stay fixed.
+
+If a layout scrolls horizontally, the rail can scroll off-screen or remain fixed. To distinguish that content is scrolling underneath the rail, use a divider or add elevation to the rail.
+
+A divider and color fill change create visual distinction between the rail and horizontally scrolling content
+Media alternative text: A nav rail with a divider between it and the page’s content.
+
+Elevating the rail to level 1 creates visual distinction between the rail and horizontally scrolling content
+Media alternative text: A nav rail with slight elevation.
+
+Selection
+
+When a destination is tapped, the destination screen uses a top level transition pattern. In addition, the icon becomes filled and the active indicator expands from the center of the icon.
+
+Tapping a destination uses a top level transition pattern
+Media alternative text: Selection transition between one navigation item and another.
+
+Back
+
+On Android, a gesture called predictive back allows people to swipe left or right on the screen to go back or dismiss modal components.
+
+- Previous screen is revealed in a preview to signal the destination
+
+- Predictive back only applies to the modal expanded navigation rail.
+
+A list of compatible components is available on the gestures page.
+
+The nav rail pops off the edge of the window during the predictive back gesture
+Media alternative text: Modal expanded navigation rail with Android predictive back feature.
+
+## Accessibility
+
+Use cases
+
+People should be able to do the following using the assistive technology:
+
+- Navigate between navigation destinations
+
+- Select a particular navigation destination from a set
+
+- Get appropriate feedback based on input type
+
+Interaction & style
+
+When a navigation item is tapped, the active indicator appears, providing the following feedback to the user that it is selected:
+
+- A ripple passes through the indicator
+
+- The icon switches from outlined to filled
+
+- The icon and text change color
+
+When hovered, the hover state appears, providing a visual cue that the destination is interactive.
+
+Touch: Tap
+Media alternative text: Colorful, purple navigation rail shown collapsed and expanded.
+
+Cursor: Hover, Click
+Media alternative text: Tap indicator on a collapsed nav rail.
+
+The target area for expanded navigation rails spans the full width of the container, even though the active indicator visually hugs the content.
+
+Touch: Tap
+Media alternative text: Touch indicator on a nav rail.
+
+Use a filled icon for the active destination and outlined icons for inactive destinations.
+
+Active and inactive icon colors need sufficient contrast against the container.
+
+Use the default color scheme to ensure proper contrast and emphasis on the active destination
+Media alternative text: Navigation rail with filled element.
+
+Don’t use more than two colors for destinations or low-contrast colors in the navigation rail. This will make distinguishing active items difficult.
+Media alternative text: Nav rail with multiple navigation destinations and multi-colored contrast.
+
+If an icon doesn’t have a filled style, use the semibold icon weight instead.
+
+An icon with no filled option should use the semibold weight when active
+Media alternative text: Icon button with semibold weight, without filled options.
+
+Text scaling and truncation
+
+When someone sets their device to show a larger text size, the navigation rail items should grow vertically to accommodate larger labels while retaining the default padding. It’s okay for scaled text to wrap in navigation items.
+
+To remain accessible, ensure the full label is always visible on-screen at up to 2x text sizing. Beyond this size, text can truncate.
+
+Text scaled to 1.5 size
+Media alternative text: Nav rail with text scaled to 1.5x size. All labels are on one line.
+
+Text scaled to 2x size
+Media alternative text: Nav rail with text scaled to 2x size. Some labels wrap to two lines.
+
+Initial focus
+
+Initial focus lands directly on the first interactive item, whether it’s the menu, the FAB, or the first navigation item.
+
+From the FAB or menu, Tab brings the person to the navigation items. Tab or Arrows then navigate between items.
+
+Use arrows to move between navigation items
+Media alternative text: Arrows help people move between pages.
+
+Use space/enter to activate the focused navigation item
+Media alternative text: Space/enter help people choose a navigation destination.
+
+Visual indicators
+
+Icons give the dominant cue of the navigation state. Use a filled icon for the selected destination to contrast with outlined icons for the non-selected destinations.
+
+Use a filled icon variant on the selected navigation item to differentiate from inactive navigation items
+Media alternative text: Nav bar with an active, filled icon button.
+
+Avoid using the same unfilled icon style for both selected and unselected items because it lacks important visual feedback cue
+Media alternative text: Selected navigation item without filled icon style.
+
+Keyboard navigation
+
+ | Keys | Actions
+
+ | Tab / Arrows | Navigate between interactive elements
+
+ | Space / Enter
+ | Selects an interactive element
+
+Labeling elements
+
+The accessibility label for a navigation item is typically the same as the adjacent text label.
+
+When the visible UI text is ambiguous, accessibility labels need to be more descriptive. For example, a navigation item visibly labeled Recent would benefit from additional information in its accessibility label to clarify the destination's intent.
+
+Note: On Android Views (MDC-Android), a more descriptive accessibility label is not available and the role is not announced.
+
+While the visible label text reads Recent, the accessibility label for this switch clarifies its function: Recent images
+Media alternative text: “Maps” is both the icon label text and the accessibility label.
+
+## Links embedded in visible content
+/m3/pages/design-tokens/overview
+/m3/pages/design-tokens/overview/
+/m3/pages/elevation/applying-elevation
+/m3/pages/gestures/
+/m3/pages/layout-overview/adaptive-design/
+/m3/pages/motion-transitions/transition-patterns#f852afd2-396f-49fd-a265-5f6d96680e16
+/m3/pages/navigation-rail/specs#d4d97764-20ec-496f-a6f3-0d423940ec5a
+http://fonts.google.com/icons
+https://m3.material.io/blog/building-with-m3-expressive

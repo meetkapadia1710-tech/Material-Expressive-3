@@ -1,0 +1,3377 @@
+[
+  {
+    "url": "https://m3.material.io/",
+    "category": "home",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P001",
+    "text_file": "evidence/page-text/home.txt",
+    "rendered_evidence_id": "ev_0770a7e5418adf3699f932b8eac5d76547974734ad17d1f162473c3e5b4a56a8",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/blog",
+    "category": "blog",
+    "status": "parent-data-retrieved",
+    "source_id": "P088",
+    "text_file": "evidence/page-text/blog.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/blog/2023-google-fonts-redesign",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/24-hour-clock-design-research",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/5-steps-large-screen-apps",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/accessibility-awareness-day-2022",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-dark-theme-tutorial",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-material-motion",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-material-theme-color",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-material-theme-shape",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-material-theme-type",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-stable-release-1-10-0",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-stable-release-1-12-0",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-stable-release-1-2",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-stable-release-1-3-0",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-stable-release-1-4",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-stable-release-1-5",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-stable-release-1-6-1",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-stable-release-1-7-0",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-stable-release-1-8-0",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/android-stable-release-1-9-0",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/announcing-material-you",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/asset-people-1",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/asset-people-2",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/asset-people-3",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/atkinson-hyperlegible-design",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/color-fonts-are-here",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/dark-theme-design-tutorial-video",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/data-visualization-accessibility",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/derek-brahney-interview",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/design-material-theme-color",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/design-material-theme-shape",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/design-material-theme-type",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/designer-toolbox-figma-android-studio-relay",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/designing-text-visual-acuity-research",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/designtocode",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/device-metrics",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/digital-wellbeing-design-systems",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/digital-wellbeing-face-retouching",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/digital-wellbeing-ux-principles",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/dynamic-color-harmony",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/finding-ethical-design",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/fonts-are-software-video",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/get-google-fonts-update",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/get-started",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/google-design-tutorial-video",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/google-fonts-dark-theme",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/google-fonts-knowledge",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/google-fonts-material-icons",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/google-fonts-pairing-figma",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/google-io-2024",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/google-material-custom-theme",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/how-to-gemini-app-compose-material-design-3",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/how-to-make-text-more-accessible",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/inclusive-imagery-at-google",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/interview-oddfellows-m3-art-style",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/introducing-symbols",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/jamie-chung-photography-interview",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/jetpack-compose-beta",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/jetpack-compose-catalog",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/localization-principles-techniques",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/m3-a11y",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-3-carousel-research-design",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-3-compose-1-1",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-3-compose-1-2",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-3-compose-1-3",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-3-compose-stable",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-3-figma-design-kit",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-3-slot-components-figma",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-ads-2022",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-density-web",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-design-2022-roundup",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-design-awards-2021",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-design-blog-welcome",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-design-for-large-screens",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-design-wordpress-plugin",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-design-wordpress-plugin-030",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-design-xr-dev-preview",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-design-youtube-channel",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-google-io21",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-google-io22",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-google-io23",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-icons-sehee-lee-interview",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-io-redesign",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-partner-studies",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-theme-builder",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-theme-builder-2-color-match",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/material-you-large-screens",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/mda-2020-winners",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/mda-2021-winners",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/migrate-android-material-components",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/migrating-material-3",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/motion-research-container-transform",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/noto-announcement",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/readability-consortium",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/readability-research",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/readex-pro-legibility-arabic-type-design",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/reduce-reflow-with-web-fonts",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/relay-in-alpha",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/relay-ravn-case-study",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/research-state-of-design-systems-2020",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/roboto-flex",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/roboto-serif",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/science-of-color-design",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/search.html",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/shantell-martin-variable-font",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/sil-typefaces",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/start-building-with-material-you",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/ten-steps-ios-android-design",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/testing-material-3",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/tone-based-surface-color-m3",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/whats-new-design-kit",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/why-we-recommend-material-design-components-android",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/blog/year-in-the-life-material-design-advocate",
+    "category": "blog",
+    "status": "not-retrieved",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/building-with-m3-expressive",
+    "category": "building-with-m3-expressive",
+    "status": "rendered-not-found",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "ev_b7d66738c353d9373ebef32776fc8d3e48b03adb3f2174f3a6db9289370eb6e6",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/components",
+    "category": "components",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P050",
+    "text_file": "evidence/page-text/components.txt",
+    "rendered_evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/all-buttons",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P051",
+    "text_file": "evidence/page-text/components__all-buttons.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/app-bars/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P080",
+    "text_file": "evidence/page-text/components__app-bars.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/app-bars/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P080",
+    "text_file": "evidence/page-text/components__app-bars.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/app-bars/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P080",
+    "text_file": "evidence/page-text/components__app-bars.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/app-bars/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P080",
+    "text_file": "evidence/page-text/components__app-bars.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/badges/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P082",
+    "text_file": "evidence/page-text/components__badges.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/badges/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P082",
+    "text_file": "evidence/page-text/components__badges.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/badges/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P082",
+    "text_file": "evidence/page-text/components__badges.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/badges/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P082",
+    "text_file": "evidence/page-text/components__badges.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/bottom-sheets/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P061",
+    "text_file": "evidence/page-text/components__bottom-sheets.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/bottom-sheets/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P061",
+    "text_file": "evidence/page-text/components__bottom-sheets.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/bottom-sheets/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P061",
+    "text_file": "evidence/page-text/components__bottom-sheets.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/bottom-sheets/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P061",
+    "text_file": "evidence/page-text/components__bottom-sheets.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/button-groups/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P053",
+    "text_file": "evidence/page-text/components__button-groups.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/button-groups/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P053",
+    "text_file": "evidence/page-text/components__button-groups.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/button-groups/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P053",
+    "text_file": "evidence/page-text/components__button-groups.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/button-groups/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P053",
+    "text_file": "evidence/page-text/components__button-groups.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/buttons/accessibility",
+    "category": "components",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P052",
+    "text_file": "evidence/page-text/components__buttons.txt",
+    "rendered_evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/buttons/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P052",
+    "text_file": "evidence/page-text/components__buttons.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/buttons/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P052",
+    "text_file": "evidence/page-text/components__buttons.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/buttons/specs",
+    "category": "components",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P052",
+    "text_file": "evidence/page-text/components__buttons.txt",
+    "rendered_evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/cards/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P062",
+    "text_file": "evidence/page-text/components__cards.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/cards/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P062",
+    "text_file": "evidence/page-text/components__cards.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/cards/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P062",
+    "text_file": "evidence/page-text/components__cards.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/cards/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P062",
+    "text_file": "evidence/page-text/components__cards.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/carousel/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P063",
+    "text_file": "evidence/page-text/components__carousel.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/carousel/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P063",
+    "text_file": "evidence/page-text/components__carousel.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/carousel/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P063",
+    "text_file": "evidence/page-text/components__carousel.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/carousel/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P063",
+    "text_file": "evidence/page-text/components__carousel.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/checkbox/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P084",
+    "text_file": "evidence/page-text/components__checkbox.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/checkbox/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P084",
+    "text_file": "evidence/page-text/components__checkbox.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/checkbox/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P084",
+    "text_file": "evidence/page-text/components__checkbox.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/checkbox/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P084",
+    "text_file": "evidence/page-text/components__checkbox.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/chips/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P064",
+    "text_file": "evidence/page-text/components__chips.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/chips/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P064",
+    "text_file": "evidence/page-text/components__chips.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/chips/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P064",
+    "text_file": "evidence/page-text/components__chips.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/chips/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P064",
+    "text_file": "evidence/page-text/components__chips.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/date-pickers/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P085",
+    "text_file": "evidence/page-text/components__date-pickers.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/date-pickers/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P085",
+    "text_file": "evidence/page-text/components__date-pickers.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/date-pickers/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P085",
+    "text_file": "evidence/page-text/components__date-pickers.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/date-pickers/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P085",
+    "text_file": "evidence/page-text/components__date-pickers.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/dialogs/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P065",
+    "text_file": "evidence/page-text/components__dialogs.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/dialogs/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P065",
+    "text_file": "evidence/page-text/components__dialogs.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/dialogs/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P065",
+    "text_file": "evidence/page-text/components__dialogs.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/dialogs/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P065",
+    "text_file": "evidence/page-text/components__dialogs.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/divider/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P066",
+    "text_file": "evidence/page-text/components__divider.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/divider/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P066",
+    "text_file": "evidence/page-text/components__divider.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/divider/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P066",
+    "text_file": "evidence/page-text/components__divider.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/divider/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P066",
+    "text_file": "evidence/page-text/components__divider.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/extended-fab/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P055",
+    "text_file": "evidence/page-text/components__extended-fab.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/extended-fab/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P055",
+    "text_file": "evidence/page-text/components__extended-fab.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/extended-fab/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P055",
+    "text_file": "evidence/page-text/components__extended-fab.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/extended-fab/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P055",
+    "text_file": "evidence/page-text/components__extended-fab.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/fab-menu/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P056",
+    "text_file": "evidence/page-text/components__fab-menu.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/fab-menu/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P056",
+    "text_file": "evidence/page-text/components__fab-menu.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/fab-menu/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P056",
+    "text_file": "evidence/page-text/components__fab-menu.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/fab-menu/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P056",
+    "text_file": "evidence/page-text/components__fab-menu.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/floating-action-button/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P054",
+    "text_file": "evidence/page-text/components__floating-action-button.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/floating-action-button/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P054",
+    "text_file": "evidence/page-text/components__floating-action-button.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/floating-action-button/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P054",
+    "text_file": "evidence/page-text/components__floating-action-button.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/floating-action-button/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P054",
+    "text_file": "evidence/page-text/components__floating-action-button.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/icon-buttons/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P057",
+    "text_file": "evidence/page-text/components__icon-buttons.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/icon-buttons/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P057",
+    "text_file": "evidence/page-text/components__icon-buttons.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/icon-buttons/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P057",
+    "text_file": "evidence/page-text/components__icon-buttons.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/icon-buttons/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P057",
+    "text_file": "evidence/page-text/components__icon-buttons.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/lists/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P081",
+    "text_file": "evidence/page-text/components__lists.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/lists/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P081",
+    "text_file": "evidence/page-text/components__lists.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/lists/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P081",
+    "text_file": "evidence/page-text/components__lists.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/lists/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P081",
+    "text_file": "evidence/page-text/components__lists.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/loading-indicator/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P071",
+    "text_file": "evidence/page-text/components__loading-indicator.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/loading-indicator/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P071",
+    "text_file": "evidence/page-text/components__loading-indicator.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/loading-indicator/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P071",
+    "text_file": "evidence/page-text/components__loading-indicator.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/loading-indicator/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P071",
+    "text_file": "evidence/page-text/components__loading-indicator.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/menus/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P067",
+    "text_file": "evidence/page-text/components__menus.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/menus/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P067",
+    "text_file": "evidence/page-text/components__menus.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/menus/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P067",
+    "text_file": "evidence/page-text/components__menus.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/menus/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P067",
+    "text_file": "evidence/page-text/components__menus.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/navigation-bar/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P068",
+    "text_file": "evidence/page-text/components__navigation-bar.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/navigation-bar/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P068",
+    "text_file": "evidence/page-text/components__navigation-bar.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/navigation-bar/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P068",
+    "text_file": "evidence/page-text/components__navigation-bar.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/navigation-bar/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P068",
+    "text_file": "evidence/page-text/components__navigation-bar.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/navigation-drawer/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P069",
+    "text_file": "evidence/page-text/components__navigation-drawer.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/navigation-drawer/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P069",
+    "text_file": "evidence/page-text/components__navigation-drawer.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/navigation-drawer/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P069",
+    "text_file": "evidence/page-text/components__navigation-drawer.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/navigation-drawer/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P069",
+    "text_file": "evidence/page-text/components__navigation-drawer.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/navigation-rail/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P070",
+    "text_file": "evidence/page-text/components__navigation-rail.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/navigation-rail/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P070",
+    "text_file": "evidence/page-text/components__navigation-rail.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/navigation-rail/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P070",
+    "text_file": "evidence/page-text/components__navigation-rail.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/navigation-rail/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P070",
+    "text_file": "evidence/page-text/components__navigation-rail.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/progress-indicators/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P072",
+    "text_file": "evidence/page-text/components__progress-indicators.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/progress-indicators/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P072",
+    "text_file": "evidence/page-text/components__progress-indicators.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/progress-indicators/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P072",
+    "text_file": "evidence/page-text/components__progress-indicators.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/progress-indicators/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P072",
+    "text_file": "evidence/page-text/components__progress-indicators.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/radio-button/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P073",
+    "text_file": "evidence/page-text/components__radio-button.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/radio-button/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P073",
+    "text_file": "evidence/page-text/components__radio-button.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/radio-button/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P073",
+    "text_file": "evidence/page-text/components__radio-button.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/radio-button/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P073",
+    "text_file": "evidence/page-text/components__radio-button.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/search/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P074",
+    "text_file": "evidence/page-text/components__search.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/search/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P074",
+    "text_file": "evidence/page-text/components__search.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/search/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P074",
+    "text_file": "evidence/page-text/components__search.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/search/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P074",
+    "text_file": "evidence/page-text/components__search.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/segmented-buttons/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P058",
+    "text_file": "evidence/page-text/components__segmented-buttons.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/segmented-buttons/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P058",
+    "text_file": "evidence/page-text/components__segmented-buttons.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/segmented-buttons/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P058",
+    "text_file": "evidence/page-text/components__segmented-buttons.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/segmented-buttons/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P058",
+    "text_file": "evidence/page-text/components__segmented-buttons.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/side-sheets/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P075",
+    "text_file": "evidence/page-text/components__side-sheets.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/side-sheets/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P075",
+    "text_file": "evidence/page-text/components__side-sheets.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/side-sheets/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P075",
+    "text_file": "evidence/page-text/components__side-sheets.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/side-sheets/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P075",
+    "text_file": "evidence/page-text/components__side-sheets.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/sliders/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P076",
+    "text_file": "evidence/page-text/components__sliders.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/sliders/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P076",
+    "text_file": "evidence/page-text/components__sliders.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/sliders/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P076",
+    "text_file": "evidence/page-text/components__sliders.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/sliders/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P076",
+    "text_file": "evidence/page-text/components__sliders.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/snackbar/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P087",
+    "text_file": "evidence/page-text/components__snackbar.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/snackbar/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P087",
+    "text_file": "evidence/page-text/components__snackbar.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/snackbar/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P087",
+    "text_file": "evidence/page-text/components__snackbar.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/snackbar/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P087",
+    "text_file": "evidence/page-text/components__snackbar.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/split-button/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P059",
+    "text_file": "evidence/page-text/components__split-button.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/split-button/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P059",
+    "text_file": "evidence/page-text/components__split-button.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/split-button/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P059",
+    "text_file": "evidence/page-text/components__split-button.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/split-button/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P059",
+    "text_file": "evidence/page-text/components__split-button.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/switch/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P077",
+    "text_file": "evidence/page-text/components__switch.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/switch/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P077",
+    "text_file": "evidence/page-text/components__switch.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/switch/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P077",
+    "text_file": "evidence/page-text/components__switch.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/switch/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P077",
+    "text_file": "evidence/page-text/components__switch.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/tabs/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P083",
+    "text_file": "evidence/page-text/components__tabs.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/tabs/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P083",
+    "text_file": "evidence/page-text/components__tabs.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/tabs/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P083",
+    "text_file": "evidence/page-text/components__tabs.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/tabs/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P083",
+    "text_file": "evidence/page-text/components__tabs.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/text-fields/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P078",
+    "text_file": "evidence/page-text/components__text-fields.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/text-fields/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P078",
+    "text_file": "evidence/page-text/components__text-fields.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/text-fields/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P078",
+    "text_file": "evidence/page-text/components__text-fields.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/text-fields/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P078",
+    "text_file": "evidence/page-text/components__text-fields.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/time-pickers/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P086",
+    "text_file": "evidence/page-text/components__time-pickers.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/time-pickers/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P086",
+    "text_file": "evidence/page-text/components__time-pickers.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/time-pickers/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P086",
+    "text_file": "evidence/page-text/components__time-pickers.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/time-pickers/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P086",
+    "text_file": "evidence/page-text/components__time-pickers.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/toolbars/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P060",
+    "text_file": "evidence/page-text/components__toolbars.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/toolbars/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P060",
+    "text_file": "evidence/page-text/components__toolbars.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/toolbars/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P060",
+    "text_file": "evidence/page-text/components__toolbars.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/toolbars/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P060",
+    "text_file": "evidence/page-text/components__toolbars.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/tooltips/accessibility",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P079",
+    "text_file": "evidence/page-text/components__tooltips.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/tooltips/guidelines",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P079",
+    "text_file": "evidence/page-text/components__tooltips.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/tooltips/overview",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P079",
+    "text_file": "evidence/page-text/components__tooltips.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/components/tooltips/specs",
+    "category": "components",
+    "status": "parent-data-retrieved",
+    "source_id": "P079",
+    "text_file": "evidence/page-text/components__tooltips.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/develop",
+    "category": "develop",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P002",
+    "text_file": "evidence/page-text/develop.txt",
+    "rendered_evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/develop/android/jetpack-compose",
+    "category": "develop",
+    "status": "parent-data-retrieved",
+    "source_id": "P004",
+    "text_file": "evidence/page-text/develop__android__jetpack-compose.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/develop/android/mdc-android",
+    "category": "develop",
+    "status": "parent-data-retrieved",
+    "source_id": "P003",
+    "text_file": "evidence/page-text/develop__android__mdc-android.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/develop/flutter",
+    "category": "develop",
+    "status": "parent-data-retrieved",
+    "source_id": "P005",
+    "text_file": "evidence/page-text/develop__flutter.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/develop/web",
+    "category": "develop",
+    "status": "parent-data-retrieved",
+    "source_id": "P006",
+    "text_file": "evidence/page-text/develop__web.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations",
+    "category": "foundations",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P007",
+    "text_file": "evidence/page-text/foundations.txt",
+    "rendered_evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/building-for-all/co-design",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P017",
+    "text_file": "evidence/page-text/foundations__building-for-all.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/building-for-all/user-needs",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P017",
+    "text_file": "evidence/page-text/foundations__building-for-all.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/content-design/alt-text",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P012",
+    "text_file": "evidence/page-text/foundations__content-design__alt-text.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/content-design/global-writing/overview",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P013",
+    "text_file": "evidence/page-text/foundations__content-design__global-writing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/content-design/global-writing/word-choice",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P013",
+    "text_file": "evidence/page-text/foundations__content-design__global-writing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/content-design/notifications",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P014",
+    "text_file": "evidence/page-text/foundations__content-design__notifications.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/content-design/overview",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P011",
+    "text_file": "evidence/page-text/foundations__content-design__overview.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/content-design/style-guide/grammar-and-punctuation",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P015",
+    "text_file": "evidence/page-text/foundations__content-design__style-guide.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/content-design/style-guide/ux-writing-best-practices",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P015",
+    "text_file": "evidence/page-text/foundations__content-design__style-guide.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/content-design/style-guide/word-choice",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P015",
+    "text_file": "evidence/page-text/foundations__content-design__style-guide.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/customization",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P018",
+    "text_file": "evidence/page-text/foundations__customization.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/design-tokens/how-to-use-tokens",
+    "category": "foundations",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P019",
+    "text_file": "evidence/page-text/foundations__design-tokens.txt",
+    "rendered_evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/design-tokens/overview",
+    "category": "foundations",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P019",
+    "text_file": "evidence/page-text/foundations__design-tokens.txt",
+    "rendered_evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/designing/color-contrast",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P009",
+    "text_file": "evidence/page-text/foundations__designing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/designing/elements",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P009",
+    "text_file": "evidence/page-text/foundations__designing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/designing/flow",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P009",
+    "text_file": "evidence/page-text/foundations__designing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/designing/overview",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P009",
+    "text_file": "evidence/page-text/foundations__designing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/designing/structure",
+    "category": "foundations",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P009",
+    "text_file": "evidence/page-text/foundations__designing.txt",
+    "rendered_evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/glossary",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P016",
+    "text_file": "evidence/page-text/foundations__glossary.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/interaction/gestures",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P029",
+    "text_file": "evidence/page-text/foundations__interaction__gestures.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/interaction/inputs",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P030",
+    "text_file": "evidence/page-text/foundations__interaction__inputs.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/interaction/selection",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P031",
+    "text_file": "evidence/page-text/foundations__interaction__selection.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/interaction/states/applying-states",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P032",
+    "text_file": "evidence/page-text/foundations__interaction__states.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/interaction/states/overview",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P032",
+    "text_file": "evidence/page-text/foundations__interaction__states.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/interaction/states/state-layers",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P032",
+    "text_file": "evidence/page-text/foundations__interaction__states.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/bidirectionality-rtl",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P028",
+    "text_file": "evidence/page-text/foundations__layout__bidirectionality-rtl.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/breakpoints/compact",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P024",
+    "text_file": "evidence/page-text/foundations__layout__breakpoints.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/breakpoints/expanded",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P024",
+    "text_file": "evidence/page-text/foundations__layout__breakpoints.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/breakpoints/large-extra-large",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P024",
+    "text_file": "evidence/page-text/foundations__layout__breakpoints.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/breakpoints/medium",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P024",
+    "text_file": "evidence/page-text/foundations__layout__breakpoints.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/breakpoints/overview",
+    "category": "foundations",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P024",
+    "text_file": "evidence/page-text/foundations__layout__breakpoints.txt",
+    "rendered_evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/canonical-examples/feed",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P025",
+    "text_file": "evidence/page-text/foundations__layout__canonical-examples.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/canonical-examples/list-detail",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P025",
+    "text_file": "evidence/page-text/foundations__layout__canonical-examples.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/canonical-examples/overview",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P025",
+    "text_file": "evidence/page-text/foundations__layout__canonical-examples.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/canonical-examples/supporting-pane",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P025",
+    "text_file": "evidence/page-text/foundations__layout__canonical-examples.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/grids-spacing/density",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P027",
+    "text_file": "evidence/page-text/foundations__layout__grids-spacing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/grids-spacing/grids",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P027",
+    "text_file": "evidence/page-text/foundations__layout__grids-spacing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/grids-spacing/overview",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P027",
+    "text_file": "evidence/page-text/foundations__layout__grids-spacing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/grids-spacing/spacing",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P027",
+    "text_file": "evidence/page-text/foundations__layout__grids-spacing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/layout-overview/adaptive-design",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P023",
+    "text_file": "evidence/page-text/foundations__layout__layout-overview.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/layout-overview/overview",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P023",
+    "text_file": "evidence/page-text/foundations__layout__layout-overview.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/layout-overview/parts-of-layout",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P023",
+    "text_file": "evidence/page-text/foundations__layout__layout-overview.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/scaffold/bars",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P026",
+    "text_file": "evidence/page-text/foundations__layout__scaffold.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/scaffold/overview",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P026",
+    "text_file": "evidence/page-text/foundations__layout__scaffold.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/scaffold/panes",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P026",
+    "text_file": "evidence/page-text/foundations__layout__scaffold.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/scaffold/rails",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P026",
+    "text_file": "evidence/page-text/foundations__layout__scaffold.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/overview/assistive-technology",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P008",
+    "text_file": "evidence/page-text/foundations__overview.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/overview/principles",
+    "category": "foundations",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P008",
+    "text_file": "evidence/page-text/foundations__overview.txt",
+    "rendered_evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/usability/applying-m3-expressive",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P033",
+    "text_file": "evidence/page-text/foundations__usability.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/usability/overview",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P033",
+    "text_file": "evidence/page-text/foundations__usability.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/watches/foundations",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P020",
+    "text_file": "evidence/page-text/foundations__watches.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/watches/layout",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P020",
+    "text_file": "evidence/page-text/foundations__watches.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/watches/overview",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P020",
+    "text_file": "evidence/page-text/foundations__watches.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/watches/styles",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P020",
+    "text_file": "evidence/page-text/foundations__watches.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/writing/best-practices",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P010",
+    "text_file": "evidence/page-text/foundations__writing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/writing/text-resizing",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P010",
+    "text_file": "evidence/page-text/foundations__writing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/writing/text-truncation",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P010",
+    "text_file": "evidence/page-text/foundations__writing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/xr/components/app-bars",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P022",
+    "text_file": "evidence/page-text/foundations__xr__components.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/xr/components/dialogs",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P022",
+    "text_file": "evidence/page-text/foundations__xr__components.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/xr/components/nav-bar",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P022",
+    "text_file": "evidence/page-text/foundations__xr__components.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/xr/components/nav-rail",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P022",
+    "text_file": "evidence/page-text/foundations__xr__components.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/xr/components/overview",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P022",
+    "text_file": "evidence/page-text/foundations__xr__components.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/xr/components/toolbars",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P022",
+    "text_file": "evidence/page-text/foundations__xr__components.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/xr/design/accessibility",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P021",
+    "text_file": "evidence/page-text/foundations__xr__design.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/xr/design/interaction",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P021",
+    "text_file": "evidence/page-text/foundations__xr__design.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/xr/design/layout",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P021",
+    "text_file": "evidence/page-text/foundations__xr__design.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/foundations/xr/design/overview",
+    "category": "foundations",
+    "status": "parent-data-retrieved",
+    "source_id": "P021",
+    "text_file": "evidence/page-text/foundations__xr__design.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/m3-expressive-motion-theming",
+    "category": "m3-expressive-motion-theming",
+    "status": "rendered-not-found",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "ev_b7d66738c353d9373ebef32776fc8d3e48b03adb3f2174f3a6db9289370eb6e6",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/material-is-compose-first",
+    "category": "material-is-compose-first",
+    "status": "rendered-not-found",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "ev_b7d66738c353d9373ebef32776fc8d3e48b03adb3f2174f3a6db9289370eb6e6",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  },
+  {
+    "url": "https://m3.material.io/styles",
+    "category": "styles",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P034",
+    "text_file": "evidence/page-text/styles.txt",
+    "rendered_evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/color/advanced/adjust-existing-colors",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P040",
+    "text_file": "evidence/page-text/styles__color__advanced.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/color/advanced/apply-colors",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P040",
+    "text_file": "evidence/page-text/styles__color__advanced.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/color/advanced/define-new-colors",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P040",
+    "text_file": "evidence/page-text/styles__color__advanced.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/color/advanced/overview",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P040",
+    "text_file": "evidence/page-text/styles__color__advanced.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/color/choosing-a-scheme",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P037",
+    "text_file": "evidence/page-text/styles__color__choosing-a-scheme.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/color/dynamic/choosing-a-source",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P039",
+    "text_file": "evidence/page-text/styles__color__dynamic.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/color/dynamic/content-based-source",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P039",
+    "text_file": "evidence/page-text/styles__color__dynamic.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/color/dynamic/user-generated-source",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P039",
+    "text_file": "evidence/page-text/styles__color__dynamic.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/color/resources",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P041",
+    "text_file": "evidence/page-text/styles__color__resources.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/color/roles",
+    "category": "styles",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P036",
+    "text_file": "evidence/page-text/styles__color__roles.txt",
+    "rendered_evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/color/static/baseline",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P038",
+    "text_file": "evidence/page-text/styles__color__static.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/color/static/custom-brand",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P038",
+    "text_file": "evidence/page-text/styles__color__static.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/color/system/how-the-system-works",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P035",
+    "text_file": "evidence/page-text/styles__color__system.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/color/system/overview",
+    "category": "styles",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P035",
+    "text_file": "evidence/page-text/styles__color__system.txt",
+    "rendered_evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/elevation/applying-elevation",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P046",
+    "text_file": "evidence/page-text/styles__elevation.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/elevation/overview",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P046",
+    "text_file": "evidence/page-text/styles__elevation.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/elevation/tokens",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P046",
+    "text_file": "evidence/page-text/styles__elevation.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/icons/applying-icons",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P042",
+    "text_file": "evidence/page-text/styles__icons.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/icons/designing-icons",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P042",
+    "text_file": "evidence/page-text/styles__icons.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/icons/overview",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P042",
+    "text_file": "evidence/page-text/styles__icons.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/motion/easing-and-duration/applying-easing-and-duration",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P048",
+    "text_file": "evidence/page-text/styles__motion__easing-and-duration.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/motion/easing-and-duration/tokens-specs",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P048",
+    "text_file": "evidence/page-text/styles__motion__easing-and-duration.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/motion/overview/how-it-works",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P047",
+    "text_file": "evidence/page-text/styles__motion__overview.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/motion/overview/specs",
+    "category": "styles",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P047",
+    "text_file": "evidence/page-text/styles__motion__overview.txt",
+    "rendered_evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/motion/transitions/applying-transitions",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P049",
+    "text_file": "evidence/page-text/styles__motion__transitions.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/motion/transitions/transition-patterns",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P049",
+    "text_file": "evidence/page-text/styles__motion__transitions.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/shape/corner-radius-scale",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P043",
+    "text_file": "evidence/page-text/styles__shape.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/shape/overview-principles",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P043",
+    "text_file": "evidence/page-text/styles__shape.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/shape/shape-morph",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P043",
+    "text_file": "evidence/page-text/styles__shape.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/spacing/applying-spacing",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P044",
+    "text_file": "evidence/page-text/styles__spacing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/spacing/overview",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P044",
+    "text_file": "evidence/page-text/styles__spacing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/spacing/tokens",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P044",
+    "text_file": "evidence/page-text/styles__spacing.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/typography/applying-type",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P045",
+    "text_file": "evidence/page-text/styles__typography.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/typography/editorial-treatments",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P045",
+    "text_file": "evidence/page-text/styles__typography.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/typography/fonts",
+    "category": "styles",
+    "status": "parent-data-retrieved",
+    "source_id": "P045",
+    "text_file": "evidence/page-text/styles__typography.txt",
+    "rendered_evidence_id": "",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/typography/overview",
+    "category": "styles",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P045",
+    "text_file": "evidence/page-text/styles__typography.txt",
+    "rendered_evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/styles/typography/type-scale-tokens",
+    "category": "styles",
+    "status": "rendered-and-data-retrieved",
+    "source_id": "P045",
+    "text_file": "evidence/page-text/styles__typography.txt",
+    "rendered_evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "limitation": "Matched exact route or declared tab; not proof every module or media item was loaded."
+  },
+  {
+    "url": "https://m3.material.io/whats-new-at-io26",
+    "category": "whats-new-at-io26",
+    "status": "rendered-not-found",
+    "source_id": "",
+    "text_file": "",
+    "rendered_evidence_id": "ev_b7d66738c353d9373ebef32776fc8d3e48b03adb3f2174f3a6db9289370eb6e6",
+    "limitation": "Sitemap inventory only; body not retrieved in this corpus."
+  }
+]

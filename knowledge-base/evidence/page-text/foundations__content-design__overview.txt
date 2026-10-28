@@ -1,0 +1,34 @@
+# Overview
+Source ID: P011
+Public page: https://m3.material.io/foundations/content-design/overview
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/e34bf326-f486-4b48-8b76-db3b0ce8a7a7.json
+Retrieved: 2026-10-28T07:43:00.653466+00:00
+Source SHA-256: 6b9d661dd8673ef7325716675e723a316e61559c72013ab372443850fb731877
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+UX writing and information design make UIs easy to use
+
+## Overview
+
+- UI text should be clear to anyone
+
+- Follow Associated Press (AP) Style unless noted otherwise
+Media alternative text: UI content templates for various components.
+
+Resources
+
+| Type | Resource
+
+ | Design  | AP Stylebook
+
+What’s new
+
+- Updated content and organization
+
+- Updated guidance on first-person pronouns
+
+- New examples and illustrations
+
+## Links embedded in visible content
+http://www.apstylebook.com
+https://www.apstylebook.com/

@@ -1,0 +1,473 @@
+[
+  {
+    "id": "TL-01",
+    "url": "https://m3.material.io/styles/typography/overview",
+    "title": "Material typography overview",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "REA rendered overview on 2026-10-27; published page JSON reviewed 2026-10-28",
+    "verified_scope": "Thirty styles, emphasized set, August 2026 language-height update, published availability table.",
+    "limitations": [
+      "REA ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e, step ready_6; availability table is a site statement, not independent platform validation."
+    ],
+    "local_file": "evidence/page-data/styles__typography.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/f6a1d89a-1bbf-46d1-a177-f13b074897a5.json",
+    "sha256": "a19348f2c70744554e6e2428615a6b3574c81c6457d58345b2e1ae56d4a4c617",
+    "retrieved_at": "2026-10-28T07:43:11.401987+00:00"
+  },
+  {
+    "id": "TL-02",
+    "url": "https://m3.material.io/styles/typography/applying-type",
+    "title": "Applying type",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON; initially corroborated by search-indexed text",
+    "verified_scope": "Roles, platform typesetting, tabular numbers, text contrast, link styling.",
+    "limitations": [
+      "Documentation inspected; no application runtime or assistive-technology test performed."
+    ],
+    "local_file": "evidence/page-data/styles__typography.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/f6a1d89a-1bbf-46d1-a177-f13b074897a5.json",
+    "sha256": "a19348f2c70744554e6e2428615a6b3574c81c6457d58345b2e1ae56d4a4c617",
+    "retrieved_at": "2026-10-28T07:43:11.401987+00:00"
+  },
+  {
+    "id": "TL-03",
+    "url": "https://m3.material.io/get-started",
+    "title": "Get started",
+    "accessed_at": "2026-10-27",
+    "timezone": "Asia/Calcutta",
+    "method": "REA rendered text inspected",
+    "verified_scope": "Expressive overview and 35-shape library.",
+    "limitations": [
+      "Local rendered/get-started.txt is a 2026-10-27 observation."
+    ]
+  },
+  {
+    "id": "TL-04",
+    "url": "https://developer.android.com/develop/ui/compose/designsystems/material3",
+    "title": "Material Design 3 in Compose",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Official web text retrieved",
+    "verified_scope": "Fifteen font size/line-height pairs, Typography API, no global defaultFontFamily, titleLarge wording.",
+    "limitations": [
+      "Documentation and moving upstream declarations differ on titleLarge weight; do not silently unify them."
+    ]
+  },
+  {
+    "id": "TL-05",
+    "url": "https://raw.githubusercontent.com/androidx/androidx/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/tokens/TypeScaleTokens.kt",
+    "title": "AndroidX TypeScaleTokens.kt",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Official raw upstream source",
+    "verified_scope": "v0_103 baseline/emphasized size, line-height, weight and tracking declarations.",
+    "limitations": [
+      "Moving androidx-main reference; no pinned release or executed binary identity.",
+      "Emphasized block contains a TODO about generated tokens."
+    ]
+  },
+  {
+    "id": "TL-06",
+    "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes",
+    "title": "Compose window-size guide (earlier URL)",
+    "accessed_at": "2026-10-27",
+    "timezone": "Asia/Calcutta",
+    "method": "Prior official documentation inspection; direct re-open timed out 2026-10-28",
+    "verified_scope": "Original 2026-10-27 research verified width/height classes and adaptive info API.",
+    "limitations": [
+      "2026-10-28 fetch timed out; current adaptive-apps guide TL-30 reverified the claims."
+    ]
+  },
+  {
+    "id": "TL-07",
+    "url": "https://m3.material.io/foundations/layout/breakpoints",
+    "title": "Material breakpoints",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON; all visible breakpoint tabs reviewed; selected tab also rendered through REA 2026-10-28",
+    "verified_scope": "All five width classes; compact/medium/expanded/large default margins, pane counts and fixed-pane widths.",
+    "limitations": [
+      "Defaults are scoped to the layout pattern and breakpoint; diagrams were not visually audited."
+    ],
+    "local_file": "evidence/page-data/foundations__layout__breakpoints.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/16281dc1-7630-4e78-abaf-c9bc8be69663.json",
+    "sha256": "ddb23b160d7be47a32f7d5ecc12fad9161a74e22406ecac7bbf283a6effb39c5",
+    "retrieved_at": "2026-10-28T07:43:04.347883+00:00",
+    "rea_evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "rea_step": "ready_2"
+  },
+  {
+    "id": "TL-08",
+    "url": "https://m3.material.io/foundations/layout/canonical-examples/overview",
+    "title": "Canonical layout examples",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON; originally search-indexed text",
+    "verified_scope": "Feed, list-detail, supporting-pane relationships and terminology.",
+    "limitations": [
+      "Documentation inspected; no application runtime or assistive-technology test performed."
+    ],
+    "local_file": "evidence/page-data/foundations__layout__canonical-examples.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/23b84814-755b-469b-83a9-771fe027b0c0.json",
+    "sha256": "8eb14cb34fece05ce60646274128bbcb374c428795d423ae73d883c258063e5d",
+    "retrieved_at": "2026-10-28T07:43:04.879408+00:00"
+  },
+  {
+    "id": "TL-09",
+    "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/canonical-layouts",
+    "title": "Android canonical layouts",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "official web text retrieved",
+    "verified_scope": "Pane-scaffold APIs, state preservation and adaptive grid example.",
+    "limitations": [
+      "180 dp example is not a mandatory Material card width."
+    ]
+  },
+  {
+    "id": "TL-10",
+    "url": "https://m3.material.io/foundations/overview/principles",
+    "title": "Accessibility principles",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "REA rendered text on 2026-10-27; reviewed saved evidence 2026-10-28",
+    "verified_scope": "Honor individuals; learn early; requirements as a starting point.",
+    "limitations": [
+      "REA ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e, step ready_8; old accessible-design URL redirected."
+    ],
+    "local_file": "evidence/page-data/foundations__overview.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/4101047f-0a57-42f9-b537-2f1dcd7d1fa7.json",
+    "sha256": "c543cbf2c698480c3780a864496a5994c77ec52b1b79365c5474a987a1f22375",
+    "retrieved_at": "2026-10-28T07:42:59.744534+00:00"
+  },
+  {
+    "id": "TL-11",
+    "url": "https://developer.android.com/develop/ui/compose/accessibility/api-defaults",
+    "title": "Compose accessibility API defaults",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "official web text retrieved",
+    "verified_scope": "48 dp targets, callback-dependent reserved size, decorative graphics, content descriptions and merged semantics.",
+    "limitations": [
+      "Documentation inspected; no application runtime or assistive-technology test performed."
+    ]
+  },
+  {
+    "id": "TL-12",
+    "url": "https://developer.android.com/develop/ui/compose/accessibility/semantics",
+    "title": "Compose semantics",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "official web text retrieved",
+    "verified_scope": "Role, state description, toggle state and action semantics for controls.",
+    "limitations": [
+      "Documentation inspected; no application runtime or assistive-technology test performed."
+    ]
+  },
+  {
+    "id": "TL-13",
+    "url": "https://developer.android.com/develop/ui/compose/accessibility/testing",
+    "title": "Compose accessibility testing",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "official web text retrieved",
+    "verified_scope": "Manual TalkBack/Switch Access and semantic tests; accessibility checks from Compose 1.8.0.",
+    "limitations": [
+      "Documentation inspected; no application runtime or assistive-technology test performed."
+    ]
+  },
+  {
+    "id": "TL-14",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+    "title": "WCAG 2.2 contrast minimum explanation",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "official web text retrieved",
+    "verified_scope": "4.5:1 ordinary text, 3:1 large text; large-text definition and exceptions.",
+    "limitations": [
+      "W3C Understanding document is informative explanation; conformance is not evaluated here."
+    ]
+  },
+  {
+    "id": "TL-15",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+    "title": "WCAG 2.2 non-text contrast explanation",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "official web text retrieved",
+    "verified_scope": "3:1 meaningful visual control/state cues against adjacent colors and stated exceptions.",
+    "limitations": [
+      "Informative explanation; no product conformance conclusion."
+    ]
+  },
+  {
+    "id": "TL-16",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+    "title": "WCAG 2.2 target-size minimum explanation",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "official web text retrieved",
+    "verified_scope": "24 by 24 CSS pixels at AA, spacing alternative and other exceptions.",
+    "limitations": [
+      "Distinct criterion and unit context from Material 48 dp recommendation."
+    ]
+  },
+  {
+    "id": "TL-17",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html",
+    "title": "WCAG animation from interactions explanation",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "official web text retrieved",
+    "verified_scope": "AAA criterion for disabling nonessential interaction animation and motion preferences.",
+    "limitations": [
+      "Does not cover every automatic-animation criterion or certify reduced-motion support."
+    ]
+  },
+  {
+    "id": "TL-18",
+    "url": "https://m3.material.io/foundations/designing",
+    "title": "Designing accessible products",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON; visible tabs reviewed for chapter claims; selected tab also rendered through REA 2026-10-28",
+    "verified_scope": "Color contrast, structure/landmarks/headings, keyboard flow, focus return and accessible labels.",
+    "limitations": [
+      "No screen-reader or keyboard runtime testing. Native semantics recommendation must be implemented per platform."
+    ],
+    "local_file": "evidence/page-data/foundations__designing.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/d352451b-8348-4816-abac-4d7983f72f88.json",
+    "sha256": "ffc6958877879d9f4fee1f89e975958af0d0bfa71c69f81c05011b445dcd669a",
+    "retrieved_at": "2026-10-28T07:43:00.135916+00:00",
+    "rea_evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "rea_step": "ready_3"
+  },
+  {
+    "id": "TL-19",
+    "url": "https://m3.material.io/styles/motion/overview",
+    "title": "Motion physics overview and specs",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON; How it works and Specs tabs reviewed; selected tab also rendered through REA 2026-10-28",
+    "verified_scope": "Expressive/standard schemes, spatial/effects springs, speed categories, web curve conversion and legacy fallback.",
+    "limitations": [
+      "No measured animation timings or gesture tests; curve conversion is an approximation."
+    ],
+    "local_file": "evidence/page-data/styles__motion__overview.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/ccf2c3e9-82b5-4c4a-9570-b0d08d95c0c1.json",
+    "sha256": "cb87e986c66c98c6463baa850cc579f754a99859273b3777ff07f81a9b8742db",
+    "retrieved_at": "2026-10-28T07:43:12.001487+00:00",
+    "rea_evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "rea_step": "ready_6"
+  },
+  {
+    "id": "TL-20",
+    "url": "https://raw.githubusercontent.com/androidx/androidx/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/tokens/ExpressiveMotionTokens.kt",
+    "title": "AndroidX ExpressiveMotionTokens.kt",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Official raw upstream source",
+    "verified_scope": "v0_14_0 six damping/stiffness pairs.",
+    "limitations": [
+      "Moving branch, source declaration only; platform spring conventions may differ."
+    ]
+  },
+  {
+    "id": "TL-21",
+    "url": "https://raw.githubusercontent.com/androidx/androidx/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/tokens/ShapeTokens.kt",
+    "title": "AndroidX ShapeTokens.kt",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Official raw upstream source",
+    "verified_scope": "14_1_0 corner-scale values and selected-corner forms.",
+    "limitations": [
+      "Moving branch; CircleShape is not a fixed dp radius."
+    ]
+  },
+  {
+    "id": "TL-22",
+    "url": "https://developers.google.com/fonts/docs/material_symbols",
+    "title": "Material Symbols guide",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "official web text retrieved",
+    "verified_scope": "Axes, formats, licensing and subsetting advice. ROND in optimization examples supplements four-axis overview.",
+    "limitations": [
+      "Internal overview/example discrepancy preserved; all glyphs and selected font metadata not inspected."
+    ]
+  },
+  {
+    "id": "TL-23",
+    "url": "https://m3.material.io/styles/spacing",
+    "title": "Spacing",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON; all three tabs reviewed",
+    "verified_scope": "8 dp base space100, nested units, padding/gap/margin distinction, adaptation, 200% text behavior and current Compose scope.",
+    "limitations": [
+      "Interactive token module not exercised; not all component mappings complete according to source."
+    ],
+    "local_file": "evidence/page-data/styles__spacing.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/36e81931-9b87-406f-9ec5-c0cc049564d8.json",
+    "sha256": "63af82004d239ea105047bba73ebb22d269cca8f7ae00f86933e5a2883f74cf7",
+    "retrieved_at": "2026-10-28T07:43:11.278851+00:00"
+  },
+  {
+    "id": "TL-24",
+    "url": "https://m3.material.io/foundations/layout/grids-spacing",
+    "title": "Grids and spacing",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON; visible tabs reviewed",
+    "verified_scope": "May 2026 ruler guidance, grouping, opt-in density and target-size constraints.",
+    "limitations": [
+      "Source uses both CSS-pixel and dp target wording; no universal conversion is inferred."
+    ],
+    "local_file": "evidence/page-data/foundations__layout__grids-spacing.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/b375cd8c-5506-4ce1-8caa-9cc23eb2d996.json",
+    "sha256": "adddef1ac1a48e92223b2a2d7d3904486eb5b42526d6304827706832f65bcf20",
+    "retrieved_at": "2026-10-28T07:43:05.596699+00:00"
+  },
+  {
+    "id": "TL-25",
+    "url": "https://m3.material.io/foundations/layout/bidirectionality-rtl",
+    "title": "Bidirectionality and RTL",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON; visible text reviewed",
+    "verified_scope": "Leading/trailing placement, mirrored navigation/panes, text direction vs alignment, media/clock exceptions.",
+    "limitations": [
+      "Language-specific exceptions require product testing; no locale runtime exercised."
+    ],
+    "local_file": "evidence/page-data/foundations__layout__bidirectionality-rtl.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/35f8449d-9b29-4224-95ac-65a0708c8722.json",
+    "sha256": "e471e20697e14e2dc6924f85ea76f389d9c44a7b05058321a43d53a783717590",
+    "retrieved_at": "2026-10-28T07:43:06.140601+00:00"
+  },
+  {
+    "id": "TL-26",
+    "url": "https://m3.material.io/foundations/writing",
+    "title": "Accessible writing and text",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON; Text truncation and Text resizing tabs reviewed",
+    "verified_scope": "Text truncation and 200% resizing, preserved information and container adaptation.",
+    "limitations": [
+      "No font scaling measurement or all-language validation."
+    ],
+    "local_file": "evidence/page-data/foundations__writing.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/672aa1bf-2faf-4bf9-b0b5-7a9d782da071.json",
+    "sha256": "a85fe3d9eb0cbb957289b9d5384a7d511516b22ca1641e01e5610936468ac5c8",
+    "retrieved_at": "2026-10-28T07:43:00.152102+00:00"
+  },
+  {
+    "id": "TL-27",
+    "url": "https://m3.material.io/styles/typography/type-scale-tokens",
+    "title": "Type scale and tokens",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON; Type scale & tokens text reviewed; selected tab also rendered through REA 2026-10-28",
+    "verified_scope": "Baseline/emphasized mapping, language-height categories, fixed-height limitations and brand/plain faces.",
+    "limitations": [
+      "Embedded token-module contexts were not interacted with."
+    ],
+    "local_file": "evidence/page-data/styles__typography.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/f6a1d89a-1bbf-46d1-a177-f13b074897a5.json",
+    "sha256": "a19348f2c70744554e6e2428615a6b3574c81c6457d58345b2e1ae56d4a4c617",
+    "retrieved_at": "2026-10-28T07:43:11.401987+00:00",
+    "rea_evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "rea_step": "ready_1"
+  },
+  {
+    "id": "TL-28",
+    "url": "https://m3.material.io/styles/typography/fonts",
+    "title": "Fonts",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON; Fonts tab reviewed",
+    "verified_scope": "Roboto Flex, Roboto and Noto Sans fallback sequence.",
+    "limitations": [
+      "Fonts were not installed or tested for actual glyph coverage."
+    ],
+    "local_file": "evidence/page-data/styles__typography.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/f6a1d89a-1bbf-46d1-a177-f13b074897a5.json",
+    "sha256": "a19348f2c70744554e6e2428615a6b3574c81c6457d58345b2e1ae56d4a4c617",
+    "retrieved_at": "2026-10-28T07:43:11.401987+00:00"
+  },
+  {
+    "id": "TL-29",
+    "url": "https://m3.material.io/styles/shape",
+    "title": "Shape",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON; visible tabs reviewed",
+    "verified_scope": "Ten-step corner scale, shape principles, optical roundness and shape-morph platform statement.",
+    "limitations": [
+      "All 35 shapes not individually inventoried or rendered; web unavailable is Material supply status."
+    ],
+    "local_file": "evidence/page-data/styles__shape.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/5e04e8f6-7da6-475e-a1b0-3818021c0cea.json",
+    "sha256": "3767cfb024716780f2b8c046d33158a4b14fd45acc5a30acdf70d31a8f7c271f",
+    "retrieved_at": "2026-10-28T07:43:10.953872+00:00"
+  },
+  {
+    "id": "TL-30",
+    "url": "https://developer.android.com/develop/adaptive-apps/guides/use-window-size-classes",
+    "title": "Current Android window-size guide",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Official web text retrieved",
+    "verified_scope": "Five width and three height classes, currentWindowAdaptiveInfo and large/extra-large parameter.",
+    "limitations": [
+      "Documentation last updated 2026-10-23; platform guidance, not application runtime observation."
+    ]
+  },
+  {
+    "id": "TL-31",
+    "url": "https://m3.material.io/styles/typography/editorial-treatments",
+    "title": "Editorial treatments",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON; Editorial treatments tab reviewed",
+    "verified_scope": "Occasional expressive typography moments, consistent tone, avoiding decorative routine labels.",
+    "limitations": [
+      "Documentation inspected; no application runtime or assistive-technology test performed."
+    ],
+    "local_file": "evidence/page-data/styles__typography.json",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/f6a1d89a-1bbf-46d1-a177-f13b074897a5.json",
+    "sha256": "a19348f2c70744554e6e2428615a6b3574c81c6457d58345b2e1ae56d4a4c617",
+    "retrieved_at": "2026-10-28T07:43:11.401987+00:00"
+  },
+  {
+    "id": "TL-32",
+    "url": "https://m3.material.io/components/buttons/accessibility",
+    "title": "Buttons accessibility",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON inspected for contrast wording",
+    "verified_scope": "3:1 label/text wording conflict with ordinary-size WCAG text criterion.",
+    "limitations": [
+      "Component prose does not prove WCAG conformance; source discrepancy preserved."
+    ],
+    "local_file": "evidence/page-data/components__buttons.json",
+    "sha256": "8a7bafda83ec399a466edfb6183619b33c763f57e5c75fd78f64759b90ec3333",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/e31df68a-59d4-41dc-8743-8c48b476d4f8.json"
+  },
+  {
+    "id": "TL-33",
+    "url": "https://m3.material.io/components/chips/accessibility",
+    "title": "Chips accessibility",
+    "accessed_at": "2026-10-28",
+    "timezone": "Asia/Calcutta",
+    "method": "Published Material JSON inspected for contrast wording",
+    "verified_scope": "3:1 label/text wording conflict with ordinary-size WCAG text criterion.",
+    "limitations": [
+      "Component prose does not prove WCAG conformance; source discrepancy preserved."
+    ],
+    "local_file": "evidence/page-data/components__chips.json",
+    "sha256": "4a2d2750e46501e38ea47d43781245178c0ad35cd49245516a5820e2c0558cff",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/592d28d0-0c82-4642-a203-556b1e0581b0.json"
+  }
+]

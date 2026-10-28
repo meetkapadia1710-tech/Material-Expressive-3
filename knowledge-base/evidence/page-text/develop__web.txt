@@ -1,0 +1,33 @@
+# Web
+Source ID: P006
+Public page: https://m3.material.io/develop/web
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/510dbdc8-6dae-4e5e-8d5f-dd93176cc7dd.json
+Retrieved: 2026-10-28T07:42:58.988776+00:00
+Source SHA-256: c0f430a41c77d2c470896c6ceaa383646d86ceac3c0ad8855b7bc8f1ac22b43b
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+Material Web is Google’s component library for building applications that work in any web framework.
+
+## Tab 1
+
+Announcements
+
+Material Web Components are currently in maintenance mode. No updates are currently being made to this library. Material 3 Expressive is not implemented on Web.
+
+Start using lightweight and accessible Material Components in any web framework
+
+Material Web is currently in maintenance mode; the roadmap lists what used to be planned and all past releases
+
+Resources & documentation
+
+Guides, developer docs, tutorials, and more
+
+Install Material Web Components and start building
+
+Use theming to apply color, typography, and other styles to your Material Web app
+
+Build using Material’s made-in-house library. Documentation for all Material components and styles available in MWC.
+
+Build using Material 3 in Angular. Note: Implementation may differ from Material Web Components and these guidelines.
+
+## Links embedded in visible content

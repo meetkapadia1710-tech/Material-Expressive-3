@@ -1,0 +1,60 @@
+# Jetpack Compose
+Source ID: P004
+Public page: https://m3.material.io/develop/android/jetpack-compose
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/dfec5d08-385a-4b2d-ad23-e44cc3410cef.json
+Retrieved: 2026-10-28T07:42:57.379224+00:00
+Source SHA-256: bcafe2ffc15c6034dd12c40e9d61947ecdb9059b3511e738f4db4a496f14e268
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+Android's modern toolkit for building native UI using Material 3
+
+## Tab 1
+
+Announcements
+
+The latest from Jetpack Compose
+
+Material Android is all-in on Compose. Read about upcoming Material Compose features like stable Expressive components, a Styles API for easier customization, and Navigation3 integration into the adaptive library.
+Media alternative text: May 19, 2026
+
+Material’s latest evolution helps you make products even more engaging and easier to use.
+Media alternative text: May 13, 2025
+
+Supercharge your Android transitions and animations with the new M3 Expressive motion theming system.
+Media alternative text: May 20, 2025
+
+Learn how to design beautiful and modern Android apps with updated, Android-specific design guidance.
+
+Develop for all platforms
+
+Get the code samples, guides, and API references to build Android apps for all kinds of platforms in the Android ecosystem, like WearOS and Android XR. Material has guidance on designing for watches and designing for XR.
+
+Material’s latest evolution helps you make products even more engaging and easier to use.
+
+Supercharge your Android transitions and animations with the new M3 Expressive motion theming system.
+
+Resources & documentation
+
+Guides, developer docs, tutorials, and more for getting started with Jetpack Compose
+
+Compose is the primary UI toolkit to build adaptive, high performance Android apps
+
+Documentation for all Material 3 Components available for Jetpack Compose
+
+Guides on implementing Material Design 3, migrating from Material 2 to Material 3, and more
+
+Use Jetpack Compose to build a simple UI with declarative functions
+
+Learn how to use Jetpack Compose to build native Android UI
+
+Jetpack Compose makes it easy to give your app a consistent look and feel with theming
+
+Material Components and layouts are available as composable functions
+
+Check out the Reply sample app for Compose
+
+Learn how to get the most from navigation components like nav rail, drawer, and tabs in apps build with Jetpack Compose
+
+## Links embedded in visible content
+/m3/pages/watches/overview
+/m3/pages/xr-design/overview

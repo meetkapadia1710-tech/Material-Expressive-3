@@ -1,0 +1,266 @@
+# Checkbox
+Source ID: P084
+Public page: https://m3.material.io/components/checkbox
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/c0332583-8417-4b80-a0a1-e283781d31c6.json
+Retrieved: 2026-10-28T07:43:25.651310+00:00
+Source SHA-256: 59210ef5042b772c56a945e76303a0098fb2e6ee9d58117a500b092514d97c00
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+
+
+## Overview
+
+- Use checkboxes (instead of switches or radio buttons) if multiple options can be selected from a list
+
+- Label should be scannable
+
+- Selected items are more prominent than unselected items
+
+Unselected, selected (hover), and indeterminate checkboxes
+Media alternative text: 3 checkboxes in a diagram demonstrating all three states.
+
+Availability & resources
+Dynamic module reference: {"source_id": "P084", "page_url": "https://m3.material.io/components/checkbox", "section": "Overview", "type": "STATUS_TABLE", "resource": "designSystems/030656e0a1083ef1/components/589af604996f7a3e", "configuration": null}
+
+Differences from M2
+
+- 
+Color: New color mappings and compatibility with dynamic color
+
+- 
+States: New indeterminate states as well as error states for unselected, selected, and indeterminate
+
+M2
+Media alternative text: Color mapping of a checkbox in M2.
+
+
+M3
+Media alternative text: Color mapping of a checkbox in M3 with new color.
+
+## Specs
+
+Tokens & specs
+
+Browse the component elements, attributes, tokens, and their values.
+Dynamic module reference: {"source_id": "P084", "page_url": "https://m3.material.io/components/checkbox", "section": "Specs", "type": "TOKEN_TABLE", "resource": "designSystems/20543ce18892f7d9/components/31f16b44fe03b0c0", "configuration": {"contextTags": ["None", "Medium contrast", "Default", "High contrast", "3P", "Android", "Dark", "Light"], "hideSearchField": false, "hideVersionName": true}}
+
+Checkbox
+
+- Container 
+
+- Icon
+Media alternative text: Diagram of checkbox indicating the 2 parts of its anatomy.
+
+Color
+
+Color values are implemented through design tokens. For design, this means working with color values that correspond with tokens. For implementation, a color value will be a token that references a value. Learn more about design tokens
+
+- Checkbox
+
+- State-layer
+
+- Icon
+Media alternative text: Checkbox color roles in light and dark themes.
+
+Adjacent text label color
+
+Use the color role on surface for adjacent text labels. This remains the same even if interacting with the label or component.
+
+The text color remains the same regardless if the checkbox is selected or not
+Media alternative text: Checkboxes with text labels. The text color is the same for checked and unchecked checkboxes.
+
+States
+
+States are visual representations used to communicate the status of a component or interactive element. Learn more about interaction states
+
+- Enabled 
+
+- Disabled 
+
+- Hovered 
+
+- Focused 
+
+- Pressed
+Media alternative text: Side by side view of states in light and dark themes.
+
+Measurements
+Media alternative text: Diagram of a selected checkbox with a container width and height of 18dp and a state-layer width and height of 40dp.
+
+| Attribute | Value
+
+ | 
+Container size
+ | 
+18dp
+
+ | 
+Container corner shape
+ | 
+2dp
+
+ | 
+Icon size
+ | 
+18dp
+
+ | 
+Icon alignment
+ | 
+Center-aligned
+
+ | 
+Target size
+ | 
+48dp
+
+ | State-layer size | 40dp
+
+## Guidelines
+
+Checkboxes in a list of items
+Media alternative text: A list of burger additions represented with checkboxes.
+
+Usage
+
+Use checkboxes to: 
+
+- Select one or more options from a list
+
+- Present a list containing sub-selections
+
+- Turn an item on or off in a desktop environment
+
+- Visually group similar options together
+
+Checkboxes select multiple, related options
+Media alternative text: List of 80's songs indicating choice through checkbox selection.
+
+Checkboxes should be used instead of switches if multiple, related options can be selected from a list. Checkboxes visually group similar items effectively and take up less space than switches.
+
+Checkboxes let users select one or more options from a list. A parent checkbox allows for easy selection or deselection of all items.
+Media alternative text: List indicating choice with checkbox selection.
+
+If a list consists of multiple options, don't use switches. Instead, use checkboxes. Checkboxes imply the items are related, and take up less visual space.
+Media alternative text: A list with multiple switches selected.
+
+Alternate selection controls
+
+Checkboxes, radio buttons, and switches are the three main  selection controls. They all help people make choices, like selecting options or switching settings on or off.
+
+- 
+Use checkboxes to select multiple related options in a list.
+
+- 
+Use radio buttons to select a single option in a list.
+
+- 
+Use switches to select standalone or more verbose options in a list, like settings.
+
+Radio buttons
+Media alternative text: Diagram of 2 radio buttons, one selected and one unselected.
+
+Switches
+Media alternative text: Diagram of 2 switches, one selected and one unselected.
+
+Anatomy
+
+1. Container
+
+2. Icon
+Media alternative text: Diagram of checkbox indicating the 2 parts of its anatomy.
+
+Responsive layout
+
+In expanded breakpoints, placing checkboxes within a contained region such as a side sheet can help group related controls and available actions.
+
+A side sheet can group related controls on larger screens
+Media alternative text: Desktop screen showing music albums and a side sheet containing checkboxes for filtering music genres.
+
+Behavior
+
+Multiple checkboxes in a list can be selected.
+
+Selecting multiple items in a list using checkboxes
+Media alternative text: Using checkboxes to select a list of extra ingredients, like pickles and tomatoes, to add to a meal.
+
+Checkboxes can have a parent-child relationship with other checkboxes.
+
+- When the parent checkbox is checked, all child checkboxes are checked
+
+- If a parent checkbox is unchecked, all child checkboxes are unchecked
+
+- If some, but not all, child checkboxes are checked, the parent checkbox becomes an indeterminate checkbox. Checking an indeterminate checkbox checks all child items.
+
+Use a parent checkbox to make it more efficient to select many items
+Media alternative text: Checking parent checkbox also checks child items. Unchecking one child item makes parent indeterminate.
+
+When selected, a checkbox clearly and instantly communicates its selected state.
+
+If used to turn something on or off, the action should be immediately executed.
+
+Turning an item on or off using a checkbox
+Media alternative text: Selecting a checkbox for turning on dark mode immediately changes the phone theme.
+
+## Accessibility
+
+Use cases
+
+People should be able to use assistive technology to:
+
+- 
+Navigate to a checkbox   
+
+- 
+Toggle the checkbox on and off
+
+- 
+Get appropriate feedback based on input type documented under Interaction & style
+
+Interaction & style
+
+Users should be able to select either the text label or the checkbox to select an option.
+
+A checkbox selected via the text label
+Media alternative text: In a list, checkboxes for 2 items are selected via their text labels.
+
+The parent checkbox has three states: selected, unselected, and indeterminate. 
+
+Checkboxes can be selected or unselected regardless of the state of the other checkboxes in a group. 
+
+If some, but not all, child checkboxes are checked, the parent checkbox becomes indeterminate. Selecting an indeterminate parent checkbox will check all of its child checkboxes.
+
+An indeterminate selection indicating that at least one checkbox is selected within a group
+Media alternative text: In a list, a child checkbox for 1 item is selected and the parent checkbox is in indeterminate state.
+
+Avoid applying density by default
+
+Don't apply density to checkboxes by default — this lowers their targets below our best practice of 48x48 CSS pixels. Instead, give people a way to choose a higher density, like selecting a denser layout or changing the theme.
+
+To ensure that this density setting can be easily reverted when it's active, keep all the targets to change it at minimum 48x48 CSS pixels each.
+
+Keyboard navigation
+
+| Keys | Actions
+
+ | Tab | Moves focus to enabled chip or chip group
+
+ | Space or Enter | Activates, selects, or deselects the focused chip
+
+ | Backspace or Delete | Removes currently focused input chip
+
+ | Arrows | Moves focus between chips
+
+Labeling elements
+
+If the UI text is correctly linked to the checkbox, assistive tech (such as a screen reader) will read the UI text followed by the component’s role.
+
+The accessibility label for an individual checkbox is typically the same as its adjacent text label.
+
+The accessibility label clearly states the text label of the checkbox
+Media alternative text: Accessibility labels of a checkbox.
+
+## Links embedded in visible content
+/m3/pages/checkbox/accessibility#6a2f55e5-2fa0-4204-b6d1-62362dda89c7
+/m3/pages/design-tokens/overview
+/m3/pages/interaction-states/overview

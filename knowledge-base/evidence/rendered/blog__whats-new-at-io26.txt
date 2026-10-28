@@ -1,0 +1,260 @@
+URL: https://m3.material.io/blog/whats-new-at-io26
+REA evidence: ev_a92eac9e99c81f8f4382af264a96628d0bb48c039f5ff3005d54faeb754e0b0f
+Step: ready_3
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /blog/whats-new-at-io26#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - text: May 19, 2026
+      - heading "What’s new at Google I/O 2026" [level=1]
+      - text: Material’s latest updates make it easier to create expressive, adaptive products
+      - tabpanel:
+        - region:
+          - text: link Copy link
+          - paragraph: Posted by
+          - paragraph:
+            - strong: Material Design
+          - separator
+        - region:
+          - text: link Copy link
+          - paragraph:
+            - text: At
+            - link "Google I/O 2026":
+              - /url: https://io.google/2026/
+            - text: ", Material announced the Expressive layout system, lists and menus on Android, and the future of Material Android being Compose-first."
+          - paragraph
+        - region:
+          - text: link Copy link
+          - 'heading "Expressive layout: Design for all devices" [level=2]'
+          - paragraph: The new layout scaffold helps designers adapt interfaces for mobile, desktop, spatial devices, and more. This update also includes a new spacing system incorporated into Material components, and new design guidance for watches and XR devices.
+          - paragraph
+        - region:
+          - text: link Copy link
+          - heading "Layout principles & guidelines" [level=3]
+          - paragraph: "Check out the updated layout principles and guidelines:"
+          - list:
+            - listitem:
+              - paragraph:
+                - link "Layout overview":
+                  - /url: https://m3.material.io/foundations/layout/layout-overview
+            - listitem:
+              - paragraph:
+                - link "Scaffold":
+                  - /url: https://m3.material.io/foundations/layout/scaffold/overview
+            - listitem:
+              - paragraph:
+                - link "Grids & spacing":
+                  - /url: https://m3.material.io/foundations/layout/grids-spacing/overview
+            - listitem:
+              - paragraph:
+                - link "Breakpoints":
+                  - /url: https://m3.material.io/foundations/layout/breakpoints/overview
+            - listitem:
+              - paragraph:
+                - link "Bidirectionality & right-to-left (RTL)":
+                  - /url: https://m3.material.io/foundations/layout/bidirectionality-rtl
+            - listitem:
+              - paragraph:
+                - link "Canonical examples":
+                  - /url: https://m3.material.io/foundations/layout/canonical-examples/overview
+          - figure "Use the expressive layout scaffold to adapt screens across breakpoints":
+            - img "Compact and expanded layout scaffolds."
+            - paragraph: Use the expressive layout scaffold to adapt screens across breakpoints
+        - region:
+          - text: link Copy link
+          - heading "New spacing system" [level=3]
+          - paragraph: The spacing system is the foundation for adaptive design, built on an 8dp scale. It can be used to adapt components and layouts to contexts like device type or density settings.
+          - paragraph:
+            - link "More on the spacing system":
+              - /url: https://m3.material.io/styles/spacing/overview
+          - figure "Apply spacing tokens to the margins, padding, and gaps of a component or layout so it can programmatically adapt to contexts like device type or density settings":
+            - img "A 2-pane layout showing padding, gap, and margin spacing."
+            - paragraph: Apply spacing tokens to the margins, padding, and gaps of a component or layout so it can programmatically adapt to contexts like device type or density settings
+        - region:
+          - text: link Copy link
+          - heading "Design across devices" [level=3]
+          - paragraph:
+            - text: Follow these form factor principles to create apps that are optimized for
+            - link "watches":
+              - /url: https://m3.material.io/foundations/watches/overview
+            - text: and
+            - link "immersive XR":
+              - /url: https://m3.material.io/foundations/xr/design/overview
+            - text: .
+        - region:
+          - text: link Copy link
+          - figure "Design for watches using a physics-based motion system, arc text styles, and edge-hugging containers":
+            - img "A smartwatch music app using expressive motion."
+            - paragraph:
+              - strong: Design for watches
+              - text: using a physics-based motion system, arc text styles, and edge-hugging containers
+          - figure "Design for immersive XR to create immersive environments using spatial panels and depth-based elevation":
+            - img "An XR app with 2 spatial panels, 1 orbiter, and an immersive background."
+            - paragraph:
+              - strong: Design for immersive XR
+              - text: to create immersive environments using spatial panels and depth-based elevation
+        - region:
+          - text: link Copy link
+          - heading "Expressive lists & menus" [level=2]
+        - region:
+          - text: link Copy link
+          - paragraph: "Expressive lists and menus got a lot of buzz at Google I/O. Check out the vibrant styles, flexible configurations, and see examples of them in action:"
+          - list:
+            - listitem:
+              - paragraph:
+                - link "Expressive lists":
+                  - /url: https://m3.material.io/components/lists/overview
+            - listitem:
+              - paragraph:
+                - link "Expressive menus":
+                  - /url: https://m3.material.io/components/menus/overview
+          - paragraph
+          - figure:
+            - img "Expressive lists and menus showcasing vibrant, expressive designs."
+            - paragraph
+        - region:
+          - text: link Copy link
+          - heading "Material Android is Compose-first" [level=2]
+          - paragraph: Read the blog post about the upcoming stable Compose release, including 14 expressive components, Styles API integration, our plans for Android Views, and more.
+          - paragraph:
+            - link "Read the Compose-first article":
+              - /url: https://m3.material.io/blog/material-is-compose-first
+          - figure:
+            - img "Compose Material 3 is going stable."
+        - region:
+          - text: link Copy link
+          - heading "More recent updates" [level=2]
+        - region:
+          - text: link Copy link
+          - heading "Expressive search & search app bar" [level=3]
+          - paragraph: Expressive search has a new visual style, motion, more flexibility for trailing icons, and is available for Jetpack Compose.
+          - paragraph:
+            - link "Expressive search":
+              - /url: https://m3.material.io/components/search/overview
+          - paragraph:
+            - link "Expressive search app bar":
+              - /url: https://m3.material.io/components/app-bars/overview
+          - figure "The contained search style features a persistent, filled search container":
+            - button "Pause Video": pause
+            - paragraph:
+              - text: The
+              - strong: contained
+              - text: search style features a persistent, filled search container
+        - region:
+          - text: link Copy link
+          - heading "Learn about Google Design" [level=2]
+          - paragraph:
+            - text: Discover the people and stories behind
+            - link "Google Design":
+              - /url: https://design.google/
+            - text: .
+        - region:
+          - text: link Copy link
+          - heading "Designing for Transparent Screens" [level=3]
+          - paragraph: Behind the scenes of Jetpack Compose Glimmer, the new design system for display AI glasses.
+          - paragraph:
+            - link "Read the story on Google Design":
+              - /url: https://design.google/library/transparent-screens
+          - figure:
+            - button "Pause Video": pause
+        - region:
+          - text: link Copy link
+          - heading "Illustrating the Gemini App" [level=3]
+          - paragraph: How dynamic cues help people discover, learn, and master an AI assistant’s evolving features
+          - paragraph:
+            - link "Read the story on Google Design":
+              - /url: https://design.google/library/gemini-ai-visual-design
+          - figure:
+            - button "Pause Video": pause
+    - button "go back to top": vertical_align_top
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

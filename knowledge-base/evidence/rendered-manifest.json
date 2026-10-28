@@ -1,0 +1,218 @@
+[
+  {
+    "url": "https://m3.material.io/styles/color/roles",
+    "evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "step": "ready_0",
+    "artifact_sha256": "4fc4f6c38b5d1d7c892b7f10489457061086c2b593234989756046038e4d19d9",
+    "file": "evidence/rendered/styles__color__roles.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/styles/typography/type-scale-tokens",
+    "evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "step": "ready_1",
+    "artifact_sha256": "442b28c6fc6cfad3d5a5b315172c2c8d5ff0951f4341d23f210860ae13058585",
+    "file": "evidence/rendered/styles__typography__type-scale-tokens.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/breakpoints/overview",
+    "evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "step": "ready_2",
+    "artifact_sha256": "458487771705cddbd23657212866fcf57f42075073664135b6dfab0f6a5114f8",
+    "file": "evidence/rendered/foundations__layout__breakpoints__overview.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/foundations/designing/structure",
+    "evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "step": "ready_3",
+    "artifact_sha256": "01f7ca3958cc12b901213c5e0f5deed53e3220160be3a9f2e2547646e6d97811",
+    "file": "evidence/rendered/foundations__designing__structure.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/components/buttons/accessibility",
+    "evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "step": "ready_4",
+    "artifact_sha256": "abfc94b75f41c4f512b84406957622c8a198004f40bf15707a1656fceb6b3cdb",
+    "file": "evidence/rendered/components__buttons__accessibility.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/components/buttons/specs",
+    "evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "step": "ready_5",
+    "artifact_sha256": "509159d95989c50b817e464948ffe7d48d44858aa1fa127d6595da8b83bbd7fe",
+    "file": "evidence/rendered/components__buttons__specs.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/styles/motion/overview/specs",
+    "evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "step": "ready_6",
+    "artifact_sha256": "1bb1af5eb627cdee234fc2be1e3cc4373b9b0270208fe7ed407d171a86feae06",
+    "file": "evidence/rendered/styles__motion__overview__specs.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/foundations/design-tokens/how-to-use-tokens",
+    "evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+    "step": "ready_7",
+    "artifact_sha256": "4a5a4421aefa0f2a0456efa5a9c21d4ba45fd5cb95e04dcacc9dcae9ab66ba66",
+    "file": "evidence/rendered/foundations__design-tokens__how-to-use-tokens.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/blog/building-with-m3-expressive",
+    "evidence_id": "ev_a92eac9e99c81f8f4382af264a96628d0bb48c039f5ff3005d54faeb754e0b0f",
+    "step": "ready_0",
+    "artifact_sha256": "fa361eeb32c276dfd0bc3f878ebbcb6affd68b2787d8e9055b6c4d34b2e1a1f0",
+    "file": "evidence/rendered/blog__building-with-m3-expressive.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/blog/m3-expressive-motion-theming",
+    "evidence_id": "ev_a92eac9e99c81f8f4382af264a96628d0bb48c039f5ff3005d54faeb754e0b0f",
+    "step": "ready_1",
+    "artifact_sha256": "6d30ad68e10a73a24487de27550aaa13b9ef3dc9b7f8303c3d8b06d822c6f5a3",
+    "file": "evidence/rendered/blog__m3-expressive-motion-theming.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/blog/material-is-compose-first",
+    "evidence_id": "ev_a92eac9e99c81f8f4382af264a96628d0bb48c039f5ff3005d54faeb754e0b0f",
+    "step": "ready_2",
+    "artifact_sha256": "04ddc4f15809664c8a3a673dea7f177ef07dee60da370f830b5bd3284fd9900b",
+    "file": "evidence/rendered/blog__material-is-compose-first.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/blog/whats-new-at-io26",
+    "evidence_id": "ev_a92eac9e99c81f8f4382af264a96628d0bb48c039f5ff3005d54faeb754e0b0f",
+    "step": "ready_3",
+    "artifact_sha256": "82080d0dee8472728d8dd68fe7a1192d23fb9540c0066c6327ed81e20e0323bf",
+    "file": "evidence/rendered/blog__whats-new-at-io26.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/building-with-m3-expressive",
+    "evidence_id": "ev_b7d66738c353d9373ebef32776fc8d3e48b03adb3f2174f3a6db9289370eb6e6",
+    "step": "ready_0",
+    "artifact_sha256": "477fccd8a69aa9255064a4db84786cafc914a69172cfdc6cd21063381f2490ed",
+    "file": "evidence/rendered/building-with-m3-expressive.txt",
+    "page_not_found": true
+  },
+  {
+    "url": "https://m3.material.io/m3-expressive-motion-theming",
+    "evidence_id": "ev_b7d66738c353d9373ebef32776fc8d3e48b03adb3f2174f3a6db9289370eb6e6",
+    "step": "ready_1",
+    "artifact_sha256": "31797c1631b276b2a86f3c5a2804313d6262f1cb410410f5b636992c09259f2e",
+    "file": "evidence/rendered/m3-expressive-motion-theming.txt",
+    "page_not_found": true
+  },
+  {
+    "url": "https://m3.material.io/material-is-compose-first",
+    "evidence_id": "ev_b7d66738c353d9373ebef32776fc8d3e48b03adb3f2174f3a6db9289370eb6e6",
+    "step": "ready_2",
+    "artifact_sha256": "ee5ec3b355b5b6dda2711b116b3d113da9193542128ed6e7cbd5523fb50bbcc8",
+    "file": "evidence/rendered/material-is-compose-first.txt",
+    "page_not_found": true
+  },
+  {
+    "url": "https://m3.material.io/whats-new-at-io26",
+    "evidence_id": "ev_b7d66738c353d9373ebef32776fc8d3e48b03adb3f2174f3a6db9289370eb6e6",
+    "step": "ready_3",
+    "artifact_sha256": "f5fbd7fba08180af58e58c166244ca8ba2fca285c3b149c15bcee6325e6df4dc",
+    "file": "evidence/rendered/whats-new-at-io26.txt",
+    "page_not_found": true
+  },
+  {
+    "url": "https://m3.material.io/",
+    "evidence_id": "ev_0770a7e5418adf3699f932b8eac5d76547974734ad17d1f162473c3e5b4a56a8",
+    "step": "home_ready",
+    "artifact_sha256": "391da47cd455d93c50f759bf00cfa741a18c7f226383f831815498d5f9e4d7e6",
+    "file": "evidence/rendered/home.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/get-started",
+    "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "step": "ready_0",
+    "artifact_sha256": "84e9e4ba21129b845166c363938a0736f6c50f8ad09eb930d3fb2cd73235680e",
+    "file": "evidence/rendered/get-started.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/foundations",
+    "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "step": "ready_1",
+    "artifact_sha256": "1dd54e7d88e716d4df1e25dd184c201cccf3a56e6fda69fb53c04136fd4704f5",
+    "file": "evidence/rendered/foundations.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/styles",
+    "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "step": "ready_2",
+    "artifact_sha256": "f8a66a7ff37b75dd5bddc23719e230d556c1c2a6589c5bbf6c1387d8f5b1d21b",
+    "file": "evidence/rendered/styles.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/components",
+    "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "step": "ready_3",
+    "artifact_sha256": "6ff5c71dc36a2faafe43a74de2a38dafcbfb7946ebfef4ef1eafcf2d7bdde598",
+    "file": "evidence/rendered/components.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/develop",
+    "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "step": "ready_4",
+    "artifact_sha256": "23e038148a04912e9884d21bceae66309a1da66b26fe6e961e571b0810c35f13",
+    "file": "evidence/rendered/develop.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/styles/color/system/overview",
+    "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "step": "ready_5",
+    "artifact_sha256": "99dc945a3cf7cdfb1b9cbf737df04b318f428ada61874b2d5279b9eeaff5be17",
+    "file": "evidence/rendered/styles__color__system__overview.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/styles/typography/overview",
+    "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "step": "ready_6",
+    "artifact_sha256": "fa20f76818cba0110395763e68e6d08f36fdbe44a23570ffd5e694efa12cac36",
+    "file": "evidence/rendered/styles__typography__overview.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/foundations/design-tokens/overview",
+    "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "step": "ready_7",
+    "artifact_sha256": "64cebc0ba1d02e528757337db014b909074941866d8b56ad487d8a041acbe54a",
+    "file": "evidence/rendered/foundations__design-tokens__overview.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/foundations/overview/principles",
+    "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "step": "ready_8",
+    "artifact_sha256": "8382a4694783a26a94e4604fac088ca205983ac308dcd795425402c88a68e7cb",
+    "file": "evidence/rendered/foundations__overview__principles.txt",
+    "page_not_found": false
+  },
+  {
+    "url": "https://m3.material.io/foundations/layout/overview",
+    "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+    "step": "ready_9",
+    "artifact_sha256": "b26bfec8844b64f4fc06d7af70a8ffab507876ba9ea562576ebeca05aaea14a0",
+    "file": "evidence/rendered/foundations__layout__overview.txt",
+    "page_not_found": true
+  }
+]

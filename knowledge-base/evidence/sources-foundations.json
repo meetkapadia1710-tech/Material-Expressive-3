@@ -1,0 +1,750 @@
+{
+  "research_date": "2026-10-27",
+  "timezone": "Asia/Calcutta",
+  "scope": [
+    "foundations",
+    "design principles",
+    "color",
+    "design tokens"
+  ],
+  "notes": [
+    "Methods distinguish rendered REA captures, public page data, ordinary page extraction, source text, and indexed text.",
+    "Summaries are original; retained source artifacts are evidence, not claims that every UI state was exercised.",
+    "2026-10-27 source dates are preserved. Additional public page-data inspection occurred on 2026-10-28."
+  ],
+  "sources": [
+    {
+      "id": "F01",
+      "url": "https://m3.material.io/foundations",
+      "title": "Foundations",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "REA controlled browser capture; accessibility tree and DOM",
+      "verified_scope": "Foundation topics and site organization",
+      "limitations": [
+        "Documentation text rendered. Linked media, external tools, and library behavior not exercised."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-rendered-text",
+      "runtime_verified": true,
+      "runtime_scope": "Documentation page rendered; library behavior not tested",
+      "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+      "step_id": "ready_1",
+      "local_file": "evidence/rendered/foundations.txt"
+    },
+    {
+      "id": "F02",
+      "url": "https://m3.material.io/get-started",
+      "title": "Get started",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "REA controlled browser capture; accessibility tree and DOM",
+      "verified_scope": "Expressive expansion; foundations/styles/components organization; emphasized type; spring motion; 35 shapes; rendered page says 15 component updates",
+      "limitations": [
+        "Documentation text rendered. Linked media, external tools, and library behavior not exercised."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-rendered-text",
+      "runtime_verified": true,
+      "runtime_scope": "Documentation page rendered; library behavior not tested",
+      "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+      "step_id": "ready_0",
+      "local_file": "evidence/rendered/get-started.txt"
+    },
+    {
+      "id": "F03",
+      "url": "https://developer.android.com/develop/ui/compose/designsystems/material3",
+      "title": "Material Design 3 in Compose",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-page-extraction",
+      "verified_scope": "M3 Expressive relationship; MaterialTheme subsystems; dynamic color and fallback; theme exports",
+      "limitations": [
+        "Documentation verified, library runtime not executed; dependency version not pinned."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "F04",
+      "url": "https://m3.material.io/",
+      "title": "Material Design 3 homepage",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "REA controlled browser capture; accessibility tree and DOM",
+      "verified_scope": "2026 updates; Expressive overview; rendered homepage says 14 component updates",
+      "limitations": [
+        "Documentation text rendered. Linked media, external tools, and library behavior not exercised."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-rendered-text",
+      "runtime_verified": true,
+      "runtime_scope": "Documentation page rendered; library behavior not tested",
+      "evidence_id": "ev_0770a7e5418adf3699f932b8eac5d76547974734ad17d1f162473c3e5b4a56a8",
+      "step_id": "home_ready",
+      "local_file": "evidence/rendered/home.txt"
+    },
+    {
+      "id": "F05",
+      "url": "https://design.google/library/expressive-material-design-google-research",
+      "title": "Better, Easier, Emotional UX",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-search-index",
+      "verified_scope": "Vendor-reported studies; attention and emotional design; functionality and context limits",
+      "limitations": [
+        "Research results are Google's reports, not independently replicated; fetched URL had pubDate=20250521 variant."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-indexed-text",
+      "runtime_verified": false
+    },
+    {
+      "id": "F06",
+      "url": "https://design.google/library/design-notes-material-3-expressive-liam-spradlin",
+      "title": "Inside M3 Expressive",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-search-index",
+      "verified_scope": "Flexibility and intentional emotional expression",
+      "limitations": [
+        "Article/interview excerpt read; full audio not listened to."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-indexed-text",
+      "runtime_verified": false
+    },
+    {
+      "id": "C01",
+      "url": "https://github.com/material-foundation/material-color-utilities/blob/main/concepts/dynamic_color_scheme.md",
+      "title": "MCU Dynamic Color Scheme",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-source-text",
+      "verified_scope": "HCT; source/key colors; palettes; semantic role mapping",
+      "limitations": [
+        "Read raw.githubusercontent.com equivalent; main is mutable; algorithms not run."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "C02",
+      "url": "https://developer.android.com/design/ui/mobile/guides/styles/color",
+      "title": "Android color for mobile design",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-page-extraction",
+      "verified_scope": "Five named key colors; tonal generation; semantic color guidance",
+      "limitations": [
+        "No empirical contrast tests; platform guidance is not a complete latest token export."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "C03",
+      "url": "https://m3.material.io/styles/color/the-color-system",
+      "title": "Color roles",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-search-index",
+      "verified_scope": "Role families; pairings; surfaces; fixed roles; 26 standard and illustrated 45-role set",
+      "limitations": [
+        "Direct /styles/color/roles open returned JS shell; exact freshness of indexed former route unknown.",
+        "Current canonical role guidance separately verified from public page data under C10; former indexed route retained for provenance."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-indexed-text",
+      "runtime_verified": false
+    },
+    {
+      "id": "C04",
+      "url": "https://api.flutter.dev/flutter/material/ColorScheme-class.html",
+      "title": "Flutter ColorScheme class",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-page-extraction",
+      "verified_scope": "45-color description; tone-based surfaces; 4.5:1 on-color guidance; deprecations",
+      "limitations": [
+        "Flutter-specific API evidence; no app executed."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "C05",
+      "url": "https://github.com/material-components/material-components-android/blob/master/docs/theming/Color.md",
+      "title": "Material Components Android Color",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-search-index",
+      "verified_scope": "Tonal surface defaults and MaterialColors.getColor recommendation",
+      "limitations": [
+        "Mutable branch; library runtime not executed."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-indexed-text",
+      "runtime_verified": false
+    },
+    {
+      "id": "C06",
+      "url": "https://github.com/material-components/material-web/blob/main/tokens/versions/v0_192/_md-sys-color.scss",
+      "title": "Material Web generated color tokens v0.192",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-source-text",
+      "verified_scope": "Exact selected light/dark tone mappings",
+      "limitations": [
+        "Read raw equivalent; version label observed; repository commit not pinned; not universal current dynamic scheme."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "C07",
+      "url": "https://github.com/material-foundation/material-color-utilities",
+      "title": "Material Color Utilities",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-source-text",
+      "verified_scope": "Language inventory and algorithm modules",
+      "limitations": [
+        "Read README via raw equivalent; feature parity/release maturity not assessed."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "C08",
+      "url": "https://github.com/material-components/material-web/blob/main/docs/theming/color.md",
+      "title": "Material Web color",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-source-text",
+      "verified_scope": "CSS color token prefix; surface foreground roles",
+      "limitations": [
+        "Read raw equivalent; source examples not executed."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "T01",
+      "url": "https://github.com/material-components/material-web/blob/main/docs/theming/README.md",
+      "title": "Material Web theming",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-source-text",
+      "verified_scope": "Reference/system/component hierarchy; public naming; concrete component values; unsupported palette/motion CSS APIs",
+      "limitations": [
+        "Raw text metadata reviewed 2026-07-31; mutable branch; not all M3 platforms."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "T02",
+      "url": "https://github.com/material-components/material-web/blob/main/tokens/versions/v0_192/_md-comp-filled-button.scss",
+      "title": "Material Web generated filled-button tokens v0.192",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-source-text",
+      "verified_scope": "Container/label/type/shape mapping and literals",
+      "limitations": [
+        "Version-specific source facts; no current Expressive API equivalence claimed."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "T03",
+      "url": "https://github.com/material-components/material-web/blob/main/tokens/_md-comp-filled-button.scss",
+      "title": "Material Web filled-button wrapper",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-source-text",
+      "verified_scope": "Supported/unsupported component token names and system dependencies",
+      "limitations": [
+        "Internal source contract; no runtime style check."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "T04",
+      "url": "https://github.com/material-components/material-web/blob/main/tokens/_md-sys-color.scss",
+      "title": "Material Web system color wrapper",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "official-source-text",
+      "verified_scope": "CSS property construction; role inventory with legacy names",
+      "limitations": [
+        "Mutable source; no exact cross-platform token schema inferred."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "X01",
+      "url": "https://m3.material.io/foundations/design-tokens/overview",
+      "title": "Design tokens overview",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "direct-web-open",
+      "verified_scope": "Page title and JavaScript-required shell",
+      "limitations": [
+        "Initial direct-web extraction failure; later superseded by T05 rendered capture."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "X02",
+      "url": "https://m3.material.io/foundations/design-tokens/how-to-use-tokens",
+      "title": "How to use tokens",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "direct-web-open",
+      "verified_scope": "Page title and JavaScript-required shell",
+      "limitations": [
+        "Initial direct-web extraction failure; later superseded by T06 public page-data inspection."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "X03",
+      "url": "https://m3.material.io/foundations/design-tokens/how-to-read-tokens",
+      "title": "Guessed how-to-read route",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "direct-web-open",
+      "verified_scope": "HTTP 404 observed",
+      "limitations": [
+        "Guessed path; not evidence that topic does not exist."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "X04",
+      "url": "https://m3.material.io/foundations/design-tokens/reading-tokens",
+      "title": "Guessed reading route",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "direct-web-open",
+      "verified_scope": "Tool reported inaccessible URL",
+      "limitations": [
+        "Tool failure; no content conclusion."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "X05",
+      "url": "https://m3.material.io/blog/building-with-m3-expressive",
+      "title": "M3 Expressive: Engaging UX Design",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "direct-web-open",
+      "verified_scope": "Page title and JavaScript-required shell",
+      "limitations": [
+        "Article body not extracted here."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "X06",
+      "url": "https://m3.material.io/styles/color/the-color-system/key-colors-tones",
+      "title": "Key colors and tones",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "direct-web-open",
+      "verified_scope": "JavaScript-required shell",
+      "limitations": [
+        "Use official MCU conceptual source as corroboration; root crawl may supersede."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed",
+      "runtime_verified": false
+    },
+    {
+      "id": "F07",
+      "url": "https://m3.material.io/foundations/overview/principles",
+      "title": "Accessibility principles",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "REA controlled browser capture; accessibility tree and DOM",
+      "verified_scope": "Accessibility by default and three named principles",
+      "limitations": [
+        "Observed documentation content; no library runtime, external tool, or interactive example validation."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-rendered-text",
+      "runtime_verified": true,
+      "runtime_scope": "Documentation page rendered only",
+      "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+      "step_id": "ready_8",
+      "local_file": "evidence/rendered/foundations__overview__principles.txt"
+    },
+    {
+      "id": "C09",
+      "url": "https://m3.material.io/styles/color/system/overview",
+      "title": "Color system overview",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "REA controlled browser capture; accessibility tree and DOM",
+      "verified_scope": "Current model; 26+ roles; dated 2023, 2024, and 2025 changes",
+      "limitations": [
+        "Observed documentation content; no library runtime, external tool, or interactive example validation."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-rendered-text",
+      "runtime_verified": true,
+      "runtime_scope": "Documentation page rendered only",
+      "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+      "step_id": "ready_5",
+      "local_file": "evidence/rendered/styles__color__system__overview.txt"
+    },
+    {
+      "id": "T05",
+      "url": "https://m3.material.io/foundations/design-tokens/overview",
+      "title": "Design tokens overview",
+      "accessed_at": "2026-10-27",
+      "timezone": "Asia/Calcutta",
+      "method": "REA controlled browser capture; accessibility tree and DOM",
+      "verified_scope": "Three classes; naming; contexts; aliases; state/element table structure",
+      "limitations": [
+        "Observed documentation content; no library runtime, external tool, or interactive example validation."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-rendered-text",
+      "runtime_verified": true,
+      "runtime_scope": "Documentation page rendered only",
+      "evidence_id": "ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e",
+      "step_id": "ready_7",
+      "local_file": "evidence/rendered/foundations__design-tokens__overview.txt"
+    },
+    {
+      "id": "F08",
+      "url": "https://m3.material.io/foundations/building-for-all/user-needs",
+      "title": "User needs",
+      "accessed_at": "2026-10-28",
+      "timezone": "Asia/Calcutta",
+      "method": "public-page-data inspection; route map and sitemap corroborated",
+      "verified_scope": "Diverse contexts and collaboration in inclusive product research",
+      "limitations": [
+        "Published data verified; this tab was not independently rendered or its interactions exercised.",
+        "Media and externally linked tools not inspected through this source."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-published-data",
+      "runtime_verified": false,
+      "local_file": "evidence/page-data/foundations__building-for-all.json",
+      "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/3b4b956e-da36-419d-bf59-c1c0455601af.json",
+      "sha256": "e90aac531aefa87779b106b18977a34749e68ba7cfb7e99a32289e63c83c92c2",
+      "retrieved_at": "2026-10-28T07:43:02.498209+00:00",
+      "published_updated_timestamp": "2026-07-17T04:57:38.755Z"
+    },
+    {
+      "id": "F09",
+      "url": "https://m3.material.io/foundations/building-for-all/co-design",
+      "title": "Co-design",
+      "accessed_at": "2026-10-28",
+      "timezone": "Asia/Calcutta",
+      "method": "public-page-data inspection; route map and sitemap corroborated",
+      "verified_scope": "Ongoing community involvement and questions for development teams",
+      "limitations": [
+        "Published data verified; this tab was not independently rendered or its interactions exercised.",
+        "Media and externally linked tools not inspected through this source."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-published-data",
+      "runtime_verified": false,
+      "local_file": "evidence/page-data/foundations__building-for-all.json",
+      "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/3b4b956e-da36-419d-bf59-c1c0455601af.json",
+      "sha256": "e90aac531aefa87779b106b18977a34749e68ba7cfb7e99a32289e63c83c92c2",
+      "retrieved_at": "2026-10-28T07:43:02.498209+00:00",
+      "published_updated_timestamp": "2026-07-17T04:57:38.755Z"
+    },
+    {
+      "id": "F10",
+      "url": "https://m3.material.io/foundations/content-design/style-guide/ux-writing-best-practices",
+      "title": "UX writing best practices",
+      "accessed_at": "2026-10-28",
+      "timezone": "Asia/Calcutta",
+      "method": "public-page-data inspection; route map and sitemap corroborated",
+      "verified_scope": "Consequences; scanning; sentence case; abbreviations",
+      "limitations": [
+        "Published data verified; this tab was not independently rendered or its interactions exercised.",
+        "Media and externally linked tools not inspected through this source."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-published-data",
+      "runtime_verified": false,
+      "local_file": "evidence/page-data/foundations__content-design__style-guide.json",
+      "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/09101f02-d770-422e-ad62-1031f867c1aa.json",
+      "sha256": "a2412875002c4b345d78a1097cdbd8af8c2ae1c3958b3f0fb79371aacf32442a",
+      "retrieved_at": "2026-10-28T07:43:01.572522+00:00",
+      "published_updated_timestamp": "2026-08-04T07:53:19.197Z"
+    },
+    {
+      "id": "F11",
+      "url": "https://m3.material.io/foundations/content-design/style-guide/word-choice",
+      "title": "Word choice",
+      "accessed_at": "2026-10-28",
+      "timezone": "Asia/Calcutta",
+      "method": "public-page-data inspection; route map and sitemap corroborated",
+      "verified_scope": "Pronoun consistency; context and user perspective",
+      "limitations": [
+        "Published data verified; this tab was not independently rendered or its interactions exercised.",
+        "Media and externally linked tools not inspected through this source."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-published-data",
+      "runtime_verified": false,
+      "local_file": "evidence/page-data/foundations__content-design__style-guide.json",
+      "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/09101f02-d770-422e-ad62-1031f867c1aa.json",
+      "sha256": "a2412875002c4b345d78a1097cdbd8af8c2ae1c3958b3f0fb79371aacf32442a",
+      "retrieved_at": "2026-10-28T07:43:01.572522+00:00",
+      "published_updated_timestamp": "2026-08-04T07:53:19.197Z"
+    },
+    {
+      "id": "F12",
+      "url": "https://m3.material.io/foundations/interaction/states/overview",
+      "title": "States overview",
+      "accessed_at": "2026-10-28",
+      "timezone": "Asia/Calcutta",
+      "method": "public-page-data inspection; route map and sitemap corroborated",
+      "verified_scope": "Enabled/disabled/hover/focus/pressed/dragged state definitions",
+      "limitations": [
+        "Published data verified; this tab was not independently rendered or its interactions exercised.",
+        "Media and externally linked tools not inspected through this source."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-published-data",
+      "runtime_verified": false,
+      "local_file": "evidence/page-data/foundations__interaction__states.json",
+      "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/b3339b30-4a6d-49b6-9a8b-8e581b2b1204.json",
+      "sha256": "c74df376b873c1d26bd432691d3b968a1985099edb55c47eab41eadf5aa1155d",
+      "retrieved_at": "2026-10-28T07:43:07.236170+00:00",
+      "published_updated_timestamp": "2026-07-17T05:30:22.307Z"
+    },
+    {
+      "id": "F13",
+      "url": "https://m3.material.io/foundations/interaction/states/state-layers",
+      "title": "State layers",
+      "accessed_at": "2026-10-28",
+      "timezone": "Asia/Calcutta",
+      "method": "public-page-data inspection; route map and sitemap corroborated",
+      "verified_scope": "State overlay model and foreground-derived color",
+      "limitations": [
+        "Published data verified; this tab was not independently rendered or its interactions exercised.",
+        "Media and externally linked tools not inspected through this source."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-published-data",
+      "runtime_verified": false,
+      "local_file": "evidence/page-data/foundations__interaction__states.json",
+      "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/b3339b30-4a6d-49b6-9a8b-8e581b2b1204.json",
+      "sha256": "c74df376b873c1d26bd432691d3b968a1985099edb55c47eab41eadf5aa1155d",
+      "retrieved_at": "2026-10-28T07:43:07.236170+00:00",
+      "published_updated_timestamp": "2026-07-17T05:30:22.307Z"
+    },
+    {
+      "id": "F14",
+      "url": "https://m3.material.io/foundations/customization",
+      "title": "Customization",
+      "accessed_at": "2026-10-28",
+      "timezone": "Asia/Calcutta",
+      "method": "public-page-data inspection; route map and sitemap corroborated",
+      "verified_scope": "Brand and user preferences; custom themes; fallback and selective dynamic color",
+      "limitations": [
+        "Published data verified; this tab was not independently rendered or its interactions exercised.",
+        "Media and externally linked tools not inspected through this source."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-published-data",
+      "runtime_verified": false,
+      "local_file": "evidence/page-data/foundations__customization.json",
+      "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/d82ab2cd-75e3-4cd0-8117-ff5ccbc8de85.json",
+      "sha256": "c07c3f95eb3db6ff330376ce408167bd1cd9642ecf60eccd2d5cfed0891dc8d8",
+      "retrieved_at": "2026-10-28T07:43:02.678056+00:00",
+      "published_updated_timestamp": "2026-07-17T04:59:31.042Z"
+    },
+    {
+      "id": "C10",
+      "url": "https://m3.material.io/styles/color/roles",
+      "title": "Color roles",
+      "accessed_at": "2026-10-28",
+      "timezone": "Asia/Calcutta",
+      "method": "REA controlled browser capture, corroborated with public page data",
+      "verified_scope": "Role families, foreground pairings, inverse/fixed/bright/dim roles and breakpoint consistency",
+      "limitations": [
+        "Documentation tab rendered; library algorithms, Figma workflow, and interactive examples not executed.",
+        "Media and externally linked tools not visually inspected through this source."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-rendered-text",
+      "runtime_verified": true,
+      "local_file": "evidence/page-data/styles__color__roles.json",
+      "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/ced25aa3-a367-44c6-a47e-439bc9e59d68.json",
+      "sha256": "06a7d87e3ea962ec84b919880ad3d8f3356ac457b1484d0e2e08eaf4640e9c12",
+      "retrieved_at": "2026-10-28T07:43:08.483677+00:00",
+      "published_updated_timestamp": "2026-07-27T13:48:22.900Z",
+      "runtime_scope": "Documentation tab rendered only",
+      "evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+      "step_id": "ready_0",
+      "rendered_file": "evidence/rendered/styles__color__roles.txt"
+    },
+    {
+      "id": "C11",
+      "url": "https://m3.material.io/styles/color/choosing-a-scheme",
+      "title": "Choosing a scheme",
+      "accessed_at": "2026-10-28",
+      "timezone": "Asia/Calcutta",
+      "method": "public-page-data inspection; route map and sitemap corroborated",
+      "verified_scope": "Static/dynamic distinctions and design recommendations",
+      "limitations": [
+        "Published data verified; this tab was not independently rendered or its interactions exercised.",
+        "Media and externally linked tools not inspected through this source."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-published-data",
+      "runtime_verified": false,
+      "local_file": "evidence/page-data/styles__color__choosing-a-scheme.json",
+      "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/a4aa0cf5-4017-4dea-ae51-edb8e950bd2c.json",
+      "sha256": "33990ae39b97d999a17ddc40d7dff76dd75c6bba9e262ccd32668401b55425ac",
+      "retrieved_at": "2026-10-28T07:43:08.853012+00:00",
+      "published_updated_timestamp": "2026-07-17T04:58:33.154Z"
+    },
+    {
+      "id": "C12",
+      "url": "https://m3.material.io/styles/color/dynamic/choosing-a-source",
+      "title": "Choosing a source",
+      "accessed_at": "2026-10-28",
+      "timezone": "Asia/Calcutta",
+      "method": "public-page-data inspection; route map and sitemap corroborated",
+      "verified_scope": "Wallpaper versus in-app content source categories",
+      "limitations": [
+        "Published data verified; this tab was not independently rendered or its interactions exercised.",
+        "Media and externally linked tools not inspected through this source."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-published-data",
+      "runtime_verified": false,
+      "local_file": "evidence/page-data/styles__color__dynamic.json",
+      "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/03571013-d450-49cc-8300-4c7ee70bb4ca.json",
+      "sha256": "651c223ab0ab7fd6e3f161526d06d46732bb0116da6b7d8f5d9507e9b7bc1152",
+      "retrieved_at": "2026-10-28T07:43:09.999123+00:00",
+      "published_updated_timestamp": "2026-07-17T05:04:01.999Z"
+    },
+    {
+      "id": "C13",
+      "url": "https://m3.material.io/styles/color/advanced/apply-colors",
+      "title": "Apply colors",
+      "accessed_at": "2026-10-28",
+      "timezone": "Asia/Calcutta",
+      "method": "public-page-data inspection; route map and sitemap corroborated",
+      "verified_scope": "Combining schemes; remapping roles; contrast and previews",
+      "limitations": [
+        "Published data verified; this tab was not independently rendered or its interactions exercised.",
+        "Media and externally linked tools not inspected through this source."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-published-data",
+      "runtime_verified": false,
+      "local_file": "evidence/page-data/styles__color__advanced.json",
+      "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/eee5a035-c309-4c67-afb5-6b4c6dd8ec4e.json",
+      "sha256": "7addb6a08a78340f4f70b93fa09d9fe23ec74badb676d83ef6a1319d0d0d4a92",
+      "retrieved_at": "2026-10-28T07:43:10.423092+00:00",
+      "published_updated_timestamp": "2026-07-17T04:53:46.229Z"
+    },
+    {
+      "id": "C14",
+      "url": "https://m3.material.io/styles/color/advanced/define-new-colors",
+      "title": "Define new colors",
+      "accessed_at": "2026-10-28",
+      "timezone": "Asia/Calcutta",
+      "method": "public-page-data inspection; route map and sitemap corroborated",
+      "verified_scope": "Static role extensions and requirements for custom roles",
+      "limitations": [
+        "Published data verified; this tab was not independently rendered or its interactions exercised.",
+        "Media and externally linked tools not inspected through this source."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-published-data",
+      "runtime_verified": false,
+      "local_file": "evidence/page-data/styles__color__advanced.json",
+      "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/eee5a035-c309-4c67-afb5-6b4c6dd8ec4e.json",
+      "sha256": "7addb6a08a78340f4f70b93fa09d9fe23ec74badb676d83ef6a1319d0d0d4a92",
+      "retrieved_at": "2026-10-28T07:43:10.423092+00:00",
+      "published_updated_timestamp": "2026-07-17T04:53:46.229Z"
+    },
+    {
+      "id": "C15",
+      "url": "https://m3.material.io/styles/color/advanced/adjust-existing-colors",
+      "title": "Adjust existing colors",
+      "accessed_at": "2026-10-28",
+      "timezone": "Asia/Calcutta",
+      "method": "public-page-data inspection; route map and sitemap corroborated",
+      "verified_scope": "Fidelity and harmonization; custom schemes",
+      "limitations": [
+        "Published data verified; this tab was not independently rendered or its interactions exercised.",
+        "Media and externally linked tools not inspected through this source."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-published-data",
+      "runtime_verified": false,
+      "local_file": "evidence/page-data/styles__color__advanced.json",
+      "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/eee5a035-c309-4c67-afb5-6b4c6dd8ec4e.json",
+      "sha256": "7addb6a08a78340f4f70b93fa09d9fe23ec74badb676d83ef6a1319d0d0d4a92",
+      "retrieved_at": "2026-10-28T07:43:10.423092+00:00",
+      "published_updated_timestamp": "2026-07-17T04:53:46.229Z"
+    },
+    {
+      "id": "T06",
+      "url": "https://m3.material.io/foundations/design-tokens/how-to-use-tokens",
+      "title": "How to use tokens",
+      "accessed_at": "2026-10-28",
+      "timezone": "Asia/Calcutta",
+      "method": "REA controlled browser capture, corroborated with public page data",
+      "verified_scope": "Documented DSP, Figma styles, Theme Builder and export workflow",
+      "limitations": [
+        "Documentation tab rendered; library algorithms, Figma workflow, and interactive examples not executed.",
+        "Media and externally linked tools not visually inspected through this source."
+      ],
+      "authority": "official-primary-source",
+      "confidence": "observed-rendered-text",
+      "runtime_verified": true,
+      "local_file": "evidence/page-data/foundations__design-tokens.json",
+      "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/abae98fd-d828-44f8-bb66-9ee8746f6073.json",
+      "sha256": "a4d54d8c5ca7d4d3af25ab2518c823553ff79dde55d05c0da03affa9d3ea39d4",
+      "retrieved_at": "2026-10-28T07:43:03.093641+00:00",
+      "published_updated_timestamp": "2026-07-17T05:01:46.434Z",
+      "runtime_scope": "Documentation tab rendered only",
+      "evidence_id": "ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3",
+      "step_id": "ready_7",
+      "rendered_file": "evidence/rendered/foundations__design-tokens__how-to-use-tokens.txt"
+    }
+  ],
+  "audited_at": "2026-10-28"
+}

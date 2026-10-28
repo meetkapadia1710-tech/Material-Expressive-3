@@ -1,0 +1,793 @@
+# Time pickers
+Source ID: P086
+Public page: https://m3.material.io/components/time-pickers
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/ec8e6da4-b726-403d-bab7-3fb660b6ef86.json
+Retrieved: 2026-10-28T07:43:26.325140+00:00
+Source SHA-256: daec5020056694f49af105ed1ddc255f74ef18510ae493890650e8a753958497
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+
+
+## Overview
+
+- 
+Time pickers are modal and cover the main content
+
+- 
+Two variants: dial and input
+
+- 
+People can select hours, minutes, or periods of time
+
+- 
+Make sure time can easily be selected by hand on a mobile device
+
+- Time picker dial
+
+- Time picker input
+Media alternative text: Dial time picker dial and input time picker.
+
+Availability & resources
+Dynamic module reference: {"source_id": "P086", "page_url": "https://m3.material.io/components/time-pickers", "section": "Overview", "type": "STATUS_TABLE", "resource": "designSystems/030656e0a1083ef1/components/5cae57e703105f6a", "configuration": null}
+
+Differences from M2
+
+- Color: New color mappings and compatibility with dynamic color
+
+M2: Time pickers had different color mappings
+Media alternative text: Time picker’s old color mappings. The selected hour of 7 and AM text is purple, on a purple background.
+
+M3: Time pickers have new color mappings compatible with dynamic color
+Media alternative text: Time picker's new color mappings. The selected hour of 7 and AM text is black, with different background colors.
+
+## Specs
+
+Tokens & specs
+
+Select a component variant below to see its elements, attributes, tokens, and their values. Learn more about design tokens
+Dynamic module reference: {"source_id": "P086", "page_url": "https://m3.material.io/components/time-pickers", "section": "Specs", "type": "TOKEN_TABLE", "resource": "designSystems/20543ce18892f7d9/components/39f4b152dd9bd292", "configuration": {"tokenSets": ["Time picker - Dial", "Time picker - Input"], "contextTags": ["None", "Medium contrast", "Default", "High contrast", "Static", "3P", "Android", "Dark", "Light"], "hideSearchField": false, "hideVersionName": true}}
+
+Anatomy
+
+Time picker dial
+
+- Headline
+
+- Time selector separator
+
+- Container
+
+- Period selector container
+
+- Period selector label text
+
+- Clock dial selector center
+
+- Clock dial selector track
+
+- Text button
+
+- Icon button
+
+- Clock dial selector container
+
+- Clock dial label text
+
+- Clock dial container
+
+- Time selector label text
+
+- Time selector container
+Media alternative text: Diagram indicating the 14 elements of a time picker dial.
+
+Time picker input
+
+- Headline
+
+- Time input field seperator
+
+- Container
+
+- Period selector container
+
+- Period selector label text
+
+- Text button
+
+- Icon button
+
+- Time input field supporting text
+
+- Time input field label text
+
+- Time input field container
+Media alternative text: Diagram indicating the 10 elements of a time picker input.
+
+Color
+
+Color values are implemented through design tokens. For design, this means working with color values that correspond with tokens. For implementation, a color value will be a token that references a value. Learn more about design tokens
+
+Time picker dial color
+
+Time picker dial color roles used for light and dark themes:
+
+- On surface variant
+
+- On surface
+
+- Surface container highest
+
+- On surface
+
+- Tertiary container
+
+- On tertiary container
+
+- Surface container high
+
+- Outline
+
+- On surface
+
+- Primary
+
+- On primary
+
+- Primary
+
+- On surface variant
+
+- On surface
+
+- Surface container highest
+
+- On primary container
+
+- Primary container
+Media alternative text: Side-by-side diagram indicating the 17 different color elements of a time picker dial.
+
+Time picker input color
+
+Time picker input color roles used for light and dark themes:
+
+- On surface variant
+
+- On surface
+
+- Surface container highest
+
+- On surface
+
+- Tertiary container
+
+- On tertiary container
+
+- Surface container high
+
+- Outline
+
+- On surface
+
+- Primary
+
+- On surface variant
+
+- On primary container
+
+- Primary container
+Media alternative text: Side-by-side diagram indicating the 13 different color elements of a time picker input.
+
+States
+
+- Enabled
+
+- Hover
+
+- Focus
+
+- Pressed
+Media alternative text: Diagram showing the 4 interactive states of a time picker, in both light theme and dark theme.
+
+States specs can be found in the token module above
+
+Measurements
+
+Time picker dial - vertical
+
+Vertical time picker dial padding and size measurements
+Media alternative text: Diagram of vertical time picker dial measurements.
+
+| Element | Attribute | Value
+
+ | 
+Container
+ | 
+Width
+ | 
+Dynamic
+
+ | 
+Height
+ | 
+Dynamic
+
+ | 
+Headline alignment
+ | 
+Left
+
+ | 
+Top/bottom padding
+ | 
+24dp
+
+ | 
+Left/right padding
+ | 
+24dp
+
+ | 
+Time selector container
+ | 
+Width
+ | 
+96dp
+
+ | 
+Width (24h vertical)
+ | 
+114dp
+
+ | 
+Height
+ | 
+80dp
+
+ | 
+Period selector container
+ | 
+Width (vertical layout)
+ | 
+52dp
+
+ | 
+Height (vertical layout)
+ | 
+80dp
+
+ | 
+Width (horizontal layout)
+ | 
+216dp
+
+ | 
+Height (horizontal layout)
+ | 
+38dp
+
+ | 
+Clock dial container
+ | 
+Size
+ | 
+256dp
+
+ | 
+Clock dial selector handle
+ | 
+Size
+ | 
+48dp
+
+ | 
+Clock dial selector center
+ | 
+Size
+ | 
+8dp
+
+ | 
+Clock dial selector track
+ | 
+Width
+ | 
+2dp
+
+Time picker dial - horizontal
+
+Horizontal time picker dial padding and size measurements
+Media alternative text: Diagram of horizontal time picker dial measurements.
+
+| Element | Attribute | Value
+
+ | 
+Container
+ | 
+Width
+ | 
+Dynamic
+
+ | 
+Height
+ | 
+Dynamic
+
+ | 
+Headline alignment
+ | 
+Left
+
+ | 
+Top/bottom padding
+ | 
+24dp
+
+ | 
+Left/right padding
+ | 
+24dp
+
+ | 
+Time selector container
+ | 
+Width
+ | 
+96dp
+
+ | 
+Width (24h vertical)
+ | 
+114dp
+
+ | 
+Height
+ | 
+80dp
+
+ | 
+Period selector container
+ | 
+Width (vertical layout)
+ | 
+52dp
+
+ | 
+Height (vertical layout)
+ | 
+80dp
+
+ | 
+Width (horizontal layout)
+ | 
+216dp
+
+ | 
+Height (horizontal layout)
+ | 
+38dp
+
+ | 
+Clock dial container
+ | 
+Size
+ | 
+256dp
+
+ | 
+Clock dial selector handle
+ | 
+Size
+ | 
+48dp
+
+ | 
+Clock dial selector center
+ | 
+Size
+ | 
+8dp
+
+ | 
+Clock dial selector track
+ | 
+Width
+ | 
+2dp
+
+Time picker input
+
+Time picker input padding and size measurements
+Media alternative text: Diagram of time picker input measurements.
+
+| Element
+ | Attribute | Value
+
+ | 
+Container
+ | 
+Width
+ | 
+Dynamic
+
+ | 
+Height
+ | 
+Dynamic
+
+ | 
+Headline alignment
+ | 
+Left
+
+ | 
+Top/bottom padding
+ | 
+24dp
+
+ | 
+Left/right padding
+ | 
+24dp
+
+ | 
+Time input field container
+ | 
+Width
+ | 
+96dp
+
+ | 
+Height
+ | 
+72dp
+
+ | 
+Period selector container
+ | 
+Width
+ | 
+52dp
+
+ | 
+Height
+ | 
+72dp
+
+Configurations
+
+Vertical orientation and horizontal orientation
+
+- Vertical layout (default on mobile)
+
+- Horizontal layout
+Media alternative text: Comparing vertical and horizontal time picker dials.
+
+24-hour time picker dial
+
+- 24h dial in vertical layout (default on mobile)
+
+- 24h dial in horizontal layout
+Media alternative text: 2 24-hour time picker dials with vertical and horizontal layouts.
+
+12-hour and 24-hour time picker inputs
+
+- 12h input
+
+- 24h input
+Media alternative text: Compare 12-hour and 24-hour time picker inputs.
+
+## Guidelines
+
+Dial selector time picker for a 12-hour clock
+Media alternative text: Time picker. It has a dial and keyboard input for hours and minutes, and a setting for AM or PM.
+
+Usage
+
+Time pickers allow people to enter a specific time value. They’re displayed in dialogs and can be used to select hours, minutes, or periods of time.
+
+They can be used for a wide range of scenarios. Common use cases include:
+
+- Setting an alarm
+
+- Scheduling a meeting
+
+Time pickers are not ideal for nuanced or granular time selection, such as milliseconds for a stopwatch application.
+
+Hour selection in a mobile calendar picker
+Media alternative text: Time picker with dial input selecting hour 7.
+
+Time input picker
+
+Time input pickers allow people to specify a time using keyboard numbers. This input option should be accessible from any other mobile time picker interface by tapping the keyboard icon.
+
+Hour input with keyboard entry
+Media alternative text: Input time picker with keyboard active for the hour.
+
+24-hour time selection
+
+The dial view can be changed to reflect time selection across 24 hours. This option is set outside of the time picker component, typically through system settings.
+
+24-hour dial view
+Media alternative text: Time picker with dial input selecting hour 20. Hours 0–11 use an outer dial, hours 12–23 use an inner dial.
+
+Anatomy
+
+- Label (headline)
+
+- Time selector separator
+
+- Input field
+
+- Input text 
+
+- Period selector (selected)
+
+- Period selector text (selected)
+
+- Container
+
+- Period selector outline
+
+- Period selector text
+
+- Dial selector track
+
+- Dial label (selected)
+
+- Text buttons
+
+- Icon button
+
+- Dial label (unselected)
+
+- Clock dial
+
+- Input text (selected)
+
+- Input field (selected)
+Media alternative text: 17 elements of a dial time picker.
+
+- Label (headline)
+
+- Time selector separator
+
+- Input field
+
+- Input text 
+
+- Period selector (selected)
+
+- Period selector text (selected)
+
+- Container
+
+- Period selector outline
+
+- Period selector text (unselected)
+
+- Text buttons
+
+- Icon button
+
+- Input text (selected)
+
+- Input field (selected)
+Media alternative text: 13 elements of an input time picker.
+
+Container
+
+Like dialogs, the container should appear above other screen elements. To focus attention, surfaces behind the container have a temporary scrim overlay to make them less prominent.
+
+The container includes all time picker elements
+Media alternative text: Time picker container, all elements inside.
+
+Input selector
+
+The input selector is a unique kind of text field input. It differs from typical text field inputs in that it has:
+
+- 
+An added highlight to call attention to the selected field
+
+- 
+A larger shape, size, and font
+
+- 
+A label below the field
+
+Hours and minutes should have separate inputs. For people using a 12-hour clock, an AM/PM selector appears to the right of minutes. For people using a 24-hour clock, the AM/PM selector shouldn’t appear.
+
+Input selector for a 12-hour clock
+Media alternative text: Input time picker with the hour field active, and so highlighted.
+
+Dial selector
+
+Dial selectors always mimic a round watch face. Hours and minutes can be selected by tapping a number or dragging the dial selector track.
+
+When representing a 12-hour dial, all numbers appear in the outer ring. When representing a 24-hour dial, even numbers appear in an inner ring, and odd numbers appear in an outer ring.
+
+Dial selector for a 12-hour clock
+Media alternative text: Dial time picker with hour 7 selected.
+
+Text & icon buttons
+
+Icon buttons are used to switch between the input selector, represented by a keyboard, and the dial selector, represented by a clock.
+
+Text buttons are used to exit the dialog (Cancel) and save the selector input (OK).
+
+The keyboard icon allows people to switch between the dial selector (pictured) and the input selector
+Media alternative text: Time picker buttons.
+
+Landscape orientation
+
+The clock dial interface adapts to a device’s orientation. In landscape mode, the stacked input and selection options are positioned side-by-side.
+
+On mobile, the time picker can adapt to landscape orientation
+Media alternative text: Time picker in landscape orientation on mobile.
+
+Placement
+
+Time pickers shouldn’t be obscured by other elements.  
+
+Time pickers should change orientation or variant to ensure they aren't cropped by the edge of the screen.
+
+Time pickers are modal windows above a scrim. This puts the time pickers at the forefront of a person's view, calling attention to make a selection of time.
+
+The time picker should change to fit the size of the screen so the time picker is always fully visible
+Media alternative text: Input time picker in landscape orientation on mobile. It's fully visible despite the limited device height.
+
+Adaptive design
+
+Time pickers can swap between orientation or variant depending on device orientation and viewport constraints. 
+
+For example, the time picker can change to landscape orientation on larger breakpoints or when viewport height is limited, to avoid scrolling the dial presentation. 
+
+Time pickers can fallback to the input time picker when there isn’t enough vertical real estate to present the landscape orientation without scrolling.
+
+High-density time picker displayed on mobile
+Media alternative text: Dial time picker in portrait orientation on mobile.
+
+Density
+
+Don’t apply density to the time picker dial when the viewport is constrained. Instead, use an input picker.
+
+Don’t apply density to the time picker dial when the viewport is constrained. Instead, use an input picker.
+Media alternative text: Dial time picker in portrait orientation, too tall to fully fit on a mobile device in landscape mode.
+
+Behavior
+
+There are two primary methods for selecting time with the mobile time picker. People can:
+
+- Type in a specific value in the hour and minute fields
+
+- Select the hour or minute field from the text input and adjust the clock dial to simultaneously change the corresponding time field above
+
+The dial time picker supports both manual and dial input
+Media alternative text: Dial time picker possible interactions. Dial selector adjusts to match manual input.
+
+Appearing & disappearing
+
+Like other kinds of dialogs, time pickers use an enter and exit transition pattern to appear on the screen.
+
+To exit a time picker, the input can either be confirmed (OK) or dismissed (Cancel). Interacting outside of the dialog will also dismiss the time picker. Unless one of these actions is taken, a time picker will continue to retain focus.
+
+OK confirms the entry and closes the dialog
+Media alternative text: Time picker enter and exit transitions.
+
+Toggle between dial & input
+
+Tapping the keyboard icon on a mobile time picker switches the view to the input picker.
+
+The keyboard icon in the lower left toggles between the input picker and the dial picker
+Media alternative text: Time picker transitioning between dial and input selectors.
+
+Scrolling
+
+Time pickers should avoid scrolling, and swap component orientation or variant based on device orientation or viewport size. 
+
+Time pickers don’t scroll with elements outside of the modal window, such as the background.
+
+Time pickers shouldn’t scroll
+Media alternative text: Input time picker in landscape orientation to fit a mobile device in landscape mode.
+
+## Accessibility
+
+Use cases
+
+People should be able to use assistive technology to: 
+
+- Select or enter hours/minutes, and in some cases, seconds/milliseconds
+
+- Choose from multiple time formats, including 24-hour clock view and AM/PM
+
+- Enter time selection manually using input fields
+
+Interaction & style
+
+Time pickers should allow manual time entry through text input, rather than exclusively through the dial selector. This makes it easier for those using keyboard inputs rather than touchscreens. 
+
+If a screen is not large enough to display the dial selector, consider displaying the input selector alone. Currently for Android Views, the dial selector is always visible.
+
+The input selector should be accessible from the dial selector via the keyboard icon. This interaction allows multiple input methods and makes the time picker accessible for assistive technology users.
+
+For time selection that doesn’t require a dial view, make a time input picker the default option
+Media alternative text: Time picker with active manual text input for hours.
+
+Targets
+
+Targets for dial selectors should be 48x48dp.
+
+Dial selector targets should be 48x48dp
+Media alternative text: Time picker dial selector specs, selecting hour 7.
+
+Keyboard navigation
+
+| Keys | Actions
+
+ | Tab | Focus lands on (non-disabled) time slot
+
+ | Space or Enter
+ | Activates the (non-disabled) time slot
+
+Labeling elements
+
+If the input text is correctly linked, assistive tech like a screenreader will read the component’s role first, then the UI text.
+
+The hour and minute fields have the text input role
+Media alternative text: Accessibility tags on the time picker's hour input field.
+
+The dial selector will read a selection of total hours, such as Hour 7 of 12.
+
+A screen reader reads the text label of a dial selector
+Media alternative text: Accessibility tag on the time picker's dial selector.
+
+Dial selector
+
+ | Element
+ | Accessibility label | Role (Wiz and Jetpack Compose)
+ | Role (Android Views)
+
+ | Hour input (input picker)
+ | Hour | Text input | -
+
+ | Minutes input
+ | Minute | Text input | -
+
+ | AM/PM selection 
+ | AM or PM | Radio button (in list) | Checkbox (in list)
+
+ | Keyboard button
+ | Toggle input picker | Button | Button
+
+ | Cancel button
+ | Cancel | Button | Button
+
+ | OK button
+ | OK | Button | Button
+
+ | Clock dial time selection (dial selector)
+ | {Value} Hours or minutes of {Total} | Button | -
+
+Input selector
+
+ | Element
+ | Accessibility label | Role (Wiz and Jetpack Compose)
+ | Role (Android Views)
+
+ | Hour input (input picker)
+ | Hour | Text input | -
+
+ | Minutes input
+ | Minute | Text input | -
+
+ | Clock button
+ | Toggle dial picker | Button | Button
+
+ | Cancel button
+ | Cancel | Button | Button
+
+ | OK button
+ | OK | Button | Button
+
+## Links embedded in visible content
+/m3/pages/design-tokens/overview
+/m3/pages/time-pickers/specs#2ccd9809-9246-4667-85fa-7747f4ac7349

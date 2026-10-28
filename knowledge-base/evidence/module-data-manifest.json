@@ -1,0 +1,958 @@
+[
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TYPE_UNSPECIFIED.20543ce18892f7d9.json",
+    "filename": "TOKEN_TYPE_UNSPECIFIED.20543ce18892f7d9.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/foundations/interaction/states",
+        "section": "State layers",
+        "type": "TOKEN_TYPE_UNSPECIFIED"
+      },
+      {
+        "page": "https://m3.material.io/styles/shape",
+        "section": "Corner radius scale",
+        "type": "TOKEN_TYPE_UNSPECIFIED"
+      },
+      {
+        "page": "https://m3.material.io/styles/motion/overview",
+        "section": "Specs",
+        "type": "TOKEN_TYPE_UNSPECIFIED"
+      },
+      {
+        "page": "https://m3.material.io/styles/motion/easing-and-duration",
+        "section": "Tokens & specs",
+        "type": "TOKEN_TYPE_UNSPECIFIED"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:13.282435+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 276587,
+    "sha256": "8b3ddb19378ff2d2ebbe3dddcf2c28951e97bb9ff12ed8a6d73278ae1b430c8c",
+    "local_file": "evidence/module-data/TOKEN_TYPE_UNSPECIFIED.20543ce18892f7d9.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/COLOR.20543ce18892f7d9.json",
+    "filename": "COLOR.20543ce18892f7d9.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/styles/color/static",
+        "section": "Baseline",
+        "type": "COLOR"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:13.283974+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 2582438,
+    "sha256": "c632b6985d6401c08f0a4209ecacb19b508ded69e5298850b010b1e8bf2a3854",
+    "local_file": "evidence/module-data/COLOR.20543ce18892f7d9.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/MEASUREMENT.20543ce18892f7d9.json",
+    "filename": "MEASUREMENT.20543ce18892f7d9.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/styles/spacing",
+        "section": "Tokens",
+        "type": "MEASUREMENT"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:13.284466+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 83005,
+    "sha256": "33167474b198eeecb8f63f654d89df928f2e598f40a7af2bde30b807cca27ea0",
+    "local_file": "evidence/module-data/MEASUREMENT.20543ce18892f7d9.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TYPOGRAPHY.20543ce18892f7d9.json",
+    "filename": "TYPOGRAPHY.20543ce18892f7d9.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/styles/typography",
+        "section": "Type scale & tokens",
+        "type": "TYPOGRAPHY"
+      },
+      {
+        "page": "https://m3.material.io/styles/typography",
+        "section": "Type scale & tokens",
+        "type": "TYPOGRAPHY"
+      },
+      {
+        "page": "https://m3.material.io/styles/typography",
+        "section": "Type scale & tokens",
+        "type": "TYPOGRAPHY"
+      },
+      {
+        "page": "https://m3.material.io/styles/typography",
+        "section": "Type scale & tokens",
+        "type": "TYPOGRAPHY"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:13.284940+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 7735465,
+    "sha256": "7daaeafb4bdeb986f8e4c385a2b3e93ab544a1e9cf17b026882417d0f8238307",
+    "local_file": "evidence/module-data/TYPOGRAPHY.20543ce18892f7d9.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/ELEVATION.20543ce18892f7d9.json",
+    "filename": "ELEVATION.20543ce18892f7d9.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/styles/elevation",
+        "section": "Tokens",
+        "type": "ELEVATION"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:15.162302+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 135923,
+    "sha256": "13be0cc6ca3b5d993eec3349bd7613a14da967579bd44cc01768ab3e589697b0",
+    "local_file": "evidence/module-data/ELEVATION.20543ce18892f7d9.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.1c4257f8804f9478.json",
+    "filename": "TOKEN_TABLE.1c4257f8804f9478.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/buttons",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      },
+      {
+        "page": "https://m3.material.io/components/buttons",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:16.176815+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 19934959,
+    "sha256": "b4d1ef79ed0a2ccca089208486c511b100ac30361d0728a4267d6901d9084719",
+    "local_file": "evidence/module-data/TOKEN_TABLE.1c4257f8804f9478.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.082d7fd6e058b011.json",
+    "filename": "TOKEN_TABLE.082d7fd6e058b011.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/button-groups",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:16.596811+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 177133,
+    "sha256": "97ab32f08a43ec6fe2e87ebf67c06cea67ecb3bbb7679db883075eb190dfa94d",
+    "local_file": "evidence/module-data/TOKEN_TABLE.082d7fd6e058b011.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.41587918e51cca98.json",
+    "filename": "TOKEN_TABLE.41587918e51cca98.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/floating-action-button",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      },
+      {
+        "page": "https://m3.material.io/components/floating-action-button",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:18.427357+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 10373151,
+    "sha256": "5600d3f4c6c95ec3037669701330db6d60dea34a78baddd3e7d9511ffb19e214",
+    "local_file": "evidence/module-data/TOKEN_TABLE.41587918e51cca98.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.36500f77b86d20a5.json",
+    "filename": "TOKEN_TABLE.36500f77b86d20a5.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/extended-fab",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      },
+      {
+        "page": "https://m3.material.io/components/extended-fab",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:23.289370+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 8929582,
+    "sha256": "27ec9ecdc600cdaf1b314709d7ac7d53095e43d56561559cbf258dc2f5f25453",
+    "local_file": "evidence/module-data/TOKEN_TABLE.36500f77b86d20a5.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.1a076cec8bc202c2.json",
+    "filename": "TOKEN_TABLE.1a076cec8bc202c2.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/fab-menu",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:24.475028+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 4057188,
+    "sha256": "92ae7d737697384465effe6d45625a0c4de36416cf61e0da90f8082649671915",
+    "local_file": "evidence/module-data/TOKEN_TABLE.1a076cec8bc202c2.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.0fe2282006ae098b.json",
+    "filename": "TOKEN_TABLE.0fe2282006ae098b.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/icon-buttons",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      },
+      {
+        "page": "https://m3.material.io/components/icon-buttons",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:32.785750+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 12762636,
+    "sha256": "35a97f50010ecab4c999a860b0b3058ffd2277760262f0e48957cc30d29cb733",
+    "local_file": "evidence/module-data/TOKEN_TABLE.0fe2282006ae098b.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.67e2613d87ca6f98.json",
+    "filename": "TOKEN_TABLE.67e2613d87ca6f98.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/segmented-buttons",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:40.892850+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 1943056,
+    "sha256": "50794a3f0615432df901b907b84b094b21dc07ae0561e96b6ecc4ea7b78918fe",
+    "local_file": "evidence/module-data/TOKEN_TABLE.67e2613d87ca6f98.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.624e8f2da4007fc8.json",
+    "filename": "TOKEN_TABLE.624e8f2da4007fc8.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/split-button",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      },
+      {
+        "page": "https://m3.material.io/components/split-button",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:49.043639+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 9763407,
+    "sha256": "f59845fbd026abbafbcb9c6a69f85ca4e0a1635a825c5d557dc1da4506cf3ad3",
+    "local_file": "evidence/module-data/TOKEN_TABLE.624e8f2da4007fc8.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.2956a7939bf0879c.json",
+    "filename": "TOKEN_TABLE.2956a7939bf0879c.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/toolbars",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      },
+      {
+        "page": "https://m3.material.io/components/toolbars",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:50.251242+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 3928543,
+    "sha256": "fe0d95b81d084d291e2101fcbc31bab86dc4a2de03f61c7569adf97055852e0a",
+    "local_file": "evidence/module-data/TOKEN_TABLE.2956a7939bf0879c.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.75e530a1014802b3.json",
+    "filename": "TOKEN_TABLE.75e530a1014802b3.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/bottom-sheets",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:54.451467+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 274026,
+    "sha256": "527a5d7d4046b1e0471b14d19fc3bcf43b59c083d6745f385af040cc7a84e27e",
+    "local_file": "evidence/module-data/TOKEN_TABLE.75e530a1014802b3.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.100ebfb4332adab1.json",
+    "filename": "TOKEN_TABLE.100ebfb4332adab1.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/cards",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:56.290999+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 1965153,
+    "sha256": "ad8f75a5ea22d65d10930edf4cee61af16020ad7a1da0529d45e42b3b08d287b",
+    "local_file": "evidence/module-data/TOKEN_TABLE.100ebfb4332adab1.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.43a124d2adc8a2ef.json",
+    "filename": "TOKEN_TABLE.43a124d2adc8a2ef.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/carousel",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:57.160719+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 760561,
+    "sha256": "3f666747df704bbeda920c490212cacdbff229af0f9f848f51fbdd752524671c",
+    "local_file": "evidence/module-data/TOKEN_TABLE.43a124d2adc8a2ef.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.484a63be03b01a17.json",
+    "filename": "TOKEN_TABLE.484a63be03b01a17.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/chips",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:48:59.699520+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 11586354,
+    "sha256": "1810b3c091d031812fd4542174c9d65aa04685c2cd3c29e5c1fbd005bb7ce8a0",
+    "local_file": "evidence/module-data/TOKEN_TABLE.484a63be03b01a17.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.0b1e39a67d5bafdc.json",
+    "filename": "TOKEN_TABLE.0b1e39a67d5bafdc.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/dialogs",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:00.332981+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 3280308,
+    "sha256": "5800deaf0627c8d3d195a1e946fb1b8a1efad858b287a40d3e0a7276259399fc",
+    "local_file": "evidence/module-data/TOKEN_TABLE.0b1e39a67d5bafdc.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.77f7657eb270e53d.json",
+    "filename": "TOKEN_TABLE.77f7657eb270e53d.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/divider",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:00.337036+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 90834,
+    "sha256": "5b55bf2d5b919696c48b645949e261a22fcfc95d72fd80d249b1e31cd43b163b",
+    "local_file": "evidence/module-data/TOKEN_TABLE.77f7657eb270e53d.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.385a28e5d3bb3dd0.json",
+    "filename": "TOKEN_TABLE.385a28e5d3bb3dd0.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/menus",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      },
+      {
+        "page": "https://m3.material.io/components/menus",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:00.360670+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 9236702,
+    "sha256": "4af10638b6039fa51e5ea39a3bfc875284feea1e5152ca78ff2d0cfcad4226b6",
+    "local_file": "evidence/module-data/TOKEN_TABLE.385a28e5d3bb3dd0.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.52865380210a9b69.json",
+    "filename": "TOKEN_TABLE.52865380210a9b69.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/navigation-bar",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      },
+      {
+        "page": "https://m3.material.io/components/navigation-bar",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:02.157768+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 2908562,
+    "sha256": "0d55d51ef59888b62ff8d0cddd007ca00047618ebce1157d74bc11fff0d7cb23",
+    "local_file": "evidence/module-data/TOKEN_TABLE.52865380210a9b69.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.376969f91547be8e.json",
+    "filename": "TOKEN_TABLE.376969f91547be8e.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/navigation-drawer",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:05.964969+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 2432944,
+    "sha256": "ced61034f8f708d20f98eb7a8b18299d88c78186c4c87d3c8589db3510e8dfc8",
+    "local_file": "evidence/module-data/TOKEN_TABLE.376969f91547be8e.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.5b55bd7cc1ea6e29.json",
+    "filename": "TOKEN_TABLE.5b55bd7cc1ea6e29.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/navigation-rail",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      },
+      {
+        "page": "https://m3.material.io/components/navigation-rail",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:12.333080+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 3533223,
+    "sha256": "9b3e9e5eeb395611704c3f258f940fcebedc3b049a64ad0b1a5b9c5093091a1e",
+    "local_file": "evidence/module-data/TOKEN_TABLE.5b55bd7cc1ea6e29.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.68895be451a51c31.json",
+    "filename": "TOKEN_TABLE.68895be451a51c31.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/loading-indicator",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:12.363880+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 301667,
+    "sha256": "c03f6e3b437bae33bc41d545b6748b890f16e34679e3c239a6ed89160920c4c4",
+    "local_file": "evidence/module-data/TOKEN_TABLE.68895be451a51c31.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.6f51f7ab7775a392.json",
+    "filename": "TOKEN_TABLE.6f51f7ab7775a392.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/progress-indicators",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      },
+      {
+        "page": "https://m3.material.io/components/progress-indicators",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:14.655393+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 766982,
+    "sha256": "6e92e8928785934ba744d247fd7e084ae359beea882d177f2c3bd0d44c0165db",
+    "local_file": "evidence/module-data/TOKEN_TABLE.6f51f7ab7775a392.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.6acb269a58d5f93f.json",
+    "filename": "TOKEN_TABLE.6acb269a58d5f93f.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/radio-button",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:16.292518+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 1008711,
+    "sha256": "c61ab705453bd0f26bcbac9cd506f8089761d36c6cb09953ef86dc57d645bca7",
+    "local_file": "evidence/module-data/TOKEN_TABLE.6acb269a58d5f93f.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.07341534518f78d0.json",
+    "filename": "TOKEN_TABLE.07341534518f78d0.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/search",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      },
+      {
+        "page": "https://m3.material.io/components/app-bars",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:17.906258+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 1819112,
+    "sha256": "b873c785fdcc9eafe40a9822bff23d1737cacf852bc31a1ddd13c50e7e0a9417",
+    "local_file": "evidence/module-data/TOKEN_TABLE.07341534518f78d0.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.06c2c925cf96adca.json",
+    "filename": "TOKEN_TABLE.06c2c925cf96adca.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/side-sheets",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:18.412922+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 940467,
+    "sha256": "8b6470638aa7937b1fa858981edc7a30f8448afa870caee41c339eb6c39424d7",
+    "local_file": "evidence/module-data/TOKEN_TABLE.06c2c925cf96adca.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.0045edb815f2325e.json",
+    "filename": "TOKEN_TABLE.0045edb815f2325e.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/sliders",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:18.450621+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 2593213,
+    "sha256": "04fd25f5f4eaa947fe55a28bce79b0d98eb5690dd5de0614f410666de73d1eb2",
+    "local_file": "evidence/module-data/TOKEN_TABLE.0045edb815f2325e.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.33b1b2925d9ff561.json",
+    "filename": "TOKEN_TABLE.33b1b2925d9ff561.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/switch",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:22.138486+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 2297340,
+    "sha256": "4a6f6aa1b26aa523254e14f90263c6205b6389998557780d72eea188a24fb73a",
+    "local_file": "evidence/module-data/TOKEN_TABLE.33b1b2925d9ff561.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.60990dd98dea0998.json",
+    "filename": "TOKEN_TABLE.60990dd98dea0998.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/text-fields",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:22.150502+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 22298986,
+    "sha256": "b568aceb8299ef2ca9e19bc66526d781e595d155a57c61178b391ceb095f6a8f",
+    "local_file": "evidence/module-data/TOKEN_TABLE.60990dd98dea0998.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.37697297db0555a6.json",
+    "filename": "TOKEN_TABLE.37697297db0555a6.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/tooltips",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:23.125116+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 1525365,
+    "sha256": "4f03fbea33c141c06c7d63af030eb0160f68a8c24ece65be2c47a246a5c076e7",
+    "local_file": "evidence/module-data/TOKEN_TABLE.37697297db0555a6.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.3ec622835c7987b5.json",
+    "filename": "TOKEN_TABLE.3ec622835c7987b5.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/app-bars",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      },
+      {
+        "page": "https://m3.material.io/components/app-bars",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:23.686638+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 3801857,
+    "sha256": "5fed49976967c1606e1c2c472d45fd07131c97ad4aeb1f9c1a7f2b8c7453cd16",
+    "local_file": "evidence/module-data/TOKEN_TABLE.3ec622835c7987b5.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.6c818a16475113bd.json",
+    "filename": "TOKEN_TABLE.6c818a16475113bd.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/lists",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      },
+      {
+        "page": "https://m3.material.io/components/lists",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:24.808605+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 6300424,
+    "sha256": "2c3b2fead087891a5f046682c859df43e431d01a4b3504641b3ff1afcb5c22e4",
+    "local_file": "evidence/module-data/TOKEN_TABLE.6c818a16475113bd.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.59a1b3a9a90ca8b3.json",
+    "filename": "TOKEN_TABLE.59a1b3a9a90ca8b3.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/badges",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:26.026089+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 388676,
+    "sha256": "0508ab55311a0eed9dee8b00b97337e69d70694a0ae28fb1bfad6520ab003120",
+    "local_file": "evidence/module-data/TOKEN_TABLE.59a1b3a9a90ca8b3.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.6039f0080a95df1e.json",
+    "filename": "TOKEN_TABLE.6039f0080a95df1e.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/tabs",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:29.323925+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 2955792,
+    "sha256": "c411b05c7630a9a40c95ecfd50bb7aaab4c02ca391a1023d912d83cf5c7fb105",
+    "local_file": "evidence/module-data/TOKEN_TABLE.6039f0080a95df1e.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.31f16b44fe03b0c0.json",
+    "filename": "TOKEN_TABLE.31f16b44fe03b0c0.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/checkbox",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:36.956676+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 2636081,
+    "sha256": "57abc06f208c4350edf4704e20e25728cb384caa5960c244f04c0de71db6be2f",
+    "local_file": "evidence/module-data/TOKEN_TABLE.31f16b44fe03b0c0.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.01c5310367774eb8.json",
+    "filename": "TOKEN_TABLE.01c5310367774eb8.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/date-pickers",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:37.485807+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 7095683,
+    "sha256": "1f54d74101699cc6bcc540a3b46da5c3fde9f9041a857e3bfe48341a451bc3fe",
+    "local_file": "evidence/module-data/TOKEN_TABLE.01c5310367774eb8.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.39f4b152dd9bd292.json",
+    "filename": "TOKEN_TABLE.39f4b152dd9bd292.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/time-pickers",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:41.253595+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 5994597,
+    "sha256": "9d78c41a6935016c29c239e7ae679251dd3efdfcd054813f5ab93bb45dcd019b",
+    "local_file": "evidence/module-data/TOKEN_TABLE.39f4b152dd9bd292.json",
+    "top_level_keys": [
+      "system"
+    ]
+  },
+  {
+    "url": "https://m3.material.io/_dsm/data/dsdb-m3/2026-10-13_06-10-19/TOKEN_TABLE.346ae12a744b45dd.json",
+    "filename": "TOKEN_TABLE.346ae12a744b45dd.json",
+    "used_by": [
+      {
+        "page": "https://m3.material.io/components/snackbar",
+        "section": "Specs",
+        "type": "TOKEN_TABLE"
+      }
+    ],
+    "derivation": "ngOnInit/fetchDsdbDataJSON URL construction in captured site-main.js",
+    "retrieved_at": "2026-10-28T07:49:42.360087+00:00",
+    "status": "retrieved",
+    "http_status": 200,
+    "bytes": 1253769,
+    "sha256": "b4fe09c87974b5419ce7bbfb7ce4339add0c29ab08613433df1d6908b56cb065",
+    "local_file": "evidence/module-data/TOKEN_TABLE.346ae12a744b45dd.json",
+    "top_level_keys": [
+      "system"
+    ]
+  }
+]

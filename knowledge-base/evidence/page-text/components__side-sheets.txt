@@ -1,0 +1,417 @@
+# Side sheets
+Source ID: P075
+Public page: https://m3.material.io/components/side-sheets
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/040dabe3-ed0f-4759-824d-812224e78af3.json
+Retrieved: 2026-10-28T07:43:22.728281+00:00
+Source SHA-256: 670c7d533748c695ffcd8a7f4a27732fb4133c0d073da65b00d4dffab425bcdd
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+
+
+## Overview
+
+- 
+Use side sheets to provide optional content and actions without interrupting the main content
+
+- 
+Two variants: standard and modal
+
+- 
+People can navigate to another region within the sheet
+
+- 
+Side sheets can contain a back icon for navigation
+
+- Standard side sheet
+
+- Modal side sheet
+Media alternative text: The 2 variants of side sheets.
+
+Availability & resources
+Dynamic module reference: {"source_id": "P075", "page_url": "https://m3.material.io/components/side-sheets", "section": "Overview", "type": "STATUS_TABLE", "resource": "designSystems/030656e0a1083ef1/components/56df27a2f3576bb1", "configuration": null}
+
+Differences from M2
+
+- 
+Right-to-left (RTL) language support with left side sheet
+
+- 
+Color: New color mappings and compatibility with dynamic color
+
+- 
+Shape: Modal side sheets have a 16dp corner radius
+
+Side sheets have new color mappings to support dynamic color
+Media alternative text: A modal side sheet showing the 16dp corner radius.
+
+## Specs
+
+Tokens & specs
+
+Browse the component elements, attributes, tokens, and their values. Learn more about design tokens
+Dynamic module reference: {"source_id": "P075", "page_url": "https://m3.material.io/components/side-sheets", "section": "Specs", "type": "TOKEN_TABLE", "resource": "designSystems/20543ce18892f7d9/components/06c2c925cf96adca", "configuration": {"contextTags": ["None", "Medium contrast", "Default", "High contrast", "Static", "3P", "Android", "Dark", "Light"], "hideSearchField": false, "hideVersionName": true}}
+
+Standard side sheet
+
+- Divider (optional)
+
+- Headline
+
+- Container
+
+- Close icon button
+Media alternative text: 4 elements of a standard side sheet.
+
+Standard side sheet color
+
+Color values are implemented through design tokens. For design, this means working with color values that correspond with tokens. For implementation, a color value will be a token that references a value. Learn more about design tokens
+
+Side sheet color roles used for light and dark themes:
+
+- Outline variant
+
+- On surface variant
+
+- Surface
+
+- On surface variant
+Media alternative text: 4 color roles applied to a side sheet in light and dark themes.
+
+Standard side sheet measurements
+
+Side sheet padding and size measurements
+Media alternative text: Standard side sheet padding and size measurements.
+
+| Attribute
+ | Value
+
+ | Start/end padding
+ | 24dp
+
+ | Padding between top elements
+ | 12dp
+
+ | Bottom actions height
+ | 72dp
+
+ | Bottom actions top padding
+ | 16dp
+
+ | Bottom actions bottom padding
+ | 24dp
+
+ | Bottom actions alignment (horizontal)
+ | Left
+
+ | Max-width
+ | 400dp
+
+ | Margins (when detached)
+ | 16dp
+
+Modal side sheet
+
+- Back icon button (optional)
+
+- Headline
+
+- Container
+
+- Close icon button
+
+- Divider (optional)
+
+- Action buttons (optional)
+
+- Scrim
+Media alternative text: 7 elements of a modal side sheet.
+
+Modal side sheet color
+
+Color values are implemented through design tokens. For design, this means working with color values that correspond with tokens. For implementation, a color value will be a token that references a value. Learn more about design tokens.
+
+Side sheet color roles used for light and dark themes:
+
+- 
+On surface variant
+
+- 
+On surface variant
+
+- 
+Surface container low
+
+- 
+On surface variant
+Media alternative text: 4 color roles applied to a modal side sheet in light and dark themes.
+
+Modal side sheet measurements
+
+Modal side sheet padding and size measurements
+Media alternative text: Modal side sheet padding and size measurements
+
+| Attribute
+ | Value
+
+ | Start/end padding
+ | 24dp
+
+ | Start padding with icon | 16dp
+
+ | Padding between top elements | 12dp
+
+ | Bottom actions height
+ | 72dp
+
+ | Bottom actions top padding
+ | 16dp
+
+ | Bottom actions bottom padding | 24dp
+
+ | Bottom actions alignment (horizontal)
+ | Left
+
+ | Max-width
+ | 400dp
+
+ | Margins (when detached)
+ | 16dp
+
+## Guidelines
+
+- Standard side sheet
+
+- Modal side sheet
+Media alternative text: Side by side comparison of a standard and a modal side sheet.
+
+Usage
+
+Standard side sheets are supplementary surfaces used mostly in medium to expanded breakpoints, like tablet and desktop. They provide a consistent and predictable surface for contextual actions and information.
+
+Standard side sheets display content that complements the screen’s primary content. They remain visible while people interact with primary content.
+
+Common uses include:
+
+- 
+Displaying a list of actions that affect the screen’s primary content, such as filters
+
+- 
+Displaying supplemental content and features
+
+Information about a photo in a standard side sheet
+Media alternative text: Standard side sheet showing supplementary information about a photo.
+
+Modal side sheets are preferred in compact breakpoints, like mobile, due to limited screen size. 
+
+They can display the same kinds of content as standard side sheets, but must be dismissed in order to interact with the underlying content.
+
+Modal side sheet with filter controls
+Media alternative text: Modal side sheet showing filter controls.
+
+Side sheets have a fixed width and typically span the height of the screen. 
+
+Their dimensions depend on how the app’s layout is subdivided into UI regions.
+
+Place side sheets along the edge of the screen, usually on the right side to avoid interference with any navigational components on the left edge. They can be slightly inset by 16dp.
+Media alternative text: A modal sheet at the right of a screen, with the correct inset.
+
+Don’t inset a side sheet from the screen edges far beyond the recommended margin. This makes the sheet’s position and scroll behavior unclear, while obscuring primary content.
+Media alternative text: A modal side sheet at the right of the screen with the wrong inset.
+
+Anatomy
+
+- Divider (optional)
+
+- Headline
+
+- Container
+
+- Close icon button
+Media alternative text: 4 elements of a standard side sheet.  
+
+- Back icon button (optional)
+
+- Headline
+
+- Container 
+
+- Close icon button
+
+- Divider (optional) 
+
+- Action buttons (optional) 
+
+- Scrim
+Media alternative text: 7 elements of a modal side sheet.
+
+Container
+
+Side sheet containers hold all side sheet elements. Their size is determined by the space those elements occupy.
+
+The container is the only required element of a side sheet.
+
+- Container
+Media alternative text: A modal side sheet’s container.
+
+Back icon button (optional)
+
+Icon buttons can provide ways to exit a side sheet or move to a different experience.
+
+Because the primary content behind or beside a side sheet is always visible, it’s important to provide affordances for leaving a side sheet and returning to the primary content.
+
+- Back icon button
+Media alternative text: Back icon button on the upper left of a modal side sheet.
+
+Close icon button (optional)
+
+A close affordance provides a consistent method for dismissing a side sheet. 
+
+A close icon button is highly recommended, increases accessibility, and makes focused side sheets easier to close.
+
+- Close icon button
+Media alternative text: Close icon button on the upper right of a modal side sheet.
+
+Action buttons (optional)
+
+Buttons represent actions available from a side sheet. Examples: Save, Edit, Download
+
+Use elevation, fill, and tone to call attention to specific actions.
+
+- Action buttons
+Media alternative text: Save and cancel buttons at the bottom of a modal side sheet.
+
+Divider (optional)
+
+Dividers can separate different kinds of content and create distinct regions in a side sheet. 
+
+Use a divider to separate:
+
+- 
+Action buttons from content
+
+- 
+User-generated content from system-generated content
+
+- Divider
+Media alternative text: Horizontal divider on a modal side sheet.
+
+Content (optional)
+
+Side sheets can display a wide variety of content and layouts, ranging from a list of actions to supplemental content in a tabular layout.
+
+Form controls shown in a side sheet for app settings
+Media alternative text: 2 side sheets with different content displayed side by side.
+
+Modal side sheets on smaller screens can transition to standard side sheets at larger screen sizes
+Media alternative text: As a small screen changes to a larger size the modal side sheet transitions to a standard side sheet.
+
+Adaptive design
+
+Side sheets have a default width, but can be resized depending on the needs of the layout. 
+
+When a standard side sheet opens, the body area shrinks to accommodate the sheet’s width while maintaining a margin on the body’s trailing edge.
+
+Entrance of standard side sheets will cause the body area to adjust and accommodate the new content
+Media alternative text: Body area of a screen adjusts to accommodate entrance and exit of side sheet. 
+
+RTL language support
+
+In right-to-left (RTL) languages, side sheets should appear on the left edge of the window with all elements reversed.
+
+Side sheet elements are reversed in RTL languages
+Media alternative text: Side sheet along the left edge of a screen. All buttons and icons are reversed.
+
+Behavior
+
+Side sheets can vertically scroll independent of the rest of the UI. 
+
+This allows their scroll position and content to persist while the page is scrolled, and vice versa.
+
+Side sheets cannot scroll horizontally.
+
+Side sheets can vertically scroll internally when their content exceeds the screen height
+Media alternative text: Animation showing a side sheet being scrolled vertically to view all the options.
+
+Don’t allow horizontal scrolling or lay out the side sheet in a way that suggests horizontal scrolling. A side sheet’s narrow width leaves limited space to fully view items.
+Media alternative text: A side sheet appears to scroll horizontally.
+
+Predictive back
+
+On Android, a gesture called predictive back allows a person to swipe left or right on the side sheet. 
+
+When predictive back is used:
+
+- 
+The side sheet detaches from the top and bottom edges of the screen to signal it will close
+
+- 
+The previous screen is revealed in a preview
+
+- 
+The side sheet and its content always scales in the direction of the gesture
+
+Find a list of compatible components
+
+Preview of the result of the gestures: release to commit, fling to commit, and cancel
+Media alternative text: Swiping to go back shows a preview of the previous screen.
+
+## Accessibility
+
+Use cases
+
+People should be able to dismiss the side sheet using assistive technology.
+
+Interaction & style
+
+Material requires that a close affordance, such as a close icon button, is always present within a side sheet.
+
+A close icon button makes the side sheet easy to dismiss
+Media alternative text: Side sheet correctly designed with close icon in upper right corner.
+
+Without a close icon button, people can’t predict the opening and closing flow of side sheets, or know if the sheet is transient or permanent
+Media alternative text: Side sheet incorrectly designed with no close icon button.
+
+Initial focus
+
+Actions within a side sheet can be focused by tab order using a keyboard or switch control.
+
+Visible focus shown on the available actions within a side sheet:
+
+- Headline
+
+- Close
+
+- Cancel
+
+- Save
+Media alternative text: Side sheet diagram showing the focus order of headline, close, save, cancel.
+
+Keyboard navigation
+
+| 
+Keys
+ | 
+Actions
+
+ | 
+Tab
+ | 
+Focus lands on (non-disabled) icon button
+
+ | 
+Space or Enter
+ | 
+Activates the (non-disabled) icon button
+
+Labeling
+
+The accessibility role for a side sheet is Dialog.
+
+The role for side sheets is Dialog
+Media alternative text: Side sheet showing the accessibility role as dialog.
+
+## Links embedded in visible content
+/m3/pages/design-tokens/overview
+/m3/pages/design-tokens/overview/
+/m3/pages/gestures#22462fb2-fbe8-4e0c-b3e7-9278bd18ea0d
+https://github.com/material-components/material-components-android/blob/master/docs/foundations/PredictiveBack.md

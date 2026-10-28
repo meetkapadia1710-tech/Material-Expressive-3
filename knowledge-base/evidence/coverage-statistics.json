@@ -1,0 +1,25 @@
+{
+  "data_documents": 88,
+  "visible_sections": 259,
+  "sitemap_urls": 375,
+  "sitemap_statuses": {
+    "rendered-and-data-retrieved": 17,
+    "parent-data-retrieved": 242,
+    "not-retrieved": 112,
+    "rendered-not-found": 4
+  },
+  "dynamic_modules": 96,
+  "module_types": {
+    "TOKEN_TYPE_UNSPECIFIED": 4,
+    "COLOR": 1,
+    "MEASUREMENT": 1,
+    "TYPOGRAPHY": 4,
+    "ELEVATION": 1,
+    "STATUS_TABLE": 36,
+    "TOKEN_TABLE": 49
+  },
+  "media_references": 3363,
+  "hidden_items_excluded": 57,
+  "rea_records": 6,
+  "rendered_snapshots": 27
+}

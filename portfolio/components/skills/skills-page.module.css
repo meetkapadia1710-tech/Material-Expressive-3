@@ -1,0 +1,26 @@
+.page { padding-top: 62px; padding-bottom: 12px; }
+.page :global(.skills-page-header) { margin-bottom: 56px; max-width: 740px; }
+.page :global(.skills-page-header) h1 { margin: 0 0 24px; font: 600 clamp(58px, 7vw, 94px)/1.08 var(--display); letter-spacing: -.065em; }
+.page :global(.skills-page-header) > p:last-child { margin: 0; color: var(--ink-muted); font-size: 18px; line-height: 1.8; max-width: 55ch; }
+.page :global(.skills-category) { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 54px; padding: 34px 0; border-top: 1px solid var(--palette-dcd5e0, #dcd5e0); }
+.page :global(.skills-category) h2 { margin: 0; font: 600 27px/1.3 var(--display); letter-spacing: -.045em; overflow-wrap: anywhere; }
+.page :global(.skills-category-content) { min-width: 0; }
+.page :global(.skills-practice-groups) { display: grid; grid-template-columns: minmax(0, 1fr); gap: 34px; }
+.page :global(.skills-practice-mixed) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
+.page :global(.skills-practice) h3 { color: var(--palette-765f8d, #765f8d); font-size: 12px; font-weight: 600; line-height: 1.7; margin: 0 0 14px; }
+.page :global(.skills-practice) ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px 22px; padding: 0; margin: 0; list-style: none; }
+.page :global(.skills-practice-mixed) ul { grid-template-columns: minmax(0, 1fr); }
+.page :global(.skills-practice) li { font-size: 15px; line-height: 1.7; color: var(--palette-403647, #403647); overflow-wrap: anywhere; }
+.page :global(.skills-category-note) { margin: 20px 0 0; color: var(--ink-muted); font-size: 12px; line-height: 1.8; max-width: 70ch; }
+@media (max-width: 1000px) { .page :global(.skills-category) { grid-template-columns: 185px minmax(0, 1fr); gap: 34px; } .page :global(.skills-practice) ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } .page :global(.skills-practice-mixed) ul { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 720px) {
+  .page { padding-top: 44px; }
+  .page :global(.skills-page-header) { margin-bottom: 36px; }
+  .page :global(.skills-page-header) h1 { font-size: 58px; }
+  .page :global(.skills-page-header) > p:last-child { font-size: 16px; }
+  .page :global(.skills-category) { grid-template-columns: minmax(0, 1fr); gap: 22px; padding-block: 28px; }
+  .page :global(.skills-category) h2 { font-size: 26px; }
+  .page :global(.skills-practice-mixed) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .page :global(.skills-practice) li { font-size: 14px; }
+}
+@media (max-width: 480px) { .page :global(.skills-practice-mixed) { grid-template-columns: minmax(0, 1fr); gap: 26px; } .page :global(.skills-practice) ul { gap: 11px 18px; } .page :global(.skills-practice-mixed) ul { grid-template-columns: minmax(0, 1fr); } }

@@ -1,0 +1,3490 @@
+[
+  {
+    "source_id": "P001",
+    "url": "https://m3.material.io/",
+    "slug": "",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/a513b32c-174e-4b85-8553-60701c021797.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:42:57.377340+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Material Design",
+    "bytes": 36710,
+    "sha256": "5f51062e7d90b1b901f63c18aeb8aa2f2ebbca7436f5065bf7c1469de3eb5581",
+    "updated_timestamp": "2026-07-08T11:13:50.193Z",
+    "page_canon_id": "a513b32c-174e-4b85-8553-60701c021797",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/home.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/home.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P002",
+    "url": "https://m3.material.io/develop",
+    "slug": "develop",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/c3d29ede-a66a-427b-8efc-afe353e8d513.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:42:57.378383+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Develop",
+    "bytes": 18065,
+    "sha256": "63cc339d1dfbaae4eb884b38632531c788f01f272caa33074c17924da955dcd3",
+    "updated_timestamp": "2026-07-22T02:01:04.752Z",
+    "page_canon_id": "c3d29ede-a66a-427b-8efc-afe353e8d513",
+    "visible_sections": [
+      "Overview"
+    ],
+    "local_file": "evidence/page-data/develop.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/develop.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P003",
+    "url": "https://m3.material.io/develop/android/mdc-android",
+    "slug": "develop/android/mdc-android",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/dc7f3bb6-9507-43d3-b8f8-7c68888fc7fa.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:42:57.378828+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Android Views (MDC-Android)",
+    "bytes": 18085,
+    "sha256": "66dbd319b507802ca058c43de85d038bca5b86c709f5168ca34943f14552cf53",
+    "updated_timestamp": "2026-08-04T11:11:59.907Z",
+    "page_canon_id": "dc7f3bb6-9507-43d3-b8f8-7c68888fc7fa",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/develop__android__mdc-android.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/develop__android__mdc-android.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P004",
+    "url": "https://m3.material.io/develop/android/jetpack-compose",
+    "slug": "develop/android/jetpack-compose",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/dfec5d08-385a-4b2d-ad23-e44cc3410cef.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:42:57.379224+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Jetpack Compose",
+    "bytes": 26056,
+    "sha256": "bcafe2ffc15c6034dd12c40e9d61947ecdb9059b3511e738f4db4a496f14e268",
+    "updated_timestamp": "2026-07-28T07:03:05.793Z",
+    "page_canon_id": "dfec5d08-385a-4b2d-ad23-e44cc3410cef",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/develop__android__jetpack-compose.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/develop__android__jetpack-compose.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P005",
+    "url": "https://m3.material.io/develop/flutter",
+    "slug": "develop/flutter",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/d1fb318b-1f4a-43bf-b3b5-35543257b935.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:42:58.979567+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Flutter",
+    "bytes": 20902,
+    "sha256": "6503f4180e680147705317de261a837fb790afc1ae624718d092a2348d61c941",
+    "updated_timestamp": "2026-07-17T05:06:20.633Z",
+    "page_canon_id": "d1fb318b-1f4a-43bf-b3b5-35543257b935",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/develop__flutter.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/develop__flutter.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P006",
+    "url": "https://m3.material.io/develop/web",
+    "slug": "develop/web",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/510dbdc8-6dae-4e5e-8d5f-dd93176cc7dd.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:42:58.988776+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Web",
+    "bytes": 11451,
+    "sha256": "c0f430a41c77d2c470896c6ceaa383646d86ceac3c0ad8855b7bc8f1ac22b43b",
+    "updated_timestamp": "2026-07-17T05:36:33.730Z",
+    "page_canon_id": "510dbdc8-6dae-4e5e-8d5f-dd93176cc7dd",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/develop__web.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/develop__web.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P007",
+    "url": "https://m3.material.io/foundations",
+    "slug": "foundations",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/4b25a580-a734-4c2c-9f51-90c7431d2a66.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:42:59.715589+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Foundations",
+    "bytes": 11571,
+    "sha256": "394862d1e1a4b8b950e3edd4823356feac48e0cce782a135b28a86df4650262a",
+    "updated_timestamp": "2026-07-17T05:06:20.337Z",
+    "page_canon_id": "4b25a580-a734-4c2c-9f51-90c7431d2a66",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/foundations.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P008",
+    "url": "https://m3.material.io/foundations/overview",
+    "slug": "foundations/overview",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/4101047f-0a57-42f9-b537-2f1dcd7d1fa7.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:42:59.744534+00:00",
+    "tabs_declared": [
+      {
+        "label": "Principles"
+      },
+      {
+        "label": "Assistive technology"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Overview",
+    "bytes": 19602,
+    "sha256": "c543cbf2c698480c3780a864496a5994c77ec52b1b79365c5474a987a1f22375",
+    "updated_timestamp": "2026-07-17T05:27:26.725Z",
+    "page_canon_id": "4101047f-0a57-42f9-b537-2f1dcd7d1fa7",
+    "visible_sections": [
+      "Principles",
+      "Assistive technology"
+    ],
+    "local_file": "evidence/page-data/foundations__overview.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__overview.txt",
+    "visible_section_count": 2
+  },
+  {
+    "source_id": "P009",
+    "url": "https://m3.material.io/foundations/designing",
+    "slug": "foundations/designing",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/d352451b-8348-4816-abac-4d7983f72f88.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:00.135916+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Color contrast"
+      },
+      {
+        "label": "Structure"
+      },
+      {
+        "label": "Flow"
+      },
+      {
+        "label": "Elements"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Designing",
+    "bytes": 107069,
+    "sha256": "ffc6958877879d9f4fee1f89e975958af0d0bfa71c69f81c05011b445dcd669a",
+    "updated_timestamp": "2026-07-17T05:01:47.617Z",
+    "page_canon_id": "d352451b-8348-4816-abac-4d7983f72f88",
+    "visible_sections": [
+      "Overview",
+      "Color contrast",
+      "Structure",
+      "Flow",
+      "Elements"
+    ],
+    "local_file": "evidence/page-data/foundations__designing.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__designing.txt",
+    "visible_section_count": 5
+  },
+  {
+    "source_id": "P010",
+    "url": "https://m3.material.io/foundations/writing",
+    "slug": "foundations/writing",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/672aa1bf-2faf-4bf9-b0b5-7a9d782da071.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:00.152102+00:00",
+    "tabs_declared": [
+      {
+        "label": "Best practices"
+      },
+      {
+        "label": "Text truncation"
+      },
+      {
+        "label": "Text resizing"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Writing and text",
+    "bytes": 63435,
+    "sha256": "a85fe3d9eb0cbb957289b9d5384a7d511516b22ca1641e01e5610936468ac5c8",
+    "updated_timestamp": "2026-07-17T05:36:35.129Z",
+    "page_canon_id": "672aa1bf-2faf-4bf9-b0b5-7a9d782da071",
+    "visible_sections": [
+      "Best practices",
+      "Text truncation",
+      "Text resizing"
+    ],
+    "local_file": "evidence/page-data/foundations__writing.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__writing.txt",
+    "visible_section_count": 3
+  },
+  {
+    "source_id": "P011",
+    "url": "https://m3.material.io/foundations/content-design/overview",
+    "slug": "foundations/content-design/overview",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/e34bf326-f486-4b48-8b76-db3b0ce8a7a7.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:00.653466+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Overview",
+    "bytes": 8174,
+    "sha256": "6b9d661dd8673ef7325716675e723a316e61559c72013ab372443850fb731877",
+    "updated_timestamp": "2026-07-17T05:27:26.453Z",
+    "page_canon_id": "e34bf326-f486-4b48-8b76-db3b0ce8a7a7",
+    "visible_sections": [
+      "Overview"
+    ],
+    "local_file": "evidence/page-data/foundations__content-design__overview.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__content-design__overview.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P012",
+    "url": "https://m3.material.io/foundations/content-design/alt-text",
+    "slug": "foundations/content-design/alt-text",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/5a576ba1-d2c8-4708-a167-2a10d0260f72.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:01.163835+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Alt text",
+    "bytes": 63168,
+    "sha256": "0005e36f2caaed1f4237f3ce356ce713c32c7cbd4673ec10f5874175f04b2269",
+    "updated_timestamp": "2026-07-17T04:53:47.324Z",
+    "page_canon_id": "5a576ba1-d2c8-4708-a167-2a10d0260f72",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/foundations__content-design__alt-text.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__content-design__alt-text.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P013",
+    "url": "https://m3.material.io/foundations/content-design/global-writing",
+    "slug": "foundations/content-design/global-writing",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/33c706d8-c9b9-4190-a403-d028a56da5cb.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:01.510500+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Word choice"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Global writing",
+    "bytes": 34544,
+    "sha256": "9c415ce1c83d3d25797caa924319754e5199d60413f9f01a318db23810610a84",
+    "updated_timestamp": "2026-07-17T05:07:22.750Z",
+    "page_canon_id": "33c706d8-c9b9-4190-a403-d028a56da5cb",
+    "visible_sections": [
+      "Overview",
+      "Word choice"
+    ],
+    "local_file": "evidence/page-data/foundations__content-design__global-writing.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__content-design__global-writing.txt",
+    "visible_section_count": 2
+  },
+  {
+    "source_id": "P014",
+    "url": "https://m3.material.io/foundations/content-design/notifications",
+    "slug": "foundations/content-design/notifications",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/844999f2-e85f-4f25-bca4-6fb422a3853d.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:01.547208+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Notifications",
+    "bytes": 47104,
+    "sha256": "90b6ef57cc35409ee1772d59682f5a73cc5374a6dce35fc2355324b8e4d66d1b",
+    "updated_timestamp": "2026-07-17T05:27:27.225Z",
+    "page_canon_id": "844999f2-e85f-4f25-bca4-6fb422a3853d",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/foundations__content-design__notifications.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__content-design__notifications.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P015",
+    "url": "https://m3.material.io/foundations/content-design/style-guide",
+    "slug": "foundations/content-design/style-guide",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/09101f02-d770-422e-ad62-1031f867c1aa.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:01.572522+00:00",
+    "tabs_declared": [
+      {
+        "label": "UX writing best practices"
+      },
+      {
+        "label": "Word choice"
+      },
+      {
+        "label": "Grammar and punctuation"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Style guide",
+    "bytes": 75687,
+    "sha256": "a2412875002c4b345d78a1097cdbd8af8c2ae1c3958b3f0fb79371aacf32442a",
+    "updated_timestamp": "2026-08-04T07:53:19.197Z",
+    "page_canon_id": "09101f02-d770-422e-ad62-1031f867c1aa",
+    "visible_sections": [
+      "UX writing best practices",
+      "Word choice",
+      "Grammar and punctuation"
+    ],
+    "local_file": "evidence/page-data/foundations__content-design__style-guide.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__content-design__style-guide.txt",
+    "visible_section_count": 3
+  },
+  {
+    "source_id": "P016",
+    "url": "https://m3.material.io/foundations/glossary",
+    "slug": "foundations/glossary",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/e168c820-1e32-47af-8b0f-8960299aff3c.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:02.494421+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Material A-Z",
+    "bytes": 92777,
+    "sha256": "e0ed8e76c0e9b68cfa95596e106ebbdd9de8cae0395239b9bc23f43e6192f4d6",
+    "updated_timestamp": "2026-09-28T10:25:36.597Z",
+    "page_canon_id": "e168c820-1e32-47af-8b0f-8960299aff3c",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/foundations__glossary.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__glossary.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P017",
+    "url": "https://m3.material.io/foundations/building-for-all",
+    "slug": "foundations/building-for-all",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/3b4b956e-da36-419d-bf59-c1c0455601af.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:02.498209+00:00",
+    "tabs_declared": [
+      {
+        "label": "User needs"
+      },
+      {
+        "label": "Co-design"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Building for all",
+    "bytes": 16822,
+    "sha256": "e90aac531aefa87779b106b18977a34749e68ba7cfb7e99a32289e63c83c92c2",
+    "updated_timestamp": "2026-07-17T04:57:38.755Z",
+    "page_canon_id": "3b4b956e-da36-419d-bf59-c1c0455601af",
+    "visible_sections": [
+      "User needs",
+      "Co-design"
+    ],
+    "local_file": "evidence/page-data/foundations__building-for-all.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__building-for-all.txt",
+    "visible_section_count": 2
+  },
+  {
+    "source_id": "P018",
+    "url": "https://m3.material.io/foundations/customization",
+    "slug": "foundations/customization",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/d82ab2cd-75e3-4cd0-8117-ff5ccbc8de85.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:02.678056+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Customizing Material",
+    "bytes": 27313,
+    "sha256": "c07c3f95eb3db6ff330376ce408167bd1cd9642ecf60eccd2d5cfed0891dc8d8",
+    "updated_timestamp": "2026-07-17T04:59:31.042Z",
+    "page_canon_id": "d82ab2cd-75e3-4cd0-8117-ff5ccbc8de85",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/foundations__customization.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__customization.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P019",
+    "url": "https://m3.material.io/foundations/design-tokens",
+    "slug": "foundations/design-tokens",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/abae98fd-d828-44f8-bb66-9ee8746f6073.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:03.093641+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "alternateSlugs": [
+          "overview/825906c9-6eed-47d1-8812-450910c1356e"
+        ]
+      },
+      {
+        "label": "How to use tokens"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Design tokens",
+    "bytes": 84947,
+    "sha256": "a4d54d8c5ca7d4d3af25ab2518c823553ff79dde55d05c0da03affa9d3ea39d4",
+    "updated_timestamp": "2026-07-17T05:01:46.434Z",
+    "page_canon_id": "abae98fd-d828-44f8-bb66-9ee8746f6073",
+    "visible_sections": [
+      "Overview",
+      "How to use tokens"
+    ],
+    "local_file": "evidence/page-data/foundations__design-tokens.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__design-tokens.txt",
+    "visible_section_count": 2
+  },
+  {
+    "source_id": "P020",
+    "url": "https://m3.material.io/foundations/watches",
+    "slug": "foundations/watches",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/ece8884d-3ef7-4f41-af54-9a402b3bd527.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:03.321676+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Foundations"
+      },
+      {
+        "label": "Styles"
+      },
+      {
+        "label": "Layout"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Watches",
+    "bytes": 106714,
+    "sha256": "844f6d0e55d3ace3177e24817ab0cfe73d199b2a3f1dff79c843cddc8bdc10b7",
+    "updated_timestamp": "2026-07-17T05:36:36.316Z",
+    "page_canon_id": "ece8884d-3ef7-4f41-af54-9a402b3bd527",
+    "visible_sections": [
+      "Overview",
+      "Foundations",
+      "Styles",
+      "Layout"
+    ],
+    "local_file": "evidence/page-data/foundations__watches.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__watches.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P021",
+    "url": "https://m3.material.io/foundations/xr/design",
+    "slug": "foundations/xr/design",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/95a7d4f6-3a81-47b3-9e99-083b5daf66be.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:03.577397+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Interaction"
+      },
+      {
+        "label": "Layout"
+      },
+      {
+        "label": "Accessibility"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Design",
+    "bytes": 100796,
+    "sha256": "497c67e6bec916a394d3823c01ab4ec0a317d22ef454435e3843268048e26a61",
+    "updated_timestamp": "2026-07-17T07:32:25.090Z",
+    "page_canon_id": "95a7d4f6-3a81-47b3-9e99-083b5daf66be",
+    "visible_sections": [
+      "Overview",
+      "Interaction",
+      "Layout",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/foundations__xr__design.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__xr__design.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P022",
+    "url": "https://m3.material.io/foundations/xr/components",
+    "slug": "foundations/xr/components",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/eef0dedf-83d1-41d0-a4b0-7072b620e5ac.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:03.722653+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "App bars"
+      },
+      {
+        "label": "Dialogs"
+      },
+      {
+        "label": "Nav bar"
+      },
+      {
+        "label": "Nav rail"
+      },
+      {
+        "label": "Toolbars"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "XR components",
+    "bytes": 244590,
+    "sha256": "660e89ddf6e1435989ac554a6c584ac7e8b8caef919a7e61ef13ac5dcb057dd3",
+    "updated_timestamp": "2026-07-17T07:32:25.430Z",
+    "page_canon_id": "eef0dedf-83d1-41d0-a4b0-7072b620e5ac",
+    "visible_sections": [
+      "Overview",
+      "App bars",
+      "Dialogs",
+      "Nav bar",
+      "Nav rail",
+      "Toolbars"
+    ],
+    "local_file": "evidence/page-data/foundations__xr__components.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__xr__components.txt",
+    "visible_section_count": 6
+  },
+  {
+    "source_id": "P023",
+    "url": "https://m3.material.io/foundations/layout/layout-overview",
+    "slug": "foundations/layout/layout-overview",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/a12b2de7-b2c4-4a79-8503-d3b1e8d4d601.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:04.217570+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Parts of layout"
+      },
+      {
+        "label": "Adaptive design"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Overview",
+    "bytes": 264163,
+    "sha256": "513fdaab0f5f5b3000f93f2cbb94f32c655731c1ae05246e7fbdfd20dc8f8c95",
+    "updated_timestamp": "2026-08-18T21:59:38.343Z",
+    "page_canon_id": "a12b2de7-b2c4-4a79-8503-d3b1e8d4d601",
+    "visible_sections": [
+      "Overview",
+      "Parts of layout",
+      "Adaptive design"
+    ],
+    "local_file": "evidence/page-data/foundations__layout__layout-overview.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__layout__layout-overview.txt",
+    "visible_section_count": 3
+  },
+  {
+    "source_id": "P024",
+    "url": "https://m3.material.io/foundations/layout/breakpoints",
+    "slug": "foundations/layout/breakpoints",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/16281dc1-7630-4e78-abaf-c9bc8be69663.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:04.347883+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Compact"
+      },
+      {
+        "label": "Medium"
+      },
+      {
+        "label": "Expanded"
+      },
+      {
+        "label": "Large & extra-large"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Breakpoints",
+    "bytes": 157330,
+    "sha256": "ddb23b160d7be47a32f7d5ecc12fad9161a74e22406ecac7bbf283a6effb39c5",
+    "updated_timestamp": "2026-07-17T04:55:59.912Z",
+    "page_canon_id": "16281dc1-7630-4e78-abaf-c9bc8be69663",
+    "visible_sections": [
+      "Overview",
+      "Compact",
+      "Medium",
+      "Expanded",
+      "Large & extra-large"
+    ],
+    "local_file": "evidence/page-data/foundations__layout__breakpoints.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__layout__breakpoints.txt",
+    "visible_section_count": 5
+  },
+  {
+    "source_id": "P025",
+    "url": "https://m3.material.io/foundations/layout/canonical-examples",
+    "slug": "foundations/layout/canonical-examples",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/23b84814-755b-469b-83a9-771fe027b0c0.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:04.879408+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Feed"
+      },
+      {
+        "label": "List-detail"
+      },
+      {
+        "label": "Supporting pane"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Canonical examples",
+    "bytes": 101885,
+    "sha256": "8eb14cb34fece05ce60646274128bbcb374c428795d423ae73d883c258063e5d",
+    "updated_timestamp": "2026-07-17T04:57:39.159Z",
+    "page_canon_id": "23b84814-755b-469b-83a9-771fe027b0c0",
+    "visible_sections": [
+      "Overview",
+      "Feed",
+      "List-detail",
+      "Supporting pane"
+    ],
+    "local_file": "evidence/page-data/foundations__layout__canonical-examples.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__layout__canonical-examples.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P026",
+    "url": "https://m3.material.io/foundations/layout/scaffold",
+    "slug": "foundations/layout/scaffold",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/7490d3ef-a222-47be-870a-3050bfcc5c59.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:05.160459+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Bars"
+      },
+      {
+        "label": "Rails",
+        "alternateSlugs": [
+          "rails-1"
+        ]
+      },
+      {
+        "label": "Panes",
+        "alternateSlugs": [
+          "panes-1"
+        ]
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Scaffold",
+    "bytes": 114061,
+    "sha256": "b46a944af3bb8ca9e9145fbd4a58a3c64ec37d7a2524fc0939723935394672b0",
+    "updated_timestamp": "2026-07-17T05:27:27.930Z",
+    "page_canon_id": "7490d3ef-a222-47be-870a-3050bfcc5c59",
+    "visible_sections": [
+      "Overview",
+      "Bars",
+      "Rails",
+      "Panes"
+    ],
+    "local_file": "evidence/page-data/foundations__layout__scaffold.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__layout__scaffold.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P027",
+    "url": "https://m3.material.io/foundations/layout/grids-spacing",
+    "slug": "foundations/layout/grids-spacing",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/b375cd8c-5506-4ce1-8caa-9cc23eb2d996.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:05.596699+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Grids"
+      },
+      {
+        "label": "Spacing"
+      },
+      {
+        "label": "Density"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Grids &amp; spacing",
+    "bytes": 121300,
+    "sha256": "adddef1ac1a48e92223b2a2d7d3904486eb5b42526d6304827706832f65bcf20",
+    "updated_timestamp": "2026-07-17T05:07:21.447Z",
+    "page_canon_id": "b375cd8c-5506-4ce1-8caa-9cc23eb2d996",
+    "visible_sections": [
+      "Overview",
+      "Grids",
+      "Spacing",
+      "Density"
+    ],
+    "local_file": "evidence/page-data/foundations__layout__grids-spacing.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__layout__grids-spacing.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P028",
+    "url": "https://m3.material.io/foundations/layout/bidirectionality-rtl",
+    "slug": "foundations/layout/bidirectionality-rtl",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/35f8449d-9b29-4224-95ac-65a0708c8722.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:06.140601+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Bidirectionality &amp; RTL",
+    "bytes": 62538,
+    "sha256": "e471e20697e14e2dc6924f85ea76f389d9c44a7b05058321a43d53a783717590",
+    "updated_timestamp": "2026-08-05T08:56:11.377Z",
+    "page_canon_id": "35f8449d-9b29-4224-95ac-65a0708c8722",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/foundations__layout__bidirectionality-rtl.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__layout__bidirectionality-rtl.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P029",
+    "url": "https://m3.material.io/foundations/interaction/gestures",
+    "slug": "foundations/interaction/gestures",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/0f6a68e6-a217-4f0e-8a7e-3f292c84a230.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:06.319637+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Gestures",
+    "bytes": 30760,
+    "sha256": "52aa2f74491d5875214a5638ca31e15880f1897463365415f0c6511dc0c806a2",
+    "updated_timestamp": "2026-07-17T05:06:24.826Z",
+    "page_canon_id": "0f6a68e6-a217-4f0e-8a7e-3f292c84a230",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/foundations__interaction__gestures.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__interaction__gestures.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P030",
+    "url": "https://m3.material.io/foundations/interaction/inputs",
+    "slug": "foundations/interaction/inputs",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/e82cd926-292d-409b-892a-1553f01be9a8.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:06.598576+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Inputs",
+    "bytes": 87286,
+    "sha256": "83929edd3df6da13cec86727f93d4b9e2029f1e6ea576a84d8acc0d43cef2666",
+    "updated_timestamp": "2026-07-17T05:07:20.540Z",
+    "page_canon_id": "e82cd926-292d-409b-892a-1553f01be9a8",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/foundations__interaction__inputs.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__interaction__inputs.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P031",
+    "url": "https://m3.material.io/foundations/interaction/selection",
+    "slug": "foundations/interaction/selection",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/0dfa5930-0695-4d99-a58a-2a7705c79d66.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:06.734156+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Selection",
+    "bytes": 23897,
+    "sha256": "d86f03fde12cb1e9b292c53746f33bff31ba6789745bfe9591fb103dd09753b4",
+    "updated_timestamp": "2026-07-17T05:28:53.854Z",
+    "page_canon_id": "0dfa5930-0695-4d99-a58a-2a7705c79d66",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/foundations__interaction__selection.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__interaction__selection.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P032",
+    "url": "https://m3.material.io/foundations/interaction/states",
+    "slug": "foundations/interaction/states",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/b3339b30-4a6d-49b6-9a8b-8e581b2b1204.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:07.236170+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "State layers"
+      },
+      {
+        "label": "Applying states"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "States",
+    "bytes": 129112,
+    "sha256": "c74df376b873c1d26bd432691d3b968a1985099edb55c47eab41eadf5aa1155d",
+    "updated_timestamp": "2026-07-17T05:30:22.307Z",
+    "page_canon_id": "b3339b30-4a6d-49b6-9a8b-8e581b2b1204",
+    "visible_sections": [
+      "Overview",
+      "State layers",
+      "Applying states"
+    ],
+    "local_file": "evidence/page-data/foundations__interaction__states.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__interaction__states.txt",
+    "visible_section_count": 3
+  },
+  {
+    "source_id": "P033",
+    "url": "https://m3.material.io/foundations/usability",
+    "slug": "foundations/usability",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/a6c4f773-9a84-4c74-aeed-7c915916827d.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:07.272948+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Applying M3 Expressive",
+        "alternateSlugs": [
+          "applying-expressive"
+        ]
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Usability",
+    "bytes": 96719,
+    "sha256": "89e7ed0637c9dccef9d8e9230b47af8dc6f8aa38a8be72461c83c56cc60aee33",
+    "updated_timestamp": "2026-07-17T05:36:34.121Z",
+    "page_canon_id": "a6c4f773-9a84-4c74-aeed-7c915916827d",
+    "visible_sections": [
+      "Overview",
+      "Applying M3 Expressive"
+    ],
+    "local_file": "evidence/page-data/foundations__usability.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/foundations__usability.txt",
+    "visible_section_count": 2
+  },
+  {
+    "source_id": "P034",
+    "url": "https://m3.material.io/styles",
+    "slug": "styles",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/fb17261d-e51b-4919-951b-1ac53484b19e.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:07.613407+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Styles",
+    "bytes": 9193,
+    "sha256": "8da9cf608a382fa28aa441e1a16a252c02cfbc50331fc48d6e83d7ae36fb2c7b",
+    "updated_timestamp": "2026-07-17T05:32:35.561Z",
+    "page_canon_id": "fb17261d-e51b-4919-951b-1ac53484b19e",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/styles.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P035",
+    "url": "https://m3.material.io/styles/color/system",
+    "slug": "styles/color/system",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/89e1e9ce-0d9c-4391-9182-818434527cda.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:07.685605+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "How the system works"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Color system",
+    "bytes": 130183,
+    "sha256": "87b8f4d024ede3b8f080b608dceaa36511ae268c7313df98c414649c596b8e1a",
+    "updated_timestamp": "2026-07-23T20:32:56.894Z",
+    "page_canon_id": "89e1e9ce-0d9c-4391-9182-818434527cda",
+    "visible_sections": [
+      "Overview",
+      "How the system works"
+    ],
+    "local_file": "evidence/page-data/styles__color__system.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__color__system.txt",
+    "visible_section_count": 2
+  },
+  {
+    "source_id": "P036",
+    "url": "https://m3.material.io/styles/color/roles",
+    "slug": "styles/color/roles",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/ced25aa3-a367-44c6-a47e-439bc9e59d68.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:08.483677+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Color roles",
+    "bytes": 109712,
+    "sha256": "06a7d87e3ea962ec84b919880ad3d8f3356ac457b1484d0e2e08eaf4640e9c12",
+    "updated_timestamp": "2026-07-27T13:48:22.900Z",
+    "page_canon_id": "ced25aa3-a367-44c6-a47e-439bc9e59d68",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/styles__color__roles.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__color__roles.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P037",
+    "url": "https://m3.material.io/styles/color/choosing-a-scheme",
+    "slug": "styles/color/choosing-a-scheme",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/a4aa0cf5-4017-4dea-ae51-edb8e950bd2c.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:08.853012+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Choosing a scheme",
+    "bytes": 21791,
+    "sha256": "33990ae39b97d999a17ddc40d7dff76dd75c6bba9e262ccd32668401b55425ac",
+    "updated_timestamp": "2026-07-17T04:58:33.154Z",
+    "page_canon_id": "a4aa0cf5-4017-4dea-ae51-edb8e950bd2c",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/styles__color__choosing-a-scheme.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__color__choosing-a-scheme.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P038",
+    "url": "https://m3.material.io/styles/color/static",
+    "slug": "styles/color/static",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/247d635f-924c-4e83-8383-94965fe769e2.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:09.541683+00:00",
+    "tabs_declared": [
+      {
+        "label": "Baseline"
+      },
+      {
+        "label": "Custom brand"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Static",
+    "bytes": 32762,
+    "sha256": "183dd528430ac2d3991f2ceeb922de6c39506104d26d6d990e37f410ba6076e2",
+    "updated_timestamp": "2026-07-17T05:32:35.739Z",
+    "page_canon_id": "247d635f-924c-4e83-8383-94965fe769e2",
+    "visible_sections": [
+      "Baseline",
+      "Custom brand"
+    ],
+    "local_file": "evidence/page-data/styles__color__static.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__color__static.txt",
+    "visible_section_count": 2
+  },
+  {
+    "source_id": "P039",
+    "url": "https://m3.material.io/styles/color/dynamic",
+    "slug": "styles/color/dynamic",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/03571013-d450-49cc-8300-4c7ee70bb4ca.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:09.999123+00:00",
+    "tabs_declared": [
+      {
+        "label": "Choosing a source"
+      },
+      {
+        "label": "User-generated source"
+      },
+      {
+        "label": "Content-based source"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Dynamic",
+    "bytes": 41859,
+    "sha256": "651c223ab0ab7fd6e3f161526d06d46732bb0116da6b7d8f5d9507e9b7bc1152",
+    "updated_timestamp": "2026-07-17T05:04:01.999Z",
+    "page_canon_id": "03571013-d450-49cc-8300-4c7ee70bb4ca",
+    "visible_sections": [
+      "Choosing a source",
+      "User-generated source",
+      "Content-based source"
+    ],
+    "local_file": "evidence/page-data/styles__color__dynamic.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__color__dynamic.txt",
+    "visible_section_count": 3
+  },
+  {
+    "source_id": "P040",
+    "url": "https://m3.material.io/styles/color/advanced",
+    "slug": "styles/color/advanced",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/eee5a035-c309-4c67-afb5-6b4c6dd8ec4e.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:10.423092+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Apply colors"
+      },
+      {
+        "label": "Define new colors"
+      },
+      {
+        "label": "Adjust existing colors"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Advanced customizations",
+    "bytes": 79603,
+    "sha256": "7addb6a08a78340f4f70b93fa09d9fe23ec74badb676d83ef6a1319d0d0d4a92",
+    "updated_timestamp": "2026-07-17T04:53:46.229Z",
+    "page_canon_id": "eee5a035-c309-4c67-afb5-6b4c6dd8ec4e",
+    "visible_sections": [
+      "Overview",
+      "Apply colors",
+      "Define new colors",
+      "Adjust existing colors"
+    ],
+    "local_file": "evidence/page-data/styles__color__advanced.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__color__advanced.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P041",
+    "url": "https://m3.material.io/styles/color/resources",
+    "slug": "styles/color/resources",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/e5cd1701-c004-498e-a4ec-620446227c51.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:10.452860+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Color resources",
+    "bytes": 6772,
+    "sha256": "43a013e1026674d482b6bd342e136d750af342899fa41e06889564f80985e985",
+    "updated_timestamp": "2026-07-17T04:58:29.062Z",
+    "page_canon_id": "e5cd1701-c004-498e-a4ec-620446227c51",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/styles__color__resources.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__color__resources.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P042",
+    "url": "https://m3.material.io/styles/icons",
+    "slug": "styles/icons",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/17aed561-a58a-44d4-852e-1e5be253a641.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:10.582770+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Designing icons"
+      },
+      {
+        "label": "Applying icons"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Icons",
+    "bytes": 169195,
+    "sha256": "68ae3da716116006801928b5bc23fc3ab3bbc0c65d48aab7277febd72a77e1a5",
+    "updated_timestamp": "2026-07-17T05:07:23.551Z",
+    "page_canon_id": "17aed561-a58a-44d4-852e-1e5be253a641",
+    "visible_sections": [
+      "Overview",
+      "Designing icons",
+      "Applying icons"
+    ],
+    "local_file": "evidence/page-data/styles__icons.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__icons.txt",
+    "visible_section_count": 3
+  },
+  {
+    "source_id": "P043",
+    "url": "https://m3.material.io/styles/shape",
+    "slug": "styles/shape",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/5e04e8f6-7da6-475e-a1b0-3818021c0cea.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:10.953872+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview & principles",
+        "alternateSlugs": [
+          "overview"
+        ]
+      },
+      {
+        "label": "Corner radius scale",
+        "alternateSlugs": [
+          "corner-radius-scale"
+        ]
+      },
+      {
+        "label": "Shape morph"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Shape",
+    "bytes": 80161,
+    "sha256": "3767cfb024716780f2b8c046d33158a4b14fd45acc5a30acdf70d31a8f7c271f",
+    "updated_timestamp": "2026-07-17T05:28:54.725Z",
+    "page_canon_id": "5e04e8f6-7da6-475e-a1b0-3818021c0cea",
+    "visible_sections": [
+      "Overview & principles",
+      "Corner radius scale",
+      "Shape morph"
+    ],
+    "local_file": "evidence/page-data/styles__shape.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__shape.txt",
+    "visible_section_count": 3
+  },
+  {
+    "source_id": "P044",
+    "url": "https://m3.material.io/styles/spacing",
+    "slug": "styles/spacing",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/36e81931-9b87-406f-9ec5-c0cc049564d8.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:11.278851+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Applying spacing"
+      },
+      {
+        "label": "Tokens"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Spacing",
+    "bytes": 64316,
+    "sha256": "63af82004d239ea105047bba73ebb22d269cca8f7ae00f86933e5a2883f74cf7",
+    "updated_timestamp": "2026-07-17T05:30:24.800Z",
+    "page_canon_id": "36e81931-9b87-406f-9ec5-c0cc049564d8",
+    "visible_sections": [
+      "Overview",
+      "Applying spacing",
+      "Tokens"
+    ],
+    "local_file": "evidence/page-data/styles__spacing.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__spacing.txt",
+    "visible_section_count": 3
+  },
+  {
+    "source_id": "P045",
+    "url": "https://m3.material.io/styles/typography",
+    "slug": "styles/typography",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/f6a1d89a-1bbf-46d1-a177-f13b074897a5.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:11.401987+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Fonts"
+      },
+      {
+        "label": "Type scale & tokens",
+        "alternateSlugs": [
+          "tokens"
+        ]
+      },
+      {
+        "label": "Applying type",
+        "alternateSlugs": [
+          "applying-scaling-type"
+        ]
+      },
+      {
+        "label": "Editorial treatments"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Typography",
+    "bytes": 252011,
+    "sha256": "a19348f2c70744554e6e2428615a6b3574c81c6457d58345b2e1ae56d4a4c617",
+    "updated_timestamp": "2026-08-28T15:09:40.768Z",
+    "page_canon_id": "f6a1d89a-1bbf-46d1-a177-f13b074897a5",
+    "visible_sections": [
+      "Overview",
+      "Fonts",
+      "Type scale & tokens",
+      "Applying type",
+      "Editorial treatments"
+    ],
+    "local_file": "evidence/page-data/styles__typography.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__typography.txt",
+    "visible_section_count": 5
+  },
+  {
+    "source_id": "P046",
+    "url": "https://m3.material.io/styles/elevation",
+    "slug": "styles/elevation",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/38354be9-206b-4988-96a8-0f2a88074511.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:11.772151+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview"
+      },
+      {
+        "label": "Applying elevation"
+      },
+      {
+        "label": "Tokens"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Elevation",
+    "bytes": 69700,
+    "sha256": "c4347979e22a8736ae08923def214b429adfb3c8e141f8be8c7db6ce9d56f7d6",
+    "updated_timestamp": "2026-07-17T05:03:59.318Z",
+    "page_canon_id": "38354be9-206b-4988-96a8-0f2a88074511",
+    "visible_sections": [
+      "Overview",
+      "Applying elevation",
+      "Tokens"
+    ],
+    "local_file": "evidence/page-data/styles__elevation.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__elevation.txt",
+    "visible_section_count": 3
+  },
+  {
+    "source_id": "P047",
+    "url": "https://m3.material.io/styles/motion/overview",
+    "slug": "styles/motion/overview",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/ccf2c3e9-82b5-4c4a-9570-b0d08d95c0c1.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:12.001487+00:00",
+    "tabs_declared": [
+      {
+        "label": "How it works"
+      },
+      {
+        "label": "Specs"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Motion physics system",
+    "bytes": 62664,
+    "sha256": "cb87e986c66c98c6463baa850cc579f754a99859273b3777ff07f81a9b8742db",
+    "updated_timestamp": "2026-07-17T05:25:55.367Z",
+    "page_canon_id": "ccf2c3e9-82b5-4c4a-9570-b0d08d95c0c1",
+    "visible_sections": [
+      "How it works",
+      "Specs"
+    ],
+    "local_file": "evidence/page-data/styles__motion__overview.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__motion__overview.txt",
+    "visible_section_count": 2
+  },
+  {
+    "source_id": "P048",
+    "url": "https://m3.material.io/styles/motion/easing-and-duration",
+    "slug": "styles/motion/easing-and-duration",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/1d658c3f-ba19-48be-9b71-872c72c7166e.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:12.351633+00:00",
+    "tabs_declared": [
+      {
+        "label": "Applying easing and duration"
+      },
+      {
+        "label": "Tokens & specs"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Easing and duration",
+    "bytes": 80673,
+    "sha256": "552d316b034b16ee16d0dde4856b5f840d0d233f534c72a05b8fe4316b6432a1",
+    "updated_timestamp": "2026-07-17T05:03:58.337Z",
+    "page_canon_id": "1d658c3f-ba19-48be-9b71-872c72c7166e",
+    "visible_sections": [
+      "Applying easing and duration",
+      "Tokens & specs"
+    ],
+    "local_file": "evidence/page-data/styles__motion__easing-and-duration.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__motion__easing-and-duration.txt",
+    "visible_section_count": 2
+  },
+  {
+    "source_id": "P049",
+    "url": "https://m3.material.io/styles/motion/transitions",
+    "slug": "styles/motion/transitions",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/2b9bdc79-df8e-4ad2-bdca-e0a3f083cd33.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:12.814423+00:00",
+    "tabs_declared": [
+      {
+        "label": "Transition patterns"
+      },
+      {
+        "label": "Applying transitions"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Transitions",
+    "bytes": 136501,
+    "sha256": "d70790f9876cb332706fb79a664fe023d3c4acec17470b27cb1f87cd06d06e4b",
+    "updated_timestamp": "2026-07-17T05:34:42.925Z",
+    "page_canon_id": "2b9bdc79-df8e-4ad2-bdca-e0a3f083cd33",
+    "visible_sections": [
+      "Transition patterns",
+      "Applying transitions"
+    ],
+    "local_file": "evidence/page-data/styles__motion__transitions.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/styles__motion__transitions.txt",
+    "visible_section_count": 2
+  },
+  {
+    "source_id": "P050",
+    "url": "https://m3.material.io/components",
+    "slug": "components",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/1624d6a1-96ea-437d-b846-dc6f00ebb49c.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:12.959948+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Components",
+    "bytes": 58660,
+    "sha256": "4cf866eb0c1542bc574972aa60b6ad547a20ab7f959ead0e7cf54806507f6a05",
+    "updated_timestamp": "2026-09-01T07:50:47.382Z",
+    "page_canon_id": "1624d6a1-96ea-437d-b846-dc6f00ebb49c",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/components.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P051",
+    "url": "https://m3.material.io/components/all-buttons",
+    "slug": "components/all-buttons",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/276f1bd7-d048-49fd-8483-f267f2ece13d.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:13.522702+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "All buttons",
+    "bytes": 23458,
+    "sha256": "d42517d11903617eb08d9d338f3468ea29b9dcd314e86f4c264c9a5cf86ef044",
+    "updated_timestamp": "2026-07-17T06:58:41.575Z",
+    "page_canon_id": "276f1bd7-d048-49fd-8483-f267f2ece13d",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/components__all-buttons.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__all-buttons.txt",
+    "visible_section_count": 1
+  },
+  {
+    "source_id": "P052",
+    "url": "https://m3.material.io/components/buttons",
+    "slug": "components/buttons",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/e31df68a-59d4-41dc-8743-8c48b476d4f8.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:13.670706+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Buttons",
+    "bytes": 218291,
+    "sha256": "8a7bafda83ec399a466edfb6183619b33c763f57e5c75fd78f64759b90ec3333",
+    "updated_timestamp": "2026-07-24T06:19:49.216Z",
+    "page_canon_id": "e31df68a-59d4-41dc-8743-8c48b476d4f8",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__buttons.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__buttons.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P053",
+    "url": "https://m3.material.io/components/button-groups",
+    "slug": "components/button-groups",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/93a2bf4e-18ac-49a4-8560-8d2a7dffc678.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:14.044495+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Button groups",
+    "bytes": 139629,
+    "sha256": "2e672a2a9a1a5b032bb2493d0c96e8f80314a41061f4088ec4b9f64a3d873765",
+    "updated_timestamp": "2026-09-16T18:25:16.117Z",
+    "page_canon_id": "93a2bf4e-18ac-49a4-8560-8d2a7dffc678",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__button-groups.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__button-groups.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P054",
+    "url": "https://m3.material.io/components/floating-action-button",
+    "slug": "components/floating-action-button",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/1e52f150-575c-45fa-8f5f-75868c5ab068.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:14.370745+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "FABs",
+    "bytes": 142764,
+    "sha256": "1324790d785f236852d648284eb48314c9843d7d5a47813557e4b83ec1d53ee9",
+    "updated_timestamp": "2026-07-27T13:59:42.096Z",
+    "page_canon_id": "1e52f150-575c-45fa-8f5f-75868c5ab068",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__floating-action-button.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__floating-action-button.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P055",
+    "url": "https://m3.material.io/components/extended-fab",
+    "slug": "components/extended-fab",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/94487cf5-eb79-43b1-b6b1-470512cfcc88.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:14.726038+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Extended FABs",
+    "bytes": 161564,
+    "sha256": "3a82e864cf2ea9bbddbf29fb3c33c72f7e0bdfd8a814b47b06e45d08d8258fa2",
+    "updated_timestamp": "2026-07-27T13:55:35.429Z",
+    "page_canon_id": "94487cf5-eb79-43b1-b6b1-470512cfcc88",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__extended-fab.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__extended-fab.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P056",
+    "url": "https://m3.material.io/components/fab-menu",
+    "slug": "components/fab-menu",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/f00af5db-3477-49da-bae5-44b90b3dd7ba.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:15.673225+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "FAB menu",
+    "bytes": 135315,
+    "sha256": "d31cfd0dc41b5565ec399b079372c463aa9dc0567599a32c011023b054ed2e73",
+    "updated_timestamp": "2026-07-17T06:58:41.835Z",
+    "page_canon_id": "f00af5db-3477-49da-bae5-44b90b3dd7ba",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__fab-menu.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__fab-menu.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P057",
+    "url": "https://m3.material.io/components/icon-buttons",
+    "slug": "components/icon-buttons",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/71391cd0-92f8-4a8e-a625-828f5413a221.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:15.720217+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Icon buttons",
+    "bytes": 161748,
+    "sha256": "a4de7efd844aed0ef2c60c39206cd6bc2fde2ee77836181b94801de32c13f26e",
+    "updated_timestamp": "2026-07-17T07:05:22.141Z",
+    "page_canon_id": "71391cd0-92f8-4a8e-a625-828f5413a221",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__icon-buttons.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__icon-buttons.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P058",
+    "url": "https://m3.material.io/components/segmented-buttons",
+    "slug": "components/segmented-buttons",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/409b50be-403a-4846-932c-706a9b2137dd.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:16.218552+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Segmented buttons",
+    "bytes": 115373,
+    "sha256": "d0ce8587ebcff6ff0489f0e23a1ef53114cc86e14a689fcc4734ddaa3f027bb9",
+    "updated_timestamp": "2026-09-16T18:18:17.328Z",
+    "page_canon_id": "409b50be-403a-4846-932c-706a9b2137dd",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__segmented-buttons.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__segmented-buttons.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P059",
+    "url": "https://m3.material.io/components/split-button",
+    "slug": "components/split-button",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/1341051a-3131-40d4-abbf-69e37b307651.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:16.801470+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Split buttons",
+    "bytes": 110926,
+    "sha256": "c427e84c6a7854dd76d02f077fad0c8b864b7bbaf00050d3482b746e9667341f",
+    "updated_timestamp": "2026-09-08T09:29:46.314Z",
+    "page_canon_id": "1341051a-3131-40d4-abbf-69e37b307651",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__split-button.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__split-button.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P060",
+    "url": "https://m3.material.io/components/toolbars",
+    "slug": "components/toolbars",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/4dc1681d-978a-4927-9ffa-8e2bd3796f64.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:16.958848+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Toolbars",
+    "bytes": 255156,
+    "sha256": "f02af5c45c0c5e55ddc440f8d0b73c2710de7d92af81f98a5ab843293decb8a4",
+    "updated_timestamp": "2026-07-28T08:14:45.120Z",
+    "page_canon_id": "4dc1681d-978a-4927-9ffa-8e2bd3796f64",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__toolbars.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__toolbars.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P061",
+    "url": "https://m3.material.io/components/bottom-sheets",
+    "slug": "components/bottom-sheets",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/aa6f9af2-d539-4b22-9af5-838e7cfc4a85.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:16.987749+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Bottom sheets",
+    "bytes": 142887,
+    "sha256": "03b130bd88b7d1d8193a341f1b57b1ccd6c55f0fc8186460815b94660cbe0652",
+    "updated_timestamp": "2026-07-28T07:45:12.661Z",
+    "page_canon_id": "aa6f9af2-d539-4b22-9af5-838e7cfc4a85",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__bottom-sheets.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__bottom-sheets.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P062",
+    "url": "https://m3.material.io/components/cards",
+    "slug": "components/cards",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/1a23fbe7-0474-444c-abfb-717bb148d3a8.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:17.349402+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Cards",
+    "bytes": 192552,
+    "sha256": "1f24722006d1f051ee573095fe2dc7c947d5768e7238648e28577dfc9282edbe",
+    "updated_timestamp": "2026-07-24T06:14:10.548Z",
+    "page_canon_id": "1a23fbe7-0474-444c-abfb-717bb148d3a8",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__cards.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__cards.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P063",
+    "url": "https://m3.material.io/components/carousel",
+    "slug": "components/carousel",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/b0726223-2639-4157-84ae-cb84c07ee2e5.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:18.138842+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Carousel",
+    "bytes": 186127,
+    "sha256": "4663af5d062704bb5b8d2448d3c797e1dfe3f26827795413fe3beef2fd0d3502",
+    "updated_timestamp": "2026-08-18T17:48:11.944Z",
+    "page_canon_id": "b0726223-2639-4157-84ae-cb84c07ee2e5",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__carousel.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__carousel.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P064",
+    "url": "https://m3.material.io/components/chips",
+    "slug": "components/chips",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/592d28d0-0c82-4642-a203-556b1e0581b0.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:18.612950+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Chips",
+    "bytes": 236283,
+    "sha256": "4a2d2750e46501e38ea47d43781245178c0ad35cd49245516a5820e2c0558cff",
+    "updated_timestamp": "2026-07-17T07:05:14.328Z",
+    "page_canon_id": "592d28d0-0c82-4642-a203-556b1e0581b0",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__chips.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__chips.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P065",
+    "url": "https://m3.material.io/components/dialogs",
+    "slug": "components/dialogs",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/79c01ab5-d09a-4f6c-9aca-f76d310583bc.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:18.953475+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Dialogs",
+    "bytes": 212881,
+    "sha256": "0c7c8e7222f4aa2a8c46404319327a0618b01d287bb3ede86613917f1a3d8a17",
+    "updated_timestamp": "2026-07-28T07:11:33.307Z",
+    "page_canon_id": "79c01ab5-d09a-4f6c-9aca-f76d310583bc",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__dialogs.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__dialogs.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P066",
+    "url": "https://m3.material.io/components/divider",
+    "slug": "components/divider",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/843ffaa9-e73e-45a7-bff7-f198cac0a7c8.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:19.290302+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Divider",
+    "bytes": 56496,
+    "sha256": "554dcc6159baba5dd39c4a410bde7859c37a4821c6827f34c1c2f9861e2b5309",
+    "updated_timestamp": "2026-07-17T07:13:07.955Z",
+    "page_canon_id": "843ffaa9-e73e-45a7-bff7-f198cac0a7c8",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__divider.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__divider.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P067",
+    "url": "https://m3.material.io/components/menus",
+    "slug": "components/menus",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/24b60c3f-1ec7-48df-b175-0d8e011a8106.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:19.861025+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Menus",
+    "bytes": 201366,
+    "sha256": "9a21e690e517888803185665d269fb3e7a013a4a5e4dff2b66516c4aae97b10d",
+    "updated_timestamp": "2026-07-28T07:32:19.493Z",
+    "page_canon_id": "24b60c3f-1ec7-48df-b175-0d8e011a8106",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__menus.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__menus.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P068",
+    "url": "https://m3.material.io/components/navigation-bar",
+    "slug": "components/navigation-bar",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/9e4cdffa-f7fd-425f-9915-867aafbcc7d6.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:19.911219+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Navigation bar",
+    "bytes": 228970,
+    "sha256": "62189f1b8b50b69ac49ae1c4e4d8b101a7981a0b8b0b6e90c03f5ca56a57f12e",
+    "updated_timestamp": "2026-07-28T07:36:27.700Z",
+    "page_canon_id": "9e4cdffa-f7fd-425f-9915-867aafbcc7d6",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__navigation-bar.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__navigation-bar.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P069",
+    "url": "https://m3.material.io/components/navigation-drawer",
+    "slug": "components/navigation-drawer",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/d2a1a290-0db4-4622-8a4b-bd11b6a4ec8d.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:20.351792+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Navigation drawer",
+    "bytes": 173521,
+    "sha256": "182c1c90e6e560ccc64d3247d74eaac418c0f7fbb2e766ec255bbbc816dfc1d3",
+    "updated_timestamp": "2026-07-30T05:22:52.002Z",
+    "page_canon_id": "d2a1a290-0db4-4622-8a4b-bd11b6a4ec8d",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__navigation-drawer.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__navigation-drawer.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P070",
+    "url": "https://m3.material.io/components/navigation-rail",
+    "slug": "components/navigation-rail",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/98fe42bd-9bb1-4307-9e92-e61e57c3e9da.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:20.401017+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Navigation rail",
+    "bytes": 249377,
+    "sha256": "d33e560852f066798a55c2d71b7dc8ebfac803fb9c247d8e68207d3ca8858a07",
+    "updated_timestamp": "2026-07-24T07:30:37.949Z",
+    "page_canon_id": "98fe42bd-9bb1-4307-9e92-e61e57c3e9da",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__navigation-rail.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__navigation-rail.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P071",
+    "url": "https://m3.material.io/components/loading-indicator",
+    "slug": "components/loading-indicator",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/eb6cf431-55ab-4d41-b3c5-cf4da1bae66f.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:21.458037+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Loading indicator",
+    "bytes": 104553,
+    "sha256": "79b51c48c7c7b58aab5ad993baadc6386535eeb51bd848165313d483a89da31b",
+    "updated_timestamp": "2026-07-29T13:35:08.589Z",
+    "page_canon_id": "eb6cf431-55ab-4d41-b3c5-cf4da1bae66f",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__loading-indicator.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__loading-indicator.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P072",
+    "url": "https://m3.material.io/components/progress-indicators",
+    "slug": "components/progress-indicators",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/9a92bb46-ccc8-4752-a144-b770d47fe1dd.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:21.515500+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Progress indicators",
+    "bytes": 125296,
+    "sha256": "43e4b7658e43104b05d4569aaed55afdeb1c29e21c5bab5acdeb584db764ac22",
+    "updated_timestamp": "2026-07-29T13:37:52.778Z",
+    "page_canon_id": "9a92bb46-ccc8-4752-a144-b770d47fe1dd",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__progress-indicators.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__progress-indicators.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P073",
+    "url": "https://m3.material.io/components/radio-button",
+    "slug": "components/radio-button",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/091d4b7c-1ab2-4050-963a-4e2558ee5d08.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:21.849915+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Radio button",
+    "bytes": 85969,
+    "sha256": "412eed3c3dfc7a7479209f6dba63a34e85096a9cfeb30e88e858b3e8aa1e67ce",
+    "updated_timestamp": "2026-07-17T07:17:47.331Z",
+    "page_canon_id": "091d4b7c-1ab2-4050-963a-4e2558ee5d08",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__radio-button.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__radio-button.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P074",
+    "url": "https://m3.material.io/components/search",
+    "slug": "components/search",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/22081e54-b56a-47b2-b137-9ba82953f05e.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:22.170894+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Search",
+    "bytes": 188103,
+    "sha256": "c538c42f85ef4941f4a2aa917cc56553aac70e82331689ae9bb270249266bf49",
+    "updated_timestamp": "2026-07-27T04:04:05.736Z",
+    "page_canon_id": "22081e54-b56a-47b2-b137-9ba82953f05e",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__search.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__search.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P075",
+    "url": "https://m3.material.io/components/side-sheets",
+    "slug": "components/side-sheets",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/040dabe3-ed0f-4759-824d-812224e78af3.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:22.728281+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Side sheets",
+    "bytes": 103869,
+    "sha256": "670c7d533748c695ffcd8a7f4a27732fb4133c0d073da65b00d4dffab425bcdd",
+    "updated_timestamp": "2026-07-28T07:57:48.089Z",
+    "page_canon_id": "040dabe3-ed0f-4759-824d-812224e78af3",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__side-sheets.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__side-sheets.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P076",
+    "url": "https://m3.material.io/components/sliders",
+    "slug": "components/sliders",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/4d160e88-c954-4614-8d11-4ec3ed399c92.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:22.927990+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Sliders",
+    "bytes": 137226,
+    "sha256": "83259f4ec9562620655e57925ba4c7deddca5f3f3fb7c2a0788040500c6b4154",
+    "updated_timestamp": "2026-07-17T07:13:18.037Z",
+    "page_canon_id": "4d160e88-c954-4614-8d11-4ec3ed399c92",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__sliders.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__sliders.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P077",
+    "url": "https://m3.material.io/components/switch",
+    "slug": "components/switch",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/a4ad43f1-5c39-44b2-ae15-a7110bdf4fa6.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:22.977264+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Switch",
+    "bytes": 111185,
+    "sha256": "5d181e144b00817da10999a0bdfe8817a067368ab19c1f7b5abcb493c21c10dd",
+    "updated_timestamp": "2026-07-17T07:03:01.922Z",
+    "page_canon_id": "a4ad43f1-5c39-44b2-ae15-a7110bdf4fa6",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__switch.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__switch.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P078",
+    "url": "https://m3.material.io/components/text-fields",
+    "slug": "components/text-fields",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/8741ef66-1a80-4b39-adb1-66bea5e6992f.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:23.522841+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Text fields",
+    "bytes": 175021,
+    "sha256": "451794bfb4668c2c53f8785ab11afab5a5a083999f1c3212a29ac303f5bb7793",
+    "updated_timestamp": "2026-09-08T08:21:17.878Z",
+    "page_canon_id": "8741ef66-1a80-4b39-adb1-66bea5e6992f",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__text-fields.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__text-fields.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P079",
+    "url": "https://m3.material.io/components/tooltips",
+    "slug": "components/tooltips",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/cb07b841-eae0-4959-bbab-25b1971714ca.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:23.941364+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Tooltips",
+    "bytes": 102714,
+    "sha256": "2651f8a97d82d5ef8fcc7df857705d0435f845dbe6ece05d4f2f2e7531a43288",
+    "updated_timestamp": "2026-07-17T07:03:02.412Z",
+    "page_canon_id": "cb07b841-eae0-4959-bbab-25b1971714ca",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__tooltips.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__tooltips.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P080",
+    "url": "https://m3.material.io/components/app-bars",
+    "slug": "components/app-bars",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/4135ef28-314c-44dc-b829-6e94a36b69f2.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:24.295273+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "App bars",
+    "bytes": 257725,
+    "sha256": "00784ed2ac3a0b1fc3a985c8c981afaf4003c990107bc08d1c90df130f728419",
+    "updated_timestamp": "2026-07-24T06:22:06.561Z",
+    "page_canon_id": "4135ef28-314c-44dc-b829-6e94a36b69f2",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__app-bars.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__app-bars.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P081",
+    "url": "https://m3.material.io/components/lists",
+    "slug": "components/lists",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/6d4033c2-f92c-4c43-b585-b3bce8468d48.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:24.923925+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Lists",
+    "bytes": 276126,
+    "sha256": "0302dfe77765c4bd0aa25246b13bb8fddd561d3a10162256adc13a1eda226812",
+    "updated_timestamp": "2026-08-06T17:09:16.197Z",
+    "page_canon_id": "6d4033c2-f92c-4c43-b585-b3bce8468d48",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__lists.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__lists.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P082",
+    "url": "https://m3.material.io/components/badges",
+    "slug": "components/badges",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/e18a73ff-b00d-46e7-af20-ab9dd24bf579.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:25.124629+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Badges",
+    "bytes": 88019,
+    "sha256": "743661fc055b3f95cb9227abe6b2abc15676e495035b1cd972137da16967a707",
+    "updated_timestamp": "2026-07-17T06:58:42.753Z",
+    "page_canon_id": "e18a73ff-b00d-46e7-af20-ab9dd24bf579",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__badges.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__badges.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P083",
+    "url": "https://m3.material.io/components/tabs",
+    "slug": "components/tabs",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/f37f47ba-8e67-4f1e-98a3-3bea94879e52.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:25.483836+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Tabs",
+    "bytes": 135906,
+    "sha256": "3b7a96ed176b32c403e78ec3d2b2d5d8dde459d889c406d9a6178f286079cba9",
+    "updated_timestamp": "2026-07-17T07:03:01.541Z",
+    "page_canon_id": "f37f47ba-8e67-4f1e-98a3-3bea94879e52",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__tabs.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__tabs.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P084",
+    "url": "https://m3.material.io/components/checkbox",
+    "slug": "components/checkbox",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/c0332583-8417-4b80-a0a1-e283781d31c6.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:25.651310+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Checkbox",
+    "bytes": 78042,
+    "sha256": "59210ef5042b772c56a945e76303a0098fb2e6ee9d58117a500b092514d97c00",
+    "updated_timestamp": "2026-08-12T09:53:04.800Z",
+    "page_canon_id": "c0332583-8417-4b80-a0a1-e283781d31c6",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__checkbox.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__checkbox.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P085",
+    "url": "https://m3.material.io/components/date-pickers",
+    "slug": "components/date-pickers",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/523144a0-9184-44bd-93f0-5b4c7355f421.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:26.324738+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Date pickers",
+    "bytes": 189481,
+    "sha256": "373a9c496d6d117947f5a07e5a1d963872d4d674aa5e7128c32b9cf42545ec5c",
+    "updated_timestamp": "2026-07-27T14:12:27.562Z",
+    "page_canon_id": "523144a0-9184-44bd-93f0-5b4c7355f421",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__date-pickers.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__date-pickers.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P086",
+    "url": "https://m3.material.io/components/time-pickers",
+    "slug": "components/time-pickers",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/ec8e6da4-b726-403d-bab7-3fb660b6ef86.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:26.325140+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Time pickers",
+    "bytes": 129573,
+    "sha256": "daec5020056694f49af105ed1ddc255f74ef18510ae493890650e8a753958497",
+    "updated_timestamp": "2026-07-17T07:13:07.343Z",
+    "page_canon_id": "ec8e6da4-b726-403d-bab7-3fb660b6ef86",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__time-pickers.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__time-pickers.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P087",
+    "url": "https://m3.material.io/components/snackbar",
+    "slug": "components/snackbar",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/26cf2750-80f7-43f8-a155-834aa01276df.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:26.584484+00:00",
+    "tabs_declared": [
+      {
+        "label": "Overview",
+        "icon": "info"
+      },
+      {
+        "label": "Specs",
+        "icon": "style"
+      },
+      {
+        "label": "Guidelines",
+        "icon": "design_services"
+      },
+      {
+        "label": "Accessibility",
+        "icon": "accessibility_new"
+      }
+    ],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Snackbar",
+    "bytes": 122509,
+    "sha256": "b54b350305d626169e8093e47df2c0631fcc02e8169024df3e308a89b669861f",
+    "updated_timestamp": "2026-07-28T08:03:08.607Z",
+    "page_canon_id": "26cf2750-80f7-43f8-a155-834aa01276df",
+    "visible_sections": [
+      "Overview",
+      "Specs",
+      "Guidelines",
+      "Accessibility"
+    ],
+    "local_file": "evidence/page-data/components__snackbar.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/components__snackbar.txt",
+    "visible_section_count": 4
+  },
+  {
+    "source_id": "P088",
+    "url": "https://m3.material.io/blog",
+    "slug": "blog",
+    "endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/3d61a289-baf3-444d-8ed7-f2ad681ea9a5.json",
+    "method": "public HTTP GET; mapping from observed shipped JavaScript",
+    "retrieved_at": "2026-10-28T07:43:27.202095+00:00",
+    "tabs_declared": [],
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/JSON",
+    "title": "Material Design Blog",
+    "bytes": 180340,
+    "sha256": "01ab9acbe42b25111a805187f8097b8a3115f7504fdc129e376d67589b0779dd",
+    "updated_timestamp": "2026-10-06T15:18:30.735Z",
+    "page_canon_id": "3d61a289-baf3-444d-8ed7-f2ad681ea9a5",
+    "visible_sections": [
+      "Tab 1"
+    ],
+    "local_file": "evidence/page-data/blog.json",
+    "limitations": [
+      "Published JSON; not every tab or interaction rendered.",
+      "Media URLs inventoried, not downloaded or visually audited."
+    ],
+    "text_file": "evidence/page-text/blog.txt",
+    "visible_section_count": 1
+  }
+]

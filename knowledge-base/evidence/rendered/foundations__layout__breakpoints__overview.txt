@@ -1,0 +1,562 @@
+URL: https://m3.material.io/foundations/layout/breakpoints/overview
+REA evidence: ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3
+Step: ready_2
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /foundations/layout/breakpoints/overview#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Breakpoints" [level=1]
+      - text: Breakpoints ensure layouts work across a wide range of devices
+      - navigation "article tabs":
+        - tablist:
+          - tab "Overview" [selected]
+          - tab "Compact"
+          - tab "Medium"
+          - tab "Expanded"
+          - tab "Large & extra-large"
+      - navigation "page content":
+        - text: On this page
+        - list:
+          - listitem:
+            - link "Breakpoints overview"
+          - listitem:
+            - link "Designing across breakpoints"
+      - tabpanel:
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: "Material uses breakpoints to create adaptive designs that work across devices:"
+          - list:
+            - listitem:
+              - paragraph: "There are five main breakpoints: compact, medium, expanded, large, and extra-large"
+            - listitem:
+              - paragraph: Layouts typically transition from a single pane to two or three panes as window size increases
+            - listitem:
+              - paragraph: When moving across breakpoints, decide which elements to reveal, divide, resize, reposition, or swap
+        - region:
+          - button "copy link to Breakpoints overview section": link
+          - text: Copy link
+          - heading "Breakpoints overview" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: A breakpoint (previously window size class) is the window size at which a layout needs to change to match available space, device conventions, and ergonomics. These apply to Android and web.
+          - paragraph: "All devices fall into one of five Material breakpoints:"
+          - list:
+            - listitem:
+              - paragraph: Compact
+            - listitem:
+              - paragraph: Medium
+            - listitem:
+              - paragraph: Expanded
+            - listitem:
+              - paragraph: Large
+            - listitem:
+              - paragraph: Extra-large
+          - paragraph: Rather than designing for an ever-increasing number of display states, focusing on breakpoints ensures layouts work across a wide range of devices.
+          - figure "Compact Medium Expanded":
+            - img "3 breakpoints from small to expanded."
+            - list:
+              - listitem:
+                - paragraph: Compact
+              - listitem:
+                - paragraph: Medium
+              - listitem:
+                - paragraph: Expanded
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Large and extra-large breakpoints are used on devices like laptops, desktops, and external monitors.
+          - figure "Large Extra-large":
+            - img "2 devices with large and extra-large breakpoints."
+            - list:
+              - listitem:
+                - paragraph: Large
+              - listitem:
+                - paragraph: Extra-large
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - strong: "Design for breakpoints instead of specific devices because:"
+          - list:
+            - listitem:
+              - paragraph: The amount of available window space is dynamic and changes based on user behavior, such as multi-window modes or unfolding a foldable device
+            - listitem:
+              - paragraph: Devices fall into different breakpoints based on orientation
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - table:
+            - rowgroup:
+              - row "Breakpoint Width (dp) Common devices":
+                - columnheader "Breakpoint":
+                  - paragraph: Breakpoint
+                - columnheader "Width (dp)":
+                  - paragraph: Width (dp)
+                - columnheader "Common devices":
+                  - paragraph: Common devices
+            - rowgroup:
+              - row "Compact Under 600dp Phone in portrait":
+                - cell "Compact":
+                  - paragraph: Compact
+                - cell "Under 600dp":
+                  - paragraph: Under 600dp
+                - cell "Phone in portrait":
+                  - paragraph: Phone in portrait
+              - row "Medium 600–839dp Tablet in portrait Foldable in portrait (unfolded)":
+                - cell "Medium":
+                  - paragraph: Medium
+                - cell "600–839dp":
+                  - paragraph: 600–839dp
+                - cell "Tablet in portrait Foldable in portrait (unfolded)":
+                  - paragraph: Tablet in portrait
+                  - paragraph: Foldable in portrait (unfolded)
+              - row "Expanded 840–1199dp Phone in landscape Tablet in landscape Foldable in landscape (unfolded) Desktop":
+                - cell "Expanded":
+                  - paragraph: Expanded
+                - cell "840–1199dp":
+                  - paragraph: 840–1199dp
+                - cell "Phone in landscape Tablet in landscape Foldable in landscape (unfolded) Desktop":
+                  - paragraph: Phone in landscape
+                  - paragraph: Tablet in landscape
+                  - paragraph: Foldable in landscape (unfolded)
+                  - paragraph: Desktop
+              - row "Large 1200–1599dp Desktop":
+                - cell "Large":
+                  - paragraph: Large
+                - cell "1200–1599dp":
+                  - paragraph: 1200–1599dp
+                - cell "Desktop":
+                  - paragraph: Desktop
+              - row "Extra-large 1600dp+ Desktop Ultra-wide monitors":
+                - cell "Extra-large":
+                  - paragraph: Extra-large
+                - cell "1600dp+":
+                  - paragraph: 1600dp+
+                - cell "Desktop Ultra-wide monitors":
+                  - paragraph: Desktop
+                  - paragraph: Ultra-wide monitors
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Height breakpoints" [level=3]
+          - paragraph:
+            - text: On Android, compact, medium, and expanded breakpoints are also available for
+            - link "height":
+              - /url: https://developer.android.com/develop/ui/compose/layouts/adaptive/support-different-display-sizes#window_size_classes
+            - text: . These can be used to adjust the layout when available vertical space is unusually small or large. However, since most layouts contain vertically scrolling content, it's rare that layouts need to adjust to available height.
+        - region:
+          - button "copy link to Designing across breakpoints section": link
+          - text: Copy link
+          - heading "Designing across breakpoints" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Products should automatically adapt to any breakpoint":
+            - 'img "An email app shown at 3 breakpoints: compact, medium, and expanded."'
+            - paragraph: Products should automatically adapt to any breakpoint
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "A product’s layout should adjust to fit each breakpoint. For example, a large window can have two panes, while an extra-large window can have three.":
+            - img "2 screens at large and extra-large breakpoints."
+            - paragraph: A product’s layout should adjust to fit each breakpoint. For example, a large window can have two panes, while an extra-large window can have three.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Each product view should have a layout for the breakpoints most appropriate for your platform and users.
+          - paragraph: Different components are recommended for performing the same function across the five layouts.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - table:
+            - rowgroup:
+              - row "Breakpoint Panes Navigation Communication Action":
+                - columnheader "Breakpoint":
+                  - paragraph: Breakpoint
+                - columnheader "Panes":
+                  - paragraph: Panes
+                - columnheader "Navigation":
+                  - paragraph: Navigation
+                - columnheader "Communication":
+                  - paragraph: Communication
+                - columnheader "Action":
+                  - paragraph: Action
+            - rowgroup:
+              - row "Compact 1 Navigation bar, modal expanded navigation rail Simple dialog Full-screen dialog Bottom sheet":
+                - cell "Compact":
+                  - paragraph: Compact
+                - cell "1":
+                  - paragraph: "1"
+                - cell "Navigation bar, modal expanded navigation rail":
+                  - paragraph: Navigation bar, modal expanded
+                  - paragraph: navigation rail
+                - cell "Simple dialog Full-screen dialog":
+                  - paragraph: Simple dialog
+                  - paragraph: Full-screen dialog
+                - cell "Bottom sheet":
+                  - paragraph: Bottom sheet
+              - row "Medium 1 (recommended) or 2 Navigation bar, modal expanded navigation rail Simple dialog Menu":
+                - cell "Medium":
+                  - paragraph: Medium
+                - cell "1 (recommended) or 2":
+                  - paragraph: 1 (recommended) or 2
+                - cell "Navigation bar, modal expanded navigation rail":
+                  - paragraph: Navigation bar, modal expanded
+                  - paragraph: navigation rail
+                - cell "Simple dialog":
+                  - paragraph: Simple dialog
+                - cell "Menu":
+                  - paragraph: Menu
+              - row "Expanded 1 or 2 (recommended) Modal or standard expanded navigation rail Simple dialog Menu":
+                - cell "Expanded":
+                  - paragraph: Expanded
+                - cell "1 or 2 (recommended)":
+                  - paragraph: 1 or 2 (recommended)
+                - cell "Modal or standard expanded navigation rail":
+                  - paragraph: Modal or standard expanded
+                  - paragraph: navigation rail
+                - cell "Simple dialog":
+                  - paragraph: Simple dialog
+                - cell "Menu":
+                  - paragraph: Menu
+              - row "Large 1 or 2 (recommended) Modal or standard expanded navigation rail Simple dialog Menu":
+                - cell "Large":
+                  - paragraph: Large
+                - cell "1 or 2 (recommended)":
+                  - paragraph: 1 or 2 (recommended)
+                - cell "Modal or standard expanded navigation rail":
+                  - paragraph: Modal or standard expanded
+                  - paragraph: navigation rail
+                - cell "Simple dialog":
+                  - paragraph: Simple dialog
+                - cell "Menu":
+                  - paragraph: Menu
+              - row "Extra-large 1 to 3 (recommended) Modal or standard expanded navigation rail Simple dialog Menu":
+                - cell "Extra-large":
+                  - paragraph: Extra-large
+                - cell "1 to 3 (recommended)":
+                  - paragraph: 1 to 3 (recommended)
+                - cell "Modal or standard expanded navigation rail":
+                  - paragraph: Modal or standard expanded
+                  - paragraph: navigation rail
+                - cell "Simple dialog":
+                  - paragraph: Simple dialog
+                - cell "Menu":
+                  - paragraph: Menu
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: "Start by designing for one breakpoint, then adjust the layout for the next size by asking these five questions:"
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "1. What should be revealed?" [level=3]
+          - paragraph: Parts of the UI that are hidden on smaller devices can be revealed in larger layouts.
+          - paragraph: "For example:"
+          - list:
+            - listitem:
+              - paragraph: On mobile, the navigation rail is collapsed by default
+            - listitem:
+              - paragraph: On an expanded device, the navigation rail can be open by default, revealing more actions and features
+          - figure "A product’s navigation rail can be revealed in an expanded layout":
+            - img "Email app layouts in compact and expanded windows."
+            - paragraph: A product’s navigation rail can be revealed in an expanded layout
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - text: The same can be applied to
+            - link "panes":
+              - /url: /m3/pages/scaffold/panes
+            - text: . Larger layouts can simultaneously display an inbox pane and a pane containing a selected conversation. Additional space doesn’t just mean making the same thing bigger.
+          - figure "An expanded layout for a messaging app reveals a second pane with the selected conversation":
+            - img "Messaging app layouts in compact and expanded windows."
+            - paragraph: An expanded layout for a messaging app reveals a second pane with the selected conversation
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "2. How should a screen be divided?" [level=3]
+          - paragraph: "When dividing a screen into layout panes, consider the breakpoint:"
+          - list:
+            - listitem:
+              - paragraph: "Compact and medium breakpoints: A single pane works best"
+            - listitem:
+              - paragraph: "Expanded and large breakpoints: Two panes are recommended"
+            - listitem:
+              - paragraph: "Extra-large breakpoints: Consider using three panes"
+          - figure "Compact and medium breakpoints should use a single pane, while larger breakpoints can use two":
+            - img "A compact and medium window have a single pane. A larger window has 2 panes."
+            - paragraph: Compact and medium breakpoints should use a single pane, while larger breakpoints can use two
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: At medium breakpoints, two panes are useful when they contain low-density content with clear actions.
+          - paragraph: Don’t use two panes in medium layouts with high information density, as it can reduce usability.
+          - figure "A settings view with low-density content and quick actions is a good use of two panes in a medium layout":
+            - 'img "Medium window with 2 panes with low-density content: an email setting menu and a list of setting switches."'
+            - paragraph: A settings view with low-density content and quick actions is a good use of two panes in a medium layout
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Rotating a device often changes the breakpoint. A layout can have two panes in landscape orientation, and one pane in portrait.":
+            - img "Video app in a medium window has 1 pane in portrait layout and 2 in landscape."
+            - paragraph: Rotating a device often changes the breakpoint. A layout can have two panes in landscape orientation, and one pane in portrait.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: "Single-pane layouts can focus attention on one action or view, creating a distraction-free environment for a specific goal such as:"
+          - list:
+            - listitem:
+              - paragraph: Playing a game
+            - listitem:
+              - paragraph: Watching a movie
+            - listitem:
+              - paragraph: Video calls
+            - listitem:
+              - paragraph: Creative applications
+          - figure "Consider using an immersive single-pane layout for video calls":
+            - img "Video app in a single-pane landscape layout at an expanded breakpoint."
+            - paragraph: Consider using an immersive single-pane layout for video calls
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "3. What should be resized?" [level=3]
+          - paragraph: UI elements that are small on compact screens can grow as breakpoints increase. Panes can also expand to rearrange elements and make better use of space.
+          - paragraph: "Consider resizing:"
+          - list:
+            - listitem:
+              - paragraph: Cards
+            - listitem:
+              - paragraph: Feeds
+            - listitem:
+              - paragraph: Lists
+            - listitem:
+              - paragraph: Panes
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Resizing can highlight imagery and improve text readability. This type of adaptation affects the scale of content and the relationship between objects on screen. For example, a vertical card on mobile can adjust its margins, orientation, text size, and density to better fit a tablet.
+          - paragraph: Across all breakpoints, adjust margins and type styles to keep text between 40–60 characters per line.
+          - figure "A small card in a compact layout can be resized larger in a medium or expanded layout":
+            - img "2 cards in compact and medium layouts. The image and text are rearranged and resized to be more legible in the medium layout."
+            - paragraph: A small card in a compact layout can be resized larger in a medium or expanded layout
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "4. What should be repositioned?" [level=3]
+          - paragraph: A UI and its components can reflow or reposition to make use of additional space on expanded screens and in resized panes. Repositioning is also a way to match the ergonomic and input needs that change across device sizes, such as shifting actions from the bottom of a compact window to the leading edge of medium and expanded windows. This method is similar to responsive design on the web.
+          - paragraph: "Consider:"
+          - list:
+            - listitem:
+              - paragraph: Repositioning cards
+            - listitem:
+              - paragraph: Adding a second column of content
+            - listitem:
+              - paragraph: Creating a more complex layout of photos
+            - listitem:
+              - paragraph: Introducing more negative space
+            - listitem:
+              - paragraph: Ensuring reachability for navigation and interactive elements
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Internal elements can be anchored to the left, right, or center as a parent container scales. Internal elements can also maintain fixed positions, such as a floating action button (FAB) in a navigation rail.
+          - figure "Tabs can remain anchored to the middle of a layout at both compact and medium breakpoints":
+            - img "Comparison of compact and medium breakpoints with tabs anchored to the middle of each layout."
+            - paragraph: Tabs can remain anchored to the middle of a layout at both compact and medium breakpoints
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: In the case of a button, the icon and text label within the button container can remain anchored to each other, staying centered as the button container scales horizontally.
+          - figure "Button icons and label text can remain anchored to each other no matter the width":
+            - img "Label text remains the same size and centered as button size increases."
+            - paragraph: Button icons and label text can remain anchored to each other no matter the width
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "5. What should be swapped?" [level=3]
+          - paragraph: As a layout changes across breakpoints, components with similar functions can also be exchanged. This makes it possible to adjust a layout for large-scale changes to the ergonomic and functional qualities of an interface.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: For example, a bottom navigation bar in a compact layout can be swapped with a navigation rail in a medium layout.
+          - figure "check Do Swap a navigation bar in a compact layout for a navigation rail in a medium or expanded layout":
+            - img "A compact layout’s navigation bar becomes a navigation rail in an expanded layout."
+            - text: check Do
+            - paragraph: Swap a navigation bar in a compact layout for a navigation rail in a medium or expanded layout
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Likewise, a navigation rail can swap from collapsed to expanded at larger breakpoints.
+          - paragraph: "Use caution when swapping components. Make sure:"
+          - list:
+            - listitem:
+              - paragraph: The interchangeable components are functionally equivalent
+            - listitem:
+              - paragraph: The component swap serves a functional and ergonomic purpose
+          - paragraph: Don’t swap a button for a chip. Be careful when changing between list items and cards.
+          - figure "check Do A collapsed navigation rail in medium or expanded layouts can become an expanded navigation rail in large or extra-large layouts":
+            - img "A compact layout’s navigation rail expands in an extra-large layout."
+            - text: check Do
+            - paragraph: A collapsed navigation rail in medium or expanded layouts can become an expanded navigation rail in large or extra-large layouts
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "close Don’t Don’t arbitrarily swap components that aren’t functionally equivalent, such as swapping a button with a menu":
+            - img "A button is swapped out for a menu in a food delivery app."
+            - text: close Don’t
+            - paragraph: Don’t arbitrarily swap components that aren’t functionally equivalent, such as swapping a button with a menu
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Common swappable components" [level=3]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - table:
+            - rowgroup:
+              - row "Component type Compact Medium Expanded":
+                - columnheader "Component type":
+                  - paragraph: Component type
+                - columnheader "Compact":
+                  - paragraph: Compact
+                - columnheader "Medium":
+                  - paragraph: Medium
+                - columnheader "Expanded":
+                  - paragraph: Expanded
+            - rowgroup:
+              - row "Navigation Navigation bar Collapsed navigation rail Collapsed navigation rail":
+                - cell "Navigation":
+                  - paragraph: Navigation
+                - cell "Navigation bar":
+                  - paragraph: Navigation bar
+                - cell "Collapsed navigation rail":
+                  - paragraph: Collapsed navigation rail
+                - cell "Collapsed navigation rail":
+                  - paragraph: Collapsed navigation rail
+              - row "Navigation Modal expanded navigation rail Modal expanded navigation rail Standard expanded navigation rail":
+                - cell "Navigation":
+                  - paragraph: Navigation
+                - cell "Modal expanded navigation rail":
+                  - paragraph: Modal expanded navigation rail
+                - cell "Modal expanded navigation rail":
+                  - paragraph: Modal expanded navigation rail
+                - cell "Standard expanded navigation rail":
+                  - paragraph: Standard expanded navigation rail
+              - row "Communication Basic or full-screen dialog Basic dialog Basic dialog":
+                - cell "Communication":
+                  - paragraph: Communication
+                - cell "Basic or full-screen dialog":
+                  - paragraph: Basic or full-screen dialog
+                - cell "Basic dialog":
+                  - paragraph: Basic dialog
+                - cell "Basic dialog":
+                  - paragraph: Basic dialog
+              - row "Supplemental selection Bottom sheet Menu Menu":
+                - cell "Supplemental selection":
+                  - paragraph: Supplemental selection
+                - cell "Bottom sheet":
+                  - paragraph: Bottom sheet
+                - cell "Menu":
+                  - paragraph: Menu
+                - cell "Menu":
+                  - paragraph: Menu
+    - navigation "previous and up next articles":
+      - 'link "Previous Grids & spacing: Overview"':
+        - /url: /foundations/layout/grids-spacing
+      - 'link "Up next Breakpoints: Compact"':
+        - /url: /foundations/layout/breakpoints/compact
+    - button "go back to top": vertical_align_top
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

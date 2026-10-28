@@ -1,0 +1,29 @@
+# Foundations
+Source ID: P007
+Public page: https://m3.material.io/foundations
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/4b25a580-a734-4c2c-9f51-90c7431d2a66.json
+Retrieved: 2026-10-28T07:42:59.715589+00:00
+Source SHA-256: 394862d1e1a4b8b950e3edd4823356feac48e0cce782a135b28a86df4650262a
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+Foundations inform the basis of any great user interface, from accessibility standards to essential patterns for layout and interaction.
+
+## Tab 1
+
+Accessible design enables users with diverse abilities to navigate, understand, and enjoy a UI.
+
+UX writing and information design make UIs easy to use.
+
+M3 makes brand expression in an interface simpler and more beautiful than ever before.
+
+Tokens store style values like colors and fonts so the same values can be used across designs, code, tools, and platforms.
+
+States are visual indicators used to communicate the status of a component or interactive element.
+
+Layout is the visual arrangement of elements on the screen.
+
+Get to know the key terms and concepts behind Material, from A to Z.
+
+Building for everyone with everyone
+
+## Links embedded in visible content

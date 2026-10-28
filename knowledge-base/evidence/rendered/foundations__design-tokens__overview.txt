@@ -1,0 +1,402 @@
+URL: https://m3.material.io/foundations/design-tokens/overview
+REA evidence: ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e
+Step: ready_7
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /foundations/design-tokens/overview#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Design tokens" [level=1]
+      - text: Design tokens are the building blocks of all UI elements. The same tokens are used in designs, tools, and code.
+      - navigation "article tabs":
+        - tablist:
+          - tab "Overview" [selected]
+          - tab "How to use tokens"
+      - navigation "page content":
+        - text: On this page
+        - list:
+          - listitem:
+            - link "Resources"
+          - listitem:
+            - link "What’s a design token?"
+          - listitem:
+            - link "Why are tokens important?"
+          - listitem:
+            - link "Deciding if tokens are right for you"
+          - listitem:
+            - link "Tokens & Material Design"
+          - listitem:
+            - link "Parts of a token name"
+          - listitem:
+            - link "Classes of tokens"
+          - listitem:
+            - link "Contexts"
+      - tabpanel:
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - list:
+            - listitem:
+              - paragraph: Tokens point to style values like colors, fonts, and measurements
+            - listitem:
+              - paragraph: Use design tokens instead of hardcoded values
+            - listitem:
+              - paragraph:
+                - text: Each token is named for how or where it’s used (for example,
+                - strong: md.comp.fab.primary.container.color
+                - text: sets the container color for a FAB)
+            - listitem:
+              - paragraph: Even if a token’s end value is changed, its name and use remain the same
+            - listitem:
+              - paragraph:
+                - text: "Material Design has three classes of tokens:"
+                - link "reference":
+                  - /url: /m3/pages/design-tokens/overview#6a0933c0-50f5-4dd6-b055-b7c4ff2c1535
+                - text: ","
+                - link "system":
+                  - /url: /m3/pages/design-tokens/overview#7f084930-cf5f-4b7e-b83c-614888f18a77
+                - text: ", and"
+                - link "component":
+                  - /url: /m3/pages/design-tokens/overview#b4d6bb35-ee69-4908-bcb4-b33b0a1997e2
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Using design tokens instead of hardcoded values can streamline the work of building, maintaining, and scaling products with a design system":
+            - img "FAB container color token in a design mock, code, and product"
+            - paragraph: Using design tokens instead of hardcoded values can streamline the work of building, maintaining, and scaling products with a design system
+        - region:
+          - button "copy link to Resources section": link
+          - text: Copy link
+          - heading "Resources" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - table:
+            - rowgroup:
+              - row "Type Link Status":
+                - columnheader "Type"
+                - columnheader "Link"
+                - columnheader "Status"
+            - rowgroup:
+              - row "Design Design Kit (Figma) Available":
+                - rowheader "Design"
+                - cell "Design Kit (Figma)":
+                  - link "Design Kit":
+                    - /url: http://goo.gle/m3-design-kit
+                  - text: (Figma)
+                - cell "Available"
+              - row "Material Theme Builder Figma plugin Available":
+                - cell "Material Theme Builder Figma plugin":
+                  - link "Material Theme Builder Figma plugin":
+                    - /url: https://goo.gle/material-theme-builder-figma
+                - cell "Available"
+              - row "Implementation Material baseline theme and tokens (DSP) Available":
+                - rowheader "Implementation"
+                - cell "Material baseline theme and tokens (DSP)":
+                  - link "Material baseline theme and tokens":
+                    - /url: https://github.com/material-foundation/material-tokens
+                  - text: (DSP)
+                - cell "Available"
+        - region:
+          - button "copy link to What’s a design token? section": link
+          - text: Copy link
+          - heading "What’s a design token?" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Design tokens are small, reusable design decisions that make up a design system's visual style. Tokens replace static values with self-explanatory names.
+          - paragraph: "A design token consists of 2 things:"
+          - list:
+            - listitem:
+              - paragraph:
+                - text: A code-like name, such as
+                - strong: md.ref.palette.secondary90
+            - listitem:
+              - paragraph:
+                - text: An associated value, such as
+                - strong: "#E8DEF8"
+          - paragraph: "The token's value can be one of several things: A color, typeface, measurement, or even another token."
+          - figure "Example of a reference token and its color value":
+            - 'img "Token md.ref.palette.secondary90 with arrow pointing to lilac color swatch #E8DEF8."'
+            - paragraph: Example of a reference token and its color value
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Design tokens meaningfully connect style choices that would otherwise lack a clear relationship.
+          - paragraph: For example, if a designer's mock-ups and an engineer's implementation both reference the same token for the “secondary container color,” then they can be confident that the same color is being used in both places. This applies even if the hex value assigned to that token gets updated.
+          - figure "Example of tokens assigned to the secondary and on secondary color roles of a FAB’s container and icon, respectively":
+            - 'img "Diagram of FAB indicating system tokens: Secondary for surface color and on secondary for icon color"'
+            - paragraph: Example of tokens assigned to the secondary and on secondary color roles of a FAB’s container and icon, respectively
+        - region:
+          - button "copy link to Why are tokens important? section": link
+          - text: Copy link
+          - heading "Why are tokens important?" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Tokens make it possible for a design system to have a single source of truth – a repository where style choices are recorded and changes can be tracked. Because tokens are reusable and purpose-driven, they can define system-wide updates to themes and contexts. For example, you can use tokens to systematically apply a high-contrast color palette for improved visibility, or change the typographic scale to ensure that text is legible on a TV screen. By using tokens for design and implementation, style updates propagate consistently through an entire product or suite of products. They also help designers and engineers "speak the same language,” reducing confusion during handoff from design to implementation.
+          - figure "As design systems evolve, certain values will change. With design tokens, we can track changes and ensure consistency across our products.":
+            - img "Diagram of how changing the value of a token cascades from design system into a product area and 3 products"
+            - text: As design systems evolve, certain values will change. With design tokens, we can track changes and ensure consistency across our products.
+        - region:
+          - button "copy link to Deciding if tokens are right for you section": link
+          - text: Copy link
+          - heading "Deciding if tokens are right for you" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Tokens will be most helpful if:" [level=4]:
+            - strong: "Tokens will be most helpful if:"
+          - list:
+            - listitem: You plan to update the design of your product or are building a product from scratch
+            - listitem: Your design system is applied across a suite of products or platforms
+            - listitem: You want to make it easy to maintain or update styles in the future
+            - listitem: You want to get the most out of the Material Design system, including features like dynamic color
+          - heading "Tokens will be less helpful if:" [level=4]:
+            - strong: "Tokens will be less helpful if:"
+          - list:
+            - listitem: You have an existing app using hard-coded values that is unlikely to change in the next year or two
+            - listitem: Your product does not have a design system
+        - region:
+          - button "copy link to Tokens & Material Design section": link
+          - text: Copy link
+          - heading "Tokens & Material Design" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: In the past, Material styles were communicated through guidelines, design files, tools, and platform-specific component libraries. With design tokens, you can now download, customize, and apply Material styles and integrate them across your design and development process. Tokens allow decisions to be documented in a platform-agnostic and shareable format.
+          - figure "Design tokens provide a central repository for design choices, with a variety of integration points for engineers and designers":
+            - img "Diagram of design token connected to design tool and platform code"
+            - paragraph: Design tokens provide a central repository for design choices, with a variety of integration points for engineers and designers
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: On this site, you’ll see tokens listed in interactive modules. These modules let you quickly look up the default baseline value stored by tokens for color, font, font size, font weight, etc. They also show the relationship between a role, its system token, reference token, and stored pre-set value.
+          - figure "Example of a token module":
+            - img "A token module for the color system with 4 color swatches for the primary color set."
+            - paragraph: Example of a token module
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - text: You’ll also see tokens in the specs tabs of component articles. Tokens are first grouped by
+            - strong: state
+            - text: (enabled, disabled, hover, etc) and then by
+            - strong: element
+            - text: ", which is the part of the component that a token or value applies to, such as the container or label text. Columns include:"
+          - list:
+            - listitem:
+              - strong: Name
+              - text: – The component style aspect that the token applies to, such as color or font
+            - listitem:
+              - strong: Token ID
+              - text: – The token defining the component style aspect
+            - listitem:
+              - strong: Description
+              - text: – Optional descriptive info
+            - listitem:
+              - strong: Context/value
+              - text: – The value stored in the token for a given context
+          - figure "The diagram and token module for elevated button":
+            - img "A token module for an elevated button organized by state (enabled, disabled, etc), then element (container, label text)."
+            - paragraph: The diagram and token module for elevated button
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "How to use token modules" [level=3]
+          - paragraph: Let's say you need to verify the color role for a filled button's label text.
+          - paragraph: Navigate to Common buttons > Specs, find the token module for filled buttons, and search for the "label text" tokens under elements.
+          - paragraph: Copy the color token and paste it in code, or compare it to the color role in Figma.
+          - figure "Diagram and token table for filled button label color":
+            - img "How to find the label text color token."
+            - paragraph: Diagram and token table for filled button label color
+        - region:
+          - button "copy link to Parts of a token name section": link
+          - text: Copy link
+          - heading "Parts of a token name" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: The parts of a token name are separated by periods and proceed from the most general information ("md") to the most specific ("on-secondary").
+          - list:
+            - listitem: All token names in a design system start with the system name (such as “md” for Material Design)
+            - listitem: "An abbreviation for the token class: “ref” for reference tokens, “sys” for system tokens, and “comp” for component tokens"
+            - listitem: The token ends with descriptive words communicating the token’s role
+          - figure "Communicates design system Communicates token class Communicates token’s purpose":
+            - 'img "Diagram of the 3 parts of a design token name: system prefix, token type, and role description"'
+            - list:
+              - listitem: Communicates design system
+              - listitem: Communicates token class
+              - listitem: Communicates token’s purpose
+        - region:
+          - button "copy link to Classes of tokens section": link
+          - text: Copy link
+          - heading "Classes of tokens" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: "There are three classes of tokens in Material:"
+          - list:
+            - listitem: Reference tokens All available tokens with associated values.
+            - listitem: System tokens Decisions and roles that give the design system its character, from color and typography, to elevation and shape.
+            - listitem: Component tokens The design properties assigned to elements in a component, such as the color of a button icon.
+          - paragraph: With three classes of tokens, teams can update design decisions globally or apply a change to a single component.
+          - figure "A button that receives its container color through a system of three tokens that define scalable color values. The color tokens point to a specific hex value that can easily change without impacting the token syntax.":
+            - img "Color value stored in reference token stored in system token, stored in component token, appearing as the container color of a FAB"
+            - paragraph: A button that receives its container color through a system of three tokens that define scalable color values. The color tokens point to a specific hex value that can easily change without impacting the token syntax.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Reference tokens" [level=3]
+          - paragraph: These tokens make up all of the style options available in a design system.
+          - paragraph: They usually point to a static value – such as a color hex code or font size – but can also point to other reference tokens. Reference tokens don't change based on context.
+          - paragraph: By providing a list of options, reference tokens give your team a starting point of approved colors, typography, measurements, etc.
+          - paragraph:
+            - text: All reference tokens start with the prefix
+            - strong: ref
+            - text: .
+          - figure "Color and typography reference tokens and their values":
+            - 'img "Token md.ref.palette.secondary90 pointing to #E8DEF8. Toke md.ref.typeface.plain-medium pointing to Roboto Medium"'
+            - text: Color and typography reference tokens and their values
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "System tokens" [level=3]
+          - paragraph: These are the decisions that systematize the design language for a specific theme or context.
+          - paragraph: System tokens define the purpose a reference token serves in the UI.
+          - paragraph: This is where theming occurs. The system token can point to different reference tokens depending on the context, such as a light or dark theme.
+          - paragraph: Whenever possible, system tokens should point to reference tokens rather than static values.
+          - paragraph:
+            - text: All system tokens start with the prefix
+            - strong: sys
+            - text: .
+          - figure "System tokens, reference tokens, and their values":
+            - 'img "System token md.sys.color.secondary-container pointing to token md.ref.palette.secondary90 pointing to #E8DEF8. System token md.sys.typescale.label-medium.font pointing to token md.ref.typeface.plain-medium pointing to Roboto Medium"'
+            - text: System tokens, reference tokens, and their values
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Component tokens (in development)" [level=3]
+          - paragraph: These represent the elements required to compose a component, such as containers, label text, icons, states, and their values such as size, shape, color, or elevation.
+          - paragraph: Whenever possible, component tokens should point to a system or reference token, and not contain hardcoded values such as hex codes.
+          - paragraph: Not every stylistic choice of a component will be able to be expressed as a token, but whenever a design choice applies to multiple components of similar intent, a token should be used.
+          - paragraph:
+            - text: All component tokens start with the prefix
+            - strong: comp
+            - text: .
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Component tokens, system tokens, reference tokens, and their values":
+            - img "Extended FAB component tokens for container color and label text pointing to system tokens, pointing to reference tokens, pointing to resolved values"
+            - text: Component tokens, system tokens, reference tokens, and their values
+        - region:
+          - button "copy link to Contexts section": link
+          - text: Copy link
+          - heading "Contexts" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: "Tokens can point to different values depending on a set of conditions. These conditions are called contexts and their resulting values are called contextual values. Examples of different contexts include: device form factors, dark theme, dense layouts, and right-to-left writing systems. You can think of a context as a kind of tag. If a token value is tagged with dark theme then it will override the default token value in a dark theme context."
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - 'figure "The same system token for background color can point to different reference tokens depending on the context: Light theme or dark theme"':
+            - img "Diagram of system token for background color pointing to different values depending on the theme context"
+            - paragraph: "The same system token for background color can point to different reference tokens depending on the context: Light theme or dark theme"
+    - navigation "previous and up next articles":
+      - 'link "Previous Components: Overview"':
+        - /url: /foundations/xr/components
+      - 'link "Up next Design tokens: How to use tokens"':
+        - /url: /foundations/design-tokens/how-to-use-tokens
+    - button "go back to top": vertical_align_top
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

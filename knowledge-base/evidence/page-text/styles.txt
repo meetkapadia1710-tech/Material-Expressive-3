@@ -1,0 +1,25 @@
+# Styles
+Source ID: P034
+Public page: https://m3.material.io/styles
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/fb17261d-e51b-4919-951b-1ac53484b19e.json
+Retrieved: 2026-10-28T07:43:07.613407+00:00
+Source SHA-256: 8da9cf608a382fa28aa441e1a16a252c02cfbc50331fc48d6e83d7ae36fb2c7b
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+Styles are the visual aspects of a UI that give it a distinct look and feel. They can be customized by changing your Material theme.
+
+## Tab 1
+
+Color is used to express style and communicate meaning. With dynamic color, Material puts personal color preferences and individual needs at the forefront of systematic color application.
+
+Elevation is the relative distance between two surfaces along the z-axis. All surfaces and components have elevation values.
+
+Icons can be used to represent common actions. Material Symbols are a set of variable icon fonts created at seven weights across three different styles.
+
+Use motion to make a UI expressive and easy to use. Material transitions help guide users as they navigate an app.
+
+The shape scale defines the style of container corners, offering a range of roundedness from square to fully circular.
+
+Use typography to make writing legible and beautiful. Material's default type scale includes contrasting and flexible styles to support a wide range of use cases.
+
+## Links embedded in visible content

@@ -1,0 +1,291 @@
+URL: https://m3.material.io/components
+REA evidence: ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e
+Step: ready_3
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /components#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Components" [level=1]
+      - text: "Components are interactive building blocks for creating a user interface. They can be organized into categories based on their purpose: Action, containment, communication, navigation, selection, and text input."
+      - tabpanel:
+        - region:
+          - text: link Copy link
+          - heading "Buttons" [level=2]
+        - region:
+          - text: link Copy link
+          - link "Button groups":
+            - /url: /components/button-groups/overview
+            - text: Button groups
+            - paragraph: Button groups organize buttons and add interactions between them
+          - link "Buttons":
+            - /url: /components/buttons/overview
+            - text: Buttons
+            - paragraph: Buttons prompt most actions in a UI
+          - link "Extended FABs":
+            - /url: /components/extended-fab/overview
+            - text: Extended FABs
+            - paragraph: Extended floating action buttons (extended FABs) help people take primary actions
+        - region:
+          - text: link Copy link
+          - link "FAB menu":
+            - /url: /components/fab-menu/overview
+            - text: FAB menu
+            - paragraph: The floating action button (FAB) menu opens from a FAB to display multiple related actions
+          - link "Floating action buttons (FABs)":
+            - /url: /components/floating-action-button/overview
+            - text: Floating action buttons (FABs)
+            - paragraph: Floating action buttons (FABs) help people take primary actions
+          - link "Icon buttons":
+            - /url: /components/icon-buttons/overview
+            - text: Icon buttons
+            - paragraph: Icon buttons help people take actions with a single tap
+        - region:
+          - text: link Copy link
+          - link "Segmented buttons":
+            - /url: /components/segmented-buttons/overview
+            - text: Segmented buttons
+            - paragraph: Segmented buttons help people select options, switch views, or sort elements
+          - link "Split buttons":
+            - /url: /components/split-button
+            - text: Split buttons
+            - paragraph: Split buttons open a menu to give people more options related to an action
+        - region:
+          - text: link Copy link
+          - heading "Date & time pickers" [level=2]
+        - region:
+          - text: link Copy link
+          - link "Date pickers":
+            - /url: /components/date-pickers/overview
+            - text: Date pickers
+            - paragraph: Date pickers let people select a date, or a range of dates
+          - link "Time pickers":
+            - /url: /components/time-pickers/overview
+            - text: Time pickers
+            - paragraph: Time pickers help people select and set a specific time
+        - region:
+          - text: link Copy link
+          - heading "Loading & progress" [level=2]
+        - region:
+          - text: link Copy link
+          - link "Loading indicator":
+            - /url: /components/loading-indicator/overview
+            - text: Loading indicator
+            - paragraph: Loading indicators show the progress of a process for a short wait time
+          - link "Progress indicators":
+            - /url: /components/progress-indicators/overview
+            - text: Progress indicators
+            - paragraph: Progress indicators show the status of a process in real time
+        - region:
+          - text: link Copy link
+          - heading "Navigation" [level=2]
+        - region:
+          - text: link Copy link
+          - link "Navigation bar":
+            - /url: /components/navigation-bar/overview
+            - text: Navigation bar
+            - paragraph: Navigation bars let people switch between UI views on smaller devices
+          - link "Navigation drawer":
+            - /url: /components/navigation-drawer/overview
+            - text: Navigation drawer
+            - paragraph: Navigation drawers let people switch between UI views on larger devices
+          - link "Navigation rail":
+            - /url: /components/navigation-rail/overview
+            - text: Navigation rail
+            - paragraph: Navigation rails let people switch between UI views on mid-sized devices
+        - region:
+          - text: link Copy link
+          - heading "Sheets" [level=2]
+        - region:
+          - text: link Copy link
+          - link "Bottom sheets":
+            - /url: /components/bottom-sheets/overview
+            - text: Bottom sheets
+            - paragraph: Bottom sheets show secondary content anchored to the bottom of the screen
+          - link "Side sheets":
+            - /url: /components/side-sheets/overview
+            - text: Side sheets
+            - paragraph: Side sheets show secondary content anchored to the side of the screen
+        - region:
+          - text: link Copy link
+          - heading "All other components" [level=2]
+        - region:
+          - text: link Copy link
+          - link "App bars":
+            - /url: /components/app-bars/overview
+            - text: App bars
+            - paragraph: App bars are placed at the top of the screen to help people navigate through a product
+          - link "Badges":
+            - /url: /components/badges/overview
+            - text: Badges
+            - paragraph: Badges show notifications, counts, or status information on navigation items and icons
+          - link "Cards":
+            - /url: /components/cards/overview
+            - text: Cards
+            - paragraph: Cards display content and actions about a single subject
+        - region:
+          - text: link Copy link
+          - link "Carousel":
+            - /url: /components/carousel/overview
+            - text: Carousel
+            - paragraph: Carousels show a collection of items that can be scrolled on and off the screen
+          - link "Checkbox":
+            - /url: /components/checkbox/overview
+            - text: Checkbox
+            - paragraph: Checkboxes let users select one or more items from a list, or turn an item on or off
+          - link "Chips":
+            - /url: /components/chips/overview
+            - text: Chips
+            - paragraph: Chips help people enter information, make selections, filter content, or trigger actions
+        - region:
+          - text: link Copy link
+          - link "Dialogs":
+            - /url: /components/dialogs/overview
+            - text: Dialogs
+            - paragraph: Dialogs provide important prompts in a user flow
+          - link "Divider":
+            - /url: /components/divider/overview
+            - text: Divider
+            - paragraph: Dividers are thin lines that group content in lists or other containers
+          - link "Lists":
+            - /url: /components/lists/overview
+            - text: Lists
+            - paragraph: Lists are continuous, vertical indexes of text and images
+        - region:
+          - text: link Copy link
+          - link "Menus":
+            - /url: /components/menus/overview
+            - text: Menus
+            - paragraph: Menus display a list of choices on a temporary surface
+          - link "Radio button":
+            - /url: /components/radio-button/overview
+            - text: Radio button
+            - paragraph: Radio buttons let people select one option from a set of options
+          - link "Search":
+            - /url: /components/search/overview
+            - text: Search
+            - paragraph: Search lets people enter a keyword or phrase to get relevant information
+        - region:
+          - text: link Copy link
+          - link "Sliders":
+            - /url: /components/sliders/overview
+            - text: Sliders
+            - paragraph: Sliders allow users to make selections from a range of values
+          - link "Snackbar":
+            - /url: /components/snackbar/overview
+            - text: Snackbar
+            - paragraph: Snackbars show short updates about app processes at the bottom of the screen
+          - link "Switch":
+            - /url: /components/switch/overview
+            - text: Switch
+            - paragraph: Switches toggle the selection of an item on and off
+        - region:
+          - text: link Copy link
+          - link "Tabs":
+            - /url: /components/tabs/overview
+            - text: Tabs
+            - paragraph: Tabs organize content across different screens and views
+          - link "Text fields":
+            - /url: /components/text-fields/overview
+            - text: Text fields
+            - paragraph: Text fields let users enter text into a UI
+          - link "Toolbars":
+            - /url: /components/toolbars/overview
+            - text: Toolbars
+            - paragraph: Toolbars display frequently used actions relevant to the current page
+        - region:
+          - text: link Copy link
+          - link "Tooltips":
+            - /url: /components/tooltips/overview
+            - text: Tooltips
+            - paragraph: Tooltips display brief labels or messages
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

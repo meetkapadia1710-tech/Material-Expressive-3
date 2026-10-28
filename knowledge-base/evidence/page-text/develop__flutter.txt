@@ -1,0 +1,41 @@
+# Flutter
+Source ID: P005
+Public page: https://m3.material.io/develop/flutter
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/d1fb318b-1f4a-43bf-b3b5-35543257b935.json
+Retrieved: 2026-10-28T07:42:58.979567+00:00
+Source SHA-256: 6503f4180e680147705317de261a837fb790afc1ae624718d092a2348d61c941
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+A framework for building beautiful, natively compiled applications from a single codebase. Support is available for Material Design 3.
+
+## Tab 1
+
+Material 3 Widget catalog
+
+Flutter supports original M3 components. M3 Expressive is not available on Flutter.
+
+The Flutter team is currently working on Material Design 3 support for Material Components.
+
+Resources & documentation
+
+Guides, developer docs, tutorials, and more
+
+Google's UI toolkit for building beautiful, natively compiled applications from a single codebase.
+
+Umbrella tracking issue for all past and future engineering work on Flutter support for Material 3.
+
+Set ThemeData.useMaterial3 to true for updated components and to apply new typography, color, elevation, and more.
+
+Step-by-step codelab on how to apply Material 3 in your Flutter app.
+
+Start with an empty Flutter app and build out a fully styled and animated application using Material 3 with Flutter.
+
+What to prioritize when building a responsive UI experience.
+
+Learn how to build the Basil Material study in Flutter with advanced theming techniques that support multiple device contexts.
+
+See how to build an adaptive, responsible application using Material 3 canonical layouts with the adaptive_scaffold package.
+
+Wonderous pushes visual fidelity, effects, and transitions to showcase Flutter capabilities on modern mobile hardware.
+
+## Links embedded in visible content

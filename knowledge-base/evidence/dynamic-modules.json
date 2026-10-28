@@ -1,0 +1,2020 @@
+[
+  {
+    "source_id": "P032",
+    "page_url": "https://m3.material.io/foundations/interaction/states",
+    "section": "State layers",
+    "type": "TOKEN_TYPE_UNSPECIFIED",
+    "resource": "designSystems/20543ce18892f7d9",
+    "configuration": {
+      "tokenSets": [
+        "State opacities"
+      ]
+    }
+  },
+  {
+    "source_id": "P038",
+    "page_url": "https://m3.material.io/styles/color/static",
+    "section": "Baseline",
+    "type": "COLOR",
+    "resource": "designSystems/20543ce18892f7d9",
+    "configuration": {
+      "tokenSets": [
+        "Color schemes",
+        "Palettes"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P043",
+    "page_url": "https://m3.material.io/styles/shape",
+    "section": "Corner radius scale",
+    "type": "TOKEN_TYPE_UNSPECIFIED",
+    "resource": "designSystems/20543ce18892f7d9",
+    "configuration": {
+      "tokenSets": [
+        "Shape"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P044",
+    "page_url": "https://m3.material.io/styles/spacing",
+    "section": "Tokens",
+    "type": "MEASUREMENT",
+    "resource": "designSystems/20543ce18892f7d9",
+    "configuration": {
+      "tokenSets": [
+        "Spacing"
+      ],
+      "tokenSetOrder": [
+        "Spacing",
+        "State - focus indicator"
+      ]
+    }
+  },
+  {
+    "source_id": "P045",
+    "page_url": "https://m3.material.io/styles/typography",
+    "section": "Type scale & tokens",
+    "type": "TYPOGRAPHY",
+    "resource": "designSystems/20543ce18892f7d9",
+    "configuration": {
+      "tokenSets": [
+        "Type scale"
+      ],
+      "contextTags": [
+        "Static",
+        "3P",
+        "Android"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P045",
+    "page_url": "https://m3.material.io/styles/typography",
+    "section": "Type scale & tokens",
+    "type": "TYPOGRAPHY",
+    "resource": "designSystems/20543ce18892f7d9",
+    "configuration": {
+      "tokenSets": [
+        "Type scale - Emphasized "
+      ],
+      "contextTags": [
+        "Static",
+        "3P",
+        "Android"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P045",
+    "page_url": "https://m3.material.io/styles/typography",
+    "section": "Type scale & tokens",
+    "type": "TYPOGRAPHY",
+    "resource": "designSystems/20543ce18892f7d9",
+    "configuration": {
+      "tokenSets": [
+        "Fonts & weights"
+      ],
+      "contextTags": [
+        "Static",
+        "3P",
+        "Android"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P045",
+    "page_url": "https://m3.material.io/styles/typography",
+    "section": "Type scale & tokens",
+    "type": "TYPOGRAPHY",
+    "resource": "designSystems/20543ce18892f7d9",
+    "configuration": {
+      "tokenSets": [
+        "Fonts & weights"
+      ],
+      "contextTags": [
+        "Small",
+        "Large",
+        "Medium",
+        "Extra large",
+        "Default",
+        "Static",
+        "3P",
+        "Android"
+      ],
+      "showInlineTokenShare": true
+    }
+  },
+  {
+    "source_id": "P046",
+    "page_url": "https://m3.material.io/styles/elevation",
+    "section": "Tokens",
+    "type": "ELEVATION",
+    "resource": "designSystems/20543ce18892f7d9",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ]
+    }
+  },
+  {
+    "source_id": "P047",
+    "page_url": "https://m3.material.io/styles/motion/overview",
+    "section": "Specs",
+    "type": "TOKEN_TYPE_UNSPECIFIED",
+    "resource": "designSystems/20543ce18892f7d9",
+    "configuration": {
+      "tokenSets": [
+        "Motion"
+      ],
+      "contextTags": [
+        "Standard",
+        "Expressive",
+        "Compose",
+        "Web",
+        "Android"
+      ]
+    }
+  },
+  {
+    "source_id": "P048",
+    "page_url": "https://m3.material.io/styles/motion/easing-and-duration",
+    "section": "Tokens & specs",
+    "type": "TOKEN_TYPE_UNSPECIFIED",
+    "resource": "designSystems/20543ce18892f7d9",
+    "configuration": {
+      "tokenSets": [
+        "Motion"
+      ],
+      "contextTags": [
+        "Standard",
+        "Expressive",
+        "Compose",
+        "Web",
+        "Android"
+      ]
+    }
+  },
+  {
+    "source_id": "P052",
+    "page_url": "https://m3.material.io/components/buttons",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/4c66f2c4b2f2cb18",
+    "configuration": null
+  },
+  {
+    "source_id": "P052",
+    "page_url": "https://m3.material.io/components/buttons",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/1c4257f8804f9478",
+    "configuration": {
+      "tokenSets": [
+        "Button - Color - Elevated",
+        "Button - Color - Filled",
+        "Button - Color - Tonal",
+        "Button - Color - Outlined",
+        "Button - Color - Text",
+        "Button - Size - Xsmall",
+        "Button - Size - Small",
+        "Button - Size - Medium",
+        "Button - Size - Large",
+        "Button - Size - Xlarge"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "[Deprecated] Button - Tonal",
+        "[Deprecated] Button - Elevated",
+        "[Deprecated] Button – Outlined",
+        "[Deprecated] Button - Filled",
+        "[Deprecated] Button - Text",
+        "Button - Color - Elevated",
+        "Button - Color - Filled",
+        "Button - Color - Tonal",
+        "Button - Color - Outlined",
+        "Button - Color - Text",
+        "Button - Size - Xsmall",
+        "Button - Size - Small",
+        "Button - Size - Medium",
+        "Button - Size - Large",
+        "Button - Size - Xlarge",
+        "Button (baseline)"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P052",
+    "page_url": "https://m3.material.io/components/buttons",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/1c4257f8804f9478",
+    "configuration": {
+      "tokenSets": [
+        "[Deprecated] Button - Elevated",
+        "[Deprecated] Button - Filled",
+        "[Deprecated] Button - Tonal",
+        "[Deprecated] Button – Outlined",
+        "[Deprecated] Button - Text"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "[Deprecated] Button - Elevated",
+        "[Deprecated] Button - Filled",
+        "[Deprecated] Button - Tonal",
+        "[Deprecated] Button – Outlined",
+        "[Deprecated] Button - Text",
+        "Button - Color - Elevated",
+        "Button - Color - Tonal",
+        "Button - Color - Outlined",
+        "Button - Color - Text",
+        "Button - Size - Xlarge",
+        "Button - Size - Large",
+        "Button - Size - Small",
+        "Button - Size - Xsmall",
+        "Button - Size - Medium",
+        "Button - Color - Filled",
+        "Button"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P053",
+    "page_url": "https://m3.material.io/components/button-groups",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/7e21db5b95eb4a2e",
+    "configuration": null
+  },
+  {
+    "source_id": "P053",
+    "page_url": "https://m3.material.io/components/button-groups",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/082d7fd6e058b011",
+    "configuration": {
+      "tokenSets": [
+        "Button group standard - Size - Xsmall",
+        "Button group standard - Size - Small",
+        "Button group standard - Size - Medium",
+        "Button group standard - Size - Large",
+        "Button group standard - Size - Xlarge",
+        "Button group connected - Size - Xsmall",
+        "Button group connected - Size - Small",
+        "Button group connected - Size - Medium",
+        "Button group connected - Size - Large",
+        "Button group connected - Size - Xlarge"
+      ],
+      "tokenSetOrder": [
+        "Button group standard - Size - Xsmall",
+        "Button group standard - Size - Small",
+        "Button group standard - Size - Medium",
+        "Button group standard - Size - Large",
+        "Button group standard - Size - Xlarge",
+        "Button group connected - Size - Xsmall",
+        "Button group connected - Size - Small",
+        "Button group connected - Size - Medium",
+        "Button group connected - Size - Large",
+        "Button group connected - Size - Xlarge"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P054",
+    "page_url": "https://m3.material.io/components/floating-action-button",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/455af1b95b07ca01",
+    "configuration": {
+      "headings": [
+        "Type",
+        "Resource",
+        "Status"
+      ]
+    }
+  },
+  {
+    "source_id": "P054",
+    "page_url": "https://m3.material.io/components/floating-action-button",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/41587918e51cca98",
+    "configuration": {
+      "tokenSets": [
+        "FAB - Size - Regular",
+        "FAB - Size - Medium",
+        "FAB - Size - Large",
+        "FAB - Color - Tonal primary",
+        "FAB - Color - Tonal secondary",
+        "FAB - Color - Tonal tertiary",
+        "FAB - Color - Primary",
+        "FAB - Color - Secondary",
+        "FAB - Color - Tertiary"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "[Deprecated] FAB - Size - Small",
+        "FAB - Color - Surface",
+        "FAB - Color - Branded",
+        "FAB - Size - Regular",
+        "FAB - Size - Medium",
+        "FAB - Size - Large",
+        "FAB - Color - Tonal primary",
+        "FAB - Color - Tonal secondary",
+        "FAB - Color - Tonal tertiary",
+        "FAB - Color - Primary",
+        "FAB - Color - Secondary",
+        "FAB - Color - Tertiary",
+        "[Deprecated] FAB - Primary, small",
+        "[Deprecated] FAB - Primary, large",
+        "[Deprecated] FAB - Branded, large",
+        "[Deprecated] FAB - Secondary, large",
+        "[Deprecated] FAB - Secondary, small",
+        "[Deprecated] FAB - Surface, large",
+        "[Deprecated] FAB - Surface, small",
+        "[Deprecated] FAB - Tertiary, large",
+        "[Deprecated] FAB - Tertiary, small"
+      ]
+    }
+  },
+  {
+    "source_id": "P054",
+    "page_url": "https://m3.material.io/components/floating-action-button",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/41587918e51cca98",
+    "configuration": {
+      "tokenSets": [
+        "[Deprecated] FAB - Size - Small",
+        "FAB - Color - Surface"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "[Deprecated] FAB - Primary, small",
+        "[Deprecated] FAB - Primary, large",
+        "[Deprecated] FAB - Secondary, small",
+        "[Deprecated] FAB - Secondary, large",
+        "[Deprecated] FAB - Tertiary, small",
+        "[Deprecated] FAB - Tertiary, large",
+        "[Deprecated] FAB - Branded, large",
+        "[Deprecated] FAB - Surface, small",
+        "[Deprecated] FAB - Surface, large",
+        "FAB - Primary",
+        "FAB - Branded",
+        "FAB - Secondary",
+        "FAB - Surface",
+        "FAB - Tertiary",
+        "FAB - Size - Large",
+        "FAB - Size - Medium",
+        "FAB - Size - Small",
+        "FAB - Color - Tonal primary",
+        "FAB - Color - Tonal secondary",
+        "FAB - Color - Tonal tertiary",
+        "FAB - Size - Baseline"
+      ]
+    }
+  },
+  {
+    "source_id": "P055",
+    "page_url": "https://m3.material.io/components/extended-fab",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/65e10af8626a2059",
+    "configuration": null
+  },
+  {
+    "source_id": "P055",
+    "page_url": "https://m3.material.io/components/extended-fab",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/36500f77b86d20a5",
+    "configuration": {
+      "tokenSets": [
+        "Extended FAB - Size - Small",
+        "Extended FAB - Size - Medium",
+        "Extended FAB - Size - Large",
+        "Extended FAB - Color - Tonal primary",
+        "Extended FAB - Color - Tonal secondary",
+        "Extended FAB - Color - Tonal tertiary",
+        "Extended FAB - Color - Primary",
+        "Extended FAB - Color - Secondary",
+        "Extended FAB - Color - Tertiary"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "Extended FAB - Color - Branded",
+        "Extended FAB - Color - Surface",
+        "Extended FAB - Size - Baseline",
+        "Extended FAB - Size - Small",
+        "Extended FAB - Size - Medium",
+        "Extended FAB - Size - Large",
+        "Extended FAB - Color - Tonal primary",
+        "Extended FAB - Color - Tonal secondary",
+        "Extended FAB - Color - Tonal tertiary",
+        "Extended FAB - Color - Primary",
+        "Extended FAB - Color - Secondary",
+        "Extended FAB - Color - Tertiary"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P055",
+    "page_url": "https://m3.material.io/components/extended-fab",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/36500f77b86d20a5",
+    "configuration": {
+      "tokenSets": [
+        "Extended FAB - Color - Tonal primary",
+        "Extended FAB - Color - Primary",
+        "Extended FAB - Size - Large",
+        "Extended FAB - Size - Medium",
+        "Extended FAB - Color - Tonal secondary",
+        "Extended FAB - Color - Tonal tertiary",
+        "Extended FAB - Size - Small",
+        "Extended FAB - Size - Baseline",
+        "Extended FAB - Color - Tertiary",
+        "Extended FAB - Color - Surface",
+        "Extended FAB - Color - Secondary",
+        "Extended FAB - Color - Branded"
+      ],
+      "tokenSetOrder": [
+        "Extended FAB - Color - Tonal primary",
+        "Extended FAB - Color - Primary",
+        "Extended FAB - Size - Large",
+        "Extended FAB - Size - Medium",
+        "Extended FAB - Color - Tonal secondary",
+        "Extended FAB - Color - Tonal tertiary",
+        "Extended FAB - Size - Small",
+        "Extended FAB - Size - Baseline",
+        "Extended FAB - Color - Tertiary",
+        "Extended FAB - Color - Surface",
+        "Extended FAB - Color - Secondary",
+        "Extended FAB - Color - Branded"
+      ]
+    }
+  },
+  {
+    "source_id": "P056",
+    "page_url": "https://m3.material.io/components/fab-menu",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/7851d4a3eb38c46d",
+    "configuration": null
+  },
+  {
+    "source_id": "P056",
+    "page_url": "https://m3.material.io/components/fab-menu",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/1a076cec8bc202c2",
+    "configuration": {
+      "tokenSets": [
+        "FAB menu - Common",
+        "FAB menu close button - Color - Primary",
+        "FAB menu close button - Color - Secondary",
+        "FAB menu close button - Color - Tertiary",
+        "FAB menu list items - Color - Primary",
+        "FAB menu list items - Color - Secondary",
+        "FAB menu list items - Color - Tertiary"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "FAB menu - Common",
+        "FAB menu close button - Color - Primary",
+        "FAB menu close button - Color - Secondary",
+        "FAB menu close button - Color - Tertiary",
+        "FAB menu list items - Color - Primary",
+        "FAB menu list items - Color - Secondary",
+        "FAB menu list items - Color - Tertiary"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P057",
+    "page_url": "https://m3.material.io/components/icon-buttons",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/39c920b4035522f5",
+    "configuration": null
+  },
+  {
+    "source_id": "P057",
+    "page_url": "https://m3.material.io/components/icon-buttons",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/0fe2282006ae098b",
+    "configuration": {
+      "tokenSets": [
+        "Icon button",
+        "Icon button - Color - Filled",
+        "Icon button - Color - Tonal",
+        "Icon button - Color - Outlined",
+        "Icon button - Color - Standard",
+        "Icon button - Size - Xsmall",
+        "Icon button - Size - Small",
+        "Icon button - Size - Medium",
+        "Icon button - Size - Large",
+        "Icon button - Size - Xlarge"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Standard",
+        "Expressive",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "[Deprecated] Icon button - Filled",
+        "Icon button",
+        "[Deprecated] Icon button - Outlined",
+        "[Deprecated] Icon button - Tonal",
+        "Icon button - Color - Filled",
+        "Icon button - Color - Tonal",
+        "Icon button - Color - Outlined",
+        "Icon button - Color - Standard",
+        "Icon button - Size - Xsmall",
+        "Icon button - Size - Small",
+        "Icon button - Size - Medium",
+        "Icon button - Size - Large",
+        "Icon button - Size - Xlarge"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P057",
+    "page_url": "https://m3.material.io/components/icon-buttons",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/0fe2282006ae098b",
+    "configuration": {
+      "tokenSets": [
+        "[Deprecated] Icon button - Filled",
+        "[Deprecated] Icon button - Tonal",
+        "[Deprecated] Icon button - Outlined"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "[Deprecated] Icon button - Filled",
+        "Icon button",
+        "[Deprecated] Icon button - Tonal",
+        "[Deprecated] Icon button - Outlined",
+        "Icon button - Color - Tonal",
+        "Icon button - Color - Standard",
+        "Icon button - Color - Outlined",
+        "Icon button - Size - Xlarge",
+        "Icon button - Size - Large",
+        "Icon button - Size - Medium",
+        "Icon button - Size - Xsmall",
+        "Icon button - Size - Small",
+        "Icon button - Color - Filled"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P058",
+    "page_url": "https://m3.material.io/components/segmented-buttons",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/6608f8e8a72ac160",
+    "configuration": {
+      "headings": [
+        "Type",
+        "Resource",
+        "Status"
+      ]
+    }
+  },
+  {
+    "source_id": "P058",
+    "page_url": "https://m3.material.io/components/segmented-buttons",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/67e2613d87ca6f98",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P059",
+    "page_url": "https://m3.material.io/components/split-button",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/27634f809ff5f396",
+    "configuration": null
+  },
+  {
+    "source_id": "P059",
+    "page_url": "https://m3.material.io/components/split-button",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/624e8f2da4007fc8",
+    "configuration": {
+      "tokenSets": [
+        "Split button - Size - Xsmall",
+        "Split button - Size - Small",
+        "Split button - Size - Medium",
+        "Split button - Size - Large",
+        "Split button - Size - Xlarge"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Compose",
+        "3P",
+        "Web",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "Button - Color - Elevated",
+        "Button - Color - Filled",
+        "Button - Color - Tonal",
+        "Button - Color - Outlined",
+        "Split button - Size - Xsmall",
+        "Split button - Size - Small",
+        "Split button - Size - Medium",
+        "Split button - Size - Large",
+        "Split button - Size - Xlarge"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P059",
+    "page_url": "https://m3.material.io/components/split-button",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/624e8f2da4007fc8",
+    "configuration": {
+      "tokenSets": [
+        "Button - Color - Elevated",
+        "Button - Color - Filled",
+        "Button - Color - Tonal",
+        "Button - Color - Outlined"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "Split button - Size - Xlarge",
+        "Split button - Size - Large",
+        "Split button - Size - Medium",
+        "Split button - Size - Small",
+        "Split button - Size - Xsmall",
+        "Button - Color - Elevated",
+        "Button - Color - Filled",
+        "Button - Color - Tonal",
+        "Button - Color - Outlined"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P060",
+    "page_url": "https://m3.material.io/components/toolbars",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/24b1bcdfc66a3784",
+    "configuration": null
+  },
+  {
+    "source_id": "P060",
+    "page_url": "https://m3.material.io/components/toolbars",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/2956a7939bf0879c",
+    "configuration": {
+      "tokenSets": [
+        "Toolbar - Color - Standard",
+        "Toolbar - Color - Vibrant",
+        "Toolbar - Docked",
+        "Toolbar - Floating",
+        "Toolbar - Floating - FAB"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "[Deprecated] App bar - Bottom",
+        "Toolbar - Color - Standard",
+        "Toolbar - Color - Vibrant",
+        "Toolbar - Docked",
+        "Toolbar - Floating",
+        "Toolbar - Floating - FAB"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P060",
+    "page_url": "https://m3.material.io/components/toolbars",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/2956a7939bf0879c",
+    "configuration": {
+      "tokenSets": [
+        "Bottom app bar (baseline)",
+        "Toolbar - Docked",
+        "Toolbar - Floating",
+        "Toolbar - Color - Standard",
+        "Toolbar - Color - Vibrant",
+        "Toolbar - Floating - FAB"
+      ],
+      "tokenSetOrder": [
+        "Bottom app bar (baseline)",
+        "Toolbar - Docked",
+        "Toolbar - Floating",
+        "Toolbar - Color - Standard",
+        "Toolbar - Color - Vibrant",
+        "Toolbar - Floating - FAB"
+      ]
+    }
+  },
+  {
+    "source_id": "P061",
+    "page_url": "https://m3.material.io/components/bottom-sheets",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/522fd47a354cd2f0",
+    "configuration": null
+  },
+  {
+    "source_id": "P061",
+    "page_url": "https://m3.material.io/components/bottom-sheets",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/75e530a1014802b3",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P062",
+    "page_url": "https://m3.material.io/components/cards",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/4611eb61fa32c0e5",
+    "configuration": {
+      "headings": [
+        "Type",
+        "Resource",
+        "Status"
+      ]
+    }
+  },
+  {
+    "source_id": "P062",
+    "page_url": "https://m3.material.io/components/cards",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/100ebfb4332adab1",
+    "configuration": {
+      "tokenSets": [
+        "Card - Elevated",
+        "Card - Filled",
+        "Card - Outlined"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P063",
+    "page_url": "https://m3.material.io/components/carousel",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/3fb6515e512e5c09",
+    "configuration": null
+  },
+  {
+    "source_id": "P063",
+    "page_url": "https://m3.material.io/components/carousel",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/43a124d2adc8a2ef",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P064",
+    "page_url": "https://m3.material.io/components/chips",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/0c68159e11eed87a",
+    "configuration": null
+  },
+  {
+    "source_id": "P064",
+    "page_url": "https://m3.material.io/components/chips",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/484a63be03b01a17",
+    "configuration": {
+      "tokenSets": [
+        "Chip - Assist",
+        "Chip - Filter",
+        "Chip - Input",
+        "Chip - Suggestion"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "Chip - Assist",
+        "Chip - Filter",
+        "Chip - Input",
+        "Chip - Suggestion"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P065",
+    "page_url": "https://m3.material.io/components/dialogs",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/160bdd9a0f6fe596",
+    "configuration": null
+  },
+  {
+    "source_id": "P065",
+    "page_url": "https://m3.material.io/components/dialogs",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/0b1e39a67d5bafdc",
+    "configuration": {
+      "tokenSets": [
+        "Dialog - Basic",
+        "Dialog - Full screen"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P066",
+    "page_url": "https://m3.material.io/components/divider",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/748fae37c92f9134",
+    "configuration": null
+  },
+  {
+    "source_id": "P066",
+    "page_url": "https://m3.material.io/components/divider",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/77f7657eb270e53d",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P067",
+    "page_url": "https://m3.material.io/components/menus",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/18d50ef91649dead",
+    "configuration": null
+  },
+  {
+    "source_id": "P067",
+    "page_url": "https://m3.material.io/components/menus",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/385a28e5d3bb3dd0",
+    "configuration": {
+      "tokenSets": [
+        "Menus - Common",
+        "Menus - Color - Vibrant",
+        "Menus - Color - Standard"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "Menu (baseline)",
+        "Menus - Common",
+        "Menus - Color - Vibrant",
+        "Menus - Color - Standard"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P067",
+    "page_url": "https://m3.material.io/components/menus",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/385a28e5d3bb3dd0",
+    "configuration": {
+      "tokenSets": [
+        "Menu (baseline)"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P068",
+    "page_url": "https://m3.material.io/components/navigation-bar",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/41c723c0c0347dee",
+    "configuration": null
+  },
+  {
+    "source_id": "P068",
+    "page_url": "https://m3.material.io/components/navigation-bar",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/52865380210a9b69",
+    "configuration": {
+      "tokenSets": [
+        "Nav bar - Common",
+        "Nav bar - Item - Vertical",
+        "Nav bar - Item - Horizontal"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P068",
+    "page_url": "https://m3.material.io/components/navigation-bar",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/52865380210a9b69",
+    "configuration": {
+      "tokenSets": [
+        "Navigation bar (baseline)",
+        "Nav bar - Common",
+        "Nav bar - Item - Vertical",
+        "Nav bar - Item - Horizontal"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "Navigation bar (baseline)",
+        "Nav bar - Common",
+        "Nav bar - Item - Vertical",
+        "Nav bar - Item - Horizontal"
+      ]
+    }
+  },
+  {
+    "source_id": "P069",
+    "page_url": "https://m3.material.io/components/navigation-drawer",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/5f54b6f53da7ecda",
+    "configuration": null
+  },
+  {
+    "source_id": "P069",
+    "page_url": "https://m3.material.io/components/navigation-drawer",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/376969f91547be8e",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P070",
+    "page_url": "https://m3.material.io/components/navigation-rail",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/6073fa0062bb7074",
+    "configuration": null
+  },
+  {
+    "source_id": "P070",
+    "page_url": "https://m3.material.io/components/navigation-rail",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/5b55bd7cc1ea6e29",
+    "configuration": {
+      "tokenSets": [
+        "Nav rail - Common",
+        "Nav rail - Collapsed",
+        "Nav rail - Expanded",
+        "Nav rail item - Common",
+        "Nav rail item - Vertical",
+        "Nav rail item - Horizontal"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "Navigation rail (baseline)",
+        "Nav rail - Common",
+        "Nav rail - Collapsed",
+        "Nav rail - Expanded",
+        "Nav rail item - Common",
+        "Nav rail item - Vertical",
+        "Nav rail item - Horizontal"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P070",
+    "page_url": "https://m3.material.io/components/navigation-rail",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/5b55bd7cc1ea6e29",
+    "configuration": {
+      "tokenSets": [
+        "Navigation rail (baseline)",
+        "Nav rail item - Horizontal",
+        "Nav rail item - Common",
+        "Nav rail - Common",
+        "Nav rail - Collapsed",
+        "Nav rail - Expanded",
+        "Nav rail item - Vertical"
+      ],
+      "tokenSetOrder": [
+        "Navigation rail (baseline)",
+        "Nav rail item - Horizontal",
+        "Nav rail item - Common",
+        "Nav rail - Common",
+        "Nav rail - Collapsed",
+        "Nav rail - Expanded",
+        "Nav rail item - Vertical"
+      ]
+    }
+  },
+  {
+    "source_id": "P071",
+    "page_url": "https://m3.material.io/components/loading-indicator",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/1b4f73b814f85df6",
+    "configuration": null
+  },
+  {
+    "source_id": "P071",
+    "page_url": "https://m3.material.io/components/loading-indicator",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/68895be451a51c31",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P072",
+    "page_url": "https://m3.material.io/components/progress-indicators",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/2fd9de395ed49bc3",
+    "configuration": null
+  },
+  {
+    "source_id": "P072",
+    "page_url": "https://m3.material.io/components/progress-indicators",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/6f51f7ab7775a392",
+    "configuration": {
+      "tokenSets": [
+        "Progress Indicator - Common",
+        "Progress indicator - Linear",
+        "Progress indicator - Circular"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "Progress Indicator",
+        "Progress indicator - Linear",
+        "Progress indicator - Circular",
+        "[Deprecated] Progress indicator - Circular",
+        "[Deprecated] Progress indicator - Linear"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P072",
+    "page_url": "https://m3.material.io/components/progress-indicators",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/6f51f7ab7775a392",
+    "configuration": {
+      "tokenSets": [
+        "[Deprecated] Progress indicator - Circular",
+        "[Deprecated] Progress indicator - Linear"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P073",
+    "page_url": "https://m3.material.io/components/radio-button",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/18e98bbdcbc43596",
+    "configuration": null
+  },
+  {
+    "source_id": "P073",
+    "page_url": "https://m3.material.io/components/radio-button",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/6acb269a58d5f93f",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P074",
+    "page_url": "https://m3.material.io/components/search",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/30edd26d5082040a",
+    "configuration": null
+  },
+  {
+    "source_id": "P074",
+    "page_url": "https://m3.material.io/components/search",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/07341534518f78d0",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "Compose",
+        "3P",
+        "Web",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P075",
+    "page_url": "https://m3.material.io/components/side-sheets",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/56df27a2f3576bb1",
+    "configuration": null
+  },
+  {
+    "source_id": "P075",
+    "page_url": "https://m3.material.io/components/side-sheets",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/06c2c925cf96adca",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P076",
+    "page_url": "https://m3.material.io/components/sliders",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/59e0e5381ea8f766",
+    "configuration": {
+      "headings": [
+        "Type",
+        "Resource",
+        "Status"
+      ]
+    }
+  },
+  {
+    "source_id": "P076",
+    "page_url": "https://m3.material.io/components/sliders",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/0045edb815f2325e",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P077",
+    "page_url": "https://m3.material.io/components/switch",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/0fe2e78f2f029241",
+    "configuration": null
+  },
+  {
+    "source_id": "P077",
+    "page_url": "https://m3.material.io/components/switch",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/33b1b2925d9ff561",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P078",
+    "page_url": "https://m3.material.io/components/text-fields",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/1747ec3c98bda4e2",
+    "configuration": null
+  },
+  {
+    "source_id": "P078",
+    "page_url": "https://m3.material.io/components/text-fields",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/60990dd98dea0998",
+    "configuration": {
+      "tokenSets": [
+        "Text field - Filled",
+        "Text field - Outlined"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P079",
+    "page_url": "https://m3.material.io/components/tooltips",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/1ddd05a1e6a16969",
+    "configuration": null
+  },
+  {
+    "source_id": "P079",
+    "page_url": "https://m3.material.io/components/tooltips",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/37697297db0555a6",
+    "configuration": {
+      "tokenSets": [
+        "Tooltip - Plain",
+        "Tooltip - Rich"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P080",
+    "page_url": "https://m3.material.io/components/app-bars",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/411b03efa2256026",
+    "configuration": null
+  },
+  {
+    "source_id": "P080",
+    "page_url": "https://m3.material.io/components/app-bars",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/3ec622835c7987b5",
+    "configuration": {
+      "tokenSets": [
+        "App bar - Common",
+        "App bar - Size - Small",
+        "App bar - Size - Medium Flexible",
+        "App bar - Size - Large Flexible"
+      ],
+      "contextTags": [
+        "Static",
+        "3P",
+        "Android"
+      ],
+      "tokenSetOrder": [
+        "App bar - Common",
+        "App bar - Size - Small",
+        "App bar - Size - Medium",
+        "App bar - Size - Large",
+        "App bar - Size - Medium Flexible",
+        "App bar - Size - Large Flexible",
+        "[Deprecated] App bar - Top, small",
+        "[Deprecated] App bar - Top, medium",
+        "[Deprecated] App bar - Top, large",
+        "[Deprecated] App bar - Top, center-aligned"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P080",
+    "page_url": "https://m3.material.io/components/app-bars",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/07341534518f78d0",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P080",
+    "page_url": "https://m3.material.io/components/app-bars",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/3ec622835c7987b5",
+    "configuration": {
+      "tokenSets": [
+        "App bar - Size - Medium (baseline)",
+        "App bar - Size - Large (baseline)",
+        "[Deprecated] Top app bar - Small",
+        "[Deprecated] Top app bar - Medium",
+        "[Deprecated] Top app bar -  Large",
+        "[Deprecated] Top app bar - Small, Center-aligned"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P081",
+    "page_url": "https://m3.material.io/components/lists",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/11cb6b2ed0f6dee4",
+    "configuration": null
+  },
+  {
+    "source_id": "P081",
+    "page_url": "https://m3.material.io/components/lists",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/6c818a16475113bd",
+    "configuration": {
+      "tokenSets": [
+        "List - Common",
+        "List - Expand"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "List - Common",
+        "List - Expand",
+        "List - Reorder",
+        "List - Reveal"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P081",
+    "page_url": "https://m3.material.io/components/lists",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/6c818a16475113bd",
+    "configuration": {
+      "tokenSets": [
+        "List - Common"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "List - Common",
+        "List - Expand",
+        "List - Reorder",
+        "List - Reveal"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P082",
+    "page_url": "https://m3.material.io/components/badges",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/69586a0d0e3bfa32",
+    "configuration": null
+  },
+  {
+    "source_id": "P082",
+    "page_url": "https://m3.material.io/components/badges",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/59a1b3a9a90ca8b3",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P083",
+    "page_url": "https://m3.material.io/components/tabs",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/26aa7eca29c81c71",
+    "configuration": null
+  },
+  {
+    "source_id": "P083",
+    "page_url": "https://m3.material.io/components/tabs",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/6039f0080a95df1e",
+    "configuration": {
+      "tokenSets": [
+        "Tabs - Primary navigation",
+        "Tabs - Secondary navigation"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "Tabs - Primary navigation",
+        "Tabs - Secondary navigation"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P084",
+    "page_url": "https://m3.material.io/components/checkbox",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/589af604996f7a3e",
+    "configuration": null
+  },
+  {
+    "source_id": "P084",
+    "page_url": "https://m3.material.io/components/checkbox",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/31f16b44fe03b0c0",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P085",
+    "page_url": "https://m3.material.io/components/date-pickers",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/13ab9956d1c04e88",
+    "configuration": null
+  },
+  {
+    "source_id": "P085",
+    "page_url": "https://m3.material.io/components/date-pickers",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/01c5310367774eb8",
+    "configuration": {
+      "tokenSets": [
+        "Date picker - Docked",
+        "Date picker - Modal",
+        "Date picker - Modal input"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "tokenSetOrder": [
+        "Date picker - Docked",
+        "Date picker - Modal",
+        "Date picker - Modal input"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P086",
+    "page_url": "https://m3.material.io/components/time-pickers",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/5cae57e703105f6a",
+    "configuration": null
+  },
+  {
+    "source_id": "P086",
+    "page_url": "https://m3.material.io/components/time-pickers",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/39f4b152dd9bd292",
+    "configuration": {
+      "tokenSets": [
+        "Time picker - Dial",
+        "Time picker - Input"
+      ],
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  },
+  {
+    "source_id": "P087",
+    "page_url": "https://m3.material.io/components/snackbar",
+    "section": "Overview",
+    "type": "STATUS_TABLE",
+    "resource": "designSystems/030656e0a1083ef1/components/20c468ba5d00e74d",
+    "configuration": null
+  },
+  {
+    "source_id": "P087",
+    "page_url": "https://m3.material.io/components/snackbar",
+    "section": "Specs",
+    "type": "TOKEN_TABLE",
+    "resource": "designSystems/20543ce18892f7d9/components/346ae12a744b45dd",
+    "configuration": {
+      "contextTags": [
+        "None",
+        "Medium contrast",
+        "Default",
+        "High contrast",
+        "Static",
+        "3P",
+        "Android",
+        "Dark",
+        "Light"
+      ],
+      "hideSearchField": false,
+      "hideVersionName": true
+    }
+  }
+]

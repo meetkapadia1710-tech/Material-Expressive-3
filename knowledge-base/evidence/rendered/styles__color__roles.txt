@@ -1,0 +1,925 @@
+URL: https://m3.material.io/styles/color/roles
+REA evidence: ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3
+Step: ready_0
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /styles/color/roles#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Color roles" [level=1]
+      - text: "There are 26 standard color roles organized into six groups: primary, secondary, tertiary, error, surface, and outline"
+      - navigation "page content":
+        - text: On this page
+        - list:
+          - listitem:
+            - link "What are color roles?"
+          - listitem:
+            - link "General concepts"
+          - listitem:
+            - link "Accent color roles"
+          - listitem:
+            - link "Primary"
+          - listitem:
+            - link "Secondary"
+          - listitem:
+            - link "Tertiary"
+          - listitem:
+            - link "Error"
+          - listitem:
+            - link "Surface"
+          - listitem:
+            - link "Outline"
+          - listitem:
+            - link "Add-on color roles"
+      - tabpanel:
+        - region:
+          - button "copy link to What are color roles? section": link
+          - text: Copy link
+          - heading "What are color roles?" [level=2]
+          - paragraph: Color roles are like the "numbers" in a paint-by-number canvas. They're the connective tissue between elements of the UI and what color goes where.
+          - list:
+            - listitem:
+              - strong: Color roles are mapped to Material Components
+              - text: You'll use these color roles whether you're using the static baseline scheme or dynamic color. If your product contains custom components, they'll need to be properly mapped to this set of color roles.
+            - listitem:
+              - strong: Color roles ensure accessibility
+              - text: The color system is built on accessible color pairings. These color pairs provide an accessible minimum 3:1 contrast.
+            - listitem:
+              - strong: Color roles are tokenized
+              - text: Roles are implemented in design and code through tokens. A design token represents a small, reusable design decision that’s part of a design system's visual style.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Diagram of all Material color roles, including optional add-on roles for surface colors and fixed accent colors":
+            - img "Example color swatches for all 45 color roles including Primary, Secondary, Tertiary, Error, Surfaces, Inverse roles, Scrim and Shadow roles."
+            - paragraph: Diagram of all Material color roles, including optional add-on roles for surface colors and fixed accent colors
+        - region:
+          - button "copy link to General concepts section": link
+          - text: Copy link
+          - heading "General concepts" [level=2]
+          - paragraph: "Here are helpful-to-know words you'll see in the names of color roles:"
+          - list:
+            - listitem:
+              - strong: Surface
+              - text: – A role used for backgrounds and large, low-emphasis areas of the screen.
+            - listitem:
+              - strong: Primary, Secondary, Tertiary
+              - text: – Accent color roles used to emphasize or de-emphasize foreground elements.
+            - listitem:
+              - strong: Container
+              - text: – Roles used as a fill color for foreground elements like buttons. They should not be used for text or icons.
+            - listitem:
+              - strong: "On"
+              - text: – Roles starting with this term indicate a color for text or icons
+              - emphasis: on top
+              - text: of its paired parent color. For example,
+              - strong: on primary
+              - text: is used for text and icons against the
+              - strong: primary
+              - text: fill color.
+            - listitem:
+              - strong: Variant
+              - text: – Roles ending with this term offer a lower emphasis alternative to its non-variant pair. For example,
+              - strong: outline variant
+              - text: is a less emphasized version of the
+              - strong: outline
+              - text: color.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Pairing and layering colors" [level=3]
+          - paragraph: To ensure accessible visual contrast in your app, apply colors only in the intended pairs or layering orders described in the following sections.
+          - paragraph: Combining colors improperly may break contrast necessary for visual accessibility, particularly when colors are adjusted through dynamic color features such as user-controlled contrast.
+          - figure "check Do Pair and layer color roles as intended to ensure expected visual results and accessibility. In this example, the two buttons mapped with (1) primary, (2) on primary, (3) secondary container, and (4) on secondary container stay legible as the contrast level changes.":
+            - img "Pair of buttons shown at three different contrast levels. At every level, the text on the button is legible because the color roles are properly applied to the buttons."
+            - text: check Do
+            - paragraph:
+              - text: Pair and layer color roles as intended to ensure expected visual results and accessibility. In this example, the two buttons mapped with (1)
+              - strong: primary
+              - text: ", (2)"
+              - strong: on primary
+              - text: ", (3)"
+              - strong: secondary container
+              - text: ", and (4)"
+              - strong: on secondary container
+              - text: stay legible as the contrast level changes.
+          - figure "close Don’t Improper color mappings can produce unintended visual results and break accessibility. In this example, the two buttons mapped with (1) primary, (2) primary container, (3) secondary container, and (4) on surface become illegible as the contrast level changes.":
+            - img "Pair of buttons shown at 3 different contrast levels. The text on the button becomes illegible because the color roles are improperly applied to the buttons."
+            - text: close Don’t
+            - paragraph:
+              - text: Improper color mappings can produce unintended visual results and break accessibility. In this example, the two buttons mapped with (1)
+              - strong: primary
+              - text: ", (2)"
+              - strong: primary container
+              - text: ", (3)"
+              - strong: secondary container
+              - text: ", and (4)"
+              - strong: on surface
+              - text: become illegible as the contrast level changes.
+        - region:
+          - button "copy link to Accent color roles section": link
+          - text: Copy link
+          - heading "Accent color roles" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Accent color roles include primary, secondary, and tertiary. Assign them to elements in the UI based on importance and needed emphasis. Use caution when changing color roles for visual effect.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - list:
+            - listitem:
+              - paragraph:
+                - strong: Primary roles
+                - text: are for important actions and elements needing the most emphasis, like a FAB to start a new message.
+            - listitem:
+              - paragraph:
+                - strong: Secondary roles
+                - text: are for elements that don’t need immediate attention and don’t need emphasis, like the selected state of a navigation icon or a dismissive button.
+            - listitem:
+              - paragraph:
+                - strong: Tertiary roles
+                - text: are for smaller elements that need special emphasis but don't require immediate attention, such as a badge or notification.
+          - figure "Primary colors are used for the most important elements, like a starred message and FAB to start a new message Tertiary colors are used for smaller emphasized elements, like a badge suggesting a follow up Secondary colors are used for less urgent elements, like the background of an inactive star icon and the selection state of an inbox icon":
+            - img "A mail app showing a mix of primary, secondary, and tertiary accent colors used across the screen."
+            - list:
+              - listitem: Primary colors are used for the most important elements, like a starred message and FAB to start a new message
+              - listitem: Tertiary colors are used for smaller emphasized elements, like a badge suggesting a follow up
+              - listitem: Secondary colors are used for less urgent elements, like the background of an inactive star icon and the selection state of an inbox icon
+        - region:
+          - button "copy link to Primary section": link
+          - text: Copy link
+          - heading "Primary" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Use primary roles for the most prominent components across the UI, such as the FAB, high-emphasis buttons, and active states.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - list:
+            - listitem:
+              - paragraph:
+                - strong: "Primary:"
+                - text: High-emphasis fills, texts, and icons against surface
+            - listitem:
+              - paragraph:
+                - strong: "On primary:"
+                - text: Text and icons against primary
+            - listitem:
+              - paragraph:
+                - strong: "Primary container:"
+                - text: Standout fill color against surface, for key components like FAB
+            - listitem:
+              - paragraph:
+                - strong: "On primary container:"
+                - text: Text and icons against primary container
+          - figure "Primary color roles include primary and primary container, with their respective “On” colors":
+            - 'img "4 color swatches: primary, on primary, primary container and on primary container."'
+            - paragraph:
+              - text: Primary color roles include
+              - strong: primary
+              - text: and
+              - strong: primary container
+              - text: ", with their respective “On” colors"
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "On primary Primary":
+            - img "Primary color used for filled button, and \"on primary\" color used for the text within that button."
+            - list:
+              - listitem: On primary
+              - listitem: Primary
+          - figure "On primary container Primary container":
+            - img "\"Primary container\" color used for FAB and \"on primary container\" color used for the text and icon within."
+            - list:
+              - listitem: On primary container
+              - listitem: Primary container
+        - region:
+          - button "copy link to Secondary section": link
+          - text: Copy link
+          - heading "Secondary" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Use secondary roles for less prominent components in the UI such as filter chips.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: "There are four secondary roles:"
+          - list:
+            - listitem:
+              - strong: "Secondary:"
+              - text: Less prominent fills, text, and icons against surface
+            - listitem:
+              - strong: "On secondary:"
+              - text: Text and icons against secondary
+            - listitem:
+              - strong: "Secondary container:"
+              - text: Less prominent fill color against surface, for recessive components like tonal buttons
+            - listitem:
+              - strong: "On secondary container:"
+              - text: Text and icons against secondary container
+          - figure "Secondary color roles include secondary and secondary container, with their respective \"On\" colors":
+            - 'img "4 color swatches: secondary, on secondary, secondary container, and on secondary container."'
+            - paragraph:
+              - text: Secondary color roles include
+              - strong: secondary
+              - text: and
+              - strong: secondary container
+              - text: ", with their respective \"On\" colors"
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - 'figure "Icon: On secondary container Button: Secondary container"':
+            - img "An icon button using \"secondary container\" color, and an icon using \"on secondary color.\""
+            - list:
+              - listitem: "Icon: On secondary container"
+              - listitem: "Button: Secondary container"
+        - region:
+          - button "copy link to Tertiary section": link
+          - text: Copy link
+          - heading "Tertiary" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Use tertiary roles for contrasting accents that balance primary and secondary colors or bring heightened attention to an element such as an input field.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: "There are four tertiary roles:"
+          - list:
+            - listitem:
+              - strong: "Tertiary:"
+              - text: Complementary fills, text, and icons against surface
+            - listitem:
+              - strong: "On tertiary:"
+              - text: Text and icons against tertiary
+            - listitem:
+              - strong: "Tertiary container:"
+              - text: Complementary container color against surface, for components like input fields
+            - listitem:
+              - strong: "On tertiary container:"
+              - text: Text and icons against tertiary container
+          - figure "Tertiary color roles include tertiary and tertiary container, with their respective \"On\" colors":
+            - 'img "4 color swatches: tertiary, on tertiary, tertiary container, and on tertiary container."'
+            - paragraph:
+              - text: Tertiary color roles include
+              - strong: tertiary
+              - text: and
+              - strong: tertiary container
+              - text: ", with their respective \"On\" colors"
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: The tertiary color roles can be applied at the designer's discretion. They're intended to support broader color expression.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "On tertiary container Tertiary container":
+            - img "A selected element using Tertiary Container as a background color and On Tertiary Container for text."
+            - list:
+              - listitem: On tertiary container
+              - listitem: Tertiary container
+        - region:
+          - button "copy link to Error section": link
+          - text: Copy link
+          - heading "Error" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Use error roles to communicate error states, such as an incorrect password entered into a text field.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: "There are four error roles:"
+          - list:
+            - listitem:
+              - strong: "Error:"
+              - text: Attention-grabbing color against surface for fills, icons, and text, indicating urgency
+            - listitem:
+              - strong: "On error:"
+              - text: Text and icons against error
+            - listitem:
+              - strong: "Error container:"
+              - text: Attention-grabbing fill color against surface
+            - listitem:
+              - strong: "On error container:"
+              - text: Text and icons against error container
+          - paragraph: Error is an example of a static color (it doesn't change even in dynamic color schemes). Error color roles are made static by default with any dynamic color scheme. They still adapt to light and dark theme.
+          - figure "Error color roles include error and error container with their respective \"On\" colors.":
+            - 'img "4 color swatches: Error, On error, Error container and On error container roles."'
+            - paragraph:
+              - text: Error color roles include
+              - strong: error
+              - text: and
+              - strong: error container
+              - text: with their respective "On" colors.
+        - region:
+          - button "copy link to Surface section": link
+          - text: Copy link
+          - heading "Surface" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Use surface roles for more neutral backgrounds, and container colors for components like cards, sheets, and dialogs.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: "There are three surface roles:"
+          - list:
+            - listitem:
+              - strong: "Surface:"
+              - text: Default color for backgrounds
+            - listitem:
+              - strong: "On surface:"
+              - text: Text and icons against any
+              - strong: surface
+              - text: or
+              - strong: surface container
+              - text: color
+            - listitem:
+              - strong: "On surface variant:"
+              - text: Lower-emphasis color for text and icons against any
+              - strong: surface
+              - text: or
+              - strong: surface container
+              - text: color
+          - figure "Surface and on surface roles in light theme":
+            - 'img "3 color swatches: Surface, On surface and On surface variant."'
+            - paragraph:
+              - strong: Surface
+              - text: and
+              - strong: on surface
+              - text: roles in light theme
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: "There are also five surface container roles named based on their level of emphasis:"
+          - list:
+            - listitem:
+              - paragraph:
+                - strong: "Surface container lowest:"
+                - text: Lowest-emphasis container color
+            - listitem:
+              - paragraph:
+                - strong: "Surface container low:"
+                - text: Low-emphasis container color
+            - listitem:
+              - paragraph:
+                - strong: "Surface container:"
+                - text: Default container color
+            - listitem:
+              - paragraph:
+                - strong: "Surface container high:"
+                - text: High-emphasis container color
+            - listitem:
+              - paragraph:
+                - strong: "Surface container highest:"
+                - text: Highest-emphasis container color
+          - paragraph:
+            - strong: Surface container
+            - text: is the default role, but the others are especially helpful for creating hierarchy and nested containers in
+            - link "layouts for expanded screens":
+              - /url: /m3/pages/breakpoints/expanded
+            - text: .
+          - figure "The five surface container roles, shown in light and dark theme":
+            - button "Pause Video": pause
+            - paragraph:
+              - text: The five
+              - strong: surface container
+              - text: roles, shown in light and dark theme
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - text: The most common combination of surface roles uses
+            - strong: surface
+            - text: for a background area and
+            - strong: surface container
+            - text: for a navigation area.
+          - paragraph:
+            - text: Text and icons typically use
+            - strong: on surface
+            - text: and
+            - strong: on surface variant
+            - text: on all types of surfaces.
+          - figure "Surface Surface container":
+            - img "Email app using Surface for the main background color and Surface Container for the navigation bar background"
+            - list:
+              - listitem: Surface
+              - listitem: Surface container
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - text: All color mappings – but especially surface colors – should remain the same for layout regions across breakpoints. For example, the body area will use the
+            - strong: surface
+            - text: color and the navigation area will use the
+            - strong: surface container
+            - text: color on both mobile and tablet.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Surface Surface container":
+            - img "Mobile and tablet screens both using Surface for main background and surface container for navigation background."
+            - list:
+              - listitem: Surface
+              - listitem: Surface container
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - text: Depending on necessary hierarchy, feature area, and design logic, you can use
+            - link "add-on surface colors":
+              - /url: /m3/pages/color-roles/tab-1#63d6db08-59e2-4341-ac33-9509eefd9b4f
+            - text: in larger window class sizes as long as colors are consistently applied.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "In this example, the body and navigation regions have the same color roles across breakpoints (surface and surface container, respectively) with the addition of other surface container colors at larger sizes.":
+            - button "Pause Video": pause
+            - paragraph:
+              - text: In this example, the body and navigation regions have the same color roles across breakpoints (
+              - strong: surface
+              - text: and
+              - strong: surface container
+              - text: ", respectively) with the addition of other surface container colors at larger sizes."
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - text: By default, neutral-colored components such as navigation bars, menus, or dialogs are mapped to specific surface container roles, but these
+            - link "roles can be remapped":
+              - /url: /m3/pages/advanced/overview
+            - text: by makers to suit user needs.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - 'figure "Default surface container roles applied to components: Surface container low Surface container Surface container high Surface container highest"':
+            - img "Surface container low applied to an elevated button and card, surface container applied to the top and bottom bar, surface container high applied to the FAB and basic dialog, surface container highest applied to an input label and off switch."
+            - paragraph: "Default surface container roles applied to components:"
+            - list:
+              - listitem:
+                - strong: Surface container low
+              - listitem:
+                - strong: Surface container
+              - listitem:
+                - strong: Surface container high
+              - listitem:
+                - strong: Surface container highest
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Inverse colors" [level=3]
+          - paragraph: Inverse roles are applied selectively to components to achieve colors that are the reverse of those in the surrounding UI, creating a contrasting effect.
+          - list:
+            - listitem:
+              - strong: "Inverse surface:"
+              - text: Background fills for elements which contrast against surface
+            - listitem:
+              - strong: "Inverse on surface:"
+              - text: Text and icons against inverse surface
+            - listitem:
+              - strong: I
+              - strong: "nverse primary:"
+              - text: Actionable elements, such as text buttons, against inverse surface
+          - figure "Inverse surface, inverse on surface, and inverse primary roles in the color scheme, shown in light theme":
+            - 'img "3 color swatches: Inverse surface, inverse on surface and inverse primary roles."'
+            - paragraph:
+              - strong: Inverse surface
+              - text: ","
+              - strong: inverse on surface
+              - text: ", and"
+              - strong: inverse primary
+              - text: roles in the color scheme, shown in light theme
+          - 'figure "A snackbar which uses: Inverse surface for its background Inverse on surface for its text Inverse primary for its text button"':
+            - img "Snackbar component using inverse surface for its background, inverse on surface for its text and inverse primary of its text button, shown in light theme"
+            - paragraph: "A snackbar which uses:"
+            - list:
+              - listitem:
+                - strong: Inverse surface
+                - text: for its background
+              - listitem:
+                - strong: Inverse on surface
+                - text: for its text
+              - listitem:
+                - strong: Inverse primary
+                - text: for its text button
+            - paragraph
+        - region:
+          - button "copy link to Outline section": link
+          - text: Copy link
+          - heading "Outline" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: "There are two outline colors to be used against a surface:"
+          - list:
+            - listitem:
+              - strong: "Outline:"
+              - text: Important boundaries, such as a text field outline
+            - listitem:
+              - strong: "Outline variant:"
+              - text: Decorative elements, such as dividers, and when other elements provide 4.5:1 contrast
+          - figure "Outline and outline variant roles in the color scheme, shown in light theme":
+            - 'img "2 color swatches: Outline and outline variant"'
+            - paragraph:
+              - strong: Outlin
+              - strong: e
+              - text: and
+              - strong: outline variant
+              - text: roles in the color scheme, shown in light theme
+          - figure "A text field which uses outline for its container border A list item which uses outline variant for its divider line":
+            - img "Diagram comparing used of outline and outline variant."
+            - list:
+              - listitem:
+                - text: A text field which uses
+                - strong: outline
+                - text: for its container border
+              - listitem:
+                - text: A list item which uses
+                - strong: outline variant
+                - text: for its divider line
+            - paragraph
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "close Don’t Don’t use the outline color for dividers since they have different contrast requirements. Instead, use outline variant.":
+            - img "Outline color incorrectly used for dividers"
+            - text: close Don’t
+            - paragraph:
+              - text: Don’t use the
+              - strong: outli
+              - strong: ne
+              - text: color for dividers since they have different contrast requirements. Instead, use
+              - strong: outline variant
+              - text: .
+          - figure "close Don’t Don’t use the outline color for components that contain multiple elements, such as cards. Instead, use outline variant.":
+            - img "Outline color incorrectly used for cards."
+            - text: close Don’t
+            - paragraph:
+              - text: Don’t use the
+              - strong: outline
+              - text: color for components that contain multiple elements, such as cards. Instead, use
+              - strong: outline variant
+              - text: .
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "close Don’t Don’t use the outline variant color to create visual hierarchy or define the visual boundary of targets. Instead, use the outline color or another color providing 3:1 contrast with the surface color.":
+            - img "Outline variant color incorrectly used for input and filter chips."
+            - text: close Don’t
+            - paragraph:
+              - text: Don’t use the
+              - strong: outline variant
+              - text: color to create visual hierarchy or define the visual boundary of targets. Instead, use the
+              - strong: outline
+              - text: color or another color providing 3:1 contrast with the surface color.
+          - figure "exclamation Caution The outline variant color can be used for the border of targets like chips and buttons, provided that those targets contain elements inside them that provide visual contrast. In this example of chips and buttons, the icons and text inside the targets meet 4.5:1 contrast.":
+            - img "Outline variant incorrectly color used for chips."
+            - text: exclamation Caution
+            - paragraph:
+              - text: The
+              - strong: outline variant
+              - text: color can be used for the border of targets like chips and buttons, provided that those targets contain elements inside them that provide visual contrast. In this example of chips and buttons, the icons and text inside the targets meet 4.5:1 contrast.
+        - region:
+          - button "copy link to Add-on color roles section": link
+          - text: Copy link
+          - heading "Add-on color roles" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Most products won't need to use these add-on color roles. However, some products require the greater flexibility and control that add-on roles provide. If you aren't sure whether your product should use the add-on roles, it probably shouldn't and you can ignore them.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Fixed accent colors" [level=3]
+          - paragraph:
+            - strong: Primary fixed, secondary fixed,
+            - text: and
+            - strong: t
+            - strong: ertiary fixed
+            - text: are fill colors used against surface. These colors maintain the same tone in light and dark themes, as opposed to regular container colors, which change in tone between these themes. The fixed color role may be used instead of the equivalent container role in situations where such fixed behavior is desired.
+          - paragraph:
+            - text: The
+            - strong: primary fixed dim
+            - text: ","
+            - strong: secondary fixed dim
+            - text: ", and"
+            - strong: tertiary fixed dim
+            - text: roles provide a stronger, more emphasized tone relative to the equivalent fixed color. They may be used where a deeper color but the same fixed behavior is desired.
+          - figure "Fixed and fixed dim color roles for the primary, secondary, and tertiary color groups, shown in both light and dark themes. Note how the colors stay the same between themes.":
+            - 'img "6 color swatches: Primary, secondary and tertiary fixed swatches, along with their darker Dim counterparts, shown in both light and dark theme."'
+            - paragraph:
+              - strong: Fixed
+              - text: and
+              - strong: fixed dim
+              - text: color roles for the
+              - strong: primary
+              - text: ","
+              - strong: secondary
+              - text: ", and"
+              - strong: tertiary
+              - text: color groups, shown in both light and dark themes. Note how the colors stay the same between themes.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "A FAB which uses primary fixed (1) for its container fill color, shown in light and dark themes. Note how the container color stays the same between themes.":
+            - img "FAB in light and dark theme, using the primary fixed role for its container fill color."
+            - paragraph:
+              - text: A FAB which uses
+              - strong: primary fixed
+              - text: (1) for its container fill color, shown in light and dark themes. Note how the container color stays the same between themes.
+          - figure "For comparison, a FAB which uses primary container (2) for its container fill color, shown in light and dark themes. Note how the container color changes tone between themes.":
+            - img "FAB in light and dark theme, using the primary container role for its container fill color."
+            - paragraph:
+              - text: For comparison, a FAB which uses
+              - strong: primary container
+              - text: (2) for its container fill color, shown in light and dark themes. Note how the container color changes tone between themes.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - 'figure "Examples of fixed and fixed dim colors in use: Primary fixed for a FAB container color Primary fixed dim for an icon button container"':
+            - img "2 email app screens using primary fixed and primary fixed dim."
+            - paragraph: "Examples of fixed and fixed dim colors in use:"
+            - list:
+              - listitem:
+                - strong: Primary fixed
+                - text: for a FAB container color
+              - listitem:
+                - strong: Primary fixed dim
+                - text: for an icon button container
+            - paragraph
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "close Don’t Fixed colors don't change based on light or dark theme, so they're likely to cause contrast issues. Avoid using them where contrast is necessary.":
+            - img "Permissions screen with Surface used for the background and Primary Fixed incorrectly used for the button fill."
+            - text: close Don’t
+            - paragraph: Fixed colors don't change based on light or dark theme, so they're likely to cause contrast issues. Avoid using them where contrast is necessary.
+            - paragraph
+            - paragraph
+            - paragraph
+            - paragraph
+            - paragraph
+          - figure "check Do Use primary, secondary, and tertiary roles for accent colors where contrast is needed":
+            - img "Permissions screen with Surface used for the background and Primary correctly used for the button fill."
+            - text: check Do
+            - paragraph:
+              - text: Use
+              - strong: primary
+              - text: ","
+              - strong: secondary
+              - text: ", and"
+              - strong: tertiary
+              - text: roles for accent colors where contrast is needed
+            - paragraph
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "On fixed accent colors" [level=3]
+          - paragraph:
+            - strong: On fixed
+            - text: colors are used for text and icons which sit on top of the corresponding Fixed color. For example,
+            - strong: "on"
+            - strong: primary fixed
+            - text: is used for text and icons against the
+            - strong: primary fixed
+            - text: color. The same usage applies for the equivalent secondary and tertiary colors.
+          - paragraph
+          - paragraph:
+            - strong: On fixed variant
+            - text: colors are used for text and icons needing lower emphasis against the corresponding fixed color. For example,
+            - strong: on primary fixed variant
+            - text: is used for low emphasis text and icons against the
+            - strong: primary fixed
+            - text: color. The same usage applies for the equivalent secondary and tertiary colors.
+          - figure "On fixed and on fixed variant color roles for the primary, secondary, and tertiary accent groups, shown in both light and dark themes":
+            - img "6 color swatches for on fixed and on fixed variant"
+            - paragraph:
+              - strong: On fixed
+              - text: and
+              - strong: on fixed variant
+              - text: color roles for the
+              - strong: primary
+              - text: ","
+              - strong: secondary
+              - text: ", and"
+              - strong: tertiary
+              - text: accent groups, shown in both light and dark themes
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "A customized banner which uses on primary fixed variant (1) for its deemphasized text and (2) on primary fixed for its emphasized text":
+            - img "Banner in a news app using on primary fixed variant and on primary fixed"
+            - paragraph:
+              - text: A customized banner which uses
+              - strong: on primary fixed variant
+              - text: (1) for its deemphasized text and (2)
+              - strong: on primary fixed
+              - text: for its emphasized text
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Bright and dim surface roles" [level=3]
+          - paragraph: "There are two add-on surface roles:"
+          - list:
+            - listitem:
+              - strong: "Surface dim:"
+              - text: Dimmest surface color in light and dark themes
+            - listitem:
+              - strong: "Surface bright:"
+              - text: Brightest surface color in light and dark themes
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Surface dim, surface, and surface bright in light theme":
+            - 'img "3 color swatches: Surface dim, surface, and surface bright"'
+            - paragraph:
+              - strong: Surface dim
+              - text: ","
+              - strong: surface
+              - text: ", and"
+              - strong: surface bright
+              - text: in light theme
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Surface dim, surface, and surface bright in dark theme":
+            - 'img "3 color swatches: Surface dim, surface, and surface bright"'
+            - paragraph:
+              - strong: Surface dim
+              - text: ","
+              - strong: surface
+              - text: ", and"
+              - strong: surface bright
+              - text: in dark theme
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - text: While the default
+            - strong: surface
+            - text: color automatically inverts between light and dark themes (it’s a light color in light theme and it flips to a dark color in dark theme), the
+            - strong: surface bright
+            - text: and
+            - strong: surface dim
+            - text: colors invert in a slightly different way. More precisely, they keep their relative brightness across both light and dark theme.
+          - paragraph:
+            - text: For example, in an interface using the default
+            - strong: surface
+            - text: role, the mapped area is the brightest in light theme and the dimmest in dark theme. In an interface using the
+            - strong: surface bright
+            - text: role, the mapped area is the brightest in both light and dark theme.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Light theme Surface Surface container":
+            - img "UI with surface role applied to the body area and surface container applied to the navigation area, shown in light theme."
+            - paragraph: Light theme
+            - list:
+              - listitem:
+                - strong: Surface
+              - listitem:
+                - strong: Surface container
+          - figure "Dark theme Surface Surface container":
+            - img "UI with surface role applied to the body area and surface container applied to the navigation area, shown in dark theme."
+            - paragraph: Dark theme
+            - list:
+              - listitem:
+                - strong: Surface
+              - listitem:
+                - strong: Surface container
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Light theme Surface bright Surface container":
+            - img "UI with surface bright role applied to the body area and surface container applied to the navigation area, shown in light theme."
+            - paragraph: Light theme
+            - list:
+              - listitem:
+                - strong: Surface bright
+              - listitem:
+                - strong: Surface container
+            - paragraph
+          - figure "Dark theme Surface bright Surface container":
+            - img "UI with surface bright role applied to the body area and surface container applied to the navigation area, shown in dark theme."
+            - paragraph: Dark theme
+            - list:
+              - listitem:
+                - strong: Surface bright
+              - listitem:
+                - strong: Surface container
+            - paragraph
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Navigation rail with surface dim background Chat window with surface bright background":
+            - img "Large screen chat UI. The surface dim role is applied to the left navigation rail and the surface bright role is applied to the chat window."
+            - list:
+              - listitem:
+                - text: Navigation rail with
+                - strong: surface dim
+                - text: background
+              - listitem:
+                - text: Chat window with
+                - strong: surface bright
+                - text: background
+            - paragraph
+    - navigation "previous and up next articles":
+      - 'link "Previous Color system: Overview"':
+        - /url: /styles/color/system
+      - link "Up next Choosing a scheme":
+        - /url: /styles/color/choosing-a-scheme
+    - button "go back to top": vertical_align_top
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

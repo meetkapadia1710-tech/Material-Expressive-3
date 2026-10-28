@@ -1,0 +1,39 @@
+# Color resources
+Source ID: P041
+Public page: https://m3.material.io/styles/color/resources
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/e5cd1701-c004-498e-a4ec-620446227c51.json
+Retrieved: 2026-10-28T07:43:10.452860+00:00
+Source SHA-256: 43a013e1026674d482b6bd342e136d750af342899fa41e06889564f80985e985
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+Use color tools and tutorials to quickly create and apply color palettes
+
+## Tab 1
+
+Material Theme Builder
+
+Material Theme Builder (MTB) is a Figma plugin that allows makers to emulate the color extraction process for dynamic color and create custom tonal schemes.
+
+MTB creates a full tonal scheme, contrast checking, and tokens. 
+
+Material Theme Builder plugin
+
+Material Theme Builder lets you create color schemes and apply them to your designs.
+Media alternative text: Screenshot of Figma design software showing a color scheme diagram on the canvas, a modal popup with the Material Theme Builder UI, and color scheme styles listed in the right UI pane.
+
+Tutorials and codelabs
+
+- Visualizing dynamic color in your app — Learn how to apply user-generated color to your app
+
+- Designing with accessible colors — Learn how color relates to accessibility and contrast guidelines
+
+- Customizing Material color — Learn how to create a custom theme with the Material Theme Builder and apply it to design mockups in Figma
+
+- Build a Material color scheme — Make a M3 color scheme with the color roles used in Material Components
+
+## Links embedded in visible content
+https://codelabs.developers.google.com/color-contrast-accessibility?hl=en#0
+https://codelabs.developers.google.com/customizing-material-color?hl=en#0
+https://codelabs.developers.google.com/visualize-dynamic-color?hl=en#0
+https://www.figma.com/community/file/1248805263844976008/Build-a-Material-color-scheme
+https://www.figma.com/community/plugin/1034969338659738588/material-theme-builder

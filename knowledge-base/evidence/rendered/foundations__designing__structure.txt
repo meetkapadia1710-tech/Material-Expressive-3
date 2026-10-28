@@ -1,0 +1,314 @@
+URL: https://m3.material.io/foundations/designing/structure
+REA evidence: ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3
+Step: ready_3
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /foundations/designing/structure#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Designing" [level=1]
+      - text: Implement intuitive, accessible layouts, considering structure, color, and flow
+      - navigation "article tabs":
+        - tablist:
+          - tab "Overview"
+          - tab "Color contrast"
+          - tab "Structure" [selected]
+          - tab "Flow"
+          - tab "Elements"
+      - navigation "page content":
+        - text: On this page
+        - list:
+          - listitem:
+            - link "Hierarchy"
+          - listitem:
+            - link "Web landmarks and headings"
+          - listitem:
+            - link "Target sizes"
+      - tabpanel:
+        - region:
+          - button "copy link to Hierarchy section": link
+          - text: Copy link
+          - heading "Hierarchy" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: When navigation is easy, users understand where they are in your app and what’s important. To emphasize which information is important, multiple visual and textual cues like color, shape, text, and motion add clarity.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Types of feedback" [level=3]
+          - paragraph: Visual feedback (such as labels, colors, and icons) and touch feedback show users what is available in the UI.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Navigation" [level=3]
+          - paragraph: Navigation can have clear task flows with minimal steps, easy-to-locate controls and clear labeling. Focus control, or the ability to control keyboard and reading focus, can be implemented for frequently used tasks.
+          - paragraph:
+            - text: Every added button, image, and line of text increases the complexity of a UI.
+            - strong: "Y"
+            - strong: "ou can simplify how your UI is understood by using:"
+          - list:
+            - listitem: Clearly visible elements
+            - listitem: Sufficient contrast and size
+            - listitem: A clear hierarchy of importance
+            - listitem: Key information that is discernable at a glance
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Levels of importance" [level=3]
+          - paragraph:
+            - strong: "To convey an item’s relative level of importance:"
+          - list:
+            - listitem: Place important actions at the top or bottom of the screen (reachable with shortcuts)
+            - listitem: Place related items of a similar hierarchy next to each other
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Visual hierarchy" [level=3]
+          - paragraph: To enable the screen reader to read out content in the intended order, it’s important for designers to collaborate with developers – both for writing out the HTML in the correct order, and understanding how screen readers will interpret designs.
+          - paragraph: While CSS determines the layout and appearance of a page, screen readers rely on the top-down structure of HTML on any platform (mobile or web). This structure creates a map for the screen reader to follow when reading the content.
+          - figure "An example of how content hierarchy in a screen can be identified in a logical reading order to optimize for the ways assistive tech, such as screen readers, may interpret information":
+            - img "Example of a mobile app using 4 content cards in a 2 by 2 grid. They reading order is top left, to top right, then bottom left, then bottom right."
+            - paragraph: An example of how content hierarchy in a screen can be identified in a logical reading order to optimize for the ways assistive tech, such as screen readers, may interpret information
+        - region:
+          - button "copy link to Web landmarks and headings section": link
+          - text: Copy link
+          - heading "Web landmarks and headings" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - strong: Define content and UI layout to improve navigation and comprehension.
+          - paragraph: Assistive technologies (AT) rely on clear, delineated structures to process page information, navigating primarily through the use of headings and landmarks. Many assistive technologies, such as screen readers, translate a design into a linear experience, which means that many users interact with content in hierarchical, predetermined order. Therefore, thinking through structural decisions in advance can improve the accessibility of a product.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - strong: For web only
+            - text: ": Landmarks and headings help assistive-technology users orient themselves to a web page and allow for easy navigation and traversal across large sections of a document or page."
+          - paragraph:
+            - text: By
+            - strong: classifying and labeling sections of a page
+            - text: ", structural information that is conveyed visually through layout design can also be represented in code."
+          - figure "Example of a page diagram mapping the areas for a UI in order to consider the relative landmarks and headings":
+            - img "Diagram of a website, showing different regions and their associated landmarks and headings."
+            - paragraph: Example of a page diagram mapping the areas for a UI in order to consider the relative landmarks and headings
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Identifying landmarks and headings" [level=3]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "1. Define landmarks" [level=4]:
+            - strong: 1. Define landmarks
+          - paragraph: Landmarks are large blocks of content that establish the high-level structure of your layout. They're a set of Accessible Rich Internet Applications (ARIA) roles that provide easy access to, and important meaning for, common content areas of a web page.
+          - paragraph:
+            - text: "There are eight landmark roles:"
+            - strong: navigation, search, main, banner, complementary, contentinfo, region, and form
+            - text: .
+          - paragraph: "The eight landmark roles in the W3C ARIA guidelines include:"
+          - list:
+            - listitem:
+              - strong: Navigation
+              - text: ": Contains lists of navigation links (there can be multiple, in which case you should differentiate in label)"
+            - listitem:
+              - strong: Search
+              - text: ": A search field"
+            - listitem:
+              - strong: Main
+              - text: ": The main content area as defined by UX. There should be only one."
+            - listitem:
+              - strong: Banner
+              - text: ": Typically the header; content repeated from page to page, often contains navigation and toolbars. There should be only one."
+            - listitem:
+              - strong: Complementary
+              - text: ": A sidebar or aside to main content that can stand alone without the main content"
+            - listitem:
+              - strong: Contentinfo
+              - text: ": Typically the footer; contains information describing the site and its content (for example, copyright). There should be only one."
+            - listitem:
+              - strong: Region
+              - text: ": Content regions are important content blocks. They can be nested inside the “main” landmark. Regions should be labeled with names that make the purpose of that region clear."
+            - listitem:
+              - strong: Form
+              - text: ": Takes and stores user info."
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Add accessibility labels" [level=4]:
+            - strong: Add accessibility labels
+          - paragraph:
+            - text: Add
+            - strong: clear and specific labels
+            - text: to any landmark roles that appear multiple times (regions or navigation typically). This will help users differentiate information.
+          - paragraph:
+            - text: Labels should be added to
+            - strong: all regions
+            - text: ", as well as any landmark where a label will enhance meaning. For example, explaining the contents or purpose of a sidebar."
+          - paragraph:
+            - strong: Don't repeat the landmark role within a label
+            - text: .
+          - figure "This layout has two areas assigned the navigation role. Each landmark should get a unique label to help users tell the difference between elements.":
+            - img "Diagram labeling two regions with a navigation role with the labels primary and pagination"
+            - text: This layout has two areas assigned the navigation role. Each landmark should get a unique label to help users tell the difference between elements.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "2. Define headings" [level=4]:
+            - strong: 2. Define headings
+          - paragraph: Assistive technology users often navigate web pages with the help of headings. They create a clear hierarchy to help users navigate and take action.
+          - list:
+            - listitem: Identify headings based on content hierarchy, rather than visual styling
+            - listitem: Headings should not skip a level, for example, don't go from H2 to H4 without using an H3
+            - listitem: Map content on your pages to headings (H1–H6) in sequential order based on the hierarchy of your content
+            - listitem: A single H1 for the page title is recommended
+          - figure "Example of headings marked up in code":
+            - img "Diagram labeling different headings"
+            - text: Example of headings marked up in code
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Consider hierarchy in addition to style" [level=4]:
+            - strong: Consider hierarchy in addition to style
+          - paragraph:
+            - strong: Ensure that headings correspond with meaningful titles
+            - text: . If they don't, consider changing the titles in the UI to benefit the experience of all users or adding a label for assistive tech.
+          - paragraph: Heading levels are informed by the layout's information architecture—the structural hierarchy that’s applied to a set of items. The page’s visual styling does not need to match the heading levels in terms of prominence and visual hierarchy.
+        - region:
+          - button "copy link to Target sizes section": link
+          - text: Copy link
+          - heading "Target sizes" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Material Design’s target guidelines can help users who aren’t able to see the screen, or who have difficulty with small touch targets, to tap elements in your app.
+          - figure:
+            - img "Target guidelines on buttons for easy accessibility."
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Touch and pointer target sizes" [level=3]
+          - paragraph: Touch targets are the parts of the screen that respond to user input, extending beyond the visual bounds of an element. For example, an icon may appear to be 24 x 24dp, but the padding surrounding it comprises the full 48 x 48dp touch target.
+          - paragraph: For most platforms, consider making touch targets at least 48 x 48dp. A touch target this size results in a physical size of about 9mm, regardless of screen size. The recommended target size for touchscreen elements is 7-10mm. It may be appropriate to use larger touch targets to accommodate a larger spectrum of users.
+          - paragraph: "Note: iOS recommends 44 x 44dp targets."
+          - 'figure "Icons: 24dp Star icon: 40dp Touch target on both: 48dp"':
+            - img "A row of four 24dp icons and one 40dp icon"
+            - paragraph: "Icons: 24dp"
+            - paragraph: "Star icon: 40dp"
+            - paragraph: "Touch target on both: 48dp"
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Pointer targets" [level=3]
+          - paragraph: Pointer targets are similar to touch targets, but are implemented by motion-tracking pointer devices such as a mouse or a stylus.
+          - paragraph: Consider making pointer targets minimums 44 x 44dp.
+          - 'figure "Recommended target size for pointers: 44dp"':
+            - img "A row of four icon buttons in the bottom app bar."
+            - text: "Recommended target size for pointers: 44dp"
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Target spacing" [level=3]
+          - paragraph: In most cases, targets separated by 8dp of space or more promote balanced information density and usability.
+          - 'figure "Two groups of icons showing their overall spacing and the spacing between each other Touch target size: 48dp Padding: 8dp"':
+            - img "Three icons in a row with 48dp touch target size and three icons in a row with 8dp padding between icons."
+            - paragraph: Two groups of icons showing their overall spacing and the spacing between each other
+            - paragraph: "Touch target size: 48dp"
+            - paragraph: "Padding: 8dp"
+    - navigation "previous and up next articles":
+      - 'link "Previous Designing: Color contrast"':
+        - /url: /foundations/designing/color-contrast
+      - 'link "Up next Designing: Flow"':
+        - /url: /foundations/designing/flow
+    - button "go back to top": vertical_align_top
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

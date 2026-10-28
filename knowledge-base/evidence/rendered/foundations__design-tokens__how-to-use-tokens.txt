@@ -1,0 +1,239 @@
+URL: https://m3.material.io/foundations/design-tokens/how-to-use-tokens
+REA evidence: ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3
+Step: ready_7
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /foundations/design-tokens/how-to-use-tokens#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Design tokens" [level=1]
+      - text: Design tokens are the building blocks of all UI elements. The same tokens are used in designs, tools, and code.
+      - navigation "article tabs":
+        - tablist:
+          - tab "Overview"
+          - tab "How to use tokens" [selected]
+      - navigation "page content":
+        - text: On this page
+        - list:
+          - listitem:
+            - link "Download Material baseline tokens"
+          - listitem:
+            - link "Use tokens in Figma"
+      - tabpanel:
+        - region:
+          - button "copy link to Download Material baseline tokens section": link
+          - text: Copy link
+          - heading "Download Material baseline tokens" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - text: Material Design’s baseline theme includes design tokens and default values.
+            - link "Download the theme":
+              - /url: http://github.com/material-foundation/material-tokens
+            - text: as a Design System Package (DSP) to customize, collaborate on, and use in your own designs and product code.
+            - link "Learn about the DSP JSON format":
+              - /url: https://github.com/AdobeXD/design-system-package-dsp
+        - region:
+          - button "copy link to Use tokens in Figma section": link
+          - text: Copy link
+          - heading "Use tokens in Figma" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - text: To begin, install the
+            - link "Material Theme Builder":
+              - /url: https://goo.gle/material-theme-builder-figma
+            - text: Figma plugin from the community page.
+          - paragraph
+          - heading "Generate tokens" [level=3]
+          - list:
+            - listitem:
+              - text: "Open Figma and navigate to:"
+              - strong: Plugins
+              - text: ">"
+              - strong: Material Theme Builder
+              - text: ">"
+              - strong: Open Plugin
+            - listitem:
+              - text: Select
+              - strong: Get started
+              - text: ", this will create"
+              - strong: material-theme
+              - text: with baseline values by default. Color and text styles will begin populating the right hand design panel. When your tokens are fully generated, your artboard will contain tonal palettes for light and dark color schemes, as well as a default type scale.
+            - listitem:
+              - text: Your tokens are now represented as
+              - link "Figma styles":
+                - /url: https://help.figma.com/hc/en-us/articles/360039238753-Styles-in-Figma
+              - text: that can be used throughout your designs
+          - paragraph
+          - heading "Update token values" [level=3]
+          - heading "Using the Material Theme Builder Figma plugin (updates colors only)" [level=4]
+          - list:
+            - listitem:
+              - text: "Open Figma and navigate to:"
+              - strong: Plugins
+              - text: ">"
+              - strong: Material Theme Builder
+              - text: ">"
+              - strong: Open Plugin
+            - listitem: Choose the colors. Updated color and text styles will begin populating the right hand design panel.
+            - listitem:
+              - text: Your updated tokens are now represented as
+              - link "Figma styles":
+                - /url: https://help.figma.com/hc/en-us/articles/360039238753-Styles-in-Figma
+              - text: that can be used throughout your designs
+          - paragraph
+          - heading "Using Figma styles" [level=4]
+          - list:
+            - listitem:
+              - text: "In Figma, navigate to the file in which the tokenized style is defined. Shortcut: right click the style in the right hand sidebar and select"
+              - strong: Go to style definition.
+            - listitem:
+              - text: In the right hand sidebar, hover over the style you want to update and
+              - strong: select the adjust icon when it appears
+              - text: . Or, right click the style in the style picker and select
+              - strong: Edit style
+              - text: .
+            - listitem:
+              - text: Make your changes to the token name, description, properties, etc. using the
+              - strong: Edit style panel
+              - text: . Close the panel when finished.
+          - paragraph
+          - heading "Use tokens in product mock-ups" [level=3]
+          - list:
+            - listitem:
+              - text: Instead of manually setting the color or typography for elements in a layout, apply the
+              - link "Figma styles":
+                - /url: https://help.figma.com/hc/en-us/articles/360039238753-Styles-in-Figma
+              - text: representing your design tokens. This helps ensure that developers will correctly understand and apply your design choices.
+          - paragraph
+          - heading "Use tokens with the Material Design Kit" [level=3]
+          - list:
+            - listitem: Duplicate the Material Design Kit in Figma
+            - listitem:
+              - text: Navigate to
+              - strong: Plugins
+              - text: ">"
+              - strong: Material Theme Builder
+              - text: ">"
+              - strong: Open plugin
+            - listitem:
+              - text: With components selected,
+              - strong: select swap
+              - text: . This will swap the baseline Material token style values with your own generated token style values.
+          - paragraph
+          - heading "Export tokens" [level=3]
+          - list:
+            - listitem:
+              - text: "Open Figma and navigate to:"
+              - strong: Plugins
+              - text: ">"
+              - strong: Material Theme Builder
+              - text: ">"
+              - strong: Open Plugin
+            - listitem:
+              - text: Navigate to the
+              - strong: Export tab
+              - text: . Select the format you want to export for (Android, Jetpack Compose)
+            - listitem:
+              - text: Name your .zip file and select
+              - strong: Save
+          - paragraph: Your tokens are ready to share!
+    - navigation "previous and up next articles":
+      - 'link "Previous Design tokens: Overview"':
+        - /url: /foundations/design-tokens/overview
+      - link "Up next Gestures":
+        - /url: /foundations/interaction/gestures
+    - button "go back to top": vertical_align_top
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

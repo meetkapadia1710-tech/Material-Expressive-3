@@ -1,0 +1,162 @@
+URL: https://m3.material.io/foundations/overview/principles
+REA evidence: ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e
+Step: ready_8
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /foundations/overview#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Overview" [level=1]
+      - text: Accessible design enables users with diverse abilities to navigate, understand, and enjoy a UI
+      - navigation "article tabs":
+        - tablist:
+          - tab "Principles" [selected]
+          - tab "Assistive technology"
+      - navigation "page content":
+        - text: On this page
+        - list:
+          - listitem:
+            - link "Accessibility & Material Design"
+          - listitem:
+            - link "Principles for accessible design"
+      - tabpanel:
+        - region:
+          - button "copy link to Accessibility & Material Design section": link
+          - text: Copy link
+          - heading "Accessibility & Material Design" [level=2]
+          - paragraph:
+            - strong: Accessibility by default
+            - text: is a core design value for Material. Material's accessibility requirements and goals are documented across component pages and guidelines. Understanding your product’s accessibility can enhance usability for all users, including those with low vision, blindness, hearing impairments, cognitive impairments, motor impairments, or situational disabilities (such as a broken arm).
+          - paragraph: Accessibility standards are built into Material components, providing a foundation for inclusive product design. Anticipating a wide range of human experiences and disabilities prevents costly redesigns, reduces tech and design debt, and conserves resources upfront.
+        - region:
+          - button "copy link to Principles for accessible design section": link
+          - text: Copy link
+          - heading "Principles for accessible design" [level=2]
+          - paragraph:
+            - text: The following principles for accessible design are approaches that can help
+            - strong: anticipate, include, and respond to the needs of individuals
+            - text: . They're considerations for design, development, collaboration, and co-creation that encourage inclusive and equitable outcomes.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Honor individuals" [level=3]
+          - paragraph: Universal default experiences rarely meet everyone’s needs. Introducing customizable features in a default experience allows room for individual adaptation. Honoring the shifting needs of any person can mean giving more freedom to choose things for themselves.
+          - paragraph: Because a person's experience throughout their day, or year, or life can continue to change, it helps to support varying preferences and choices that allow individuals to address how their changing conditions, individual knowledge, and varying needs are met.
+          - figure:
+            - img "silhouette of person's head made out of colorful liquid"
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Learn before, not after" [level=3]
+          - paragraph: Before defining solutions, invest time in understanding the needs of users with a wide range of abilities and life experiences. Formal and informal research can open new ways of thinking, reduce biases, and encourage creative ways to make access available, especially to those who fall outside prevailing norms.
+          - paragraph: Accessible design processes anticipate as many potential product or experience outcomes as possible upfront. When user problems do arise, exploring the unanticipated outcomes can become a research foundation for learning, adapting, and recovering thoughtfully.
+          - figure:
+            - img "cube floating above a circular hole"
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Requirements as a starting point" [level=3]
+          - paragraph:
+            - text: The minimum requirements established by
+            - link "WCAG":
+              - /url: https://www.w3.org/WAI/standards-guidelines/wcag/
+            - text: support specific human needs. However, these requirements can produce creative solutions with broad benefits.
+          - paragraph: History has shown that features originating from responses to specific access needs (dark mode, text-to-speech, speech-to-text) are a result of creative problem-solving within specified constraints. Seeing the requirements as opportunities, rather than constraints, has been shown to lead to solutions that ultimately serve many.
+          - figure:
+            - img "foam-like material sculpted into a puzzle piece resembling a standing human"
+    - navigation "previous and up next articles":
+      - link "Previous Web":
+        - /url: /develop/web
+      - 'link "Up next Overview: Assistive technology"':
+        - /url: /foundations/overview/assistive-technology
+    - button "go back to top": vertical_align_top
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

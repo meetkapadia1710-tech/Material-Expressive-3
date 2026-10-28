@@ -1,0 +1,340 @@
+{
+  "date": "2026-10-28",
+  "method": "Rendered text colors against composited ancestor backgrounds; 4.5:1 normal text and 3:1 large text. Excludes decorative, hidden and disabled elements. Not a complete accessibility certification.",
+  "darkDesktop": [
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 102,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 6.99,
+      "overflow": false,
+      "path": "/",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 174,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 6.82,
+      "overflow": false,
+      "path": "/projects",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 55,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 6.82,
+      "overflow": false,
+      "path": "/about",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 93,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 10.19,
+      "overflow": false,
+      "path": "/skills",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 100,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 6.72,
+      "overflow": false,
+      "path": "/achievements",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 28,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 8.57,
+      "overflow": false,
+      "path": "/contact",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 59,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/repograde",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 59,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/hindsight",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 51,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/playhub",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 51,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/bd-buildcon-bhumi-developers",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 33,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/api-traffic-optimizer",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 49,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/learnflex",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 48,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/mann-beauty-studio",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 41,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/wanderstay",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 36,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/coastal-blue-carbon",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 41,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/hydrogen-ecosystem-map",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 36,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/green-hydrogen-credits",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 40,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/robustvision-privacy-lens",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 36,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/peer-skill-swap",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 36,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/pocket-noticeboard",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 33,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.66,
+      "overflow": false,
+      "path": "/projects/receipt-scanner",
+      "theme": "dark"
+    }
+  ],
+  "darkMobile320": [
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 102,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 6.99,
+      "overflow": false,
+      "path": "/",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 174,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 6.82,
+      "overflow": false,
+      "path": "/projects",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 55,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 6.82,
+      "overflow": false,
+      "path": "/about",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 93,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 10.19,
+      "overflow": false,
+      "path": "/skills",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 100,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 6.72,
+      "overflow": false,
+      "path": "/achievements",
+      "theme": "dark"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 28,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 8.57,
+      "overflow": false,
+      "path": "/contact",
+      "theme": "dark"
+    }
+  ],
+  "lightDesktop": [
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 102,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.47,
+      "overflow": false,
+      "path": "/",
+      "theme": "light"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 174,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.14,
+      "overflow": false,
+      "path": "/projects",
+      "theme": "light"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 55,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 4.62,
+      "overflow": false,
+      "path": "/about",
+      "theme": "light"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 93,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.22,
+      "overflow": false,
+      "path": "/skills",
+      "theme": "light"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 100,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 4.58,
+      "overflow": false,
+      "path": "/achievements",
+      "theme": "light"
+    },
+    {
+      "bodyFont": "bodyFont, \"bodyFont Fallback\", \"DM Sans Variable\", sans-serif",
+      "checked": 28,
+      "failures": [],
+      "headingFont": "displayFont, \"displayFont Fallback\", \"Manrope Variable\", sans-serif",
+      "minimum": 5.6,
+      "overflow": false,
+      "path": "/contact",
+      "theme": "light"
+    }
+  ]
+}

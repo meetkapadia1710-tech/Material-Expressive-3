@@ -1,0 +1,2024 @@
+{
+  "v": [
+    {
+      "slug": "",
+      "exportedCarbonFileId": "a513b32c-174e-4b85-8553-60701c021797.json",
+      "carbonPath": "m3/pages/material-design"
+    },
+    {
+      "slug": "search.html",
+      "exportedCarbonFileId": null
+    },
+    {
+      "slug": "get-started",
+      "exportedCarbonFileId": null
+    },
+    {
+      "slug": "develop",
+      "exportedCarbonFileId": "c3d29ede-a66a-427b-8efc-afe353e8d513.json",
+      "carbonPath": "m3/pages/develop"
+    },
+    {
+      "slug": "develop/android/mdc-android",
+      "exportedCarbonFileId": "dc7f3bb6-9507-43d3-b8f8-7c68888fc7fa.json",
+      "carbonPath": "m3/pages/mdc-android"
+    },
+    {
+      "slug": "develop/android/jetpack-compose",
+      "exportedCarbonFileId": "dfec5d08-385a-4b2d-ad23-e44cc3410cef.json",
+      "carbonPath": "m3/pages/jetpack-compose"
+    },
+    {
+      "slug": "develop/flutter",
+      "exportedCarbonFileId": "d1fb318b-1f4a-43bf-b3b5-35543257b935.json",
+      "carbonPath": "m3/pages/flutter"
+    },
+    {
+      "slug": "develop/web",
+      "exportedCarbonFileId": "510dbdc8-6dae-4e5e-8d5f-dd93176cc7dd.json",
+      "carbonPath": "m3/pages/web"
+    },
+    {
+      "slug": "foundations",
+      "exportedCarbonFileId": "4b25a580-a734-4c2c-9f51-90c7431d2a66.json",
+      "carbonPath": "m3/pages/foundations"
+    },
+    {
+      "slug": "foundations/overview",
+      "exportedCarbonFileId": "4101047f-0a57-42f9-b537-2f1dcd7d1fa7.json",
+      "carbonPath": "m3/pages/overview",
+      "alternateSlugs": [
+        "overview/8386f4ab-ae95-43dd-9bad-d6d311929404",
+        "foundations/accessible-design/overview"
+      ],
+      "tabs": [
+        {
+          "label": "Principles"
+        },
+        {
+          "label": "Assistive technology"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/designing",
+      "exportedCarbonFileId": "d352451b-8348-4816-abac-4d7983f72f88.json",
+      "carbonPath": "m3/pages/designing",
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Color contrast"
+        },
+        {
+          "label": "Structure"
+        },
+        {
+          "label": "Flow"
+        },
+        {
+          "label": "Elements"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/writing",
+      "exportedCarbonFileId": "672aa1bf-2faf-4bf9-b0b5-7a9d782da071.json",
+      "carbonPath": "m3/pages/writing-and-text",
+      "tabs": [
+        {
+          "label": "Best practices"
+        },
+        {
+          "label": "Text truncation"
+        },
+        {
+          "label": "Text resizing"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/content-design/overview",
+      "exportedCarbonFileId": "e34bf326-f486-4b48-8b76-db3b0ce8a7a7.json",
+      "carbonPath": "m3/pages/content-overview"
+    },
+    {
+      "slug": "foundations/content-design/alt-text",
+      "exportedCarbonFileId": "5a576ba1-d2c8-4708-a167-2a10d0260f72.json",
+      "carbonPath": "m3/pages/alt-text"
+    },
+    {
+      "slug": "foundations/content-design/global-writing",
+      "exportedCarbonFileId": "33c706d8-c9b9-4190-a403-d028a56da5cb.json",
+      "carbonPath": "m3/pages/global-writing",
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Word choice"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/content-design/notifications",
+      "exportedCarbonFileId": "844999f2-e85f-4f25-bca4-6fb422a3853d.json",
+      "carbonPath": "m3/pages/notifications"
+    },
+    {
+      "slug": "foundations/content-design/style-guide",
+      "exportedCarbonFileId": "09101f02-d770-422e-ad62-1031f867c1aa.json",
+      "carbonPath": "m3/pages/style-guide",
+      "tabs": [
+        {
+          "label": "UX writing best practices"
+        },
+        {
+          "label": "Word choice"
+        },
+        {
+          "label": "Grammar and punctuation"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/glossary",
+      "exportedCarbonFileId": "e168c820-1e32-47af-8b0f-8960299aff3c.json",
+      "carbonPath": "m3/pages/material-a-z"
+    },
+    {
+      "slug": "foundations/building-for-all",
+      "exportedCarbonFileId": "3b4b956e-da36-419d-bf59-c1c0455601af.json",
+      "carbonPath": "m3/pages/building-for-all",
+      "tabs": [
+        {
+          "label": "User needs"
+        },
+        {
+          "label": "Co-design"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/customization",
+      "exportedCarbonFileId": "d82ab2cd-75e3-4cd0-8117-ff5ccbc8de85.json",
+      "carbonPath": "m3/pages/customization"
+    },
+    {
+      "slug": "foundations/design-tokens",
+      "exportedCarbonFileId": "abae98fd-d828-44f8-bb66-9ee8746f6073.json",
+      "carbonPath": "m3/pages/design-tokens",
+      "tabs": [
+        {
+          "label": "Overview",
+          "alternateSlugs": [
+            "overview/825906c9-6eed-47d1-8812-450910c1356e"
+          ]
+        },
+        {
+          "label": "How to use tokens"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/watches",
+      "exportedCarbonFileId": "ece8884d-3ef7-4f41-af54-9a402b3bd527.json",
+      "carbonPath": "m3/pages/watches",
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Foundations"
+        },
+        {
+          "label": "Styles"
+        },
+        {
+          "label": "Layout"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/xr/design",
+      "exportedCarbonFileId": "95a7d4f6-3a81-47b3-9e99-083b5daf66be.json",
+      "carbonPath": "m3/pages/xr-design",
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Interaction"
+        },
+        {
+          "label": "Layout"
+        },
+        {
+          "label": "Accessibility"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/xr/components",
+      "exportedCarbonFileId": "eef0dedf-83d1-41d0-a4b0-7072b620e5ac.json",
+      "carbonPath": "m3/pages/xr-components",
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "App bars"
+        },
+        {
+          "label": "Dialogs"
+        },
+        {
+          "label": "Nav bar"
+        },
+        {
+          "label": "Nav rail"
+        },
+        {
+          "label": "Toolbars"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/layout/layout-overview",
+      "exportedCarbonFileId": "a12b2de7-b2c4-4a79-8503-d3b1e8d4d601.json",
+      "carbonPath": "m3/pages/layout-overview",
+      "alternateSlugs": [
+        "foundations/adaptive-design/overview",
+        "m3/pages/understanding-layout",
+        "foundations/layout/understanding-layout"
+      ],
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Parts of layout"
+        },
+        {
+          "label": "Adaptive design"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/layout/breakpoints",
+      "exportedCarbonFileId": "16281dc1-7630-4e78-abaf-c9bc8be69663.json",
+      "carbonPath": "m3/pages/breakpoints",
+      "alternateSlugs": [
+        "foundations/adaptive-design/large-screens",
+        "foundations/adaptive-design/foldables",
+        "foundations/layout/applying-layout",
+        "m3/pages/breakpoints"
+      ],
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Compact"
+        },
+        {
+          "label": "Medium"
+        },
+        {
+          "label": "Expanded"
+        },
+        {
+          "label": "Large & extra-large"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/layout/canonical-examples",
+      "exportedCarbonFileId": "23b84814-755b-469b-83a9-771fe027b0c0.json",
+      "carbonPath": "m3/pages/canonical-examples",
+      "alternateSlugs": [
+        "foundations/adaptive-design/canonical-layouts",
+        "m3/pages/canonical-layouts",
+        "foundations/layout/canonical-layouts"
+      ],
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Feed"
+        },
+        {
+          "label": "List-detail"
+        },
+        {
+          "label": "Supporting pane"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/layout/scaffold",
+      "exportedCarbonFileId": "7490d3ef-a222-47be-870a-3050bfcc5c59.json",
+      "carbonPath": "m3/pages/scaffold",
+      "alternateSlugs": [
+        "foundations/layout/applying-layout/pane-layouts"
+      ],
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Bars"
+        },
+        {
+          "label": "Rails",
+          "alternateSlugs": [
+            "rails-1"
+          ]
+        },
+        {
+          "label": "Panes",
+          "alternateSlugs": [
+            "panes-1"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "foundations/layout/grids-spacing",
+      "exportedCarbonFileId": "b375cd8c-5506-4ce1-8caa-9cc23eb2d996.json",
+      "carbonPath": "m3/pages/grids-spacing",
+      "alternateSlugs": [
+        "foundations/layout/understanding-layout/spacing"
+      ],
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Grids"
+        },
+        {
+          "label": "Spacing"
+        },
+        {
+          "label": "Density"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/layout/bidirectionality-rtl",
+      "exportedCarbonFileId": "35f8449d-9b29-4224-95ac-65a0708c8722.json",
+      "carbonPath": "m3/pages/bidirectionality-rtl",
+      "alternateSlugs": [
+        "foundations/layout/understanding-layout/bidirectionality-rtl"
+      ]
+    },
+    {
+      "slug": "foundations/interaction/gestures",
+      "exportedCarbonFileId": "0f6a68e6-a217-4f0e-8a7e-3f292c84a230.json",
+      "carbonPath": "m3/pages/gestures"
+    },
+    {
+      "slug": "foundations/interaction/inputs",
+      "exportedCarbonFileId": "e82cd926-292d-409b-892a-1553f01be9a8.json",
+      "carbonPath": "m3/pages/inputs"
+    },
+    {
+      "slug": "foundations/interaction/selection",
+      "exportedCarbonFileId": "0dfa5930-0695-4d99-a58a-2a7705c79d66.json",
+      "carbonPath": "m3/pages/selection"
+    },
+    {
+      "slug": "foundations/interaction/states",
+      "exportedCarbonFileId": "b3339b30-4a6d-49b6-9a8b-8e581b2b1204.json",
+      "carbonPath": "m3/pages/states",
+      "alternateSlugs": [
+        "m3/pages/interaction-states",
+        "m3/pages/interaction-states/tab 1",
+        "foundations/interaction-states"
+      ],
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "State layers"
+        },
+        {
+          "label": "Applying states"
+        }
+      ]
+    },
+    {
+      "slug": "foundations/usability",
+      "exportedCarbonFileId": "a6c4f773-9a84-4c74-aeed-7c915916827d.json",
+      "carbonPath": "m3/pages/usability",
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Applying M3 Expressive",
+          "alternateSlugs": [
+            "applying-expressive"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "styles",
+      "exportedCarbonFileId": "fb17261d-e51b-4919-951b-1ac53484b19e.json",
+      "carbonPath": "m3/pages/styles"
+    },
+    {
+      "slug": "styles/color/system",
+      "exportedCarbonFileId": "89e1e9ce-0d9c-4391-9182-818434527cda.json",
+      "carbonPath": "m3/pages/color",
+      "alternateSlugs": [
+        "styles/color/overview"
+      ],
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "How the system works"
+        }
+      ]
+    },
+    {
+      "slug": "styles/color/roles",
+      "exportedCarbonFileId": "ced25aa3-a367-44c6-a47e-439bc9e59d68.json",
+      "carbonPath": "m3/pages/color-roles",
+      "alternateSlugs": [
+        "styles/color/the-color-system/key-colors-tones",
+        "styles/color/the-color-system"
+      ]
+    },
+    {
+      "slug": "styles/color/choosing-a-scheme",
+      "exportedCarbonFileId": "a4aa0cf5-4017-4dea-ae51-edb8e950bd2c.json",
+      "carbonPath": "m3/pages/choosing-a-scheme"
+    },
+    {
+      "slug": "styles/color/static",
+      "exportedCarbonFileId": "247d635f-924c-4e83-8383-94965fe769e2.json",
+      "carbonPath": "m3/pages/static",
+      "tabs": [
+        {
+          "label": "Baseline"
+        },
+        {
+          "label": "Custom brand"
+        }
+      ]
+    },
+    {
+      "slug": "styles/color/dynamic",
+      "exportedCarbonFileId": "03571013-d450-49cc-8300-4c7ee70bb4ca.json",
+      "carbonPath": "m3/pages/dynamic",
+      "alternateSlugs": [
+        "styles/color/dynamic-color",
+        "styles/color/dynamic-color/overview",
+        "m3/pages/dynamic-color/overview"
+      ],
+      "tabs": [
+        {
+          "label": "Choosing a source"
+        },
+        {
+          "label": "User-generated source"
+        },
+        {
+          "label": "Content-based source"
+        }
+      ]
+    },
+    {
+      "slug": "styles/color/advanced",
+      "exportedCarbonFileId": "eee5a035-c309-4c67-afb5-6b4c6dd8ec4e.json",
+      "carbonPath": "m3/pages/advanced",
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Apply colors"
+        },
+        {
+          "label": "Define new colors"
+        },
+        {
+          "label": "Adjust existing colors"
+        }
+      ]
+    },
+    {
+      "slug": "styles/color/resources",
+      "exportedCarbonFileId": "e5cd1701-c004-498e-a4ec-620446227c51.json",
+      "carbonPath": "m3/pages/color-resources"
+    },
+    {
+      "slug": "styles/icons",
+      "exportedCarbonFileId": "17aed561-a58a-44d4-852e-1e5be253a641.json",
+      "carbonPath": "m3/pages/icons",
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Designing icons"
+        },
+        {
+          "label": "Applying icons"
+        }
+      ]
+    },
+    {
+      "slug": "styles/shape",
+      "exportedCarbonFileId": "5e04e8f6-7da6-475e-a1b0-3818021c0cea.json",
+      "carbonPath": "m3/pages/shape",
+      "tabs": [
+        {
+          "label": "Overview & principles",
+          "alternateSlugs": [
+            "overview"
+          ]
+        },
+        {
+          "label": "Corner radius scale",
+          "alternateSlugs": [
+            "corner-radius-scale"
+          ]
+        },
+        {
+          "label": "Shape morph"
+        }
+      ]
+    },
+    {
+      "slug": "styles/spacing",
+      "exportedCarbonFileId": "36e81931-9b87-406f-9ec5-c0cc049564d8.json",
+      "carbonPath": "m3/pages/spacing",
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Applying spacing"
+        },
+        {
+          "label": "Tokens"
+        }
+      ]
+    },
+    {
+      "slug": "styles/typography",
+      "exportedCarbonFileId": "f6a1d89a-1bbf-46d1-a177-f13b074897a5.json",
+      "carbonPath": "m3/pages/typography",
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Fonts"
+        },
+        {
+          "label": "Type scale & tokens",
+          "alternateSlugs": [
+            "tokens"
+          ]
+        },
+        {
+          "label": "Applying type",
+          "alternateSlugs": [
+            "applying-scaling-type"
+          ]
+        },
+        {
+          "label": "Editorial treatments"
+        }
+      ]
+    },
+    {
+      "slug": "styles/elevation",
+      "exportedCarbonFileId": "38354be9-206b-4988-96a8-0f2a88074511.json",
+      "carbonPath": "m3/pages/elevation",
+      "tabs": [
+        {
+          "label": "Overview"
+        },
+        {
+          "label": "Applying elevation"
+        },
+        {
+          "label": "Tokens"
+        }
+      ]
+    },
+    {
+      "slug": "styles/motion/overview",
+      "exportedCarbonFileId": "ccf2c3e9-82b5-4c4a-9570-b0d08d95c0c1.json",
+      "carbonPath": "m3/pages/motion-overview",
+      "tabs": [
+        {
+          "label": "How it works"
+        },
+        {
+          "label": "Specs"
+        }
+      ]
+    },
+    {
+      "slug": "styles/motion/easing-and-duration",
+      "exportedCarbonFileId": "1d658c3f-ba19-48be-9b71-872c72c7166e.json",
+      "carbonPath": "m3/pages/motion-easing-and-duration",
+      "tabs": [
+        {
+          "label": "Applying easing and duration"
+        },
+        {
+          "label": "Tokens & specs"
+        }
+      ]
+    },
+    {
+      "slug": "styles/motion/transitions",
+      "exportedCarbonFileId": "2b9bdc79-df8e-4ad2-bdca-e0a3f083cd33.json",
+      "carbonPath": "m3/pages/motion-transitions",
+      "tabs": [
+        {
+          "label": "Transition patterns"
+        },
+        {
+          "label": "Applying transitions"
+        }
+      ]
+    },
+    {
+      "slug": "components",
+      "exportedCarbonFileId": "1624d6a1-96ea-437d-b846-dc6f00ebb49c.json",
+      "carbonPath": "m3/pages/components"
+    },
+    {
+      "slug": "components/all-buttons",
+      "exportedCarbonFileId": "276f1bd7-d048-49fd-8483-f267f2ece13d.json",
+      "carbonPath": "m3/pages/all-buttons",
+      "theme": "green"
+    },
+    {
+      "slug": "components/buttons",
+      "exportedCarbonFileId": "e31df68a-59d4-41dc-8743-8c48b476d4f8.json",
+      "carbonPath": "m3/pages/common-buttons",
+      "theme": "green",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/button-groups",
+      "exportedCarbonFileId": "93a2bf4e-18ac-49a4-8560-8d2a7dffc678.json",
+      "carbonPath": "m3/pages/button-groups",
+      "theme": "green",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/floating-action-button",
+      "exportedCarbonFileId": "1e52f150-575c-45fa-8f5f-75868c5ab068.json",
+      "carbonPath": "m3/pages/fab",
+      "theme": "green",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/extended-fab",
+      "exportedCarbonFileId": "94487cf5-eb79-43b1-b6b1-470512cfcc88.json",
+      "carbonPath": "m3/pages/extended-fab",
+      "theme": "green",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/fab-menu",
+      "exportedCarbonFileId": "f00af5db-3477-49da-bae5-44b90b3dd7ba.json",
+      "carbonPath": "m3/pages/fab-menu",
+      "theme": "green",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/icon-buttons",
+      "exportedCarbonFileId": "71391cd0-92f8-4a8e-a625-828f5413a221.json",
+      "carbonPath": "m3/pages/icon-buttons",
+      "theme": "green",
+      "alternateSlugs": [
+        "m3/pages/icon-button",
+        "components/icon-button"
+      ],
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/segmented-buttons",
+      "exportedCarbonFileId": "409b50be-403a-4846-932c-706a9b2137dd.json",
+      "carbonPath": "m3/pages/segmented-buttons",
+      "theme": "green",
+      "alternateSlugs": [
+        "m3/pages/segmented-button",
+        "components/segmented-button"
+      ],
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/split-button",
+      "exportedCarbonFileId": "1341051a-3131-40d4-abbf-69e37b307651.json",
+      "carbonPath": "m3/pages/split-button",
+      "alternateSlugs": [
+        "m3/pages/split-buttons"
+      ],
+      "theme": "green",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/toolbars",
+      "exportedCarbonFileId": "4dc1681d-978a-4927-9ffa-8e2bd3796f64.json",
+      "carbonPath": "m3/pages/toolbars",
+      "theme": "yellow",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/bottom-sheets",
+      "exportedCarbonFileId": "aa6f9af2-d539-4b22-9af5-838e7cfc4a85.json",
+      "carbonPath": "m3/pages/bottom-sheets",
+      "theme": "red",
+      "alternateSlugs": [
+        "components/bottom-sheetsimplementation"
+      ],
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/cards",
+      "exportedCarbonFileId": "1a23fbe7-0474-444c-abfb-717bb148d3a8.json",
+      "carbonPath": "m3/pages/cards",
+      "theme": "red",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/carousel",
+      "exportedCarbonFileId": "b0726223-2639-4157-84ae-cb84c07ee2e5.json",
+      "carbonPath": "m3/pages/carousel",
+      "theme": "red",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/chips",
+      "exportedCarbonFileId": "592d28d0-0c82-4642-a203-556b1e0581b0.json",
+      "carbonPath": "m3/pages/chips",
+      "theme": "green",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/dialogs",
+      "exportedCarbonFileId": "79c01ab5-d09a-4f6c-9aca-f76d310583bc.json",
+      "carbonPath": "m3/pages/dialogs",
+      "theme": "red",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/divider",
+      "exportedCarbonFileId": "843ffaa9-e73e-45a7-bff7-f198cac0a7c8.json",
+      "carbonPath": "m3/pages/divider",
+      "theme": "red",
+      "alternateSlugs": [
+        "m3/pages/dividers"
+      ],
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/menus",
+      "exportedCarbonFileId": "24b60c3f-1ec7-48df-b175-0d8e011a8106.json",
+      "carbonPath": "m3/pages/menus",
+      "theme": "green",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/navigation-bar",
+      "exportedCarbonFileId": "9e4cdffa-f7fd-425f-9915-867aafbcc7d6.json",
+      "carbonPath": "m3/pages/navigation-bar",
+      "theme": "yellow",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/navigation-drawer",
+      "exportedCarbonFileId": "d2a1a290-0db4-4622-8a4b-bd11b6a4ec8d.json",
+      "carbonPath": "m3/pages/navigation-drawer",
+      "theme": "yellow",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/navigation-rail",
+      "exportedCarbonFileId": "98fe42bd-9bb1-4307-9e92-e61e57c3e9da.json",
+      "carbonPath": "m3/pages/navigation-rail",
+      "theme": "yellow",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/loading-indicator",
+      "exportedCarbonFileId": "eb6cf431-55ab-4d41-b3c5-cf4da1bae66f.json",
+      "carbonPath": "m3/pages/loading-indicator",
+      "theme": "red",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/progress-indicators",
+      "exportedCarbonFileId": "9a92bb46-ccc8-4752-a144-b770d47fe1dd.json",
+      "carbonPath": "m3/pages/progress-indicators",
+      "theme": "red",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/radio-button",
+      "exportedCarbonFileId": "091d4b7c-1ab2-4050-963a-4e2558ee5d08.json",
+      "carbonPath": "m3/pages/radio-button",
+      "theme": "green",
+      "alternateSlugs": [
+        "components/radio-buttons",
+        "m3/pages/radio-buttons"
+      ],
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/search",
+      "exportedCarbonFileId": "22081e54-b56a-47b2-b137-9ba82953f05e.json",
+      "carbonPath": "m3/pages/search",
+      "theme": "yellow",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/side-sheets",
+      "exportedCarbonFileId": "040dabe3-ed0f-4759-824d-812224e78af3.json",
+      "carbonPath": "m3/pages/side-sheets",
+      "theme": "red",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/sliders",
+      "exportedCarbonFileId": "4d160e88-c954-4614-8d11-4ec3ed399c92.json",
+      "carbonPath": "m3/pages/sliders",
+      "theme": "green",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/switch",
+      "exportedCarbonFileId": "a4ad43f1-5c39-44b2-ae15-a7110bdf4fa6.json",
+      "carbonPath": "m3/pages/switch",
+      "theme": "green",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/text-fields",
+      "exportedCarbonFileId": "8741ef66-1a80-4b39-adb1-66bea5e6992f.json",
+      "carbonPath": "m3/pages/text-fields",
+      "theme": "yellow",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/tooltips",
+      "exportedCarbonFileId": "cb07b841-eae0-4959-bbab-25b1971714ca.json",
+      "carbonPath": "m3/pages/tooltips",
+      "theme": "red",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/app-bars",
+      "exportedCarbonFileId": "4135ef28-314c-44dc-b829-6e94a36b69f2.json",
+      "carbonPath": "m3/pages/app-bars",
+      "theme": "yellow",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/lists",
+      "exportedCarbonFileId": "6d4033c2-f92c-4c43-b585-b3bce8468d48.json",
+      "carbonPath": "m3/pages/lists",
+      "theme": "red",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/badges",
+      "exportedCarbonFileId": "e18a73ff-b00d-46e7-af20-ab9dd24bf579.json",
+      "carbonPath": "m3/pages/badges",
+      "theme": "red",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/tabs",
+      "exportedCarbonFileId": "f37f47ba-8e67-4f1e-98a3-3bea94879e52.json",
+      "carbonPath": "m3/pages/tabs",
+      "theme": "yellow",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/checkbox",
+      "exportedCarbonFileId": "c0332583-8417-4b80-a0a1-e283781d31c6.json",
+      "carbonPath": "m3/pages/checkbox",
+      "theme": "green",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/date-pickers",
+      "exportedCarbonFileId": "523144a0-9184-44bd-93f0-5b4c7355f421.json",
+      "carbonPath": "m3/pages/date-pickers",
+      "theme": "green",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/time-pickers",
+      "exportedCarbonFileId": "ec8e6da4-b726-403d-bab7-3fb660b6ef86.json",
+      "carbonPath": "m3/pages/time-pickers",
+      "theme": "green",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "components/snackbar",
+      "exportedCarbonFileId": "26cf2750-80f7-43f8-a155-834aa01276df.json",
+      "carbonPath": "m3/pages/snackbar",
+      "theme": "red",
+      "tabs": [
+        {
+          "label": "Overview",
+          "icon": "info"
+        },
+        {
+          "label": "Specs",
+          "icon": "style"
+        },
+        {
+          "label": "Guidelines",
+          "icon": "design_services"
+        },
+        {
+          "label": "Accessibility",
+          "icon": "accessibility_new"
+        }
+      ]
+    },
+    {
+      "slug": "blog",
+      "exportedCarbonFileId": "3d61a289-baf3-444d-8ed7-f2ad681ea9a5.json",
+      "carbonPath": "m3/pages/blogs"
+    }
+  ],
+  "Z": [
+    {
+      "slug": "whats-new-at-io26",
+      "exportedCarbonFileId": "b7e5c2b2-d343-45e6-8516-ca0ddf93c743.json",
+      "carbonPath": "m3/pages/whats-new-at-io2026"
+    },
+    {
+      "slug": "material-is-compose-first",
+      "exportedCarbonFileId": "52808ced-97c2-4719-a022-baf4d5a60509.json",
+      "carbonPath": "m3/pages/material-is-compose-first"
+    },
+    {
+      "slug": "m3-expressive-motion-theming",
+      "exportedCarbonFileId": "db985439-a4b8-4b9e-bb86-6fb113b99d92.json",
+      "carbonPath": "m3/pages/m3-expressive-motion-theming"
+    },
+    {
+      "slug": "building-with-m3-expressive",
+      "exportedCarbonFileId": "dd671163-5c9d-42c2-9737-048c191ed507.json",
+      "carbonPath": "m3/pages/building-with-m3-expressive"
+    },
+    {
+      "slug": "how-to-make-text-more-accessible",
+      "document_id": "6578576280387584"
+    },
+    {
+      "slug": "material-google-io23",
+      "document_id": "6041192958656512"
+    },
+    {
+      "slug": "designer-toolbox-figma-android-studio-relay",
+      "document_id": "5258494971346944"
+    },
+    {
+      "slug": "android-material-theme-shape",
+      "document_id": "5703648154484736"
+    },
+    {
+      "slug": "why-we-recommend-material-design-components-android",
+      "document_id": "5693645939015680"
+    },
+    {
+      "slug": "android-stable-release-1-6-1",
+      "document_id": "5843048915402752"
+    },
+    {
+      "slug": "ten-steps-ios-android-design",
+      "document_id": "5318562916597760"
+    },
+    {
+      "slug": "material-google-io22",
+      "document_id": "4861119382159360"
+    },
+    {
+      "slug": "5-steps-large-screen-apps",
+      "document_id": "5176362010411008"
+    },
+    {
+      "slug": "google-fonts-material-icons",
+      "document_id": "6050796774621184"
+    },
+    {
+      "slug": "2023-google-fonts-redesign",
+      "document_id": "5214061699661824"
+    },
+    {
+      "slug": "material-design-wordpress-plugin",
+      "document_id": "6234795288559616"
+    },
+    {
+      "slug": "android-stable-release-1-7-0",
+      "document_id": "6724211708133376"
+    },
+    {
+      "slug": "android-stable-release-1-3-0",
+      "document_id": "6503505239736320"
+    },
+    {
+      "slug": "android-stable-release-1-10-0",
+      "document_id": "4743734110060544"
+    },
+    {
+      "slug": "digital-wellbeing-ux-principles",
+      "document_id": "4753554093637632"
+    },
+    {
+      "slug": "dark-theme-design-tutorial-video",
+      "document_id": "6019490452865024"
+    },
+    {
+      "slug": "dynamic-color-harmony",
+      "document_id": "5121173452750848"
+    },
+    {
+      "slug": "roboto-serif",
+      "document_id": "5984499829309440"
+    },
+    {
+      "slug": "material-design-awards-2021",
+      "document_id": "5385015262969856"
+    },
+    {
+      "slug": "google-fonts-knowledge",
+      "document_id": "6083643885486080"
+    },
+    {
+      "slug": "material-theme-builder-2-color-match",
+      "document_id": "6233415106560000"
+    },
+    {
+      "slug": "android-material-motion",
+      "document_id": "5851801742737408"
+    },
+    {
+      "slug": "tone-based-surface-color-m3",
+      "document_id": "5454212709351424"
+    },
+    {
+      "slug": "roboto-flex",
+      "document_id": "4811536769744896"
+    },
+    {
+      "slug": "android-stable-release-1-9-0",
+      "document_id": "5473462043934720"
+    },
+    {
+      "slug": "design-material-theme-shape",
+      "document_id": "5102095135670272"
+    },
+    {
+      "slug": "migrating-material-3",
+      "document_id": "5025319425409024"
+    },
+    {
+      "slug": "google-material-custom-theme",
+      "document_id": "5822975157469184"
+    },
+    {
+      "slug": "material-design-blog-welcome",
+      "document_id": "6305819849916416"
+    },
+    {
+      "slug": "material-density-web",
+      "document_id": "6660569227329536"
+    },
+    {
+      "slug": "android-stable-release-1-5",
+      "document_id": "5731438242299904"
+    },
+    {
+      "slug": "design-material-theme-type",
+      "document_id": "5026888144388096"
+    },
+    {
+      "slug": "material-io-redesign",
+      "document_id": "6105825437417472"
+    },
+    {
+      "slug": "atkinson-hyperlegible-design",
+      "document_id": "4675578724745216"
+    },
+    {
+      "slug": "derek-brahney-interview",
+      "document_id": "5154165085044736"
+    },
+    {
+      "slug": "material-partner-studies",
+      "document_id": "6016881925029888"
+    },
+    {
+      "slug": "android-stable-release-1-12-0",
+      "document_id": "5836138581721088"
+    },
+    {
+      "slug": "material-3-carousel-research-design",
+      "document_id": "5158713158664192"
+    },
+    {
+      "slug": "whats-new-design-kit",
+      "document_id": "5820541975003136"
+    },
+    {
+      "slug": "material-google-io21",
+      "document_id": "5474193665425408"
+    },
+    {
+      "slug": "get-google-fonts-update",
+      "document_id": "5660525826015232"
+    },
+    {
+      "slug": "android-stable-release-1-4",
+      "document_id": "5349126482690048"
+    },
+    {
+      "slug": "digital-wellbeing-face-retouching",
+      "document_id": "5866947047325696"
+    },
+    {
+      "slug": "shantell-martin-variable-font",
+      "document_id": "6739758443266048"
+    },
+    {
+      "slug": "material-3-compose-1-2",
+      "document_id": "5668225645412352"
+    },
+    {
+      "slug": "mda-2020-winners",
+      "document_id": "6336736650854400"
+    },
+    {
+      "slug": "designing-text-visual-acuity-research",
+      "document_id": "4654308022550528"
+    },
+    {
+      "slug": "android-material-theme-color",
+      "document_id": "6218501906497536"
+    },
+    {
+      "slug": "material-3-figma-design-kit",
+      "document_id": "5910056902197248"
+    },
+    {
+      "slug": "jamie-chung-photography-interview",
+      "document_id": "5295591924039680"
+    },
+    {
+      "slug": "material-icons-sehee-lee-interview",
+      "document_id": "5309157368135680"
+    },
+    {
+      "slug": "finding-ethical-design",
+      "document_id": "5591366685687808"
+    },
+    {
+      "slug": "reduce-reflow-with-web-fonts",
+      "document_id": "4901981369663488"
+    },
+    {
+      "slug": "material-3-compose-1-3",
+      "document_id": "5479866587021312"
+    },
+    {
+      "slug": "design-material-theme-color",
+      "document_id": "5158805642674176"
+    },
+    {
+      "slug": "material-you-large-screens",
+      "document_id": "5587246423080960"
+    },
+    {
+      "slug": "asset-people-2",
+      "document_id": "6211535843885056"
+    },
+    {
+      "slug": "readability-research",
+      "document_id": "5915993901367296"
+    },
+    {
+      "slug": "relay-ravn-case-study",
+      "document_id": "4664350895898624"
+    },
+    {
+      "slug": "google-fonts-dark-theme",
+      "document_id": "5760435980337152"
+    },
+    {
+      "slug": "material-design-wordpress-plugin-030",
+      "document_id": "4817998753562624"
+    },
+    {
+      "slug": "announcing-material-you",
+      "document_id": "5624662777921536"
+    },
+    {
+      "slug": "m3-a11y",
+      "document_id": "6034538337402880"
+    },
+    {
+      "slug": "color-fonts-are-here",
+      "document_id": "4818064474505216"
+    },
+    {
+      "slug": "device-metrics",
+      "document_id": "6017960135884800"
+    },
+    {
+      "slug": "sil-typefaces",
+      "document_id": "5106909641310208"
+    },
+    {
+      "slug": "android-stable-release-1-8-0",
+      "document_id": "4605957596381184"
+    },
+    {
+      "slug": "google-design-tutorial-video",
+      "document_id": "5243360368132096"
+    },
+    {
+      "slug": "year-in-the-life-material-design-advocate",
+      "document_id": "6687258700414976"
+    },
+    {
+      "slug": "how-to-gemini-app-compose-material-design-3",
+      "document_id": "5572176225107968"
+    },
+    {
+      "slug": "data-visualization-accessibility",
+      "document_id": "5048380078292992"
+    },
+    {
+      "slug": "jetpack-compose-catalog",
+      "document_id": "5254593229094912"
+    },
+    {
+      "slug": "noto-announcement",
+      "document_id": "6730987974950912"
+    },
+    {
+      "slug": "inclusive-imagery-at-google",
+      "document_id": "5033445688082432"
+    },
+    {
+      "slug": "relay-in-alpha",
+      "document_id": "5726260789641216"
+    },
+    {
+      "slug": "android-dark-theme-tutorial",
+      "document_id": "4897180022996992"
+    },
+    {
+      "slug": "readex-pro-legibility-arabic-type-design",
+      "document_id": "5048271741517824"
+    },
+    {
+      "slug": "start-building-with-material-you",
+      "document_id": "6548103502757888"
+    },
+    {
+      "slug": "migrate-android-material-components",
+      "document_id": "5572471263330304"
+    },
+    {
+      "slug": "24-hour-clock-design-research",
+      "document_id": "5937855834750976"
+    },
+    {
+      "slug": "material-design-youtube-channel",
+      "document_id": "6386999802724352"
+    },
+    {
+      "slug": "material-3-compose-1-1",
+      "document_id": "6692554092445696"
+    },
+    {
+      "slug": "material-3-compose-stable",
+      "document_id": "5527854674739200"
+    },
+    {
+      "slug": "interview-oddfellows-m3-art-style",
+      "document_id": "4790143600558080"
+    },
+    {
+      "slug": "accessibility-awareness-day-2022",
+      "document_id": "6412661855879168"
+    },
+    {
+      "slug": "material-design-xr-dev-preview",
+      "document_id": "4514989311131648"
+    },
+    {
+      "slug": "introducing-symbols",
+      "document_id": "5866765657309184"
+    },
+    {
+      "slug": "testing-material-3",
+      "document_id": "5444478474780672"
+    },
+    {
+      "slug": "designtocode",
+      "document_id": "5125582148599808"
+    },
+    {
+      "slug": "material-design-2022-roundup",
+      "document_id": "6608555042013184"
+    },
+    {
+      "slug": "material-design-for-large-screens",
+      "document_id": "5364221464018944"
+    },
+    {
+      "slug": "digital-wellbeing-design-systems",
+      "document_id": "5698678290120704"
+    },
+    {
+      "slug": "fonts-are-software-video",
+      "document_id": "6450636571934720"
+    },
+    {
+      "slug": "asset-people-3",
+      "document_id": "6427919005777920"
+    },
+    {
+      "slug": "asset-people-1",
+      "document_id": "4835882078830592"
+    },
+    {
+      "slug": "research-state-of-design-systems-2020",
+      "document_id": "4884660150337536"
+    },
+    {
+      "slug": "science-of-color-design",
+      "document_id": "6502590191501312"
+    },
+    {
+      "slug": "jetpack-compose-beta",
+      "document_id": "6465524856520704"
+    },
+    {
+      "slug": "material-ads-2022",
+      "document_id": "6322084691181568"
+    },
+    {
+      "slug": "readability-consortium",
+      "document_id": "5184897614086144"
+    },
+    {
+      "slug": "google-fonts-pairing-figma",
+      "document_id": "5661578846404608"
+    },
+    {
+      "slug": "motion-research-container-transform",
+      "document_id": "6705236567392256"
+    },
+    {
+      "slug": "material-3-slot-components-figma",
+      "document_id": "5965893380472832"
+    },
+    {
+      "slug": "android-stable-release-1-2",
+      "document_id": "5174296018944000"
+    },
+    {
+      "slug": "mda-2021-winners",
+      "document_id": "4776628026343424"
+    },
+    {
+      "slug": "google-io-2024",
+      "document_id": "5459080356954112"
+    },
+    {
+      "slug": "localization-principles-techniques",
+      "document_id": "5550732958498816"
+    },
+    {
+      "slug": "material-theme-builder",
+      "document_id": "5876903831142400"
+    },
+    {
+      "slug": "android-material-theme-type",
+      "document_id": "5312679798112256"
+    }
+  ]
+}

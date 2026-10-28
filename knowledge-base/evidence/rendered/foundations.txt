@@ -1,0 +1,141 @@
+URL: https://m3.material.io/foundations
+REA evidence: ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e
+Step: ready_1
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /foundations#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Foundations" [level=1]
+      - text: Foundations inform the basis of any great user interface, from accessibility standards to essential patterns for layout and interaction.
+      - tabpanel:
+        - region:
+          - text: link Copy link
+          - link "Accessibility":
+            - /url: /foundations/overview/principles
+            - text: Accessibility
+            - paragraph: Accessible design enables users with diverse abilities to navigate, understand, and enjoy a UI.
+          - link "Content design":
+            - /url: /foundations/content-design/overview
+            - text: Content design
+            - paragraph: UX writing and information design make UIs easy to use.
+        - region:
+          - text: link Copy link
+          - link "Customizing Material":
+            - /url: /foundations/customization
+            - text: Customizing Material
+            - paragraph: M3 makes brand expression in an interface simpler and more beautiful than ever before.
+          - link "Design tokens":
+            - /url: /foundations/design-tokens/overview
+            - text: Design tokens
+            - paragraph: Tokens store style values like colors and fonts so the same values can be used across designs, code, tools, and platforms.
+        - region:
+          - text: link Copy link
+          - link "Interaction states":
+            - /url: /foundations/interaction/states/overview
+            - text: Interaction states
+            - paragraph: States are visual indicators used to communicate the status of a component or interactive element.
+          - link "Layout":
+            - /url: /foundations/layout/understanding-layout/overview
+            - text: Layout
+            - paragraph: Layout is the visual arrangement of elements on the screen.
+        - region:
+          - text: link Copy link
+          - link "Material A-Z":
+            - /url: /foundations/glossary
+            - text: Material A-Z
+            - paragraph: Get to know the key terms and concepts behind Material, from A to Z.
+          - link "Building for all":
+            - /url: /foundations/building-for-all/user-needs
+            - text: Building for all
+            - paragraph: Building for everyone with everyone
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

@@ -1,0 +1,894 @@
+[
+  {
+    "id": "C01",
+    "url": "https://m3.material.io/develop",
+    "title": "Develop",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/develop.json",
+    "sha256": "63cc339d1dfbaae4eb884b38632531c788f01f272caa33074c17924da955dcd3",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/c3d29ede-a66a-427b-8efc-afe353e8d513.json",
+    "source_updated_timestamp": "2026-07-22T02:01:04.752Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C02",
+    "url": "https://m3.material.io/develop/android/mdc-android",
+    "title": "Android Views (MDC-Android)",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/develop__android__mdc-android.json",
+    "sha256": "66dbd319b507802ca058c43de85d038bca5b86c709f5168ca34943f14552cf53",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/dc7f3bb6-9507-43d3-b8f8-7c68888fc7fa.json",
+    "source_updated_timestamp": "2026-08-04T11:11:59.907Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C03",
+    "url": "https://m3.material.io/develop/android/jetpack-compose",
+    "title": "Jetpack Compose",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/develop__android__jetpack-compose.json",
+    "sha256": "bcafe2ffc15c6034dd12c40e9d61947ecdb9059b3511e738f4db4a496f14e268",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/dfec5d08-385a-4b2d-ad23-e44cc3410cef.json",
+    "source_updated_timestamp": "2026-07-28T07:03:05.793Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C04",
+    "url": "https://m3.material.io/develop/flutter",
+    "title": "Flutter",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Official platform page explicitly says Flutter supports original M3 components and M3 Expressive is not available on Flutter.",
+    "local_file": "evidence/page-data/develop__flutter.json",
+    "sha256": "6503f4180e680147705317de261a837fb790afc1ae624718d092a2348d61c941",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/d1fb318b-1f4a-43bf-b3b5-35543257b935.json",
+    "source_updated_timestamp": "2026-07-17T05:06:20.633Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C05",
+    "url": "https://m3.material.io/develop/web",
+    "title": "Web",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Official platform page explicitly says maintenance mode, no current updates, and Material 3 Expressive is not implemented on Web.",
+    "local_file": "evidence/page-data/develop__web.json",
+    "sha256": "c0f430a41c77d2c470896c6ceaa383646d86ceac3c0ad8855b7bc8f1ac22b43b",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/510dbdc8-6dae-4e5e-8d5f-dd93176cc7dd.json",
+    "source_updated_timestamp": "2026-07-17T05:36:33.730Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C06",
+    "url": "https://m3.material.io/components",
+    "title": "Components",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components.json",
+    "sha256": "4cf866eb0c1542bc574972aa60b6ad547a20ab7f959ead0e7cf54806507f6a05",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/1624d6a1-96ea-437d-b846-dc6f00ebb49c.json",
+    "source_updated_timestamp": "2026-09-01T07:50:47.382Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C07",
+    "url": "https://m3.material.io/components/all-buttons",
+    "title": "All buttons",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__all-buttons.json",
+    "sha256": "d42517d11903617eb08d9d338f3468ea29b9dcd314e86f4c264c9a5cf86ef044",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/276f1bd7-d048-49fd-8483-f267f2ece13d.json",
+    "source_updated_timestamp": "2026-07-17T06:58:41.575Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C08",
+    "url": "https://m3.material.io/components/buttons",
+    "title": "Buttons",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__buttons.json",
+    "sha256": "8a7bafda83ec399a466edfb6183619b33c763f57e5c75fd78f64759b90ec3333",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/e31df68a-59d4-41dc-8743-8c48b476d4f8.json",
+    "source_updated_timestamp": "2026-07-24T06:19:49.216Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C09",
+    "url": "https://m3.material.io/components/button-groups",
+    "title": "Button groups",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__button-groups.json",
+    "sha256": "2e672a2a9a1a5b032bb2493d0c96e8f80314a41061f4088ec4b9f64a3d873765",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/93a2bf4e-18ac-49a4-8560-8d2a7dffc678.json",
+    "source_updated_timestamp": "2026-09-16T18:25:16.117Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C10",
+    "url": "https://m3.material.io/components/floating-action-button",
+    "title": "FABs",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__floating-action-button.json",
+    "sha256": "1324790d785f236852d648284eb48314c9843d7d5a47813557e4b83ec1d53ee9",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/1e52f150-575c-45fa-8f5f-75868c5ab068.json",
+    "source_updated_timestamp": "2026-07-27T13:59:42.096Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C11",
+    "url": "https://m3.material.io/components/extended-fab",
+    "title": "Extended FABs",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__extended-fab.json",
+    "sha256": "3a82e864cf2ea9bbddbf29fb3c33c72f7e0bdfd8a814b47b06e45d08d8258fa2",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/94487cf5-eb79-43b1-b6b1-470512cfcc88.json",
+    "source_updated_timestamp": "2026-07-27T13:55:35.429Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C12",
+    "url": "https://m3.material.io/components/fab-menu",
+    "title": "FAB menu",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__fab-menu.json",
+    "sha256": "d31cfd0dc41b5565ec399b079372c463aa9dc0567599a32c011023b054ed2e73",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/f00af5db-3477-49da-bae5-44b90b3dd7ba.json",
+    "source_updated_timestamp": "2026-07-17T06:58:41.835Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C13",
+    "url": "https://m3.material.io/components/icon-buttons",
+    "title": "Icon buttons",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__icon-buttons.json",
+    "sha256": "a4de7efd844aed0ef2c60c39206cd6bc2fde2ee77836181b94801de32c13f26e",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/71391cd0-92f8-4a8e-a625-828f5413a221.json",
+    "source_updated_timestamp": "2026-07-17T07:05:22.141Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C14",
+    "url": "https://m3.material.io/components/segmented-buttons",
+    "title": "Segmented buttons",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__segmented-buttons.json",
+    "sha256": "d0ce8587ebcff6ff0489f0e23a1ef53114cc86e14a689fcc4734ddaa3f027bb9",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/409b50be-403a-4846-932c-706a9b2137dd.json",
+    "source_updated_timestamp": "2026-09-16T18:18:17.328Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C15",
+    "url": "https://m3.material.io/components/split-button",
+    "title": "Split buttons",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__split-button.json",
+    "sha256": "c427e84c6a7854dd76d02f077fad0c8b864b7bbaf00050d3482b746e9667341f",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/1341051a-3131-40d4-abbf-69e37b307651.json",
+    "source_updated_timestamp": "2026-09-08T09:29:46.314Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C16",
+    "url": "https://m3.material.io/components/toolbars",
+    "title": "Toolbars",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__toolbars.json",
+    "sha256": "f02af5c45c0c5e55ddc440f8d0b73c2710de7d92af81f98a5ab843293decb8a4",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/4dc1681d-978a-4927-9ffa-8e2bd3796f64.json",
+    "source_updated_timestamp": "2026-07-28T08:14:45.120Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C17",
+    "url": "https://m3.material.io/components/bottom-sheets",
+    "title": "Bottom sheets",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__bottom-sheets.json",
+    "sha256": "03b130bd88b7d1d8193a341f1b57b1ccd6c55f0fc8186460815b94660cbe0652",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/aa6f9af2-d539-4b22-9af5-838e7cfc4a85.json",
+    "source_updated_timestamp": "2026-07-28T07:45:12.661Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C18",
+    "url": "https://m3.material.io/components/cards",
+    "title": "Cards",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__cards.json",
+    "sha256": "1f24722006d1f051ee573095fe2dc7c947d5768e7238648e28577dfc9282edbe",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/1a23fbe7-0474-444c-abfb-717bb148d3a8.json",
+    "source_updated_timestamp": "2026-07-24T06:14:10.548Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C19",
+    "url": "https://m3.material.io/components/carousel",
+    "title": "Carousel",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__carousel.json",
+    "sha256": "4663af5d062704bb5b8d2448d3c797e1dfe3f26827795413fe3beef2fd0d3502",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/b0726223-2639-4157-84ae-cb84c07ee2e5.json",
+    "source_updated_timestamp": "2026-08-18T17:48:11.944Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C20",
+    "url": "https://m3.material.io/components/chips",
+    "title": "Chips",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__chips.json",
+    "sha256": "4a2d2750e46501e38ea47d43781245178c0ad35cd49245516a5820e2c0558cff",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/592d28d0-0c82-4642-a203-556b1e0581b0.json",
+    "source_updated_timestamp": "2026-07-17T07:05:14.328Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C21",
+    "url": "https://m3.material.io/components/dialogs",
+    "title": "Dialogs",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__dialogs.json",
+    "sha256": "0c7c8e7222f4aa2a8c46404319327a0618b01d287bb3ede86613917f1a3d8a17",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/79c01ab5-d09a-4f6c-9aca-f76d310583bc.json",
+    "source_updated_timestamp": "2026-07-28T07:11:33.307Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C22",
+    "url": "https://m3.material.io/components/divider",
+    "title": "Divider",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__divider.json",
+    "sha256": "554dcc6159baba5dd39c4a410bde7859c37a4821c6827f34c1c2f9861e2b5309",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/843ffaa9-e73e-45a7-bff7-f198cac0a7c8.json",
+    "source_updated_timestamp": "2026-07-17T07:13:07.955Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C23",
+    "url": "https://m3.material.io/components/menus",
+    "title": "Menus",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__menus.json",
+    "sha256": "9a21e690e517888803185665d269fb3e7a013a4a5e4dff2b66516c4aae97b10d",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/24b60c3f-1ec7-48df-b175-0d8e011a8106.json",
+    "source_updated_timestamp": "2026-07-28T07:32:19.493Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C24",
+    "url": "https://m3.material.io/components/navigation-bar",
+    "title": "Navigation bar",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__navigation-bar.json",
+    "sha256": "62189f1b8b50b69ac49ae1c4e4d8b101a7981a0b8b0b6e90c03f5ca56a57f12e",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/9e4cdffa-f7fd-425f-9915-867aafbcc7d6.json",
+    "source_updated_timestamp": "2026-07-28T07:36:27.700Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C25",
+    "url": "https://m3.material.io/components/navigation-drawer",
+    "title": "Navigation drawer",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__navigation-drawer.json",
+    "sha256": "182c1c90e6e560ccc64d3247d74eaac418c0f7fbb2e766ec255bbbc816dfc1d3",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/d2a1a290-0db4-4622-8a4b-bd11b6a4ec8d.json",
+    "source_updated_timestamp": "2026-07-30T05:22:52.002Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C26",
+    "url": "https://m3.material.io/components/navigation-rail",
+    "title": "Navigation rail",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__navigation-rail.json",
+    "sha256": "d33e560852f066798a55c2d71b7dc8ebfac803fb9c247d8e68207d3ca8858a07",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/98fe42bd-9bb1-4307-9e92-e61e57c3e9da.json",
+    "source_updated_timestamp": "2026-07-24T07:30:37.949Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C27",
+    "url": "https://m3.material.io/components/loading-indicator",
+    "title": "Loading indicator",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__loading-indicator.json",
+    "sha256": "79b51c48c7c7b58aab5ad993baadc6386535eeb51bd848165313d483a89da31b",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/eb6cf431-55ab-4d41-b3c5-cf4da1bae66f.json",
+    "source_updated_timestamp": "2026-07-29T13:35:08.589Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C28",
+    "url": "https://m3.material.io/components/progress-indicators",
+    "title": "Progress indicators",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__progress-indicators.json",
+    "sha256": "43e4b7658e43104b05d4569aaed55afdeb1c29e21c5bab5acdeb584db764ac22",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/9a92bb46-ccc8-4752-a144-b770d47fe1dd.json",
+    "source_updated_timestamp": "2026-07-29T13:37:52.778Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C29",
+    "url": "https://m3.material.io/components/radio-button",
+    "title": "Radio button",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__radio-button.json",
+    "sha256": "412eed3c3dfc7a7479209f6dba63a34e85096a9cfeb30e88e858b3e8aa1e67ce",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/091d4b7c-1ab2-4050-963a-4e2558ee5d08.json",
+    "source_updated_timestamp": "2026-07-17T07:17:47.331Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C30",
+    "url": "https://m3.material.io/components/search",
+    "title": "Search",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__search.json",
+    "sha256": "c538c42f85ef4941f4a2aa917cc56553aac70e82331689ae9bb270249266bf49",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/22081e54-b56a-47b2-b137-9ba82953f05e.json",
+    "source_updated_timestamp": "2026-07-27T04:04:05.736Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C31",
+    "url": "https://m3.material.io/components/side-sheets",
+    "title": "Side sheets",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__side-sheets.json",
+    "sha256": "670c7d533748c695ffcd8a7f4a27732fb4133c0d073da65b00d4dffab425bcdd",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/040dabe3-ed0f-4759-824d-812224e78af3.json",
+    "source_updated_timestamp": "2026-07-28T07:57:48.089Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C32",
+    "url": "https://m3.material.io/components/sliders",
+    "title": "Sliders",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__sliders.json",
+    "sha256": "83259f4ec9562620655e57925ba4c7deddca5f3f3fb7c2a0788040500c6b4154",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/4d160e88-c954-4614-8d11-4ec3ed399c92.json",
+    "source_updated_timestamp": "2026-07-17T07:13:18.037Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C33",
+    "url": "https://m3.material.io/components/switch",
+    "title": "Switch",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__switch.json",
+    "sha256": "5d181e144b00817da10999a0bdfe8817a067368ab19c1f7b5abcb493c21c10dd",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/a4ad43f1-5c39-44b2-ae15-a7110bdf4fa6.json",
+    "source_updated_timestamp": "2026-07-17T07:03:01.922Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C34",
+    "url": "https://m3.material.io/components/text-fields",
+    "title": "Text fields",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__text-fields.json",
+    "sha256": "451794bfb4668c2c53f8785ab11afab5a5a083999f1c3212a29ac303f5bb7793",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/8741ef66-1a80-4b39-adb1-66bea5e6992f.json",
+    "source_updated_timestamp": "2026-09-08T08:21:17.878Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C35",
+    "url": "https://m3.material.io/components/tooltips",
+    "title": "Tooltips",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__tooltips.json",
+    "sha256": "2651f8a97d82d5ef8fcc7df857705d0435f845dbe6ece05d4f2f2e7531a43288",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/cb07b841-eae0-4959-bbab-25b1971714ca.json",
+    "source_updated_timestamp": "2026-07-17T07:03:02.412Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C36",
+    "url": "https://m3.material.io/components/app-bars",
+    "title": "App bars",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__app-bars.json",
+    "sha256": "00784ed2ac3a0b1fc3a985c8c981afaf4003c990107bc08d1c90df130f728419",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/4135ef28-314c-44dc-b829-6e94a36b69f2.json",
+    "source_updated_timestamp": "2026-07-24T06:22:06.561Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C37",
+    "url": "https://m3.material.io/components/lists",
+    "title": "Lists",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__lists.json",
+    "sha256": "0302dfe77765c4bd0aa25246b13bb8fddd561d3a10162256adc13a1eda226812",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/6d4033c2-f92c-4c43-b585-b3bce8468d48.json",
+    "source_updated_timestamp": "2026-08-06T17:09:16.197Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C38",
+    "url": "https://m3.material.io/components/badges",
+    "title": "Badges",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__badges.json",
+    "sha256": "743661fc055b3f95cb9227abe6b2abc15676e495035b1cd972137da16967a707",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/e18a73ff-b00d-46e7-af20-ab9dd24bf579.json",
+    "source_updated_timestamp": "2026-07-17T06:58:42.753Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C39",
+    "url": "https://m3.material.io/components/tabs",
+    "title": "Tabs",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__tabs.json",
+    "sha256": "3b7a96ed176b32c403e78ec3d2b2d5d8dde459d889c406d9a6178f286079cba9",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/f37f47ba-8e67-4f1e-98a3-3bea94879e52.json",
+    "source_updated_timestamp": "2026-07-17T07:03:01.541Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C40",
+    "url": "https://m3.material.io/components/checkbox",
+    "title": "Checkbox",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__checkbox.json",
+    "sha256": "59210ef5042b772c56a945e76303a0098fb2e6ee9d58117a500b092514d97c00",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/c0332583-8417-4b80-a0a1-e283781d31c6.json",
+    "source_updated_timestamp": "2026-08-12T09:53:04.800Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C41",
+    "url": "https://m3.material.io/components/date-pickers",
+    "title": "Date pickers",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__date-pickers.json",
+    "sha256": "373a9c496d6d117947f5a07e5a1d963872d4d674aa5e7128c32b9cf42545ec5c",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/523144a0-9184-44bd-93f0-5b4c7355f421.json",
+    "source_updated_timestamp": "2026-07-27T14:12:27.562Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C42",
+    "url": "https://m3.material.io/components/time-pickers",
+    "title": "Time pickers",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__time-pickers.json",
+    "sha256": "daec5020056694f49af105ed1ddc255f74ef18510ae493890650e8a753958497",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/ec8e6da4-b726-403d-bab7-3fb660b6ef86.json",
+    "source_updated_timestamp": "2026-07-17T07:13:07.343Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C43",
+    "url": "https://m3.material.io/components/snackbar",
+    "title": "Snackbar",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Published page JSON retrieved by public HTTP; visible Overview and Accessibility text inspected for component families; rendered REA catalog corroborates inventory",
+    "verified_scope": "Published component purpose, variants and selected accessibility guidance; or implementation platform positioning. Not a complete spec/token audit.",
+    "local_file": "evidence/page-data/components__snackbar.json",
+    "sha256": "b54b350305d626169e8093e47df2c0631fcc02e8169024df3e308a89b669861f",
+    "content_endpoint": "https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/26cf2750-80f7-43f8-a155-834aa01276df.json",
+    "source_updated_timestamp": "2026-07-28T08:03:08.607Z",
+    "limitations": [
+      "No component interaction or platform package execution.",
+      "Media and every numerical spec value were not individually verified."
+    ]
+  },
+  {
+    "id": "C44",
+    "url": "https://github.com/material-components/material-components-android",
+    "title": "MDC-Android repository",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Official page or repository raw text opened with web retrieval tool",
+    "verified_scope": "Repository labels maintenance mode.",
+    "limitations": [
+      "Moving URL, not a commit-pinned snapshot.",
+      "No package build or runtime validation."
+    ]
+  },
+  {
+    "id": "C45",
+    "url": "https://raw.githubusercontent.com/material-components/material-web/main/README.md",
+    "title": "Material Web README",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Official page or repository raw text opened with web retrieval tool",
+    "verified_scope": "Material 3 Web Components library; maintenance pending maintainers; Angular Material recommendation.",
+    "limitations": [
+      "Moving URL, not a commit-pinned snapshot.",
+      "No package build or runtime validation."
+    ]
+  },
+  {
+    "id": "C46",
+    "url": "https://github.com/material-components/material-components-ios",
+    "title": "Material Components iOS repository",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Official page or repository raw text opened with web retrieval tool",
+    "verified_scope": "Archived 2025-12-11; read-only repository.",
+    "limitations": [
+      "Moving URL, not a commit-pinned snapshot.",
+      "No package build or runtime validation."
+    ]
+  },
+  {
+    "id": "C47",
+    "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3",
+    "title": "Compose Material3 releases",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Official page or repository raw text opened with web retrieval tool",
+    "verified_scope": "2026-10-21 latest update, stable 1.4.0, beta 1.5.0-beta02; Wear-specific library distinction.",
+    "limitations": [
+      "Moving URL, not a commit-pinned snapshot.",
+      "No package build or runtime validation."
+    ]
+  },
+  {
+    "id": "C48",
+    "url": "https://developer.android.com/develop/ui/compose/designsystems/material3",
+    "title": "Material Design 3 in Compose",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Official page or repository raw text opened with web retrieval tool",
+    "verified_scope": "M3/Expressive overview, dependency, experimental APIs, core theme axes.",
+    "limitations": [
+      "Moving URL, not a commit-pinned snapshot.",
+      "No package build or runtime validation."
+    ]
+  },
+  {
+    "id": "C49",
+    "url": "https://developer.android.com/develop/ui/compose/designsystems/material2-material3",
+    "title": "Migrate from M2 to M3 in Compose",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Official page or repository raw text opened with web retrieval tool",
+    "verified_scope": "Distinct packages and themes; phased migration recommendation.",
+    "limitations": [
+      "Moving URL, not a commit-pinned snapshot.",
+      "No package build or runtime validation."
+    ]
+  },
+  {
+    "id": "C50",
+    "url": "https://developer.android.com/develop/ui/compose/accessibility/semantics",
+    "title": "Compose semantics",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Official page or repository raw text opened with web retrieval tool",
+    "verified_scope": "Semantics expose meaning/role; built-in semantics and developer responsibilities.",
+    "limitations": [
+      "Moving URL, not a commit-pinned snapshot.",
+      "No package build or runtime validation."
+    ]
+  },
+  {
+    "id": "C51",
+    "url": "https://raw.githubusercontent.com/material-components/material-components-android/master/docs/components/FloatingActionButton.md",
+    "title": "MDC-Android FAB documentation",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Official page or repository raw text opened with web retrieval tool",
+    "verified_scope": "Expressive sizes and color theme overlays; small/surface FAB deprecations in this documentation.",
+    "limitations": [
+      "Moving URL, not a commit-pinned snapshot.",
+      "No package build or runtime validation."
+    ]
+  },
+  {
+    "id": "C52",
+    "url": "https://raw.githubusercontent.com/material-components/material-web/main/docs/quick-start.md",
+    "title": "Material Web quick start",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Official page or repository raw text opened with web retrieval tool",
+    "verified_scope": "NPM install, component imports, custom elements, prototype versus production guidance.",
+    "limitations": [
+      "Moving URL, not a commit-pinned snapshot.",
+      "No package build or runtime validation."
+    ]
+  },
+  {
+    "id": "C53",
+    "url": "https://docs.flutter.dev/release/breaking-changes/material-3-migration",
+    "title": "Flutter M3 migration",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Official page or repository raw text opened with web retrieval tool",
+    "verified_scope": "Flutter 3.16 default change; breaking-change doc warns of staleness.",
+    "limitations": [
+      "Moving URL, not a commit-pinned snapshot.",
+      "No package build or runtime validation."
+    ]
+  },
+  {
+    "id": "C54",
+    "url": "https://api.flutter.dev/flutter/material/ThemeData/useMaterial3.html",
+    "title": "Flutter useMaterial3 API",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Official page or repository raw text opened with web retrieval tool",
+    "verified_scope": "Default true, opt-out status, constructor/copyWith distinction, widget mappings.",
+    "limitations": [
+      "Moving URL, not a commit-pinned snapshot.",
+      "No package build or runtime validation."
+    ]
+  },
+  {
+    "id": "C55",
+    "url": "https://api.flutter.dev/flutter/material/ColorScheme/ColorScheme.fromSeed.html",
+    "title": "Flutter ColorScheme.fromSeed API",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Official page or repository raw text opened with web retrieval tool",
+    "verified_scope": "Seed-derived role generation, brightness/variant/contrast/override parameters; original seed may not be output color.",
+    "limitations": [
+      "Moving URL, not a commit-pinned snapshot.",
+      "No package build or runtime validation."
+    ]
+  },
+  {
+    "id": "C56",
+    "url": "https://developer.android.com/develop/ui/compose/components/button",
+    "title": "Compose Button guide",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Official page or repository raw text opened with web retrieval tool",
+    "verified_scope": "Five button types and named Compose APIs; supplementary verification.",
+    "limitations": [
+      "Moving URL, not a commit-pinned snapshot.",
+      "No package build or runtime validation."
+    ]
+  },
+  {
+    "id": "C57",
+    "url": "https://raw.githubusercontent.com/material-components/material-web/main/docs/theming/README.md",
+    "title": "Material Web theming",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Official page or repository raw text opened with web retrieval tool",
+    "verified_scope": "CSS custom property token conventions and unsupported palette/motion token families.",
+    "limitations": [
+      "Moving URL, not a commit-pinned snapshot.",
+      "No package build or runtime validation."
+    ]
+  },
+  {
+    "id": "C58",
+    "url": "https://material-web.dev/components/",
+    "title": "Unsuccessful retrieval",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Web open",
+    "verified_scope": "No page content verified",
+    "limitations": [
+      "Web retrieval tool reported inaccessible."
+    ],
+    "status": "inaccessible"
+  },
+  {
+    "id": "C59",
+    "url": "https://raw.githubusercontent.com/material-components/material-web/main/docs/components/README.md",
+    "title": "Unsuccessful retrieval",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Web open",
+    "verified_scope": "No page content verified",
+    "limitations": [
+      "HTTP 404 through web retrieval tool."
+    ],
+    "status": "inaccessible"
+  },
+  {
+    "id": "C60",
+    "url": "https://raw.githubusercontent.com/material-components/material-components-android/master/docs/components/SegmentedButton.md",
+    "title": "Unsuccessful retrieval",
+    "accessed_at": "2026-10-28 (Asia/Calcutta)",
+    "method": "Web open",
+    "verified_scope": "No page content verified",
+    "limitations": [
+      "HTTP 404 through web retrieval tool; guessed singular filename. Does not establish absence of segmented-button documentation elsewhere."
+    ],
+    "status": "inaccessible"
+  }
+]

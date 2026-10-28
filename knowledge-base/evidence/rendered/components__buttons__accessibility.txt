@@ -1,0 +1,199 @@
+URL: https://m3.material.io/components/buttons/accessibility
+REA evidence: ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3
+Step: ready_4
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /components/buttons/accessibility#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Buttons" [level=1]
+      - navigation "article tabs":
+        - tablist:
+          - tab "Overview"
+          - tab "Specs"
+          - tab "Guidelines"
+          - tab "Accessibility" [selected]
+      - navigation "page content":
+        - text: On this page
+        - list:
+          - listitem:
+            - link "Use cases"
+          - listitem:
+            - link "Interaction & style"
+          - listitem:
+            - link "Keyboard navigation"
+          - listitem:
+            - link "Labeling elements"
+      - tabpanel:
+        - region:
+          - button "copy link to Use cases section": link
+          - text: Copy link
+          - heading "Use cases" [level=2]
+          - paragraph: "People should be able to do the following with assistive technology:"
+          - list:
+            - listitem: Use a button to perform an action
+            - listitem: Navigate to and activate a button
+        - region:
+          - button "copy link to Interaction & style section": link
+          - text: Copy link
+          - heading "Interaction & style" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Color contrast" [level=3]
+          - paragraph: Enabled buttons need a 3:1 contrast ratio with the background to meet accessibility best practices.
+          - paragraph: This is measured from the container for elevated, filled, and tonal button styles, and the label text for outlined and text button styles.
+          - figure "Higher contrast helps differentiate elements":
+            - img "Diagram of color contrast ratios for buttons."
+            - paragraph: Higher contrast helps differentiate elements
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "200% text size" [level=3]
+          - paragraph: Avoid excessive text wrapping or truncation by choosing concise strings.
+          - paragraph: On Android, button labels should be kept concise enough to fit within two lines after the text size is increased to 200%. If a button label exceeds this limit and gets truncated, provide an alternative way to access the full content in a single tap.
+          - figure "exclamation Caution Avoid excessive text wrapping or truncation by choosing concise strings":
+            - 'img "200% text size on a mobile screen. The overly long button text wraps to a second line: “Download playlist for offline access”."'
+            - text: exclamation Caution
+            - paragraph: Avoid excessive text wrapping or truncation by choosing concise strings
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Rapid clicks" [level=3]
+          - paragraph: On the web, you can use a modified motion curve to avoid resonant effects from overlapping animations. This provides a smoother experience for interactions where you anticipate multiple clicks or taps in succession.
+          - figure "Use the modified motion curve if rapid click or pointer interactions are expected":
+            - button "Pause Video": pause
+            - paragraph: Use the modified motion curve if rapid click or pointer interactions are expected
+        - region:
+          - button "copy link to Keyboard navigation section": link
+          - text: Copy link
+          - heading "Keyboard navigation" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - table:
+            - rowgroup:
+              - row "Keys Actions":
+                - columnheader "Keys"
+                - columnheader "Actions"
+            - rowgroup:
+              - row "Tab Navigate to a button":
+                - rowheader "Tab"
+                - cell "Navigate to a button"
+              - row "Space or Enter Activate a button":
+                - rowheader "Space or Enter"
+                - cell "Activate a button"
+        - region:
+          - button "copy link to Labeling elements section": link
+          - text: Copy link
+          - heading "Labeling elements" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - text: The accessibility label for a button should match the visible label text on the button such as
+            - strong: Done
+            - text: ","
+            - strong: Send
+            - text: ", or"
+            - strong: Reply
+            - text: .
+          - paragraph: It can contain extra contextual information if necessary.
+          - figure:
+            - img "Accessibility tags for a text-only button."
+    - navigation "previous and up next articles":
+      - 'link "Previous Buttons: Guidelines"':
+        - /url: /components/buttons/guidelines
+      - 'link "Up next Extended FABs: Overview"':
+        - /url: /components/extended-fab
+    - button "go back to top": vertical_align_top
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

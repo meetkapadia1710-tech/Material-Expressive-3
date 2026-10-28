@@ -1,0 +1,194 @@
+URL: https://m3.material.io/get-started
+REA evidence: ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e
+Step: ready_0
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /get-started#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Get Started" [level=1]
+      - paragraph: Get to know Material 3 – from UX guidance and tools to reusable components and open-source code
+      - link "What's Material? Learn how Material enables beautiful product design at Google scale":
+        - /url: ""
+      - link "What's Material 3 Expressive? Explore new features, components, and tactics for emotionally impactful UX":
+        - /url: ""
+      - link "Using Material Get to know Material.io and our top resources":
+        - /url: ""
+      - link "Design Start applying color, type, adaptive design patterns, and more":
+        - /url: ""
+      - link "Develop Developer resources include code for Android, Flutter, and the Web":
+        - /url: ""
+      - heading "What's Material?" [level=2]
+      - paragraph:
+        - text: Material Design is a design system built and supported by Google designers and developers.
+        - strong: Material.io
+        - text: includes in-depth UX guidance and UI component implementations for Android, Flutter, and the Web. The latest version, Material 3, enables personal, adaptive, and expressive experiences – from dynamic color and enhanced accessibility, to foundations for large screen layouts and design tokens. M3 Expressive takes this a step further by adding more flexible components, vibrant styles, and fully integrated motion.
+      - paragraph:
+        - text: All Material 3 content, guidelines, imagery, and resources are available under the
+        - link "Apache 2.0":
+          - /url: https://www.apache.org/licenses/LICENSE-2.0.html
+        - text: or
+        - link "CC BY 4.0":
+          - /url: https://creativecommons.org/licenses/by/4.0/
+        - text: license.
+      - link "UX foundations Foundations like color, type, and shape are customizable systems in Material":
+        - /url: /foundations
+        - text: UX foundations Foundations like color, type, and shape are customizable systems in Material
+        - img
+      - link "Open-source code Multi-platform code to build beautiful products, faster":
+        - /url: /develop
+        - text: Open-source code Multi-platform code to build beautiful products, faster
+        - img
+      - link "Tutorials, case studies & news Follow Material's blog for updates, deep dives, and more":
+        - /url: /blog
+        - text: Tutorials, case studies & news Follow Material's blog for updates, deep dives, and more
+        - img
+      - heading "What's Material 3 Expressive?" [level=2]
+      - paragraph: People increasingly see their devices as extensions of themselves. Expressive UIs have an emotional impact, fostering this connection by evoking a stronger feeling or mood with the device.
+      - paragraph: M3 Expressive is an expansion of the Material 3 design system. It’s a set of new features, updated components, and design tactics for creating emotionally impactful UX.
+      - link "Expressive components 15 new or updated components featuring more sizes, shapes, functionality, visual emphasis, and other expressive updates":
+        - /url: /blog/building-with-m3-expressive?utm_source=get-started&utm_medium=referral&utm_campaign=IO25#66c25e92-7560-479f-9e09-f8d41b63d4ec
+      - link "Emphasized typography Expanded M3 type scale with new emphasized styles, and guidelines for how to craft stunning editorial moments using variable fonts":
+        - /url: /styles/typography/overview?utm_source=get-started&utm_medium=referral&utm_campaign=IO25
+      - link "Motion physics system New, simplified spring-based system to make interactions and transitions feel more alive, fluid, and natural":
+        - /url: /styles/motion/overview?utm_source=get-started&utm_medium=referral&utm_campaign=IO25
+      - link "Expanded shape library 35 shapes to add decorative detail and shape morphing to image crops, avatars, loading indicators, and general progress":
+        - /url: /styles/shape/overview-principles?utm_source=get-started&utm_medium=referral&utm_campaign=IO25
+      - heading "Using Material" [level=2]
+      - paragraph:
+        - text: "On Material.io, the design system is organized in three main parts:"
+        - strong: foundations
+        - text: ","
+        - strong: styles
+        - text: ", and"
+        - strong: components
+        - text: . Each section includes design guidance and tools to help you customize and build with Material.
+      - link "Foundations & customization Accessibility, layout, interaction states, design tokens, and more":
+        - /url: /foundations
+        - text: Foundations & customization Accessibility, layout, interaction states, design tokens, and more
+        - img
+      - link "Styles Systems for applying color, type, icons, motion, and shape":
+        - /url: /styles
+        - text: Styles Systems for applying color, type, icons, motion, and shape
+        - img
+      - link "Components Customizable UI elements, from menus to buttons to dialogs":
+        - /url: /components
+        - text: Components Customizable UI elements, from menus to buttons to dialogs
+        - img
+      - heading "Design" [level=2]
+      - paragraph: Design guidance, specs, and tools to streamline the work of getting from Figma to finished products.
+      - link "Styles & customization Scale design decisions with systems for color, type, and more":
+        - /url: /styles
+        - text: Styles & customization Scale design decisions with systems for color, type, and more
+        - img
+      - link "Adaptive layouts Patterns and best practices for handling multiple screen sizes":
+        - /url: /foundations/layout/layout-overview/adaptive-design
+        - text: Adaptive layouts Patterns and best practices for handling multiple screen sizes
+        - img
+      - link "Figma M3 Design Kit Jumpstart your designs with ready-made elements in the M3 Design Kit":
+        - /url: https://www.figma.com/community/file/1035203688168086460
+        - text: Figma M3 Design Kit Jumpstart your designs with ready-made elements in the M3 Design Kit
+        - img
+      - heading "Develop" [level=2]
+      - paragraph: The latest Material Components, tutorials, case studies, and documentation.
+      - link "Android Material Components and tutorials for Android’s Jetpack Compose":
+        - /url: /develop/android/jetpack-compose
+        - text: Android Material Components and tutorials for Android’s Jetpack Compose
+        - img
+      - link "Flutter Material Components for Flutter, a mobile UI framework":
+        - /url: /develop/flutter
+        - text: Flutter Material Components for Flutter, a mobile UI framework
+        - img
+      - link "Web Web Components and tutorials are in development for M3":
+        - /url: /develop/web
+        - text: Web Web Components and tutorials are in development for M3
+        - img
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

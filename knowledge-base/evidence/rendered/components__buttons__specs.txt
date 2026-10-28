@@ -1,0 +1,685 @@
+URL: https://m3.material.io/components/buttons/specs
+REA evidence: ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3
+Step: ready_5
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /components/buttons/specs#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Buttons" [level=1]
+      - navigation "article tabs":
+        - tablist:
+          - tab "Overview"
+          - tab "Specs" [selected]
+          - tab "Guidelines"
+          - tab "Accessibility"
+      - navigation "page content":
+        - text: On this page
+        - list:
+          - listitem:
+            - link "Variants"
+          - listitem:
+            - link "Configurations"
+          - listitem:
+            - link "Tokens & specs"
+          - listitem:
+            - link "Anatomy"
+          - listitem:
+            - link "Color"
+          - listitem:
+            - link "States"
+          - listitem:
+            - link "Shape morph"
+          - listitem:
+            - link "Measurements"
+          - listitem:
+            - link "Baseline tokens"
+      - tabpanel:
+        - region:
+          - button "copy link to Variants section": link
+          - text: Copy link
+          - heading "Variants" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Default button Toggle button":
+            - img "Diagram comparing buttons with toggle buttons."
+            - img "Diagram comparing buttons with toggle buttons."
+            - list:
+              - listitem:
+                - paragraph: Default button
+              - listitem:
+                - paragraph: Toggle button
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - table:
+            - rowgroup:
+              - row "Variant M3 M3 Expressive":
+                - columnheader "Variant":
+                  - paragraph: Variant
+                - columnheader "M3":
+                  - paragraph: M3
+                - columnheader "M3 Expressive":
+                  - paragraph: M3 Expressive
+            - rowgroup:
+              - row "Default Available Available":
+                - cell "Default":
+                  - paragraph: Default
+                - cell "Available":
+                  - paragraph: Available
+                - cell "Available":
+                  - paragraph: Available
+              - row "Toggle (selection) -- Available":
+                - cell "Toggle (selection)":
+                  - paragraph: Toggle (selection)
+                - cell "--":
+                  - paragraph: "--"
+                - cell "Available":
+                  - paragraph: Available
+        - region:
+          - button "copy link to Configurations section": link
+          - text: Copy link
+          - heading "Configurations" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Size Shape Color Small button padding":
+            - img "Diagram showing configurations of buttons."
+            - img "Diagram showing configurations of buttons."
+            - list:
+              - listitem: Size
+              - listitem: Shape
+              - listitem: Color
+              - listitem: Small button padding
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - table:
+            - rowgroup:
+              - row "Category Configuration M3 M3 Expressive":
+                - columnheader "Category":
+                  - paragraph: Category
+                - columnheader "Configuration":
+                  - paragraph: Configuration
+                - columnheader "M3":
+                  - paragraph: M3
+                - columnheader "M3 Expressive":
+                  - paragraph: M3 Expressive
+            - rowgroup:
+              - row "Size Small (default) Available Available":
+                - cell "Size":
+                  - paragraph: Size
+                - cell "Small (default)":
+                  - paragraph: Small (default)
+                - cell "Available":
+                  - paragraph: Available
+                - cell "Available":
+                  - paragraph: Available
+              - row "XS, M, L, XL -- Available":
+                - cell "XS, M, L, XL":
+                  - paragraph: XS, M, L, XL
+                - cell "--":
+                  - paragraph: "--"
+                - cell "Available":
+                  - paragraph: Available
+              - row "Shape Round (default) Available Available":
+                - cell "Shape":
+                  - paragraph: Shape
+                - cell "Round (default)":
+                  - paragraph: Round (default)
+                - cell "Available":
+                  - paragraph: Available
+                - cell "Available":
+                  - paragraph: Available
+              - row "Square -- Available":
+                - cell "Square":
+                  - paragraph: Square
+                - cell "--":
+                  - paragraph: "--"
+                - cell "Available":
+                  - paragraph: Available
+              - row "Color Elevated, filled (default), tonal, outlined, text Available Available":
+                - cell "Color":
+                  - paragraph: Color
+                - cell "Elevated, filled (default), tonal, outlined, text":
+                  - paragraph: Elevated, filled (default), tonal, outlined, text
+                - cell "Available":
+                  - paragraph: Available
+                - cell "Available":
+                  - paragraph: Available
+              - row "Small button padding 24dp Available Not recommended. Use 16dp":
+                - cell "Small button padding":
+                  - paragraph: Small button padding
+                - cell "24dp":
+                  - paragraph: 24dp
+                - cell "Available":
+                  - paragraph: Available
+                - cell "Not recommended. Use 16dp":
+                  - paragraph: Not recommended.
+                  - paragraph: Use 16dp
+              - row "16dp -- Available":
+                - cell "16dp":
+                  - paragraph: 16dp
+                - cell "--":
+                  - paragraph: "--"
+                - cell "Available":
+                  - paragraph: Available
+        - region:
+          - button "copy link to Tokens & specs section": link
+          - text: Copy link
+          - heading "Tokens & specs" [level=2]
+          - paragraph:
+            - text: Use the table's menu to select a token set. Button token sets are separated into common tokens, color, and size.
+            - link "View baseline tokens":
+              - /url: /m3/pages/common-buttons/specs#c305d304-a6c0-466a-a48c-8d0718a29ae2
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+        - region:
+          - button "copy link to Anatomy section": link
+          - text: Copy link
+          - heading "Anatomy" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Container Label text Icon (optional)":
+            - img "Diagram labeling 3 parts of a button."
+            - list:
+              - listitem: Container
+              - listitem: Label text
+              - listitem: Icon (optional)
+        - region:
+          - button "copy link to Color section": link
+          - text: Copy link
+          - heading "Color" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Color values are implemented through design tokens. For designers, this means working with color values that correspond with tokens. In implementation, a color value will be a token that references a value.
+          - list:
+            - listitem:
+              - paragraph: "There are five built-in button color styles: elevated, filled, tonal, outlined, and text"
+            - listitem:
+              - paragraph: The default and toggle buttons use different colors
+            - listitem:
+              - paragraph: Toggle buttons don’t use the text style
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link star Note:These color roles were chosen to create design coherence and familiarity. Other color roles can be used as long as the container and text have a 3:1 contrast ratio. For example, tertiary and on tertiary.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - 'figure "A. Elevated, B. Filled, C. Tonal, D. Outlined, E. Text Default Toggle: unselected Toggle: selected"':
+            - img "Diagram shows dark and light color schemes for buttons."
+            - paragraph: A. Elevated, B. Filled, C. Tonal, D. Outlined, E. Text
+            - list:
+              - listitem: Default
+              - listitem: "Toggle: unselected"
+              - listitem: "Toggle: selected"
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - table:
+            - rowgroup:
+              - row "1. Default 2. Toggle unselected 3. Toggle selected":
+                - columnheader:
+                  - paragraph
+                - columnheader "1. Default":
+                  - paragraph: 1. Default
+                - columnheader "2. Toggle unselected":
+                  - paragraph: 2. Toggle unselected
+                - columnheader "3. Toggle selected":
+                  - paragraph: 3. Toggle selected
+            - rowgroup:
+              - row "Elevated container Elevated icon & label Surface container low Primary Surface container low Primary Primary On primary":
+                - cell "Elevated container Elevated icon & label":
+                  - paragraph: Elevated container
+                  - paragraph: Elevated icon & label
+                - cell "Surface container low Primary":
+                  - paragraph: Surface container low
+                  - paragraph: Primary
+                - cell "Surface container low Primary":
+                  - paragraph: Surface container low
+                  - paragraph: Primary
+                - cell "Primary On primary":
+                  - paragraph: Primary
+                  - paragraph: On primary
+              - row "Filled container Filled icon & label Primary On primary Surface container On surface variant Primary On primary":
+                - cell "Filled container Filled icon & label":
+                  - paragraph: Filled container
+                  - paragraph: Filled icon & label
+                - cell "Primary On primary":
+                  - paragraph: Primary On primary
+                - cell "Surface container On surface variant":
+                  - paragraph: Surface container
+                  - paragraph: On surface variant
+                - cell "Primary On primary":
+                  - paragraph: Primary
+                  - paragraph: On primary
+              - row "Tonal container Tonal icon & label Secondary container On secondary container Secondary container On secondary container Secondary On secondary":
+                - cell "Tonal container Tonal icon & label":
+                  - paragraph: Tonal container
+                  - paragraph: Tonal icon & label
+                - cell "Secondary container On secondary container":
+                  - paragraph: Secondary container
+                  - paragraph: On secondary container
+                - cell "Secondary container On secondary container":
+                  - paragraph: Secondary container
+                  - paragraph: On secondary container
+                - cell "Secondary On secondary":
+                  - paragraph: Secondary
+                  - paragraph: On secondary
+              - row "Outlined container Outlined icon & label Outline variant (outline) On surface variant Outline variant (outline) On surface variant Inverse surface Inverse on surface":
+                - cell "Outlined container Outlined icon & label":
+                  - paragraph: Outlined container
+                  - paragraph: Outlined icon & label
+                - cell "Outline variant (outline) On surface variant":
+                  - paragraph: Outline variant (outline)
+                  - paragraph: On surface variant
+                - cell "Outline variant (outline) On surface variant":
+                  - paragraph: Outline variant (outline)
+                  - paragraph: On surface variant
+                - cell "Inverse surface Inverse on surface":
+                  - paragraph: Inverse surface
+                  - paragraph: Inverse on surface
+              - row "Text icon & label Primary -- --":
+                - cell "Text icon & label":
+                  - paragraph: Text icon & label
+                - cell "Primary":
+                  - paragraph: Primary
+                - cell "--":
+                  - paragraph: "--"
+                - cell "--":
+                  - paragraph: "--"
+        - region:
+          - button "copy link to States section": link
+          - text: Copy link
+          - heading "States" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: States are visual representations used to communicate the status of a component or interactive element.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Elevated button states" [level=3]
+          - paragraph: The elevated button style has an elevation of 1 by default and 0 when disabled.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Default" [level=4]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Enabled Disabled Hovered Focused Pressed":
+            - img "Elevated button states."
+            - list:
+              - listitem: Enabled
+              - listitem: Disabled
+              - listitem: Hovered
+              - listitem: Focused
+              - listitem: Pressed
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Toggle" [level=4]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "A. Unselected, B. Selected Enabled Disabled Hovered Focused Pressed":
+            - img "Toggle elevated button states."
+            - paragraph: A. Unselected, B. Selected
+            - list:
+              - listitem: Enabled
+              - listitem: Disabled
+              - listitem: Hovered
+              - listitem: Focused
+              - listitem: Pressed
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Filled button states" [level=3]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Default" [level=4]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Enabled Disabled Hovered Focused Pressed":
+            - img "Filled button states."
+            - list:
+              - listitem: Enabled
+              - listitem: Disabled
+              - listitem: Hovered
+              - listitem: Focused
+              - listitem: Pressed
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Toggle" [level=4]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "A. Unselected, B. Selected Enabled Disabled Hovered Focused Pressed":
+            - img "Toggle filled button states."
+            - paragraph: A. Unselected, B. Selected
+            - list:
+              - listitem: Enabled
+              - listitem: Disabled
+              - listitem: Hovered
+              - listitem: Focused
+              - listitem: Pressed
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Tonal button states" [level=3]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Default" [level=4]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Enabled Disabled Hovered Focused Pressed":
+            - img "Tonal button states."
+            - list:
+              - listitem: Enabled
+              - listitem: Disabled
+              - listitem: Hovered
+              - listitem: Focused
+              - listitem: Pressed
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Toggle" [level=4]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "A. Unselected, B. Selected Enabled Disabled Hovered Focused Pressed":
+            - img "Toggle tonal button states."
+            - paragraph: A. Unselected, B. Selected
+            - list:
+              - listitem: Enabled
+              - listitem: Disabled
+              - listitem: Hovered
+              - listitem: Focused
+              - listitem: Pressed
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Outlined button states" [level=3]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: The outlined button’s container fill is invisible at rest, but the opacity and state layers behave the same as other button styles when disabled, hovered, focused, or pressed.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Default" [level=4]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Enabled Disabled Hovered Focused Pressed":
+            - img "Outlined button states."
+            - list:
+              - listitem: Enabled
+              - listitem: Disabled
+              - listitem: Hovered
+              - listitem: Focused
+              - listitem: Pressed
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Toggle" [level=4]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Enabled Disabled Hovered Focused Pressed":
+            - img "Outlined button states."
+            - list:
+              - listitem: Enabled
+              - listitem: Disabled
+              - listitem: Hovered
+              - listitem: Focused
+              - listitem: Pressed
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Text button style states" [level=3]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: The text button’s container is invisible at rest, but the opacity and state layers behave the same as other button styles when disabled, hovered, focused, or pressed. There is no toggle text button.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Enabled Disabled Hovered Focused Pressed":
+            - img "Default text button style states."
+            - list:
+              - listitem: Enabled
+              - listitem: Disabled
+              - listitem: Hovered
+              - listitem: Focused
+              - listitem: Pressed
+        - region:
+          - button "copy link to Shape morph section": link
+          - text: Copy link
+          - heading "Shape morph" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Pressed state" [level=3]
+          - paragraph: When pressed, buttons can morph to become more square. Both round and square buttons should have the same pressed shape.
+          - paragraph:
+            - text: The corner radius value differs for each button size.
+            - link "See full button corner measurements":
+              - /url: /m3/pages/common-buttons/specs#b1f39738-6f3a-409b-8f08-4cab6d78d756
+          - figure "A. Round button, B. Square button Enabled Hovered Pressed":
+            - img "Shape changes of a button."
+            - paragraph: A. Round button, B. Square button
+            - list:
+              - listitem: Enabled
+              - listitem: Hovered
+              - listitem: Pressed
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "When selected" [level=3]
+          - paragraph: In addition to changing shape when pressed, toggle buttons also change the resting shape from round (unselected) to square (selected).
+          - paragraph: If the resting unselected shape is square, the selected shape should be round.
+          - figure "A. Round button, B. Square button Enabled Hovered Pressed Selected":
+            - img "Shape changes of a toggle button."
+            - paragraph: A. Round button, B. Square button
+            - list:
+              - listitem:
+                - paragraph: Enabled
+              - listitem:
+                - paragraph: Hovered
+              - listitem:
+                - paragraph: Pressed
+              - listitem:
+                - paragraph: Selected
+        - region:
+          - button "copy link to Measurements section": link
+          - text: Copy link
+          - heading "Measurements" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Padding and size measurements of each button size Extra small Small Medium Large Extra large":
+            - img "Diagram of measurements of all button sizes."
+            - paragraph: Padding and size measurements of each button size
+            - list:
+              - listitem: Extra small
+              - listitem: Small
+              - listitem: Medium
+              - listitem: Large
+              - listitem: Extra large
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Target areas" [level=3]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Extra small and small icon buttons must have a target size of 48x48dp or larger to be accessible.
+          - figure "A. Extra small B. Small Round button Button with icon Square button":
+            - img "Diagram of small button target areas."
+            - paragraph: A. Extra small B. Small
+            - list:
+              - listitem: Round button
+              - listitem: Button with icon
+              - listitem: Square button
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Corner sizes" [level=3]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure:
+            - img "Diagram of corner radii of buttons."
+            - paragraph
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - table:
+            - rowgroup:
+              - row "XS S M L XL":
+                - columnheader
+                - columnheader "XS"
+                - columnheader "S"
+                - columnheader "M"
+                - columnheader "L"
+                - columnheader "XL"
+            - rowgroup:
+              - row "A. Round button Full Full Full Full Full":
+                - cell "A. Round button"
+                - cell "Full"
+                - cell "Full"
+                - cell "Full"
+                - cell "Full"
+                - cell "Full"
+              - row "B. Square button 12dp 12dp 16dp 28dp 28dp":
+                - cell "B. Square button"
+                - cell "12dp"
+                - cell "12dp"
+                - cell "16dp"
+                - cell "28dp"
+                - cell "28dp"
+              - row "C. Pressed state 8dp 8dp 12dp 16dp 16dp":
+                - cell "C. Pressed state"
+                - cell "8dp"
+                - cell "8dp"
+                - cell "12dp"
+                - cell "16dp"
+                - cell "16dp"
+        - region:
+          - button "copy link to Baseline tokens section": link
+          - text: Copy link
+          - heading "Baseline tokens" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Use the table's menu to switch token sets. The baseline button token sets are organized by color.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+    - navigation "previous and up next articles":
+      - 'link "Previous Buttons: Overview"':
+        - /url: /components/buttons/overview
+      - 'link "Up next Buttons: Guidelines"':
+        - /url: /components/buttons/guidelines
+    - button "go back to top": vertical_align_top
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

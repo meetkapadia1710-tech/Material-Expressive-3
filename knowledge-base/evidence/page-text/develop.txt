@@ -1,0 +1,38 @@
+# Develop
+Source ID: P002
+Public page: https://m3.material.io/develop
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/c3d29ede-a66a-427b-8efc-afe353e8d513.json
+Retrieved: 2026-10-28T07:42:57.378383+00:00
+Source SHA-256: 63cc339d1dfbaae4eb884b38632531c788f01f272caa33074c17924da955dcd3
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+Implement Material Design with code and developer documentation for Jetpack Compose, Android Views, Flutter, and the web
+
+## Overview
+
+Announcements
+
+The latest in Material development
+
+Jetpack Compose is the modern toolkit for building Material UI on Android. The Material Views (MDC-Android) library is in maintenance mode and will only receive critical fixes.
+Media alternative text: May 19, 2026
+
+Material platforms
+
+The Material Compose library is built in-house, so it receives the latest Material updates first. It’s the recommended platform for developing on Android.
+
+Jetpack Compose is the recommended toolkit for building Material UI on Android. Get developer documentation, tutorials, and feature highlights to build with Material for Android using Jetpack Compose.
+
+The Material Flutter library is actively maintained by the Flutter team and receives periodic Material updates.
+
+Flutter offers the best Material support for multi-platform app development. Get developer documentation to build with Material for Flutter.
+
+Additional platforms
+
+Material’s Android Views (MDC-Android) and web libraries are in maintenance mode. They’re still available to use, but are not receiving feature updates from Material.
+
+Developer documentation to build with Material for Android Views.
+
+Developer documentation to build with Material in any web framework.
+
+## Links embedded in visible content

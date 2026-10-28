@@ -1,0 +1,313 @@
+URL: https://m3.material.io/styles/typography/overview
+REA evidence: ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e
+Step: ready_6
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /styles/typography/overview#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Typography" [level=1]
+      - text: Use typography to make content readable and beautiful
+      - navigation "article tabs":
+        - tablist:
+          - tab "Overview" [selected]
+          - tab "Fonts"
+          - tab "Type scale & tokens"
+          - tab "Applying type"
+          - tab "Editorial treatments"
+      - navigation "page content":
+        - text: On this page
+        - list:
+          - listitem:
+            - link "Availability & resources"
+          - listitem:
+            - link "Updates"
+          - listitem:
+            - link "M3 Expressive update"
+          - listitem:
+            - link "Previous updates"
+      - tabpanel:
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - list:
+            - listitem: "M3 type scale has 30 type styles: 15 baseline and 15 emphasized"
+            - listitem: Use variable fonts for more control over expression in editorial treatments
+            - listitem: Use Material tokens to easily define font, line height, size, tracking, weight, and more
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure:
+            - img "Type at different scales."
+            - img "Type at different scales."
+        - region:
+          - button "copy link to Availability & resources section": link
+          - text: Copy link
+          - heading "Availability & resources" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: This shows where the type scale is available and implemented into Material components.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - table:
+            - rowgroup:
+              - row "Type Link Status":
+                - columnheader "Type":
+                  - paragraph: Type
+                - columnheader "Link":
+                  - paragraph: Link
+                - columnheader "Status":
+                  - paragraph: Status
+            - rowgroup:
+              - row "Design Design Kit Available":
+                - rowheader "Design":
+                  - paragraph: Design
+                - cell "Design Kit":
+                  - paragraph:
+                    - link "Design Kit":
+                      - /url: https://goo.gle/m3-design-kit
+                - cell "Available":
+                  - paragraph: Available
+              - row "Google Fonts Available":
+                - cell "Google Fonts":
+                  - paragraph:
+                    - link "Google Fonts":
+                      - /url: https://fonts.google.com/
+                - cell "Available":
+                  - paragraph: Available
+              - row "Implementation Flutter Available":
+                - rowheader "Implementation":
+                  - paragraph: Implementation
+                - cell "Flutter":
+                  - paragraph:
+                    - link "Flutter":
+                      - /url: https://api.flutter.dev/flutter/material/Typography/Typography.material2021.html
+                - cell "Available":
+                  - paragraph: Available
+              - row "Jetpack Compose Available":
+                - cell "Jetpack Compose":
+                  - paragraph:
+                    - link "Jetpack Compose":
+                      - /url: https://developer.android.com/develop/ui/compose/designsystems/material3#typography
+                - cell "Available":
+                  - paragraph: Available
+              - 'row "Jetpack Compose: Expressive Available"':
+                - 'cell "Jetpack Compose: Expressive"':
+                  - paragraph:
+                    - 'link "Jetpack Compose: Expressive"':
+                      - /url: https://developer.android.com/reference/kotlin/androidx/compose/material3/Typography
+                - cell "Available":
+                  - paragraph: Available
+              - row "Android Views (MDC-Android) Available":
+                - cell "Android Views (MDC-Android)":
+                  - paragraph:
+                    - link "Android Views (MDC-Android)":
+                      - /url: https://github.com/material-components/material-components-android/blob/master/docs/theming/Typography.md
+                - cell "Available":
+                  - paragraph: Available
+              - 'row "Android Views (MDC-Android): Expressive Available"':
+                - 'cell "Android Views (MDC-Android): Expressive"':
+                  - paragraph:
+                    - 'link "Android Views (MDC-Android): Expressive"':
+                      - /url: https://github.com/material-components/material-components-android/blob/master/docs/theming/Typography.md
+                - cell "Available":
+                  - paragraph: Available
+              - row "Web Available":
+                - cell "Web":
+                  - paragraph:
+                    - link "Web":
+                      - /url: https://github.com/material-components/material-web/blob/main/docs/theming/typography.md
+                - cell "Available":
+                  - paragraph: Available
+              - 'row "Web: Expressive Unavailable"':
+                - 'cell "Web: Expressive"':
+                  - paragraph: "Web: Expressive"
+                - cell "Unavailable":
+                  - paragraph: Unavailable
+        - region:
+          - button "copy link to Updates section": link
+          - text: Copy link
+          - heading "Updates" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - strong: Aug 2026
+          - heading "Language script height support" [level=3]
+          - paragraph: "Material’s type scale can adapt line height automatically based on language script height category: small, medium, large, and extra large."
+          - paragraph: Components can then adapt their size based on these language heights.
+          - paragraph:
+            - link "More on language height":
+              - /url: /m3/pages/typography/type-scale-tokens#fcae9063-6c70-4512-87f9-3b6e0d8aea04
+          - figure "Line heights for styles like display large can automatically adapt to language height":
+            - img "Different line heights produced by different languages using Roboto Flex."
+            - paragraph: Line heights for styles like display large can automatically adapt to language height
+        - region:
+          - button "copy link to M3 Expressive update section": link
+          - text: Copy link
+          - heading "M3 Expressive update" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - strong: May 2025
+          - heading "Updated M3 type scale with emphasized styles" [level=3]
+          - paragraph:
+            - text: Material’s type scale includes fifteen
+            - strong: baseline
+            - text: type styles, the same as before, and fifteen new
+            - strong: emphasized
+            - text: type styles.
+          - paragraph: The emphasized type styles add more expression to highlighted moments.
+          - paragraph: Roboto Flex can be used on its own to show a range of emotional states, but is not yet part of the M3 typescale.
+          - paragraph:
+            - link "More on how to use emphasized styles":
+              - /url: /m3/pages/typography/type-scale-tokens#0020d4d9-4f5b-4666-b3ce-c26db849bd73
+          - paragraph:
+            - link "More on M3 Expressive":
+              - /url: https://m3.material.io/blog/building-with-m3-expressive
+          - figure "The expressive type scale includes fifteen baseline type styles and fifteen emphasized type styles":
+            - img "Type scale showing roles for “display”, “headline,” “title,” “label,” and “body.”"
+            - paragraph: The expressive type scale includes fifteen baseline type styles and fifteen emphasized type styles
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Emphasized type style tokens" [level=3]
+          - paragraph: Design tokens offer an improved way to define typography in products by assigning an element's type style by a configurable value, rather than a set value.
+          - paragraph: Emphasized tokens allow for clearer hierarchies and prioritized components within a layout.
+          - paragraph: Type roles describe size—such as small, medium, and large—enabling them to adapt and respond to the device or context.
+          - figure "Typography tokens describe scalable size that adapts to devices or settings, including updating the style on boldness":
+            - img "Close crop of markdown text showing type scales referenced as “display-large” and “display-large-emphasized.”"
+            - paragraph: Typography tokens describe scalable size that adapts to devices or settings, including updating the style on boldness
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - 'heading "Google Design: Making Google Sans Flex" [level=3]'
+          - paragraph:
+            - text: Learn how seven design problems shaped Google’s iconic typeface — from inception to going open-source.
+            - link "Read the article on design.google":
+              - /url: https://design.google/library/google-sans-flex-font
+          - figure "Google Sans Flex can morph into an impressive range of styles, powered by its six variable axes":
+            - button "Pause Video": pause
+            - paragraph: Google Sans Flex can morph into an impressive range of styles, powered by its six variable axes
+        - region:
+          - button "copy link to Previous updates section": link
+          - text: Copy link
+          - heading "Previous updates" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Variable fonts" [level=3]
+          - paragraph:
+            - strong: Roboto Flex, Roboto Serif, & Roboto Mono
+          - paragraph: Updated considerations for using variable fonts and different combinations of their customizable axes, including grade, width, weight, slant, and optical size.
+          - figure "Roboto Flex, Roboto Serif, and Roboto Mono have a fluid range of axes, like weight, across all optical sizes":
+            - img "Roboto Flex, Roboto Mono, and Roboto Serif type rendered in different weights."
+            - paragraph: Roboto Flex, Roboto Serif, and Roboto Mono have a fluid range of axes, like weight, across all optical sizes
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - heading "Style roles" [level=3]
+          - paragraph: "Type styles are defined by five roles: display, headline, title, body, and label."
+          - paragraph: These names are more descriptive, allowing for easier matching of type style to use case.
+          - 'figure "M3 has five distinct type styles: display, headline, title, body, and label"':
+            - 'img "Different examples of Roboto scaled to their respective roles: display, headline, title, body, and label."'
+            - paragraph: "M3 has five distinct type styles: display, headline, title, body, and label"
+    - navigation "previous and up next articles":
+      - 'link "Previous Spacing: Overview"':
+        - /url: /styles/spacing
+      - 'link "Up next Typography: Fonts"':
+        - /url: /styles/typography/fonts
+    - button "go back to top": vertical_align_top
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

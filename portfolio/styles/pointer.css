@@ -1,0 +1,21 @@
+/* Decorative effects only: hit targets, content, and native cursor remain intact. */
+@media (pointer: fine) and (hover: hover) and (prefers-reduced-motion: no-preference) {
+  [data-pointer-effect="card"] { isolation: isolate; overflow: hidden; }
+  [data-pointer-effect="card"]::after {
+    content: ""; position: absolute; pointer-events: none; z-index: 2;
+    width: 240px; height: 240px; top: 0; left: 0; border-radius: 50%;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    opacity: 0; transform: translate(calc(var(--pointer-x, 50%) - 120px), calc(var(--pointer-y, 50%) - 120px));
+    transition: opacity 180ms ease-out;
+  }
+  [data-pointer-effect="card"][data-pointer-active]::after { opacity: .07; }
+  [data-pointer-effect="magnetic"].button, [data-pointer-effect="magnetic"].nav-link { translate: var(--pointer-x, 0px) var(--pointer-y, 0px); transition: translate 180ms ease-out, transform 250ms var(--spring); }
+  [data-pointer-effect="hero"] .bloom { translate: var(--pointer-x, 0px) var(--pointer-y, 0px); transition: translate 260ms ease-out; }
+  [data-pointer-reset], [data-pointer-reset]::after, [data-pointer-reset] .bloom { transition: none !important; }
+}
+/* Keyboard focus communicates the same affordance, without pointer-dependent motion. */
+.nav-link:focus-visible:not(.active) { background: var(--palette-e5dfeb, #e5dfeb); }
+.button-primary:focus-visible { background: var(--palette-503395, #503395); }
+.button-dark:focus-visible { background: var(--palette-41354e, #41354e); }
+[data-project-slug]:focus-within { outline: 3px solid var(--primary); outline-offset: 5px; }
+.project-card:focus-within .project-title-link svg { transform: translate(3px, -3px); }

@@ -1,0 +1,131 @@
+URL: https://m3.material.io/styles
+REA evidence: ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e
+Step: ready_2
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /styles#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Styles" [level=1]
+      - text: Styles are the visual aspects of a UI that give it a distinct look and feel. They can be customized by changing your Material theme.
+      - tabpanel:
+        - region:
+          - text: link Copy link
+          - link "Color":
+            - /url: /styles/color/system/overview
+            - text: Color
+            - paragraph: Color is used to express style and communicate meaning. With dynamic color, Material puts personal color preferences and individual needs at the forefront of systematic color application.
+          - link "Elevation":
+            - /url: /styles/elevation/overview
+            - text: Elevation
+            - paragraph: Elevation is the relative distance between two surfaces along the z-axis. All surfaces and components have elevation values.
+        - region:
+          - text: link Copy link
+          - link "Icons":
+            - /url: /styles/icons/overview
+            - text: Icons
+            - paragraph: Icons can be used to represent common actions. Material Symbols are a set of variable icon fonts created at seven weights across three different styles.
+          - link "Motion":
+            - /url: /styles/motion/overview/how-it-works
+            - text: Motion
+            - paragraph: Use motion to make a UI expressive and easy to use. Material transitions help guide users as they navigate an app.
+        - region:
+          - text: link Copy link
+          - link "Shape":
+            - /url: /styles/shape/overview-principles
+            - text: Shape
+            - paragraph: The shape scale defines the style of container corners, offering a range of roundedness from square to fully circular.
+          - link "Typography":
+            - /url: /styles/typography/overview
+            - text: Typography
+            - paragraph: Use typography to make writing legible and beautiful. Material's default type scale includes contrasting and flexible styles to support a wide range of use cases.
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

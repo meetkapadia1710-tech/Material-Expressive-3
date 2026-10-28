@@ -1,0 +1,287 @@
+[
+  {
+    "source_id": "P002",
+    "section": "Overview",
+    "kind": "block"
+  },
+  {
+    "source_id": "P019",
+    "section": "Overview",
+    "kind": "block"
+  },
+  {
+    "source_id": "P019",
+    "section": "Overview",
+    "kind": "block"
+  },
+  {
+    "source_id": "P019",
+    "section": "Overview",
+    "kind": "block"
+  },
+  {
+    "source_id": "P019",
+    "section": "Overview",
+    "kind": "block"
+  },
+  {
+    "source_id": "P019",
+    "section": "Overview",
+    "kind": "block"
+  },
+  {
+    "source_id": "P019",
+    "section": "Overview",
+    "kind": "block"
+  },
+  {
+    "source_id": "P019",
+    "section": "Overview",
+    "kind": "block"
+  },
+  {
+    "source_id": "P019",
+    "section": "Overview",
+    "kind": "block"
+  },
+  {
+    "source_id": "P019",
+    "section": "Overview",
+    "kind": "block"
+  },
+  {
+    "source_id": "P019",
+    "section": "How to use tokens",
+    "kind": "block"
+  },
+  {
+    "source_id": "P019",
+    "section": "How to use tokens",
+    "kind": "block"
+  },
+  {
+    "source_id": "P019",
+    "section": "How to use tokens",
+    "kind": "block"
+  },
+  {
+    "source_id": "P023",
+    "section": "Spacing",
+    "kind": "section"
+  },
+  {
+    "source_id": "P023",
+    "section": "Density",
+    "kind": "section"
+  },
+  {
+    "source_id": "P023",
+    "section": "Hardware considerations",
+    "kind": "section"
+  },
+  {
+    "source_id": "P023",
+    "section": "Bidirectionality & RTL",
+    "kind": "section"
+  },
+  {
+    "source_id": "P032",
+    "section": "State layers",
+    "kind": "block"
+  },
+  {
+    "source_id": "P032",
+    "section": "Applying states",
+    "kind": "block"
+  },
+  {
+    "source_id": "P032",
+    "section": "Applying states",
+    "kind": "block"
+  },
+  {
+    "source_id": "P032",
+    "section": "Applying states",
+    "kind": "block"
+  },
+  {
+    "source_id": "P032",
+    "section": "Applying states",
+    "kind": "block"
+  },
+  {
+    "source_id": "P032",
+    "section": "Applying states",
+    "kind": "block"
+  },
+  {
+    "source_id": "P032",
+    "section": "Applying states",
+    "kind": "block"
+  },
+  {
+    "source_id": "P032",
+    "section": "Applying states",
+    "kind": "block"
+  },
+  {
+    "source_id": "P032",
+    "section": "Applying states",
+    "kind": "block"
+  },
+  {
+    "source_id": "P037",
+    "section": "Tab 1",
+    "kind": "block"
+  },
+  {
+    "source_id": "P037",
+    "section": "Tab 1",
+    "kind": "block"
+  },
+  {
+    "source_id": "P045",
+    "section": "Applying type",
+    "kind": "block"
+  },
+  {
+    "source_id": "P045",
+    "section": "Applying type",
+    "kind": "block"
+  },
+  {
+    "source_id": "P045",
+    "section": "Applying type",
+    "kind": "block"
+  },
+  {
+    "source_id": "P045",
+    "section": "Applying type",
+    "kind": "block"
+  },
+  {
+    "source_id": "P045",
+    "section": "Applying type",
+    "kind": "block"
+  },
+  {
+    "source_id": "P045",
+    "section": "Applying type",
+    "kind": "block"
+  },
+  {
+    "source_id": "P045",
+    "section": "Applying type",
+    "kind": "block"
+  },
+  {
+    "source_id": "P045",
+    "section": "Applying type",
+    "kind": "block"
+  },
+  {
+    "source_id": "P052",
+    "section": "Specs",
+    "kind": "block"
+  },
+  {
+    "source_id": "P052",
+    "section": "Specs",
+    "kind": "block"
+  },
+  {
+    "source_id": "P053",
+    "section": "Specs",
+    "kind": "block"
+  },
+  {
+    "source_id": "P053",
+    "section": "Specs",
+    "kind": "block"
+  },
+  {
+    "source_id": "P058",
+    "section": "Specs",
+    "kind": "block"
+  },
+  {
+    "source_id": "P058",
+    "section": "Specs",
+    "kind": "block"
+  },
+  {
+    "source_id": "P059",
+    "section": "Specs",
+    "kind": "block"
+  },
+  {
+    "source_id": "P059",
+    "section": "Specs",
+    "kind": "block"
+  },
+  {
+    "source_id": "P059",
+    "section": "Specs",
+    "kind": "block"
+  },
+  {
+    "source_id": "P060",
+    "section": "XR",
+    "kind": "section"
+  },
+  {
+    "source_id": "P062",
+    "section": "Specs",
+    "kind": "block"
+  },
+  {
+    "source_id": "P062",
+    "section": "Accessibility",
+    "kind": "block"
+  },
+  {
+    "source_id": "P065",
+    "section": "Guidelines",
+    "kind": "block"
+  },
+  {
+    "source_id": "P065",
+    "section": "Guidelines",
+    "kind": "block"
+  },
+  {
+    "source_id": "P065",
+    "section": "XR",
+    "kind": "section"
+  },
+  {
+    "source_id": "P067",
+    "section": "Accessibility",
+    "kind": "block"
+  },
+  {
+    "source_id": "P068",
+    "section": "XR",
+    "kind": "section"
+  },
+  {
+    "source_id": "P070",
+    "section": "Guidelines",
+    "kind": "block"
+  },
+  {
+    "source_id": "P070",
+    "section": "XR",
+    "kind": "section"
+  },
+  {
+    "source_id": "P077",
+    "section": "Guidelines",
+    "kind": "block"
+  },
+  {
+    "source_id": "P080",
+    "section": "XR",
+    "kind": "section"
+  }
+]

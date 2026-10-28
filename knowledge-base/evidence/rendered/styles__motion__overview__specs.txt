@@ -1,0 +1,240 @@
+URL: https://m3.material.io/styles/motion/overview/specs
+REA evidence: ev_3566d4ddd59da340a484784a34e0fde0dab16f3476c1f07d08b4108b9050cde3
+Step: ready_6
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /styles/motion/overview/specs#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Motion physics system" [level=1]
+      - text: The motion physics system makes a UI expressive and easy to use
+      - navigation "article tabs":
+        - tablist:
+          - tab "How it works"
+          - tab "Specs" [selected]
+      - navigation "page content":
+        - text: On this page
+        - list:
+          - listitem:
+            - link "Cross-platform experiences"
+          - listitem:
+            - link "Tokens and specs"
+          - listitem:
+            - 'link "Web: Convert springs to curves"'
+          - listitem:
+            - link "Easing and duration"
+      - tabpanel:
+        - region:
+          - button "copy link to Cross-platform experiences section": link
+          - text: Copy link
+          - heading "Cross-platform experiences" [level=2]
+          - paragraph: The motion physics system is available on Jetpack Compose and Android Views (MDC-Android), and can be easily adapted to other platforms.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - table:
+            - rowgroup:
+              - row "Platform Status How to apply":
+                - columnheader "Platform":
+                  - paragraph: Platform
+                - columnheader "Status":
+                  - paragraph: Status
+                - columnheader "How to apply":
+                  - paragraph: How to apply
+            - rowgroup:
+              - row "Jetpack Compose Available Use built-in components and spring tokens.":
+                - rowheader "Jetpack Compose":
+                  - paragraph: Jetpack Compose
+                - cell "Available":
+                  - paragraph: Available
+                - cell "Use built-in components and spring tokens.":
+                  - paragraph: Use built-in components and spring tokens.
+              - row "Android Views (MDC-Android) Available. Not added to components. Use built-in spring tokens.":
+                - rowheader "Android Views (MDC-Android)":
+                  - paragraph: Android Views (MDC-Android)
+                - cell "Available. Not added to components.":
+                  - paragraph: Available. Not added to components.
+                - cell "Use built-in spring tokens.":
+                  - paragraph: Use built-in spring tokens.
+              - row "Web Compatible Use springs when possible, otherwise use curves that mimic the springs for animations without interruptions or gestures. View web conversion table":
+                - rowheader "Web":
+                  - paragraph: Web
+                - cell "Compatible":
+                  - paragraph: Compatible
+                - cell "Use springs when possible, otherwise use curves that mimic the springs for animations without interruptions or gestures. View web conversion table":
+                  - paragraph:
+                    - text: Use springs when possible, otherwise use curves that mimic the springs for animations without interruptions or gestures.
+                    - link "View web conversion table":
+                      - /url: /m3/pages/motion-overview/specs#e3e4f10b-6314-47b7-9051-988066081fa0
+        - region:
+          - button "copy link to Tokens and specs section": link
+          - text: Copy link
+          - heading "Tokens and specs" [level=2]
+          - paragraph:
+            - text: The
+            - strong: spring composite
+            - text: tokens are used in the motion physics system. These composites combine two
+            - strong: spring
+            - text: tokens (damping and stiffness) into a single token for ease of use. The
+            - strong: easing
+            - text: ","
+            - strong: duration
+            - text: ", and"
+            - strong: path
+            - text: tokens are used by the legacy system, so can be ignored.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+        - region:
+          - 'button "copy link to Web: Convert springs to curves section"': link
+          - text: Copy link
+          - 'heading "Web: Convert springs to curves" [level=2]'
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - table:
+            - rowgroup:
+              - row "Spring Curve":
+                - columnheader "Spring"
+                - columnheader "Curve"
+            - rowgroup:
+              - row "Expressive fast spatial 0.42, 1.67, 0.21, 0.90. Duration = 350ms":
+                - cell "Expressive fast spatial"
+                - cell "0.42, 1.67, 0.21, 0.90. Duration = 350ms"
+              - row "Expressive default spatial 0.38, 1.21, 0.22, 1.00. Duration = 500ms":
+                - cell "Expressive default spatial"
+                - cell "0.38, 1.21, 0.22, 1.00. Duration = 500ms"
+              - row "Expressive slow spatial 0.39, 1.29, 0.35, 0.98. Duration = 650ms":
+                - cell "Expressive slow spatial"
+                - cell "0.39, 1.29, 0.35, 0.98. Duration = 650ms"
+              - row "Expressive fast effects 0.31, 0.94, 0.34, 1.00. Duration = 150ms":
+                - cell "Expressive fast effects"
+                - cell "0.31, 0.94, 0.34, 1.00. Duration = 150ms"
+              - row "Expressive default effects 0.34, 0.80, 0.34, 1.00. Duration = 200ms":
+                - cell "Expressive default effects"
+                - cell "0.34, 0.80, 0.34, 1.00. Duration = 200ms"
+              - row "Expressive slow effects 0.34, 0.88, 0.34, 1.00. Duration = 300ms":
+                - cell "Expressive slow effects"
+                - cell "0.34, 0.88, 0.34, 1.00. Duration = 300ms"
+              - row "Standard fast spatial 0.27, 1.06, 0.18, 1.00. Duration = 350ms":
+                - cell "Standard fast spatial"
+                - cell "0.27, 1.06, 0.18, 1.00. Duration = 350ms"
+              - row "Standard default spatial 0.27, 1.06, 0.18, 1.00. Duration = 500ms":
+                - cell "Standard default spatial"
+                - cell "0.27, 1.06, 0.18, 1.00. Duration = 500ms"
+              - row "Standard slow spatial 0.27, 1.06, 0.18, 1.00. Duration = 750ms":
+                - cell "Standard slow spatial"
+                - cell "0.27, 1.06, 0.18, 1.00. Duration = 750ms"
+              - row "Standard fast effects 0.31, 0.94, 0.34, 1.00. Duration = 150ms":
+                - cell "Standard fast effects"
+                - cell "0.31, 0.94, 0.34, 1.00. Duration = 150ms"
+              - row "Standard default effects 0.34, 0.80, 0.34, 1.00. Duration = 200ms":
+                - cell "Standard default effects"
+                - cell "0.34, 0.80, 0.34, 1.00. Duration = 200ms"
+              - row "Standard slow effects 0.34, 0.88, 0.34, 1.00. Duration = 300ms":
+                - cell "Standard slow effects"
+                - cell "0.34, 0.88, 0.34, 1.00. Duration = 300ms"
+        - region:
+          - button "copy link to Easing and duration section": link
+          - text: Copy link
+          - heading "Easing and duration" [level=2]
+          - paragraph:
+            - text: The original easing and duration tokens are still available to use as a fallback, and are currently used for animating transitions.
+            - link "View easing and duration system":
+              - /url: /m3/pages/motion-easing-and-duration/applying-easing-and-duration
+    - navigation "previous and up next articles":
+      - 'link "Previous Motion physics system: How it works"':
+        - /url: /styles/motion/overview/how-it-works
+      - 'link "Up next Easing and duration: Applying easing and duration"':
+        - /url: /styles/motion/easing-and-duration
+    - button "go back to top": vertical_align_top
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

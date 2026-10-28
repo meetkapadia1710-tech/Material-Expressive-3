@@ -1,0 +1,335 @@
+URL: https://m3.material.io/styles/color/system/overview
+REA evidence: ev_59d954f4e4ee8a997c7f8f794671d3fe485e45f7a9978b7df06d7262c502ac0e
+Step: ready_5
+
+- document:
+  - banner:
+    - link "skip to main content":
+      - /url: /styles/color/system/overview#main_content
+      - text: Skip to main content
+    - navigation "Main":
+      - link "Search":
+        - /url: /search.html
+        - text: search
+      - link "Home":
+        - /url: /
+        - text: material_design Home
+      - link "Get started":
+        - /url: /get-started
+        - text: apps Get started
+      - button "Develop": code Develop
+      - button "Foundations": book Foundations
+      - button "Styles": palette Styles
+      - button "Components": add_circle Components
+      - link "Blog":
+        - /url: /blog
+        - text: pages Blog
+    - switch "Pause animations" [checked]
+    - switch "Switch to dark mode"
+    - main "Main Content":
+      - heading "Color system" [level=1]
+      - text: Create accessible, personal color schemes communicating your product's hierarchy, state, and brand
+      - navigation "article tabs":
+        - tablist:
+          - tab "Overview" [selected]
+          - tab "How the system works"
+      - navigation "page content":
+        - text: On this page
+        - list:
+          - listitem:
+            - link "Resources"
+          - listitem:
+            - link "What's new"
+      - tabpanel:
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph:
+            - strong: "The Material color system includes:"
+          - list:
+            - listitem: Built-in set of accessible color relationships
+            - listitem: 26+ color roles mapped to Material Components
+            - listitem: Built-in dark theme colors
+            - listitem: Static baseline color scheme with default colors assigned to each color role
+            - listitem: Dynamic color features including user-generated and content-based color
+          - paragraph:
+            - link "Learn how the system works":
+              - /url: /m3/pages/color/how-the-system-works
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Learn about the value and function of Material 3’s dynamic color system and how it differs from past color systems":
+            - paragraph: Learn about the value and function of Material 3’s dynamic color system and how it differs from past color systems
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: View transcript
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "The baseline color scheme doesn't dynamically change":
+            - img "Primary, on primary, primary container, and on primary container roles shown in baseline light theme color scheme."
+            - paragraph: The baseline color scheme doesn't dynamically change
+          - figure "A dynamic color scheme changes the UI's colors based on different inputs, like a wallpaper":
+            - img "Diagram showing an input color resulting in a simplified illustration of four roles of a color scheme. Shown in green and yellow in light theme."
+            - paragraph: A dynamic color scheme changes the UI's colors based on different inputs, like a wallpaper
+          - figure "Specific colors, such as semantic colors, can be set to not dynamically change":
+            - img "Diagram showing an orange input color generating a static orange color scheme for an auto heating UI element."
+            - paragraph: Specific colors, such as semantic colors, can be set to not dynamically change
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Products with dynamic color can automatically generate and assign colors to each element in the UI.
+          - paragraph: "This provides:"
+          - list:
+            - listitem: Personalized UI
+            - listitem: Accessible contrast
+            - listitem: User-controlled contrast
+            - listitem: Automatic dark theme
+          - figure "The UI colors change dynamically":
+            - button "Pause Video": pause
+            - paragraph: The UI colors change dynamically
+        - region:
+          - button "copy link to Resources section": link
+          - text: Copy link
+          - heading "Resources" [level=2]
+          - table:
+            - rowgroup:
+              - row "Type Link Status":
+                - columnheader "Type":
+                  - paragraph: Type
+                - columnheader "Link":
+                  - paragraph: Link
+                - columnheader "Status":
+                  - paragraph: Status
+            - rowgroup:
+              - row "Design Design Kit (Figma) Available":
+                - rowheader "Design":
+                  - paragraph: Design
+                - cell "Design Kit (Figma)":
+                  - paragraph:
+                    - link "Design Kit":
+                      - /url: https://www.figma.com/community/file/1035203688168086460
+                    - text: (Figma)
+                - cell "Available":
+                  - paragraph: Available
+              - row "Implementation Android Views (MDC-Android) Available":
+                - rowheader "Implementation":
+                  - paragraph: Implementation
+                - cell "Android Views (MDC-Android)":
+                  - paragraph:
+                    - link "Android Views (MDC-Android)":
+                      - /url: https://github.com/material-components/material-components-android/blob/master/docs/theming/Color.md
+                - cell "Available":
+                  - paragraph: Available
+              - row "Jetpack Compose Available":
+                - cell "Jetpack Compose":
+                  - paragraph:
+                    - link "Jetpack Compose":
+                      - /url: https://developer.android.com/develop/ui/compose/designsystems/material3#dynamic_color_schemes
+                - cell "Available":
+                  - paragraph: Available
+              - row "Flutter Available":
+                - cell "Flutter":
+                  - paragraph:
+                    - link "Flutter":
+                      - /url: https://pub.dev/packages/dynamic_color
+                - cell "Available":
+                  - paragraph: Available
+              - row "Tools Material Theme Builder Available":
+                - rowheader "Tools":
+                  - paragraph: Tools
+                - cell "Material Theme Builder":
+                  - paragraph:
+                    - link "Material Theme Builder":
+                      - /url: https://www.figma.com/community/plugin/1034969338659738588/material-theme-builder
+                - cell "Available":
+                  - paragraph: Available
+        - region:
+          - button "copy link to What's new section": link
+          - text: Copy link
+          - heading "What's new" [level=2]
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: May 2025
+          - heading "Three levels of contrast" [level=3]
+          - paragraph: Color roles support three levels of contrast so people can select the one that best suits their vision needs. Contrasts also are tokenized.
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - figure "Standard contrast":
+            - img "Email app in standard contrast."
+            - paragraph: Standard contrast
+          - figure "Medium contrast":
+            - img "Email app in medium contrast."
+            - paragraph: Medium contrast
+          - figure "High contrast":
+            - img "Email app in high contrast."
+            - paragraph: High contrast
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: August 2024
+          - heading "More colorful text and icons" [level=3]
+          - paragraph: "The following color roles are updated in light theme to be more colorful while still having accessible color contrast:"
+          - list:
+            - listitem: On primary container
+            - listitem: On secondary container
+            - listitem: On tertiary container
+            - listitem: On error container
+          - paragraph: "Affected components:"
+          - list:
+            - listitem: Badges
+            - listitem:
+              - text: Buttons
+              - list:
+                - listitem: Buttons
+                - listitem: Extended FAB
+                - listitem: FAB
+                - listitem: Icon buttons
+                - listitem: Segmented buttons
+            - listitem: Chips
+            - listitem: Lists
+            - listitem: Menus
+            - listitem: Navigation bar
+            - listitem: Navigation drawer
+            - listitem: Navigation rail
+            - listitem: Switches
+            - listitem: Toolbars
+          - figure "Colors used for text and icons now appear more colorful":
+            - img "Comparison of the color before and after the update, with FAB and button examples."
+            - paragraph: Colors used for text and icons now appear more colorful
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Oct 2023
+          - heading "Reorganized guidelines" [level=3]
+          - paragraph: "Same color system, explained in a new way. Updated sections include:"
+          - list:
+            - listitem:
+              - link "How the system works":
+                - /url: /m3/pages/color/how-the-system-works
+            - listitem:
+              - link "Advanced customizations":
+                - /url: /m3/pages/advanced/overview
+            - listitem:
+              - link "Color resources":
+                - /url: /m3/pages/color-resources
+          - figure "The guidelines have been reorganized and updated":
+            - img "Diagram illustrating guidelines being reorganized"
+            - paragraph: The guidelines have been reorganized and updated
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Feb 2023
+          - heading "Tone-based surface colors" [level=3]
+          - paragraph:
+            - link "Tone-based surface color roles":
+              - /url: https://material.io/blog/tone-based-surface-color-m3
+            - text: have replaced the previous approach of surfaces at +1 to +5 elevation. The new color roles are not tied to elevation and offer more flexibility and support for color features, such as user-controlled contrast.
+          - figure "New tone-based surface colors offer more flexibility and support":
+            - img "Simplified tablet UI showcasing the application of surface roles, shown in light theme"
+            - paragraph: New tone-based surface colors offer more flexibility and support
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: "Technical changes were made to align the color system with Android SysUI:"
+          - list:
+            - listitem: Updated the default light theme surface from tone 99 to tone 98
+            - listitem: Updated the chroma for the neutral palette, increasing it from 4 to 6
+            - listitem: Slightly darkened surface roles in dark theme
+          - figure "Changes in tone and chroma in the default light theme surface":
+            - img "Before and after swatch of the default light theme surface, showcasing the difference in chroma and tone"
+            - paragraph: Changes in tone and chroma in the default light theme surface
+        - region:
+          - button "copy link to this section": link
+          - text: Copy link
+          - paragraph: Feb 2023
+          - heading "Additional accent colors" [level=3]
+          - paragraph:
+            - text: Additional accent colors in the scheme provide more flexibility and choice for color application. In particular, a new set of fixed colors for the
+            - strong: primary
+            - text: ","
+            - strong: secondary
+            - text: ", and"
+            - strong: tertiary
+            - text: accent groups provide colors which stay the same across light and dark themes.
+          - figure "Additional accent colors provide more choice for color application":
+            - img "Fab and star icon show in fixed and fixed dim roles, in both light and dark theme"
+            - paragraph: Additional accent colors provide more choice for color application
+    - navigation "previous and up next articles":
+      - link "Previous Material A-Z":
+        - /url: /foundations/glossary
+      - 'link "Up next Color system: How the system works"':
+        - /url: /styles/color/system/how-the-system-works
+    - button "go back to top": vertical_align_top
+    - contentinfo:
+      - link "Material Design":
+        - /url: /
+        - text: material_design
+      - paragraph: Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.
+      - list:
+        - listitem:
+          - paragraph: Social
+        - listitem:
+          - link "Find us on Github":
+            - /url: https://www.github.com/material-components
+            - text: GitHub
+        - listitem:
+          - link "Find us on X":
+            - /url: https://x.com/googledesign
+            - text: X
+        - listitem:
+          - link "Find us on Youtube":
+            - /url: https://www.youtube.com/@googledesign
+            - text: YouTube
+        - listitem:
+          - link "Blog RSS":
+            - /url: https://material.io/feed.xml
+      - list:
+        - listitem:
+          - paragraph: Libraries
+        - listitem:
+          - link "Android":
+            - /url: /develop/android/mdc-android
+        - listitem:
+          - link "Compose":
+            - /url: /develop/android/jetpack-compose
+        - listitem:
+          - link "Flutter":
+            - /url: /develop/flutter
+        - listitem:
+          - link "web":
+            - /url: /develop/web
+            - text: Web
+      - list:
+        - listitem:
+          - paragraph: More Google sites
+        - listitem:
+          - link "Google Design":
+            - /url: https://design.google/?home=
+      - list:
+        - listitem:
+          - paragraph: Archived versions
+        - listitem:
+          - link "Material Design 1":
+            - /url: https://m1.material.io
+        - listitem:
+          - link "Material Design 2":
+            - /url: https://m2.material.io
+      - link "Google":
+        - /url: https://www.google.com
+        - img
+      - list:
+        - listitem:
+          - link "Privacy Policy":
+            - /url: https://policies.google.com/privacy
+        - listitem:
+          - link "Terms of Service":
+            - /url: https://policies.google.com/terms
+        - listitem:
+          - link "Join research studies":
+            - /url: https://google.qualtrics.com/jfe/form/SV_3NMIMtX0F2zkakR?utm_source=Website&Q_Language=en&utm_campaign=Q2&campaignDate=June2022&referral_code=UXRgbtM2422655&productTag=b2d
+        - listitem:
+          - button "Feedback"

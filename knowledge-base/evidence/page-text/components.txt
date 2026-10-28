@@ -1,0 +1,97 @@
+# Components
+Source ID: P050
+Public page: https://m3.material.io/components
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/1624d6a1-96ea-437d-b846-dc6f00ebb49c.json
+Retrieved: 2026-10-28T07:43:12.959948+00:00
+Source SHA-256: 4cf866eb0c1542bc574972aa60b6ad547a20ab7f959ead0e7cf54806507f6a05
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+Components are interactive building blocks for creating a user interface. They can be organized into categories based on their purpose: Action, containment, communication, navigation, selection, and text input.
+
+## Tab 1
+
+Buttons
+
+Button groups organize buttons and add interactions between them
+
+Buttons prompt most actions in a UI
+
+Extended floating action buttons (extended FABs) help people take primary actions
+
+The floating action button (FAB) menu opens from a FAB to display multiple related actions
+
+Floating action buttons (FABs) help people take primary actions
+
+Icon buttons help people take actions with a single tap
+
+Segmented buttons help people select options, switch views, or sort elements
+
+Split buttons open a menu to give people more options related to an action
+
+Date & time pickers
+
+Date pickers let people select a date, or a range of dates
+
+Time pickers help people select and set a specific time
+
+Loading & progress
+
+Loading indicators show the progress of a process for a short wait time
+
+Progress indicators show the status of a process in real time
+
+Navigation
+
+Navigation bars let people switch between UI views on smaller devices
+
+Navigation drawers let people switch between UI views on larger devices
+
+Navigation rails let people switch between UI views on mid-sized devices
+
+Sheets
+
+Bottom sheets show secondary content anchored to the bottom of the screen
+
+Side sheets show secondary content anchored to the side of the screen
+
+All other components
+
+App bars are placed at the top of the screen to help people navigate through a product
+
+Badges show notifications, counts, or status information on navigation items and icons
+
+Cards display content and actions about a single subject
+
+Carousels show a collection of items that can be scrolled on and off the screen
+
+Checkboxes let users select one or more items from a list, or turn an item on or off
+
+Chips help people enter information, make selections, filter content, or trigger actions
+
+Dialogs provide important prompts in a user flow
+
+Dividers are thin lines that group content in lists or other containers
+
+Lists are continuous, vertical indexes of text and images
+
+Menus display a list of choices on a temporary surface
+
+Radio buttons let people select one option from a set of options
+
+Search lets people enter a keyword or phrase to get relevant information
+
+Sliders allow users to make selections from a range of values
+
+Snackbars show short updates about app processes at the bottom of the screen
+
+Switches toggle the selection of an item on and off
+
+Tabs organize content across different screens and views
+
+Text fields let users enter text into a UI
+
+Toolbars display frequently used actions relevant to the current page
+
+Tooltips display brief labels or messages
+
+## Links embedded in visible content

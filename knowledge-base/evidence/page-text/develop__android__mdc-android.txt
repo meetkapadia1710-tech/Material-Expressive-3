@@ -1,0 +1,47 @@
+# Android Views (MDC-Android)
+Source ID: P003
+Public page: https://m3.material.io/develop/android/mdc-android
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/dc7f3bb6-9507-43d3-b8f8-7c68888fc7fa.json
+Retrieved: 2026-10-28T07:42:57.378828+00:00
+Source SHA-256: 66dbd319b507802ca058c43de85d038bca5b86c709f5168ca34943f14552cf53
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+Modular and customizable code for building Android products.
+
+## Tab 1
+
+Android Views in maintenance mode
+
+The Android Views (MDC-Android) M3 library is in maintenance mode. While it’ll receive critical fixes, Material Android is Compose-first. Migrate to Jetpack Compose to use the latest features. Read the Compose-first announcement
+
+Announcements
+
+The latest from Android Views (MDC-Android)
+
+Material Views 1.14 (MDC-Android) is the final stable release for the Views library. There’s never been a better time to migrate to Jetpack Compose.
+Media alternative text: May 19, 2026
+
+Material’s latest evolution helps you make products even more engaging and easier to use.
+Media alternative text: May 13, 2025
+
+New color options and carousel refinements
+Media alternative text: May 08, 2024
+
+Resources & documentation
+
+Guides, developer docs, tutorials, and more
+
+Learn how the shift to Compose affects Android Views (MDC-Android) libraries, tools, and documentation
+
+Documentation for all Material Components available in the Android Views (MDC-Android) repo on Github
+
+Learn how to apply dynamic color in this short talk from two Material experts
+
+Codelab and video tutorial: Get step-by-step instructions for Material transition patterns
+
+Codelab with step-by-step instructions for adding dynamic color features to an app
+
+YouTube playlist with step-by-step instructions for using Material Components for Android
+
+## Links embedded in visible content
+https://m3.material.io/blog/material-is-compose-first

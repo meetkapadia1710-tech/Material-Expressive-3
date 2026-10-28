@@ -1,0 +1,453 @@
+# Progress indicators
+Source ID: P072
+Public page: https://m3.material.io/components/progress-indicators
+Endpoint: https://m3.material.io/_dsm/content/m3/2026-10-13_06-10-19/9a92bb46-ccc8-4752-a144-b770d47fe1dd.json
+Retrieved: 2026-10-28T07:43:21.515500+00:00
+Source SHA-256: 43e4b7658e43104b05d4569aaed55afdeb1c29e21c5bab5acdeb584db764ac22
+Machine extraction of published page data, not an authored summary. Hidden sections/blocks omitted.
+Dynamic RESOURCE modules are references only; images/video are represented by text metadata, not visual verification.
+
+
+## Overview
+
+- 
+Two variants: linear and circular
+
+- 
+Use the same configuration for all instances of a process (like loading)
+
+- 
+They capture attention through motion
+
+- 
+Option to apply a wave to the active track for use cases that would benefit from increased expressiveness
+
+Linear and circular progress indicators have visual configurations for shape and thickness
+Media alternative text: 8 progress indicators configured to show different thickness and shape.
+
+Availability & resources
+Dynamic module reference: {"source_id": "P072", "page_url": "https://m3.material.io/components/progress-indicators", "section": "Overview", "type": "STATUS_TABLE", "resource": "designSystems/030656e0a1083ef1/components/2fd9de395ed49bc3", "configuration": null}
+
+M3 Expressive update
+
+Aug 2024
+
+The progress indicators have configurations for height and wavy shape. Choose the visual style that best fits your product. More on M3 Expressive
+
+- Track height: Configurable
+
+- Shape: Wavy
+
+Progress indicators have a new rounded, colorful style, and more configurations to choose from, including a wavy shape and variable track height
+Media alternative text: Progress indicators used when loading a page and for processing a payment.
+
+Previous updates
+
+Dec 2023: Non-text contrast (NTC)
+
+- Anatomy: Added an end stop indicator to improve accessibility
+
+- Contrast: Higher contrast between track and active indicator to enhance the perception of progress
+
+- Motion: New motion behavior
+
+- Shape: Rounded corners
+
+Progress indicators have a new rounded, colorful style
+Media alternative text: GM3 linear and circular progress indicators
+
+Differences from M2
+
+July 2022: Added to Material 3
+
+- Color: New color mappings and compatibility with dynamic color
+
+M2: Progress indicators have a boxier, neutral style
+Media alternative text: M2 linear and circular progress indicators.
+
+M3: Progress indicators are compatible with dynamic color
+Media alternative text: M3 linear and circular progress indicators.
+
+## Specs
+
+Variants
+
+- Linear progress indicator
+
+- Circular progress indicator
+Media alternative text: 2 variant of progress indicators.
+
+| 
+Variant
+ | 
+M3
+ | 
+M3 Expressive
+
+ | 
+Linear progress indicator
+ | 
+Available
+ | 
+Available
+
+ | 
+Circular progress indicator
+ | 
+Available
+ | 
+Available
+
+Configurations
+
+- Behavior: Determinate and indeterminate
+
+- Thickness: Default (4dp) and variable
+
+- Shape: Flat and wavy
+Media alternative text: 4 configurations of the linear determinate progress indicator.
+
+| 
+Category
+ | 
+Configuration
+ | 
+M3
+ | 
+M3 Expressive
+
+ | 
+Behavior
+ | 
+Determinate (default), Indeterminate
+ | 
+Available
+ | 
+Available
+
+ | 
+Track thickness
+ | 
+Fixed (4dp) 
+ | 
+Available
+ | 
+Available
+
+ | 
+Configurable
+ | 
+--
+ | 
+Available
+
+ | 
+Shape
+ | 
+Flat (default)
+ | 
+Available
+ | 
+Available
+
+ | 
+Wavy
+ | 
+--
+ | 
+Available
+
+Tokens & specs
+
+Browse the component elements, attributes, tokens, and their values. View baseline tokens
+Dynamic module reference: {"source_id": "P072", "page_url": "https://m3.material.io/components/progress-indicators", "section": "Specs", "type": "TOKEN_TABLE", "resource": "designSystems/20543ce18892f7d9/components/6f51f7ab7775a392", "configuration": {"tokenSets": ["Progress Indicator - Common", "Progress indicator - Linear", "Progress indicator - Circular"], "contextTags": ["None", "Medium contrast", "Default", "High contrast", "3P", "Android", "Dark", "Light"], "tokenSetOrder": ["Progress Indicator", "Progress indicator - Linear", "Progress indicator - Circular", "[Deprecated] Progress indicator - Circular", "[Deprecated] Progress indicator - Linear"], "hideSearchField": false, "hideVersionName": true}}
+
+Anatomy
+
+- Active indicator
+
+- Track
+
+- Stop indicator
+Media alternative text: 3 elements of a progress indicator.
+
+Color
+
+Progress indicator color roles used for light and dark schemes:
+
+- 
+Primary
+
+- 
+Secondary container
+Media alternative text: 2 color roles of a linear progress indicator in light and dark themes: the active indicator and stop indicator are primary and the track is secondary container.
+
+Measurements
+
+Wavy indicators use amplitude and wavelength to determine the shape of the wave. The height is the overall container height.
+
+Amplitude measures from the center of the resting position to the center of the peak
+Media alternative text: Definitions of wave measurements for height and amplitude.
+
+Wavelength measures the distance between two adjacent peaks
+Media alternative text: Definitions of wave measurements for wavelength.
+
+Size measurements for linear progress indicators. The thicker variants are provided as sample measurement for makers to adjust the default version based on their use cases.
+Media alternative text: Linear progress indicator measurements.
+
+Size measurements for circular progress indicators. The thicker variants are provided as sample measurement for makers to adjust the default version based on their use cases.
+Media alternative text: Circular progress indicator measurements.
+
+The linear progress indicator is inset from the edge of the screen by 4dp
+Media alternative text: 4dp padding on the left and right of the linear progress indicator.
+
+Baseline tokens
+
+The circular and linear progress indicator had separate token sets. These are no longer recommended.
+Dynamic module reference: {"source_id": "P072", "page_url": "https://m3.material.io/components/progress-indicators", "section": "Specs", "type": "TOKEN_TABLE", "resource": "designSystems/20543ce18892f7d9/components/6f51f7ab7775a392", "configuration": {"tokenSets": ["[Deprecated] Progress indicator - Circular", "[Deprecated] Progress indicator - Linear"], "contextTags": ["None", "Medium contrast", "Default", "High contrast", "3P", "Android", "Dark", "Light"], "hideSearchField": false, "hideVersionName": true}}
+
+## Guidelines
+
+Progress indicators communicate the status of an ongoing process
+Media alternative text: Primary colored horizontal line fills a contrasting track from left to right and reaches the end when the app is loaded.
+
+Usage
+
+Use progress indicators to show the status of ongoing processes, such as loading an app, submitting a form, or saving updates.
+
+When multiple items are loading, use a single progress indicator to show progress for the group. Don’t add progress indicators to every activity.
+
+Indicate overall progress of a group of items
+Media alternative text: One progress indicator showing the loading progress for a page of podcasts.
+
+Don’t show the progress of each activity in a group
+Media alternative text: Two progress indicators showing the loading progress of two podcasts.
+
+Choose a loading or progress indicator that corresponds to the expected wait time and kind of process. 
+
+If the wait is very long, consider allowing people to navigate away from the page while the process finishes up.
+
+| Expected wait time
+ | Recommendation
+
+ | Instant (under 200ms) | No indicator
+
+ | Short (between 200ms and 5s) | Loading indicator
+
+ | Long (Over 5s) | Progress indicator
+
+Instant (under 200ms): Display the content immediately
+Media alternative text: Screen without latency without progress indicator.
+
+Short (between 200ms and 5s): Use a loading indicator
+Media alternative text: Screen with slight lag with loading indicator.
+
+Long (over 5s): Use a progress indicator
+Media alternative text: Screen with long lag and progress indicator.
+
+There are two variants of progress indicators:
+
+- 
+Linear
+
+- 
+Circular
+
+Linear indicators are best when placed on the edge of a container.
+
+Circular indicators are best when centered in an element.
+
+A process should be represented by the same variant of progress indicator throughout the product. For example, if refreshing uses a circular indicator in one place, it should use circular indicators everywhere.
+
+- Linear indicator  
+
+- Circular indicator
+Media alternative text: 1. A primary colored horizontal line fills a contrasting track from left to right. 2. A circle appears from 0 to 360 degrees.
+
+Progress indicators behave differently based on the time of progress being tracked:
+
+- Determinate: Known progress and wait time
+
+- Indeterminate: Unknown progress and wait time
+
+When using a determinate indicator, the indicator must accurately represent the progress of what it's measuring. 
+
+Use indeterminate indicators to show that a process is happening, but the wait time is unknown.
+
+- Determinate progress indicators fill from 0% to 100%
+
+- Indeterminate progress indicators move along a fixed track, growing and shrinking in size
+Media alternative text: Linear and circular progress indicators show both determinate and indeterminate progress.
+
+As more information about a process becomes available, a progress indicator should change from indeterminate to determinate.
+
+A linear progress indicator changes from indeterminate to determinate while loading a screen
+Media alternative text: On a track, a contrasting primary-colored horizontal line grows and shrinks, then fills it from left to right as app loads.
+
+Anatomy
+
+- Active indicator
+
+- Track
+
+- Stop indicator
+Media alternative text: 1. The track is a horizontal line. 2. A primary colored line over the contrasting colored track is the progress indicator.
+
+Active indicator
+
+The active indicator shows the progress that has been made so far. 
+
+In indeterminate processes, it grows and shrinks along the track repeatedly.
+
+Linear indicators animate from the leading to the trailing edge along the track. Circular indicators animate from the top of the track, clockwise by default.
+Media alternative text: A primary colored horizontal line fills a contrasting line from left to right.  
+
+The active indicator appears as soon as progress begins. At low percentages where space is limited, this should appear as a dot to help people understand that there’s progress underway.
+
+When progress first begins, the active indicator appears as a dot
+Media alternative text: A linear and circular progress indicator at 1% progress, where the active indicator has only just appeared.
+
+The active indicator has two shape options: flat and wavy. Use the shape that best fits the product’s tone.
+
+The wavy shape can make longer processes feel less static and is best used when a more expressive style is appropriate.
+
+When using the wavy shape, the overall height of the component changes. At very small sizes, the wavy shape may not be as visible.
+
+Wavy linear indicators increase the height of the overall container
+Media alternative text: Examples of flat and wavy active indicator.
+
+Stop indicator
+
+The stop indicator is a 4dp circle that marks the end of a linear determinate progress indicator to meet Material's accessibility standards.
+
+It's not used for indeterminate or circular progress indicators.
+
+The stop indicator is required if the track has a contrast below 3:1 with its container or the surface behind the container.
+
+Use a stop indicator when placing the progress indicator inside a container with low contrast
+Media alternative text: A primary colored horizontal  line fills a contrasting line from left to right.
+
+Only remove the end stop indicator if there's a visual contrast of at least 3:1 with surrounding surfaces
+Media alternative text: An invisible circular track fills with color from 0 to 360 degrees.
+
+Placement
+
+Place a linear progress indicator along the edge of a container that’s loading. If the container changes shape, place it on the edge that animates. It can also be placed in the middle of a container.
+
+Use a single progress indicator at the top of a page to show progress of the whole group. Don’t add one for every element unless they’re activated independently.
+
+When at the top of a screen, a progress indicator shows that all of the page content is loading
+Media alternative text: Progress indicator at top of screen, indicating page content is loading.
+
+
+When attached to a card, a progress indicator shows that just the card content is loading
+Media alternative text: Progress indicator on a card, indicating that the card's content is loading.
+
+A progress indicator on the expanding edge of a card shows that the edge may expand to show the loaded content
+Media alternative text: Linear indicator shows the loading progress of a selected news article in a list.
+
+Circular progress indicators should be centered directly on the container or page that's loading, such as a button or card.
+
+When loading more items on a page, place the circular progress indicator in the empty space where the new content will appear, not overlapping existing content.
+
+However, if the content does not take long to load, consider using a loading indicator instead.
+
+A circular progress indicator can show that the page is loading
+Media alternative text: As content loads, the screen is blank except for a circular progress indicator.
+
+A circular progress indicator can show where new items will appear on a page. A loading indicator also works well in this space.
+Media alternative text: As container content loads, the container is blank except for a circular progress indicator.
+
+Progress indicators in buttons
+
+A circular indicator can be placed in a button to show that the button’s action is currently in progress.
+
+In very small buttons, use the flat shape since the wavy shape is not as visible at that size.
+
+To ensure a minimum 3:1 contrast ratio, change the active indicator color to be the same color as the button’s icon or label text, and remove the track.
+
+Use circular indicators for short, indeterminate activities under 5 seconds
+Media alternative text: Determinate circular indicator active for 2 seconds after download button is selected, reflecting download progress.
+
+Avoid applying progress indicators to every button in a list
+Media alternative text: Shows idea of indeterminate circular indicators active on multiple buttons as  cluttered and confusing.
+
+Responsive layout
+
+Right-to-left languages
+
+Linear progress indicators should be mirrored horizontally for products using right-to-left (RTL) languages. 
+
+Circular progress indicators don’t need to be mirrored.
+
+Linear progress indicators can flow from right to left in right-to-left (RTL) languages
+Media alternative text: Mirrored right-to-left progress indicator.
+
+Large screens
+
+Circular progress indicators have flexible sizes. They can range from 24dp to 240dp, depending on the placement and the breakpoint. Avoid exceeding the minimum and maximum sizes.
+
+Reserve very large progress indicators for large and extra-large windows, such as desktop.
+
+The waveform should scale with the size so the proportions look the same across sizes
+Media alternative text: Circular progress indicators can range in size from 24dps to 240dps.
+
+Linear progress indicators dynamically adjust to fit the width of the window or element they’re placed within, such as a card. They shouldn’t be used in any elements smaller than 40dp.
+
+The padding on each end should be 4dp minimum, but can be modified.
+
+The linear progress indicator should always span the width of the UI element it’s placed within
+Media alternative text: Linear progress indicators can dynamically adjust to any width.
+
+## Accessibility
+
+Use cases
+
+People should be able to do the following using the assistive technology:
+
+- Navigate to the progress indicator
+
+- Understand what progress the indicator is communicating
+
+Interaction & style
+
+The active indicator, which displays progress, provides visual contrast of at least 3:1 against most background colors.
+
+The progress indicator and stop indicator provide visual contrast of at least 3:1 against most background colors
+Media alternative text: Dark line of progress indicator stands out against the lighter colored track.
+
+When integrated into another component, such as a button, make sure that the active indicator provides visual contrast of at least 3:1 against the other component. 
+
+For the active indicator, use the same color as the label text or icon. The track should be removed.
+
+Ensure the indicator’s color provides at least 3:1 contrast against the surface it's on
+Media alternative text: Circular indicator on button passes 3 to 1 contrast test.
+
+Avoid using a color below 3:1 contrast
+Media alternative text: Circular indicator on button fails 3 to 1 contrast test.
+
+For linear progress indicators, the stop indicator is required if the track has a contrast below 3:1 with its container or the surface behind the container.
+
+Essentially, the end of the track must be easy to identify.
+
+Only remove the stop indicator when the linear progress indicator has at least a 3:1 color contrast with surrounding containers and surfaces
+Media alternative text: Bright container holding the progress bar is on a dark surface, passing the 3:1 color contrast.
+
+Avoid removing the stop indicator if any adjacent containers or surfaces are below the 3:1 color contrast
+Media alternative text: Bright container holding progress indicator is on a bright surface, failing the 3:1 color contrast.
+
+Labeling elements
+
+Since the progress indicator is a visual cue, it needs an accessibility label to describe the kind and amount of progress made.
+
+Use the progress bar accessibility role, and write an accessibility label that describes the purpose of the progress indicator. The label should include the process, such as "loading,” and the affected content, such as a page, article, or episode. For example: "Loading news article" or "Refreshing page."
+
+Progress indicator labels should explain which items are loading
+Media alternative text: Determinate linear progress indicator has an accessibility label of “loading news article” and role of “progressbar”.
+
+A label on an intedeterminate progress indicator on a screen which is loading a set of podcast episodes
+Media alternative text: Indeterminate linear progress indicator has an accessibility label of “loading my episodes” and role of “progressbar.”
+
+## Links embedded in visible content
+/m3/pages/progress-indicators/specs#c6f484b0-2bc6-4d37-bd75-f859a35a3594
+https://m3.material.io/blog/building-with-m3-expressive
