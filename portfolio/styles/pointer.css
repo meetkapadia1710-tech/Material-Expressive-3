@@ -6,11 +6,11 @@
     width: 240px; height: 240px; top: 0; left: 0; border-radius: 50%;
     background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
     opacity: 0; transform: translate(calc(var(--pointer-x, 50%) - 120px), calc(var(--pointer-y, 50%) - 120px));
-    transition: opacity 180ms ease-out;
+    transition: opacity var(--motion-duration-fast) var(--motion-project-effects-easing);
   }
   [data-pointer-effect="card"][data-pointer-active]::after { opacity: .07; }
-  [data-pointer-effect="magnetic"].button, [data-pointer-effect="magnetic"].nav-link { translate: var(--pointer-x, 0px) var(--pointer-y, 0px); transition: translate 180ms ease-out, transform 250ms var(--spring); }
-  [data-pointer-effect="hero"] .bloom { translate: var(--pointer-x, 0px) var(--pointer-y, 0px); transition: translate 260ms ease-out; }
+  [data-pointer-effect="magnetic"].button, [data-pointer-effect="magnetic"].nav-link { translate: var(--pointer-x, 0px) var(--pointer-y, 0px); transition: translate var(--motion-duration-fast) var(--motion-project-effects-easing), transform var(--motion-duration-navigation) var(--spring); }
+  [data-pointer-effect="hero"] .bloom { translate: var(--pointer-x, 0px) var(--pointer-y, 0px); transition: translate var(--motion-duration-pointer) var(--motion-project-effects-easing); }
   [data-pointer-reset], [data-pointer-reset]::after, [data-pointer-reset] .bloom { transition: none !important; }
 }
 /* Keyboard focus communicates the same affordance, without pointer-dependent motion. */

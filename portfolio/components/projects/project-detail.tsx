@@ -6,6 +6,9 @@ import { projectDetailCopy } from "@/content/projects";
 import { siteCopy } from "@/content/profile";
 import { getProjectDetailContent } from "@/lib/project-detail";
 import { Icon } from "@/components/icon";
+import { ProjectAccentSeed } from "@/components/projects/project-accent-seed";
+import { SharedProjectElement } from "@/components/motion/shared-project-element";
+import { MorphingShape } from "@/components/motion/morphing-shape";
 
 function DetailSection({ id, title, children }: { id: string; title: string; children: ReactNode }) {
   return <section className="detail-section" id={id} aria-labelledby={`${id}-heading`}><h2 id={`${id}-heading`}>{title}</h2>{children}</section>;
@@ -15,15 +18,18 @@ export function ProjectDetail({ project, previous, next, className = "" }: { pro
   const content = getProjectDetailContent(project);
   const ideaNote = content.status === "concept" ? projectDetailCopy.conceptNote : content.status === "prototype" ? projectDetailCopy.prototypeNote : null;
 
-  return <article className={`page-width ${className}`}>
+  return <SharedProjectElement as="article" slug={project.slug} element="container" className={`page-width ${className}`}>
+    <ProjectAccentSeed seed={project.accentSeed} />
     <Link className="text-link detail-back" href="/projects"><Icon name="arrow-right" />{siteCopy.backToProjects}</Link>
     <header className="detail-header">
       <p className="eyebrow">{projectDetailCopy.eyebrow}{project.category?.trim() ? <><span aria-hidden="true">/</span>{project.category}</> : null}</p>
-      <h1>{project.name}</h1>
+      <h1><SharedProjectElement as="span" slug={project.slug} element="title">{project.name}</SharedProjectElement></h1>
       {content.status ? <span className={`detail-status-pill${ideaNote ? " detail-idea-status" : ""}`}><span aria-hidden="true" />{projectDetailCopy.statusLabels[content.status]}</span> : null}
       {ideaNote ? <p className="detail-idea-note">{ideaNote}</p> : null}
       {project.verification === "unverified" ? <p className="detail-review">{projectDetailCopy.unverified}</p> : null}
-      <span className="detail-header-art" aria-hidden="true"><Icon name="spark" /></span>
+      <SharedProjectElement slug={project.slug} element="shape" className="detail-header-art" ariaHidden>
+        <MorphingShape className="detail-header-shape" shape="roundedSquare" viewShape="scalloped" hoverShape="blob" morphOnView><Icon name="spark" /></MorphingShape>
+      </SharedProjectElement>
     </header>
 
     {content.sections.length ? <div className="detail-layout">
@@ -57,5 +63,5 @@ export function ProjectDetail({ project, previous, next, className = "" }: { pro
       {previous ? <Link className="detail-previous" href={`/projects/${previous.slug}`} rel="prev"><span className="detail-direction"><Icon name="arrow-right" />{projectDetailCopy.previous}</span><span className="detail-neighbor-name">{previous.name}</span></Link> : null}
       {next ? <Link className="detail-next" href={`/projects/${next.slug}`} rel="next"><span className="detail-direction">{projectDetailCopy.next}<Icon name="arrow-right" /></span><span className="detail-neighbor-name">{next.name}</span></Link> : null}
     </nav> : null}
-  </article>;
+  </SharedProjectElement>;
 }

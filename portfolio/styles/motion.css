@@ -1,0 +1,20 @@
+/* Project motion tokens. These retain existing behavior; values are not
+   presented as official Material token values. */
+:root {
+  --motion-project-spatial-easing: cubic-bezier(.38, 1.21, .22, 1);
+  --motion-project-effects-easing: ease-out;
+  --motion-project-content-easing: cubic-bezier(.2, .75, .2, 1);
+  --motion-project-layout-easing: var(--motion-project-content-easing);
+  --motion-duration-route-exit: 120ms;
+  --motion-duration-fast: 180ms;
+  --motion-duration-standard: 240ms;
+  --motion-duration-navigation: 250ms;
+  --motion-duration-button: 350ms;
+  --motion-duration-card: 400ms;
+  --motion-duration-pointer: 260ms;
+  --motion-duration-reveal: 340ms;
+  --motion-duration-pagination: 300ms;
+  --motion-duration-filter: 250ms;
+  --motion-duration-layout: 280ms;
+  --motion-stagger-step: 35ms;
+}

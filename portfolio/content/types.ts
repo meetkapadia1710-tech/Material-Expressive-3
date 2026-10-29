@@ -21,6 +21,7 @@ export interface ProjectMedia {
 
 export interface Project {
   slug: string;
+  accentSeed?: string | null;
   name: string;
   tagline: string | null;
   category: string | null;

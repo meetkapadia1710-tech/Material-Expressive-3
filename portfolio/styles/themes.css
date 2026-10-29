@@ -1,6 +1,71 @@
-/* Intentional dark color roles. Original light values remain in their component fallbacks. */
+/*
+ * Semantic roles for this portfolio's existing brand palette.
+ * These are project theme aliases mapped to Material 3 role concepts; they are
+ * not a generated Material dynamic-color scheme.
+ */
+:root {
+  color-scheme: light;
+  --color-primary: #6142ae;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #e9ddff;
+  --color-on-primary-container: #292431;
+  --color-secondary: #e3f29c;
+  --color-on-secondary: #292431;
+  --color-secondary-container: #f0f6e4;
+  --color-on-secondary-container: #292431;
+  --color-tertiary: #865336;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #f9e2cc;
+  --color-on-tertiary-container: #443428;
+  --color-error: #a42d43;
+  --color-on-error: #ffffff;
+  --color-error-container: #f0e1e3;
+  --color-on-error-container: #472e3a;
+  --color-background: #faf8f3;
+  --color-on-background: #292431;
+  --color-surface: #fffdf9;
+  --color-on-surface: #292431;
+  --color-surface-variant: #f0ede6;
+  --color-on-surface-variant: #69616e;
+  --color-surface-container: #f0ede6;
+  --color-outline: #8f8498;
+  --color-outline-variant: #ded9d2;
+  --color-inverse-surface: #292431;
+  --color-inverse-on-surface: #faf8f3;
+  --color-inverse-primary: #dfceff;
+}
+
+/* Dark roles retain the portfolio's existing dark palette. */
 :root[data-theme="dark"] {
   color-scheme: dark;
+  --color-primary: #cfb7ff;
+  --color-on-primary: #241933;
+  --color-primary-container: #3d2d53;
+  --color-on-primary-container: #e0d8ec;
+  --color-secondary: #cbe78d;
+  --color-on-secondary: #283815;
+  --color-secondary-container: #31462f;
+  --color-on-secondary-container: #d1e5b5;
+  --color-tertiary: #e8cfad;
+  --color-on-tertiary: #443428;
+  --color-tertiary-container: #493b25;
+  --color-on-tertiary-container: #f1e4bf;
+  --color-error: #ffb3c0;
+  --color-on-error: #601d2b;
+  --color-error-container: #472e3a;
+  --color-on-error-container: #ffb3c0;
+  --color-background: #141318;
+  --color-on-background: #f4eff8;
+  --color-surface: #211f27;
+  --color-on-surface: #f4eff8;
+  --color-surface-variant: #2d2935;
+  --color-on-surface-variant: #c6bdcf;
+  --color-surface-container: #2d2935;
+  --color-outline: #9687ab;
+  --color-outline-variant: #51495e;
+  --color-inverse-surface: #f4eff8;
+  --color-inverse-on-surface: #241933;
+  --color-inverse-primary: #6142ae;
   --dark-base: #141318;
   --dark-surface: #211f27;
   --dark-raised: #2d2935;
@@ -171,10 +236,10 @@
 }
 
 /* On-colors belong to their surfaces, not to an inverted hex value. */
-:root[data-theme="dark"] .brand-mark { color: #283815; }
+:root[data-theme="dark"] .brand-mark { color: var(--color-on-secondary); }
 :root[data-theme="dark"] .contact-panel { background: #293e2b; color: #e8f2df; border: 1px solid #486348; }
 :root[data-theme="dark"] .contact-panel .text-link { color: #d5ecb0; }
-:root[data-theme="dark"] .contact-panel .button-dark { background: #cbe78d; color: #283815; }
+:root[data-theme="dark"] .contact-panel .button-dark { background: var(--color-secondary); color: var(--color-on-secondary); }
 :root[data-theme="dark"] .contact-panel .button-dark:is(:hover, :focus-visible) { background: #dceeaf; }
 :root[data-theme="dark"] .github-section { background: #202d2b; border: 1px solid #405a50; }
 :root[data-theme="dark"] .github-section h2 { color: #d5ecb0; }

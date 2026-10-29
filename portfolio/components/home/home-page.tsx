@@ -4,6 +4,7 @@ import { homeCopy, profile, siteCopy } from "@/content/profile";
 import { getFeaturedProjects } from "@/content/projects";
 import { skills } from "@/content/skills";
 import { Icon } from "../icon";
+import { MorphingShape } from "../motion/morphing-shape";
 import { ProjectCard } from "./project-card";
 
 export function HomePage() {
@@ -23,13 +24,17 @@ export function HomePage() {
         </div>
       </div>
       <div className="hero-aside">
-        <div className="hero-art" aria-hidden="true">
-          <span className="art-caption top-caption"><span />{homeCopy.illustration.topLabel}</span>
-          <div className="bloom"><span /><span /><span /><span /><span /><span /><span /><span /></div>
-          <div className="art-message">{homeCopy.illustration.center}<br /><em>{homeCopy.illustration.emphasis}</em></div>
-          <div className="small-star star-one">✦</div><div className="small-star star-two">✦</div>
-          <span className="art-code"><Icon name="code" /></span>
-          <span className="art-caption bottom-caption">{homeCopy.illustration.bottomLabel}<Icon name="arrow-up-right" /></span>
+        <div className="hero-art-frame">
+          <div className="hero-art" aria-hidden="true">
+            <span className="art-caption top-caption"><span />{homeCopy.illustration.topLabel}</span>
+            <div className="bloom"><span /><span /><span /><span /><span /><span /><span /><span /></div>
+            <div className="art-message">{homeCopy.illustration.center}<br /><em>{homeCopy.illustration.emphasis}</em></div>
+            <div className="small-star star-one">✦</div><div className="small-star star-two">✦</div>
+            <span className="art-caption bottom-caption">{homeCopy.illustration.bottomLabel}<Icon name="arrow-up-right" /></span>
+          </div>
+          <MorphingShape className="art-code hero-badge" interactive label="Change decorative badge shape" shape="roundedSquare" hoverShape="scalloped" focusShape="circle" pressShape="blob" selectedShape="blob">
+            <Icon name="code" />
+          </MorphingShape>
         </div>
         <p className="aside-note"><span aria-hidden="true">↳</span>{homeCopy.introduction}</p>
       </div>
