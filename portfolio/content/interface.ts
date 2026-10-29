@@ -1,4 +1,5 @@
 export const interfaceCopy = {
+  routeChanged: (title: string) => `Now viewing ${title}.`,
   theme: "Appearance", light: "Light", dark: "Dark", system: "System",
   search: "Search projects", clearSearch: "Clear search", clearFilters: "Clear filters",
   emptyTitle: "No matching projects.", emptyDescription: "Try another search or clear your filters.",

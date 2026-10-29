@@ -2,6 +2,7 @@
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import { interfaceCopy as copy } from "@/content/interface";
 import { Icon } from "./icon";
+import { registerViewTransition, skipActiveViewTransition } from "./motion/view-transition-coordinator";
 const ToastContext = createContext<(message: string) => void>(() => {});
 export function useToast() { return useContext(ToastContext); }
 
@@ -9,7 +10,6 @@ export type ThemeChoice = "light" | "dark" | "system";
 
 type ThemeTransition = { skipTransition: () => void; finished: Promise<void> };
 type ViewTransitionDocument = Document & { startViewTransition?: (update: () => void) => ThemeTransition };
-let activeThemeTransition: ThemeTransition | null = null;
 
 function applyThemeChoice(value: ThemeChoice) {
   const root = document.documentElement;
@@ -30,6 +30,11 @@ export function runThemeReveal(update: () => void, origin?: HTMLElement | null) 
     return;
   }
 
+  if (root.dataset.introPending === "true") {
+    update();
+    return;
+  }
+
   const rect = origin?.getBoundingClientRect();
   const x = rect ? rect.left + rect.width / 2 : window.innerWidth / 2;
   const y = rect ? rect.top + rect.height / 2 : window.innerHeight / 2;
@@ -41,12 +46,9 @@ export function runThemeReveal(update: () => void, origin?: HTMLElement | null) 
   root.style.setProperty("--theme-reveal-radius", `${radius}px`);
 
   if (viewTransitionDocument.startViewTransition) {
-    activeThemeTransition?.skipTransition();
+    skipActiveViewTransition();
     const transition = viewTransitionDocument.startViewTransition(update);
-    activeThemeTransition = transition;
-    void transition.finished.catch(() => {}).finally(() => {
-      if (activeThemeTransition === transition) activeThemeTransition = null;
-    });
+    registerViewTransition("theme", transition);
     return;
   }
 

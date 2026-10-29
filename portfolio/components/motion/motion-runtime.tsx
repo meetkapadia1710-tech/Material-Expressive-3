@@ -1,9 +1,42 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import type Lenis from "lenis";
 import { readMotionMilliseconds, readMotionValue } from "./motion-tokens";
+import { registerViewTransition, skipActiveViewTransition } from "./view-transition-coordinator";
+import { interfaceCopy } from "@/content/interface";
+import { navigation } from "@/content/profile";
+import { projects } from "@/content/projects";
+
+type RouteViewTransition = { skipTransition: () => void; finished: Promise<void> };
+type RouteTransitionDocument = Document & { startViewTransition?: (update: () => void | Promise<void>) => RouteViewTransition };
+type RouteIntent = { direction: 1 | -1; shared: boolean };
+
+function routePosition(path: string) {
+  const detail = path.match(/^\/projects\/[^/]+\/?$/);
+  if (detail) return (navigation.findIndex((item) => item.href === "/projects") + 0.5);
+  const index = navigation.findIndex((item) => item.href === path);
+  return index < 0 ? 0 : index;
+}
+
+function isProjectCollectionDetailPair(from: string, to: string) {
+  const isCollection = (path: string) => path === "/" || path === "/projects";
+  const isDetail = (path: string) => /^\/projects\/[^/]+\/?$/.test(path);
+  return (isDetail(from) && isCollection(to)) || (isCollection(from) && isDetail(to));
+}
+
+function projectCollectionOrigin(path: string) {
+  return path === "/" ? "home" : path === "/projects" ? "catalog" : null;
+}
+
+function routeTitle(path: string) {
+  const navItem = navigation.find((item) => item.href === path);
+  if (navItem) return navItem.label;
+  const match = path.match(/^\/projects\/([^/]+)\/?$/);
+  if (match) return projects.find((project) => project.slug === match[1])?.name ?? "Project";
+  return "Page";
+}
 
 // One observer handles all pages. Content remains visible without JavaScript,
 // and the observer never removes it from the accessibility tree.
@@ -69,10 +102,15 @@ function Reveal({ pathname }: { pathname: string }) {
 
 export function MotionRuntime() {
   const pathname = usePathname();
+  const router = useRouter();
   const lenis = useRef<Lenis | null>(null);
   const initialPath = useRef(pathname);
+  const activePath = useRef(pathname);
   const historyNavigation = useRef(false);
-  const projectNavigation = useRef(false);
+  const pendingPath = useRef<{ pathname: string; resolve: () => void } | null>(null);
+  const activeRouteTransition = useRef<RouteViewTransition | null>(null);
+  const routeScrollPositions = useRef(new Map<string, number>());
+  const announcement = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     const eligible = matchMedia("(pointer: fine) and (hover: hover) and (prefers-reduced-motion: no-preference)");
@@ -90,32 +128,134 @@ export function MotionRuntime() {
   }, []);
 
   useEffect(() => {
+    const viewTransitionDocument = document as RouteTransitionDocument;
+    const routeRoot = document.documentElement;
+    const supportsViewTransitions = () => typeof viewTransitionDocument.startViewTransition === "function";
+
+    const waitForPath = (targetPath: string) => new Promise<void>((resolve) => {
+      pendingPath.current?.resolve();
+      let timeout = 0;
+      const finish = () => {
+        window.clearTimeout(timeout);
+        if (pendingPath.current?.resolve === finish) pendingPath.current = null;
+        resolve();
+      };
+      timeout = window.setTimeout(finish, 900);
+      pendingPath.current = { pathname: targetPath, resolve: finish };
+    });
+
+    const sendIntent = (from: string, to: string, shared: boolean) => {
+      const fromPosition = routePosition(from);
+      const toPosition = routePosition(to);
+      const direction: 1 | -1 = fromPosition === toPosition ? 1 : toPosition > fromPosition ? 1 : -1;
+      const intent: RouteIntent = { direction, shared };
+      routeRoot.dataset.routeDirection = direction === 1 ? "forward" : "backward";
+      window.dispatchEvent(new CustomEvent<RouteIntent>("portfolio:route-intent", { detail: intent }));
+      return intent;
+    };
+
+    const runNativeTransition = (update: () => void | Promise<void>) => {
+      if (!supportsViewTransitions()) return false;
+      skipActiveViewTransition();
+      routeRoot.dataset.routeTransition = "true";
+      try {
+        const transition = viewTransitionDocument.startViewTransition(update);
+        activeRouteTransition.current = transition;
+        registerViewTransition("route", transition, () => { delete routeRoot.dataset.routeTransition; });
+        void transition.finished.catch(() => {}).finally(() => {
+          if (activeRouteTransition.current === transition) {
+            activeRouteTransition.current = null;
+            delete routeRoot.dataset.routeTransition;
+          }
+        });
+        return true;
+      } catch {
+        delete routeRoot.dataset.routeTransition;
+        return false;
+      }
+    };
+
+    const pushRoute = (href: string, shared = false) => {
+      const target = new URL(href, window.location.href);
+      if (target.origin !== window.location.origin) return;
+      const currentPath = activePath.current;
+      const destination = `${target.pathname}${target.search}${target.hash}`;
+      if (target.pathname === currentPath) {
+        if (destination !== `${window.location.pathname}${window.location.search}${window.location.hash}`) router.push(destination, { scroll: false });
+        return;
+      }
+      routeScrollPositions.current.set(currentPath, window.scrollY);
+      historyNavigation.current = false;
+      sendIntent(currentPath, target.pathname, shared);
+      if (shared) routeRoot.dataset.projectOrigin = projectCollectionOrigin(currentPath) ?? "";
+
+      const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!shared && !reduced && supportsViewTransitions()) {
+        const pathChange = waitForPath(target.pathname);
+        const started = runNativeTransition(async () => {
+          router.push(destination, { scroll: false });
+          await pathChange;
+        });
+        if (started) return;
+      }
+      router.push(destination, { scroll: false });
+    };
+
     const onNavigation = (event: MouseEvent) => {
       if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       const link = (event.target as Element | null)?.closest("a[href]") as HTMLAnchorElement | null;
-      if (!link || link.target || link.download) return;
-      const url = new URL(link.href);
-      if (url.origin !== location.origin || url.pathname === location.pathname) return;
+      if (!link || link.target || link.download || link.hasAttribute("data-no-route-transition")) return;
+      const target = new URL(link.href);
+      if (target.origin !== window.location.origin || target.pathname === activePath.current) return;
+
       const canShare = matchMedia("(min-width: 481px) and (pointer: fine) and (hover: hover) and (prefers-reduced-motion: no-preference)").matches;
-      projectNavigation.current = link.hasAttribute("data-project-transition") && canShare && /^\/projects\/[^/]+\/?$/.test(url.pathname);
-      if (projectNavigation.current) link.closest(".project-card, [data-project-slug]")?.getAnimations().forEach((animation) => animation.cancel());
+      const shared = link.hasAttribute("data-project-transition") && canShare && /^\/projects\/[^/]+\/?$/.test(target.pathname);
+      routeScrollPositions.current.set(activePath.current, window.scrollY);
       historyNavigation.current = false;
-      if (projectNavigation.current) return;
-      if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      const main = document.querySelector("main");
-      const duration = readMotionMilliseconds("--motion-duration-route-exit", 120);
-      main?.animate([{ transform: "translateY(0)" }, { transform: "translateY(-4px)" }], {
-        duration, easing: readMotionValue("--motion-project-effects-easing", "ease-out"),
-      });
-      main?.animate([{ opacity: 1 }, { opacity: 0.88 }], {
-        duration, easing: readMotionValue("--motion-project-effects-easing", "ease-out"),
-      });
+      if (shared) {
+        routeRoot.dataset.projectOrigin = projectCollectionOrigin(activePath.current) ?? "";
+        sendIntent(activePath.current, target.pathname, true);
+        link.closest(".project-card, [data-project-slug]")?.getAnimations().forEach((animation) => animation.cancel());
+        return;
+      }
+      event.preventDefault();
+      event.stopPropagation();
+      pushRoute(`${target.pathname}${target.search}${target.hash}`);
     };
-    const onPopState = () => { historyNavigation.current = true; };
+
+    const onRouteRequest = (event: Event) => {
+      const href = (event as CustomEvent<string>).detail;
+      if (typeof href === "string") pushRoute(href);
+    };
+
+    const onPopState = () => {
+      const from = activePath.current;
+      const to = window.location.pathname;
+      routeScrollPositions.current.set(from, window.scrollY);
+      historyNavigation.current = true;
+      const canShare = matchMedia("(min-width: 481px) and (pointer: fine) and (hover: hover) and (prefers-reduced-motion: no-preference)").matches;
+      const pair = isProjectCollectionDetailPair(from, to);
+      const enteringDetail = pair && projectCollectionOrigin(from) !== null;
+      if (canShare && enteringDetail) routeRoot.dataset.projectOrigin = projectCollectionOrigin(from) ?? "";
+      const sharedProjectNavigation = canShare && pair && (enteringDetail || routeRoot.dataset.projectOrigin === projectCollectionOrigin(to));
+      sendIntent(from, to, sharedProjectNavigation);
+      if (sharedProjectNavigation || matchMedia("(prefers-reduced-motion: reduce)").matches || !supportsViewTransitions()) return;
+      const pathChange = waitForPath(to);
+      runNativeTransition(() => pathChange);
+    };
+
     document.addEventListener("click", onNavigation, true);
-    window.addEventListener("popstate", onPopState);
-    return () => { document.removeEventListener("click", onNavigation, true); window.removeEventListener("popstate", onPopState); };
-  }, []);
+    window.addEventListener("portfolio:route-request", onRouteRequest);
+    window.addEventListener("popstate", onPopState, true);
+    return () => {
+      document.removeEventListener("click", onNavigation, true);
+      window.removeEventListener("portfolio:route-request", onRouteRequest);
+      window.removeEventListener("popstate", onPopState, true);
+      pendingPath.current?.resolve();
+      activeRouteTransition.current?.skipTransition();
+      delete routeRoot.dataset.routeTransition;
+    };
+  }, [router]);
 
   useEffect(() => {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
@@ -155,29 +295,42 @@ export function MotionRuntime() {
 
   useEffect(() => {
     if (initialPath.current === pathname) return;
-    const previousPath = initialPath.current;
     initialPath.current = pathname;
-    const isCollection = (path: string) => path === "/" || path === "/projects";
-    const isDetail = (path: string) => /^\/projects\/[^/]+\/?$/.test(path);
-    const sharedHistoryNavigation = historyNavigation.current && ((isDetail(previousPath) && isCollection(pathname)) || (isCollection(previousPath) && isDetail(pathname)));
-    const sharedProjectNavigation = projectNavigation.current || sharedHistoryNavigation;
-    projectNavigation.current = false;
-    // Preserve Next.js back/forward restoration, while new routes start at the top.
-    lenis.current?.resize();
-    if (!historyNavigation.current && !location.hash) window.scrollTo({ top: 0, behavior: "instant" });
-    lenis.current?.scrollTo(window.scrollY, { immediate: true, force: true });
+    activePath.current = pathname;
+    const restoringHistory = historyNavigation.current;
     historyNavigation.current = false;
-    if (sharedProjectNavigation || matchMedia("(prefers-reduced-motion: reduce)").matches) { historyNavigation.current = false; return; }
-    const main = document.querySelector("main");
-    main?.getAnimations().forEach((animation) => animation.cancel());
-    const duration = readMotionMilliseconds("--motion-duration-standard", 240);
-    main?.animate([{ transform: "translateY(8px)" }, { transform: "translateY(0)" }], {
-      duration, easing: readMotionValue("--motion-project-content-easing", "cubic-bezier(.2,.75,.2,1)"),
-    });
-    main?.animate([{ opacity: 0.8 }, { opacity: 1 }], {
-      duration, easing: readMotionValue("--motion-project-content-easing", "cubic-bezier(.2,.75,.2,1)"),
-    });
+    const hash = window.location.hash;
+    const main = document.getElementById("main-content");
+    const heading = main?.querySelector<HTMLElement>("h1") ?? main;
+    if (heading && !heading.hasAttribute("tabindex")) heading.setAttribute("tabindex", "-1");
+    heading?.focus({ preventScroll: true });
+    if (announcement.current) announcement.current.textContent = interfaceCopy.routeChanged(routeTitle(pathname));
+
+    const finish = () => {
+      if (hash) {
+        let target: HTMLElement | null = null;
+        try { target = document.getElementById(decodeURIComponent(hash.slice(1))); } catch { target = null; }
+        if (target) {
+          target.setAttribute("tabindex", "-1");
+          if (lenis.current) lenis.current.scrollTo(target, { offset: -36, immediate: true });
+          else target.scrollIntoView();
+          target.focus({ preventScroll: true });
+        }
+      } else if (restoringHistory) {
+        lenis.current?.resize();
+        const remembered = routeScrollPositions.current.get(pathname);
+        if (remembered !== undefined) window.scrollTo({ top: remembered, behavior: "instant" });
+        lenis.current?.scrollTo(window.scrollY, { immediate: true, force: true });
+      } else {
+        window.scrollTo({ top: 0, behavior: "instant" });
+        lenis.current?.scrollTo(0, { immediate: true, force: true });
+      }
+
+      if (pendingPath.current?.pathname === pathname) pendingPath.current.resolve();
+    };
+
+    requestAnimationFrame(() => requestAnimationFrame(finish));
   }, [pathname]);
 
-  return <Reveal pathname={pathname} />;
+  return <><Reveal pathname={pathname} /><p ref={announcement} className="sr-only" aria-live="polite" aria-atomic="true" /></>;
 }

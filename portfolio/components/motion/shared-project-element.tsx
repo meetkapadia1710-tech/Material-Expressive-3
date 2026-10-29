@@ -20,8 +20,16 @@ export function useSharedProjectTransitionEnabled() {
   return finePointer;
 }
 
+export type ProjectTransitionScope = "home" | "catalog" | "detail";
+
+export function sharedProjectLayoutId(scope: ProjectTransitionScope, slug: string, element: "container" | "shape" | "title", enabled: boolean) {
+  const namespace = scope === "detail" && typeof document !== "undefined" ? document.documentElement.dataset.projectOrigin : scope === "detail" ? null : scope;
+  return enabled && namespace ? `portfolio-project-${slug}-${element}-${namespace}` : undefined;
+}
+
 type SharedProjectElementProps = {
   slug: string;
+  scope: ProjectTransitionScope;
   element: "container" | "shape" | "title";
   as?: "div" | "article" | "span";
   className?: string;
@@ -29,12 +37,12 @@ type SharedProjectElementProps = {
   children: ReactNode;
 };
 
-export function SharedProjectElement({ slug, element, as = "div", className, ariaHidden, children }: SharedProjectElementProps) {
+export function SharedProjectElement({ slug, scope, element, as = "div", className, ariaHidden, children }: SharedProjectElementProps) {
   const enabled = useSharedProjectTransitionEnabled();
   const sharedProps = {
     className,
     "aria-hidden": ariaHidden || undefined,
-    layoutId: enabled ? `portfolio-project-${slug}-${element}` : undefined,
+    layoutId: sharedProjectLayoutId(scope, slug, element, enabled),
     transition: {
       layout: {
         duration: readMotionMilliseconds("--motion-duration-card", 400) / 1000,

@@ -18,16 +18,16 @@ export function ProjectDetail({ project, previous, next, className = "" }: { pro
   const content = getProjectDetailContent(project);
   const ideaNote = content.status === "concept" ? projectDetailCopy.conceptNote : content.status === "prototype" ? projectDetailCopy.prototypeNote : null;
 
-  return <SharedProjectElement as="article" slug={project.slug} element="container" className={`page-width ${className}`}>
+  return <SharedProjectElement as="article" slug={project.slug} scope="detail" element="container" className={`page-width ${className}`}>
     <ProjectAccentSeed seed={project.accentSeed} />
     <Link className="text-link detail-back" href="/projects"><Icon name="arrow-right" />{siteCopy.backToProjects}</Link>
     <header className="detail-header">
       <p className="eyebrow">{projectDetailCopy.eyebrow}{project.category?.trim() ? <><span aria-hidden="true">/</span>{project.category}</> : null}</p>
-      <h1><SharedProjectElement as="span" slug={project.slug} element="title">{project.name}</SharedProjectElement></h1>
+      <h1><SharedProjectElement as="span" slug={project.slug} scope="detail" element="title">{project.name}</SharedProjectElement></h1>
       {content.status ? <span className={`detail-status-pill${ideaNote ? " detail-idea-status" : ""}`}><span aria-hidden="true" />{projectDetailCopy.statusLabels[content.status]}</span> : null}
       {ideaNote ? <p className="detail-idea-note">{ideaNote}</p> : null}
       {project.verification === "unverified" ? <p className="detail-review">{projectDetailCopy.unverified}</p> : null}
-      <SharedProjectElement slug={project.slug} element="shape" className="detail-header-art" ariaHidden>
+      <SharedProjectElement slug={project.slug} scope="detail" element="shape" className="detail-header-art" ariaHidden>
         <MorphingShape className="detail-header-shape" shape="roundedSquare" viewShape="scalloped" hoverShape="blob" morphOnView><Icon name="spark" /></MorphingShape>
       </SharedProjectElement>
     </header>

@@ -28,5 +28,6 @@ coverage/
 .DS_Store
 Thumbs.db
 
-# Artifacts
+# Artifacts & Playwright
 artifacts/
+.playwright-mcp/

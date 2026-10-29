@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
-import { useRouter } from "next/navigation";
 import { interfaceCopy as copy } from "@/content/interface";
 import { navigation } from "@/content/profile";
 import { projectCatalogCopy, projects } from "@/content/projects";
@@ -104,7 +103,6 @@ function getBaseItems(): CommandItem[] {
 }
 
 export default function CommandPalette({ open, onDismiss }: { open: boolean; onDismiss: () => void }) {
-  const router = useRouter();
   const notify = useToast();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -179,7 +177,7 @@ export default function CommandPalette({ open, onDismiss }: { open: boolean; onD
     if (item.action === "copy-email") { void copyAddress(); return; }
     if (item.action === "toggle-theme") { toggleThemeChoice(); return; }
     if (item.href && item.external) { window.open(item.href, "_blank", "noopener,noreferrer"); return; }
-    if (item.href) router.push(item.href);
+    if (item.href) window.dispatchEvent(new CustomEvent("portfolio:route-request", { detail: item.href }));
   }
 
   function onKeyDown(event: ReactKeyboardEvent<HTMLInputElement>) {
