@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useRef, useState, type ReactNode 
 import { interfaceCopy as copy } from "@/content/interface";
 import { Icon } from "./icon";
 const ToastContext = createContext<(message: string) => void>(() => {});
+export function useToast() { return useContext(ToastContext); }
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [toast, setToast] = useState<{message: string; id: number} | null>(null);
   useEffect(() => { if (!toast) return; const timer = setTimeout(() => setToast(null), 7000); const dismiss = (event: KeyboardEvent) => { if (event.key === "Escape") setToast(null); }; window.addEventListener("keydown", dismiss); return () => { clearTimeout(timer); window.removeEventListener("keydown", dismiss); }; }, [toast]);

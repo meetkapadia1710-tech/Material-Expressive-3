@@ -4,7 +4,7 @@ Appearance offers Light, Dark and System through sun, moon and monitor icons in 
 
 Project search matches name, tagline, category and stack. Typing is reflected immediately and results debounce by 180 ms. `q`, `category` and `status` query parameters preserve selections on refresh; clearing filters removes them. No navigation or browser API call to GitHub is required.
 
-Copy email uses the Clipboard API. If permission is denied or the API is unavailable, a selected read-only input provides a manual-copy fallback. Toasts use a persistent polite live region, a dismiss button, Escape, and a seven-second timeout. The current Contact placeholder has email and copy actions; it still has no contact form, and no action claims that email was sent.
+Copy email uses the Clipboard API. If permission is denied or the API is unavailable, a selected read-only input provides a manual-copy fallback. Toasts use a persistent polite live region, a dismiss button, Escape, and a seven-second timeout. Contact uses the editable copy in `content/contact.ts` and social links in `content/links.ts`. Its validated form opens a prefilled `mailto:` URL in the visitor's email app; it does not send messages from the site.
 
 GitHub uses server fetches and daily ISR. Set an optional `GITHUB_TOKEN` in `.env.local`; never expose it through a public environment variable. All public repository pages are fetched. Languages count each repository's primary language, including forks. The activity chart groups repositories by their latest push month, not contributions. Its complete visible table provides an accessible equivalent. Any failed, blocked or rate-limited fetch hides the whole section. Suspense supplies a section-only static skeleton while fetching.
 
