@@ -54,6 +54,7 @@ flowchart TD
 
 This repository is optimized for autonomous coding agents (Gemini, Claude, Cursor, Copilot, Antigravity) to learn and implement Material 3 Expressive without hallucinations:
 
+* **[MCP Server](MCP.md):** Connect via Model Context Protocol (`python mcp_server.py`) to query component specs, 8,897 tokens, and platform support directly from Cursor, Claude Desktop, or Antigravity.
 * **[llms.txt](llms.txt):** The open standard index distilling architecture, component replacement rules, and platform constraints into a clean, zero-noise prompt file.
 * **Offline Semantic Search:** Instant, dependency-free keyword search across all authored guides and 88 extracted source documents:
   ```powershell
