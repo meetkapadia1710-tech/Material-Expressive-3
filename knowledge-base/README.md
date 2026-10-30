@@ -1,8 +1,18 @@
-# Material 3 knowledge base
+# Material 3 Expressive Knowledge Base
+
+> [!NOTE]
+> **Independent Community Research:** This repository is an independent, evidence-backed reference and engineering toolset. It is not affiliated with, sponsored by, or endorsed by Google LLC. Material Design, Android, and Flutter are trademarks of Google LLC.
 
 An evidence-backed reference for [Material Design 3](https://m3.material.io/), researched on **27–28 October 2026, Asia/Calcutta** using the REA reverse-engineering workflow, live browser captures, the site's public published data, and official implementation documentation.
 
 Start with the topic guides below. They are authored syntheses with source links, scope distinctions, and unresolved questions. The evidence directory holds the underlying snapshots and machine-readable inventories. This is a dated research snapshot, not a guarantee about later releases.
+
+## Use with AI Agents & LLMs
+
+This repository is optimized for consumption by AI coding assistants (Gemini, Claude, Cursor, Copilot, Antigravity):
+- [llms.txt](llms.txt) provides a compact, structured index of the core guidelines, platform support realities, and design rules.
+- Run `python tools/search.py "<query>"` for local zero-dependency semantic keyword search across all guides and extracted text.
+- Run `python tools/validate_kb.py` to verify token pointers and evidence integrity.
 
 ## Topic guides
 

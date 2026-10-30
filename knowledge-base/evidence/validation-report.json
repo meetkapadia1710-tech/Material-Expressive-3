@@ -1,11 +1,11 @@
 {
-  "validated_at": "2026-10-28T12:41:10.104387+00:00",
+  "validated_at": "2026-10-30T06:27:32.115800+00:00",
   "status": "passed",
   "checks": {
     "required_deliverables": 15,
     "json_files_parsed": 152,
     "source_hashes_checked": 129,
-    "local_markdown_targets_checked": 84,
+    "local_markdown_targets_checked": 85,
     "topic_citation_records_checked": 134,
     "qualified_source_records": 263,
     "source_text_extracts_checked": 88,

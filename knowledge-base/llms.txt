@@ -1,0 +1,41 @@
+# Material 3 Expressive Knowledge Base
+
+> An evidence-backed engineering reference and token repository for Google's Material Design 3 (M3) and its M3 Expressive expansion, researched from live captures, public application data, and official platform documentation.
+
+## Core Rules & Invariants for AI Coding Assistants
+
+- **M3 Expressive is an expansion, not Material 4:** It introduces 35 morphable shapes, spring physics, emphasized typography, and updated component patterns on top of baseline M3.
+- **Platform support status (as of late 2026):**
+  - **Android (Jetpack Compose):** Primary, "Compose-first" implementation receiving Material 3 Expressive updates first (`androidx.compose.material3:material3`).
+  - **Android Views (MDC-Android):** In maintenance mode (critical fixes only).
+  - **Flutter:** Supports baseline Material 3 (`useMaterial3: true`), but official documentation confirms that **M3 Expressive is not implemented on Flutter**. Do not generate nonexistent Flutter Expressive APIs.
+  - **Material Web (`@material/web`):** In maintenance mode; Expressive is not implemented.
+  - **Native iOS (`material-components-ios`):** Officially archived as read-only on December 11, 2025.
+- **Component replacements & deprecations:**
+  - **Segmented buttons:** Replaced by connected **Button Groups** in Expressive designs.
+  - **Navigation drawers:** Replaced by the expanded **Navigation Rail** in Expressive.
+  - **FABs:** Small FABs and surface-color FABs are deprecated; use standard, medium, or large FABs.
+  - **FAB menus:** Replace speed-dial and stacked-small-FAB patterns.
+- **Accessibility constraints:**
+  - Minimum touch target size is 48x48dp / CSS px across all interactive components.
+  - Never use color alone to communicate state.
+  - Follow WCAG 2.1 / 2.2 AA contrast standards.
+
+## Topic Guides
+
+- [Foundations](foundations.md): Core M3 philosophy, inclusive design, UX research findings, and customization principles.
+- [Color System](color.md): Dynamic and static color schemes, tonal palettes, semantic color roles, and contrast requirements.
+- [Typography](typography.md): 30 baseline and emphasized type styles, variable font axes, and scaling behavior.
+- [Layout & Scaffolds](layout.md): Breakpoint grids, pane scaffolds, canonical adaptive patterns, density, and RTL.
+- [Components](components.md): Catalog of 36 component families, variant choices, accessibility requirements, and deprecations.
+- [Design Tokens](design-tokens.md): Token architecture (reference, system, component classes), contexts, and workflows.
+- [Token Catalog](token-catalog.md): Searchable inventory of 8,897 token declarations across 41 public modules.
+- [Accessibility](accessibility.md): Focus management, semantics, target sizing, keyboard navigation, and testing guidance.
+- [Motion, Shape & Icons](motion-shape-icons.md): Spring parameters, motion schemes, the 35-shape scale, and Material Symbols.
+- [Interaction & Elevation](interaction-elevation-content.md): State layers, selection, input methods, and elevation tiers.
+- [Implementation](implementation.md): Official platform guidance, migration paths from M2, Compose semantics, and web/Flutter realities.
+
+## Tools & Verification
+
+- `python tools/search.py "<query>"`: Fast zero-dependency local text search across all guides and extracted source text.
+- `python tools/validate_kb.py`: Validates deliverables, JSON schemas, source hashes, and token pointers offline.
