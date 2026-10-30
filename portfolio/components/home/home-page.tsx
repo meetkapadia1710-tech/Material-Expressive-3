@@ -5,6 +5,9 @@ import { getFeaturedProjects } from "@/content/projects";
 import { skills } from "@/content/skills";
 import { Icon } from "../icon";
 import { MorphingShape } from "../motion/morphing-shape";
+import { HighlightText } from "@/components/ui/highlight-text";
+import { BlurText } from "@/components/ui/blur-text";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { ProjectCard } from "./project-card";
 
 export function HomePage() {
@@ -15,7 +18,7 @@ export function HomePage() {
         <p className="eyebrow"><span className="tiny-spark" aria-hidden="true">✳</span>{homeCopy.eyebrow}<span className="location">{profile.location.label}</span></p>
         <p className="hero-name">{profile.displayName}<span aria-hidden="true">.</span></p>
         <h1 id="hero-heading">{profile.headline}</h1>
-        {profile.description ? <p className="hero-description">{profile.description}</p> : null}
+        {profile.description ? <p className="hero-description"><TextGenerateEffect text={profile.description} delay={0.025} /></p> : null}
         {profile.heroLabels.length ? <ul className="hero-labels">{profile.heroLabels.slice(0, 4).map((label) => <li key={label}>{label}</li>)}</ul> : null}
         <div className="hero-actions">
           <a className="button button-primary" href={homeCopy.workCta.href}>{homeCopy.workCta.label}<Icon name="arrow-right" /></a>
@@ -28,7 +31,7 @@ export function HomePage() {
           <div className="hero-art" aria-hidden="true">
             <span className="art-caption top-caption"><span />{homeCopy.illustration.topLabel}</span>
             <div className="bloom"><span /><span /><span /><span /><span /><span /><span /><span /></div>
-            <div className="art-message">{homeCopy.illustration.center}<br /><em>{homeCopy.illustration.emphasis}</em></div>
+            <div className="art-message">{homeCopy.illustration.center}<br /><em><HighlightText text={homeCopy.illustration.emphasis} delay={300} highlightColor="linear-gradient(120deg, color-mix(in srgb, var(--color-secondary) 45%, transparent) 0%, color-mix(in srgb, var(--color-inverse-primary) 38%, transparent) 100%)" /></em></div>
             <div className="small-star star-one">✦</div><div className="small-star star-two">✦</div>
             <span className="art-caption bottom-caption">{homeCopy.illustration.bottomLabel}<Icon name="arrow-up-right" /></span>
           </div>
@@ -36,12 +39,12 @@ export function HomePage() {
             <Icon name="code" />
           </MorphingShape>
         </div>
-        <p className="aside-note"><span aria-hidden="true">↳</span>{homeCopy.introduction}</p>
+        <p className="aside-note"><span aria-hidden="true">↳</span><BlurText text={homeCopy.introduction} delay={50} /></p>
       </div>
     </section>
 
     {featured.length ? <section id="selected-projects" className="projects-section page-width section-space" aria-labelledby="projects-heading">
-      <div className="section-header"><div><p className="eyebrow">{homeCopy.projects.eyebrow}</p><h2 id="projects-heading">{homeCopy.projects.title}</h2><p className="section-description">{homeCopy.projects.description}</p></div><Link className="text-link section-link" href="/projects">{homeCopy.projects.allLabel}<Icon name="arrow-up-right" /></Link></div>
+      <div className="section-header"><div><p className="eyebrow">{homeCopy.projects.eyebrow}</p><h2 id="projects-heading">{homeCopy.projects.title}</h2><p className="section-description"><BlurText text={homeCopy.projects.description} delay={35} /></p></div><Link className="text-link section-link" href="/projects">{homeCopy.projects.allLabel}<Icon name="arrow-up-right" /></Link></div>
       <div className="project-grid">{featured.map((project, index) => <ProjectCard key={project.slug} project={project} index={index} lead={index === 0} />)}</div>
     </section> : null}
 
@@ -50,6 +53,6 @@ export function HomePage() {
       <dl className="skills-overview">{skills.map((group) => <div className="skill-row" key={group.id}><dt>{group.name}</dt><dd>{group.overview}</dd></div>)}</dl>
     </section> : null}
 
-    <section className="contact-section page-width section-space" aria-labelledby="contact-heading"><div className="contact-panel"><span className="contact-flower" aria-hidden="true">✳</span><p className="eyebrow">{homeCopy.contact.eyebrow}</p><h2 id="contact-heading">{homeCopy.contact.title}</h2>{homeCopy.contact.description ? <p>{homeCopy.contact.description}</p> : null}<div className="contact-actions">{links.email.href ? <a className="button button-dark" href={links.email.href}>{homeCopy.contact.emailLabel}<Icon name="mail" /></a> : null}<Link className="text-link" href="/contact">{homeCopy.contact.pageLabel}<Icon name="arrow-up-right" /></Link></div></div></section>
+    <section className="contact-section page-width section-space" aria-labelledby="contact-heading"><div className="contact-panel"><span className="contact-flower" aria-hidden="true">✳</span><p className="eyebrow">{homeCopy.contact.eyebrow}</p><h2 id="contact-heading">Something <HighlightText text="thoughtful" highlightColor="linear-gradient(120deg, color-mix(in srgb, var(--color-primary-container) 95%, transparent) 0%, color-mix(in srgb, var(--color-primary) 18%, transparent) 100%)" /> starts with a conversation.</h2>{homeCopy.contact.description ? <p>{homeCopy.contact.description}</p> : null}<div className="contact-actions">{links.email.href ? <a className="button button-dark" href={links.email.href}>{homeCopy.contact.emailLabel}<Icon name="mail" /></a> : null}<Link className="text-link" href="/contact">{homeCopy.contact.pageLabel}<Icon name="arrow-up-right" /></Link></div></div></section>
   </>;
 }

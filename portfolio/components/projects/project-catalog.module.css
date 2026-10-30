@@ -48,7 +48,12 @@
 .statusDetail { font-size: var(--type-label-medium-size); color: var(--color-on-surface-variant); line-height: 1.6; margin: 14px 0 0; }
 .stack { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 7px; margin: 22px 0 0; }
 .stack li { color: var(--default-project-chip-foreground, var(--color-on-surface-variant)); background: var(--default-project-chip-background, var(--color-surface-container-low)); border: 1px solid var(--default-project-chip-outline, var(--color-outline-variant)); border-radius: 8px; padding: 6px 9px; font-size: var(--type-label-small-size); line-height: 1.5; overflow-wrap: anywhere; max-width: 100%; }
-.cardLinks { display: flex; flex-wrap: wrap; gap: 8px 24px; padding-top: 20px; margin-top: auto; }
+.cardLinks { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding-top: 20px; margin-top: auto; }
+.cardExpandButton { display: inline-flex; align-items: center; gap: 7px; background: var(--color-surface-container-high); color: var(--color-on-surface); border: 1px solid var(--color-outline-variant); border-radius: 9999px; padding: 7px 15px; font-size: var(--type-label-small-size); font-weight: 600; cursor: pointer; min-height: 38px; transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s var(--spring); }
+.cardExpandButton:hover { background: var(--color-primary-container); color: var(--color-on-primary-container); border-color: var(--color-primary); }
+.cardExpandButton:active { transform: scale(0.96); }
+.cardExpandButton svg { width: 15px; height: 15px; color: var(--color-primary); }
+.cardExpandButton:hover svg { color: var(--color-on-primary-container); }
 .cardLinks a { display: inline-flex; align-items: center; gap: 8px; color: var(--color-primary); font-size: var(--type-body-small-size); font-weight: 600; min-height: 48px; }
 .cardLinks a:hover { text-decoration: underline; text-underline-offset: 5px; }
 .cardLinks svg { width: 17px; height: 17px; }

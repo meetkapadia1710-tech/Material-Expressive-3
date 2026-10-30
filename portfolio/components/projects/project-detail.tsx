@@ -9,6 +9,7 @@ import { projectAccentStyle } from "@/lib/project-accent";
 import { Icon } from "@/components/icon";
 import { SharedProjectElement } from "@/components/motion/shared-project-element";
 import { MorphingShape } from "@/components/motion/morphing-shape";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 function DetailSection({ id, title, children }: { id: string; title: string; children: ReactNode }) {
   return <section className="detail-section" id={id} aria-labelledby={`${id}-heading`}><h2 id={`${id}-heading`}>{title}</h2>{children}</section>;
@@ -34,7 +35,7 @@ export function ProjectDetail({ project, previous, next, className = "" }: { pro
 
     {content.sections.length ? <div className="detail-layout">
       <div className="detail-content">
-        {content.overview ? <DetailSection id="project-overview" title={projectDetailCopy.overview}><p className="detail-overview">{content.overview}</p></DetailSection> : null}
+        {content.overview ? <DetailSection id="project-overview" title={projectDetailCopy.overview}><p className="detail-overview"><TextGenerateEffect text={content.overview} delay={0.03} /></p></DetailSection> : null}
         {content.problem ? <DetailSection id="project-problem" title={projectDetailCopy.problem}><p>{content.problem}</p></DetailSection> : null}
         {content.role ? <DetailSection id="project-role" title={projectDetailCopy.role}><p>{content.role}</p></DetailSection> : null}
         {content.stack.length ? <DetailSection id="project-stack" title={projectDetailCopy.stack}><ul className="detail-stack">{content.stack.map((tool, index) => <li key={`${tool}-${index}`}>{tool}</li>)}</ul></DetailSection> : null}

@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { CopyEmail, useToast } from "@/components/interface-controls";
 import { Icon } from "@/components/icon";
+import { HighlightText } from "@/components/ui/highlight-text";
 import { links } from "@/content/links";
 import { contactCopy as copy } from "@/content/contact";
 import styles from "./contact-page.module.css";
@@ -81,7 +82,7 @@ export function ContactPage() {
   return <article className={`page-width ${styles.page}`}>
     <header className={styles.intro}>
       <p className="eyebrow"><span aria-hidden="true" className={styles.spark}>✳</span>{copy.eyebrow}</p>
-      <h1>{copy.title}</h1>
+      <h1>Have an <HighlightText text="Interesting Idea?" /></h1>
       <p className={styles.description}>{copy.description}</p>
     </header>
     <div className={styles.layout}>

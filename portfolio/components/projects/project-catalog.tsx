@@ -7,12 +7,14 @@ import type { Project } from "@/content/types";
 import { ALL_PROJECTS, WITHOUT_VALUE, filterProjects, getProjectCategories, groupProjects, projectGroupOrder, type ProjectFilters } from "@/lib/project-catalog";
 import { Icon } from "@/components/icon";
 import { CatalogCard } from "./catalog-card";
+import { ExpandableProjectModal } from "@/components/ui/expandable-card";
 import styles from "./project-catalog.module.css";
 
 const initialFilters: ProjectFilters = { category: ALL_PROJECTS, status: ALL_PROJECTS };
 
 export function ProjectCatalog({ entries, accentStyles = {} }: { entries: readonly Project[]; accentStyles?: Record<string, CSSProperties> }) {
   const [filters, setFilters] = useState<ProjectFilters>(initialFilters);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [query, setQuery] = useState("");
   const [ready, setReady] = useState(false);
   useEffect(() => {
@@ -56,8 +58,12 @@ export function ProjectCatalog({ entries, accentStyles = {} }: { entries: readon
     <div id="project-results">
       {visible.length ? projectGroupOrder.map((group) => groups[group].length ? <section className={styles.projectGroup} key={group} id={`projects-${group}`} aria-labelledby={`projects-${group}-heading`}>
         <header className={styles.groupHeader}><div><h2 id={`projects-${group}-heading`}>{projectCatalogCopy.groups[group].title}</h2><p>{projectCatalogCopy.groups[group].description}</p></div><span className={styles.groupCount}>{projectCatalogCopy.groupCountLabel(groups[group].length)}</span></header>
-        <div className={`${styles.grid}${group === "explorations" ? ` ${styles.ideaGrid}` : ""}`}>{groups[group].map((project) => <CatalogCard key={project.slug} project={project} accentStyle={accentStyles[project.slug]} />)}</div>
+        <div className={`${styles.grid}${group === "explorations" ? ` ${styles.ideaGrid}` : ""}`}>{groups[group].map((project) => <CatalogCard key={project.slug} project={project} accentStyle={accentStyles[project.slug]} onExpand={setActiveProject} />)}</div>
       </section> : null) : <div className={styles.empty}><Icon name="spark" /><h2>{copy.emptyTitle}</h2><p>{copy.emptyDescription}</p><button type="button" className="button button-primary" onClick={clearAll}>{copy.clearFilters}</button></div>}
     </div>
+    <ExpandableProjectModal
+      project={activeProject}
+      onClose={() => setActiveProject(null)}
+    />
   </>;
 }
