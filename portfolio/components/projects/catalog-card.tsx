@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { memo } from "react";
+import { memo, type CSSProperties } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { readMotionBezier, readMotionMilliseconds } from "@/components/motion/motion-tokens";
 import { MorphingShape } from "@/components/motion/morphing-shape";
@@ -11,14 +11,14 @@ import type { Project } from "@/content/types";
 import { Icon } from "@/components/icon";
 import styles from "./project-catalog.module.css";
 
-export const CatalogCard = memo(function CatalogCard({ project }: { project: Project }) {
+export const CatalogCard = memo(function CatalogCard({ project, accentStyle }: { project: Project; accentStyle?: CSSProperties }) {
   const reduced = useReducedMotion();
   const shared = useSharedProjectTransitionEnabled();
   const isExploration = project.status === "concept" || project.status === "prototype";
   const isReview = project.visibility === "review" || project.verification === "unverified";
   const layoutDuration = readMotionMilliseconds(shared ? "--motion-duration-card" : "--motion-duration-layout", shared ? 400 : 280) / 1000;
   const layoutEasing = shared ? readMotionBezier("--motion-project-spatial-easing", [0.38, 1.21, 0.22, 1]) : readMotionBezier("--motion-project-layout-easing", [0.2, 0.75, 0.2, 1]);
-  return <motion.article layout={reduced ? false : "position"} layoutId={sharedProjectLayoutId("catalog", project.slug, "container", shared)} transition={{ layout: { duration: layoutDuration, ease: layoutEasing } }} className={`${styles.card}${isExploration ? ` ${styles.ideaCard}` : ""}`} data-project-slug={project.slug}>
+  return <motion.article layout={reduced ? false : "position"} layoutId={sharedProjectLayoutId("catalog", project.slug, "container", shared)} transition={{ layout: { duration: layoutDuration, ease: layoutEasing } }} className={`${styles.card}${isExploration ? ` ${styles.ideaCard}` : ""}`} style={accentStyle} data-project-accent={accentStyle ? "true" : undefined} data-project-slug={project.slug}>
     <div className={styles.cardMeta}>
       <SharedProjectElement slug={project.slug} scope="catalog" element="shape" className={styles.cardShape} ariaHidden>
         <MorphingShape className={styles.cardShapeInner} shape="roundedSquare" viewShape="scalloped" hoverShape="circle" focusShape="blob" morphOnView>

@@ -1,18 +1,25 @@
 .control { position: relative; display: inline-flex; flex: 0 0 auto; list-style: none; }
 .control > summary { list-style: none; }
 .control > summary::-webkit-details-marker { display: none; }
-.trigger { display: grid; width: 48px; height: 48px; place-items: center; border: 1px solid var(--color-outline); border-radius: 50%; color: var(--color-on-surface); background: var(--color-surface); cursor: pointer; transition: transform var(--motion-duration-fast) var(--motion-project-spatial-easing), background-color var(--motion-duration-fast) var(--motion-project-effects-easing); }
+.trigger { position: relative; display: grid; width: 48px; height: 48px; place-items: center; border: 1px solid var(--color-outline); border-radius: 50%; color: var(--color-on-surface); background: var(--color-surface-container-lowest); cursor: pointer; transition: transform var(--motion-duration-fast) var(--motion-project-spatial-easing), background-color var(--motion-duration-fast) var(--motion-project-effects-easing); }
 .trigger svg { color: var(--color-primary); }
+.trigger::after { content: ""; position: absolute; right: 4px; bottom: 4px; width: 10px; height: 10px; border: 2px solid var(--color-surface-container-lowest); border-radius: 50%; background: var(--color-seed); }
 .trigger:hover, .control[open] > .trigger { background: var(--color-primary-container); color: var(--color-on-primary-container); }
 .trigger:active { transform: scale(.95); }
-.popover { position: absolute; z-index: 30; top: calc(100% + 10px); right: 0; width: min(290px, calc(100vw - 32px)); padding: 18px; border: 1px solid var(--color-outline-variant); border-radius: 24px; background: var(--color-surface-container); color: var(--color-on-surface); box-shadow: 0 8px 24px #0002; animation: popover-enter var(--motion-duration-fast) var(--motion-project-content-easing) both; }
+.popover { position: absolute; z-index: 30; top: calc(100% + 10px); right: 0; width: min(290px, calc(100vw - 32px)); padding: 18px; border: 1px solid var(--color-outline-variant); border-radius: 24px; background: var(--color-surface-container-high); color: var(--color-on-surface); box-shadow: 0 8px 24px color-mix(in srgb, var(--color-shadow) 14%, transparent); animation: popover-enter var(--motion-duration-fast) var(--motion-project-content-easing) both; }
 .popover h2 { margin: 0 0 14px; font: var(--type-title-medium); }
-.swatches { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.swatches { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .swatch { display: grid; justify-items: center; gap: 5px; min-height: 70px; padding: 5px 2px; border: 1px solid transparent; border-radius: 14px; color: var(--color-on-surface-variant); background: transparent; cursor: pointer; transition: transform var(--motion-duration-fast) var(--motion-project-spatial-easing), background-color var(--motion-duration-fast) var(--motion-project-effects-easing); }
-.swatch > span { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; border: 2px solid var(--color-outline); background: var(--seed-color); color: #fff; font-size: 14px; font-weight: 700; text-shadow: 0 1px 2px #0008; }
+.swatch > span { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; border: 2px solid var(--color-outline); background: var(--seed-color); color: var(--seed-on-color); font-size: 14px; font-weight: 700; }
 .swatch small { font: var(--type-label-small); }
 .swatch:hover { transform: translateY(-2px); background: var(--color-surface-variant); }
-.swatch[aria-pressed="true"] { border-color: var(--color-primary); background: var(--color-primary-container); color: var(--color-on-primary-container); }
+.swatch[aria-checked="true"] { border-color: var(--color-primary); background: var(--color-primary-container); color: var(--color-on-primary-container); }
+.swatch[aria-checked="true"] > span { border-color: var(--color-on-primary-container); outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.defaultSwatchColors { position: relative; overflow: hidden; background: var(--color-surface-container-lowest); color: transparent; }
+.defaultSwatchColors i { position: absolute; width: 15px; height: 15px; border: 1px solid var(--color-surface-container-lowest); border-radius: 50%; background: var(--picker-default-violet); }
+.defaultSwatchColors i:first-child { left: 3px; top: 3px; }
+.defaultSwatchColors i:nth-child(2) { right: 3px; bottom: 3px; background: var(--picker-default-lime); }
+.defaultSwatchColors b { position: absolute; inset: 0; display: grid; place-items: center; color: var(--color-on-primary-container); font-size: 13px; text-shadow: 0 1px 2px var(--color-surface-container-lowest); }
 .custom { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 54px; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--color-outline-variant); font: var(--type-body-medium); }
 .custom input { width: 48px; height: 40px; padding: 3px; border: 1px solid var(--color-outline); border-radius: 12px; background: var(--color-surface); cursor: pointer; }
 .custom input:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 3px; }

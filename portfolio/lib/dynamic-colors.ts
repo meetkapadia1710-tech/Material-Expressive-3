@@ -3,21 +3,15 @@ import {
   hexFromArgb,
   Hct,
   MaterialDynamicColors,
-  SchemeExpressive,
+  SchemeContent,
 } from "@material/material-color-utilities";
 import type { DynamicColor, DynamicScheme } from "@material/material-color-utilities";
+import { applyColorRecordToDocument, clearColorRecordFromDocument, DYNAMIC_COLOR_STORAGE_KEY, readStoredColorRecord } from "./dynamic-color-state";
 
-export const DYNAMIC_COLOR_STORAGE_KEY = "portfolio-color-palette";
-export const DYNAMIC_COLOR_SEED_KEY = "portfolio-color-seed";
-
+export { DYNAMIC_COLOR_STORAGE_KEY } from "./dynamic-color-state";
 export type DynamicColorRoles = Record<string, string>;
-export type DynamicColorRecord = {
-  seed: string;
-  light: DynamicColorRoles;
-  dark: DynamicColorRoles;
-};
+export type DynamicColorRecord = { seed: string; light: DynamicColorRoles; dark: DynamicColorRoles };
 
-const DEFAULT_SEED = "#6142AE";
 const colorPattern = /^#[\da-f]{6}$/i;
 const textContrastPairs = [
   ["primary", "on-primary"], ["primary-container", "on-primary-container"],
@@ -27,6 +21,17 @@ const textContrastPairs = [
   ["background", "on-background"], ["surface", "on-surface"],
   ["surface-variant", "on-surface-variant"], ["inverse-surface", "inverse-on-surface"],
 ] as const;
+const surfaceRoles = ["background", "surface", "surface-variant", "surface-container-lowest", "surface-container-low", "surface-container", "surface-container-high", "surface-container-highest"];
+const requiredRoles = [
+  "primary", "on-primary", "primary-container", "on-primary-container",
+  "secondary", "on-secondary", "secondary-container", "on-secondary-container",
+  "tertiary", "on-tertiary", "tertiary-container", "on-tertiary-container",
+  "error", "on-error", "error-container", "on-error-container",
+  "background", "on-background", "surface", "on-surface", "surface-variant", "on-surface-variant",
+  "surface-container-lowest", "surface-container-low", "surface-container", "surface-container-high", "surface-container-highest",
+  "surface-dim", "surface-bright", "outline", "outline-variant", "inverse-surface", "inverse-on-surface", "inverse-primary",
+  "surface-tint", "shadow", "scrim",
+];
 
 function luminance(hex: string) {
   const rgb = hex.slice(1).match(/.{2}/g)!.map((channel) => parseInt(channel, 16) / 255)
@@ -39,33 +44,40 @@ function contrast(first: string, second: string) {
   return (values[0] + 0.05) / (values[1] + 0.05);
 }
 
+function adjustForeground(roles: DynamicColorRoles, foregroundName: string, backgroundNames: string[], minimum: number) {
+  const foreground = Hct.fromInt(argbFromHex(roles[foregroundName]));
+  if (backgroundNames.every((name) => contrast(roles[foregroundName], roles[name]) >= minimum)) return;
+  const candidates = Array.from({ length: 101 }, (_, tone) => {
+    const color = hexFromArgb(Hct.from(foreground.hue, foreground.chroma, tone).toInt()).toUpperCase();
+    return { color, distance: Math.abs(tone - foreground.tone) };
+  }).filter((candidate) => backgroundNames.every((name) => contrast(candidate.color, roles[name]) >= minimum))
+    .sort((first, second) => first.distance - second.distance);
+  if (candidates[0]) roles[foregroundName] = candidates[0].color;
+  else {
+    const black = "#000000";
+    const white = "#FFFFFF";
+    const safe = [black, white].find((candidate) => backgroundNames.every((name) => contrast(candidate, roles[name]) >= minimum));
+    if (safe) roles[foregroundName] = safe;
+  }
+}
+
+function ensureRoleContrast(roles: DynamicColorRoles) {
+  for (const [background, foreground] of textContrastPairs) adjustForeground(roles, foreground, [background], 4.5);
+  for (const accent of ["primary", "secondary", "tertiary"]) adjustForeground(roles, accent, surfaceRoles, 4.5);
+  adjustForeground(roles, "on-surface", surfaceRoles, 4.5);
+  adjustForeground(roles, "on-surface-variant", surfaceRoles, 4.5);
+  adjustForeground(roles, "outline", surfaceRoles, 3);
+  adjustForeground(roles, "outline-variant", surfaceRoles, 3);
+  return roles;
+}
+
 function passesContrast(roles: DynamicColorRoles) {
   return textContrastPairs.every(([surface, foreground]) => contrast(roles[surface], roles[foreground]) >= 4.5)
-    && contrast(roles.outline, roles.surface) >= 3
-    && contrast(roles["outline-variant"], roles.surface) >= 3;
+    && ["on-surface", "on-surface-variant"].every((foreground) => surfaceRoles.every((surface) => contrast(roles[surface], roles[foreground]) >= 4.5))
+    && ["outline", "outline-variant"].every((foreground) => surfaceRoles.every((surface) => contrast(roles[surface], roles[foreground]) >= 3));
 }
 
-function collectLegacyPaletteAliases() {
-  const aliases = new Map<string, string>();
-  if (typeof document === "undefined") return aliases;
-  for (const sheet of Array.from(document.styleSheets)) {
-    try {
-      for (const rule of Array.from(sheet.cssRules)) {
-        if (!(rule instanceof CSSStyleRule) || !rule.selectorText.split(",").some((selector) => selector.trim() === ":root")) continue;
-        for (const property of Array.from({ length: rule.style.length }, (_, index) => rule.style.item(index))) {
-          if (!property.startsWith("--palette-")) continue;
-          const hex = rule.style.getPropertyValue(property).trim();
-          if (colorPattern.test(hex)) aliases.set(property, hex.toUpperCase());
-        }
-      }
-    } catch {
-      // A browser may omit inaccessible stylesheet rules; semantic roles still work.
-    }
-  }
-  return aliases;
-}
-
-function colorRoles(scheme: SchemeExpressive): DynamicColorRoles {
+function colorRoles(scheme: SchemeContent): DynamicColorRoles {
   const dynamicColors = new MaterialDynamicColors();
   const role = (dynamicColor: DynamicColor) => hexFromArgb(dynamicColor.getArgb(scheme as DynamicScheme)).toUpperCase();
   return {
@@ -80,77 +92,45 @@ function colorRoles(scheme: SchemeExpressive): DynamicColorRoles {
     background: role(dynamicColors.background()), "on-background": role(dynamicColors.onBackground()),
     surface: role(dynamicColors.surface()), "on-surface": role(dynamicColors.onSurface()),
     "surface-variant": role(dynamicColors.surfaceVariant()), "on-surface-variant": role(dynamicColors.onSurfaceVariant()),
-    "surface-container": role(dynamicColors.surfaceContainer()), "surface-container-low": role(dynamicColors.surfaceContainerLow()),
-    "surface-container-high": role(dynamicColors.surfaceContainerHigh()), outline: role(dynamicColors.outline()),
-    "outline-variant": role(dynamicColors.outlineVariant()), "inverse-surface": role(dynamicColors.inverseSurface()),
-    "inverse-on-surface": role(dynamicColors.inverseOnSurface()), "inverse-primary": role(dynamicColors.inversePrimary()),
-    "surface-tint": role(dynamicColors.surfaceTint()),
+    "surface-container-lowest": role(dynamicColors.surfaceContainerLowest()),
+    "surface-container-low": role(dynamicColors.surfaceContainerLow()),
+    "surface-container": role(dynamicColors.surfaceContainer()),
+    "surface-container-high": role(dynamicColors.surfaceContainerHigh()),
+    "surface-container-highest": role(dynamicColors.surfaceContainerHighest()),
+    "surface-dim": role(dynamicColors.surfaceDim()), "surface-bright": role(dynamicColors.surfaceBright()),
+    outline: role(dynamicColors.outline()), "outline-variant": role(dynamicColors.outlineVariant()),
+    "inverse-surface": role(dynamicColors.inverseSurface()), "inverse-on-surface": role(dynamicColors.inverseOnSurface()),
+    "inverse-primary": role(dynamicColors.inversePrimary()), "surface-tint": role(dynamicColors.surfaceTint()),
+    shadow: role(dynamicColors.shadow()), scrim: role(dynamicColors.scrim()),
   };
-}
-
-function legacyPaletteRoles(scheme: SchemeExpressive, aliases: Map<string, string>) {
-  const palettes = [scheme.primaryPalette, scheme.secondaryPalette, scheme.tertiaryPalette, scheme.errorPalette];
-  const mapped: DynamicColorRoles = {};
-  for (const [name, oldHex] of aliases) {
-    const oldColor = Hct.fromInt(argbFromHex(oldHex));
-    const palette = oldColor.chroma < 8
-      ? oldColor.chroma < 3 ? scheme.neutralPalette : scheme.neutralVariantPalette
-      : palettes.reduce((closest, candidate) => {
-        const distance = Math.abs(((oldColor.hue - candidate.hue + 540) % 360) - 180);
-        const closestDistance = Math.abs(((oldColor.hue - closest.hue + 540) % 360) - 180);
-        return distance < closestDistance ? candidate : closest;
-      }, palettes[0]);
-    mapped[name] = hexFromArgb(palette.tone(oldColor.tone)).toUpperCase();
-  }
-  return mapped;
 }
 
 export function isDynamicColorRecord(value: unknown): value is DynamicColorRecord {
   if (!value || typeof value !== "object") return false;
   const record = value as Partial<DynamicColorRecord>;
   return typeof record.seed === "string" && colorPattern.test(record.seed)
-    && [record.light, record.dark].every((roles) => roles && typeof roles === "object"
-      && Object.values(roles).every((entry) => typeof entry === "string" && colorPattern.test(entry)));
+    && [record.light, record.dark].every((roles) => roles && requiredRoles.every((name) => colorPattern.test(roles[name] ?? "")));
 }
 
 export function readDynamicColorRecord() {
-  try {
-    const value: unknown = JSON.parse(localStorage.getItem(DYNAMIC_COLOR_STORAGE_KEY) ?? "null");
-    return isDynamicColorRecord(value) ? value : null;
-  } catch {
-    return null;
-  }
-}
-
-export function applyDynamicColorRoles(roles: DynamicColorRoles, seed = "selected") {
-  const root = document.documentElement;
-  for (const [name, value] of Object.entries(roles)) root.style.setProperty(name.startsWith("--palette-") ? name : `--color-${name}`, value);
-  root.dataset.colorSeed = seed;
+  return readStoredColorRecord();
 }
 
 export function applyDynamicColorRecord(record: DynamicColorRecord, theme: "light" | "dark") {
-  applyDynamicColorRoles(record[theme], record.seed);
+  applyColorRecordToDocument(record, theme);
 }
 
 export function clearDynamicColorRoles() {
-  const root = document.documentElement;
-  for (const property of Array.from({ length: root.style.length }, (_, index) => root.style.item(index))) {
-    if (property.startsWith("--color-") || property.startsWith("--palette-")) root.style.removeProperty(property);
-  }
-  delete root.dataset.colorSeed;
+  clearColorRecordFromDocument();
 }
 
 export function createDynamicColorRecord(seed: string): DynamicColorRecord | null {
   if (!colorPattern.test(seed)) return null;
-  const aliases = collectLegacyPaletteAliases();
   const generate = (isDark: boolean) => {
-    const source = Hct.fromInt(argbFromHex(seed));
     for (const contrastLevel of [0.5, 1]) {
-      const scheme = new SchemeExpressive(source, isDark, contrastLevel);
-      const roles = colorRoles(scheme);
-      if (Object.values(roles).every((value) => colorPattern.test(value)) && passesContrast(roles)) {
-        return { ...roles, ...legacyPaletteRoles(scheme, aliases) };
-      }
+      const scheme = new SchemeContent(Hct.fromInt(argbFromHex(seed)), isDark, contrastLevel);
+      const roles = ensureRoleContrast(colorRoles(scheme));
+      if (requiredRoles.every((name) => colorPattern.test(roles[name] ?? "")) && passesContrast(roles)) return roles;
     }
     return null;
   };
@@ -161,19 +141,17 @@ export function createDynamicColorRecord(seed: string): DynamicColorRecord | nul
 
 export function persistDynamicColorRecord(record: DynamicColorRecord) {
   try {
-    localStorage.setItem(DYNAMIC_COLOR_STORAGE_KEY, JSON.stringify(record));
-    localStorage.setItem(DYNAMIC_COLOR_SEED_KEY, record.seed);
-  } catch {
-    // The current page can still use the in-memory palette if storage is unavailable.
+    localStorage.setItem(DYNAMIC_COLOR_STORAGE_KEY, JSON.stringify({ ...record, mode: "seed" }));
+    localStorage.removeItem("portfolio-color-seed");
   }
+  catch { /* The current page can still use the in-memory palette if storage is unavailable. */ }
 }
 
 export function resetDynamicColorRecord() {
   try {
-    localStorage.removeItem(DYNAMIC_COLOR_STORAGE_KEY);
-    localStorage.removeItem(DYNAMIC_COLOR_SEED_KEY);
-  } catch { /* The default CSS theme still applies. */ }
+    localStorage.setItem(DYNAMIC_COLOR_STORAGE_KEY, JSON.stringify({ mode: "default" }));
+    // Remove the obsolete second source of truth introduced by an earlier picker version.
+    localStorage.removeItem("portfolio-color-seed");
+  } catch { /* The static Default palette still applies. */ }
   clearDynamicColorRoles();
 }
-
-export const defaultDynamicColorSeed = DEFAULT_SEED;

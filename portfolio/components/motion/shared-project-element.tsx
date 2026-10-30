@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import { LayoutGroup, motion } from "framer-motion";
 import { readMotionBezier, readMotionMilliseconds } from "./motion-tokens";
 
@@ -33,14 +33,18 @@ type SharedProjectElementProps = {
   element: "container" | "shape" | "title";
   as?: "div" | "article" | "span";
   className?: string;
+  style?: CSSProperties;
+  "data-project-accent"?: string;
   ariaHidden?: boolean;
   children: ReactNode;
 };
 
-export function SharedProjectElement({ slug, scope, element, as = "div", className, ariaHidden, children }: SharedProjectElementProps) {
+export function SharedProjectElement({ slug, scope, element, as = "div", className, style, "data-project-accent": projectAccent, ariaHidden, children }: SharedProjectElementProps) {
   const enabled = useSharedProjectTransitionEnabled();
   const sharedProps = {
     className,
+    style,
+    "data-project-accent": projectAccent,
     "aria-hidden": ariaHidden || undefined,
     layoutId: sharedProjectLayoutId(scope, slug, element, enabled),
     transition: {

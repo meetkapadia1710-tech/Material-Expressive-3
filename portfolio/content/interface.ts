@@ -27,10 +27,11 @@ export const interfaceCopy = {
   colors: {
     label: "Color theme",
     title: "Choose a color theme",
+    default: "Default",
     custom: "Custom seed color",
     reset: "Reset to default",
     generating: "Applying color theme…",
-    fallback: "That seed could not meet the contrast check. The default palette is active.",
+    fallback: "That seed could not be applied. Try another color.",
     presets: [
       { label: "Violet", seed: "#6142AE" },
       { label: "Lagoon", seed: "#006A60" },

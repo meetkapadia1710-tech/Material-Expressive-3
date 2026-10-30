@@ -3,8 +3,10 @@ import { createContext, useContext, useEffect, useRef, useState, type ReactNode 
 import { interfaceCopy as copy } from "@/content/interface";
 import { Icon } from "./icon";
 import { registerViewTransition, skipActiveViewTransition } from "./motion/view-transition-coordinator";
+import { applyStoredColorScheme } from "@/lib/dynamic-color-state";
 const ToastContext = createContext<(message: string) => void>(() => {});
 export function useToast() { return useContext(ToastContext); }
+let colorTransitionTimer = 0;
 
 export type ThemeChoice = "light" | "dark" | "system";
 
@@ -13,8 +15,10 @@ type ViewTransitionDocument = Document & { startViewTransition?: (update: () => 
 
 function applyThemeChoice(value: ThemeChoice) {
   const root = document.documentElement;
+  const nextTheme = value === "system" ? matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light" : value;
+  applyStoredColorScheme(nextTheme);
   root.dataset.preference = value;
-  root.dataset.theme = value === "system" ? matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light" : value;
+  root.dataset.theme = nextTheme;
   try { localStorage.setItem("portfolio-theme", value); } catch {}
   window.dispatchEvent(new CustomEvent<ThemeChoice>("portfolio:theme-choice", { detail: value }));
   window.dispatchEvent(new CustomEvent("portfolio:theme-effective", { detail: root.dataset.theme }));
@@ -24,8 +28,10 @@ export function runThemeReveal(update: () => void, origin?: HTMLElement | null) 
   const root = document.documentElement;
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const viewTransitionDocument = document as ViewTransitionDocument;
+  window.clearTimeout(colorTransitionTimer);
 
   if (reducedMotion) {
+    delete root.dataset.colorTransitioning;
     update();
     return;
   }
@@ -46,17 +52,16 @@ export function runThemeReveal(update: () => void, origin?: HTMLElement | null) 
   root.style.setProperty("--theme-reveal-radius", `${radius}px`);
 
   if (viewTransitionDocument.startViewTransition) {
+    delete root.dataset.colorTransitioning;
     skipActiveViewTransition();
     const transition = viewTransitionDocument.startViewTransition(update);
     registerViewTransition("theme", transition);
     return;
   }
 
+  root.dataset.colorTransitioning = "true";
   update();
-  root.animate([{ opacity: 0.86 }, { opacity: 1 }], {
-    duration: 160,
-    easing: getComputedStyle(root).getPropertyValue("--motion-project-effects-easing").trim() || "ease-out",
-  });
+  colorTransitionTimer = window.setTimeout(() => { delete root.dataset.colorTransitioning; }, 300);
 }
 
 export function setThemeChoice(value: ThemeChoice, origin?: HTMLElement | null) {
@@ -74,7 +79,26 @@ export function ToastProvider({ children }: { children: ReactNode }) {
 }
 export function ThemeToggle() {
   const [choice, setChoice] = useState<ThemeChoice>("system");
-  useEffect(() => { setChoice(document.documentElement.dataset.preference as ThemeChoice || "system"); const media = matchMedia("(prefers-color-scheme: dark)"); const update = () => { if ((document.documentElement.dataset.preference || "system") === "system") { document.documentElement.dataset.theme = media.matches ? "dark" : "light"; window.dispatchEvent(new CustomEvent("portfolio:theme-effective", { detail: document.documentElement.dataset.theme })); } }; const onChoice = (event: Event) => setChoice((event as CustomEvent<ThemeChoice>).detail); media.addEventListener("change", update); window.addEventListener("portfolio:theme-choice", onChoice); return () => { media.removeEventListener("change", update); window.removeEventListener("portfolio:theme-choice", onChoice); }; }, []);
+  useEffect(() => {
+    setChoice(document.documentElement.dataset.preference as ThemeChoice || "system");
+    const media = matchMedia("(prefers-color-scheme: dark)");
+    const update = () => {
+      if ((document.documentElement.dataset.preference || "system") !== "system") return;
+      const nextTheme = media.matches ? "dark" : "light";
+      runThemeReveal(() => {
+        applyStoredColorScheme(nextTheme);
+        document.documentElement.dataset.theme = nextTheme;
+        window.dispatchEvent(new CustomEvent("portfolio:theme-effective", { detail: nextTheme }));
+      });
+    };
+    const onChoice = (event: Event) => setChoice((event as CustomEvent<ThemeChoice>).detail);
+    media.addEventListener("change", update);
+    window.addEventListener("portfolio:theme-choice", onChoice);
+    return () => {
+      media.removeEventListener("change", update);
+      window.removeEventListener("portfolio:theme-choice", onChoice);
+    };
+  }, []);
   const options = [{ value: "light", label: copy.light, icon: "sun" }, { value: "dark", label: copy.dark, icon: "moon" }, { value: "system", label: copy.system, icon: "monitor" }] as const;
   return <fieldset className="theme-control"><legend className="sr-only">{copy.theme}</legend>{options.map((option) => <label className="theme-option" key={option.value} title={option.label}><input className="sr-only" type="radio" name="appearance" value={option.value} checked={choice === option.value} onChange={(event) => { setChoice(option.value); setThemeChoice(option.value, event.currentTarget.closest(".theme-option") as HTMLElement | null); }} /><span className="theme-icon"><Icon name={option.icon} /></span><span className="sr-only">{option.label}</span></label>)}</fieldset>;
 }

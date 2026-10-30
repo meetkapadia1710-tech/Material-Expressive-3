@@ -1,36 +1,38 @@
 .page { padding-top: 62px; }
 .intro { position: relative; max-width: 980px; padding-bottom: 48px; }
 .intro h1 { max-width: 15ch; margin: 0 0 24px; font: var(--type-contact-display); letter-spacing: -.065em; }
-.spark { color: var(--primary); font-size: 19px; }
-.description { max-width: 72ch; margin: 0; color: var(--ink-muted); font-size: var(--type-contact-copy-size); line-height: 1.8; }
+.spark { color: var(--color-primary); font-size: 19px; }
+.description { max-width: 72ch; margin: 0; color: var(--color-on-surface-variant); font-size: var(--type-contact-copy-size); line-height: 1.8; }
 .layout { display: grid; grid-template-columns: minmax(260px, .78fr) minmax(0, 1.22fr); align-items: start; gap: 28px; padding-bottom: 24px; }
 .aside { display: grid; gap: 20px; }
-.emailCard { padding: 30px; border-radius: 30px 30px 70px 30px; background: var(--primary-container); }
-.emailIcon, .formIcon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 17px; background: var(--primary); color: var(--on-primary); }
+.emailCard { padding: 30px; border-radius: 30px 30px 70px 30px; background: var(--color-primary-container); color: var(--color-on-primary-container); }
+.emailIcon, .formIcon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 17px; background: var(--color-primary); color: var(--color-on-primary); }
 .emailIcon svg, .formIcon svg { width: 22px; }
-.cardLabel { margin: 24px 0 7px; color: var(--ink-muted); font-size: var(--type-label-medium-size); font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
+.cardLabel { margin: 24px 0 7px; color: var(--color-on-primary-container); font-size: var(--type-label-medium-size); font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
 .emailAddress { display: inline-block; margin-bottom: 18px; font: var(--type-contact-email); letter-spacing: -.03em; overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: .18em; }
 .emailCard :global(.copy-email) { display: flex; }
-.socialCard { padding: 26px 28px; border-radius: 28px; background: var(--surface-container); }
+.emailCard :global(.copy-email) :global(.button-secondary) { color: var(--color-on-primary-container); border-color: var(--color-on-primary-container); }
+.emailCard :global(.copy-email) :global(.button-secondary):hover { color: var(--color-on-primary); background: var(--color-primary); }
+.socialCard { padding: 26px 28px; border-radius: 28px; background: var(--color-surface-container); }
 .socialCard h2 { margin: 0 0 14px; font: var(--type-contact-subheading); letter-spacing: -.04em; }
 .socialCard ul { list-style: none; padding: 0; margin: 0; }
-.socialCard li + li { border-top: 1px solid var(--outline); }
+.socialCard li + li { border-top: 1px solid var(--color-outline); }
 .socialCard li a { display: grid; grid-template-columns: minmax(72px, .7fr) minmax(0, 1.3fr) 18px; gap: 12px; min-height: 54px; align-items: center; font-size: var(--type-body-small-size); font-weight: 600; }
-.socialCard li a:hover { color: var(--primary); }
-.socialValue { color: var(--ink-muted); font-weight: 450; overflow-wrap: anywhere; }
+.socialCard li a:hover { color: var(--color-primary); }
+.socialValue { color: var(--color-on-surface-variant); font-weight: 450; overflow-wrap: anywhere; }
 .socialCard li svg { width: 16px; height: 16px; }
-.form { display: grid; gap: 20px; min-width: 0; padding: 34px; border: 1px solid var(--outline); border-radius: 32px; background: var(--surface); }
+.form { display: grid; gap: 20px; min-width: 0; padding: 34px; border: 1px solid var(--color-outline); border-radius: 32px; background: var(--color-surface); }
 .formHeading { display: flex; align-items: flex-start; gap: 16px; padding-bottom: 8px; }
 .formHeading h2 { margin: 0 0 8px; font: var(--type-contact-form-heading); letter-spacing: -.05em; }
-.formHeading p { max-width: 52ch; margin: 0; color: var(--ink-muted); font-size: var(--type-body-small-size); line-height: 1.65; }
+.formHeading p { max-width: 52ch; margin: 0; color: var(--color-on-surface-variant); font-size: var(--type-body-small-size); line-height: 1.65; }
 .formIcon { flex: 0 0 48px; }
 .field { display: grid; gap: 8px; }
 .field label { font-size: var(--type-body-small-size); font-weight: 650; }
-.field input, .field textarea { width: 100%; min-width: 0; border: 1px solid var(--outline); border-radius: 15px; padding: 14px 16px; background: var(--surface-container); color: var(--ink); font-size: var(--type-label-large-size); line-height: 1.6; }
+.field input, .field textarea { width: 100%; min-width: 0; border: 1px solid var(--color-outline); border-radius: 15px; padding: 14px 16px; background: var(--color-surface-container); color: var(--color-on-surface); font-size: var(--type-label-large-size); line-height: 1.6; }
 .field textarea { min-height: 160px; resize: vertical; }
-.field input::placeholder, .field textarea::placeholder { color: var(--ink-muted); opacity: .82; }
-.field input:focus-visible, .field textarea:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; border-color: var(--primary); }
-.field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: var(--color-error); background: color-mix(in srgb, var(--color-error) 7%, var(--surface-container)); }
+.field input::placeholder, .field textarea::placeholder { color: var(--color-on-surface-variant); opacity: .82; }
+.field input:focus-visible, .field textarea:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; border-color: var(--color-primary); }
+.field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: var(--color-error); background: color-mix(in srgb, var(--color-error) 7%, var(--color-surface-container)); }
 .error { margin: 0; color: var(--color-error); font-size: var(--type-body-small-size); line-height: 1.5; }
 .form > button { justify-self: start; }
 .form > button svg { width: 17px; height: 17px; }

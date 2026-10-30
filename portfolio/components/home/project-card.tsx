@@ -4,11 +4,12 @@ import type { Project } from "@/content/types";
 import { Icon } from "../icon";
 import { MorphingShape, type ShapeName } from "../motion/morphing-shape";
 import { SharedProjectElement } from "../motion/shared-project-element";
+import { projectAccentStyle } from "@/lib/project-accent";
 
 const projectShapes: ShapeName[] = ["roundedSquare", "circle", "blob", "scalloped", "roundedSquare"];
 
 export function ProjectCard({ project, lead = false, index }: { project: Project; lead?: boolean; index: number }) {
-  return <SharedProjectElement as="article" slug={project.slug} scope="home" element="container" className={`project-card project-tone-${index % 5}${lead ? " project-lead" : ""}`}>
+  return <SharedProjectElement as="article" slug={project.slug} scope="home" element="container" className={`project-card project-tone-${index % 5}${lead ? " project-lead" : ""}`} style={projectAccentStyle(project.accentSeed)} data-project-accent={project.accentSeed ? "true" : undefined}>
     <div className="project-art" aria-hidden="true">
       <span className="project-number">{String(project.order).padStart(2, "0")}</span>
       <SharedProjectElement slug={project.slug} scope="home" element="shape" className="project-symbol" ariaHidden>

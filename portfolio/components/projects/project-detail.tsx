@@ -5,8 +5,8 @@ import type { Project } from "@/content/types";
 import { projectDetailCopy } from "@/content/projects";
 import { siteCopy } from "@/content/profile";
 import { getProjectDetailContent } from "@/lib/project-detail";
+import { projectAccentStyle } from "@/lib/project-accent";
 import { Icon } from "@/components/icon";
-import { ProjectAccentSeed } from "@/components/projects/project-accent-seed";
 import { SharedProjectElement } from "@/components/motion/shared-project-element";
 import { MorphingShape } from "@/components/motion/morphing-shape";
 
@@ -17,9 +17,9 @@ function DetailSection({ id, title, children }: { id: string; title: string; chi
 export function ProjectDetail({ project, previous, next, className = "" }: { project: Project; previous: Project | null; next: Project | null; className?: string }) {
   const content = getProjectDetailContent(project);
   const ideaNote = content.status === "concept" ? projectDetailCopy.conceptNote : content.status === "prototype" ? projectDetailCopy.prototypeNote : null;
+  const accentStyle = projectAccentStyle(project.accentSeed);
 
-  return <SharedProjectElement as="article" slug={project.slug} scope="detail" element="container" className={`page-width ${className}`}>
-    <ProjectAccentSeed seed={project.accentSeed} />
+  return <SharedProjectElement as="article" slug={project.slug} scope="detail" element="container" className={`page-width ${className}`} style={accentStyle} data-project-accent={accentStyle ? "true" : undefined}>
     <Link className="text-link detail-back" href="/projects"><Icon name="arrow-right" />{siteCopy.backToProjects}</Link>
     <header className="detail-header">
       <p className="eyebrow">{projectDetailCopy.eyebrow}{project.category?.trim() ? <><span aria-hidden="true">/</span>{project.category}</> : null}</p>
