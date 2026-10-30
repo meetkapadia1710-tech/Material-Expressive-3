@@ -17,7 +17,7 @@ The investigation asked what the system recommends for foundations, principles, 
 
 ## Acquisition
 
-1. Read the explicitly requested [REA skill](C:/Users/meetk/.agents/skills/reverse-engineer-anything/SKILL.md) and its browser runtime-observation guide. No native analysis target was opened.
+1. Used the REA (reverse-engineer-anything) workflow and its browser runtime-observation guide. No native analysis target was opened.
 2. Ordinary web text retrieval returned a JavaScript-required shell for the site. REA launched an owned headless Chrome instance and performed declared navigation/waits, successfully capturing DOM and accessibility text.
 3. The homepage network observation exposed a public versioned content endpoint. The rendered HTML exposed the shipped bundle at `/static/angular/main.9fa6346ef63e2a6c.js`.
 4. Retrieve the public sitemap, bundle and homepage JSON. Extract the route-map JSON as data without executing the bundle. Its 90 entries include 88 JSON mappings; Get Started is separately rendered and Search was not exercised.

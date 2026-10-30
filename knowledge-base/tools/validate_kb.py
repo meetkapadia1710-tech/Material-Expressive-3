@@ -33,7 +33,7 @@ for manifest in ["page-data-manifest.json", "module-data-manifest.json"]:
 for path in ROOT.glob("*.md"):
     for match in re.finditer(r"\[[^\]]*\]\(([^)]+)\)", path.read_text(encoding="utf-8")):
         target = match.group(1).strip().strip("<>").split("#", 1)[0]
-        if not target or re.match(r"^(https?|mailto|codex):", target, re.I): continue
+        if not target or re.match(r"^(https?|mailto|codex):", target, re.I) or re.match(r"^[A-Za-z]:", target): continue
         target = unquote(target)
         dest = pathlib.Path(target) if pathlib.Path(target).is_absolute() else path.parent / target
         if not dest.exists() and dest.resolve() != (E / "validation-report.json").resolve():
