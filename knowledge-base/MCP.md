@@ -68,3 +68,4 @@ To run the server in standard stdio mode:
 ```powershell
 python mcp_server.py
 ```
+

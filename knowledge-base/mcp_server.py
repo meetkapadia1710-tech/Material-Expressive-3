@@ -357,3 +357,4 @@ def implement_ui_prompt(component_name: str, platform: str = "compose") -> str:
 
 if __name__ == "__main__":
     server.run(transport="stdio")
+

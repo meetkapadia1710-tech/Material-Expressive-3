@@ -4,40 +4,54 @@ import { useEffect, useRef, useState } from "react";
 import { profile } from "@/content/profile";
 import { Icon } from "@/components/icon";
 import { MorphingShape, type ShapeName } from "./morphing-shape";
+import { readMotionMilliseconds } from "./motion-tokens";
 
 const shapeSequence: ShapeName[] = ["roundedSquare", "scalloped", "circle", "blob"];
 const minimumDisplayMs = 1200;
-const normalExitMs = 280;
-const reducedExitMs = 120;
+const morphIntervalMs = 220;
+const wordmarkAtMs = 900;
 
 export function IntroLoader() {
   const [shapeIndex, setShapeIndex] = useState(0);
-  const [showWordmark, setShowWordmark] = useState(false);
+  const [showMark, setShowMark] = useState(false);
   const skipRef = useRef<HTMLButtonElement>(null);
-  const dismissRef = useRef<((fast: boolean) => void) | null>(null);
+  const dismissRef = useRef<((urgent?: boolean) => void) | null>(null);
 
   useEffect(() => {
     const root = document.documentElement;
     if (root.dataset.introPending !== "true") return;
 
-    let dismissed = false;
+    let closing = false;
     let fontsReady = false;
     let pageReady = false;
     const startedAt = Number(root.dataset.introStarted) || Date.now();
-    const reducedPreference = matchMedia("(prefers-reduced-motion: reduce)");
-    const reduced = reducedPreference.matches;
-    const exitMs = reduced ? reducedExitMs : normalExitMs;
-    let cycleTimer = 0;
-    let markTimer = 0;
-    let minimumTimer = 0;
-    let hardTimer = 0;
-    let exitTimer = 0;
+    const reducedPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const normalExitMs = readMotionMilliseconds("--motion-duration-standard", 240);
+    const urgentExitMs = readMotionMilliseconds("--motion-duration-fast", 180);
+    if (reducedPreference.matches) {
+      delete root.dataset.introPending;
+      delete root.dataset.introExiting;
+      delete root.dataset.introFast;
+      delete root.dataset.introStarted;
+      const main = document.getElementById("main-content");
+      main?.removeAttribute("aria-busy");
+      requestAnimationFrame(() => main?.focus({ preventScroll: true }));
+      return;
+    }
+    let minimumTimer: number | undefined;
+    let exitTimer: number | undefined;
     let observer: MutationObserver | undefined;
+    const cycleTimer = window.setInterval(() => setShapeIndex((index) => (index + 1) % shapeSequence.length), morphIntervalMs);
+    const markTimer = window.setTimeout(() => {
+      window.clearInterval(cycleTimer);
+      setShowMark(true);
+    }, wordmarkAtMs);
+    const hardTimer = window.setTimeout(() => dismissRef.current?.(true), Math.max(0, 2700 - (Date.now() - startedAt)));
 
     const clearSequenceTimers = () => {
       window.clearInterval(cycleTimer);
       window.clearTimeout(markTimer);
-      window.clearTimeout(minimumTimer);
+      if (minimumTimer !== undefined) window.clearTimeout(minimumTimer);
       window.clearTimeout(hardTimer);
       observer?.disconnect();
     };
@@ -47,24 +61,24 @@ export function IntroLoader() {
       delete root.dataset.introExiting;
       delete root.dataset.introFast;
       delete root.dataset.introStarted;
-      document.getElementById("main-content")?.removeAttribute("aria-busy");
-      const heading = document.querySelector<HTMLElement>("#main-content h1") ?? document.getElementById("main-content");
-      heading?.focus({ preventScroll: true });
+      const main = document.getElementById("main-content");
+      main?.removeAttribute("aria-busy");
+      requestAnimationFrame(() => main?.focus({ preventScroll: true }));
     };
 
-    const dismiss = (fast = false) => {
-      if (dismissed) return;
-      dismissed = true;
+    const dismiss = (urgent = false) => {
+      if (closing) return;
+      closing = true;
       clearSequenceTimers();
-      setShowWordmark(true);
-      if (fast) root.dataset.introFast = "true";
+      setShowMark(true);
+      if (urgent) root.dataset.introFast = "true";
       root.dataset.introExiting = "true";
-      exitTimer = window.setTimeout(finish, fast ? Math.min(exitMs, 140) : exitMs);
+      exitTimer = window.setTimeout(finish, urgent ? urgentExitMs : normalExitMs);
     };
     dismissRef.current = dismiss;
 
     const tryDismiss = () => {
-      if (!dismissed && fontsReady && pageReady) {
+      if (!closing && fontsReady && pageReady) {
         const remaining = Math.max(0, minimumDisplayMs - (Date.now() - startedAt));
         if (!remaining) dismiss();
         else if (!minimumTimer) minimumTimer = window.setTimeout(() => dismiss(), remaining);
@@ -81,15 +95,6 @@ export function IntroLoader() {
       }
     };
 
-    if (reduced) {
-      setShowWordmark(true);
-      cycleTimer = 0;
-      minimumTimer = window.setTimeout(() => dismiss(), Math.max(0, 100 - (Date.now() - startedAt)));
-    } else {
-      cycleTimer = window.setInterval(() => setShapeIndex((index) => (index + 1) % shapeSequence.length), 240);
-      markTimer = window.setTimeout(() => setShowWordmark(true), 930);
-    }
-
     const main = document.getElementById("main-content");
     if (main) {
       observer = new MutationObserver(checkPage);
@@ -101,11 +106,8 @@ export function IntroLoader() {
       tryDismiss();
     });
 
-    const hardLimit = reduced ? 170 : Math.max(0, 2700 - (Date.now() - startedAt));
-    hardTimer = window.setTimeout(() => dismiss(true), hardLimit);
-
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key !== "Escape" || dismissed) return;
+      if (event.key !== "Escape" || closing) return;
       event.preventDefault();
       event.stopPropagation();
       dismiss(true);
@@ -117,20 +119,20 @@ export function IntroLoader() {
 
     return () => {
       clearSequenceTimers();
-      window.clearTimeout(exitTimer);
+      if (exitTimer !== undefined) window.clearTimeout(exitTimer);
       document.removeEventListener("keydown", onKeyDown, true);
       reducedPreference.removeEventListener("change", onReducedMotionChange);
       dismissRef.current = null;
     };
   }, []);
 
-  return <div className="intro-loader" role="status" aria-live="polite" aria-label="Loading portfolio">
-    <span className="sr-only">Loading portfolio</span>
+  return <div id="portfolio-intro" className="intro-loader" aria-busy="true">
+    <span className="sr-only" role="status" aria-live="polite" aria-atomic="true">Loading portfolio</span>
     <div className="intro-loader-content">
       <MorphingShape className="intro-loader-shape" shape={shapeSequence[shapeIndex]} viewShape="scalloped" hoverShape="blob" focusShape="circle" pressShape="roundedSquare">
-        <span className="intro-loader-mark" aria-hidden="true">{showWordmark ? profile.initials : <Icon name="spark" />}</span>
+        <span className="intro-loader-mark" aria-hidden="true">{showMark ? profile.initials : <Icon name="spark" />}</span>
       </MorphingShape>
-      <span className={`intro-loader-wordmark${showWordmark ? " is-visible" : ""}`} aria-hidden="true">{profile.displayName}.</span>
+      <span className={`intro-loader-wordmark${showMark ? " is-visible" : ""}`} aria-hidden="true">{profile.displayName}.</span>
     </div>
     <button ref={skipRef} className="button button-secondary intro-loader-skip" type="button" onClick={() => dismissRef.current?.(true)}>Skip intro</button>
   </div>;
