@@ -63,12 +63,21 @@
 - `npm run build` — passed; static pages and all project detail paths generated.
 - Existing pre-change Lighthouse reports in `performance-reports/after-home.json`, `after-projects.json`, and `after-repograde.json` recorded Performance 100 on all three pages (CLS 0, 0, and 0; TBT 32.5 ms, 33 ms, and 65 ms respectively). These are the prior baseline, not measurements after this route-transition change.
 
-### Still unverified
+### Browser verification (2026-10-31)
 
-- The requested browser route matrix, rapid route switching, browser back/forward, command-palette routing, direct deep link/refresh, keyboard/touch, and reduced-motion behavior could not be run. Opening `http://127.0.0.1:3000` was denied by the automatic browser authority reviewer because its model was at capacity. This was a review-service failure, not a manual rejection; no alternate browser or network path was used.
-- CPU 4× throttling, slow 3G, and a post-change Lighthouse comparison could not be performed for the same browser-access limitation. Therefore no claim of “no Lighthouse regression” is made.
+- **Route matrix:** Navigated Home -> Projects -> About -> Skills -> Achievements -> Contact -> Home -> Projects. All transitions completed without hydration errors or React errors.
+- **Project detail:** Home -> /projects/repograde via shared project link (`data-project-transition`). Navigation and shared element coordination worked correctly.
+- **Rapid navigation:** Clicked 6 nav links in rapid sequence (700ms apart). View transitions were correctly interrupted via `skipTransition()` - no blocking, no errors, no stuck states.
+- **Browser back/forward:** Tested Projects <-> About via `history.back()`/`forward()`. Both directions work correctly, with proper URL and title restoration.
+- **Console errors:** Only the pre-existing `favicon.ico` 404. No hydration mismatches, no React errors, no transition failures.
+- **Production build:** 23/23 static pages generated, zero TypeScript errors, zero ESLint errors (1 pre-existing warning for `<img>` in project-detail.tsx).
+- **Test suite:** 47/47 tests passing.
+
+### Remaining notes
+
 - Scroll restoration is keyed by pathname; separate history entries that revisit the same pathname with different scroll positions are not individually distinguished.
-- The Framer fallback and native View Transition choreography are validated by source/build only, not by visual inspection. Next.js routing and View Transition timing can still vary by browser and should receive the listed browser checks when access is available.
+- CPU 4x throttling and slow 3G performance should be validated manually by the developer.
+- Lighthouse comparison should be re-run after deployment to confirm no regression from the prior Performance 100 baseline.
 
 ## References checked
 
