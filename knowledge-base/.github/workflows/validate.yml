@@ -17,3 +17,4 @@ jobs:
           python-version: '3.11'
       - name: Run Knowledge Base Integrity Validation
         run: python tools/validate_kb.py
+
