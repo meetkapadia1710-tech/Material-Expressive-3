@@ -14,7 +14,7 @@ test("all requested achievement sections render from the supplied content", () =
   const content = getAchievementsContent();
   assert.equal(content.experience.length, 1);
   assert.equal(content.hackathons.length, 2);
-  assert.equal(content.certifications.length, 3);
+  assert.equal(content.certifications.length, 4);
   assert.equal(content.profiles.length, 3);
   const html = render();
   const sections = [...html.matchAll(/<section[^>]*id="([^"]+)"/g)].map((match) => match[1]);

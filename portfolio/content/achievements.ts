@@ -16,6 +16,19 @@ export const hackathons: readonly Achievement[] = [
 ];
 
 export const certifications: readonly Achievement[] = [
+  {
+    ...provided,
+    id: "nvidia-deep-learning",
+    title: "Fundamentals of Deep Learning",
+    organization: "NVIDIA",
+    dateLabel: "September 2026",
+    startDate: "2026-09-05",
+    url: "https://learn.nvidia.com/certificates?id=iCYD7o4TQD2sk23TRgpwJA",
+    documents: [
+      { label: "Certificate of Competency (PDF)", url: "/certificates/nvidia-deep-learning.pdf" },
+      { label: "Verify Credential", url: "https://learn.nvidia.com/certificates?id=iCYD7o4TQD2sk23TRgpwJA" },
+    ],
+  },
   { ...provided, id: "oracle-genai", title: "Oracle Cloud Infrastructure 2025 Generative AI Professional", organization: "Oracle" },
   { ...provided, id: "delta-mern", title: "Full Stack Web Development (Delta, MERN)", organization: "Apna College" },
   { ...provided, id: "iit-bombay-ai", title: "AI Workshop", organization: "IIT Bombay" },

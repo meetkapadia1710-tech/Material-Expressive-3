@@ -181,7 +181,8 @@ svg { flex-shrink: 0; }
 }
 
 
-main { position: relative; min-width: 0; }
+main, #main-content { position: relative; min-width: 0; outline: none; }
+main:focus, main:focus-visible, #main-content:focus, #main-content:focus-visible, [tabindex="-1"]:focus, [tabindex="-1"]:focus-visible { outline: none !important; }
 .route-transition-stack { position: relative; display: grid; min-width: 0; }
 .route-transition-surface { grid-area: 1 / 1; width: 100%; min-width: 0; }
 :root[data-route-transition="true"] .route-transition-surface { view-transition-name: route-content; }

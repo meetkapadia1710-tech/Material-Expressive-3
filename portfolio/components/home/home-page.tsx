@@ -49,13 +49,17 @@ export function HomePage() {
       <section className="hero page-width" aria-labelledby="hero-heading">
         <div className="hero-copy">
           <Link href={homeCopy.buildingStatus.href} className="hero-status-pill">
-            <span className="hero-status-dot" aria-hidden="true" />
-            <span className="hero-status-tag">{homeCopy.buildingStatus.tag}</span>
-            <span className="hero-status-sep" aria-hidden="true">·</span>
-            <span className="hero-status-text">
-              <strong>{homeCopy.buildingStatus.project}</strong> ({homeCopy.buildingStatus.desc})
+            <span className="hero-status-badge">
+              <span className="hero-status-dot" aria-hidden="true" />
+              <span className="hero-status-tag">{homeCopy.buildingStatus.tag}</span>
             </span>
-            <Icon name="arrow-up-right" />
+            <span className="hero-status-content">
+              <strong className="hero-status-project">{homeCopy.buildingStatus.project}</strong>
+              <span className="hero-status-desc">{homeCopy.buildingStatus.desc}</span>
+            </span>
+            <span className="hero-status-action" aria-hidden="true">
+              <Icon name="arrow-up-right" />
+            </span>
           </Link>
 
           <p className="eyebrow">
