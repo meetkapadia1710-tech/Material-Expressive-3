@@ -5,69 +5,36 @@ import Lanyard from "./Lanyard";
 import { Icon } from "@/components/icon";
 import { readMotionMilliseconds } from "./motion-tokens";
 
-const minimumDisplayMs = 1800;
-const targetDurationMs = 2200;
+const progressDurationMs = 2000;
+const holdAfterCompleteMs = 800;
 
 export function IntroLoader() {
   const [progress, setProgress] = useState(0);
   const [isReady, setIsReady] = useState(false);
+  const isReadyRef = useRef(false);
   const skipRef = useRef<HTMLButtonElement>(null);
   const dismissRef = useRef<((urgent?: boolean) => void) | null>(null);
+
+  useEffect(() => {
+    isReadyRef.current = isReady;
+  }, [isReady]);
 
   useEffect(() => {
     const root = document.documentElement;
     if (root.dataset.introPending !== "true") return;
 
     let closing = false;
-    let fontsReady = false;
-    let pageReady = false;
-    const startedAt = Number(root.dataset.introStarted) || Date.now();
-    const reducedPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let progressTimer: number | undefined;
+    let exitTimer: number | undefined;
+    let autoDismissTimer: number | undefined;
+
     const normalExitMs = readMotionMilliseconds("--motion-duration-standard", 240);
     const urgentExitMs = readMotionMilliseconds("--motion-duration-fast", 180);
 
-    if (reducedPreference.matches) {
-      delete root.dataset.introPending;
-      delete root.dataset.introExiting;
-      delete root.dataset.introFast;
-      delete root.dataset.introStarted;
-      const main = document.getElementById("main-content");
-      main?.removeAttribute("aria-busy");
-      requestAnimationFrame(() => main?.focus({ preventScroll: true }));
-      return;
-    }
-
-    let progressRaf: number | undefined;
-    let exitTimer: number | undefined;
-    let observer: MutationObserver | undefined;
-
-    const startProgressTime = performance.now();
-    const updateProgress = (now: number) => {
-      const elapsed = now - startProgressTime;
-      const raw = Math.min(100, Math.round((elapsed / targetDurationMs) * 100));
-      setProgress((prev) => {
-        const next = Math.max(prev, raw);
-        if (next >= 100) {
-          setIsReady(true);
-          tryDismiss();
-        }
-        return next;
-      });
-      if (raw < 100 && !closing) {
-        progressRaf = requestAnimationFrame(updateProgress);
-      }
-    };
-    progressRaf = requestAnimationFrame(updateProgress);
-
-    const hardTimer = window.setTimeout(
-      () => dismissRef.current?.(true),
-      Math.max(0, 3600 - (Date.now() - startedAt))
-    );
-
     const clearTimers = () => {
-      if (progressRaf !== undefined) cancelAnimationFrame(progressRaf);
-      window.clearTimeout(hardTimer);
-      observer?.disconnect();
+      if (progressTimer !== undefined) cancelAnimationFrame(progressTimer);
+      if (autoDismissTimer !== undefined) window.clearTimeout(autoDismissTimer);
+      if (exitTimer !== undefined) window.clearTimeout(exitTimer);
     };
 
     const finish = () => {
@@ -92,43 +59,35 @@ export function IntroLoader() {
     };
     dismissRef.current = dismiss;
 
-    const tryDismiss = () => {
-      if (!closing && fontsReady && pageReady) {
-        const remaining = Math.max(0, minimumDisplayMs - (Date.now() - startedAt));
-        if (!remaining) {
-          window.setTimeout(() => dismiss(), 300);
-        }
+    const mountTime = performance.now();
+    const tick = (now: number) => {
+      if (closing) return;
+      const elapsed = now - mountTime;
+      const pct = Math.min(100, Math.round((elapsed / progressDurationMs) * 100));
+      setProgress(pct);
+
+      if (pct < 100) {
+        progressTimer = requestAnimationFrame(tick);
+      } else {
+        setIsReady(true);
+        isReadyRef.current = true;
+        autoDismissTimer = window.setTimeout(() => {
+          dismiss(false);
+        }, holdAfterCompleteMs);
       }
     };
 
-    const checkPage = () => {
-      const main = document.getElementById("main-content");
-      const rendered = main?.querySelector<HTMLElement>("h1") ?? main?.firstElementChild;
-      if (rendered && rendered.getClientRects().length > 0) {
-        pageReady = true;
-        observer?.disconnect();
-        tryDismiss();
-      }
-    };
-
-    const main = document.getElementById("main-content");
-    if (main) {
-      observer = new MutationObserver(checkPage);
-      observer.observe(main, { childList: true, subtree: true });
-    }
-    requestAnimationFrame(checkPage);
-    void (document.fonts?.ready ?? Promise.resolve()).then(() => {
-      fontsReady = true;
-      tryDismiss();
-    });
+    progressTimer = requestAnimationFrame(tick);
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if ((event.key === "Escape" || (event.key === "Enter" && isReady)) && !closing) {
+      if ((event.key === "Escape" || event.key === "Enter" || event.key === " ") && !closing) {
         event.preventDefault();
         event.stopPropagation();
         dismiss(true);
       }
     };
+
+    const reducedPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const onReducedMotionChange = () => {
       if (reducedPreference.matches) dismiss(true);
     };
@@ -139,12 +98,11 @@ export function IntroLoader() {
 
     return () => {
       clearTimers();
-      if (exitTimer !== undefined) window.clearTimeout(exitTimer);
       document.removeEventListener("keydown", onKeyDown, true);
       reducedPreference.removeEventListener("change", onReducedMotionChange);
       dismissRef.current = null;
     };
-  }, [isReady]);
+  }, []);
 
   return (
     <div id="portfolio-intro" className="intro-loader" aria-busy="true">
