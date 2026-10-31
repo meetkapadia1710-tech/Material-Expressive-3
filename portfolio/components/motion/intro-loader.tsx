@@ -5,8 +5,12 @@ import Lanyard from "./Lanyard";
 import { Icon } from "@/components/icon";
 import { readMotionMilliseconds } from "./motion-tokens";
 
-const progressDurationMs = 2000;
-const holdAfterCompleteMs = 800;
+const progressDurationMs = 3800;
+const holdAfterCompleteMs = 1500;
+
+function expressiveEase(t: number): number {
+  return 1 - Math.pow(1 - t, 2.6);
+}
 
 export function IntroLoader() {
   const [progress, setProgress] = useState(0);
@@ -63,7 +67,8 @@ export function IntroLoader() {
     const tick = (now: number) => {
       if (closing) return;
       const elapsed = now - mountTime;
-      const pct = Math.min(100, Math.round((elapsed / progressDurationMs) * 100));
+      const t = Math.min(1, elapsed / progressDurationMs);
+      const pct = Math.min(100, Math.round(expressiveEase(t) * 100));
       setProgress(pct);
 
       if (pct < 100) {
