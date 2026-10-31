@@ -1,19 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { profile } from "@/content/profile";
+import Lanyard from "./Lanyard";
 import { Icon } from "@/components/icon";
-import { MorphingShape, type ShapeName } from "./morphing-shape";
 import { readMotionMilliseconds } from "./motion-tokens";
 
-const shapeSequence: ShapeName[] = ["roundedSquare", "scalloped", "circle", "blob"];
-const minimumDisplayMs = 1200;
-const morphIntervalMs = 220;
-const wordmarkAtMs = 900;
+const minimumDisplayMs = 1800;
+const targetDurationMs = 2200;
 
 export function IntroLoader() {
-  const [shapeIndex, setShapeIndex] = useState(0);
-  const [showMark, setShowMark] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [isReady, setIsReady] = useState(false);
   const skipRef = useRef<HTMLButtonElement>(null);
   const dismissRef = useRef<((urgent?: boolean) => void) | null>(null);
 
@@ -28,6 +25,7 @@ export function IntroLoader() {
     const reducedPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const normalExitMs = readMotionMilliseconds("--motion-duration-standard", 240);
     const urgentExitMs = readMotionMilliseconds("--motion-duration-fast", 180);
+
     if (reducedPreference.matches) {
       delete root.dataset.introPending;
       delete root.dataset.introExiting;
@@ -38,20 +36,36 @@ export function IntroLoader() {
       requestAnimationFrame(() => main?.focus({ preventScroll: true }));
       return;
     }
-    let minimumTimer: number | undefined;
+
+    let progressRaf: number | undefined;
     let exitTimer: number | undefined;
     let observer: MutationObserver | undefined;
-    const cycleTimer = window.setInterval(() => setShapeIndex((index) => (index + 1) % shapeSequence.length), morphIntervalMs);
-    const markTimer = window.setTimeout(() => {
-      window.clearInterval(cycleTimer);
-      setShowMark(true);
-    }, wordmarkAtMs);
-    const hardTimer = window.setTimeout(() => dismissRef.current?.(true), Math.max(0, 2700 - (Date.now() - startedAt)));
 
-    const clearSequenceTimers = () => {
-      window.clearInterval(cycleTimer);
-      window.clearTimeout(markTimer);
-      if (minimumTimer !== undefined) window.clearTimeout(minimumTimer);
+    const startProgressTime = performance.now();
+    const updateProgress = (now: number) => {
+      const elapsed = now - startProgressTime;
+      const raw = Math.min(100, Math.round((elapsed / targetDurationMs) * 100));
+      setProgress((prev) => {
+        const next = Math.max(prev, raw);
+        if (next >= 100) {
+          setIsReady(true);
+          tryDismiss();
+        }
+        return next;
+      });
+      if (raw < 100 && !closing) {
+        progressRaf = requestAnimationFrame(updateProgress);
+      }
+    };
+    progressRaf = requestAnimationFrame(updateProgress);
+
+    const hardTimer = window.setTimeout(
+      () => dismissRef.current?.(true),
+      Math.max(0, 3600 - (Date.now() - startedAt))
+    );
+
+    const clearTimers = () => {
+      if (progressRaf !== undefined) cancelAnimationFrame(progressRaf);
       window.clearTimeout(hardTimer);
       observer?.disconnect();
     };
@@ -69,8 +83,9 @@ export function IntroLoader() {
     const dismiss = (urgent = false) => {
       if (closing) return;
       closing = true;
-      clearSequenceTimers();
-      setShowMark(true);
+      clearTimers();
+      setProgress(100);
+      setIsReady(true);
       if (urgent) root.dataset.introFast = "true";
       root.dataset.introExiting = "true";
       exitTimer = window.setTimeout(finish, urgent ? urgentExitMs : normalExitMs);
@@ -80,8 +95,9 @@ export function IntroLoader() {
     const tryDismiss = () => {
       if (!closing && fontsReady && pageReady) {
         const remaining = Math.max(0, minimumDisplayMs - (Date.now() - startedAt));
-        if (!remaining) dismiss();
-        else if (!minimumTimer) minimumTimer = window.setTimeout(() => dismiss(), remaining);
+        if (!remaining) {
+          window.setTimeout(() => dismiss(), 300);
+        }
       }
     };
 
@@ -107,33 +123,93 @@ export function IntroLoader() {
     });
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key !== "Escape" || closing) return;
-      event.preventDefault();
-      event.stopPropagation();
-      dismiss(true);
+      if ((event.key === "Escape" || (event.key === "Enter" && isReady)) && !closing) {
+        event.preventDefault();
+        event.stopPropagation();
+        dismiss(true);
+      }
     };
-    const onReducedMotionChange = () => { if (reducedPreference.matches) dismiss(true); };
+    const onReducedMotionChange = () => {
+      if (reducedPreference.matches) dismiss(true);
+    };
+
     document.addEventListener("keydown", onKeyDown, true);
     reducedPreference.addEventListener("change", onReducedMotionChange);
     skipRef.current?.focus({ preventScroll: true });
 
     return () => {
-      clearSequenceTimers();
+      clearTimers();
       if (exitTimer !== undefined) window.clearTimeout(exitTimer);
       document.removeEventListener("keydown", onKeyDown, true);
       reducedPreference.removeEventListener("change", onReducedMotionChange);
       dismissRef.current = null;
     };
-  }, []);
+  }, [isReady]);
 
-  return <div id="portfolio-intro" className="intro-loader" aria-busy="true">
-    <span className="sr-only" role="status" aria-live="polite" aria-atomic="true">Loading portfolio</span>
-    <div className="intro-loader-content">
-      <MorphingShape className="intro-loader-shape" shape={shapeSequence[shapeIndex]} viewShape="scalloped" hoverShape="blob" focusShape="circle" pressShape="roundedSquare">
-        <span className="intro-loader-mark" aria-hidden="true">{showMark ? profile.initials : <Icon name="spark" />}</span>
-      </MorphingShape>
-      <span className={`intro-loader-wordmark${showMark ? " is-visible" : ""}`} aria-hidden="true">{profile.displayName}.</span>
+  return (
+    <div id="portfolio-intro" className="intro-loader" aria-busy="true">
+      <span className="sr-only" role="status" aria-live="polite" aria-atomic="true">
+        Loading portfolio {progress}%
+      </span>
+
+      <div className="intro-loader-content">
+        <div style={{ width: "100%", height: "600px" }} className="intro-loader-lanyard-wrapper">
+          <Lanyard
+            frontImage="/card-front.png"
+            backImage="/card-back.png"
+            strapImage="/band.png"
+            imageFit="cover"
+            cardColor="#ffffff"
+            orientation="portrait"
+            finish="glossy"
+            cornerRadius={0.3}
+            size={0.6}
+            anchor="center"
+            strapLength={0.5}
+            strapColor="#111111"
+            strapWidth={0.65}
+            metal="silver"
+            gravity={1}
+            damping={0.5}
+            elasticity={0.5}
+            breeze={0.5}
+            interactive
+            intro
+          />
+        </div>
+
+        <div className="intro-loader-meta" aria-hidden="true">
+          <div className="intro-loader-number-row">
+            <span className="intro-loader-number">{progress}</span>
+            <span className="intro-loader-percent">%</span>
+          </div>
+
+          <div
+            className="intro-loader-bar-track"
+            role="progressbar"
+            aria-valuenow={progress}
+            aria-valuemin={0}
+            aria-valuemax={100}
+          >
+            <div className="intro-loader-bar-fill" style={{ width: `${progress}%` }} />
+          </div>
+
+          <span className="intro-loader-caption">
+            <Icon name="spark" />
+            <span>{isReady ? "Ready · Swing card or press Enter" : "Initialising Material 3 Expressive..."}</span>
+          </span>
+        </div>
+      </div>
+
+      <button
+        ref={skipRef}
+        className="button button-secondary intro-loader-skip"
+        type="button"
+        onClick={() => dismissRef.current?.(true)}
+      >
+        <span>{isReady ? "Enter portfolio" : "Skip intro"}</span>
+        <Icon name="arrow-up-right" />
+      </button>
     </div>
-    <button ref={skipRef} className="button button-secondary intro-loader-skip" type="button" onClick={() => dismissRef.current?.(true)}>Skip intro</button>
-  </div>;
+  );
 }

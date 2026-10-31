@@ -203,22 +203,25 @@ main { position: relative; min-width: 0; }
   :root::view-transition-old(root), :root::view-transition-new(root), :root::view-transition-old(route-content), :root::view-transition-new(route-content) { animation: none !important; }
 }
 
-.intro-loader { position: fixed; inset: 0; z-index: 1000; display: none; place-items: center; background: var(--color-background); color: var(--color-on-background); }
+.intro-loader { position: fixed; inset: 0; z-index: 1000; display: none; place-items: center; background: var(--color-background); color: var(--color-on-background); overflow: hidden; }
 :root[data-intro-pending="true"] .intro-loader { display: grid; }
-.intro-loader-content { display: grid; justify-items: center; gap: 18px; }
-.intro-loader-shape { width: clamp(92px, 18vw, 132px); aspect-ratio: 1; display: grid; place-items: center; background: var(--color-primary-container); color: var(--color-on-primary-container); }
-.intro-loader-shape svg { width: 42%; height: 42%; }
-.intro-loader-mark { font: var(--type-title-large); letter-spacing: -.06em; }
-.intro-loader-wordmark { opacity: 0; transform: translateY(7px); color: var(--color-on-surface-variant); font: var(--type-title-medium); transition: opacity var(--motion-duration-standard) var(--motion-project-effects-easing), transform var(--motion-duration-standard) var(--motion-project-spatial-easing); }
-.intro-loader-wordmark.is-visible { opacity: 1; transform: translateY(0); }
-.intro-loader-skip { position: fixed; right: max(24px, env(safe-area-inset-right)); bottom: max(24px, env(safe-area-inset-bottom)); }
+.intro-loader-content { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; max-width: 900px; padding: 24px; box-sizing: border-box; }
+.intro-loader-lanyard-wrapper { position: relative; width: 100%; height: min(600px, 60vh); display: flex; align-items: center; justify-content: center; touch-action: none; }
+.intro-loader-meta { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: -24px; z-index: 10; pointer-events: none; }
+.intro-loader-number-row { display: flex; align-items: baseline; gap: 4px; }
+.intro-loader-number { font-family: var(--font-display-local), var(--font-display), sans-serif; font-size: clamp(2.75rem, 6vw, 4.25rem); font-weight: 800; line-height: 1; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; color: var(--color-on-background); }
+.intro-loader-percent { font-family: var(--font-display-local), var(--font-display), sans-serif; font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; color: var(--color-primary); }
+.intro-loader-bar-track { width: clamp(200px, 35vw, 320px); height: 6px; background: var(--color-surface-container-highest); border-radius: 9999px; overflow: hidden; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25); }
+.intro-loader-bar-fill { height: 100%; background: var(--color-primary); border-radius: 9999px; transition: width 80ms ease-out; }
+.intro-loader-caption { font-family: var(--font-body-local), var(--font-body), sans-serif; font-size: 0.875rem; color: var(--color-on-surface-variant); display: flex; align-items: center; gap: 8px; letter-spacing: 0.01em; }
+.intro-loader-caption svg { width: 14px; height: 14px; color: var(--color-primary); }
+.intro-loader-skip { position: fixed; right: max(24px, env(safe-area-inset-right)); bottom: max(24px, env(safe-area-inset-bottom)); z-index: 1001; }
 :root[data-intro-exiting="true"] .intro-loader { animation: portfolio-intro-exit var(--motion-duration-standard) var(--motion-project-content-easing) both; }
 :root[data-intro-exiting="true"][data-intro-fast="true"] .intro-loader { animation-duration: var(--motion-duration-fast); }
 :root[data-intro-exiting="true"] #main-content .route-transition-surface > :first-child { animation: portfolio-page-enter var(--motion-duration-standard) var(--motion-project-spatial-easing) both; }
-@keyframes portfolio-intro-exit { to { opacity: 0; transform: translateY(-10px); } }
+@keyframes portfolio-intro-exit { to { opacity: 0; transform: scale(0.98); } }
 @keyframes portfolio-page-enter { from { opacity: .72; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) {
-  .intro-loader-wordmark { transition-duration: 1ms; }
   :root[data-intro-exiting="true"] .intro-loader,
   :root[data-intro-exiting="true"] #main-content .route-transition-surface > :first-child { animation-duration: 1ms !important; }
 }
