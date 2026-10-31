@@ -8,7 +8,6 @@ import { MorphingShape } from "../motion/morphing-shape";
 import { HighlightText } from "@/components/ui/highlight-text";
 import { BlurText } from "@/components/ui/blur-text";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { EncryptedText } from "@/components/ui/encrypted-text";
 import { SVGMaskEffectDemo } from "@/components/ui/svg-mask-effect";
 import { ProjectCard } from "./project-card";
 
@@ -21,7 +20,7 @@ export function HomePage() {
         <p className="hero-name">{profile.displayName}<span aria-hidden="true">.</span></p>
         <h1 id="hero-heading">{profile.headline}</h1>
         {profile.description ? <p className="hero-description"><TextGenerateEffect text={profile.description} delay={0.025} /></p> : null}
-        {profile.heroLabels.length ? <ul className="hero-labels">{profile.heroLabels.slice(0, 4).map((label) => <li key={label}><EncryptedText text={label} revealDelayMs={22} replayOnHover /></li>)}</ul> : null}
+        {profile.heroLabels.length ? <ul className="hero-labels">{profile.heroLabels.slice(0, 4).map((label) => <li key={label}>{label}</li>)}</ul> : null}
         <div className="hero-actions">
           <a className="button button-primary" href={homeCopy.workCta.href}>{homeCopy.workCta.label}<Icon name="arrow-right" /></a>
           <Link className="button button-secondary" href={homeCopy.contactCta.href}>{homeCopy.contactCta.label}<Icon name="arrow-up-right" /></Link>
@@ -31,11 +30,11 @@ export function HomePage() {
       <div className="hero-aside">
         <div className="hero-art-frame">
           <div className="hero-art" aria-hidden="true">
-            <span className="art-caption top-caption"><span /><EncryptedText text={homeCopy.illustration.topLabel} revealDelayMs={28} replayOnHover /></span>
+            <span className="art-caption top-caption"><span />{homeCopy.illustration.topLabel}</span>
             <div className="bloom"><span /><span /><span /><span /><span /><span /><span /><span /></div>
             <div className="art-message">{homeCopy.illustration.center}<br /><em><HighlightText text={homeCopy.illustration.emphasis} delay={300} highlightColor="linear-gradient(120deg, color-mix(in srgb, var(--color-secondary) 45%, transparent) 0%, color-mix(in srgb, var(--color-inverse-primary) 38%, transparent) 100%)" /></em></div>
             <div className="small-star star-one">✦</div><div className="small-star star-two">✦</div>
-            <span className="art-caption bottom-caption"><EncryptedText text={homeCopy.illustration.bottomLabel} revealDelayMs={28} replayOnHover /><Icon name="arrow-up-right" /></span>
+            <span className="art-caption bottom-caption">{homeCopy.illustration.bottomLabel}<Icon name="arrow-up-right" /></span>
           </div>
           <MorphingShape className="art-code hero-badge" interactive label="Change decorative badge shape" shape="roundedSquare" hoverShape="scalloped" focusShape="circle" pressShape="blob" selectedShape="blob">
             <Icon name="code" />

@@ -180,43 +180,6 @@ svg { flex-shrink: 0; }
   will-change: opacity, filter;
 }
 
-.m3-encrypted-container {
-  display: inline;
-  font-variant-numeric: tabular-nums;
-  -webkit-font-feature-settings: "tnum" 1;
-  font-feature-settings: "tnum" 1;
-}
-
-.m3-encrypted-display {
-  display: inline;
-}
-
-.m3-encrypted-char {
-  display: inline;
-  transition: color var(--motion-duration-fast) var(--motion-easing-effects),
-              opacity var(--motion-duration-fast) var(--motion-easing-effects);
-}
-
-.m3-encrypted-scrambled {
-  color: var(--color-outline);
-  opacity: 0.65;
-  user-select: none;
-}
-
-.m3-encrypted-revealed {
-  color: inherit;
-  opacity: 1;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .m3-encrypted-char {
-    transition: none !important;
-  }
-  .m3-encrypted-scrambled {
-    opacity: 1 !important;
-    color: inherit !important;
-  }
-}
 
 main { position: relative; min-width: 0; }
 .route-transition-stack { position: relative; display: grid; min-width: 0; }

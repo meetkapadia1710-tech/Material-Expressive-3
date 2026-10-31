@@ -2,12 +2,11 @@ import { CopyEmail } from "./interface-controls";
 import { footerLinkIds, links } from "@/content/links";
 import { profile, siteCopy } from "@/content/profile";
 import { Icon } from "./icon";
-import { EncryptedText } from "./ui/encrypted-text";
 
 export function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div><p className="footer-name">{profile.name}<span aria-hidden="true"> ✳</span></p><p className="footer-note"><EncryptedText text={siteCopy.footerNote} revealDelayMs={30} replayOnHover /></p></div>
+      <div><p className="footer-name">{profile.name}<span aria-hidden="true"> ✳</span></p><p className="footer-note">{siteCopy.footerNote}</p></div>
       <nav className="footer-links" aria-label={siteCopy.footerLabel}>
         {footerLinkIds.map((id) => {
           const link = links[id];
