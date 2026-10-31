@@ -9,6 +9,7 @@ import { SharedProjectElement, sharedProjectLayoutId, useSharedProjectTransition
 import { projectCatalogCopy } from "@/content/projects";
 import type { Project } from "@/content/types";
 import { Icon } from "@/components/icon";
+import { EncryptedText } from "@/components/ui/encrypted-text";
 import styles from "./project-catalog.module.css";
 
 export const CatalogCard = memo(function CatalogCard({ project, accentStyle, onExpand }: { project: Project; accentStyle?: CSSProperties; onExpand?: (project: Project) => void }) {
@@ -33,7 +34,7 @@ export const CatalogCard = memo(function CatalogCard({ project, accentStyle, onE
     {project.tagline ? <p className={styles.tagline}>{project.tagline}</p> : null}
     {project.statusDetail ? <p className={styles.statusDetail}>{project.statusDetail}</p> : null}
     {isExploration ? <p className={styles.ideaNote}>{project.status === "concept" ? projectCatalogCopy.conceptNote : projectCatalogCopy.prototypeNote}</p> : null}
-    {project.stack?.length ? <ul className={styles.stack} aria-label={projectCatalogCopy.stackLabel}>{project.stack.map((item) => <li key={item}>{item}</li>)}</ul> : null}
+    {project.stack?.length ? <ul className={styles.stack} aria-label={projectCatalogCopy.stackLabel}>{project.stack.map((item) => <li key={item}><EncryptedText text={item} revealDelayMs={24} replayOnHover /></li>)}</ul> : null}
     {project.repoUrl || project.liveUrl || onExpand ? <div className={styles.cardLinks}>
       {onExpand ? <button type="button" onClick={() => onExpand(project)} className={styles.cardExpandButton} aria-label={`Preview ${project.name}`}><Icon name="spark" /><span>Quick preview</span></button> : null}
       {project.repoUrl ? <a href={project.repoUrl}><Icon name="github" />{projectCatalogCopy.repoLabel}<Icon name="arrow-up-right" /></a> : null}

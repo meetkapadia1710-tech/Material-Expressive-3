@@ -10,6 +10,7 @@ import { Icon } from "@/components/icon";
 import { SharedProjectElement } from "@/components/motion/shared-project-element";
 import { MorphingShape } from "@/components/motion/morphing-shape";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { EncryptedText } from "@/components/ui/encrypted-text";
 
 function DetailSection({ id, title, children }: { id: string; title: string; children: ReactNode }) {
   return <section className="detail-section" id={id} aria-labelledby={`${id}-heading`}><h2 id={`${id}-heading`}>{title}</h2>{children}</section>;
@@ -38,7 +39,7 @@ export function ProjectDetail({ project, previous, next, className = "" }: { pro
         {content.overview ? <DetailSection id="project-overview" title={projectDetailCopy.overview}><p className="detail-overview"><TextGenerateEffect text={content.overview} delay={0.03} /></p></DetailSection> : null}
         {content.problem ? <DetailSection id="project-problem" title={projectDetailCopy.problem}><p>{content.problem}</p></DetailSection> : null}
         {content.role ? <DetailSection id="project-role" title={projectDetailCopy.role}><p>{content.role}</p></DetailSection> : null}
-        {content.stack.length ? <DetailSection id="project-stack" title={projectDetailCopy.stack}><ul className="detail-stack">{content.stack.map((tool, index) => <li key={`${tool}-${index}`}>{tool}</li>)}</ul></DetailSection> : null}
+        {content.stack.length ? <DetailSection id="project-stack" title={projectDetailCopy.stack}><ul className="detail-stack">{content.stack.map((tool, index) => <li key={`${tool}-${index}`}><EncryptedText text={tool} revealDelayMs={24} replayOnHover /></li>)}</ul></DetailSection> : null}
         {content.features.length ? <DetailSection id="project-features" title={projectDetailCopy.features}><ul className="detail-features">{content.features.map((feature, index) => <li key={index}><span aria-hidden="true"><Icon name="arrow-up-right" /></span><p>{feature}</p></li>)}</ul></DetailSection> : null}
         {content.media.length ? <DetailSection id="project-media" title={projectDetailCopy.media}><div className="detail-media">{content.media.map((item, index) => <figure key={`${item.src}-${index}`}>
           {item.kind === "image" ? item.width && item.height ? <Image src={item.src} alt={item.alt} width={item.width} height={item.height} sizes="(max-width: 720px) 100vw, 800px" unoptimized loading="lazy" /> : <img src={item.src} alt={item.alt} loading="lazy" decoding="async" /> : <><video controls preload="metadata" aria-label={item.alt || undefined}><source src={item.src} /><a href={item.src}>{projectDetailCopy.videoFallback}</a></video>{item.alt ? <figcaption>{item.alt}</figcaption> : null}</>}

@@ -5,6 +5,7 @@ import { Icon } from "../icon";
 import { MorphingShape, type ShapeName } from "../motion/morphing-shape";
 import { SharedProjectElement } from "../motion/shared-project-element";
 import { projectAccentStyle } from "@/lib/project-accent";
+import { EncryptedText } from "../ui/encrypted-text";
 
 const projectShapes: ShapeName[] = ["roundedSquare", "circle", "blob", "scalloped", "roundedSquare"];
 
@@ -25,7 +26,7 @@ export function ProjectCard({ project, lead = false, index }: { project: Project
       <h3><Link className="project-title-link" href={`/projects/${project.slug}`} data-project-transition scroll={false}><SharedProjectElement as="span" slug={project.slug} scope="home" element="title">{project.name}</SharedProjectElement><Icon name="arrow-up-right" /></Link></h3>
       {project.tagline ? <p className="project-description">{project.tagline}</p> : null}
       {project.statusDetail ? <p className="project-status-detail">{project.statusDetail}</p> : null}
-      {project.stack?.length ? <ul className="stack-list" aria-label={homeCopy.projects.stackLabel}>{project.stack.slice(0, lead ? 6 : 4).map((tool) => <li key={tool}>{tool}</li>)}</ul> : null}
+      {project.stack?.length ? <ul className="stack-list" aria-label={homeCopy.projects.stackLabel}>{project.stack.slice(0, lead ? 6 : 4).map((tool) => <li key={tool}><EncryptedText text={tool} revealDelayMs={24} replayOnHover /></li>)}</ul> : null}
     </div>
   </SharedProjectElement>;
 }
