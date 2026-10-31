@@ -122,14 +122,14 @@ export function IntroLoader() {
             backImage="/card-back.png"
             strapImage="/band.png"
             imageFit="cover"
-            cardColor="#ffffff"
+            cardColor="#2A1D47"
             orientation="portrait"
             finish="glossy"
             cornerRadius={0.3}
             size={0.6}
             anchor="center"
             strapLength={0.5}
-            strapColor="#111111"
+            strapColor="#1F1535"
             strapWidth={0.65}
             metal="silver"
             gravity={1}
