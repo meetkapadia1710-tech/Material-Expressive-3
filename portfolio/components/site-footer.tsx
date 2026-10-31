@@ -10,9 +10,17 @@ export function SiteFooter() {
       <nav className="footer-links" aria-label={siteCopy.footerLabel}>
         {footerLinkIds.map((id) => {
           const link = links[id];
-          return link.href ? <a key={id} href={link.href} className="text-link">{link.label}<Icon name="arrow-up-right" />{link.verification === "unverified" ? <span className="verification-label">{siteCopy.unverified}</span> : null}</a> : null;
+          return link.href ? (
+            <a key={id} href={link.href} className="text-link" target="_blank" rel="noopener noreferrer">
+              {id === "github" ? <Icon name="github" /> : id === "linkedin" ? <Icon name="linkedin" /> : null}
+              <span>{link.label}</span>
+              <Icon name="arrow-up-right" />
+              {link.verification === "unverified" ? <span className="verification-label">{siteCopy.unverified}</span> : null}
+            </a>
+          ) : null;
         })}
-      {links.email.value ? <CopyEmail email={links.email.value} /> : null}</nav>
+        {links.email.value ? <CopyEmail email={links.email.value} /> : null}
+      </nav>
     </footer>
   );
 }

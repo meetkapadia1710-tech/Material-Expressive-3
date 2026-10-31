@@ -4,8 +4,6 @@ import { useEffect, useRef } from 'react';
 import type { CSSProperties } from 'react';
 import * as THREE from 'three';
 
-import './Lanyard.css';
-
 type Orientation = 'portrait' | 'landscape';
 type Finish = 'glossy' | 'matte' | 'holographic' | 'metallic';
 type Metal = 'graphite' | 'silver' | 'gold';

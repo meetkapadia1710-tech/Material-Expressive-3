@@ -78,8 +78,9 @@ export const skillCategories: readonly SkillCategory[] = [
       { name: "Postman", practice: "hands-on" },
       { name: "Jupyter", practice: "hands-on" },
       { name: "Claude Code", practice: "hands-on" },
+      { name: "Blender", practice: "hands-on" },
     ],
-    note: null, overview: "Git, GitHub Actions, Vercel, Postman, Jupyter, Claude Code",
+    note: null, overview: "Git, GitHub Actions, Vercel, Postman, Jupyter, Claude Code, Blender",
   },
   {
     id: "fundamentals", name: "CS fundamentals",

@@ -255,7 +255,8 @@ export function createCardBackSvg(t: ActiveThemeTokens): string {
       <rect x="278" y="565" width="12" height="12" />
     </g>
 
-    <text x="256" y="632" font-family="'Manrope', 'DM Sans', -apple-system, sans-serif" font-size="11" font-weight="700" fill="${t.onSurface}" text-anchor="middle" letter-spacing="1">SCAN TO CONNECT</text>
+    <text x="256" y="626" font-family="'Manrope', 'DM Sans', -apple-system, sans-serif" font-size="10" font-weight="700" fill="${t.onSurface}" text-anchor="middle" letter-spacing="1">SCAN TO CONNECT</text>
+    <text x="256" y="644" font-family="'Manrope', 'DM Sans', -apple-system, sans-serif" font-size="10" font-weight="600" fill="${t.primary}" text-anchor="middle" letter-spacing="0.5">in/meet-kapadia17</text>
   </svg>`;
 
   return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);

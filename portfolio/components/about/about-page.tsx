@@ -15,7 +15,8 @@ export function AboutPage({ className = "" }: { className?: string }) {
     </header>
 
     <section className="about-bio" id="about-bio" aria-labelledby="about-bio-heading">
-      <h2 id="about-bio-heading">{aboutCopy.bioTitle}</h2><p>{aboutCopy.bio}</p>
+      <h2 id="about-bio-heading">{aboutCopy.bioTitle}</h2>
+      <p>{aboutCopy.bio}</p>
     </section>
 
     <div className="about-background-grid">

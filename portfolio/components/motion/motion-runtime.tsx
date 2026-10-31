@@ -164,9 +164,15 @@ export function MotionRuntime() {
       skipActiveViewTransition();
       routeRoot.dataset.routeTransition = "true";
       try {
-        const transition = viewTransitionDocument.startViewTransition(update);
-        void transition.ready?.catch(() => {});
-        void transition.updateCallbackDone?.catch(() => {});
+        const transition = viewTransitionDocument.startViewTransition(async () => {
+          try {
+            await update();
+          } catch {
+            // Callback execution interrupted or skipped
+          }
+        });
+        if (transition.ready) void transition.ready.catch(() => {});
+        if (transition.updateCallbackDone) void transition.updateCallbackDone.catch(() => {});
         activeRouteTransition.current = transition;
         registerViewTransition("route", transition, () => { delete routeRoot.dataset.routeTransition; });
         void transition.finished.catch(() => {}).finally(() => {
@@ -255,18 +261,19 @@ export function MotionRuntime() {
       const reason = event.reason;
       const isAbort =
         (reason instanceof DOMException && reason.name === "AbortError") ||
-        (typeof reason === "object" && reason !== null && (reason.name === "AbortError" || String(reason.message).includes("skipTransition")));
+        (typeof reason === "object" && reason !== null && (reason.name === "AbortError" || String(reason.message).includes("skipTransition") || String(reason.message).includes("Transition was skipped")));
       if (isAbort) {
         event.preventDefault();
+        event.stopImmediatePropagation?.();
       }
     };
 
-    window.addEventListener("unhandledrejection", onUnhandledRejection);
+    window.addEventListener("unhandledrejection", onUnhandledRejection, true);
     document.addEventListener("click", onNavigation, true);
     window.addEventListener("portfolio:route-request", onRouteRequest);
     window.addEventListener("popstate", onPopState, true);
     return () => {
-      window.removeEventListener("unhandledrejection", onUnhandledRejection);
+      window.removeEventListener("unhandledrejection", onUnhandledRejection, true);
       document.removeEventListener("click", onNavigation, true);
       window.removeEventListener("portfolio:route-request", onRouteRequest);
       window.removeEventListener("popstate", onPopState, true);

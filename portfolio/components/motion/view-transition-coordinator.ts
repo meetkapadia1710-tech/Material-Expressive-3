@@ -12,6 +12,9 @@ export function skipActiveViewTransition() {
   const current = activeTransition;
   if (!current) return;
   activeTransition = null;
+  if (current.handle.ready) void current.handle.ready.catch(() => {});
+  if (current.handle.updateCallbackDone) void current.handle.updateCallbackDone.catch(() => {});
+  if (current.handle.finished) void current.handle.finished.catch(() => {});
   try {
     current.handle.skipTransition();
   } catch {

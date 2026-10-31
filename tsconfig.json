@@ -1,0 +1,16 @@
+{
+  "extends": "./portfolio/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./portfolio",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": [
+    "portfolio/next-env.d.ts",
+    "portfolio/**/*.ts",
+    "portfolio/**/*.tsx",
+    "portfolio/.next/types/**/*.ts"
+  ]
+}
+

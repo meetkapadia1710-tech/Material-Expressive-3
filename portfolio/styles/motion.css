@@ -18,3 +18,17 @@
   --motion-duration-layout: 280ms;
   --motion-stagger-step: 35ms;
 }
+
+
+.lanyard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.lanyard-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

@@ -4,7 +4,7 @@ export const profile = {
   name: "Meet Kapadia",
   displayName: "Meet",
   initials: "MK",
-  location: { region: "Gujarat", country: "India", label: "Gujarat, India" },
+  location: { region: "Gujarat", country: "India", label: "Ahmedabad, Gujarat, India" },
   headline: "Building thoughtful software, from interfaces to intelligent systems.",
   description: "I'm a Computer Science undergraduate at IIIT Vadodara interested in full-stack development, backend engineering, databases, and applied AI/ML. I enjoy turning ideas into functional products, exploring system design, and solving challenging programming problems.",
   education: {
@@ -53,6 +53,9 @@ export const homeCopy = {
   workCta: { label: "Explore My Work", href: "#selected-projects" },
   contactCta: { label: "Get in Touch", href: "/contact" },
   githubCta: { label: "View GitHub" },
+  linkedinCta: { label: "LinkedIn" },
+  resumeCta: { label: "View Resume", href: "https://miniresumemeet.vercel.app" },
+  buildingStatus: { tag: "Currently building", project: "RepoGrade", href: "/projects/repograde", desc: "AST code scoring & ratings" },
   illustration: { center: "Make it", emphasis: "thoughtful.", caption: "Ideas → interfaces → systems", topLabel: "Curiosity, in progress", bottomLabel: "Learning by building" },
   projects: { eyebrow: "Ideas into things", title: "Selected projects.", description: "A few things I've been building across the web, backend systems, and applied AI.", allLabel: "All projects", featuredLabel: "Lead project", detailLabel: "Explore project", stackLabel: "Built with", statusLabels: { shipped: "Shipped", "in-progress": "In progress", prototype: "Prototype", concept: "Concept" } },
   skills: { eyebrow: "The toolkit", title: "Different tools. Same curiosity.", description: "The languages, systems, and ideas I work with — and the ones I'm exploring next.", linkLabel: "Explore my skills" },
