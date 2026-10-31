@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Lanyard from "./Lanyard";
+import { useLanyardTheme } from "./lanyard-theme";
 import { Icon } from "@/components/icon";
 import { readMotionMilliseconds } from "./motion-tokens";
 
@@ -18,6 +19,7 @@ export function IntroLoader() {
   const isReadyRef = useRef(false);
   const skipRef = useRef<HTMLButtonElement>(null);
   const dismissRef = useRef<((urgent?: boolean) => void) | null>(null);
+  const lanyardTheme = useLanyardTheme();
 
   useEffect(() => {
     isReadyRef.current = isReady;
@@ -118,18 +120,18 @@ export function IntroLoader() {
       <div className="intro-loader-content">
         <div style={{ width: "100%", height: "600px" }} className="intro-loader-lanyard-wrapper">
           <Lanyard
-            frontImage="/card-front.png"
-            backImage="/card-back.png"
-            strapImage="/band.png"
+            frontImage={lanyardTheme.frontImage}
+            backImage={lanyardTheme.backImage}
+            strapImage={lanyardTheme.strapImage}
             imageFit="cover"
-            cardColor="#2A1D47"
+            cardColor={lanyardTheme.cardColor}
             orientation="portrait"
             finish="glossy"
             cornerRadius={0.3}
             size={0.6}
             anchor="center"
             strapLength={0.5}
-            strapColor="#1F1535"
+            strapColor={lanyardTheme.strapColor}
             strapWidth={0.65}
             metal="silver"
             gravity={1}
