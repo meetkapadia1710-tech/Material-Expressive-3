@@ -9,7 +9,12 @@ import { interfaceCopy } from "@/content/interface";
 import { navigation } from "@/content/profile";
 import { projects } from "@/content/projects";
 
-type RouteViewTransition = { skipTransition: () => void; finished: Promise<void> };
+type RouteViewTransition = {
+  skipTransition: () => void;
+  finished: Promise<void>;
+  ready?: Promise<void>;
+  updateCallbackDone?: Promise<void>;
+};
 type RouteTransitionDocument = Document & { startViewTransition?: (update: () => void | Promise<void>) => RouteViewTransition };
 type RouteIntent = { direction: 1 | -1; shared: boolean };
 
@@ -160,6 +165,8 @@ export function MotionRuntime() {
       routeRoot.dataset.routeTransition = "true";
       try {
         const transition = viewTransitionDocument.startViewTransition(update);
+        void transition.ready?.catch(() => {});
+        void transition.updateCallbackDone?.catch(() => {});
         activeRouteTransition.current = transition;
         registerViewTransition("route", transition, () => { delete routeRoot.dataset.routeTransition; });
         void transition.finished.catch(() => {}).finally(() => {
@@ -244,15 +251,29 @@ export function MotionRuntime() {
       runNativeTransition(() => pathChange);
     };
 
+    const onUnhandledRejection = (event: PromiseRejectionEvent) => {
+      const reason = event.reason;
+      const isAbort =
+        (reason instanceof DOMException && reason.name === "AbortError") ||
+        (typeof reason === "object" && reason !== null && (reason.name === "AbortError" || String(reason.message).includes("skipTransition")));
+      if (isAbort) {
+        event.preventDefault();
+      }
+    };
+
+    window.addEventListener("unhandledrejection", onUnhandledRejection);
     document.addEventListener("click", onNavigation, true);
     window.addEventListener("portfolio:route-request", onRouteRequest);
     window.addEventListener("popstate", onPopState, true);
     return () => {
+      window.removeEventListener("unhandledrejection", onUnhandledRejection);
       document.removeEventListener("click", onNavigation, true);
       window.removeEventListener("portfolio:route-request", onRouteRequest);
       window.removeEventListener("popstate", onPopState, true);
       pendingPath.current?.resolve();
-      activeRouteTransition.current?.skipTransition();
+      try {
+        activeRouteTransition.current?.skipTransition();
+      } catch {}
       delete routeRoot.dataset.routeTransition;
     };
   }, [router]);

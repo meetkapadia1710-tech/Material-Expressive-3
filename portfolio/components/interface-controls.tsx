@@ -10,7 +10,12 @@ let colorTransitionTimer = 0;
 
 export type ThemeChoice = "light" | "dark" | "system";
 
-type ThemeTransition = { skipTransition: () => void; finished: Promise<void> };
+type ThemeTransition = {
+  skipTransition: () => void;
+  finished: Promise<void>;
+  ready?: Promise<void>;
+  updateCallbackDone?: Promise<void>;
+};
 type ViewTransitionDocument = Document & { startViewTransition?: (update: () => void) => ThemeTransition };
 
 function applyThemeChoice(value: ThemeChoice) {
@@ -55,6 +60,9 @@ export function runThemeReveal(update: () => void, origin?: HTMLElement | null) 
     delete root.dataset.colorTransitioning;
     skipActiveViewTransition();
     const transition = viewTransitionDocument.startViewTransition(update);
+    void transition.ready?.catch(() => {});
+    void transition.updateCallbackDone?.catch(() => {});
+    void transition.finished?.catch(() => {});
     registerViewTransition("theme", transition);
     return;
   }
