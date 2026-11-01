@@ -27,7 +27,7 @@ const NavigationLinks = memo(function NavigationLinks() {
     {navigation.map((item) => {
       const active = item.href === "/" ? pathname === "/" : pathname === item.href || pathname.startsWith(`${item.href}/`);
       const prefetch = () => router.prefetch(item.href);
-      return <Link key={item.href} href={item.href} prefetch className={`nav-link${active ? " active" : ""}`} aria-current={active ? "page" : undefined} onMouseEnter={prefetch} onFocus={prefetch}>
+      return <Link key={item.href} href={item.href} prefetch className={`nav-link${active ? " active" : ""}`} aria-current={active ? "page" : undefined} onMouseEnter={prefetch} onFocus={prefetch} onPointerDown={prefetch}>
         {active ? <motion.span layoutId="portfolio-active-nav-indicator" className="nav-active-indicator" aria-hidden="true" transition={layoutTransition} /> : null}
         <span className="nav-link-label">{item.label}</span>
       </Link>;

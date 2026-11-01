@@ -1,3 +1,4 @@
+// cspell:words Neev Mendpara Dishant Marchant asyncio HTTPX Uvicorn bursty Inngest playhub Pickleball learnflex BCNF wanderstay robustvision agrisetu Agrisetu nexshell gobooking
 import type { Project } from "./types";
 
 // null means unknown. An empty array would mean confirmed to have no entries.
@@ -34,9 +35,22 @@ export const projects: readonly Project[] = [
   },
   {
     ...provided, slug: "api-traffic-optimizer", name: "API Traffic Optimizer", category: "AI / Optimization",
-    tagline: "An intelligent application designed to optimize decision-making and resource allocation using algorithmic techniques and AI-driven insights.",
+    tagline: "An asynchronous reverse-proxy middleware and research study mitigating cache stampedes and reducing upstream API traffic by 96.67% using deterministic SHA-256 normalization, in-flight request coalescing, and distributed Redis leases.",
+    role: "Co-Author & System Architect; research collaboration with Neev Mendpara and Dishant Marchant at IIIT Vadodara.",
+    problem: "Modern microservices frequently encounter duplicate upstream HTTP traffic from redundant client polling and concurrent cold-start cache misses. Standard HTTP caching proxies fail to coordinate concurrent requests, triggering thundering herds, CPU contention, and backend database saturation.",
+    stack: ["FastAPI", "Python asyncio", "Redis 7", "Docker", "HTTPX", "Uvicorn", "React 18", "Vite", "SHA-256"],
+    features: [
+      "Deterministic SHA-256 request normalization with lexicographical query parameter sorting (O(k log k)) and Accept/Accept-Language representation negotiation",
+      "In-flight request coalescing via non-blocking asyncio.Future and asyncio.shield() to collapse concurrent stampedes within the event loop",
+      "Token-owned distributed Redis cache leases (SET NX PX 10000) with atomic Lua script evaluation to prevent stale leader overwrites",
+      "96.67% upstream traffic reduction during repeated queries and high-concurrency bursts (collapsing 30 backend requests to 1 origin fetch)",
+      "Client response latency reduction of up to 86.99% for repeated requests and 35.34% under concurrent burst loads",
+      "Fail-closed outage protection: issues bounded HTTP 503 responses during Redis outages with zero fallback origin storms",
+      "Dual pluggable storage backends: near-zero latency in-memory dictionary cache (~0.05 ms) and distributed multi-instance Redis tier",
+      "Real-time developer telemetry and observability dashboard built with React 18 and Vite displaying live KPIs, hit ratios, and request waterfalls",
+    ],
+    lessons: "Benchmarking across a 72-case evaluation suite (1,608 HTTP transactions) revealed that request suppression delivers massive latency and throughput gains for repeated and bursty queries, but introduces a measurable pass-through overhead (+4.86% in memory, +30.15% in Redis) on unique non-cacheable traffic due to cryptographic hashing and serialization. Production middleware must evaluate workload concurrency thresholds to justify coordination overhead.",
     featured: true, order: 5,
-    reviewNote: "The supplied description calls this AI Optimizer. Confirm whether it overlaps with the earlier academic AI Optimizer record; no traffic-specific features or metrics have been assumed.",
   },
   {
     ...provided, slug: "learnflex", name: "LearnFlex", category: "DBMS project",

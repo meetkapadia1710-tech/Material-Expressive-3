@@ -32,9 +32,20 @@ export function mountPointerEffects() {
   }
   const scan = (root: ParentNode) => root.querySelectorAll<HTMLElement>(selector).forEach(register);
   scan(document);
-  const mutations = new MutationObserver((records) => {
-    registrations.forEach((dispose, element) => { if (!element.isConnected) { dispose(); registrations.delete(element); } });
-    records.forEach((record) => record.addedNodes.forEach((node) => { if (node instanceof HTMLElement) { if (node.matches(selector)) register(node); scan(node); } }));
+  let updateScheduled = false;
+  const mutations = new MutationObserver(() => {
+    if (updateScheduled) return;
+    updateScheduled = true;
+    requestAnimationFrame(() => {
+      updateScheduled = false;
+      registrations.forEach((dispose, element) => {
+        if (!element.isConnected) {
+          dispose();
+          registrations.delete(element);
+        }
+      });
+      document.querySelectorAll<HTMLElement>(selector).forEach(register);
+    });
   });
   mutations.observe(document.body, { childList: true, subtree: true });
   return () => { mutations.disconnect(); registrations.forEach((dispose) => dispose()); registrations.clear(); tracker.destroy(); };

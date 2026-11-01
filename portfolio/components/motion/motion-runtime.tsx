@@ -145,7 +145,7 @@ export function MotionRuntime() {
         if (pendingPath.current?.resolve === finish) pendingPath.current = null;
         resolve();
       };
-      timeout = window.setTimeout(finish, 900);
+      timeout = window.setTimeout(finish, 180);
       pendingPath.current = { pathname: targetPath, resolve: finish };
     });
 
@@ -233,6 +233,7 @@ export function MotionRuntime() {
       }
       event.preventDefault();
       event.stopPropagation();
+      router.prefetch(target.pathname);
       pushRoute(`${target.pathname}${target.search}${target.hash}`);
     };
 
@@ -325,6 +326,12 @@ export function MotionRuntime() {
     if (initialPath.current === pathname) return;
     initialPath.current = pathname;
     activePath.current = pathname;
+
+    // Release view transition lock immediately on DOM update instead of stalling behind paused rAF
+    if (pendingPath.current?.pathname === pathname) {
+      pendingPath.current.resolve();
+    }
+
     const restoringHistory = historyNavigation.current;
     historyNavigation.current = false;
     const hash = window.location.hash;
@@ -353,12 +360,46 @@ export function MotionRuntime() {
         window.scrollTo({ top: 0, behavior: "instant" });
         lenis.current?.scrollTo(0, { immediate: true, force: true });
       }
-
-      if (pendingPath.current?.pathname === pathname) pendingPath.current.resolve();
     };
 
     requestAnimationFrame(() => requestAnimationFrame(finish));
   }, [pathname]);
+
+  // Idle prefetcher for main routes: respects Save-Data and 2G connections
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const conn = (navigator as unknown as { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+    if (conn?.saveData || conn?.effectiveType === "2g" || conn?.effectiveType === "slow-2g") return;
+
+    const routesToPrefetch = navigation.map((item) => item.href);
+    let currentIndex = 0;
+
+    const prefetchStep = (deadline?: { timeRemaining: () => number; didTimeout: boolean }) => {
+      while (currentIndex < routesToPrefetch.length && (!deadline || deadline.timeRemaining() > 5 || deadline.didTimeout)) {
+        const href = routesToPrefetch[currentIndex++];
+        if (href && href !== activePath.current) {
+          router.prefetch(href);
+        }
+      }
+      if (currentIndex < routesToPrefetch.length) {
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(prefetchStep, { timeout: 3000 });
+        } else {
+          setTimeout(prefetchStep, 500);
+        }
+      }
+    };
+
+    if ("requestIdleCallback" in window) {
+      const handle = window.requestIdleCallback(prefetchStep, { timeout: 2000 });
+      return () => {
+        if ("cancelIdleCallback" in window) window.cancelIdleCallback(handle);
+      };
+    } else {
+      const timer = setTimeout(prefetchStep, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [router]);
 
   return <><Reveal pathname={pathname} /><p ref={announcement} className="sr-only" aria-live="polite" aria-atomic="true" /></>;
 }

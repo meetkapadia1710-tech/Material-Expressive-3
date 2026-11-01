@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
+import { useRouter } from "next/navigation";
 import { interfaceCopy as copy } from "@/content/interface";
 import { navigation } from "@/content/profile";
 import { projectCatalogCopy, projects } from "@/content/projects";
@@ -104,6 +105,7 @@ function getBaseItems(): CommandItem[] {
 
 export default function CommandPalette({ open, onDismiss }: { open: boolean; onDismiss: () => void }) {
   const notify = useToast();
+  const router = useRouter();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState("");
@@ -196,8 +198,13 @@ export default function CommandPalette({ open, onDismiss }: { open: boolean; onD
 
   useEffect(() => { setActiveIndex(0); }, [query]);
   useEffect(() => {
-    if (activeItem) document.getElementById(itemId(activeItem))?.scrollIntoView({ block: "nearest" });
-  }, [activeItem]);
+    if (activeItem) {
+      document.getElementById(itemId(activeItem))?.scrollIntoView({ block: "nearest" });
+      if (activeItem.href && !activeItem.external) {
+        router.prefetch(activeItem.href);
+      }
+    }
+  }, [activeItem, router]);
 
   let optionIndex = 0;
   return <dialog ref={dialogRef} className={styles.dialog} aria-modal="true" aria-labelledby="command-palette-title" onCancel={(event) => { event.preventDefault(); event.currentTarget.close(); onDismiss(); }} onClose={onDismiss} onClick={(event) => { if (event.target === event.currentTarget) { event.currentTarget.close(); onDismiss(); } }}>

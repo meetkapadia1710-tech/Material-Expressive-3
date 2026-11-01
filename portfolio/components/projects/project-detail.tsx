@@ -21,7 +21,7 @@ export function ProjectDetail({ project, previous, next, className = "" }: { pro
   const accentStyle = projectAccentStyle(project.accentSeed);
 
   return <SharedProjectElement as="article" slug={project.slug} scope="detail" element="container" className={`page-width ${className}`} style={accentStyle} data-project-accent={accentStyle ? "true" : undefined}>
-    <Link className="text-link detail-back" href="/projects"><Icon name="arrow-right" />{siteCopy.backToProjects}</Link>
+    <Link className="text-link detail-back" href="/projects" prefetch><Icon name="arrow-right" />{siteCopy.backToProjects}</Link>
     <header className="detail-header">
       <p className="eyebrow">{projectDetailCopy.eyebrow}{project.category?.trim() ? <><span aria-hidden="true">/</span>{project.category}</> : null}</p>
       <h1><SharedProjectElement as="span" slug={project.slug} scope="detail" element="title">{project.name}</SharedProjectElement></h1>
@@ -62,8 +62,8 @@ export function ProjectDetail({ project, previous, next, className = "" }: { pro
     </div> : null}
 
     {previous || next ? <nav className="detail-pagination" aria-label={projectDetailCopy.projectNavigation}>
-      {previous ? <Link className="detail-previous" href={`/projects/${previous.slug}`} rel="prev"><span className="detail-direction"><Icon name="arrow-right" />{projectDetailCopy.previous}</span><span className="detail-neighbor-name">{previous.name}</span></Link> : null}
-      {next ? <Link className="detail-next" href={`/projects/${next.slug}`} rel="next"><span className="detail-direction">{projectDetailCopy.next}<Icon name="arrow-right" /></span><span className="detail-neighbor-name">{next.name}</span></Link> : null}
+      {previous ? <Link className="detail-previous" href={`/projects/${previous.slug}`} rel="prev" prefetch><span className="detail-direction"><Icon name="arrow-right" />{projectDetailCopy.previous}</span><span className="detail-neighbor-name">{previous.name}</span></Link> : null}
+      {next ? <Link className="detail-next" href={`/projects/${next.slug}`} rel="next" prefetch><span className="detail-direction">{projectDetailCopy.next}<Icon name="arrow-right" /></span><span className="detail-neighbor-name">{next.name}</span></Link> : null}
     </nav> : null}
   </SharedProjectElement>;
 }
