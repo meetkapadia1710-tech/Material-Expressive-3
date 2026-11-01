@@ -249,7 +249,7 @@ main:focus, main:focus-visible, #main-content:focus, #main-content:focus-visible
   display: grid;
   place-items: center;
   padding: clamp(16px, 4vw, 36px);
-  overflow-y: auto;
+  overflow: hidden;
   pointer-events: none;
 }
 
@@ -258,9 +258,11 @@ main:focus, main:focus-visible, #main-content:focus, #main-content:focus-visible
   position: relative;
   width: 100%;
   max-width: 680px;
-  max-height: min(88vh, 860px);
-  overflow-y: auto;
+  max-height: min(85vh, 800px);
+  overflow-y: auto !important;
   overflow-x: hidden;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
   background: var(--color-surface-container-high);
   color: var(--color-on-surface);
   border-radius: 36px;
@@ -269,10 +271,28 @@ main:focus, main:focus-visible, #main-content:focus, #main-content:focus-visible
               0 0 1px color-mix(in srgb, var(--color-scrim, #000) 20%, transparent);
   display: flex;
   flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-outline-variant) transparent;
+}
+
+.expandable-dialog::-webkit-scrollbar {
+  width: 6px;
+}
+.expandable-dialog::-webkit-scrollbar-track {
+  background: transparent;
+}
+.expandable-dialog::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 9999px;
+}
+.expandable-dialog::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
 }
 
 .expandable-dialog-art {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -280,6 +300,8 @@ main:focus, main:focus-visible, #main-content:focus, #main-content:focus-visible
   padding: 24px 28px;
   background: var(--color-surface-container);
   border-bottom: 1px solid var(--color-outline-variant);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .expandable-art-badge {
@@ -472,6 +494,52 @@ main:focus, main:focus-visible, #main-content:focus, #main-content:focus-visible
   color: var(--color-primary);
   flex-shrink: 0;
   margin-top: 3px;
+}
+
+.expandable-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.expandable-features-count {
+  font-size: var(--type-label-small-size);
+  color: var(--color-on-surface-variant);
+  font-weight: 550;
+}
+
+.expandable-more-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  background: var(--color-surface-container);
+  color: var(--color-primary);
+  border: 1px dashed var(--color-outline-variant);
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: var(--type-label-small-size);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s var(--spring);
+  margin-top: 4px;
+}
+
+.expandable-more-toggle:hover {
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  border-style: solid;
+  border-color: var(--color-primary);
+}
+
+.expandable-more-toggle:active {
+  transform: scale(0.96);
+}
+
+.expandable-more-toggle svg {
+  width: 14px;
+  height: 14px;
 }
 
 .expandable-actions {

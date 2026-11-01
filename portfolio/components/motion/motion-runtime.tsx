@@ -80,21 +80,33 @@ function Reveal({ pathname }: { pathname: string }) {
     }, { threshold: 0.08 });
     const main = document.querySelector("main");
     const selector = "section, .project-card, [data-project-slug], .achievement-entry, .coding-profile, [data-morph-in-view]";
-    const watch = (element: Element, initial = false) => {
+    const watch = (element: Element) => {
       if (seen.has(element) || reduced.matches) return;
-      if (initial && element.getBoundingClientRect().top < window.innerHeight) {
-        seen.add(element);
-        if (element.matches("[data-morph-in-view]")) (element as HTMLElement).dataset.morphed = "true";
-        return;
-      }
       observer.observe(element);
     };
-    main?.querySelectorAll(selector).forEach((element) => watch(element, true));
-    const mutations = new MutationObserver((records) => records.forEach((record) => record.addedNodes.forEach((node) => {
-      if (!(node instanceof Element)) return;
-      if (node.matches(selector)) watch(node);
-      node.querySelectorAll(selector).forEach((element) => watch(element));
-    })));
+    main?.querySelectorAll(selector).forEach(watch);
+
+    let scheduledScan = false;
+    const addedNodesQueue: Node[] = [];
+    const mutations = new MutationObserver((records) => {
+      for (const record of records) {
+        for (let i = 0; i < record.addedNodes.length; i++) {
+          addedNodesQueue.push(record.addedNodes[i]);
+        }
+      }
+      if (scheduledScan) return;
+      scheduledScan = true;
+      requestAnimationFrame(() => {
+        scheduledScan = false;
+        const nodes = addedNodesQueue.splice(0, addedNodesQueue.length);
+        for (const node of nodes) {
+          if (node instanceof Element) {
+            if (node.matches(selector)) watch(node);
+            node.querySelectorAll(selector).forEach(watch);
+          }
+        }
+      });
+    });
     if (main) mutations.observe(main, { childList: true, subtree: true });
     const onFocus = (event: FocusEvent) => { animations.forEach((items, element) => { if (event.target instanceof Node && element.contains(event.target)) { items.forEach((animation) => animation.cancel()); animations.delete(element); } }); };
     main?.addEventListener("focusin", onFocus);
@@ -138,14 +150,19 @@ export function MotionRuntime() {
     const supportsViewTransitions = () => typeof viewTransitionDocument.startViewTransition === "function";
 
     const waitForPath = (targetPath: string) => new Promise<void>((resolve) => {
-      pendingPath.current?.resolve();
+      if (pendingPath.current) {
+        pendingPath.current.resolve();
+        pendingPath.current = null;
+      }
       let timeout = 0;
       const finish = () => {
         window.clearTimeout(timeout);
         if (pendingPath.current?.resolve === finish) pendingPath.current = null;
         resolve();
       };
-      timeout = window.setTimeout(finish, 180);
+      // Signal-based resolution: Resolves immediately upon pathname commit in useEffect([pathname]).
+      // 1500ms safety timeout acts strictly as a fallback in case React aborts navigation.
+      timeout = window.setTimeout(finish, 1500);
       pendingPath.current = { pathname: targetPath, resolve: finish };
     });
 
@@ -233,6 +250,10 @@ export function MotionRuntime() {
       }
       event.preventDefault();
       event.stopPropagation();
+      skipActiveViewTransition();
+      try {
+        activeRouteTransition.current?.skipTransition();
+      } catch {}
       router.prefetch(target.pathname);
       pushRoute(`${target.pathname}${target.search}${target.hash}`);
     };
@@ -327,9 +348,11 @@ export function MotionRuntime() {
     initialPath.current = pathname;
     activePath.current = pathname;
 
-    // Release view transition lock immediately on DOM update instead of stalling behind paused rAF
-    if (pendingPath.current?.pathname === pathname) {
+    // Signal-based resolution: The new route has committed to the DOM.
+    // Immediately release the view transition lock without waiting on any rAF.
+    if (pendingPath.current) {
       pendingPath.current.resolve();
+      pendingPath.current = null;
     }
 
     const restoringHistory = historyNavigation.current;

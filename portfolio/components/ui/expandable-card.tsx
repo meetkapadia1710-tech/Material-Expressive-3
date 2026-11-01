@@ -65,6 +65,7 @@ export function ExpandableProjectModal({
           <div
             className="expandable-dialog-wrapper"
             role="presentation"
+            data-lenis-prevent="true"
           >
             <motion.div
               key={`expandable-dialog-${project.slug}`}
@@ -78,6 +79,11 @@ export function ExpandableProjectModal({
               className="expandable-dialog"
               style={accentStyle as CSSProperties}
               data-project-accent={accentStyle ? "true" : undefined}
+              data-project-slug={project.slug}
+              data-lenis-prevent="true"
+              onWheel={(e) => {
+                e.stopPropagation();
+              }}
               initial={
                 shouldReduceMotion
                   ? { opacity: 0, scale: 0.98 }
