@@ -41,8 +41,11 @@
 .status { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--default-project-status-outline, var(--color-outline-variant)); padding: 6px 10px; border-radius: 9px; font-size: var(--type-label-small-size); color: var(--default-project-status-foreground, var(--color-on-surface-variant)); background: var(--default-project-status-background, var(--color-surface-container-low)); }
 .status > span { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
 .cardTitle { font: var(--type-headline-small); letter-spacing: -.045em; margin: 17px 0 12px; overflow-wrap: anywhere; }
-.cardTitle a { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; min-height: 48px; }
+.cardTitle a { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; min-height: 48px; border-radius: 8px; }
 .cardTitle a:hover { color: var(--color-primary); }
+.cardTitle a:focus { outline: none; }
+.cardTitle a:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.card:has(:focus-visible) .cardTitle a:focus-visible { outline: none; }
 .cardTitle svg { width: 21px; height: 21px; margin-top: 5px; }
 .tagline { color: var(--color-on-surface-variant); font-size: var(--type-body-supporting-size); line-height: 1.75; margin: 0; }
 .statusDetail { font-size: var(--type-label-medium-size); color: var(--color-on-surface-variant); line-height: 1.6; margin: 14px 0 0; }

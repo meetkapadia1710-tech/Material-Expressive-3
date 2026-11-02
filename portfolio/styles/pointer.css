@@ -17,5 +17,9 @@
 .nav-link:focus-visible:not(.active) { background: var(--color-surface-container-high); }
 .button-primary:focus-visible { background: var(--color-primary-container); color: var(--color-on-primary-container); }
 .button-dark:focus-visible { background: var(--color-surface-container-highest); color: var(--color-on-surface); }
-[data-project-slug]:focus-within { outline: 3px solid var(--color-primary); outline-offset: 5px; }
-.project-card:focus-within .project-title-link svg { transform: translate(3px, -3px); }
+[data-project-slug]:focus-visible,
+[data-project-slug]:has(:focus-visible) { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+[data-project-slug]:focus:not(:focus-visible),
+[data-project-slug]:focus-within:not(:has(:focus-visible)) { outline: none; }
+.project-card:focus-visible .project-title-link svg,
+.project-card:has(:focus-visible) .project-title-link svg { transform: translate(3px, -3px); }

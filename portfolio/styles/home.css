@@ -49,8 +49,12 @@
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .project-card { position: relative; border: 1px solid var(--default-home-card-outline, var(--color-outline-variant)); border-radius: 30px; background: var(--color-surface-container-lowest); overflow: hidden; transition: transform var(--motion-duration-card) var(--spring); min-width: 0; }
 .project-card:hover { transform: translateY(-5px); border-color: var(--default-home-card-hover-outline, var(--color-primary)); }
-.project-card:focus-within { outline: 3px solid var(--color-primary); outline-offset: 5px; }
-.project-card:focus-within .project-title-link { outline: none; }
+.project-card:focus-visible,
+.project-card:has(:focus-visible) { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.project-card:focus:not(:focus-visible),
+.project-card:focus-within:not(:has(:focus-visible)) { outline: none; }
+.project-card:focus-visible .project-title-link,
+.project-card:has(:focus-visible) .project-title-link { outline: none; }
 .project-lead { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
 .project-art { height: 220px; background: var(--default-project-tone-0-panel, var(--color-surface-container-low)); position: relative; overflow: hidden; display: grid; place-items: center; isolation: isolate; }
 .project-lead .project-art { min-height: 340px; height: 100%; order: 2; }

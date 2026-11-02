@@ -33,8 +33,10 @@ test("unknown and unverified fields remain explicit", () => {
   assert.equal(profile.education.cgpaScale, null);
   assert.equal(links.geeksforgeeks.verification, "unverified");
   assert.equal(links.resume.verification, "unverified");
-  assert.equal(projects.filter((p) => p.repoUrl !== null).length, 1);
-  assert.ok(projects.every((p) => p.liveUrl === null && p.media === null && p.challenges === null));
+  assert.equal(projects.filter((p) => p.repoUrl !== null).length, 5);
+  assert.equal(projects.filter((p) => p.liveUrl !== null).length, 2);
+  assert.equal(projects.filter((p) => p.media !== null).length, 4);
+  assert.ok(projects.every((p) => p.challenges === null));
   assert.equal(getProjectBySlug("hindsight")?.status, null);
   assert.equal(codingProfiles.find((p) => p.id === "codolio")?.rating, null);
 });
