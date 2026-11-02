@@ -7,8 +7,8 @@ export const links: Record<LinkId, ContentLink> = {
   linkedin: { id: "linkedin", label: "LinkedIn", value: "Meet Kapadia", href: "https://www.linkedin.com/in/meet-kapadia17", verification: "provided" },
   leetcode: { id: "leetcode", label: "LeetCode", value: "Code-Hacker_17", href: "https://leetcode.com/u/Code-Hacker_17/", verification: "provided" },
   codechef: { id: "codechef", label: "CodeChef", value: "neat_otters_97", href: "https://www.codechef.com/users/neat_otters_97", verification: "provided" },
-  codolio: { id: "codolio", label: "Codolio", value: "Lucifer_17", href: "https://codolio.com/profile/Lucifer_17", verification: "provided" },
-  geeksforgeeks: { id: "geeksforgeeks", label: "GeeksforGeeks", value: "meetkapa9w1y", href: "https://www.geeksforgeeks.org/profile/meetkapa9w1y", verification: "unverified" },
+  geeksforgeeks: { id: "geeksforgeeks", label: "GeeksforGeeks", value: "meetkapa9w1y", href: "https://www.geeksforgeeks.org/profile/meetkapa9w1y", verification: "provided" },
+  codolio: { id: "codolio", label: "Codolio", value: "Lucifer_17", href: "https://codolio.com/profile/Lucifer_17", verification: "unverified" },
   resume: { id: "resume", label: "Resume", value: null, href: "https://miniresumemeet.vercel.app", verification: "unverified" },
 };
 

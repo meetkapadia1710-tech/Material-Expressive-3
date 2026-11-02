@@ -75,6 +75,10 @@ export interface Achievement {
   visibility: Visibility;
   reviewNote: string | null;
   documents: readonly { label: string; url: string | null }[] | null;
+  timeConstraint?: string | null;
+  technologies?: readonly string[] | null;
+  credentialId?: string | null;
+  skills?: readonly string[] | null;
 }
 
 export interface PageCopy {

@@ -31,14 +31,14 @@ test("uncertain work and achievements cannot be surfaced as finished", () => {
 test("unknown and unverified fields remain explicit", () => {
   assert.equal(profile.phone, null);
   assert.equal(profile.education.cgpaScale, null);
-  assert.equal(links.geeksforgeeks.verification, "unverified");
+  assert.equal(links.geeksforgeeks.verification, "provided");
   assert.equal(links.resume.verification, "unverified");
   assert.equal(projects.filter((p) => p.repoUrl !== null).length, 5);
   assert.equal(projects.filter((p) => p.liveUrl !== null).length, 2);
   assert.equal(projects.filter((p) => p.media !== null).length, 4);
   assert.ok(projects.every((p) => p.challenges === null));
   assert.equal(getProjectBySlug("hindsight")?.status, null);
-  assert.equal(codingProfiles.find((p) => p.id === "codolio")?.rating, null);
+  assert.equal(codingProfiles.find((p) => p.id === "geeksforgeeks")?.rating, 327);
 });
 
 test("Home uses content, the project scroll target, all featured routes and skill categories", () => {
