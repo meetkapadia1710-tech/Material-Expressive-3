@@ -45,7 +45,7 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
         setCurrentStats((prev) => ({
           ...prev,
           total: live.total,
-          totalDisplay: `${live.total}+`,
+          totalDisplay: `${live.total}`,
           easy: live.easy,
           medium: live.medium,
           hard: live.hard,
@@ -98,9 +98,9 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
             <span className="leetcode-eyebrow">
               <Icon name="code" className="leetcode-icon-inline" /> Problem Solving Analytics
             </span>
-            <span className="leetcode-live-badge" title="Live synchronization with LeetCode GraphQL API">
+            <span className="leetcode-live-badge" title="Hourly synchronization with LeetCode GraphQL API (3600s cache)">
               <span className={`live-pulse-dot ${isLiveSync ? "pulse-active" : ""}`} />
-              {isLiveSync ? "Live LeetCode Sync" : "Verified Snapshot"}
+              {isLiveSync ? "LeetCode Sync • Hourly" : "Verified Snapshot"}
             </span>
           </div>
           <h3>LeetCode Problem Distribution</h3>
@@ -259,7 +259,7 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
                 <span className="leetcode-bar-difficulty">Hard</span>
               </div>
               <div className="leetcode-bar-metrics">
-                <strong>{stats.hard.count}+</strong>
+                <strong>{stats.hard.count}</strong>
                 <span className="leetcode-bar-pct">{stats.hard.percentage}%</span>
               </div>
             </div>

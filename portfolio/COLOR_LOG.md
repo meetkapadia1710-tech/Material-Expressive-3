@@ -44,3 +44,59 @@ Projects with specific accent seeds (e.g. RepoGrade, Hindsight) compute scoped C
 ### 3. Contrast Verification
 All color roles and component pairs are checked against WCAG 2.1 AA requirements (4.5:1 for body copy and icons, 3:1 for large display elements) in `tests/theme-token-contrast.test.tsx`.
 
+## Platform-Scoped Color Schemes for /achievements
+
+Date: 2026-11-03
+
+### 1. Platform Seeds & Architecture
+Platform cards and widgets on `/achievements` now use fixed, brand-specific Material Design 3 Expressive color schemes generated exclusively using Material Color Utilities (`Hct`, `SchemeContent`, `TonalPalette`). Each scheme is applied via scoped CSS variables (`[data-platform-scheme="..."]`), overriding global role tokens locally so child components strictly consume standard role tokens (`--color-primary`, `--color-surface`, `--color-surface-container-*`, `--color-on-*`, etc.) with zero hardcoded hexes.
+
+- **LeetCode**: Seed `#FFA116` (warm amber/yellow). Dark scheme uses low-chroma charcoal neutral surfaces with amber as primary.
+- **CodeChef**: Seed `#795548` (earthy brown). Rich brown surfaces/containers paired with cream and tan on-colors.
+- **GitHub**: Seed `#4A4D50` (near-neutral low-chroma grey, chroma 4.8). Crisp grey/black surfaces with high-contrast text.
+- **GeeksforGeeks**: Seed `#2F8D46` (signature green). Forest green surfaces with vibrant mint accents.
+
+### 2. Tone Adjustments & Difficulty / Ramp Separation
+1. **LeetCode Dark Mode Neutralization**:
+   - Rather than muddy brown surfaces from raw seed chroma, dark surfaces are derived from a low-chroma neutral palette `Hct(68, 4)`:
+     - `surface`: `#181410` (tone 8)
+     - `surface-container-low`: `#1E1915` (tone 10)
+     - `surface-container`: `#26211C` (tone 14)
+   - Primary is anchored at tone 74 (`#FFA116`), preserving LeetCode's vibrant amber identity while achieving 8.4:1 contrast on container backgrounds.
+2. **Algorithmic Difficulty Separation (Easy / Medium / Hard)**:
+   - **Easy**: Mapped to `tertiary` generated from green tonal palette (`#6DBD6A` in dark mode, `#166A20` in light mode).
+   - **Medium**: Mapped to `primary` warm amber (`#FFA116` in dark mode, `#7C4A00` in light mode).
+   - **Hard**: Mapped to `error` red (`#FF5449` in dark mode, `#BA1A1A` in light mode).
+   - All three difficulty tiers are visually separated by distinct hues and reinforced with explicit text labels and numeric counts.
+3. **GitHub Heatmap 5-Step Green Tonal Ramp**:
+   - Replaced legacy hardcoded hexes with semantic CSS custom properties (`--github-heatmap-level-*`) derived from a green tonal palette `Hct(145.6, 53.0)`:
+     - **Dark Mode**: Level 0 = `surface-container-high`, Level 1 = tone 25 (`#00460E`), Level 2 = tone 40 (`#1B6D24`), Level 3 = tone 60 (`#53A252`), Level 4 = tone 75 (`#7ACB76`).
+     - **Light Mode**: Level 0 = `surface-container`, Level 1 = tone 85 (`#95E88F`), Level 2 = tone 70 (`#6DBD6A`), Level 3 = tone 50 (`#38873A`), Level 4 = tone 30 (`#005312`).
+4. **GeeksforGeeks Card Title Contrast Fix**:
+   - Previously, the title suffered from severe illegibility (~1.5:1 contrast) due to dark green hover/text variables overlaying a dark green background.
+   - Now, card text pairs `on-surface` (`#FFFFFF` on `#1A1F19` = 16.7:1) with `primary` accents/hovers (`#93F19E` = 12.2:1), exceeding WCAG AAA standards.
+
+### 3. Contrast Verification Summary
+All text, icon, and surface pairings verified via automated tests in `tests/theme-token-contrast.test.tsx`:
+- **LeetCode (Light)**: on-surface = 17.0:1 | on-surface-variant = 10.9:1 | primary = 6.3:1
+- **LeetCode (Dark)**: on-surface = 17.1:1 | on-surface-variant = 10.1:1 | primary = 8.4:1
+- **CodeChef (Light)**: on-surface = 17.1:1 | on-surface-variant = 10.9:1 | primary = 10.9:1
+- **CodeChef (Dark)**: on-surface = 16.7:1 | on-surface-variant = 12.2:1 | primary = 12.2:1
+- **GitHub (Light)**: on-surface = 17.1:1 | on-surface-variant = 11.0:1 | primary = 11.0:1
+- **GitHub (Dark)**: on-surface = 16.8:1 | on-surface-variant = 12.3:1 | primary = 12.2:1
+- **GeeksforGeeks (Light)**: on-surface = 17.1:1 | on-surface-variant = 10.9:1 | primary = 10.9:1
+- **GeeksforGeeks (Dark)**: on-surface = 16.7:1 | on-surface-variant = 12.3:1 | primary = 12.2:1
+
+### 4. Data Audit & Resolution
+1. **LeetCode 762+ vs 763 Count Consistency**:
+   - *Root Cause*: Meet Kapadia (`Code-Hacker_17`) solved an additional Medium problem on LeetCode ($371\text{ Easy} + 337\text{ Medium} + 55\text{ Hard} = 763$). The static fallback recorded 762 ($371 + 336 + 55$), but the client-side GraphQL route `/api/leetcode` returned live 763, creating a mismatch between the profile card (762+) and distribution panel (763+).
+   - *Fix*: Standardized both static snapshot and live defaults to exact 763 (371 Easy, 337 Medium, 55 Hard) across `content/achievements.ts`, `lib/leetcode.ts`, `components/achievements/leetcode-widget.tsx`, and `lib/skill-projects.ts`.
+   - *Suffix Note*: Dropped the `+` suffix on LeetCode cards because 763 represents the exact, fully verified sum of accepted submissions.
+2. **GitHub Heatmap Activity Timeline**:
+   - *Investigation*: Inspected raw HTML fetched from `https://github.com/users/meetkapadia1710-tech/contributions`. Meet had virtually no public commits between late August and late October 2026 (0 contributions recorded), followed by daily commits starting October 28 (creating the active 6-day streak ending November 2).
+   - *Finding*: The heatmap calendar correctly spans all 53 weeks without cutoff or staleness. The blank period between September and October is an accurate reflection of public commit history.
+3. **Data Sync Truthfulness**:
+   - Both LeetCode and GitHub routes revalidate on a 1-hour ISR window (`revalidate = 3600`).
+   - Replaced ambiguous "Live Sync" badges with `"LeetCode Sync • Hourly"` and `"GitHub Sync • Hourly"` along with explicit tooltip descriptions detailing hourly synchronization.
+
+

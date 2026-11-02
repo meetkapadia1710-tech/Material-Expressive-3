@@ -26,7 +26,7 @@ export async function GitHubSection() {
   const isCached = !liveStats && !liveCalendar;
 
   return (
-    <section className="github-section page-width" aria-labelledby="github-heading">
+    <section className="github-section page-width" aria-labelledby="github-heading" data-platform-scheme="github">
       <div className="github-heading-row">
         <h2 id="github-heading">{copy.title}</h2>
         {isCached ? (
@@ -34,8 +34,8 @@ export async function GitHubSection() {
             <span className="cached-dot" /> Cached snapshot
           </span>
         ) : (
-          <span className="github-live-pill">
-            <span className="live-dot" /> Live GitHub Sync
+          <span className="github-live-pill" title="Revalidated hourly via GitHub API">
+            <span className="live-dot" /> GitHub Sync • Hourly
           </span>
         )}
       </div>

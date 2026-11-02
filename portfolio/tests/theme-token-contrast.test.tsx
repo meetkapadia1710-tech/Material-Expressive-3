@@ -126,3 +126,35 @@ test("Default's restored component accents retain readable foreground/background
     }
   }
 });
+
+test("platform-scoped schemes provide verified contrast across all four platforms in both modes", () => {
+  const platformCss = readFileSync(new URL("../styles/platform-themes.css", import.meta.url), "utf8");
+  for (const platform of ["leetcode", "codechef", "github", "geeksforgeeks"]) {
+    const lightMatch = platformCss.match(new RegExp(`\\[data-platform-scheme="${platform}"\\]\\s*\\{([\\s\\S]*?)\\n\\}`));
+    const darkMatch = platformCss.match(new RegExp(`:root\\[data-theme="dark"\\] \\[data-platform-scheme="${platform}"\\]\\s*\\{([\\s\\S]*?)\\n\\}`));
+    assert.ok(lightMatch, `Missing light block for ${platform}`);
+    assert.ok(darkMatch, `Missing dark block for ${platform}`);
+
+    const lightRoles = parseRoles(lightMatch[1]);
+    const darkRoles = parseRoles(darkMatch[1]);
+
+    for (const [mode, roles] of [["light", lightRoles], ["dark", darkRoles]] as const) {
+      const bg = roles["surface-container-low"] || roles["surface-container"] || roles.surface;
+      assert.ok(contrast(bg, roles["on-surface"]) >= 4.5, `${platform} ${mode} on-surface vs ${bg}`);
+      assert.ok(contrast(bg, roles["on-surface-variant"]) >= 4.5, `${platform} ${mode} on-surface-variant vs ${bg}`);
+      assert.ok(contrast(bg, roles.primary) >= 3.0, `${platform} ${mode} primary vs ${bg}`);
+    }
+  }
+
+  // Verify GitHub heatmap tonal ramp is monotonically separated
+  const darkMatch = platformCss.match(/:root\[data-theme="dark"\] \[data-platform-scheme="github"\]\s*\{([\s\S]*?)\n\}/)?.[1];
+  assert.ok(darkMatch);
+  const l1 = darkMatch.match(/--github-heatmap-level-1:\s*(#[\da-f]{6})/i)?.[1];
+  const l2 = darkMatch.match(/--github-heatmap-level-2:\s*(#[\da-f]{6})/i)?.[1];
+  const l3 = darkMatch.match(/--github-heatmap-level-3:\s*(#[\da-f]{6})/i)?.[1];
+  const l4 = darkMatch.match(/--github-heatmap-level-4:\s*(#[\da-f]{6})/i)?.[1];
+  assert.ok(l1 && l2 && l3 && l4);
+  assert.ok(luminance(l1) < luminance(l2));
+  assert.ok(luminance(l2) < luminance(l3));
+  assert.ok(luminance(l3) < luminance(l4));
+});

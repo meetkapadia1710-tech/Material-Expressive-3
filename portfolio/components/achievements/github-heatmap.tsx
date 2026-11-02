@@ -91,9 +91,9 @@ export function GitHubHeatmap({ initialData = githubFallbackCalendar }: GitHubHe
             </span>
             <h4>Continuous Contribution Heatmap</h4>
           </div>
-          <span className="heatmap-live-badge">
+          <span className="heatmap-live-badge" title={isLive ? "Synchronized hourly with GitHub activity" : "Cached snapshot"}>
             <span className={`live-pulse-dot ${isLive ? "pulse-active" : ""}`} />
-            {isLive ? "Live GitHub Sync" : "Cached Snapshot"}
+            {isLive ? "GitHub Sync • Hourly" : "Cached Snapshot"}
           </span>
         </div>
 

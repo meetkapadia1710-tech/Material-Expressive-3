@@ -106,7 +106,7 @@ export interface CodingProfile {
 
 // Editable, user-supplied snapshots. No scraping or inferred timestamps.
 export const codingProfiles: readonly CodingProfile[] = [
-  { id: "leetcode", linkId: "leetcode", handle: "Code-Hacker_17", problemsSolved: 762, problemsQualifier: "+", rating: null, updatedAt: null, verification: "provided", visibility: "public" },
+  { id: "leetcode", linkId: "leetcode", handle: "Code-Hacker_17", problemsSolved: 763, problemsQualifier: null, rating: null, updatedAt: null, verification: "provided", visibility: "public" },
   { id: "codechef", linkId: "codechef", handle: "neat_otters_97", problemsSolved: null, problemsQualifier: null, rating: 1462, updatedAt: null, verification: "provided", visibility: "public" },
   { id: "geeksforgeeks", linkId: "geeksforgeeks", handle: "meetkapa9w1y", problemsSolved: 111, problemsQualifier: "+", rating: 327, updatedAt: null, verification: "provided", visibility: "public" },
 ];
@@ -143,10 +143,10 @@ export interface LeetCodeBreakdown {
 }
 
 export const leetCodeStats: LeetCodeBreakdown = {
-  total: 762,
-  totalDisplay: "762+",
-  easy: { count: 371, percentage: 48.7 },
-  medium: { count: 336, percentage: 44.1, highlight: "The sweet spot for technical interviews" },
+  total: 763,
+  totalDisplay: "763",
+  easy: { count: 371, percentage: 48.6 },
+  medium: { count: 337, percentage: 44.2, highlight: "The sweet spot for technical interviews" },
   hard: { count: 55, percentage: 7.2 },
   patterns: [
     { title: "Sliding Window", subtitle: "Dynamic arrays, two pointers & sub-array optimizations", tag: "Array / Two Pointers" },

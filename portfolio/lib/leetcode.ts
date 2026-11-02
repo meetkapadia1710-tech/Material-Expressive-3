@@ -66,7 +66,7 @@ export async function getLeetCodeStats(username = "Code-Hacker_17", request: typ
 
     return {
       total,
-      totalDisplay: `${total}+`,
+      totalDisplay: `${total}`,
       easy: { count: easy, percentage: total > 0 ? Math.round((easy / total) * 1000) / 10 : 0 },
       medium: { count: medium, percentage: total > 0 ? Math.round((medium / total) * 1000) / 10 : 0, highlight: "The sweet spot for technical interviews" },
       hard: { count: hard, percentage: total > 0 ? Math.round((hard / total) * 1000) / 10 : 0 },

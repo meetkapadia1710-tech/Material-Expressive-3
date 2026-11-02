@@ -40,21 +40,21 @@ test("unverified profile records and profiles with unverified associated links a
     { ...codingProfiles[2], linkId: "resume" },
   ] });
   assert.ok(html.includes(copy.empty.title));
-  for (const label of ["LeetCode", "CodeChef", "GeeksforGeeks", "762", "1462"]) assert.ok(!html.includes(label));
+  for (const label of ["LeetCode", "CodeChef", "GeeksforGeeks", "763", "1462"]) assert.ok(!html.includes(label));
 });
 
 test("coding links and statistics use config values with null metrics omitted", () => {
   const html = render();
   for (const id of ["leetcode", "codechef", "geeksforgeeks"] as const) assert.ok(html.includes(`href="${links[id].href}"`));
-  assert.ok(html.replace(/<!--.*?-->/g, "").includes("762+"));
+  assert.ok(html.replace(/<!--.*?-->/g, "").includes("763"));
   assert.ok(html.includes("1462"));
   assert.ok(html.includes("327"));
   const gfgOnly = render({ ...empty, links, codingProfiles: [codingProfiles[2]] });
   assert.ok(gfgOnly.includes("meetkapa9w1y") && gfgOnly.includes("111+"));
   // Test-only edited counts demonstrate data-driven rendering; not portfolio claims.
-  const edited = render({ ...empty, links, codingProfiles: [{ ...codingProfiles[0], problemsSolved: 123 }] });
+  const edited = render({ ...empty, links, codingProfiles: [{ ...codingProfiles[0], problemsSolved: 123, problemsQualifier: "+" }] });
   assert.ok(edited.replace(/<!--.*?-->/g, "").includes("123+"));
-  assert.ok(!edited.includes("762"));
+  assert.ok(!edited.includes("763"));
   const zeros = render({ ...empty, links, codingProfiles: [{ ...codingProfiles[0], problemsSolved: 0, problemsQualifier: null, rating: 0 }] });
   assert.equal((zeros.match(/<dd>0<\/dd>/g) ?? []).length, 2);
 });

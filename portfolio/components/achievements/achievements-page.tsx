@@ -135,17 +135,24 @@ export function AchievementsPage({ data = achievementsData, className = "" }: { 
           {content.profiles.length ? (
             <div className="coding-profile-grid">
               {content.profiles.map((profile) => (
-                <article className="coding-profile" key={profile.id}>
-                  <h3>
-                    {profile.href ? (
-                      <a href={profile.href} target="_blank" rel="noopener noreferrer">
-                        {profile.label}
-                        <Icon name="arrow-up-right" />
-                      </a>
-                    ) : (
-                      profile.label
-                    )}
-                  </h3>
+                <article className="coding-profile" key={profile.id} data-platform-scheme={profile.id}>
+                  <div className="coding-profile-header">
+                    <div className="coding-profile-title-group">
+                      <span className="platform-mark" aria-hidden="true">
+                        {profile.id === "leetcode" ? "LC" : profile.id === "codechef" ? "CC" : profile.id === "geeksforgeeks" ? "GFG" : "GH"}
+                      </span>
+                      <h3>
+                        {profile.href ? (
+                          <a href={profile.href} target="_blank" rel="noopener noreferrer">
+                            {profile.label}
+                            <Icon name="arrow-up-right" />
+                          </a>
+                        ) : (
+                          profile.label
+                        )}
+                      </h3>
+                    </div>
+                  </div>
                   {profile.handle ? <p className="coding-handle">{profile.handle}</p> : null}
                   {profile.problemsSolved !== null || profile.rating !== null ? (
                     <dl className="coding-metrics">
@@ -179,7 +186,9 @@ export function AchievementsPage({ data = achievementsData, className = "" }: { 
 
           {/* Interactive LeetCode Breakdown & Algorithmic Patterns Widget */}
           {content.profiles.some((p) => p.id === "leetcode" && p.problemsSolved !== 123 && (p.problemsSolved ?? 0) >= 650) ? (
-            <LeetCodeWidget />
+            <div data-platform-scheme="leetcode">
+              <LeetCodeWidget />
+            </div>
           ) : null}
 
           {content.topics.length ? (

@@ -33,7 +33,7 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "High-Performance Algorithms & Competitive Programming",
     description: "Primary language for algorithmic competitions and technical interviews. Standard Template Library (STL) mastery across 760+ solved challenges on LeetCode.",
     projects: [],
-    highlights: ["762 LeetCode problems solved (371 Easy, 336 Medium, 55 Hard)", "Custom comparator heaps, segment trees, and disjoint-set unions", "Zero-overhead abstractions & template metaprogramming"],
+    highlights: ["763 LeetCode problems solved (371 Easy, 337 Medium, 55 Hard)", "Custom comparator heaps, segment trees, and disjoint-set unions", "Zero-overhead abstractions & template metaprogramming"],
   },
   "Java": {
     name: "Java",
@@ -395,9 +395,9 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
   "DSA": {
     name: "DSA",
     role: "Data Structures & Algorithms Mastery",
-    description: "Rigorous algorithmic problem solving spanning trees, graphs, dynamic programming, heaps, and two-pointer techniques across 762 LeetCode problems.",
+    description: "Rigorous algorithmic problem solving spanning trees, graphs, dynamic programming, heaps, and two-pointer techniques across 763 LeetCode problems.",
     projects: [],
-    highlights: ["762 problems solved (371 Easy, 336 Medium, 55 Hard)", "Time & space complexity asymptotic analysis", "Sliding window, monotonic stack, and union-find patterns"],
+    highlights: ["763 problems solved (371 Easy, 337 Medium, 55 Hard)", "Time & space complexity asymptotic analysis", "Sliding window, monotonic stack, and union-find patterns"],
   },
   "OOP": {
     name: "OOP",
