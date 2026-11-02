@@ -62,13 +62,13 @@ export function createPointerTracker(env: PointerEnvironment) {
       env.view.addEventListener("pointerout", leave, { passive: true });
       env.view.addEventListener("keydown", keyboard);
       env.view.addEventListener("blur", blur);
-      env.view.addEventListener("scroll", scroll, { passive: true });
+      env.view.addEventListener("scroll", scroll, { passive: true, capture: true });
     } else {
       env.view.removeEventListener("pointermove", move);
       env.view.removeEventListener("pointerout", leave);
       env.view.removeEventListener("keydown", keyboard);
       env.view.removeEventListener("blur", blur);
-      env.view.removeEventListener("scroll", scroll);
+      env.view.removeEventListener("scroll", scroll, true);
       reset(true);
     }
   };

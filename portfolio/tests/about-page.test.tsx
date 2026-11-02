@@ -52,3 +52,19 @@ test("campus, current learning and future interests come only from the content l
     assert.ok(html.includes(topic));
   }
 });
+
+test("education entries render exact percentages and screen-reader contexts from the content layer", () => {
+  const html = render();
+  assert.ok(aboutCopy.schools && aboutCopy.schools.length === 2);
+  for (const school of aboutCopy.schools) {
+    assert.ok(html.includes(school.institution));
+    assert.ok(html.includes(school.qualification));
+    assert.ok(html.includes(school.classLevel));
+    assert.ok(html.includes(school.score));
+    assert.ok(html.includes(school.screenReaderText));
+  }
+  assert.ok(html.includes("89.8%"));
+  assert.ok(html.includes("92.33%"));
+  assert.ok(html.includes("Class XII, 2024, 89.8 percent"));
+  assert.ok(html.includes("Class X, 2022, 92.33 percent"));
+});

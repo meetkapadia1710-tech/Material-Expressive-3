@@ -10,12 +10,12 @@ export function mountPointerEffects() {
     observe: (callback) => { const observer = new IntersectionObserver((entries) => entries.forEach((entry) => callback(entry.target, entry.isIntersecting))); return observer; },
   });
   const registrations = new Map<HTMLElement, () => void>();
-  const selector = ".project-card, [data-project-slug]:not(.expandable-dialog), .button-primary, .button-secondary, .button-dark, .nav-link, .hero-art, .cardExpandButton, .expandable-dialog-close, .expandable-more-toggle";
+  const selector = ".project-card, [data-project-slug]:not(.expandable-dialog), .skill-modal-project-card, .about-education-card, .button-primary, .button-secondary, .button-dark, .nav-link, .hero-art, .cardExpandButton, .expandable-dialog-close, .expandable-more-toggle, .craftsmanship-toggle-button, .craftsmanship-copy-button, .craftsmanship-tab, .skill-modal-close, .skill-modal-details-link, .skill-modal-repo-link, .skills-mode-pill, .skills-cat-pill";
   function register(element: HTMLElement) {
     if (registrations.has(element)) return;
     const kind = element.matches(".hero-art")
       ? "hero"
-      : element.matches(".project-card, [data-project-slug]:not(.expandable-dialog)")
+      : element.matches(".project-card, [data-project-slug]:not(.expandable-dialog), .skill-modal-project-card, .about-education-card")
       ? "card"
       : "magnetic";
     element.dataset.pointerEffect = kind;

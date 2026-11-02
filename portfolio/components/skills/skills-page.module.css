@@ -383,22 +383,20 @@
   background: var(--color-surface-container-low);
   border: 1px solid var(--color-outline-variant);
   border-radius: var(--radius-extra-large, 28px);
-  max-width: 620px;
+  max-width: min(780px, 94vw);
   width: 100%;
-  max-height: 85vh;
+  max-height: 88vh;
   overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
-  padding: 32px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
-  animation: modalEnter 240ms cubic-bezier(0.2, 0, 0, 1);
+  padding: clamp(24px, 4vw, 36px);
+  box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.45);
+  animation: modalEnter 260ms cubic-bezier(0.2, 0, 0, 1);
   cursor: default;
 }
 
-.page :global(.skill-modal-content)::-webkit-scrollbar,
-.page :global(.skill-modal-content::-webkit-scrollbar),
-:global(.skill-modal-content)::-webkit-scrollbar,
-:global(.skill-modal-content::-webkit-scrollbar) {
+.page :global(.skill-modal-content)::-webkit-scrollbar {
   display: none !important;
   width: 0 !important;
   height: 0 !important;
@@ -406,7 +404,7 @@
 }
 
 @keyframes modalEnter {
-  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  from { opacity: 0; transform: scale(0.96) translateY(12px); }
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
@@ -415,13 +413,22 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+}
+
+.page :global(.skill-modal-header .eyebrow) {
+  margin: 0 0 6px;
+  font: var(--type-label-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
 }
 
 .page :global(.skill-modal-heading) {
   margin: 0;
-  font: var(--type-headline-small);
-  letter-spacing: -0.03em;
+  font: var(--type-headline-medium);
+  letter-spacing: -0.035em;
   color: var(--color-on-surface);
 }
 
@@ -429,13 +436,13 @@
   background: var(--color-surface-container-high);
   border: 1px solid var(--color-outline-variant);
   border-radius: 50%;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-on-surface);
-  cursor: pointer !important;
+  cursor: pointer;
   flex-shrink: 0;
   transition: transform var(--motion-duration-fast, 150ms) var(--spring),
               background-color var(--motion-duration-fast, 150ms) ease,
@@ -456,16 +463,17 @@
 
 .page :global(.skill-modal-desc) {
   color: var(--color-on-surface-variant);
-  font: var(--type-body-medium);
+  font: var(--type-body-large);
   line-height: 1.6;
   margin: 0 0 20px;
+  max-width: 68ch;
 }
 
 .page :global(.skill-modal-highlights-box) {
   background: var(--color-surface-container);
   border: 1px solid var(--color-outline-variant);
   border-left: 4px solid var(--color-primary);
-  border-radius: 0 16px 16px 0;
+  border-radius: 0 18px 18px 0;
   padding: 16px 20px;
   margin-bottom: 24px;
 }
@@ -492,7 +500,7 @@
 .page :global(.skill-modal-highlights-list li) {
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  gap: 10px;
   font: var(--type-body-medium);
   color: var(--color-on-surface);
   line-height: 1.5;
@@ -500,7 +508,7 @@
 
 .page :global(.skill-modal-bullet) {
   color: var(--color-primary);
-  font: var(--type-label-medium);
+  font-size: 13px;
   font-weight: 700;
   flex-shrink: 0;
 }
@@ -514,46 +522,45 @@
 }
 
 .page :global(.skill-modal-projects-list) {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
 }
 
-/* Actionable Project Cards inside Review Modal: Whole Card Cursor Pointer */
+/* Actionable Project Cards inside Review Modal with M3 Shapes & Pointer Spotlight */
 .page :global(.skill-modal-project-card) {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: var(--color-surface-container);
+  background: var(--color-surface);
   border: 1px solid var(--color-outline-variant);
   border-radius: var(--radius-large, 20px);
-  padding: 22px;
-  cursor: pointer !important;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
   user-select: none;
   transition: transform var(--motion-duration-fast, 180ms) var(--spring),
               border-color var(--motion-duration-fast, 180ms) ease,
+              border-radius var(--motion-duration-fast, 180ms) var(--spring),
               box-shadow var(--motion-duration-fast, 180ms) ease,
               background-color var(--motion-duration-fast, 180ms) ease;
 }
 
-.page :global(.skill-modal-project-card *),
-.page :global(.skill-modal-project-card h4),
-.page :global(.skill-modal-project-card p),
-.page :global(.skill-modal-project-card span) {
-  cursor: pointer !important;
-}
-
 .page :global(.skill-modal-project-card:hover),
 .page :global(.skill-modal-project-card:focus-visible) {
-  transform: translateY(-3px) scale(1.008);
+  transform: translateY(-2px);
   border-color: var(--color-primary);
+  border-radius: 24px 14px 24px 14px;
   background: var(--color-surface-container-high);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2), 0 0 20px color-mix(in srgb, var(--color-primary) 18%, transparent);
+  box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.2), 0 0 16px color-mix(in srgb, var(--color-primary) 15%, transparent);
   outline: none;
 }
 
 .page :global(.skill-modal-project-card:active) {
   transform: scale(0.985);
+  border-radius: 16px 22px 16px 22px;
 }
 
 .page :global(.skill-modal-arrow) {
@@ -569,7 +576,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 8px;
 }
 
@@ -578,15 +585,15 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--color-primary);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .page :global(.skill-modal-card-status) {
   font: var(--type-label-small);
   text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--color-on-surface-variant);
-  background: var(--color-surface-container-lowest);
-  border: 1px solid var(--color-outline-variant);
+  background: var(--color-surface-container-high);
   padding: 2px 8px;
   border-radius: 999px;
 }
@@ -594,20 +601,23 @@
 .page :global(.skill-modal-card-title) {
   margin: 0 0 6px;
   font: var(--type-title-medium);
+  letter-spacing: -0.025em;
   color: var(--color-on-surface);
 }
 
 .page :global(.skill-modal-card-tagline) {
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   font: var(--type-body-small);
   color: var(--color-on-surface-variant);
   line-height: 1.5;
+  flex: 1;
 }
 
 .page :global(.skill-modal-links-row) {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
+  margin-top: auto;
 }
 
 .page :global(.skill-modal-details-link) {
@@ -617,40 +627,40 @@
   background: var(--color-primary-container);
   color: var(--color-on-primary-container);
   border: 1px solid var(--color-primary);
-  padding: 8px 18px;
+  padding: 6px 14px;
   border-radius: 999px;
-  font: var(--type-label-medium);
+  font: var(--type-label-small);
   font-weight: 600;
   text-decoration: none;
-  cursor: pointer !important;
+  cursor: pointer;
   transition: transform var(--motion-duration-fast, 150ms) var(--spring),
               background var(--motion-duration-fast, 150ms) ease,
-              color var(--motion-duration-fast, 150ms) ease,
-              box-shadow var(--motion-duration-fast, 150ms) ease;
+              color var(--motion-duration-fast, 150ms) ease;
 }
 
 .page :global(.skill-modal-details-link:hover) {
   background: var(--color-primary);
   color: var(--color-on-primary);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 30%, transparent);
 }
 
 .page :global(.skill-modal-repo-link) {
   color: var(--color-on-surface-variant);
-  font: var(--type-label-medium);
-  font-weight: 550;
+  font: var(--type-label-small);
+  font-weight: 600;
   text-decoration: none;
-  cursor: pointer !important;
-  padding: 6px 12px;
+  cursor: pointer;
+  padding: 6px 10px;
   border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   transition: color var(--motion-duration-fast, 150ms) ease, background-color var(--motion-duration-fast, 150ms) ease;
 }
 
 .page :global(.skill-modal-repo-link:hover) {
   color: var(--color-primary);
   background: var(--color-surface-container-high);
-  text-decoration: none;
 }
 
 /* ==========================================================================
@@ -753,10 +763,12 @@
 }
 
 .page :global(.craftsmanship-tab) {
+  position: relative;
+  isolation: isolate;
   background: var(--color-surface-container-low);
   border: 1px solid var(--color-outline-variant);
-  border-radius: 12px;
-  padding: 10px 16px;
+  border-radius: 999px;
+  padding: 8px 18px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -764,7 +776,7 @@
   color: var(--color-on-surface-variant);
   font: var(--type-label-medium);
   font-family: var(--font-mono, monospace);
-  transition: all 150ms ease;
+  transition: color 150ms ease, border-color 150ms ease;
   white-space: nowrap;
   user-select: none;
 }
@@ -772,14 +784,29 @@
 .page :global(.craftsmanship-tab:hover) {
   border-color: var(--color-outline);
   color: var(--color-on-surface);
-  background: var(--color-surface-container-high);
 }
 
-.page :global(.craftsmanship-tab-active) {
-  background: var(--color-surface-container-high);
-  border-color: var(--color-primary);
-  color: var(--color-on-surface);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+.page :global(.craftsmanship-tab.craftsmanship-tab-active) {
+  color: var(--color-on-primary-container);
+  border-color: transparent;
+  background: transparent;
+}
+
+.page :global(.craftsmanship-tab-active-pill) {
+  position: absolute;
+  inset: -1px;
+  background: var(--color-primary-container);
+  border: 1px solid var(--color-primary);
+  border-radius: inherit;
+  z-index: 0;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--color-primary) 18%, transparent);
+}
+
+.page :global(.craftsmanship-tab-dot),
+.page :global(.craftsmanship-tab-filename),
+.page :global(.craftsmanship-tab-lang) {
+  position: relative;
+  z-index: 1;
 }
 
 .page :global(.craftsmanship-tab-dot) {

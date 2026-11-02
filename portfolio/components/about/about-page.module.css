@@ -153,7 +153,7 @@
   grid-template-columns: 0.9fr 1.1fr;
   gap: 40px;
   margin-top: 52px;
-  align-items: start;
+  align-items: stretch;
 }
 .page :global(.about-section-heading) {
   display: flex;
@@ -178,71 +178,221 @@
 }
 .page :global(.about-section-heading) svg { width: 19px; height: 19px; }
 
-/* Education Card (Warm Tertiary Tone) */
-.page :global(.about-education-card) {
-  padding: 28px 30px;
-  border: 1px solid var(--color-outline-variant);
-  border-radius: 26px;
-  background: var(--color-surface-container-low);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-}
-.page :global(.about-year-range) {
-  display: inline-block;
-  margin: 0 0 20px;
-  background: var(--color-tertiary-container);
-  color: var(--color-on-tertiary-container);
-  padding: 6px 12px;
-  border-radius: 10px;
-  font-size: var(--type-label-medium-size);
-  font-weight: 700;
-}
-.page :global(.about-education-card) h3 { font: var(--type-education-heading); letter-spacing: -.045em; margin: 0 0 10px; }
-.page :global(.about-degree) { color: var(--color-on-surface-variant); line-height: 1.7; font-size: var(--type-body-supporting-size); margin: 0; }
-.page :global(.about-cgpa) { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding-top: 24px; border-top: 1px solid var(--color-outline-variant); margin: 24px 0 0; }
-.page :global(.about-cgpa) dt { font-size: var(--type-label-medium-size); color: var(--color-on-surface-variant); }
-.page :global(.about-cgpa) dd { margin: 0; font: var(--type-academic-metric); letter-spacing: -.06em; color: var(--color-tertiary); }
-.page :global(.about-cgpa) dd > span { font-size: var(--type-body-medium-size); letter-spacing: 0; }
-
-.page :global(.about-education-timeline) {
-  margin-top: 18px;
+/* --- Material 3 Expressive Education List & Cards --- */
+.page :global(.about-education) {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  height: 100%;
 }
-.page :global(.about-edu-node) {
+
+.page :global(.about-education-list) {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  padding: 16px 20px;
-  border-radius: 18px;
+  flex-direction: column;
+  flex: 1;
+  gap: 24px;
+}
+
+.page :global(.about-education-card) {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 24px;
+  border-radius: var(--radius-large, 24px);
   background: var(--color-surface-container-low);
   border: 1px solid var(--color-outline-variant);
-  transition: transform var(--motion-duration-fast) var(--spring), border-color var(--motion-duration-fast) ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  position: relative;
+  flex: 1;
+  transition:
+    transform var(--motion-duration-card) var(--spring),
+    border-radius var(--motion-duration-card) var(--spring),
+    border-color var(--motion-duration-fast) ease,
+    box-shadow var(--motion-duration-card) var(--spring),
+    background-color var(--motion-duration-fast) ease;
 }
-.page :global(.about-edu-node):hover {
-  transform: translateX(3px);
+
+.page :global(.about-education-card:hover) {
+  transform: translateY(-3px);
+  border-radius: 28px 16px 28px 16px;
   border-color: var(--color-tertiary);
+  box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.1), 0 0 18px color-mix(in srgb, var(--color-tertiary) 14%, transparent);
+  background: var(--color-surface-container);
 }
-.page :global(.about-edu-dot) {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--color-tertiary);
-  margin-top: 6px;
+
+.page :global(.about-education-card:active) {
+  transform: scale(0.985);
+  border-radius: 18px 24px 18px 24px;
+}
+
+.page :global(.about-education-card:focus-visible) {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.page :global(.about-edu-leading) {
   flex-shrink: 0;
+  display: grid;
+  place-items: center;
 }
-.page :global(.about-edu-details) h4 {
+
+.page :global(.about-edu-shape) {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+  display: grid;
+  place-items: center;
+  transition: transform var(--motion-duration-card) var(--spring);
+}
+
+.page :global(.about-education-card:hover) :global(.about-edu-shape) {
+  transform: scale(1.1) rotate(4deg);
+}
+
+.page :global(.about-edu-shape svg) {
+  width: 22px;
+  height: 22px;
+  color: var(--color-on-tertiary-container);
+}
+
+.page :global(.about-edu-main) {
+  flex: 1;
+  min-width: 0;
+}
+
+.page :global(.about-edu-header) {
+  margin-bottom: 6px;
+}
+
+.page :global(.about-year-range) {
+  display: inline-block;
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: var(--type-label-small-size);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--color-outline-variant);
+}
+
+.page :global(.about-education-card.is-current) :global(.about-year-range) {
+  background: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+}
+
+.page :global(.about-education-card) h3 {
   margin: 0 0 4px;
   font-family: var(--display);
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 1.08rem;
+  font-weight: 750;
+  letter-spacing: -0.025em;
   color: var(--color-on-surface);
 }
-.page :global(.about-edu-details) p {
+
+.page :global(.about-degree) {
   margin: 0;
-  font-size: 0.825rem;
   color: var(--color-on-surface-variant);
+  font-size: var(--type-body-small-size);
   line-height: 1.5;
+}
+
+/* Trailing score stat/chip: right-aligned on wide screens, wraps on narrow */
+.page :global(.about-edu-score) {
+  flex-shrink: 0;
+  margin-left: auto;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.page :global(.about-score-stat) {
+  background: var(--color-surface-container-high);
+  border: 1px solid var(--color-outline-variant);
+  color: var(--color-on-surface);
+  padding: 6px 14px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--motion-duration-fast) var(--spring), background-color var(--motion-duration-fast) ease, border-color var(--motion-duration-fast) ease;
+}
+
+.page :global(.about-education-card:hover) :global(.about-score-stat) {
+  background: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+  border-color: var(--color-tertiary);
+  transform: scale(1.05);
+}
+
+.page :global(.about-score-value) {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: inherit;
+}
+
+.page :global(.about-cgpa) {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  background: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+  border: 1px solid var(--color-outline-variant);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin: 0;
+  transition: transform var(--motion-duration-fast) var(--spring), border-color var(--motion-duration-fast) ease;
+}
+
+.page :global(.about-education-card:hover) :global(.about-cgpa) {
+  border-color: var(--color-tertiary);
+  transform: scale(1.05);
+}
+
+.page :global(.about-cgpa) dt {
+  font-size: var(--type-label-small-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.page :global(.about-cgpa) dd {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: inherit;
+}
+
+.page :global(.about-cgpa) dd > span {
+  font-size: var(--type-label-small-size);
+  font-weight: 600;
+  letter-spacing: 0;
+  opacity: 0.75;
+}
+
+@media (max-width: 600px) {
+  .page :global(.about-education-card) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 20px;
+  }
+  .page :global(.about-edu-score) {
+    margin-left: 0;
+    align-self: flex-start;
+    margin-top: 4px;
+  }
 }
 
 /* --- Material 3 Expressive Vertical Timeline Stream --- */
@@ -461,24 +611,22 @@
   color: var(--color-on-surface);
 }
 
-.page :global(.about-timeline-item.tone-secondary) :global(.about-organization) {
+.page :global(.about-organization) {
   font-size: var(--type-label-large-size);
   font-weight: 600;
   margin: 0 0 12px;
-  color: var(--color-secondary);
+  color: var(--color-on-surface-variant);
+}
+
+.page :global(.about-timeline-item.tone-secondary) :global(.about-organization) {
+  color: var(--color-on-surface-variant);
 }
 
 .page :global(.about-timeline-item.tone-tertiary) :global(.about-organization) {
-  font-size: var(--type-label-large-size);
-  font-weight: 600;
-  margin: 0 0 12px;
-  color: var(--color-tertiary);
+  color: var(--color-on-surface-variant);
 }
 
 .page :global(.about-timeline-item.tone-primary) :global(.about-organization) {
-  font-size: var(--type-label-large-size);
-  font-weight: 600;
-  margin: 0 0 12px;
   color: var(--color-primary);
 }
 
@@ -887,7 +1035,22 @@
 
 /* Responsive Media Queries */
 @media (max-width: 1000px) {
-  .page :global(.about-background-grid) { gap: 28px; grid-template-columns: 1fr; }
+  .page :global(.about-background-grid) {
+    gap: 28px;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .page :global(.about-education) {
+    height: auto;
+  }
+  .page :global(.about-education-list) {
+    flex: initial;
+    gap: 16px;
+    justify-content: flex-start;
+  }
+  .page :global(.about-education-card) {
+    flex: initial;
+  }
   .page :global(.about-campus-grid) { grid-template-columns: 1fr; gap: 14px; }
   .page :global(.about-section-heading) h2 { font-size: 24px; }
 }

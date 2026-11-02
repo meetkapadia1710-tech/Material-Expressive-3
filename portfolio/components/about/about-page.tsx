@@ -68,38 +68,75 @@ export function AboutPage({ className = "" }: { className?: string }) {
         {/* Education Column */}
         <section className="about-education" id="about-education" aria-labelledby="about-education-heading">
           <div className="about-section-heading">
-            <span aria-hidden="true"><Icon name="layers" /></span>
+            <span aria-hidden="true"><Icon name="school" /></span>
             <h2 id="about-education-heading">{aboutCopy.educationTitle}</h2>
           </div>
 
-          <div className="about-education-card">
-            <p className="about-year-range">{education.startYear}–{education.endYear}</p>
-            <h3>{education.institution}</h3>
-            <p className="about-degree">{education.degree}<span aria-hidden="true"> · </span>{education.field}</p>
-            {education.cgpa !== null ? (
-              <dl className="about-cgpa">
-                <dt>{aboutCopy.cgpaLabel}</dt>
-                <dd>{education.cgpa}{education.cgpaScale !== null ? <span> / {education.cgpaScale}</span> : null}</dd>
-              </dl>
-            ) : null}
-          </div>
+          <ol className="about-education-list">
+            {/* 1. IIIT Vadodara (Most Recent Higher Education) */}
+            <li className="about-education-card is-current">
+              <div className="about-edu-leading" aria-hidden="true">
+                <MorphingShape
+                  className="about-edu-shape"
+                  shape="roundedSquare"
+                  hoverShape="circle"
+                  morphOnView={true}
+                >
+                  <Icon name="school" />
+                </MorphingShape>
+              </div>
 
-          <div className="about-education-timeline">
-            <div className="about-edu-node">
-              <span className="about-edu-dot" aria-hidden="true" />
-              <div className="about-edu-details">
-                <h4>Cosmos Castle International School</h4>
-                <p>Higher Secondary Certificate (HSC) · Class XII · 2024</p>
+              <div className="about-edu-main">
+                <div className="about-edu-header">
+                  <span className="about-year-range">{education.startYear}–{education.endYear}</span>
+                </div>
+                <h3>{education.institution}</h3>
+                <p className="about-degree">{education.degree}<span aria-hidden="true"> · </span>{education.field}</p>
               </div>
-            </div>
-            <div className="about-edu-node">
-              <span className="about-edu-dot" aria-hidden="true" />
-              <div className="about-edu-details">
-                <h4>Sanskar Vidhya Bhavan</h4>
-                <p>Secondary School Certificate (SSC) · Class X · 2022</p>
-              </div>
-            </div>
-          </div>
+
+              {education.cgpa !== null ? (
+                <div className="about-edu-score">
+                  <dl className="about-cgpa">
+                    <dt>{aboutCopy.cgpaLabel}</dt>
+                    <dd>{education.cgpa}{education.cgpaScale !== null ? <span> / {education.cgpaScale}</span> : null}</dd>
+                  </dl>
+                </div>
+              ) : null}
+            </li>
+
+            {/* 2 & 3. Secondary & Higher Secondary Schools */}
+            {aboutCopy.schools.map((school) => (
+              <li key={school.id} className="about-education-card">
+                <div className="about-edu-leading" aria-hidden="true">
+                  <MorphingShape
+                    className="about-edu-shape"
+                    shape={school.shape}
+                    hoverShape={school.hoverShape}
+                    morphOnView={true}
+                  >
+                    <Icon name={school.icon} />
+                  </MorphingShape>
+                </div>
+
+                <div className="about-edu-main">
+                  <div className="about-edu-header">
+                    <span className="about-year-range">{school.yearLabel}</span>
+                  </div>
+                  <h3>{school.institution}</h3>
+                  <p className="about-degree">
+                    {school.qualification}<span aria-hidden="true"> · </span>{school.classLevel}
+                  </p>
+                </div>
+
+                <div className="about-edu-score">
+                  <div className="about-score-stat" aria-label={school.screenReaderText}>
+                    <span className="sr-only">{school.screenReaderText}</span>
+                    <span className="about-score-value" aria-hidden="true">{school.score}</span>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
         </section>
 
         {/* Experience Column: Expressive Multitonal M3 Timeline Arc */}

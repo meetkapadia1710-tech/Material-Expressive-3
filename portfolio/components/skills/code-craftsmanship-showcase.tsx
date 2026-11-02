@@ -259,9 +259,21 @@ export function CodeCraftsmanshipShowcase() {
           onClick={() => setIsExpanded((prev) => !prev)}
           aria-expanded={isExpanded}
         >
-          <span>{isExpanded ? "Collapse Snippet Viewer" : "Expand Snippet Viewer"}</span>
-          <svg
-            className={`craftsmanship-toggle-icon ${isExpanded ? "icon-up" : "icon-down"}`}
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.span
+              key={isExpanded ? "collapse" : "expand"}
+              initial={{ opacity: 0, y: isExpanded ? -3 : 3 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: isExpanded ? 3 : -3 }}
+              transition={{ duration: 0.15 }}
+            >
+              {isExpanded ? "Collapse Snippet Viewer" : "Expand Snippet Viewer"}
+            </motion.span>
+          </AnimatePresence>
+          <motion.svg
+            className="craftsmanship-toggle-icon"
+            animate={{ rotate: isExpanded ? 0 : 180 }}
+            transition={{ type: "spring", stiffness: 340, damping: 26 }}
             width="14"
             height="14"
             viewBox="0 0 24 24"
@@ -273,7 +285,7 @@ export function CodeCraftsmanshipShowcase() {
             aria-hidden="true"
           >
             <polyline points="18 15 12 9 6 15" />
-          </svg>
+          </motion.svg>
         </button>
       </div>
 
@@ -282,15 +294,15 @@ export function CodeCraftsmanshipShowcase() {
           <motion.div
             key="craftsmanship-collapse"
             className="craftsmanship-collapse-wrapper"
-            initial={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
-            animate={shouldReduceMotion ? { opacity: 1 } : { height: "auto", opacity: 1 }}
-            exit={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
+            initial={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0, scale: 0.985 }}
+            animate={shouldReduceMotion ? { opacity: 1 } : { height: "auto", opacity: 1, scale: 1 }}
+            exit={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0, scale: 0.985 }}
             transition={
               shouldReduceMotion
                 ? { duration: 0.01 }
-                : { duration: 0.38, ease: [0.38, 1.21, 0.22, 1] }
+                : { type: "spring", stiffness: 280, damping: 28, mass: 0.85 }
             }
-            style={{ overflow: "hidden" }}
+            style={{ overflow: "hidden", transformOrigin: "top center" }}
           >
             <div className="craftsmanship-collapse-inner">
               <div className="craftsmanship-viewer">
@@ -312,6 +324,13 @@ export function CodeCraftsmanshipShowcase() {
                           setCopied(false);
                         }}
                       >
+                        {selected ? (
+                          <motion.span
+                            layoutId="active-craftsmanship-tab-pill"
+                            className="craftsmanship-tab-active-pill"
+                            transition={{ type: "spring", stiffness: 360, damping: 30 }}
+                          />
+                        ) : null}
                         <span className="craftsmanship-tab-dot" />
                         <span className="craftsmanship-tab-filename">{snippet.filename}</span>
                         <span className="craftsmanship-tab-lang">{snippet.language}</span>
@@ -321,20 +340,20 @@ export function CodeCraftsmanshipShowcase() {
                 </div>
 
                 {/* Active Snippet Content with fluid key transition */}
-                <AnimatePresence mode="wait">
+                <AnimatePresence initial={false}>
                   <motion.div
                     key={activeSnippet.id}
                     id={`panel-${activeSnippet.id}`}
                     role="tabpanel"
                     aria-labelledby={`tab-${activeSnippet.id}`}
                     className="craftsmanship-panel"
-                    initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
+                    initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -10 }}
+                    exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
                     transition={
                       shouldReduceMotion
                         ? { duration: 0.01 }
-                        : { duration: 0.22, ease: [0.2, 0, 0, 1] }
+                        : { duration: 0.2, ease: [0.2, 0, 0, 1] }
                     }
                   >
                     <div className="craftsmanship-panel-meta">

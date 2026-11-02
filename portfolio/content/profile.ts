@@ -311,6 +311,49 @@ export const aboutExploreItems: readonly AboutExploreItem[] = [
   },
 ];
 
+export interface SchoolEducation {
+  id: string;
+  institution: string;
+  qualification: string;
+  classLevel: string;
+  year: number;
+  yearLabel: string;
+  score: string;
+  screenReaderText: string;
+  shape: "roundedSquare" | "circle" | "scalloped" | "blob";
+  hoverShape: "roundedSquare" | "circle" | "scalloped" | "blob";
+  icon: "school" | "book" | "layers" | "spark";
+}
+
+export const aboutSchoolEducation: readonly SchoolEducation[] = [
+  {
+    id: "cosmos-castle",
+    institution: "Cosmos Castle International School",
+    qualification: "Higher Secondary Certificate (HSC)",
+    classLevel: "Class XII",
+    year: 2024,
+    yearLabel: "2024",
+    score: "89.8%",
+    screenReaderText: "Class XII, 2024, 89.8 percent",
+    shape: "scalloped",
+    hoverShape: "blob",
+    icon: "book",
+  },
+  {
+    id: "sanskar-vidhya-bhavan",
+    institution: "Sanskar Vidhya Bhavan",
+    qualification: "Secondary School Certificate (SSC)",
+    classLevel: "Class X",
+    year: 2022,
+    yearLabel: "2022",
+    score: "92.33%",
+    screenReaderText: "Class X, 2022, 92.33 percent",
+    shape: "circle",
+    hoverShape: "roundedSquare",
+    icon: "book",
+  },
+];
+
 // About-only copy. Keep the Home description above independent of this bio.
 export const aboutCopy = {
   bioTitle: "Bio",
@@ -328,4 +371,5 @@ export const aboutCopy = {
   campusCommunities: aboutCampusCommunities,
   learningItems: aboutLearningItems,
   exploreItems: aboutExploreItems,
+  schools: aboutSchoolEducation,
 };
