@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 interface Snippet {
   id: string;
@@ -228,6 +229,7 @@ export function CodeCraftsmanshipShowcase() {
   const [activeTab, setActiveTab] = useState(snippets[0].id);
   const [copied, setCopied] = useState(false);
   const [isExpanded, setIsExpanded] = useState(true);
+  const shouldReduceMotion = useReducedMotion();
 
   const activeSnippet = snippets.find((s) => s.id === activeTab) ?? snippets[0];
 
@@ -275,100 +277,122 @@ export function CodeCraftsmanshipShowcase() {
         </button>
       </div>
 
-      <div
-        className="craftsmanship-collapse-wrapper"
-        data-collapsed={!isExpanded}
-        aria-hidden={!isExpanded}
-      >
-        <div className="craftsmanship-collapse-inner">
-          <div className="craftsmanship-viewer">
-            {/* Tabs */}
-            <div className="craftsmanship-tab-bar" role="tablist" aria-label="Code snippet tabs">
-              {snippets.map((snippet) => {
-                const selected = snippet.id === activeTab;
-                return (
-                  <button
-                    key={snippet.id}
-                    type="button"
-                    role="tab"
-                    aria-selected={selected}
-                    aria-controls={`panel-${snippet.id}`}
-                    id={`tab-${snippet.id}`}
-                    className={`craftsmanship-tab${selected ? " craftsmanship-tab-active" : ""}`}
-                    onClick={() => {
-                      setActiveTab(snippet.id);
-                      setCopied(false);
-                    }}
-                  >
-                    <span className="craftsmanship-tab-dot" />
-                    <span className="craftsmanship-tab-filename">{snippet.filename}</span>
-                    <span className="craftsmanship-tab-lang">{snippet.language}</span>
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Active Snippet Content with key for fluid tab transitions */}
-            <div
-              key={activeSnippet.id}
-              id={`panel-${activeSnippet.id}`}
-              role="tabpanel"
-              aria-labelledby={`tab-${activeSnippet.id}`}
-              className="craftsmanship-panel"
-            >
-              <div className="craftsmanship-panel-meta">
-                <div>
-                  <h3 className="craftsmanship-snippet-title">{activeSnippet.title}</h3>
-                  <p className="craftsmanship-snippet-tagline">{activeSnippet.tagline}</p>
+      <AnimatePresence initial={false}>
+        {isExpanded ? (
+          <motion.div
+            key="craftsmanship-collapse"
+            className="craftsmanship-collapse-wrapper"
+            initial={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
+            animate={shouldReduceMotion ? { opacity: 1 } : { height: "auto", opacity: 1 }}
+            exit={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
+            transition={
+              shouldReduceMotion
+                ? { duration: 0.01 }
+                : { duration: 0.38, ease: [0.38, 1.21, 0.22, 1] }
+            }
+            style={{ overflow: "hidden" }}
+          >
+            <div className="craftsmanship-collapse-inner">
+              <div className="craftsmanship-viewer">
+                {/* Tabs */}
+                <div className="craftsmanship-tab-bar" role="tablist" aria-label="Code snippet tabs">
+                  {snippets.map((snippet) => {
+                    const selected = snippet.id === activeTab;
+                    return (
+                      <button
+                        key={snippet.id}
+                        type="button"
+                        role="tab"
+                        aria-selected={selected}
+                        aria-controls={`panel-${snippet.id}`}
+                        id={`tab-${snippet.id}`}
+                        className={`craftsmanship-tab${selected ? " craftsmanship-tab-active" : ""}`}
+                        onClick={() => {
+                          setActiveTab(snippet.id);
+                          setCopied(false);
+                        }}
+                      >
+                        <span className="craftsmanship-tab-dot" />
+                        <span className="craftsmanship-tab-filename">{snippet.filename}</span>
+                        <span className="craftsmanship-tab-lang">{snippet.language}</span>
+                      </button>
+                    );
+                  })}
                 </div>
-                <button
-                  type="button"
-                  className="craftsmanship-copy-button"
-                  onClick={handleCopy}
-                  aria-label={`Copy ${activeSnippet.filename} code`}
-                >
-                  {copied ? (
-                    <>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                      <span>Copied!</span>
-                    </>
-                  ) : (
-                    <>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                      </svg>
-                      <span>Copy Code</span>
-                    </>
-                  )}
-                </button>
-              </div>
 
-              <div className="craftsmanship-code-wrapper">
-                <pre className="craftsmanship-pre">
-                  <code>
-                    {activeSnippet.code.split("\n").map((line, idx) => (
-                      <div key={idx} className="craftsmanship-code-line">
-                        <span className="craftsmanship-line-number" aria-hidden="true">
-                          {idx + 1}
-                        </span>
-                        <span className="craftsmanship-line-text">{renderHighlightedCode(line)}</span>
+                {/* Active Snippet Content with fluid key transition */}
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeSnippet.id}
+                    id={`panel-${activeSnippet.id}`}
+                    role="tabpanel"
+                    aria-labelledby={`tab-${activeSnippet.id}`}
+                    className="craftsmanship-panel"
+                    initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -10 }}
+                    transition={
+                      shouldReduceMotion
+                        ? { duration: 0.01 }
+                        : { duration: 0.22, ease: [0.2, 0, 0, 1] }
+                    }
+                  >
+                    <div className="craftsmanship-panel-meta">
+                      <div>
+                        <h3 className="craftsmanship-snippet-title">{activeSnippet.title}</h3>
+                        <p className="craftsmanship-snippet-tagline">{activeSnippet.tagline}</p>
                       </div>
-                    ))}
-                  </code>
-                </pre>
-              </div>
+                      <button
+                        type="button"
+                        className="craftsmanship-copy-button"
+                        onClick={handleCopy}
+                        aria-label={`Copy ${activeSnippet.filename} code`}
+                      >
+                        {copied ? (
+                          <>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                              <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Copied!</span>
+                          </>
+                        ) : (
+                          <>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                            </svg>
+                            <span>Copy Code</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
 
-              <div className="craftsmanship-architecture-box">
-                <span className="craftsmanship-arch-label">Architectural Design Note</span>
-                <p className="craftsmanship-arch-text">{activeSnippet.architectureNote}</p>
+                    <div className="craftsmanship-code-wrapper">
+                      <pre className="craftsmanship-pre">
+                        <code>
+                          {activeSnippet.code.split("\n").map((line, idx) => (
+                            <div key={idx} className="craftsmanship-code-line">
+                              <span className="craftsmanship-line-number" aria-hidden="true">
+                                {idx + 1}
+                              </span>
+                              <span className="craftsmanship-line-text">{renderHighlightedCode(line)}</span>
+                            </div>
+                          ))}
+                        </code>
+                      </pre>
+                    </div>
+
+                    <div className="craftsmanship-architecture-box">
+                      <span className="craftsmanship-arch-label">Architectural Design Note</span>
+                      <p className="craftsmanship-arch-text">{activeSnippet.architectureNote}</p>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </aside>
   );
 }

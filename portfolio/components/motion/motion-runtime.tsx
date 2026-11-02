@@ -79,7 +79,7 @@ function Reveal({ pathname }: { pathname: string }) {
       }
     }, { threshold: 0.08 });
     const main = document.querySelector("main");
-    const selector = "section, .project-card, [data-project-slug], .achievement-entry, .coding-profile, [data-morph-in-view]";
+    const selector = "section, .project-card, [data-project-slug], .achievement-entry, .coding-profile, .about-timeline-item, .about-campus-card, .about-topic-item, [data-morph-in-view]";
     const watch = (element: Element) => {
       if (seen.has(element) || reduced.matches) return;
       observer.observe(element);

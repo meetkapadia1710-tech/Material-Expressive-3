@@ -81,11 +81,14 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setActiveSkill(null);
     };
-    const prevOverflow = document.body.style.overflow;
+    const prevBodyOverflow = document.body.style.overflow;
+    const prevHtmlOverflow = document.documentElement.style.overflow;
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
     window.addEventListener("keydown", handleKeyDown);
     return () => {
-      document.body.style.overflow = prevOverflow;
+      document.body.style.overflow = prevBodyOverflow;
+      document.documentElement.style.overflow = prevHtmlOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [activeSkill]);
@@ -327,6 +330,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
         <div
           className="skill-modal-backdrop"
           onClick={() => setActiveSkill(null)}
+          data-lenis-prevent="true"
         >
           <div
             className="skill-modal-content"
@@ -334,6 +338,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
             role="dialog"
             aria-modal="true"
             aria-labelledby="skill-modal-title"
+            data-lenis-prevent="true"
           >
             <div className="skill-modal-header">
               <div>
@@ -382,25 +387,13 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
                       key={proj.slug}
                       className="skill-modal-project-card"
                       data-project-slug={proj.slug}
-                      data-pointer-effect="card"
                       role="button"
                       tabIndex={0}
-                      onMouseMove={(e) => {
-                        const rect = e.currentTarget.getBoundingClientRect();
-                        const x = e.clientX - rect.left;
-                        const y = e.clientY - rect.top;
-                        e.currentTarget.style.setProperty("--pointer-x", `${x}px`);
-                        e.currentTarget.style.setProperty("--pointer-y", `${y}px`);
-                        e.currentTarget.setAttribute("data-pointer-active", "");
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.removeAttribute("data-pointer-active");
-                      }}
                       onClick={(e) => {
                         const target = e.target as HTMLElement;
                         if (target.closest(".skill-modal-repo-link")) return;
                         const link = e.currentTarget.querySelector<HTMLAnchorElement>(".skill-modal-details-link");
-                        if (link) {
+                        if (link && target !== link && !link.contains(target)) {
                           setActiveSkill(null);
                           link.click();
                         }

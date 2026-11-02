@@ -387,16 +387,22 @@
   width: 100%;
   max-height: 85vh;
   overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
   padding: 32px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
   animation: modalEnter 240ms cubic-bezier(0.2, 0, 0, 1);
   cursor: default;
 }
 
-.page :global(.skill-modal-content::-webkit-scrollbar) {
-  display: none;
+.page :global(.skill-modal-content)::-webkit-scrollbar,
+.page :global(.skill-modal-content::-webkit-scrollbar),
+:global(.skill-modal-content)::-webkit-scrollbar,
+:global(.skill-modal-content::-webkit-scrollbar) {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
 }
 
 @keyframes modalEnter {
@@ -423,21 +429,29 @@
   background: var(--color-surface-container-high);
   border: 1px solid var(--color-outline-variant);
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-on-surface);
-  cursor: pointer;
+  cursor: pointer !important;
   flex-shrink: 0;
-  transition: all var(--motion-duration-fast, 150ms) ease;
+  transition: transform var(--motion-duration-fast, 150ms) var(--spring),
+              background-color var(--motion-duration-fast, 150ms) ease,
+              border-color var(--motion-duration-fast, 150ms) ease,
+              color var(--motion-duration-fast, 150ms) ease;
 }
 
 .page :global(.skill-modal-close:hover) {
-  background: var(--color-surface-container-highest);
-  color: var(--color-primary);
-  border-color: var(--color-outline);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  border-color: var(--color-primary);
+  transform: rotate(90deg) scale(1.05);
+}
+
+.page :global(.skill-modal-close:active) {
+  transform: rotate(90deg) scale(0.92);
 }
 
 .page :global(.skill-modal-desc) {
@@ -512,9 +526,9 @@
   overflow: hidden;
   background: var(--color-surface-container);
   border: 1px solid var(--color-outline-variant);
-  border-radius: 18px;
-  padding: 20px;
-  cursor: pointer;
+  border-radius: var(--radius-large, 20px);
+  padding: 22px;
+  cursor: pointer !important;
   user-select: none;
   transition: transform var(--motion-duration-fast, 180ms) var(--spring),
               border-color var(--motion-duration-fast, 180ms) ease,
@@ -525,25 +539,16 @@
 .page :global(.skill-modal-project-card *),
 .page :global(.skill-modal-project-card h4),
 .page :global(.skill-modal-project-card p),
-.page :global(.skill-modal-project-card span),
-.page :global(.skill-modal-project-card a) {
-  cursor: pointer;
-}
-
-.page :global(.skill-modal-project-card *),
-.page :global(.skill-modal-project-card h4),
-.page :global(.skill-modal-project-card p),
-.page :global(.skill-modal-project-card span),
-.page :global(.skill-modal-project-card a) {
-  cursor: pointer;
+.page :global(.skill-modal-project-card span) {
+  cursor: pointer !important;
 }
 
 .page :global(.skill-modal-project-card:hover),
 .page :global(.skill-modal-project-card:focus-visible) {
-  transform: translateY(-4px);
+  transform: translateY(-3px) scale(1.008);
   border-color: var(--color-primary);
   background: var(--color-surface-container-high);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22), 0 0 24px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2), 0 0 20px color-mix(in srgb, var(--color-primary) 18%, transparent);
   outline: none;
 }
 
@@ -609,31 +614,43 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--color-primary);
-  color: var(--color-on-primary);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  border: 1px solid var(--color-primary);
   padding: 8px 18px;
   border-radius: 999px;
   font: var(--type-label-medium);
   font-weight: 600;
   text-decoration: none;
-  cursor: pointer;
-  transition: opacity 150ms ease;
+  cursor: pointer !important;
+  transition: transform var(--motion-duration-fast, 150ms) var(--spring),
+              background var(--motion-duration-fast, 150ms) ease,
+              color var(--motion-duration-fast, 150ms) ease,
+              box-shadow var(--motion-duration-fast, 150ms) ease;
 }
 
 .page :global(.skill-modal-details-link:hover) {
-  opacity: 0.92;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 30%, transparent);
 }
 
 .page :global(.skill-modal-repo-link) {
   color: var(--color-on-surface-variant);
   font: var(--type-label-medium);
+  font-weight: 550;
   text-decoration: none;
-  cursor: pointer;
+  cursor: pointer !important;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: color var(--motion-duration-fast, 150ms) ease, background-color var(--motion-duration-fast, 150ms) ease;
 }
 
 .page :global(.skill-modal-repo-link:hover) {
   color: var(--color-primary);
-  text-decoration: underline;
+  background: var(--color-surface-container-high);
+  text-decoration: none;
 }
 
 /* ==========================================================================
@@ -676,27 +693,28 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--color-surface-container);
+  background: var(--color-surface-container-high);
   border: 1px solid var(--color-outline-variant);
   border-radius: 999px;
-  padding: 8px 18px;
+  padding: 8px 20px;
   font: var(--type-label-medium);
   font-weight: 600;
   color: var(--color-on-surface);
-  cursor: pointer;
+  cursor: pointer !important;
   white-space: nowrap;
   transition: transform var(--motion-duration-fast, 180ms) var(--spring),
-              background var(--motion-duration-fast, 180ms) ease,
+              background-color var(--motion-duration-fast, 180ms) ease,
               border-color var(--motion-duration-fast, 180ms) ease,
+              color var(--motion-duration-fast, 180ms) ease,
               box-shadow var(--motion-duration-fast, 180ms) ease;
 }
 
 .page :global(.craftsmanship-toggle-button:hover) {
   border-color: var(--color-primary);
-  background: var(--color-surface-container-high);
-  color: var(--color-primary);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
 
 .page :global(.craftsmanship-toggle-button:active) {
@@ -714,23 +732,13 @@
   transform: rotate(180deg);
 }
 
-/* Fluid CSS Grid Expand/Collapse animation */
+/* Fluid Expand/Collapse container animated via motion */
 .page :global(.craftsmanship-collapse-wrapper) {
-  display: grid;
-  grid-template-rows: 1fr;
-  opacity: 1;
-  transition: grid-template-rows 420ms var(--motion-project-spatial-easing, cubic-bezier(.38, 1.21, .22, 1)),
-              opacity 320ms var(--motion-project-content-easing, cubic-bezier(.2, .75, .2, 1));
-}
-
-.page :global(.craftsmanship-collapse-wrapper[data-collapsed="true"]) {
-  grid-template-rows: 0fr;
-  opacity: 0;
-  pointer-events: none;
+  width: 100%;
+  will-change: height, opacity;
 }
 
 .page :global(.craftsmanship-collapse-inner) {
-  overflow: hidden;
   min-height: 0;
 }
 

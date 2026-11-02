@@ -177,18 +177,6 @@
   color: var(--color-on-primary-container);
 }
 .page :global(.about-section-heading) svg { width: 19px; height: 19px; }
-.page :global(.about-timeline-eyebrow) {
-  margin-left: auto;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-on-secondary-container);
-  background: var(--color-secondary-container);
-  border: 1px solid color-mix(in srgb, var(--color-secondary) 40%, transparent);
-  padding: 4px 10px;
-  border-radius: 20px;
-}
 
 /* Education Card (Warm Tertiary Tone) */
 .page :global(.about-education-card) {
@@ -261,94 +249,144 @@
 .page :global(.about-timeline-stream) {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
   width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .page :global(.about-timeline-item) {
   display: flex;
-  gap: 18px;
+  gap: 20px;
   align-items: stretch;
+  position: relative;
 }
 
-/* Vertical Timeline Rail & Connecting Stems */
+/* Vertical Timeline Rail & Morphing Nodes */
 .page :global(.about-timeline-node-col) {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 20px;
+  width: 36px;
   flex-shrink: 0;
   padding-top: 14px;
 }
 
-.page :global(.about-timeline-dot) {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 3px solid var(--color-primary);
-  background: var(--color-surface);
-  box-shadow: 0 0 0 3px var(--color-primary-container);
-  flex-shrink: 0;
-  transition: transform var(--motion-duration-fast) var(--spring);
+.page :global(.about-timeline-node-shape) {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  transition: transform var(--motion-duration-card) var(--spring);
 }
 
-.page :global(.about-timeline-item.tone-hackathon) :global(.about-timeline-dot) {
-  border-color: var(--color-secondary);
-  box-shadow: 0 0 0 3px var(--color-secondary-container);
+.page :global(.about-timeline-node-shape.is-current-node) {
+  width: 34px;
+  height: 34px;
 }
 
-.page :global(.about-timeline-item.tone-systems) :global(.about-timeline-dot.solid) {
-  border: none;
+.page :global(.about-timeline-item:hover) :global(.about-timeline-node-shape),
+.page :global(.about-timeline-item:focus-within) :global(.about-timeline-node-shape) {
+  transform: scale(1.15);
+}
+
+.page :global(.about-timeline-item:active) :global(.about-timeline-node-shape) {
+  transform: scale(0.92);
+}
+
+.page :global(.about-timeline-node-fill) {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: inherit;
+}
+
+/* Tone-specific node fills paired with matching container glows */
+.page :global(.about-timeline-item.tone-secondary) :global(.about-timeline-node-fill) {
+  background: var(--color-secondary);
+  box-shadow: 0 0 0 4px var(--color-secondary-container);
+}
+
+.page :global(.about-timeline-item.tone-tertiary) :global(.about-timeline-node-fill) {
   background: var(--color-tertiary);
-  box-shadow: 0 0 0 3px var(--color-tertiary-container);
+  box-shadow: 0 0 0 4px var(--color-tertiary-container);
 }
 
-.page :global(.about-timeline-stem) {
-  width: 2px;
-  flex: 1;
-  min-height: 28px;
-  margin-top: 6px;
-  border-radius: 1px;
+.page :global(.about-timeline-item.tone-primary) :global(.about-timeline-node-fill) {
+  background: var(--color-primary);
+  box-shadow: 0 0 0 5px var(--color-primary-container);
 }
 
-.page :global(.about-timeline-stem.stem-1) {
-  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+/* Connecting track between nodes */
+.page :global(.about-timeline-track) {
+  position: absolute;
+  top: 44px;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  border-radius: 9999px;
+  background: var(--color-surface-container-highest);
+  z-index: 1;
+  overflow: hidden;
 }
 
-.page :global(.about-timeline-stem.stem-2) {
-  background: linear-gradient(to bottom, var(--color-secondary), var(--color-tertiary));
+.page :global(.about-timeline-track-fill) {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--color-secondary), var(--color-tertiary), var(--color-primary));
+  border-radius: inherit;
 }
 
 /* Material 3 Expressive Timeline Cards */
 .page :global(.about-timeline-card) {
   flex: 1;
   min-width: 0;
-  border-radius: 24px;
-  background: var(--color-surface);
+  border-radius: 28px;
+  background: var(--color-surface-container-low);
   border: 1px solid var(--color-outline-variant);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
   overflow: hidden;
   transition:
     transform var(--motion-duration-card) var(--spring),
+    border-radius var(--motion-duration-card) var(--spring),
     box-shadow var(--motion-duration-card) var(--spring),
-    border-color var(--motion-duration-fast) ease;
+    border-color var(--motion-duration-fast) ease,
+    background-color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-timeline-card):hover {
+/* Current entry uses stronger container tone and accent border */
+.page :global(.about-timeline-item.is-current) :global(.about-timeline-card) {
+  background: var(--color-surface-container);
+  border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-outline-variant));
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Corner radius morph on hover and press */
+.page :global(.about-timeline-card:hover) {
   transform: translateY(-3px);
-  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.12);
+  border-radius: 36px 18px 36px 18px;
+  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.1);
 }
 
-.page :global(.about-timeline-item.tone-corporate) :global(.about-timeline-card):hover {
-  border-color: var(--color-primary);
+.page :global(.about-timeline-card:active) {
+  transform: translateY(-1px) scale(0.995);
+  border-radius: 20px 32px 20px 32px;
 }
 
-.page :global(.about-timeline-item.tone-hackathon) :global(.about-timeline-card):hover {
+.page :global(.about-timeline-item.tone-secondary) :global(.about-timeline-card:hover) {
   border-color: var(--color-secondary);
 }
 
-.page :global(.about-timeline-item.tone-systems) :global(.about-timeline-card):hover {
+.page :global(.about-timeline-item.tone-tertiary) :global(.about-timeline-card:hover) {
   border-color: var(--color-tertiary);
+}
+
+.page :global(.about-timeline-item.tone-primary) :global(.about-timeline-card:hover) {
+  border-color: var(--color-primary);
 }
 
 /* Card Header */
@@ -357,203 +395,176 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 12px 20px;
+  padding: 14px 22px;
   border-bottom: 1px solid var(--color-outline-variant);
 }
 
-.page :global(.about-timeline-pill-wrap) {
-  display: inline-flex;
+.page :global(.about-timeline-chip-group) {
+  display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
-.page :global(.about-timeline-badge-icon) {
-  font-size: 1rem;
-  line-height: 1;
-}
-
-/* Tone-Specific Header Styling */
-.page :global(.about-timeline-item.tone-corporate) :global(.about-timeline-card-header) {
-  background: color-mix(in srgb, var(--color-primary-container) 70%, var(--color-surface));
-  border-bottom-color: color-mix(in srgb, var(--color-primary) 20%, var(--color-outline-variant));
-}
-
-.page :global(.about-timeline-item.tone-hackathon) :global(.about-timeline-card-header) {
-  background: color-mix(in srgb, var(--color-secondary-container) 75%, var(--color-surface));
-  border-bottom-color: color-mix(in srgb, var(--color-secondary) 25%, var(--color-outline-variant));
-}
-
-.page :global(.about-timeline-item.tone-systems) :global(.about-timeline-card-header) {
-  background: color-mix(in srgb, var(--color-tertiary-container) 75%, var(--color-surface));
-  border-bottom-color: color-mix(in srgb, var(--color-tertiary) 25%, var(--color-outline-variant));
-}
-
-/* Milestone Header Pills */
-.page :global(.about-timeline-pill) {
+/* Consistent M3 Assist/Suggestion Chips */
+.page :global(.about-category-chip) {
   font-family: var(--body);
-  font-size: 0.72rem;
-  font-weight: 750;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 4px 10px;
-  border-radius: 9999px;
-  line-height: 1.3;
-}
-
-.page :global(.about-timeline-item.tone-corporate) :global(.about-timeline-pill) {
-  background: var(--color-primary-container);
-  color: var(--color-on-primary-container);
-  border: 1px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
-}
-
-.page :global(.about-timeline-item.tone-hackathon) :global(.about-timeline-pill) {
-  background: var(--color-secondary-container);
-  color: var(--color-on-secondary-container);
-  border: 1px solid color-mix(in srgb, var(--color-secondary) 30%, transparent);
-}
-
-.page :global(.about-timeline-item.tone-systems) :global(.about-timeline-pill) {
-  background: var(--color-tertiary-container);
-  color: var(--color-on-tertiary-container);
-  border: 1px solid color-mix(in srgb, var(--color-tertiary) 30%, transparent);
-}
-
-.page :global(.about-timeline-date) {
-  font-size: 0.76rem;
-  font-weight: 650;
-  color: var(--color-on-surface-variant);
-  white-space: nowrap;
-}
-
-/* Status Chips (Finalist, Active Focus) */
-.page :global(.about-timeline-status) {
-  font-family: var(--body);
-  font-size: 0.72rem;
-  font-weight: 800;
+  font-size: var(--type-label-small-size);
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  padding: 4px 11px;
+  padding: 4px 12px;
   border-radius: 9999px;
   line-height: 1.3;
-  white-space: nowrap;
 }
 
-.page :global(.about-timeline-item.tone-hackathon) :global(.about-timeline-status) {
-  background: var(--color-secondary);
-  color: var(--color-on-secondary);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+.page :global(.about-timeline-item.tone-secondary) :global(.about-category-chip) {
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  border: 1px solid var(--color-outline-variant);
 }
 
-.page :global(.about-timeline-item.tone-systems) :global(.about-timeline-status) {
-  background: var(--color-tertiary);
-  color: var(--color-on-tertiary);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+.page :global(.about-timeline-item.tone-tertiary) :global(.about-category-chip) {
+  background: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+  border: 1px solid var(--color-outline-variant);
+}
+
+.page :global(.about-timeline-item.tone-primary) :global(.about-category-chip) {
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  border: 1px solid var(--color-outline-variant);
+}
+
+.page :global(.about-date-chip) {
+  font-family: var(--body);
+  font-size: var(--type-label-small-size);
+  font-weight: 600;
+  color: var(--color-on-surface-variant);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  line-height: 1.3;
 }
 
 /* Card Body */
 .page :global(.about-timeline-card-body) {
-  padding: 18px 22px 22px;
+  padding: 20px 24px 24px;
 }
 
 .page :global(.about-timeline-card) h3 {
   margin: 0 0 6px;
-  font-family: var(--display);
-  font-size: 1.15rem;
-  font-weight: 750;
+  font: var(--type-title-large);
+  font-weight: 700;
   letter-spacing: -0.025em;
   color: var(--color-on-surface);
 }
 
-.page :global(.about-timeline-item.tone-corporate) :global(.about-organization) {
-  font-size: 0.88rem;
-  font-weight: 650;
-  margin: 0 0 10px;
-  color: var(--color-primary);
+.page :global(.about-timeline-item.tone-secondary) :global(.about-organization) {
+  font-size: var(--type-label-large-size);
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--color-secondary);
 }
 
-.page :global(.about-timeline-item.tone-hackathon) :global(.about-organization) {
-  font-size: 0.88rem;
-  font-weight: 650;
-  margin: 0 0 10px;
-  color: var(--color-on-secondary-container);
-}
-
-.page :global(.about-timeline-item.tone-systems) :global(.about-organization) {
-  font-size: 0.88rem;
-  font-weight: 650;
-  margin: 0 0 10px;
+.page :global(.about-timeline-item.tone-tertiary) :global(.about-organization) {
+  font-size: var(--type-label-large-size);
+  font-weight: 600;
+  margin: 0 0 12px;
   color: var(--color-tertiary);
 }
 
-:global([data-theme="dark"]) .page :global(.about-timeline-item.tone-systems) :global(.about-organization) {
-  color: var(--color-on-tertiary-container);
+.page :global(.about-timeline-item.tone-primary) :global(.about-organization) {
+  font-size: var(--type-label-large-size);
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--color-primary);
 }
 
 .page :global(.about-internship-description) {
-  font-size: 0.875rem;
+  font-size: var(--type-body-medium-size);
   color: var(--color-on-surface-variant);
   line-height: 1.65;
-  margin: 0 0 14px;
+  margin: 0 0 16px;
 }
 
-/* Documents */
+/* M3 Document Chips */
 .page :global(.about-documents) {
-  margin-top: 14px;
-  padding-top: 12px;
+  margin-top: 16px;
+  padding-top: 14px;
   border-top: 1px solid var(--color-outline-variant);
 }
 
 .page :global(.about-documents) > p {
-  font-size: 0.72rem;
-  font-weight: 750;
+  font-size: var(--type-label-small-size);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.08em;
   color: var(--color-on-surface-variant);
-  margin: 0 0 8px;
+  margin: 0 0 10px;
 }
 
-.page :global(.about-documents) ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+.page :global(.about-document-chips) {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.page :global(.about-documents) li {
+.page :global(.about-doc-chip) {
   display: inline-flex;
   align-items: center;
-  font-size: 0.78rem;
-  font-weight: 650;
-  color: var(--color-on-surface);
-  background: var(--color-surface-container);
-  border: 1px solid var(--color-outline-variant);
+  gap: 7px;
+  padding: 6px 14px;
   border-radius: 9999px;
-  transition: all var(--motion-duration-fast) var(--spring);
+  font-size: var(--type-label-small-size);
+  font-weight: 600;
+  background: var(--color-surface-container);
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline-variant);
+  text-decoration: none;
+  transition:
+    transform var(--motion-duration-fast) var(--spring),
+    border-color var(--motion-duration-fast) ease,
+    background-color var(--motion-duration-fast) ease,
+    color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-documents) li:hover {
+.page :global(.about-doc-chip.is-link:hover) {
   background: var(--color-primary-container);
   color: var(--color-on-primary-container);
   border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.page :global(.about-doc-chip.is-link:active) {
+  transform: translateY(0) scale(0.97);
+}
+
+.page :global(.about-doc-chip.is-link:focus-visible) {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.page :global(.about-doc-chip.is-static:hover) {
+  background: var(--color-surface-container-high);
+  border-color: var(--color-outline);
   transform: translateY(-1px);
 }
 
-.page :global(.about-documents) li > span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
-}
-
-.page :global(.about-documents) li svg {
+.page :global(.about-doc-chip svg) {
   width: 14px;
   height: 14px;
-  opacity: 0.75;
+  opacity: 0.85;
 }
 
-/* Assist Chips / Tags */
+.page :global(.about-doc-external) {
+  width: 12px;
+  height: 12px;
+  margin-left: 2px;
+}
+
+/* Technology Tags */
 .page :global(.about-timeline-tags) {
   display: flex;
   flex-wrap: wrap;
@@ -561,63 +572,71 @@
   margin-top: 12px;
 }
 
-.page :global(.about-timeline-tags) span {
-  font-size: 0.74rem;
-  font-weight: 650;
-  padding: 4px 10px;
+.page :global(.about-timeline-tag) {
+  font-size: var(--type-label-small-size);
+  font-weight: 600;
+  padding: 4px 11px;
   border-radius: 9999px;
   background: var(--color-surface-container);
-  color: var(--color-on-surface);
+  color: var(--color-on-surface-variant);
   border: 1px solid var(--color-outline-variant);
-  transition: transform var(--motion-duration-fast) var(--spring), border-color var(--motion-duration-fast) ease;
+  transition:
+    transform var(--motion-duration-fast) var(--spring),
+    background-color var(--motion-duration-fast) ease,
+    color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-timeline-tags) span:hover {
+.page :global(.about-timeline-tag:hover) {
   transform: translateY(-1px);
+  color: var(--color-on-surface);
+  background: var(--color-surface-container-high);
 }
 
-.page :global(.about-timeline-item.tone-hackathon) :global(.about-timeline-tags) span {
-  background: color-mix(in srgb, var(--color-secondary-container) 55%, var(--color-surface));
-  border-color: color-mix(in srgb, var(--color-secondary) 35%, var(--color-outline-variant));
-  color: var(--color-on-secondary-container);
+/* 3. Campus Communities Bento (Unified M3 Expressive Architecture) */
+.page :global(.about-campus) {
+  margin-top: 56px;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 360px;
 }
 
-.page :global(.about-timeline-item.tone-systems) :global(.about-timeline-tags) span {
-  background: color-mix(in srgb, var(--color-tertiary-container) 55%, var(--color-surface));
-  border-color: color-mix(in srgb, var(--color-tertiary) 35%, var(--color-outline-variant));
-  color: var(--color-on-tertiary-container);
+.page :global(.about-campus-grid) {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
 }
 
-/* 3. Campus Communities Bento (3 Distinct Vibrant Identities) */
-.page :global(.about-campus) { margin-top: 52px; content-visibility: auto; contain-intrinsic-size: 1px 360px; }
-.page :global(.about-campus-grid) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; gap: 16px; }
 .page :global(.about-campus-card) {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  border: 1px solid var(--color-outline-variant);
+  gap: 14px;
   background: var(--color-surface-container-low);
-  border-radius: 24px;
-  padding: 24px 22px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-  transition: transform var(--motion-duration-card) var(--spring), border-color var(--motion-duration-fast) ease, box-shadow var(--motion-duration-fast) ease;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-large, 28px);
+  padding: 24px;
+  box-shadow: 0 4px 16px -4px color-mix(in srgb, var(--color-shadow) 8%, transparent);
+  transition:
+    transform var(--motion-duration-fast) var(--spring),
+    border-radius var(--motion-duration-fast) var(--spring),
+    border-color var(--motion-duration-fast) ease,
+    box-shadow var(--motion-duration-fast) ease,
+    background-color var(--motion-duration-fast) ease;
 }
-.page :global(.about-campus-card):hover {
+
+.page :global(.about-campus-card:hover) {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.14);
+  border-radius: 36px 18px 36px 18px;
+  border-color: var(--color-primary);
+  background: var(--color-surface-container);
+  box-shadow: 0 12px 28px -6px color-mix(in srgb, var(--color-primary) 14%, transparent);
 }
-.page :global(.about-campus-card.tone-tech) {
-  border-top: 3px solid var(--color-secondary);
+
+.page :global(.about-campus-card:active) {
+  transform: scale(0.98);
+  border-radius: 20px 32px 20px 32px;
 }
-.page :global(.about-campus-card.tone-design) {
-  border-top: 3px solid var(--color-primary);
-}
-.page :global(.about-campus-card.tone-photo) {
-  border-top: 3px solid var(--color-tertiary);
-}
-.page :global(.about-campus-card.tone-tech):hover { border-color: var(--color-secondary); }
-.page :global(.about-campus-card.tone-design):hover { border-color: var(--color-primary); }
-.page :global(.about-campus-card.tone-photo):hover { border-color: var(--color-tertiary); }
 
 .page :global(.about-campus-card-header) {
   display: flex;
@@ -626,106 +645,121 @@
   gap: 12px;
   margin-bottom: 2px;
 }
-.page :global(.about-campus-icon) {
-  width: 40px;
-  height: 40px;
-  border-radius: 13px;
+
+.page :global(.about-campus-shape) {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
   display: grid;
   place-items: center;
-  flex-shrink: 0;
-}
-.page :global(.about-campus-card.tone-tech) :global(.about-campus-icon) {
-  background: var(--color-secondary-container);
-  color: var(--color-on-secondary-container);
-}
-.page :global(.about-campus-card.tone-design) :global(.about-campus-icon) {
   background: var(--color-primary-container);
   color: var(--color-on-primary-container);
+  flex-shrink: 0;
+  transition: transform var(--motion-duration-fast) var(--spring), background-color var(--motion-duration-fast) ease;
 }
-.page :global(.about-campus-card.tone-photo) :global(.about-campus-icon) {
-  background: var(--color-tertiary-container);
-  color: var(--color-on-tertiary-container);
-}
-.page :global(.about-campus-icon) svg { width: 19px; height: 19px; }
 
-.page :global(.about-campus-role) {
-  font-size: 0.7rem;
+.page :global(.about-campus-card:hover) :global(.about-campus-shape) {
+  transform: scale(1.08);
+}
+
+.page :global(.about-campus-shape) svg {
+  width: 20px;
+  height: 20px;
+}
+
+.page :global(.about-campus-chips) {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.page :global(.about-campus-category-chip) {
+  font: var(--type-label-small);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  padding: 4px 8px;
-  border-radius: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: var(--color-surface-container);
+  color: var(--color-on-surface-variant);
+  border: 1px solid var(--color-outline-variant);
+}
+
+.page :global(.about-campus-period-chip) {
+  font: var(--type-label-small);
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline-variant);
   white-space: nowrap;
-}
-.page :global(.about-campus-card.tone-tech) :global(.about-campus-role) {
-  background: var(--color-secondary-container);
-  color: var(--color-on-secondary-container);
-  border: 1px solid color-mix(in srgb, var(--color-secondary) 30%, transparent);
-}
-.page :global(.about-campus-card.tone-design) :global(.about-campus-role) {
-  background: var(--color-primary-container);
-  color: var(--color-on-primary-container);
-  border: 1px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
-}
-.page :global(.about-campus-card.tone-photo) :global(.about-campus-role) {
-  background: var(--color-tertiary-container);
-  color: var(--color-on-tertiary-container);
-  border: 1px solid color-mix(in srgb, var(--color-tertiary) 30%, transparent);
 }
 
 .page :global(.about-campus-name) {
-  font-family: var(--display);
-  font-size: 1.12rem;
-  font-weight: 750;
-  letter-spacing: -0.025em;
+  font: var(--type-title-medium);
+  letter-spacing: -0.02em;
   color: var(--color-on-surface);
+  margin: 0;
 }
+
 .page :global(.about-campus-desc) {
   margin: 0;
-  font-size: 0.865rem;
+  font: var(--type-body-small);
   line-height: 1.6;
   color: var(--color-on-surface-variant);
 }
 
-/* 4. Learning & Next Explorations Grid (Secondary Emerald & Tertiary Terracotta Tonal Containers) */
+/* 4. Learning & Next Explorations Grid (M3 Expressive Equal-Height Lists) */
 .page :global(.about-learning-grid) {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
-  margin-top: 48px;
+  margin-top: 52px;
   content-visibility: auto;
   contain-intrinsic-size: 1px 360px;
+  align-items: stretch;
 }
-.page :global(.about-learning) {
-  border-radius: 28px;
-  padding: 30px;
-  min-width: 0;
-  background: var(--color-secondary-container);
-  border: 1px solid color-mix(in srgb, var(--color-secondary) 40%, transparent);
-  color: var(--color-on-secondary-container);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-}
+
+.page :global(.about-learning),
 .page :global(.about-next) {
-  border-radius: 28px;
+  border-radius: var(--radius-large, 28px);
   padding: 30px;
   min-width: 0;
-  background: var(--color-tertiary-container);
-  border: 1px solid color-mix(in srgb, var(--color-tertiary) 40%, transparent);
-  color: var(--color-on-tertiary-container);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-surface-container-low);
+  box-shadow: 0 4px 20px -6px color-mix(in srgb, var(--color-shadow) 8%, transparent);
 }
-.page :global(.about-learning-grid) h2 {
-  font: var(--type-title-large);
-  letter-spacing: -.045em;
-  margin: 0 0 20px;
-  max-width: none;
-  white-space: nowrap;
+
+.page :global(.about-learning.tone-secondary) {
+  border: 1px solid color-mix(in srgb, var(--color-secondary) 30%, var(--color-outline-variant));
 }
-.page :global(.about-learning) h2 {
-  color: var(--color-on-secondary-container);
+
+.page :global(.about-next.tone-tertiary) {
+  border: 1px solid color-mix(in srgb, var(--color-tertiary) 30%, var(--color-outline-variant));
 }
-.page :global(.about-next) h2 {
-  color: var(--color-on-tertiary-container);
+
+.page :global(.about-panel-header) {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 22px;
+}
+
+.page :global(.about-panel-header) :global(.about-section-heading) {
+  margin-bottom: 2px;
+}
+
+.page :global(.about-panel-caption) {
+  font: var(--type-label-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-on-surface-variant);
 }
 
 .page :global(.about-topic-list) {
@@ -734,92 +768,121 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  flex: 1;
 }
+
 .page :global(.about-topic-item) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 12px 16px;
-  border-radius: 16px;
-  background: var(--color-surface);
-  border: 1px solid color-mix(in srgb, var(--color-outline-variant) 35%, transparent);
-  transition: transform var(--motion-duration-fast) var(--spring), border-color var(--motion-duration-fast) ease;
-}
-.page :global(.about-learning) :global(.about-topic-item) {
-  border-color: color-mix(in srgb, var(--color-secondary) 30%, transparent);
-}
-.page :global(.about-next) :global(.about-topic-item) {
-  border-color: color-mix(in srgb, var(--color-tertiary) 30%, transparent);
+  gap: 14px;
+  padding: 12px 18px;
+  border-radius: 18px;
+  background: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  outline: none;
+  transition:
+    transform var(--motion-duration-fast) var(--spring),
+    border-color var(--motion-duration-fast) ease,
+    background-color var(--motion-duration-fast) ease,
+    box-shadow var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-topic-item):hover {
+.page :global(.about-topic-item:hover),
+.page :global(.about-topic-item:focus-visible) {
   transform: translateX(4px);
-}
-.page :global(.about-learning) :global(.about-topic-item):hover {
-  border-color: var(--color-secondary);
-}
-.page :global(.about-next) :global(.about-topic-item):hover {
-  border-color: var(--color-tertiary);
+  background: var(--color-surface-container-high);
+  border-color: var(--color-primary);
+  box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--color-primary) 14%, transparent);
 }
 
-.page :global(.about-topic-bullet) {
+.page :global(.about-topic-item:focus-visible) {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.page :global(.about-topic-leading) {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.page :global(.about-topic-shape) {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
   display: grid;
   place-items: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 8px;
   flex-shrink: 0;
+  transition: transform var(--motion-duration-fast) var(--spring), background-color var(--motion-duration-fast) ease;
 }
-.page :global(.about-learning) :global(.about-topic-bullet) {
-  background: var(--color-secondary);
-  color: var(--color-on-secondary);
+
+.page :global(.about-topic-item:hover) :global(.about-topic-shape) {
+  transform: scale(1.12);
 }
-.page :global(.about-next) :global(.about-topic-bullet) {
-  background: var(--color-tertiary);
-  color: var(--color-on-tertiary);
+
+.page :global(.about-topic-shape.tone-secondary) {
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
 }
-.page :global(.about-topic-bullet) svg { width: 13px; height: 13px; }
+
+.page :global(.about-topic-shape.tone-tertiary) {
+  background: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+}
+
+.page :global(.about-topic-shape) svg {
+  width: 18px;
+  height: 18px;
+}
+
+.page :global(.about-topic-text) {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
 
 .page :global(.about-topic-name) {
-  font-family: var(--body);
-  font-size: 0.935rem;
-  font-weight: 600;
-  flex: 1;
-}
-.page :global(.about-learning) :global(.about-topic-name) {
-  color: var(--color-on-secondary-container);
-}
-.page :global(.about-next) :global(.about-topic-name) {
-  color: var(--color-on-tertiary-container);
+  font: var(--type-title-small);
+  font-weight: 650;
+  color: var(--color-on-surface);
+  letter-spacing: -0.01em;
 }
 
-.page :global(.about-topic-tag) {
-  font-size: 0.72rem;
-  font-weight: 750;
+.page :global(.about-topic-support) {
+  font: var(--type-body-small);
+  color: var(--color-on-surface-variant);
+  line-height: 1.4;
+}
+
+.page :global(.about-topic-chip) {
+  font: var(--type-label-small);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 3px 8px;
-  border-radius: 6px;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
-.page :global(.about-learning) :global(.about-topic-tag) {
-  background: color-mix(in srgb, var(--color-secondary) 25%, transparent);
-  color: var(--color-on-secondary-container);
-  border: 1px solid color-mix(in srgb, var(--color-secondary) 35%, transparent);
-}
-.page :global(.about-next) :global(.about-topic-tag) {
-  background: color-mix(in srgb, var(--color-tertiary) 25%, transparent);
-  color: var(--color-on-tertiary-container);
-  border: 1px solid color-mix(in srgb, var(--color-tertiary) 35%, transparent);
+
+.page :global(.about-topic-chip.status-focus) {
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  border: 1px solid var(--color-primary);
 }
 
 .page :global(.about-learning-note) {
-  color: var(--color-on-secondary-container);
-  opacity: 0.85;
-  font-size: var(--type-label-medium-size);
-  line-height: 1.7;
-  margin: 18px 0 0;
+  font: var(--type-label-medium);
+  color: var(--color-on-surface-variant);
+  line-height: 1.6;
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px dashed var(--color-outline-variant);
 }
 
 /* Responsive Media Queries */
