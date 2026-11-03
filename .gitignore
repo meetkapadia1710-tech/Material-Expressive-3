@@ -14,8 +14,7 @@ dist/
 coverage/
 
 # Environment files
-.env*.local
-.env
+.env*
 !.env.example
 
 # IDE & Editor files
