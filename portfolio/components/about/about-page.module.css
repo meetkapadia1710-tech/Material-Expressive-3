@@ -214,7 +214,7 @@
     background-color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-education-card:hover) {
+.page :global(.about-education-card):hover {
   transform: translateY(-3px);
   border-radius: 28px 16px 28px 16px;
   border-color: var(--color-tertiary);
@@ -222,12 +222,12 @@
   background: var(--color-surface-container);
 }
 
-.page :global(.about-education-card:active) {
+.page :global(.about-education-card):active {
   transform: scale(0.985);
   border-radius: 18px 24px 18px 24px;
 }
 
-.page :global(.about-education-card:focus-visible) {
+.page :global(.about-education-card):focus-visible {
   outline: 3px solid var(--color-primary);
   outline-offset: 3px;
 }
@@ -249,11 +249,11 @@
   transition: transform var(--motion-duration-card) var(--spring);
 }
 
-.page :global(.about-education-card:hover) :global(.about-edu-shape) {
+.page :global(.about-education-card):hover :global(.about-edu-shape) {
   transform: scale(1.1) rotate(4deg);
 }
 
-.page :global(.about-edu-shape svg) {
+.page :global(.about-edu-shape) svg {
   width: 22px;
   height: 22px;
   color: var(--color-on-tertiary-container);
@@ -323,7 +323,7 @@
   transition: transform var(--motion-duration-fast) var(--spring), background-color var(--motion-duration-fast) ease, border-color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-education-card:hover) :global(.about-score-stat) {
+.page :global(.about-education-card):hover :global(.about-score-stat) {
   background: var(--color-tertiary-container);
   color: var(--color-on-tertiary-container);
   border-color: var(--color-tertiary);
@@ -351,7 +351,7 @@
   transition: transform var(--motion-duration-fast) var(--spring), border-color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-education-card:hover) :global(.about-cgpa) {
+.page :global(.about-education-card):hover :global(.about-cgpa) {
   border-color: var(--color-tertiary);
   transform: scale(1.05);
 }
@@ -438,12 +438,12 @@
   height: 34px;
 }
 
-.page :global(.about-timeline-item:hover) :global(.about-timeline-node-shape),
-.page :global(.about-timeline-item:focus-within) :global(.about-timeline-node-shape) {
+.page :global(.about-timeline-item):hover :global(.about-timeline-node-shape),
+.page :global(.about-timeline-item):focus-within :global(.about-timeline-node-shape) {
   transform: scale(1.15);
 }
 
-.page :global(.about-timeline-item:active) :global(.about-timeline-node-shape) {
+.page :global(.about-timeline-item):active :global(.about-timeline-node-shape) {
   transform: scale(0.92);
 }
 
@@ -516,26 +516,26 @@
 }
 
 /* Corner radius morph on hover and press */
-.page :global(.about-timeline-card:hover) {
+.page :global(.about-timeline-card):hover {
   transform: translateY(-3px);
   border-radius: 36px 18px 36px 18px;
   box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.1);
 }
 
-.page :global(.about-timeline-card:active) {
+.page :global(.about-timeline-card):active {
   transform: translateY(-1px) scale(0.995);
   border-radius: 20px 32px 20px 32px;
 }
 
-.page :global(.about-timeline-item.tone-secondary) :global(.about-timeline-card:hover) {
+.page :global(.about-timeline-item.tone-secondary) :global(.about-timeline-card):hover {
   border-color: var(--color-secondary);
 }
 
-.page :global(.about-timeline-item.tone-tertiary) :global(.about-timeline-card:hover) {
+.page :global(.about-timeline-item.tone-tertiary) :global(.about-timeline-card):hover {
   border-color: var(--color-tertiary);
 }
 
-.page :global(.about-timeline-item.tone-primary) :global(.about-timeline-card:hover) {
+.page :global(.about-timeline-item.tone-primary) :global(.about-timeline-card):hover {
   border-color: var(--color-primary);
 }
 
@@ -678,29 +678,29 @@
     color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-doc-chip.is-link:hover) {
+.page :global(.about-doc-chip.is-link):hover {
   background: var(--color-primary-container);
   color: var(--color-on-primary-container);
   border-color: var(--color-primary);
   transform: translateY(-2px);
 }
 
-.page :global(.about-doc-chip.is-link:active) {
+.page :global(.about-doc-chip.is-link):active {
   transform: translateY(0) scale(0.97);
 }
 
-.page :global(.about-doc-chip.is-link:focus-visible) {
+.page :global(.about-doc-chip.is-link):focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
-.page :global(.about-doc-chip.is-static:hover) {
+.page :global(.about-doc-chip.is-static):hover {
   background: var(--color-surface-container-high);
   border-color: var(--color-outline);
   transform: translateY(-1px);
 }
 
-.page :global(.about-doc-chip svg) {
+.page :global(.about-doc-chip) svg {
   width: 14px;
   height: 14px;
   opacity: 0.85;
@@ -734,7 +734,7 @@
     color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-timeline-tag:hover) {
+.page :global(.about-timeline-tag):hover {
   transform: translateY(-1px);
   color: var(--color-on-surface);
   background: var(--color-surface-container-high);
@@ -773,7 +773,7 @@
     background-color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-campus-card:hover) {
+.page :global(.about-campus-card):hover {
   transform: translateY(-3px);
   border-radius: 36px 18px 36px 18px;
   border-color: var(--color-primary);
@@ -781,7 +781,7 @@
   box-shadow: 0 12px 28px -6px color-mix(in srgb, var(--color-primary) 14%, transparent);
 }
 
-.page :global(.about-campus-card:active) {
+.page :global(.about-campus-card):active {
   transform: scale(0.98);
   border-radius: 20px 32px 20px 32px;
 }
@@ -806,7 +806,7 @@
   transition: transform var(--motion-duration-fast) var(--spring), background-color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-campus-card:hover) :global(.about-campus-shape) {
+.page :global(.about-campus-card):hover :global(.about-campus-shape) {
   transform: scale(1.08);
 }
 
@@ -937,15 +937,15 @@
     box-shadow var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-topic-item:hover),
-.page :global(.about-topic-item:focus-visible) {
+.page :global(.about-topic-item):hover,
+.page :global(.about-topic-item):focus-visible {
   transform: translateX(4px);
   background: var(--color-surface-container-high);
   border-color: var(--color-primary);
   box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--color-primary) 14%, transparent);
 }
 
-.page :global(.about-topic-item:focus-visible) {
+.page :global(.about-topic-item):focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
@@ -968,7 +968,7 @@
   transition: transform var(--motion-duration-fast) var(--spring), background-color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-topic-item:hover) :global(.about-topic-shape) {
+.page :global(.about-topic-item):hover :global(.about-topic-shape) {
   transform: scale(1.12);
 }
 

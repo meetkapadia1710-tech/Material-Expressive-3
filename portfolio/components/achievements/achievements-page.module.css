@@ -4,48 +4,902 @@
 .page :global(.achievements-header) > p:last-of-type { color: var(--color-on-surface-variant); font-size: var(--type-achievements-intro-size); line-height: 1.8; margin: 0; }
 .page :global(.achievements-header-art) { position: absolute; top: 8px; right: 8px; width: 120px; height: 120px; border-radius: 34px 50% 34px 50%; display: grid; place-items: center; background: var(--color-primary-container); transform: rotate(-10deg); }
 .page :global(.achievements-header-art) svg { width: 55px; height: 55px; color: var(--default-achievement-header-icon, var(--color-on-primary-container)); }
-.page :global(.achievement-section) { margin-top: 44px; padding-top: 30px; border-top: 1px solid var(--default-achievement-divider, var(--color-outline-variant)); }
+.page :global(.achievement-section) {
+  margin-top: 44px;
+  padding-top: 30px;
+  border-top: 1px solid var(--default-achievement-divider, var(--color-outline-variant));
+  scroll-margin-top: 100px;
+}
 .page :global(.achievement-section) > h2 { font: var(--type-achievement-section); letter-spacing: -.045em; margin: 0 0 26px; max-width: 26ch; }
 .page :global(.achievement-entry) { min-width: 0; padding: 28px; background: var(--color-surface-container-lowest); border: 1px solid var(--default-achievement-card-outline, var(--color-outline-variant)); border-radius: 25px; }
 .page :global(.achievement-entry) h3 { font: var(--type-entry-heading); letter-spacing: -.035em; margin: 0 0 12px; overflow-wrap: anywhere; }
 .page :global(.achievement-date) { font-size: var(--type-label-medium-size); color: var(--default-achievement-date, var(--color-on-surface-variant)); margin: 0 0 18px; }
 .page :global(.achievement-organization) { color: var(--default-achievement-organization, var(--color-on-surface-variant)); font-size: var(--type-body-supporting-size); line-height: 1.7; margin: 0 0 12px; }
 .page :global(.achievement-description) { color: var(--color-on-surface-variant); font-size: var(--type-body-supporting-size); line-height: 1.85; margin: 0; white-space: pre-line; }
-.page :global(.achievement-experience-list) { display: grid; gap: 18px; }
-.page :global(.achievement-experience-list) :global(.achievement-entry) { background: var(--default-achievement-experience-background, var(--color-primary-container)); color: var(--default-achievement-experience-foreground, var(--color-on-primary-container)); border-color: var(--default-achievement-experience-outline, var(--color-primary)); border-radius: 28px 28px 55px 28px; padding: 32px 36px; }
-.page :global(.achievement-experience-list) :global(.achievement-entry) :is(:global(.achievement-date), :global(.achievement-organization), :global(.achievement-description)) { color: var(--default-achievement-experience-foreground, var(--color-on-primary-container)); }
-.page :global(.achievement-documents) { margin-top: 22px; }
-.page :global(.achievement-documents) > p { font-size: var(--type-label-small-size); color: var(--color-on-surface-variant); margin: 0 0 9px; }
-.page :global(.achievement-documents) ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px 24px; }
-.page :global(.achievement-documents) li { font-size: var(--type-label-medium-size); color: var(--color-on-surface-variant); line-height: 1.8; }
-.page :global(.achievement-documents) a { display: flex; align-items: center; min-height: 44px; gap: 8px; }
-.page :global(.achievement-documents) a:hover { color: var(--color-primary); text-decoration: underline; }
-.page :global(.achievement-experience-list) :global(.achievement-documents) a:hover { color: var(--color-on-primary-container); }
-.page :global(.achievement-documents) svg { width: 16px; height: 16px; }
-.page :global(.achievement-entry-link) { color: var(--color-primary); margin-top: 13px; font-size: var(--type-label-medium-size); }
-.page :global(.achievement-experience-list) :global(.achievement-entry-link) { color: var(--color-on-primary-container); }
-.page :global(.achievement-grid) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-.page :global(.achievement-certification-list) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-.page :global(.achievement-certification-list) :global(.achievement-entry) { padding: 26px; background: var(--default-achievement-certification-background, var(--color-surface-container-low)); border-color: var(--default-achievement-certification-outline, var(--color-outline-variant)); }
-.page :global(.achievement-certification-list) h3 { font: var(--type-title-medium); }
+.page :global(.achievement-experience-list) {
+  display: block;
+  width: 100%;
+}
 
-/* Hackathon Spotlights */
-.page :global(.achievement-entry-top) { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
-.page :global(.achievement-entry-top) :global(.achievement-date) { margin-bottom: 0; }
-.page :global(.spotlight-constraint-badge) { font: var(--type-label-small); font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--color-primary-container); color: var(--color-on-primary-container); letter-spacing: 0.02em; }
-.page :global(.spotlight-tech-row) { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 12px; }
-.page :global(.spotlight-tech-tag) { font: var(--type-label-small); padding: 3px 9px; border-radius: 7px; background: var(--color-surface-container-high); color: var(--color-on-surface); border: 1px solid var(--color-outline-variant); }
+.page :global(.achievement-hackathons-grid),
+.page :global(.achievement-certification-list) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  grid-auto-rows: auto;
+  align-items: stretch;
+}
 
-/* Certifications interactive elements */
-.page :global(.certification-card) { display: flex; flex-direction: column; justify-content: space-between; transition: transform var(--motion-duration-short3) var(--spring), border-color var(--motion-duration-short3) var(--spring); }
-.page :global(.certification-card):hover { transform: translateY(-3px); border-color: var(--color-primary); }
-.page :global(.credential-skills-preview) { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 12px; }
-.page :global(.credential-skill-chip) { font: var(--type-label-small); padding: 2px 8px; border-radius: 6px; background: var(--color-surface-container-highest); color: var(--color-on-surface-variant); }
-.page :global(.credential-skill-more) { font: var(--type-label-small); padding: 2px 6px; border-radius: 6px; color: var(--color-on-surface-variant); font-weight: 600; }
-.page :global(.credential-actions-row) { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
-.page :global(.credential-view-btn) { display: inline-flex; align-items: center; gap: 6px; background: var(--color-primary-container); color: var(--color-on-primary-container); border: none; border-radius: 999px; padding: 8px 16px; font-size: var(--type-label-small-size); font-weight: 600; cursor: pointer; transition: opacity var(--motion-duration-short2) var(--spring); }
-.page :global(.credential-view-btn):hover { opacity: 0.9; }
-.page :global(.credential-view-btn) svg { width: 14px; height: 14px; }
+.page :global(.achievement-card),
+.page :global(.achievement-hackathon-card),
+.page :global(.certification-card) {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 6;
+  row-gap: 12px;
+  border-radius: 24px;
+  background: var(--color-surface-container-low);
+  border: 1px solid var(--color-outline-variant);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+  padding: 26px 28px;
+  min-width: 0;
+  outline: none;
+  transition:
+    transform var(--motion-duration-short3) var(--spring),
+    border-radius var(--motion-duration-short3) var(--spring),
+    box-shadow var(--motion-duration-short3) var(--spring),
+    border-color var(--motion-duration-short2) ease,
+    background-color var(--motion-duration-short2) ease;
+}
+
+.page :global(.achievement-card:hover),
+.page :global(.achievement-hackathon-card:hover),
+.page :global(.certification-card:hover) {
+  transform: translateY(-3px);
+  border-radius: 32px 20px 32px 20px;
+  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.1);
+  background: var(--color-surface-container);
+}
+
+.page :global(.achievement-card:focus-visible),
+.page :global(.achievement-hackathon-card:focus-visible),
+.page :global(.certification-card:focus-visible) {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.page :global(.achievement-card.tone-secondary:hover),
+.page :global(.achievement-hackathon-card.tone-secondary:hover) {
+  border-color: var(--color-secondary);
+}
+
+.page :global(.achievement-card.tone-tertiary:hover),
+.page :global(.achievement-hackathon-card.tone-tertiary:hover),
+.page :global(.certification-card:hover) {
+  border-color: var(--color-tertiary);
+}
+
+/* Subgrid Fallback for browsers without subgrid support */
+@supports not (grid-template-rows: subgrid) {
+  .page :global(.achievement-card),
+  .page :global(.achievement-hackathon-card),
+  .page :global(.certification-card) {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .page :global(.achievement-card-footer) {
+    margin-top: auto;
+  }
+}
+
+/* Card Slot 1: Header (Leading Shape + Inline Meta Row) */
+.page :global(.achievement-card-header) {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.page :global(.achievement-card-shape-slot) {
+  flex-shrink: 0;
+}
+
+.page :global(.achievement-card-shape) {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.page :global(.achievement-card-shape.tone-secondary) {
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.page :global(.achievement-card-shape.tone-tertiary) {
+  background: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+}
+
+.page :global(.achievement-card-shape-icon) {
+  width: 18px;
+  height: 18px;
+}
+
+.page :global(.achievement-card-meta) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+/* Credential ID Chip with Copy Action */
+.page :global(.achievement-id-chip) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
+  font-family: var(--code);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--color-outline-variant);
+}
+
+.page :global(.achievement-id-copy-btn) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  background: transparent;
+  border: none;
+  color: var(--color-on-surface-variant);
+  cursor: pointer;
+  border-radius: 4px;
+  transition:
+    color var(--motion-duration-short2) ease,
+    transform var(--motion-duration-short2) var(--spring);
+}
+
+.page :global(.achievement-id-copy-btn:hover) {
+  color: var(--color-primary);
+  transform: scale(1.15);
+}
+
+.page :global(.achievement-copy-icon) {
+  width: 13px;
+  height: 13px;
+}
+
+/* Card Slot 2: Title Slot */
+.page :global(.achievement-card-title-slot) {
+  display: flex;
+  align-items: flex-start;
+  min-height: 52px;
+}
+
+.page :global(.achievement-card-title) {
+  font: var(--type-title-large);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--color-on-surface);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card Slot 3: Org / Issuer Slot */
+.page :global(.achievement-card-org-slot) {
+  display: flex;
+  align-items: center;
+  min-height: 22px;
+}
+
+.page :global(.achievement-card-org) {
+  font-size: var(--type-label-large-size);
+  color: var(--color-primary);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Card Slot 4: Description Slot */
+.page :global(.achievement-card-desc-slot) {
+  display: flex;
+  align-items: flex-start;
+  min-height: 66px;
+}
+
+.page :global(.achievement-card-desc) {
+  font-size: var(--type-body-medium-size);
+  line-height: 1.55;
+  color: var(--color-on-surface-variant);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card Slot 5: Tech / Skills Slot */
+.page :global(.achievement-card-tech-slot) {
+  display: flex;
+  align-items: flex-start;
+  min-height: 32px;
+}
+
+/* Card Slot 6: Footer Slot (Pinned to Bottom Edge) */
+.page :global(.achievement-card-footer) {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-outline-variant);
+}
+
+.page :global(.achievement-slot-empty) {
+  min-height: 1px;
+}
+
+/* --- Material 3 Expressive Vertical Timeline Stream (Experience & Hackathons) --- */
+.page :global(.about-timeline-stream) {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page :global(.about-timeline-item) {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  position: relative;
+}
+
+/* Vertical Timeline Rail & Morphing Nodes */
+.page :global(.about-timeline-node-col) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 36px;
+  flex-shrink: 0;
+  padding-top: 14px;
+}
+
+.page :global(.about-timeline-node-shape) {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  transition: transform var(--motion-duration-short3) var(--spring);
+}
+
+.page :global(.about-timeline-item):hover :global(.about-timeline-node-shape),
+.page :global(.about-timeline-item):focus-within :global(.about-timeline-node-shape) {
+  transform: scale(1.15);
+}
+
+.page :global(.about-timeline-item):active :global(.about-timeline-node-shape) {
+  transform: scale(0.92);
+}
+
+.page :global(.about-timeline-node-fill) {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: inherit;
+}
+
+.page :global(.about-timeline-item.tone-secondary) :global(.about-timeline-node-fill) {
+  background: var(--color-secondary);
+  box-shadow: 0 0 0 4px var(--color-secondary-container);
+}
+
+.page :global(.about-timeline-item.tone-tertiary) :global(.about-timeline-node-fill) {
+  background: var(--color-tertiary);
+  box-shadow: 0 0 0 4px var(--color-tertiary-container);
+}
+
+.page :global(.about-timeline-item.tone-primary) :global(.about-timeline-node-fill) {
+  background: var(--color-primary);
+  box-shadow: 0 0 0 5px var(--color-primary-container);
+}
+
+/* Connecting track between nodes */
+.page :global(.about-timeline-track) {
+  position: absolute;
+  top: 44px;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  border-radius: 9999px;
+  background: var(--color-surface-container-highest);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.page :global(.about-timeline-track-fill) {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--color-secondary), var(--color-tertiary), var(--color-primary));
+  border-radius: inherit;
+}
+
+/* Material 3 Expressive Timeline Cards */
+.page :global(.about-timeline-card) {
+  flex: 1;
+  min-width: 0;
+  border-radius: 24px;
+  background: var(--color-surface-container-low);
+  border: 1px solid var(--color-outline-variant);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  transition:
+    transform var(--motion-duration-short3) var(--spring),
+    border-radius var(--motion-duration-short3) var(--spring),
+    box-shadow var(--motion-duration-short3) var(--spring),
+    border-color var(--motion-duration-short2) ease,
+    background-color var(--motion-duration-short2) ease;
+}
+
+.page :global(.about-timeline-card):hover {
+  transform: translateY(-3px);
+  border-radius: 32px 20px 32px 20px;
+  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.1);
+}
+
+.page :global(.about-timeline-card):active {
+  transform: translateY(-1px) scale(0.995);
+  border-radius: 20px 28px 20px 28px;
+}
+
+.page :global(.about-timeline-item.tone-secondary) :global(.about-timeline-card):hover {
+  border-color: var(--color-secondary);
+}
+
+.page :global(.about-timeline-item.tone-tertiary) :global(.about-timeline-card):hover {
+  border-color: var(--color-tertiary);
+}
+
+.page :global(.about-timeline-item.tone-primary) :global(.about-timeline-card):hover {
+  border-color: var(--color-primary);
+}
+
+/* Card Header & Chips */
+.page :global(.about-timeline-card-header) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.page :global(.about-timeline-chip-group),
+.page :global(.certification-chip-group) {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.page :global(.about-category-chip) {
+  font-family: var(--body);
+  font-size: var(--type-label-small-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  line-height: 1.3;
+}
+
+.page :global(.about-timeline-item.tone-secondary) :global(.about-category-chip) {
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  border: 1px solid var(--color-outline-variant);
+}
+
+.page :global(.about-timeline-item.tone-tertiary) :global(.about-category-chip) {
+  background: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+  border: 1px solid var(--color-outline-variant);
+}
+
+.page :global(.about-timeline-item.tone-primary) :global(.about-category-chip) {
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  border: 1px solid var(--color-outline-variant);
+}
+
+.page :global(.about-date-chip) {
+  font-family: var(--body);
+  font-size: var(--type-label-small-size);
+  font-weight: 600;
+  color: var(--color-on-surface-variant);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  line-height: 1.3;
+}
+
+/* Card Body */
+.page :global(.about-timeline-card-body) {
+  padding: 20px 24px 24px;
+}
+
+.page :global(.about-timeline-card) h3 {
+  margin: 0 0 6px;
+  font: var(--type-title-large);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--color-on-surface);
+}
+
+.page :global(.about-organization) {
+  font-size: var(--type-label-large-size);
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--color-on-surface-variant);
+}
+
+.page :global(.about-timeline-item.tone-primary) :global(.about-organization) {
+  color: var(--color-primary);
+}
+
+.page :global(.about-internship-description) {
+  font-size: var(--type-body-medium-size);
+  color: var(--color-on-surface-variant);
+  line-height: 1.65;
+  margin: 0 0 16px;
+}
+
+/* Tech Tags */
+.page :global(.about-timeline-tags) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 16px 0 12px;
+}
+
+.page :global(.about-timeline-tag) {
+  font-size: var(--type-label-small-size);
+  padding: 3px 9px;
+  border-radius: 7px;
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline-variant);
+}
+
+/* spotlight-tech-row / spotlight-tech-tag — used in hackathon cards */
+.page :global(.spotlight-tech-row) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0 12px;
+}
+
+.page :global(.spotlight-tech-tag) {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--type-label-small-size);
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline-variant);
+  line-height: 1.4;
+}
+
+/* spotlight-constraint-badge — used for "48-hour build", "National idea stage" etc. */
+.page :global(.spotlight-constraint-badge) {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--type-label-small-size);
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+/* M3 Document Chips & Verification Links */
+.page :global(.about-documents),
+.page :global(.achievement-documents) {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-outline-variant);
+}
+
+.page :global(.about-documents-label),
+.page :global(.achievement-documents-label) {
+  font-size: var(--type-label-small-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-on-surface-variant);
+  margin: 0 0 10px;
+}
+
+.page :global(.about-documents-list),
+.page :global(.achievement-doc-chips) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none !important;
+  list-style-type: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.page :global(.achievement-doc-item) {
+  list-style: none !important;
+  list-style-type: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.page :global(.about-doc-chip),
+.page :global(.achievement-doc-chip) {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline-variant);
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:
+    transform var(--motion-duration-short3) var(--spring),
+    border-radius var(--motion-duration-short3) var(--spring),
+    background-color var(--motion-duration-short2) ease,
+    border-color var(--motion-duration-short2) ease,
+    color var(--motion-duration-short2) ease,
+    box-shadow var(--motion-duration-short2) ease;
+}
+
+.page :global(.about-doc-chip.is-link):hover,
+.page :global(.achievement-doc-chip.is-link):hover {
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  border-color: var(--color-secondary);
+  transform: translateY(-2px);
+  border-radius: 14px 22px 14px 22px;
+  box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--color-secondary) 22%, transparent);
+}
+
+.page :global(.about-doc-chip.is-link):active,
+.page :global(.achievement-doc-chip.is-link):active {
+  transform: translateY(0) scale(0.97);
+  border-radius: 20px 14px 20px 14px;
+}
+
+.page :global(.about-doc-chip.is-link):focus-visible,
+.page :global(.achievement-doc-chip.is-link):focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.page :global(.about-doc-chip.is-static),
+.page :global(.achievement-doc-chip.is-static) {
+  background: var(--color-surface-container);
+  color: var(--color-on-surface-variant);
+  border: 1px dashed var(--color-outline-variant);
+  cursor: default;
+}
+
+.page :global(.about-doc-chip.is-static):hover,
+.page :global(.achievement-doc-chip.is-static):hover {
+  background: var(--color-surface-container-high);
+  border-color: var(--color-outline);
+}
+
+.page :global(.doc-chip-lead-icon) {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+.page :global(.doc-chip-trail-icon) {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-left: 2px;
+  color: currentColor;
+  opacity: 0.85;
+}
+
+.page :global(.doc-chip-label) {
+  white-space: nowrap;
+}
+
+/* Sticky Section Navigation & Scroll Progress */
+.page :global(.achievements-nav-wrapper) {
+  position: sticky;
+  top: 16px;
+  z-index: 25;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 0 36px;
+  pointer-events: none;
+}
+
+.page :global(.achievements-nav-pill) {
+  pointer-events: auto;
+  position: relative;
+  max-width: calc(100% - 32px);
+  width: fit-content;
+  background: color-mix(in srgb, var(--color-surface-container-high) 92%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 9999px;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.12), 0 2px 6px -1px rgba(0, 0, 0, 0.08);
+  padding: 4px;
+  overflow: hidden;
+}
+
+.page :global(.achievements-segmented-group) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.page :global(.achievements-segmented-group)::-webkit-scrollbar {
+  display: none;
+}
+
+/* Shared Sliding Active Segment Indicator */
+.page :global(.nav-sliding-indicator) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 9999px;
+  background: var(--color-secondary-container);
+  transition:
+    transform var(--motion-duration-medium2, 0.32s) var(--spring, cubic-bezier(0.2, 0, 0, 1)),
+    width var(--motion-duration-medium2, 0.32s) var(--spring, cubic-bezier(0.2, 0, 0, 1));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* M3 Segment Buttons */
+.page :global(.nav-segment-button) {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  color: var(--color-on-surface-variant);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color var(--motion-duration-short2) ease,
+    transform var(--motion-duration-short2) var(--spring);
+}
+
+.page :global(.nav-segment-button:hover) {
+  color: var(--color-on-surface);
+}
+
+.page :global(.nav-segment-button:active) {
+  transform: scale(0.96);
+}
+
+.page :global(.nav-segment-button:focus-visible) {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.page :global(.nav-segment-button.is-selected) {
+  color: var(--color-on-secondary-container);
+  font-weight: 700;
+}
+
+.page :global(.nav-segment-icon) {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.page :global(.nav-segment-label) {
+  line-height: 1;
+}
+
+/* Embedded Scroll Progress Line (Clean, No Yellow Dash) */
+.page :global(.pill-scroll-track) {
+  position: absolute;
+  bottom: 2px;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  border-radius: 9999px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--color-outline-variant) 30%, transparent);
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.page :global(.pill-scroll-fill) {
+  height: 100%;
+  width: 100%;
+  transform-origin: left;
+  background: var(--color-primary);
+  transition: transform 0.06s linear;
+}
+
+/* Certifications Grid & Expressive Cards */
+.page :global(.achievement-certification-list) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.page :global(.certification-card) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 24px;
+  background: var(--color-surface-container-low);
+  border: 1px solid var(--color-outline-variant);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+  padding: 28px;
+  min-width: 0;
+  transition:
+    transform var(--motion-duration-short3) var(--spring),
+    border-radius var(--motion-duration-short3) var(--spring),
+    box-shadow var(--motion-duration-short3) var(--spring),
+    border-color var(--motion-duration-short2) ease,
+    background-color var(--motion-duration-short2) ease;
+}
+
+.page :global(.certification-card:hover) {
+  transform: translateY(-3px);
+  border-radius: 32px 20px 32px 20px;
+  border-color: var(--color-tertiary);
+  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.1);
+  background: var(--color-surface-container);
+}
+
+.page :global(.certification-leading-cluster),
+.page :global(.hackathon-leading-cluster) {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.page :global(.certification-shape-badge),
+.page :global(.hackathon-shape-badge) {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+}
+
+.page :global(.certification-shape-badge) {
+  background: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+}
+
+.page :global(.hackathon-shape-badge) {
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.page :global(.certification-shape-icon),
+.page :global(.hackathon-shape-icon) {
+  width: 18px;
+  height: 18px;
+}
+
+.page :global(.certification-skills-section) {
+  margin-top: 14px;
+}
+
+.page :global(.certification-skills-label) {
+  font-size: var(--type-label-small-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-on-surface-variant);
+  margin: 0 0 8px;
+}
+
+.page :global(.credential-actions-row) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-outline-variant);
+  flex-wrap: wrap;
+}
+
+.page :global(.credential-view-btn) {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 9999px;
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  border: 1px solid var(--color-primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform var(--motion-duration-short3) var(--spring),
+    border-radius var(--motion-duration-short3) var(--spring),
+    background-color var(--motion-duration-short2) ease;
+}
+
+.page :global(.credential-view-btn:hover) {
+  transform: translateY(-2px);
+  border-radius: 14px 22px 14px 22px;
+}
+
+.page :global(.credential-view-btn:active) {
+  transform: scale(0.97);
+}
+
+.page :global(.credential-view-btn svg) {
+  width: 16px;
+  height: 16px;
+}
 
 /* Certificate Modal */
 :global(.cert-modal-backdrop) { position: fixed; inset: 0; z-index: 1000; background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(8px); display: grid; place-items: center; padding: 20px; animation: certFadeIn 0.2s cubic-bezier(0.2, 0, 0, 1); }
@@ -101,19 +955,179 @@
 .page :global(.leetcode-eyebrow) { display: inline-flex; align-items: center; gap: 8px; font-size: var(--type-label-small-size); text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-primary); font-weight: 600; }
 .page :global(.leetcode-icon-inline) { width: 16px; height: 16px; }
 .page :global(.leetcode-header) h3 { font: var(--type-headline-small); letter-spacing: -0.035em; margin: 0; color: var(--color-on-surface); }
-.page :global(.leetcode-segment-filters) { display: flex; gap: 8px; flex-wrap: wrap; }
-.page :global(.leetcode-filter-btn) { background: var(--color-surface-container-high); border: 1px solid var(--color-outline-variant); border-radius: 999px; padding: 6px 14px; font-size: var(--type-label-small-size); color: var(--color-on-surface-variant); cursor: pointer; transition: all var(--motion-duration-short3) var(--spring); }
-.page :global(.leetcode-filter-btn:hover) { background: var(--color-surface-container-highest); color: var(--color-on-surface); }
-.page :global(.filter-active) { background: var(--color-primary); color: var(--color-on-primary); border-color: var(--color-primary); }
-.page :global(.filter-easy.filter-active) { background: var(--color-tertiary); color: var(--color-on-tertiary); border-color: var(--color-tertiary); }
-.page :global(.filter-medium.filter-active) { background: var(--color-primary); color: var(--color-on-primary); border-color: var(--color-primary); }
-.page :global(.filter-hard.filter-active) { background: var(--color-error); color: var(--color-on-error); border-color: var(--color-error); }
+/* M3 Connected Segmented Button Group (Difficulty Filter) */
+.page :global(.leetcode-segmented-group),
+.page :global(.leetcode-segment-filters) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 9999px;
+  padding: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Shared Sliding Difficulty Indicator */
+.page :global(.leetcode-segmented-indicator) {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  border-radius: 9999px;
+  transition:
+    transform var(--motion-duration-medium2, 0.32s) var(--spring, cubic-bezier(0.2, 0, 0, 1)),
+    width var(--motion-duration-medium2, 0.32s) var(--spring, cubic-bezier(0.2, 0, 0, 1)),
+    background-color var(--motion-duration-short3, 0.2s) ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.page :global(.leetcode-segmented-indicator.indicator-all) {
+  background: var(--color-secondary-container);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.page :global(.leetcode-segmented-indicator.indicator-easy) {
+  background: var(--color-tertiary-container);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.page :global(.leetcode-segmented-indicator.indicator-medium) {
+  background: var(--color-primary-container);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.page :global(.leetcode-segmented-indicator.indicator-hard) {
+  background: color-mix(in srgb, var(--color-error-container) 85%, transparent);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.page :global(.segmented-button),
+.page :global(.leetcode-filter-btn) {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  color: var(--color-on-surface-variant);
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color var(--motion-duration-short2) ease,
+    transform var(--motion-duration-short2) var(--spring);
+}
+
+.page :global(.segmented-button:hover),
+.page :global(.leetcode-filter-btn:hover) {
+  color: var(--color-on-surface);
+}
+
+.page :global(.segmented-button:active),
+.page :global(.leetcode-filter-btn:active) {
+  transform: scale(0.96);
+}
+
+.page :global(.segmented-button:focus-visible),
+.page :global(.leetcode-filter-btn:focus-visible) {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.page :global(.segmented-button.is-selected),
+.page :global(.filter-active) {
+  font-weight: 700;
+}
+
+.page :global(.segmented-button.segment-all.is-selected) {
+  color: var(--color-on-secondary-container);
+}
+
+.page :global(.segmented-button.segment-easy.is-selected),
+.page :global(.filter-easy.filter-active) {
+  color: var(--color-on-tertiary-container);
+}
+
+.page :global(.segmented-button.segment-medium.is-selected),
+.page :global(.filter-medium.filter-active) {
+  color: var(--color-on-primary-container);
+}
+
+.page :global(.segmented-button.segment-hard.is-selected),
+.page :global(.filter-hard.filter-active) {
+  color: var(--color-on-error-container, var(--color-error));
+}
+
+.page :global(.segmented-dot) {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+  transition: transform var(--motion-duration-short2) var(--spring);
+}
+
+.page :global(.segmented-button.is-selected .segmented-dot) {
+  transform: scale(1.2);
+}
+
+.page :global(.dot-easy) {
+  background: var(--color-tertiary, #166A20);
+}
+
+.page :global(.dot-medium) {
+  background: var(--color-primary, #FFA116);
+}
+
+.page :global(.dot-hard) {
+  background: var(--color-error, #BA1A1A);
+}
+
+.page :global(.segmented-label) {
+  line-height: 1;
+}
 .page :global(.leetcode-main-layout) { display: grid; grid-template-columns: 240px 1fr; gap: 36px; align-items: center; }
 .page :global(.leetcode-chart-col) { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+.page :global(.leetcode-donut-wrapper),
+.page :global(.leetcode-donut-wrapper *),
+.page :global(.leetcode-donut-svg),
+.page :global(.leetcode-donut-svg *),
+.page :global(.leetcode-donut-segment) {
+  outline: none !important;
+  outline-style: none !important;
+  outline-width: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+.page :global(.leetcode-donut-wrapper:focus),
+.page :global(.leetcode-donut-wrapper:focus-within),
+.page :global(.leetcode-donut-wrapper:focus-visible),
+.page :global(.leetcode-donut-svg:focus),
+.page :global(.leetcode-donut-svg:focus-visible),
+.page :global(.leetcode-donut-segment:focus),
+.page :global(.leetcode-donut-segment:focus-visible) {
+  outline: none !important;
+  outline-style: none !important;
+  outline-width: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
 .page :global(.leetcode-donut-wrapper) { position: relative; width: 170px; height: 170px; display: grid; place-items: center; }
 .page :global(.leetcode-donut-svg) { width: 100%; height: 100%; transform: rotate(-90deg); }
 .page :global(.leetcode-donut-track) { fill: none; stroke: var(--color-surface-container-highest); stroke-width: 14; }
-.page :global(.leetcode-donut-segment) { fill: none; stroke-width: 14; cursor: pointer; transition: opacity var(--motion-duration-short3) var(--spring), stroke-width var(--motion-duration-short3) var(--spring); }
+.page :global(.leetcode-donut-segment) { fill: none; stroke-width: 14; cursor: pointer; outline: none; transition: opacity var(--motion-duration-short3) var(--spring), stroke-width var(--motion-duration-short3) var(--spring); }
 .page :global(.leetcode-donut-segment:hover) { stroke-width: 16; }
 .page :global(.segment-easy) { stroke: var(--color-tertiary); }
 .page :global(.segment-medium) { stroke: var(--color-primary); }
@@ -145,37 +1159,91 @@
 .page :global(.fill-medium) { background: var(--color-primary); }
 .page :global(.fill-hard) { background: var(--color-error); }
 .page :global(.leetcode-bar-note) { font-size: var(--type-label-small-size); color: var(--color-on-surface-variant); margin: 0; line-height: 1.4; font-style: italic; }
-.page :global(.leetcode-patterns-section) { border-top: 1px solid var(--color-outline-variant); padding-top: 24px; display: flex; flex-direction: column; gap: 16px; }
+.page :global(.leetcode-patterns-section) { border-top: 1px solid var(--color-outline-variant); padding-top: 20px; display: flex; flex-direction: column; gap: 12px; }
 .page :global(.leetcode-patterns-header) { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-.page :global(.leetcode-patterns-header h4) { font: var(--type-title-medium); margin: 0; color: var(--color-on-surface); }
+.page :global(.leetcode-patterns-header h4) { font: var(--type-title-medium); font-size: 15px; margin: 0; color: var(--color-on-surface); }
 .page :global(.leetcode-patterns-subtitle) { font-size: var(--type-label-small-size); color: var(--color-on-surface-variant); }
-.page :global(.leetcode-pattern-grid) { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-.page :global(.leetcode-pattern-card) { background: var(--color-surface-container); border: 1px solid var(--color-outline-variant); border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 8px; transition: transform var(--motion-duration-short3) var(--spring), border-color var(--motion-duration-short3) var(--spring), background-color var(--motion-duration-short3) var(--spring); cursor: pointer; }
-.page :global(.leetcode-pattern-card:hover), .page :global(.pattern-card-hovered) { transform: translateY(-3px); border-color: var(--color-primary); background: var(--color-surface-container-high); }
-.page :global(.leetcode-pattern-top) { display: flex; align-items: center; justify-content: space-between; }
-.page :global(.leetcode-pattern-tag) { font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 6px; background: var(--color-surface-container-highest); color: var(--color-on-surface-variant); }
-.page :global(.leetcode-pattern-index) { font-size: 11px; font-family: monospace; color: var(--color-on-surface-variant); opacity: 0.7; }
-.page :global(.leetcode-pattern-title) { font: var(--type-title-small); margin: 0; color: var(--color-on-surface); }
-.page :global(.leetcode-pattern-desc) { font-size: var(--type-body-small-size, 13px); line-height: 1.5; color: var(--color-on-surface-variant); margin: 0; }
+.page :global(.leetcode-pattern-grid), .page :global(.leetcode-patterns-grid) {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.page :global(.leetcode-pattern-card) {
+  background: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition:
+    transform var(--motion-duration-short3) var(--spring),
+    border-color var(--motion-duration-short3) var(--spring),
+    background-color var(--motion-duration-short3) var(--spring),
+    box-shadow var(--motion-duration-short3) var(--spring);
+  cursor: pointer;
+  min-height: 0;
+  box-sizing: border-box;
+}
+.page :global(.leetcode-pattern-card:hover), .page :global(.pattern-card-hovered), .page :global(.pattern-card-active) {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  background: var(--color-surface-container-high);
+}
+.page :global(.pattern-card-active) { box-shadow: 0 0 0 1px var(--color-primary); }
+.page :global(.leetcode-pattern-top) { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+.page :global(.pattern-leading-cluster) { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.page :global(.pattern-index-badge) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--display);
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+.page :global(.pattern-shape-badge) { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: var(--color-primary-container); color: var(--color-on-primary-container); border-radius: 6px; flex-shrink: 0; transition: transform var(--motion-duration-short2) var(--spring); }
+.page :global(.pattern-shape-badge:hover) { transform: scale(1.08); }
+.page :global(.leetcode-pattern-tag) {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--color-surface-container-highest);
+  color: var(--color-on-surface-variant);
+  border: 1px solid var(--color-outline-variant);
+  white-space: nowrap;
+}
+.page :global(.leetcode-pattern-index) { font-size: 11px; font-weight: 700; font-family: var(--display); letter-spacing: -0.02em; color: var(--color-on-primary-container); }
+.page :global(.leetcode-pattern-title) { font: var(--type-title-small); font-size: 13px; font-weight: 700; line-height: 1.35; margin: 0; color: var(--color-on-surface); }
+.page :global(.leetcode-pattern-desc) { font-size: 12px; line-height: 1.45; color: var(--color-on-surface-variant); margin: 0; }
 
 .page :global(.leetcode-eyebrow-row) { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .page :global(.leetcode-live-badge) { display: inline-flex; align-items: center; gap: 6px; font: var(--type-label-small); font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--color-surface-container-high); color: var(--color-on-surface-variant); border: 1px solid var(--color-outline-variant); }
 .page :global(.live-pulse-dot) { width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary); }
 .page :global(.pulse-active) { background: var(--color-secondary); box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-secondary) 30%, transparent); }
 
-.page :global(.leetcode-recent-section) { border-top: 1px solid var(--color-outline-variant); padding-top: 24px; display: flex; flex-direction: column; gap: 16px; }
+.page :global(.leetcode-recent-section) { border-top: 1px solid var(--color-outline-variant); padding-top: 24px; display: flex; flex-direction: column; gap: 14px; }
 .page :global(.leetcode-recent-header) { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
 .page :global(.leetcode-recent-header h4) { font: var(--type-title-medium); margin: 0; color: var(--color-on-surface); }
 .page :global(.leetcode-recent-count) { font-size: var(--type-label-small-size); color: var(--color-on-surface-variant); }
 .page :global(.leetcode-recent-list) { display: flex; flex-direction: column; gap: 8px; }
-.page :global(.leetcode-recent-item) { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 18px; border-radius: 14px; background: var(--color-surface-container); border: 1px solid var(--color-outline-variant); text-decoration: none; color: inherit; transition: transform var(--motion-duration-short2) var(--spring), border-color var(--motion-duration-short2) var(--spring), background-color var(--motion-duration-short2) var(--spring); }
+.page :global(.leetcode-recent-item) { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 16px; border-radius: 12px; background: var(--color-surface-container); border: 1px solid var(--color-outline-variant); text-decoration: none; color: inherit; transition: transform var(--motion-duration-short2) var(--spring), border-color var(--motion-duration-short2) var(--spring), background-color var(--motion-duration-short2) var(--spring); }
 .page :global(.leetcode-recent-item:hover) { transform: translateX(4px); border-color: var(--color-primary); background: var(--color-surface-container-high); }
 .page :global(.leetcode-recent-info) { display: flex; align-items: center; gap: 10px; min-width: 0; }
-.page :global(.leetcode-recent-status) { width: 8px; height: 8px; border-radius: 50%; background: var(--color-secondary); flex-shrink: 0; }
+.page :global(.leetcode-recent-status), .page :global(.recent-leading-shape) { width: 22px; height: 22px; border-radius: 6px; background: var(--color-tertiary-container); color: var(--color-on-tertiary-container); display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+.page :global(.recent-status-icon) { line-height: 1; }
 .page :global(.leetcode-recent-title) { font-size: var(--type-label-medium-size); font-weight: 500; color: var(--color-on-surface); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.page :global(.leetcode-recent-meta) { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.page :global(.leetcode-recent-meta) { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .page :global(.leetcode-recent-time) { font-size: var(--type-label-small-size); color: var(--color-on-surface-variant); }
-.page :global(.leetcode-recent-icon) { width: 15px; height: 15px; color: var(--color-primary); }
+.page :global(.leetcode-recent-icon), .page :global(.recent-link-button) { width: 26px; height: 26px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; background: var(--color-surface-container-high); border: 1px solid var(--color-outline-variant); color: var(--color-primary); text-decoration: none; transition: all var(--motion-duration-short2) var(--spring); }
+.page :global(.recent-link-button:hover) { background: var(--color-primary); color: var(--color-on-primary); border-color: var(--color-primary); transform: scale(1.05); }
+.page :global(.recent-link-button svg) { width: 14px; height: 14px; }
 
 .page :global(.coding-profile-grid) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .page :global(.coding-profile) {
@@ -243,12 +1311,13 @@
 .page :global(.achievements-empty) p { color: var(--color-on-surface-variant); font-size: var(--type-body-medium-size); line-height: 1.8; margin: 0; }
 
 @media (max-width: 1000px) {
+  .page :global(.achievement-hackathons-grid),
   .page :global(.achievement-certification-list) { grid-template-columns: minmax(0, 1fr); }
   .page :global(.achievement-certification-list) h3 { font-size: 22px; }
   .page :global(.coding-profile) { padding: 22px; }
   .page :global(.honors-grid) { grid-template-columns: 1fr; }
   .page :global(.leetcode-main-layout) { grid-template-columns: 1fr; gap: 28px; }
-  .page :global(.leetcode-pattern-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page :global(.leetcode-pattern-grid), .page :global(.leetcode-patterns-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 720px) {
@@ -257,16 +1326,31 @@
   .page :global(.achievements-header) h1 { font-size: 43px; }
   .page :global(.achievements-header-art) { display: none; }
   .page :global(.achievements-header) > p:last-of-type { font-size: var(--type-body-medium-size); }
-  .page :global(.achievement-section) { margin-top: 34px; padding-top: 26px; }
+  .page :global(.achievement-section) { margin-top: 34px; padding-top: 26px; scroll-margin-top: 80px; }
   .page :global(.achievement-section) > h2 { margin-bottom: 22px; }
-  .page :global(.achievement-grid), .page :global(.coding-profile-grid) { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  :global(.github-section) { scroll-margin-top: 80px; }
+  .page :global(.achievements-nav-wrapper) {
+    top: 12px;
+    margin-bottom: 24px;
+  }
+  .page :global(.achievements-nav-pill) {
+    max-width: calc(100% - 20px);
+    mask-image: linear-gradient(to right, transparent, black 14px, black calc(100% - 14px), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 14px, black calc(100% - 14px), transparent);
+  }
+  .page :global(.nav-segment-button) {
+    padding: 0 13px;
+    font-size: 12px;
+    min-height: 44px;
+  }
+  .page :global(.achievement-grid), .page :global(.coding-profile-grid), .page :global(.achievement-hackathons-grid) { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .page :global(.achievement-entry), .page :global(.achievement-experience-list) :global(.achievement-entry) { padding: 26px; }
   .page :global(.achievement-entry) h3 { font-size: 22px; }
   .page :global(.coding-profile) { padding: 24px; }
   .page :global(.coding-metrics) { margin-top: 20px; }
   .page :global(.problem-solving-topics) ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 22px; }
   .page :global(.leetcode-widget) { padding: 24px 18px; }
-  .page :global(.leetcode-pattern-grid) { grid-template-columns: 1fr; }
+  .page :global(.leetcode-pattern-grid), .page :global(.leetcode-patterns-grid) { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 380px) {
@@ -276,7 +1360,13 @@
 }
 
 /* GitHub Section & Interactive Heatmap */
-:global(.github-section) { margin-top: 56px; padding-top: 36px; border-top: 1px solid var(--default-achievement-divider, var(--color-outline-variant)); margin-bottom: 60px; }
+:global(.github-section) {
+  margin-top: 56px;
+  padding-top: 36px;
+  border-top: 1px solid var(--default-achievement-divider, var(--color-outline-variant));
+  margin-bottom: 60px;
+  scroll-margin-top: 100px;
+}
 :global(.github-heading-row) { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
 :global(.github-heading-row) h2 { font: var(--type-achievement-section); letter-spacing: -0.045em; margin: 0; color: var(--color-on-surface); }
 :global(.github-live-pill) { display: inline-flex; align-items: center; gap: 6px; font: var(--type-label-small); font-weight: 600; padding: 4px 12px; border-radius: 999px; background: var(--color-secondary-container); color: var(--color-on-secondary-container); border: 1px solid var(--color-secondary); }

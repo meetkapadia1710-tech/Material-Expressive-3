@@ -18,6 +18,7 @@ a { color: inherit; text-decoration: none; }
 button, input, textarea { font: inherit; }
 ::selection { background: var(--color-primary-container); color: var(--color-on-primary-container); }
 :focus-visible { outline: 3px solid var(--color-primary); outline-offset: 5px; }
+svg:focus, svg:focus-visible, circle:focus, circle:focus-visible { outline: none !important; }
 svg { flex-shrink: 0; }
 .site-shell { max-width: 1600px; margin: auto; }
 .page-width { width: min(1240px, calc(100% - 112px)); margin-inline: auto; }
@@ -123,6 +124,36 @@ svg { flex-shrink: 0; }
 .activity-chart small { position: absolute; top: 100%; font-size: var(--type-label-tiny-size); padding-top: 4px; }
 .github-skeleton { height: 100px; border-radius: 24px; background: var(--color-outline); margin-block: 20px; }
 @media (max-width: 720px) { .site-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px 10px; align-items: center; } .navigation-tools { grid-column: 1 / -1; grid-row: 2; } .theme-control { grid-column: 2; grid-row: 1; } .command-trigger { flex: 1 0 35%; padding-inline: 10px; } .command-trigger kbd { display: none; } .github-section { padding: 20px; } .footer-links { align-items: center; } }
+
+@media (max-width: 599px) {
+  /* M3 Compact Window: Hide top horizontal pill nav in favor of M3 Bottom Navigation Bar */
+  .site-header .navigation {
+    display: none !important;
+  }
+  .site-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 16px 18px !important;
+    min-height: 72px !important;
+  }
+  .site-header .navigation-tools {
+    width: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    gap: 8px !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  /* Provide bottom clearance so fixed bottom navigation never obscures scrollable content */
+  body, .site-shell {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+  /* Reposition fixed toasts safely above the M3 mobile bottom navigation bar */
+  .toast-region {
+    bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
 
 :root[data-color-transitioning="true"] *,
 :root[data-color-transitioning="true"] *::before,

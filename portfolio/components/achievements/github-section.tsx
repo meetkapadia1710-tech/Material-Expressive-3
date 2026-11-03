@@ -26,7 +26,12 @@ export async function GitHubSection() {
   const isCached = !liveStats && !liveCalendar;
 
   return (
-    <section className="github-section page-width" aria-labelledby="github-heading" data-platform-scheme="github">
+    <section
+      id="achievement-github"
+      className="github-section page-width"
+      aria-labelledby="github-heading"
+      data-platform-scheme="github"
+    >
       <div className="github-heading-row">
         <h2 id="github-heading">{copy.title}</h2>
         {isCached ? (

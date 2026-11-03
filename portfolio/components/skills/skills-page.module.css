@@ -44,16 +44,18 @@
   top: 16px;
   z-index: 25;
   margin-bottom: 48px;
-  padding: 18px 24px;
-  background: color-mix(in srgb, var(--color-surface) 90%, transparent);
+  padding: 16px 20px;
+  background: color-mix(in srgb, var(--color-surface-container-high) 92%, transparent);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--color-outline-variant);
-  border-radius: var(--radius-large, 28px);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+  border-radius: 28px;
+  box-shadow:
+    0 4px 20px -2px rgba(0, 0, 0, 0.12),
+    0 2px 6px -1px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .page :global(.skills-toolbar-top) {
@@ -129,11 +131,12 @@
   transform: scale(1.05);
 }
 
-/* Connected Button Group for Competency Matrix */
+/* Connected Button Group for Competency Matrix — M3 segmented group with shared indicator */
 .page :global(.skills-view-mode-group) {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   background: var(--color-surface-container-high);
   padding: 4px;
   border-radius: 999px;
@@ -141,7 +144,24 @@
   flex-shrink: 0;
 }
 
+/* Shared sliding indicator — same pattern as achievements nav */
+.page :global(.skills-mode-indicator) {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  border-radius: 9999px;
+  background: var(--color-secondary-container);
+  transition:
+    transform var(--motion-duration-medium2, 0.32s) var(--spring, cubic-bezier(0.2, 0, 0, 1)),
+    width var(--motion-duration-medium2, 0.32s) var(--spring, cubic-bezier(0.2, 0, 0, 1));
+  z-index: 1;
+  pointer-events: none;
+}
+
 .page :global(.skills-mode-pill) {
+  position: relative;
+  z-index: 2;
   background: transparent;
   border: none;
   border-radius: 999px;
@@ -150,20 +170,30 @@
   font-weight: 550;
   color: var(--color-on-surface-variant);
   cursor: pointer;
-  transition: all var(--motion-duration-fast, 150ms) ease;
+  transition:
+    color var(--motion-duration-short2) ease,
+    transform var(--motion-duration-short2) var(--spring);
   white-space: nowrap;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .page :global(.skills-mode-pill:hover) {
   color: var(--color-on-surface);
-  background: color-mix(in srgb, var(--color-on-surface) 6%, transparent);
+}
+
+.page :global(.skills-mode-pill:active) {
+  transform: scale(0.96);
+}
+
+.page :global(.skills-mode-pill:focus-visible) {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
 }
 
 .page :global(.skills-mode-pill-active) {
-  background: var(--color-primary);
-  color: var(--color-on-primary);
-  font-weight: 600;
-  box-shadow: 0 2px 10px color-mix(in srgb, var(--color-primary) 35%, transparent);
+  color: var(--color-on-secondary-container);
+  font-weight: 700;
 }
 
 /* Category Filter Chips Bar */
@@ -172,8 +202,15 @@
   align-items: center;
   gap: 8px;
   overflow-x: auto;
-  padding: 2px 0 4px;
-  scrollbar-width: thin;
+  padding: 4px 2px 6px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page :global(.skills-category-pills)::-webkit-scrollbar {
+  display: none;
 }
 
 .page :global(.skills-cat-pill) {
@@ -183,12 +220,20 @@
   background: var(--color-surface-container-high);
   border: 1px solid var(--color-outline-variant);
   border-radius: 999px;
-  padding: 7px 15px;
+  padding: 8px 16px;
+  min-height: 38px;
   font: var(--type-label-medium);
   color: var(--color-on-surface-variant);
   cursor: pointer;
   white-space: nowrap;
-  transition: all var(--motion-duration-fast, 150ms) ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color var(--motion-duration-short2, 150ms) ease,
+    color var(--motion-duration-short2, 150ms) ease,
+    border-color var(--motion-duration-short2, 150ms) ease,
+    transform var(--motion-duration-short2, 150ms) var(--spring, cubic-bezier(0.2, 0, 0, 1)),
+    box-shadow var(--motion-duration-short2, 150ms) ease;
 }
 
 .page :global(.skills-cat-pill:hover) {
@@ -196,6 +241,15 @@
   color: var(--color-on-surface);
   background: var(--color-surface-container-highest);
   transform: translateY(-1px);
+}
+
+.page :global(.skills-cat-pill:active) {
+  transform: scale(0.96);
+}
+
+.page :global(.skills-cat-pill:focus-visible) {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .page :global(.skills-cat-pill-active) {
@@ -345,12 +399,34 @@
 }
 
 .page :global(.skills-empty-state) {
+  margin: 36px 0;
   padding: 48px 24px;
   text-align: center;
   background: var(--color-surface-container-low);
-  border-radius: 20px;
+  border-radius: 24px;
   border: 1px dashed var(--color-outline-variant);
-  color: var(--color-on-surface-variant);
+  color: var(--color-on-surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page :global(.skills-empty-art) {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 16px;
+  display: grid;
+  place-items: center;
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  border-radius: 16px;
+}
+
+.page :global(.skills-empty-message) {
+  font: var(--type-body-large);
+  color: var(--color-on-surface);
+  margin: 0 0 8px;
+  font-weight: 500;
 }
 
 .page :global(.skills-reset-button) {

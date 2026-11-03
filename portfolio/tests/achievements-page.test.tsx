@@ -83,3 +83,61 @@ test("unknown document URLs render known document names without fabricated links
   const fixture = { ...experience[0], documents: [{ label: "Test document", url: "https://example.test/document" }] };
   assert.ok(render({ ...empty, experience: [fixture] }).includes('href="https://example.test/document"'));
 });
+
+test("documents lists render with M3 assist chip classes, no bullet lists, and proper accessibility", () => {
+  const html = render();
+  // Must render assist chip classes
+  assert.ok(html.includes('class="achievement-doc-chips"'));
+  assert.ok(html.includes('class="achievement-doc-chip'));
+  // Must never render unstyled bullet list inside documents
+  assert.ok(!html.includes('achievement-documents"><ul>'));
+  assert.ok(!html.includes('achievement-documents"><p>Documents</p><ul>'));
+  // Check external links have opens in a new tab in aria-label
+  assert.ok(html.includes("opens in a new tab"));
+  // Verify GitHub submission chip has repo/code leading icon and external link
+  assert.ok(html.includes("GitHub submission"));
+  // Verify Certificate of Competency has document chip
+  assert.ok(html.includes("Certificate of Competency (PDF)"));
+  // Verify M3 floating pill navigation renders with connected segmented buttons and sliding indicator
+  assert.ok(html.includes("achievements-nav-sticky"));
+  assert.ok(html.includes("achievements-nav-pill"));
+  assert.ok(html.includes('role="tablist"'));
+  assert.ok(html.includes("nav-sliding-indicator"));
+  assert.ok(html.includes("nav-segment-button"));
+  assert.ok(html.includes("pill-scroll-track"));
+  assert.ok(html.includes("Hackathons") && html.includes("Certifications") && html.includes("Coding Profiles"));
+});
+
+test("achievement cards render shared 6-slot subgrid structure with credential ID truncation and M3 difficulty segment control", () => {
+  const html = renderToStaticMarkup(<AchievementsPage data={achievementsData} />);
+
+  // 1. Unified Achievement Card 6-Slot Structure across Hackathons and Certifications
+  assert.ok(html.includes("achievement-card"));
+  assert.ok(html.includes("achievement-card-header"));
+  assert.ok(html.includes("achievement-card-shape-slot"));
+  assert.ok(html.includes("achievement-card-title-slot"));
+  assert.ok(html.includes("achievement-card-org-slot"));
+  assert.ok(html.includes("achievement-card-desc-slot"));
+  assert.ok(html.includes("achievement-card-tech-slot"));
+  assert.ok(html.includes("achievement-card-footer"));
+
+  // 2. Real Credential ID middle truncation and copy button
+  assert.ok(html.includes("achievement-id-chip"));
+  assert.ok(html.includes("achievement-id-copy-btn"));
+  // NVIDIA credential ID should be middle-truncated (iCYD7o...pwJA)
+  assert.ok(html.includes("iCYD7o...pwJA"));
+
+  // 3. LeetCode Connected Segmented Control with shared sliding indicator
+  assert.ok(html.includes("leetcode-segmented-group"));
+  assert.ok(html.includes("leetcode-segmented-indicator"));
+  assert.ok(html.includes("segmented-button"));
+  assert.ok(html.includes("segment-all"));
+  assert.ok(html.includes("segment-easy"));
+  assert.ok(html.includes("segment-medium"));
+  assert.ok(html.includes("segment-hard"));
+  assert.ok(html.includes("segmented-dot dot-easy"));
+  assert.ok(html.includes("segmented-dot dot-medium"));
+  assert.ok(html.includes("segmented-dot dot-hard"));
+});
+
+

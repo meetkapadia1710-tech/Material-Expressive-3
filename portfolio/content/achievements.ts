@@ -16,7 +16,7 @@ export const hackathons: readonly Achievement[] = [
     title: "Supermemory localhost:6767",
     organization: "Supermemory",
     description: "Built Hindsight as a solo hackathon project. A 100% local, privacy-first photographic memory tool for Windows with offline semantic search.",
-    dateLabel: "July 2026",
+    dateLabel: "Jul 2026",
     timeConstraint: "48-hour build",
     technologies: ["FastAPI", "Supermemory Local", "Ollama", "Vanilla JS", "pywin32", "Pillow"],
     documents: [
@@ -45,7 +45,7 @@ export const certifications: readonly Achievement[] = [
     id: "nvidia-deep-learning",
     title: "Fundamentals of Deep Learning",
     organization: "NVIDIA",
-    dateLabel: "September 2026",
+    dateLabel: "Sep 2026",
     startDate: "2026-09-05",
     credentialId: "iCYD7o4TQD2sk23TRgpwJA",
     skills: ["Deep Neural Networks", "Computer Vision", "CUDA", "PyTorch"],

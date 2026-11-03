@@ -57,7 +57,9 @@
     "Apna",
     "Subnetting",
     "lerp",
-    "Lenis"
+    "Lenis",
+    "sweetspot",
+    "sweetSpot"
   ],
   "ignorePaths": [
     "node_modules",
