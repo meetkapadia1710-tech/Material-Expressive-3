@@ -8,6 +8,7 @@ import { ALL_PROJECTS, WITHOUT_VALUE, filterProjects, getProjectCategories, grou
 import { Icon } from "@/components/icon";
 import { CatalogCard } from "./catalog-card";
 import { ExpandableProjectModal } from "@/components/ui/expandable-card";
+import { MaterialSelect } from "@/components/ui/material-select";
 import styles from "./project-catalog.module.css";
 
 const initialFilters: ProjectFilters = { category: ALL_PROJECTS, status: ALL_PROJECTS };
@@ -29,25 +30,97 @@ export function ProjectCatalog({ entries, accentStyles = {} }: { entries: readon
   const categories = getProjectCategories(entries);
   const filtered = Boolean(query) || filters.category !== ALL_PROJECTS || filters.status !== ALL_PROJECTS;
 
+  const categoryOptions = [
+    { value: ALL_PROJECTS, label: projectCatalogCopy.filters.allCategories },
+    ...categories.map((category) => ({ value: category, label: category })),
+    ...(entries.some((project) => project.category === null)
+      ? [{ value: WITHOUT_VALUE, label: projectCatalogCopy.filters.noCategory }]
+      : []),
+  ];
+
+  const statusOptions = [
+    { value: ALL_PROJECTS, label: projectCatalogCopy.filters.allStatuses },
+    ...Object.entries(projectCatalogCopy.statusLabels).map(([status, label]) => ({
+      value: status,
+      label,
+    })),
+    ...(entries.some((project) => project.status === null)
+      ? [{ value: WITHOUT_VALUE, label: projectCatalogCopy.filters.noStatus }]
+      : []),
+  ];
+
   return <>
     <div className={styles.filterPanel} role="group" aria-label={projectCatalogCopy.filters.label}>
-      <div className={styles.selectFields}><div className={styles.filterField}><label htmlFor="project-search">{copy.search}</label><input id="project-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} aria-controls="project-results" />{query ? <button type="button" className={styles.clearButton} onClick={() => { setQuery(""); setFilters((current) => ({...current, query: ""})); }}>{copy.clearSearch}</button> : null}</div>
-        <div className={styles.filterField}><label htmlFor="project-category">{projectCatalogCopy.filters.category}</label>
-          <select id="project-category" value={filters.category} onChange={(event) => setFilters({ ...filters, category: event.target.value })} aria-controls="project-results">
-            <option value={ALL_PROJECTS}>{projectCatalogCopy.filters.allCategories}</option>
-            {categories.map((category) => <option key={category} value={category}>{category}</option>)}
-            {entries.some((project) => project.category === null) ? <option value={WITHOUT_VALUE}>{projectCatalogCopy.filters.noCategory}</option> : null}
-          </select>
+      <div className={styles.selectFields}>
+        <div className={styles.filterField}>
+          <label htmlFor="project-search">{copy.search}</label>
+          <div className={styles.searchWrapper}>
+            <input
+              id="project-search"
+              type="search"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              aria-controls="project-results"
+              placeholder="Search builds, tech, keywords..."
+            />
+            {query ? (
+              <button
+                type="button"
+                className={styles.searchClearBtn}
+                onClick={() => {
+                  setQuery("");
+                  setFilters((current) => ({ ...current, query: "" }));
+                }}
+                aria-label={copy.clearSearch}
+              >
+                ×
+              </button>
+            ) : null}
+          </div>
         </div>
-        <div className={styles.filterField}><label htmlFor="project-status">{projectCatalogCopy.filters.status}</label>
-          <select id="project-status" value={filters.status} onChange={(event) => setFilters({ ...filters, status: event.target.value as ProjectFilters["status"] })} aria-controls="project-results">
-            <option value={ALL_PROJECTS}>{projectCatalogCopy.filters.allStatuses}</option>
-            {Object.entries(projectCatalogCopy.statusLabels).map(([status, label]) => <option key={status} value={status}>{label}</option>)}
-            {entries.some((project) => project.status === null) ? <option value={WITHOUT_VALUE}>{projectCatalogCopy.filters.noStatus}</option> : null}
-          </select>
+        <div className={styles.filterField}>
+          <MaterialSelect
+            id="project-category"
+            label={projectCatalogCopy.filters.category}
+            value={filters.category}
+            onChange={(category) => setFilters((current) => ({ ...current, category }))}
+            options={categoryOptions}
+            ariaControls="project-results"
+          />
+        </div>
+        <div className={styles.filterField}>
+          <MaterialSelect
+            id="project-status"
+            label={projectCatalogCopy.filters.status}
+            value={filters.status}
+            onChange={(status) => setFilters((current) => ({ ...current, status: status as ProjectFilters["status"] }))}
+            options={statusOptions}
+            ariaControls="project-results"
+          />
         </div>
       </div>
       <button className={styles.clearButton} type="button" disabled={!filtered} onClick={clearAll}>{projectCatalogCopy.filters.clear}</button>
+    </div>
+
+    {/* Quick Status Pill Bar */}
+    <div className={styles.quickChips} role="toolbar" aria-label="Quick status filter chips">
+      <button
+        type="button"
+        className={`${styles.chip} ${filters.status === ALL_PROJECTS ? styles.chipActive : ""}`}
+        onClick={() => setFilters((prev) => ({ ...prev, status: ALL_PROJECTS }))}
+      >
+        All Statuses
+      </button>
+      {Object.entries(projectCatalogCopy.statusLabels).map(([status, label]) => (
+        <button
+          key={status}
+          type="button"
+          className={`${styles.chip} ${filters.status === status ? styles.chipActive : ""}`}
+          onClick={() => setFilters((prev) => ({ ...prev, status: status as ProjectFilters["status"] }))}
+        >
+          {label}
+        </button>
+      ))}
     </div>
 
     <div className={styles.resultSummary}>

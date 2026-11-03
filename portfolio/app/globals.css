@@ -107,7 +107,30 @@ svg { flex-shrink: 0; }
 .site-header { flex-wrap: wrap; }
 .copy-email { display: inline-flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .toast-region { position: fixed; inset: auto 20px 24px; z-index: 100; pointer-events: none; display: flex; justify-content: center; }
-.toast { pointer-events: auto; display: flex; align-items: center; gap: 20px; padding: 8px 12px 8px 24px; border-radius: 24px; max-width: 560px; color: var(--color-inverse-on-surface); background: var(--color-inverse-surface); box-shadow: 0 4px 18px color-mix(in srgb, var(--color-shadow) 20%, transparent); }
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 8px 12px 8px 24px;
+  border-radius: 24px;
+  max-width: 560px;
+  color: var(--color-inverse-on-surface);
+  background: var(--color-inverse-surface);
+  box-shadow: 0 8px 28px -4px color-mix(in srgb, var(--color-shadow, #000) 24%, transparent);
+  animation: toast-spring-in 180ms var(--spring) forwards;
+}
+
+@keyframes toast-spring-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
 .toast button { color: inherit; background: transparent; border: 0; min-width: 48px; min-height: 48px; font-size: 26px; cursor: pointer; }
 .toast button:focus-visible { outline-color: currentColor; }
 .github-section { margin-top: 64px; padding: 32px; background: var(--color-surface-container); border-radius: 32px; }

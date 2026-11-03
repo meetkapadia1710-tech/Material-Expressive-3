@@ -222,9 +222,11 @@ export function AboutPage({ className = "" }: { className?: string }) {
                                     key={doc.label}
                                     className="about-doc-chip is-static"
                                     role="listitem"
+                                    title="Verification document available upon request"
                                   >
                                     <Icon name="file" />
                                     <span>{doc.label}</span>
+                                    <span className="about-doc-tag">Available on request</span>
                                   </span>
                                 )
                               )}

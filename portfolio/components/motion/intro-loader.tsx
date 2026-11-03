@@ -1,13 +1,18 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Lanyard from "./Lanyard";
+import dynamic from "next/dynamic";
 import { useLanyardTheme } from "./lanyard-theme";
 import { Icon } from "@/components/icon";
 import { readMotionMilliseconds } from "./motion-tokens";
 
-const progressDurationMs = 3800;
-const holdAfterCompleteMs = 1500;
+const Lanyard = dynamic(() => import("./Lanyard"), {
+  ssr: false,
+  loading: () => <div className="intro-loader-lanyard-placeholder" aria-hidden="true" />,
+});
+
+const progressDurationMs = 1100;
+const holdAfterCompleteMs = 250;
 
 function expressiveEase(t: number): number {
   return 1 - Math.pow(1 - t, 2.6);
@@ -44,6 +49,9 @@ export function IntroLoader() {
     };
 
     const finish = () => {
+      try {
+        sessionStorage.setItem("meet-portfolio-intro-seen-v3", "true");
+      } catch {}
       delete root.dataset.introPending;
       delete root.dataset.introExiting;
       delete root.dataset.introFast;

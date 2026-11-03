@@ -8,8 +8,13 @@ import { getFeaturedProjects } from "@/content/projects";
 import { skills } from "@/content/skills";
 import { Icon } from "../icon";
 import { MorphingShape } from "../motion/morphing-shape";
-import Lanyard from "../motion/Lanyard";
+import dynamic from "next/dynamic";
 import { useLanyardTheme } from "../motion/lanyard-theme";
+
+const Lanyard = dynamic(() => import("../motion/Lanyard"), {
+  ssr: false,
+  loading: () => <div className="lanyard-inspect-loading" aria-hidden="true" />,
+});
 import { HighlightText } from "@/components/ui/highlight-text";
 import { BlurText } from "@/components/ui/blur-text";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
@@ -84,17 +89,15 @@ export function HomePage() {
               {homeCopy.workCta.label}
               <Icon name="arrow-right" />
             </a>
-            <a
+            <Link
               className="button button-secondary hero-resume-btn"
-              href={links.resume.href ?? "https://miniresumemeet.vercel.app"}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View Meet Kapadia's Resume (opens in new tab)"
+              href="/resume"
+              aria-label="View Meet Kapadia's Resume and Credentials"
             >
               <Icon name="file" />
               <span>{homeCopy.resumeCta.label}</span>
-              <Icon name="arrow-up-right" />
-            </a>
+              <Icon name="arrow-right" />
+            </Link>
             <Link className="button button-secondary" href={homeCopy.contactCta.href}>
               {homeCopy.contactCta.label}
               <Icon name="arrow-up-right" />

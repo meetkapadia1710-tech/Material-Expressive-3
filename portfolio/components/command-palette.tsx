@@ -8,6 +8,8 @@ import { projectCatalogCopy, projects } from "@/content/projects";
 import { links } from "@/content/links";
 import { useToast, toggleThemeChoice } from "@/components/interface-controls";
 import { Icon } from "@/components/icon";
+import { copyToClipboard } from "@/lib/clipboard";
+import { playTactileSound } from "@/lib/sound-engine";
 import styles from "./command-palette.module.css";
 
 type GroupName = "Recent" | "Pages" | "Projects" | "Actions";
@@ -156,21 +158,11 @@ export default function CommandPalette({ open, onDismiss }: { open: boolean; onD
   async function copyAddress() {
     const email = links.email.value;
     if (!email) return;
-    try {
-      if (!navigator.clipboard?.writeText) throw new Error("Clipboard API unavailable");
-      await navigator.clipboard.writeText(email);
-      notify(copy.copied);
-    } catch {
-      const fallback = document.createElement("textarea");
-      fallback.value = email;
-      fallback.setAttribute("readonly", "");
-      fallback.style.position = "fixed";
-      fallback.style.opacity = "0";
-      document.body.append(fallback);
-      fallback.select();
-      const copied = document.execCommand("copy");
-      fallback.remove();
-      notify(copied ? copy.copied : copy.copyFailed);
+    playTactileSound("click");
+    notify(copy.copied);
+    const success = await copyToClipboard(email);
+    if (!success) {
+      notify(copy.copyFailed);
     }
   }
 

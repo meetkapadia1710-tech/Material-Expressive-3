@@ -7,6 +7,8 @@ import { Icon, type IconName } from "@/components/icon";
 import { MorphingShape, type ShapeName } from "@/components/motion/morphing-shape";
 import { DocumentChips } from "./document-chips";
 import { useToast } from "@/components/interface-controls";
+import { copyToClipboard } from "@/lib/clipboard";
+import { playTactileSound } from "@/lib/sound-engine";
 
 interface AchievementCardProps {
   entry: Achievement;
@@ -54,15 +56,18 @@ export function AchievementCard({
   const hasRealId = isRealCredentialId(entry.credentialId);
   const isCredentialName = Boolean(entry.credentialId && !hasRealId);
 
-  const handleCopyId = (e: React.MouseEvent) => {
+  const handleCopyId = async (e: React.MouseEvent) => {
     e.stopPropagation();
     if (!entry.credentialId) return;
-    if (typeof navigator !== "undefined" && navigator.clipboard) {
-      navigator.clipboard.writeText(entry.credentialId).then(() => {
-        setCopied(true);
-        toast("Credential ID copied to clipboard");
-        setTimeout(() => setCopied(false), 2000);
-      });
+    setCopied(true);
+    playTactileSound("click");
+    toast("Credential ID copied to clipboard");
+    const success = await copyToClipboard(entry.credentialId);
+    if (!success) {
+      setCopied(false);
+      toast("Failed to copy credential ID");
+    } else {
+      setTimeout(() => setCopied(false), 2000);
     }
   };
 

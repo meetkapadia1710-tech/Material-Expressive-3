@@ -26,6 +26,34 @@ export function ProjectCard({ project, lead = false, index }: { project: Project
       {project.tagline ? <p className="project-description">{project.tagline}</p> : null}
       {project.statusDetail ? <p className="project-status-detail">{project.statusDetail}</p> : null}
       {project.stack?.length ? <ul className="stack-list" aria-label={homeCopy.projects.stackLabel}>{project.stack.slice(0, lead ? 6 : 4).map((tool) => <li key={tool}>{tool}</li>)}</ul> : null}
+      {project.repoUrl || project.liveUrl ? (
+        <div className="project-card-actions">
+          {project.repoUrl ? (
+            <a
+              href={project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-action-link"
+              aria-label={`Source code for ${project.name} on GitHub (opens in new tab)`}
+            >
+              <Icon name="github" />
+              <span>Source</span>
+            </a>
+          ) : null}
+          {project.liveUrl ? (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-action-link project-action-live"
+              aria-label={`Live demo for ${project.name} (opens in new tab)`}
+            >
+              <Icon name="arrow-up-right" />
+              <span>Live Demo</span>
+            </a>
+          ) : null}
+        </div>
+      ) : null}
     </div>
   </SharedProjectElement>;
 }

@@ -34,6 +34,16 @@
 .field input:focus-visible, .field textarea:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; border-color: var(--color-primary); }
 .field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: var(--color-error); background: color-mix(in srgb, var(--color-error) 7%, var(--color-surface-container)); }
 .error { margin: 0; color: var(--color-error); font-size: var(--type-body-small-size); line-height: 1.5; }
+.characterCounter { justify-self: end; font-size: var(--type-label-tiny-size); color: var(--color-on-surface-variant); margin-top: -2px; }
+.resumeCard { padding: 26px 28px; border-radius: 28px; background: var(--color-surface-container-low); border: 1px solid var(--color-outline-variant); display: flex; flex-direction: column; gap: 10px; transition: all var(--motion-duration-fast) var(--spring); }
+.resumeCard:hover { border-color: var(--color-primary); background: var(--color-surface-container); transform: translateY(-2px); }
+.resumeIcon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 15px; background: var(--color-tertiary-container); color: var(--color-on-tertiary-container); }
+.resumeIcon svg { width: 20px; height: 20px; }
+.resumeSummary { margin: 0; font-size: var(--type-body-small-size); line-height: 1.6; color: var(--color-on-surface-variant); }
+.resumeLink { display: inline-flex; align-items: center; gap: 8px; color: var(--color-primary); font-size: var(--type-label-medium-size); font-weight: 600; text-decoration: none; margin-top: 4px; }
+.resumeLink:hover { text-decoration: underline; text-underline-offset: 4px; }
+.resumeLink svg { width: 16px; height: 16px; transition: transform 0.2s var(--spring); }
+.resumeLink:hover svg { transform: translateX(3px); }
 .form > button { justify-self: start; }
 .form > button svg { width: 17px; height: 17px; }
 

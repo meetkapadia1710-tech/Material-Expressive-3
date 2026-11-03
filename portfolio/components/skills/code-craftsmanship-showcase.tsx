@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { copyToClipboard } from "@/lib/clipboard";
+import { playTactileSound } from "@/lib/sound-engine";
 
 interface Snippet {
   id: string;
@@ -234,12 +236,14 @@ export function CodeCraftsmanshipShowcase() {
   const activeSnippet = snippets.find((s) => s.id === activeTab) ?? snippets[0];
 
   const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(activeSnippet.code);
-      setCopied(true);
+    // Instant optimistic feedback (0ms)
+    setCopied(true);
+    playTactileSound("click");
+    const success = await copyToClipboard(activeSnippet.code);
+    if (!success) {
+      setCopied(false);
+    } else {
       setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // Clipboard fallback
     }
   };
 

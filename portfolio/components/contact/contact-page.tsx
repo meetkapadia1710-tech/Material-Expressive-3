@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Link from "next/link";
 import { CopyEmail, useToast } from "@/components/interface-controls";
 import { Icon } from "@/components/icon";
 import { HighlightText } from "@/components/ui/highlight-text";
@@ -67,7 +68,12 @@ function ContactForm() {
       return <div className={styles.field} key={field.name}>
         <label htmlFor={id}>{field.label}</label>
         {field.multiline
-          ? <textarea id={id} name={field.name} rows={6} maxLength={field.maxLength} placeholder={field.placeholder} value={values[field.name]} aria-invalid={Boolean(error)} aria-describedby={error ? errorId : undefined} onChange={(event) => { setValues((current) => ({ ...current, [field.name]: event.target.value })); if (error) setErrors((current) => ({ ...current, [field.name]: undefined })); }} />
+          ? <>
+              <textarea id={id} name={field.name} rows={6} maxLength={field.maxLength} placeholder={field.placeholder} value={values[field.name]} aria-invalid={Boolean(error)} aria-describedby={error ? errorId : undefined} onChange={(event) => { setValues((current) => ({ ...current, [field.name]: event.target.value })); if (error) setErrors((current) => ({ ...current, [field.name]: undefined })); }} />
+              <span className={styles.characterCounter} aria-live="polite">
+                {field.maxLength - values[field.name].length} characters left
+              </span>
+            </>
           : <input id={id} name={field.name} type="text" autoComplete={field.name === "name" ? "name" : "off"} maxLength={field.maxLength} placeholder={field.placeholder} value={values[field.name]} aria-invalid={Boolean(error)} aria-describedby={error ? errorId : undefined} onChange={(event) => { setValues((current) => ({ ...current, [field.name]: event.target.value })); if (error) setErrors((current) => ({ ...current, [field.name]: undefined })); }} />}
         {error ? <p className={styles.error} id={errorId} role="alert">{error}</p> : null}
       </div>;
@@ -92,6 +98,15 @@ export function ContactPage() {
           <p className={styles.cardLabel}>{links.email.label}</p>
           <a className={styles.emailAddress} href={links.email.href ?? undefined}>{links.email.value}</a>
           {links.email.value ? <CopyEmail email={links.email.value} /> : null}
+        </div>
+        <div className={styles.resumeCard}>
+          <span className={styles.resumeIcon} aria-hidden="true"><Icon name="file" /></span>
+          <p className={styles.cardLabel}>Verified Resume</p>
+          <p className={styles.resumeSummary}>Inspect verified coursework, credentials, competitive metrics, or print an ATS-ready copy.</p>
+          <Link href="/resume" className={styles.resumeLink}>
+            <span>View Digital Resume</span>
+            <Icon name="arrow-right" />
+          </Link>
         </div>
         <nav className={styles.socialCard} aria-label="Social profiles">
           <h2>{copy.socialTitle}</h2>

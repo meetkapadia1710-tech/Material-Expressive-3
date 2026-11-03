@@ -14,10 +14,64 @@
 .filterField > label { font-size: var(--type-label-small-size); font-weight: 650; color: var(--default-project-filter-label, var(--color-on-surface-variant)); padding-left: 14px; }
 .filterField select { width: 100%; min-height: 50px; padding: 10px 38px 10px 16px; border: 1px solid var(--default-project-filter-outline, var(--color-outline)); border-radius: 16px; background-color: var(--color-surface-container-lowest); color: var(--color-on-surface); font: 500 14px var(--body); cursor: pointer; }
 .filterField select:hover { border-color: var(--color-primary); }
+.filterField input {
+  width: 100%;
+  min-height: 52px;
+  padding: 10px 40px 10px 18px;
+  border: 1px solid var(--default-project-filter-outline, var(--color-outline-variant));
+  border-radius: 18px;
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-on-surface);
+  font: 500 14px var(--body);
+  outline: none;
+  transition:
+    border-color var(--motion-duration-short2) var(--spring),
+    background-color var(--motion-duration-short2) var(--spring),
+    box-shadow var(--motion-duration-short2) var(--spring);
+}
+.filterField input:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface-container-low);
+}
+.filterField input:focus-visible {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.searchClearBtn {
+  position: absolute;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all var(--motion-duration-fast) var(--spring);
+}
+.searchClearBtn:hover {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
 .clearButton { min-height: 50px; border: 1px solid var(--default-project-filter-action-outline, var(--color-outline)); border-radius: 28px; padding: 10px 20px; color: var(--default-project-filter-action, var(--color-primary)); background: transparent; font-size: var(--type-body-small-size); font-weight: 600; cursor: pointer; transition: transform var(--motion-duration-filter) var(--spring); }
 .clearButton:active:not(:disabled) { transform: scale(.97); }
 .clearButton:hover:not(:disabled) { background: var(--default-project-filter-hover, var(--color-primary-container)); color: var(--default-project-filter-hover-foreground, var(--color-on-primary-container)); }
 .clearButton:disabled { opacity: .45; cursor: default; }
+.quickChips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 14px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 7px 15px; border-radius: 9999px; background: var(--color-surface-container-high); color: var(--color-on-surface-variant); border: 1px solid var(--color-outline-variant); font-size: var(--type-label-small-size); font-weight: 600; cursor: pointer; transition: all var(--motion-duration-fast) var(--spring); }
+.chip:hover { background: var(--color-surface-container-highest); color: var(--color-on-surface); border-color: var(--color-outline); }
+.chipActive { background: var(--color-primary); color: var(--color-on-primary); border-color: var(--color-primary); box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary) 28%, transparent); }
+.chipActive:hover { background: var(--color-primary); color: var(--color-on-primary); border-color: var(--color-primary); }
 .resultSummary { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 24px; margin-top: 18px; margin-bottom: 38px; }
 .resultSummary > p { margin: 0; font-size: var(--type-label-medium-size); color: var(--color-on-surface-variant); }
 .groupNavigation { display: flex; flex-wrap: wrap; gap: 8px 22px; }

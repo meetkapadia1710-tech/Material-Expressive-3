@@ -108,6 +108,12 @@
 .project-status-detail { font-size: var(--type-label-medium-size); color: var(--color-on-surface-variant); margin: 15px 0 0; }
 .stack-list { list-style: none; display: flex; flex-wrap: wrap; gap: 7px; padding: 0; margin: 22px 0 0; }
 .stack-list li { font-size: var(--type-label-tiny-size); color: var(--default-home-stack-foreground, var(--color-on-surface-variant)); background: var(--default-home-stack-background, var(--color-surface-container-low)); padding: 5px 9px; border-radius: 7px; }
+.project-card-actions { position: relative; z-index: 3; display: flex; align-items: center; gap: 8px; margin-top: 18px; flex-wrap: wrap; }
+.project-action-link { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 9999px; background: var(--color-surface-container-high); color: var(--color-on-surface); border: 1px solid var(--color-outline-variant); font-size: var(--type-label-small-size); font-weight: 600; text-decoration: none; transition: all var(--motion-duration-fast) var(--spring); }
+.project-action-link:hover { background: var(--color-primary-container); color: var(--color-on-primary-container); border-color: var(--color-primary); transform: translateY(-1px); }
+.project-action-link svg { width: 14px; height: 14px; }
+.project-action-live { background: color-mix(in srgb, var(--color-tertiary-container) 80%, transparent); border-color: var(--color-tertiary); color: var(--color-on-tertiary-container); }
+.project-action-live:hover { background: var(--color-tertiary); color: var(--color-on-tertiary); }
 .skills-section { display: grid; grid-template-columns: .85fr 1.4fr; gap: 92px; padding-block: 70px 42px; }
 .skills-intro { position: relative; }
 .skills-intro .section-description { max-width: 34ch; }

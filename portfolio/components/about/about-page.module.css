@@ -700,6 +700,16 @@
   transform: translateY(-1px);
 }
 
+.page :global(.about-doc-tag) {
+  font-size: var(--type-label-tiny-size);
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: var(--color-surface-container-highest);
+  color: var(--color-on-surface-variant);
+  font-weight: 500;
+  margin-left: 2px;
+}
+
 .page :global(.about-doc-chip) svg {
   width: 14px;
   height: 14px;

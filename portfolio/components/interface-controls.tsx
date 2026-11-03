@@ -4,6 +4,8 @@ import { interfaceCopy as copy } from "@/content/interface";
 import { Icon } from "./icon";
 import { registerViewTransition, skipActiveViewTransition } from "./motion/view-transition-coordinator";
 import { applyStoredColorScheme } from "@/lib/dynamic-color-state";
+import { copyToClipboard } from "@/lib/clipboard";
+import { playTactileSound } from "@/lib/sound-engine";
 const ToastContext = createContext<(message: string) => void>(() => {});
 export function useToast() { return useContext(ToastContext); }
 let colorTransitionTimer = 0;
@@ -113,11 +115,21 @@ export function ThemeToggle() {
 export function CopyEmail({ email }: { email: string }) {
   const notify = useContext(ToastContext);
   const [fallback, setFallback] = useState(false);
+  const [copied, setCopied] = useState(false);
   const input = useRef<HTMLInputElement>(null);
   useEffect(() => { if (fallback) { input.current?.focus(); input.current?.select(); } }, [fallback]);
   async function copyAddress() {
-    try { if (!navigator.clipboard?.writeText) throw new Error("Clipboard unavailable"); await navigator.clipboard.writeText(email); setFallback(false); notify(copy.copied); }
-    catch { setFallback(true); notify(copy.copyFailed); }
+    setCopied(true);
+    playTactileSound("click");
+    notify(copy.copied);
+    const success = await copyToClipboard(email);
+    if (!success) {
+      setCopied(false);
+      setFallback(true);
+      notify(copy.copyFailed);
+    } else {
+      setTimeout(() => setCopied(false), 2000);
+    }
   }
-  return <span className="copy-email"><button className="button button-secondary" type="button" onClick={copyAddress}>{copy.copyEmail}</button>{fallback ? <input ref={input} readOnly value={email} aria-label={copy.copyEmail} onFocus={(event) => event.target.select()} /> : null}</span>;
+  return <span className="copy-email"><button className="button button-secondary" type="button" onClick={copyAddress}>{copied ? copy.copied : copy.copyEmail}</button>{fallback ? <input ref={input} readOnly value={email} aria-label={copy.copyEmail} onFocus={(event) => event.target.select()} /> : null}</span>;
 }

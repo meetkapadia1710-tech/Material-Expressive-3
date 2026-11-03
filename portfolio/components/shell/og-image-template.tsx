@@ -1,6 +1,4 @@
 import { ImageResponse } from "next/og";
-import fs from "node:fs";
-import path from "node:path";
 import { OG_COLORS, OG_IMAGE_SIZE } from "@/lib/og-tokens";
 
 interface OgPreviewData {
@@ -11,26 +9,7 @@ interface OgPreviewData {
   stack?: readonly string[];
 }
 
-let fontData: Buffer | null = null;
-function getManropeFont(): Buffer {
-  if (!fontData) {
-    const fontPath = path.join(process.cwd(), "public/fonts/manrope-variable.ttf");
-    try {
-      fontData = fs.readFileSync(fontPath);
-    } catch {
-      // Fallback font in next dist if custom path not found
-      const fallbackPath = path.join(
-        process.cwd(),
-        "node_modules/next/dist/compiled/@vercel/og/Geist-Regular.ttf"
-      );
-      fontData = fs.readFileSync(fallbackPath);
-    }
-  }
-  return fontData;
-}
-
 export function renderOgImage(data: OgPreviewData): ImageResponse {
-  const font = getManropeFont();
   const titleClamped = data.title.length > 55 ? `${data.title.slice(0, 52)}...` : data.title;
   const subtitleClamped = data.subtitle && data.subtitle.length > 120
     ? `${data.subtitle.slice(0, 117)}...`
@@ -274,14 +253,6 @@ export function renderOgImage(data: OgPreviewData): ImageResponse {
     ),
     {
       ...OG_IMAGE_SIZE,
-      fonts: [
-        {
-          name: "Manrope",
-          data: font,
-          style: "normal",
-          weight: 700,
-        },
-      ],
     }
   );
 }
