@@ -1,13 +1,53 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, type FormEvent } from "react";
 import Link from "next/link";
 import { CopyEmail, useToast } from "@/components/interface-controls";
-import { Icon } from "@/components/icon";
+import { Icon, type IconName } from "@/components/icon";
 import { HighlightText } from "@/components/ui/highlight-text";
+import { LiveStatusCard } from "./live-status-card";
 import { links } from "@/content/links";
 import { contactCopy as copy } from "@/content/contact";
 import styles from "./contact-page.module.css";
+
+interface TopicOption {
+  id: string;
+  iconName: IconName;
+  label: string;
+  subject: string;
+  placeholder: string;
+}
+
+const TOPICS: readonly TopicOption[] = [
+  {
+    id: "internship",
+    iconName: "briefcase",
+    label: "SDE / Internship Opportunity",
+    subject: "SDE / Internship Opportunity Discussion",
+    placeholder: "Tell me about the role, company/team, tech stack, and location (remote or on-site)...",
+  },
+  {
+    id: "collaboration",
+    iconName: "rocket",
+    label: "Project Collaboration",
+    subject: "Project Collaboration Proposal",
+    placeholder: "Tell me about your project idea, goals, timeline, and how we could build it together...",
+  },
+  {
+    id: "chat",
+    iconName: "coffee",
+    label: "Tech Chat / Coffee",
+    subject: "Informal Tech Chat & Discussion",
+    placeholder: "What topics would you like to explore? (e.g. system design, full-stack architectures, AI)...",
+  },
+  {
+    id: "repograde",
+    iconName: "lightbulb",
+    label: "Feedback on RepoGrade",
+    subject: "Feedback & Ideas for RepoGrade",
+    placeholder: "Share your thoughts, suggestions, feature ideas, or issues with RepoGrade AST code scoring...",
+  },
+] as const;
 
 type Field = "name" | "email" | "subject" | "message";
 type Values = Record<Field, string>;
@@ -44,7 +84,42 @@ function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
   const [botcheck, setBotcheck] = useState("");
+  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
   const notify = useToast();
+
+  const handleSelectTopic = (topic: TopicOption) => {
+    if (selectedTopic === topic.id) {
+      setSelectedTopic(null);
+    } else {
+      setSelectedTopic(topic.id);
+      setValues((prev) => ({
+        ...prev,
+        subject: topic.subject,
+      }));
+      setErrors((prev) => ({ ...prev, subject: undefined }));
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const topicParam = params.get("topic");
+      const projectParam = params.get("project");
+      if (topicParam) {
+        const match = TOPICS.find((t) => t.id === topicParam.toLowerCase());
+        if (match) {
+          setSelectedTopic(match.id);
+          setValues((prev) => ({ ...prev, subject: match.subject }));
+        }
+      } else if (projectParam && projectParam.toLowerCase() === "repograde") {
+        const match = TOPICS.find((t) => t.id === "repograde");
+        if (match) {
+          setSelectedTopic(match.id);
+          setValues((prev) => ({ ...prev, subject: match.subject }));
+        }
+      }
+    }
+  }, []);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -169,20 +244,64 @@ function ContactForm() {
       </div>
     ) : (
       <>
+        {/* Topic Selector in Material 3 Expressive 2x2 Grid */}
+        <div className={styles.topicSection} role="group" aria-labelledby="topic-selector-label">
+          <div className={styles.topicHeader}>
+            <span id="topic-selector-label" className={styles.topicLabel}>
+              What would you like to discuss?
+            </span>
+            <span className={styles.topicHelper}>
+              Select a topic to auto-fill details, or leave unselected to write your own
+            </span>
+          </div>
+          <div className={styles.topicGrid}>
+            {TOPICS.map((topic) => {
+              const isSelected = selectedTopic === topic.id;
+              return (
+                <button
+                  key={topic.id}
+                  type="button"
+                  className={`${styles.topicCard} ${isSelected ? styles.topicCardSelected : ""}`}
+                  onClick={() => handleSelectTopic(topic)}
+                  aria-pressed={isSelected}
+                >
+                  <span className={styles.topicIconTile} aria-hidden="true">
+                    <Icon name={topic.iconName} />
+                  </span>
+                  <span className={styles.topicCardText}>{topic.label}</span>
+                  {isSelected && (
+                    <span className={styles.topicCheck} aria-hidden="true">
+                      <Icon name="check" />
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
         {fields.map((field) => {
           const error = errors[field.name];
           const id = `contact-${field.name}`;
           const errorId = `${id}-error`;
-          return <div className={styles.field} key={field.name}>
+          const activeTopic = TOPICS.find((t) => t.id === selectedTopic);
+          const dynamicPlaceholder =
+            field.name === "message"
+              ? activeTopic?.placeholder ?? field.placeholder
+              : field.name === "subject"
+              ? activeTopic?.subject ?? field.placeholder
+              : field.placeholder;
+
+          return <div className={`${styles.field} ${field.multiline ? styles.fieldTextarea : ""}`} key={field.name}>
             <label htmlFor={id}>{field.label}</label>
             {field.multiline
               ? <>
-                  <textarea id={id} name={field.name} rows={6} maxLength={field.maxLength} placeholder={field.placeholder} value={values[field.name]} aria-invalid={Boolean(error)} aria-describedby={error ? errorId : undefined} onChange={(event) => { setValues((current) => ({ ...current, [field.name]: event.target.value })); if (error) setErrors((current) => ({ ...current, [field.name]: undefined })); }} />
+                  <textarea id={id} name={field.name} rows={6} maxLength={field.maxLength} placeholder={dynamicPlaceholder} value={values[field.name]} aria-invalid={Boolean(error)} aria-describedby={error ? errorId : undefined} onChange={(event) => { setValues((current) => ({ ...current, [field.name]: event.target.value })); if (error) setErrors((current) => ({ ...current, [field.name]: undefined })); }} />
                   <span className={styles.characterCounter} aria-live="polite">
                     {field.maxLength - values[field.name].length} characters left
                   </span>
                 </>
-              : <input id={id} name={field.name} type={field.type ?? "text"} autoComplete={field.name === "name" ? "name" : field.name === "email" ? "email" : "off"} maxLength={field.maxLength} placeholder={field.placeholder} value={values[field.name]} aria-invalid={Boolean(error)} aria-describedby={error ? errorId : undefined} onChange={(event) => { setValues((current) => ({ ...current, [field.name]: event.target.value })); if (error) setErrors((current) => ({ ...current, [field.name]: undefined })); }} />}
+              : <input id={id} name={field.name} type={field.type ?? "text"} autoComplete={field.name === "name" ? "name" : field.name === "email" ? "email" : "off"} maxLength={field.maxLength} placeholder={dynamicPlaceholder} value={values[field.name]} aria-invalid={Boolean(error)} aria-describedby={error ? errorId : undefined} onChange={(event) => { setValues((current) => ({ ...current, [field.name]: event.target.value })); if (error) setErrors((current) => ({ ...current, [field.name]: undefined })); }} />}
             {error ? <p className={styles.error} id={errorId} role="alert">{error}</p> : null}
           </div>;
         })}
@@ -226,6 +345,7 @@ export function ContactPage() {
     </header>
     <div className={styles.layout}>
       <aside className={styles.aside} aria-label="Contact details and social profiles">
+        <LiveStatusCard />
         <div className={styles.emailCard}>
           <span className={styles.emailIcon} aria-hidden="true"><Icon name="mail" /></span>
           <p className={styles.cardLabel}>{links.email.label}</p>

@@ -1,0 +1,225 @@
+.card {
+  padding: 24px 26px;
+  border-radius: 28px 28px 52px 28px;
+  background: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all var(--motion-duration-fast) var(--spring);
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+  background: var(--color-surface-container-high);
+  transform: translateY(-2px);
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 10px;
+  border-radius: 9999px;
+  background: color-mix(in srgb, #22c55e 12%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, #22c55e 30%, transparent);
+}
+
+.pulseBeacon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+}
+
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.pulseRing {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: #22c55e;
+  opacity: 0.45;
+  animation: pulseRing 2.4s cubic-bezier(0.2, 0, 0, 1) infinite;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.75;
+  }
+  60% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.statusLabel {
+  font-size: var(--type-label-small-size);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--color-on-surface);
+}
+
+.yearChip {
+  font-size: var(--type-label-tiny-size);
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
+  border: 1px solid var(--color-outline-variant);
+}
+
+.clockRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.clockDisplay {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+}
+
+.clockIcon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 14px;
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.clockIcon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.timeStack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.timeDigits {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.timeValue {
+  font-size: 1.55rem;
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-on-surface);
+  line-height: 1.1;
+}
+
+.timezonePill {
+  display: inline-block;
+  font-size: var(--type-label-tiny-size);
+  font-weight: 650;
+  color: var(--color-on-surface-variant);
+  background: var(--color-surface-container-high);
+  border: 1px solid var(--color-outline-variant);
+  padding: 2px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+}
+
+.location {
+  margin: 0;
+  font-size: var(--type-body-small-size);
+  color: var(--color-on-surface-variant);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  line-height: 1.4;
+}
+
+.dotDivider {
+  opacity: 0.5;
+}
+
+.dayStatus {
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.footerRow {
+  border-top: 1px solid var(--color-outline-variant);
+  padding-top: 12px;
+  margin-top: 2px;
+}
+
+.responseGuarantee {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--type-label-small-size);
+  font-weight: 550;
+  color: var(--color-on-surface-variant);
+}
+
+.zapIcon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  color: var(--color-tertiary);
+  flex-shrink: 0;
+}
+
+.zapIcon svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 560px) {
+  .card {
+    padding: 20px;
+    border-radius: 24px 24px 40px 24px;
+    gap: 14px;
+  }
+  .timeValue {
+    font-size: 1.35rem;
+  }
+  .clockIcon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+  }
+  .clockIcon svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+
