@@ -41,7 +41,7 @@ export function ColorSeedPicker({ inline = false }: { inline?: boolean } = {}) {
       if (event.key !== "Escape" || !rootRef.current?.open) return;
       event.preventDefault();
       rootRef.current.removeAttribute("open");
-      rootRef.current.querySelector("summary")?.focus();
+      rootRef.current.querySelector("summary")?.focus({ preventScroll: true });
     };
     window.addEventListener("portfolio:global-color-applied", syncSeed);
     document.addEventListener("pointerdown", closeOutside);

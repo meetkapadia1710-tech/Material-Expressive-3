@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
 import { useRouter } from "next/navigation";
 import { interfaceCopy as copy } from "@/content/interface";
 import { navigation } from "@/content/profile";
@@ -118,37 +118,39 @@ export default function CommandPalette({ open, onDismiss }: { open: boolean; onD
   const router = useRouter();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const [recentIds, setRecentIds] = useState<string[]>([]);
   const baseItems = useMemo(() => getBaseItems(), []);
   const byId = useMemo(() => new Map(baseItems.map((item) => [item.id, item])), [baseItems]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const dialog = dialogRef.current;
+    if (!dialog) return;
+    if (!open) {
+      if (dialog.open) dialog.close();
+      return;
+    }
     const viewport = window.visualViewport;
-    if (!open || !dialog || !viewport) return;
     const sync = () => {
+      if (!viewport) return;
       dialog.style.setProperty("--visual-height", `${viewport.height}px`);
       dialog.style.setProperty("--visual-top", `${viewport.offsetTop}px`);
     };
     sync();
-    viewport.addEventListener("resize", sync);
-    viewport.addEventListener("scroll", sync);
+    viewport?.addEventListener("resize", sync);
+    viewport?.addEventListener("scroll", sync);
+    if (!dialog.open) dialog.showModal();
+    inputRef.current?.focus({ preventScroll: true });
     return () => {
-      viewport.removeEventListener("resize", sync);
-      viewport.removeEventListener("scroll", sync);
+      viewport?.removeEventListener("resize", sync);
+      viewport?.removeEventListener("scroll", sync);
     };
   }, [open]);
 
-  useEffect(() => {
-    if (!open) {
-      if (dialogRef.current?.open) dialogRef.current.close();
-      return;
-    }
-    const dialog = dialogRef.current;
-    if (dialog && !dialog.open) dialog.showModal();
-    inputRef.current?.focus();
+  useLayoutEffect(() => {
+    if (!open) return;
     try {
       const saved: unknown = JSON.parse(localStorage.getItem(RECENT_KEY) ?? "[]");
       const validIds = Array.isArray(saved)
@@ -205,40 +207,51 @@ export default function CommandPalette({ open, onDismiss }: { open: boolean; onD
     if (item.href) window.dispatchEvent(new CustomEvent("portfolio:route-request", { detail: item.href }));
   }
 
+  function dismiss(dialog: HTMLDialogElement | null) {
+    dialog?.close();
+    onDismiss();
+  }
+
   function onKeyDown(event: ReactKeyboardEvent<HTMLInputElement>) {
     if (!flatItems.length) return;
     if (event.key === "ArrowDown") { event.preventDefault(); setActiveIndex((index) => (index + 1) % flatItems.length); }
     if (event.key === "ArrowUp") { event.preventDefault(); setActiveIndex((index) => (index - 1 + flatItems.length) % flatItems.length); }
     if (event.key === "Enter" && activeItem) {
       event.preventDefault();
-      dialogRef.current?.close();
-      onDismiss();
+      dismiss(dialogRef.current);
       selectItem(activeItem);
     }
   }
 
   useEffect(() => { setActiveIndex(0); }, [query]);
   useEffect(() => {
-    if (activeItem) {
-      document.getElementById(itemId(activeItem))?.scrollIntoView({ block: "nearest" });
+    if (open && activeItem) {
+      const results = resultsRef.current;
+      const option = document.getElementById(itemId(activeItem));
+      if (results && option) {
+        const top = option.offsetTop;
+        const bottom = top + option.offsetHeight;
+        if (top < results.scrollTop) results.scrollTop = top;
+        else if (bottom > results.scrollTop + results.clientHeight) results.scrollTop = bottom - results.clientHeight;
+      }
       if (activeItem.href && !activeItem.external) {
         router.prefetch(activeItem.href);
       }
     }
-  }, [activeItem, router]);
+  }, [open, activeItem, router]);
 
   let optionIndex = 0;
-  return <dialog ref={dialogRef} className={styles.dialog} aria-modal="true" aria-labelledby="command-palette-title" onCancel={(event) => { event.preventDefault(); event.currentTarget.close(); onDismiss(); }} onClose={onDismiss} onClick={(event) => { if (event.target === event.currentTarget) { event.currentTarget.close(); onDismiss(); } }}>
+  return <dialog ref={dialogRef} className={styles.dialog} aria-modal="true" aria-labelledby="command-palette-title" onCancel={(event) => { event.preventDefault(); dismiss(event.currentTarget); }} onClick={(event) => { if (event.target === event.currentTarget) dismiss(event.currentTarget); }}>
     <h2 id="command-palette-title" className="sr-only">{copy.command.title}</h2>
-    <div className={styles.searchRow}><Icon name="search" /><input ref={inputRef} inputMode="search" role="combobox" aria-label={copy.command.placeholder} aria-autocomplete="list" aria-expanded="true" aria-controls="command-palette-list" aria-activedescendant={activeItem ? itemId(activeItem) : undefined} value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={onKeyDown} placeholder={copy.command.placeholder} autoComplete="off" /><kbd>ESC</kbd><button type="button" className={styles.closeButton} aria-label="Close command palette" onClick={(event) => { event.currentTarget.closest("dialog")?.close(); onDismiss(); }}>×</button></div>
+    <div className={styles.searchRow}><Icon name="search" /><input ref={inputRef} inputMode="search" role="combobox" aria-label={copy.command.placeholder} aria-autocomplete="list" aria-expanded="true" aria-controls="command-palette-list" aria-activedescendant={activeItem ? itemId(activeItem) : undefined} value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={onKeyDown} placeholder={copy.command.placeholder} autoComplete="off" /><kbd>ESC</kbd><button type="button" className={styles.closeButton} aria-label="Close command palette" onClick={(event) => dismiss(event.currentTarget.closest("dialog"))}>×</button></div>
     <p className={styles.resultCount} role="status" aria-live="polite" aria-atomic="true">{copy.command.resultCount(flatItems.length)}</p>
-    <div className={styles.results}>
+    <div className={styles.results} ref={resultsRef}>
       <div id="command-palette-list" role="listbox" aria-label={copy.command.title} aria-activedescendant={activeItem ? itemId(activeItem) : undefined}>
         {groups.length ? groups.map(({ group, items }) => <div role="group" aria-label={copy.command[group.toLowerCase() as "recent" | "pages" | "projects" | "actions"]} key={group}>
           <h3 className={styles.groupHeading}>{copy.command[group.toLowerCase() as "recent" | "pages" | "projects" | "actions"]}</h3>
           {items.map((item) => {
             const index = optionIndex++;
-            return <div id={itemId(item)} key={`${group}-${item.id}`} role="option" aria-selected={index === activeIndex} className={`${styles.option}${index === activeIndex ? ` ${styles.active}` : ""}`} onMouseMove={() => setActiveIndex(index)} onClick={(event) => { event.currentTarget.closest("dialog")?.close(); onDismiss(); selectItem(item); }}>
+            return <div id={itemId(item)} key={`${group}-${item.id}`} role="option" aria-selected={index === activeIndex} className={`${styles.option}${index === activeIndex ? ` ${styles.active}` : ""}`} onMouseMove={() => setActiveIndex(index)} onClick={(event) => { dismiss(event.currentTarget.closest("dialog")); selectItem(item); }}>
               <span className={styles.optionText}><strong><Highlight text={item.label} query={query} /></strong>{item.detail ? <small>{item.detail}</small> : null}</span>
               <span className={styles.optionEnd}>{item.external ? <Icon name="arrow-up-right" /> : item.href ? <kbd>↵</kbd> : null}</span>
             </div>;
