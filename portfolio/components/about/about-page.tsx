@@ -25,22 +25,22 @@ export function AboutPage({ className = "" }: { className?: string }) {
         <div className="about-principles-grid">
           <div className="about-principle-card tone-primary">
             <div className="about-principle-icon" aria-hidden="true"><Icon name="code" /></div>
-            <h4>Grounded in Reality</h4>
+            <h3>Grounded in Reality</h3>
             <p>No synthetic AI fluff; software built on real codebases, verified data, and rigorous edge-case testing.</p>
           </div>
           <div className="about-principle-card tone-secondary">
             <div className="about-principle-icon" aria-hidden="true"><Icon name="layers" /></div>
-            <h4>Local-First & Privacy</h4>
+            <h3>Local-First & Privacy</h3>
             <p>Prioritizing on-device models (Ollama, Supermemory) and efficient SQLite/Postgres for private, zero-latency workflows.</p>
           </div>
           <div className="about-principle-card tone-tertiary">
             <div className="about-principle-icon" aria-hidden="true"><Icon name="spark" /></div>
-            <h4>M3 Expressive Aesthetics</h4>
+            <h3>M3 Expressive Aesthetics</h3>
             <p>Interfaces that respond with fluid physical springs, purposeful shape morphing, and accessible WCAG AA contrast.</p>
           </div>
           <div className="about-principle-card tone-accent">
             <div className="about-principle-icon" aria-hidden="true"><Icon name="monitor" /></div>
-            <h4>Deep Fundamentals</h4>
+            <h3>Deep Fundamentals</h3>
             <p>Strong DSA base (650+ LeetCode) married to modern web frameworks, system design, and database engineering.</p>
           </div>
         </div>
@@ -129,7 +129,7 @@ export function AboutPage({ className = "" }: { className?: string }) {
                 </div>
 
                 <div className="about-edu-score">
-                  <div className="about-score-stat" aria-label={school.screenReaderText}>
+                  <div className="about-score-stat">
                     <span className="sr-only">{school.screenReaderText}</span>
                     <span className="about-score-value" aria-hidden="true">{school.score}</span>
                   </div>
@@ -290,7 +290,7 @@ export function AboutPage({ className = "" }: { className?: string }) {
             </div>
             <ul className="about-topic-list">
               {aboutCopy.learningItems.map((item) => (
-                <li key={item.id} className="about-topic-item" tabIndex={0}>
+                <li key={item.id} className="about-topic-item">
                   <div className="about-topic-leading">
                     <MorphingShape
                       className="about-topic-shape tone-secondary"
@@ -326,7 +326,7 @@ export function AboutPage({ className = "" }: { className?: string }) {
             </div>
             <ul className="about-topic-list">
               {aboutCopy.exploreItems.map((item) => (
-                <li key={item.id} className="about-topic-item" tabIndex={0}>
+                <li key={item.id} className="about-topic-item">
                   <div className="about-topic-leading">
                     <MorphingShape
                       className="about-topic-shape tone-tertiary"

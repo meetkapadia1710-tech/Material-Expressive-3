@@ -101,7 +101,7 @@ test("documents lists render with M3 assist chip classes, no bullet lists, and p
   // Verify M3 floating pill navigation renders with connected segmented buttons and sliding indicator
   assert.ok(html.includes("achievements-nav-sticky"));
   assert.ok(html.includes("achievements-nav-pill"));
-  assert.ok(html.includes('role="tablist"'));
+  assert.ok(html.includes('role="radiogroup"'));
   assert.ok(html.includes("nav-sliding-indicator"));
   assert.ok(html.includes("nav-segment-button"));
   assert.ok(html.includes("pill-scroll-track"));

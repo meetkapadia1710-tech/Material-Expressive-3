@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, type CSSProperties } from "react";
+import React, { useLayoutEffect, useRef, type CSSProperties } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { useOutsideClick } from "@/hooks/use-outside-click";
 import { Icon } from "@/components/icon";
 import { MorphingShape } from "@/components/motion/morphing-shape";
 import { projectAccentStyle } from "@/lib/project-accent";
@@ -12,70 +11,77 @@ import type { Project } from "@/content/types";
 
 export interface ExpandableProjectModalProps {
   project: Project | null;
+  trigger: HTMLButtonElement | null;
   onClose: () => void;
 }
 
 export function ExpandableProjectModal({
   project,
+  trigger,
   onClose,
 }: ExpandableProjectModalProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const firstActionRef = useRef<HTMLButtonElement>(null);
+  const lastActionRef = useRef<HTMLButtonElement>(null);
   const shouldReduceMotion = useReducedMotion();
 
-  useEffect(() => {
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        onClose();
-      }
-    }
+  useLayoutEffect(() => {
+    const dialog = dialogRef.current;
+    if (!project || !dialog) return;
+    triggerRef.current = trigger;
+    if (!dialog.open) dialog.showModal();
+    firstActionRef.current?.focus({ preventScroll: true });
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = originalOverflow; };
+  }, [project, trigger]);
 
-    if (project) {
-      const originalOverflow = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
-      window.addEventListener("keydown", onKeyDown);
-      return () => {
-        document.body.style.overflow = originalOverflow;
-        window.removeEventListener("keydown", onKeyDown);
-      };
-    }
-  }, [project, onClose]);
-
-  useOutsideClick(ref, () => {
-    if (project) onClose();
-  });
+  function finishClosing() {
+    if (project || !dialogRef.current?.open) return;
+    dialogRef.current.close();
+    if (triggerRef.current?.isConnected) triggerRef.current.focus({ preventScroll: true });
+  }
 
   const accentStyle = project ? projectAccentStyle(project.accentSeed) : undefined;
   const isExploration =
     project?.status === "concept" || project?.status === "prototype";
 
   return (
-    <AnimatePresence>
-      {project ? (
-        <>
-          <motion.div
-            key="expandable-backdrop"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: shouldReduceMotion ? 0.01 : 0.25 }}
-            className="expandable-backdrop"
-            aria-hidden="true"
-          />
+    <dialog
+      ref={dialogRef}
+      className="expandable-dialog-wrapper"
+      aria-labelledby="project-preview-title"
+      data-lenis-prevent="true"
+      onCancel={(event) => { event.preventDefault(); onClose(); }}
+      onClick={(event) => { if (event.target === event.currentTarget) onClose(); }}
+      onKeyDown={(event) => {
+        if (event.key !== "Tab") return;
+        const boundary = event.shiftKey ? firstActionRef.current : lastActionRef.current;
+        if (event.target !== boundary) return;
+        event.preventDefault();
+        const next = event.shiftKey ? lastActionRef.current : firstActionRef.current;
+        next?.focus();
+      }}
+    >
+      <AnimatePresence onExitComplete={finishClosing}>
+        {project ? (
+          <React.Fragment key={project.slug}>
+            <motion.div
+              key="expandable-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: shouldReduceMotion ? 0.01 : 0.25 }}
+              className="expandable-backdrop"
+              aria-hidden="true"
+            />
 
-          <div
-            className="expandable-dialog-wrapper"
-            role="presentation"
-            data-lenis-prevent="true"
-          >
             <motion.div
               key={`expandable-dialog-${project.slug}`}
               layoutId={
                 shouldReduceMotion ? undefined : `project-card-${project.slug}`
               }
-              ref={ref}
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby={`expandable-title-${project.slug}`}
               className="expandable-dialog"
               style={accentStyle as CSSProperties}
               data-project-accent={accentStyle ? "true" : undefined}
@@ -143,6 +149,7 @@ export function ExpandableProjectModal({
                 </div>
 
                 <button
+                  ref={firstActionRef}
                   type="button"
                   className="expandable-dialog-close"
                   onClick={onClose}
@@ -155,7 +162,7 @@ export function ExpandableProjectModal({
               <div className="expandable-dialog-body">
                 <div>
                   <h2
-                    id={`expandable-title-${project.slug}`}
+                    id="project-preview-title"
                     className="expandable-title"
                   >
                     {project.name}
@@ -254,6 +261,7 @@ export function ExpandableProjectModal({
                   ) : null}
 
                   <button
+                    ref={lastActionRef}
                     type="button"
                     className="button button-secondary expandable-dismiss"
                     onClick={onClose}
@@ -263,10 +271,10 @@ export function ExpandableProjectModal({
                 </div>
               </div>
             </motion.div>
-          </div>
-        </>
-      ) : null}
-    </AnimatePresence>
+          </React.Fragment>
+        ) : null}
+      </AnimatePresence>
+    </dialog>
   );
 }
 

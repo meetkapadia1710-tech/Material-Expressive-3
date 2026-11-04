@@ -148,12 +148,11 @@ The project goes beyond typical static portfolios by treating the developer port
    Create a `.env.local` file inside the `portfolio/` directory:
 
    ```env
-   # Web3Forms Access Key (free from https://web3forms.com)
-   NEXT_PUBLIC_WEB3FORMS_KEY=your_access_key_here
+   # Server-only Web3Forms access key
    WEB3FORMS_ACCESS_KEY=your_access_key_here
    ```
 
-   _(Note: If omitted, the contact form will seamlessly fall back to opening your local email app)._
+   Web3Forms requires a paid plan and an allowlisted server IP for server-side delivery. Without working delivery configuration, the form keeps the draft and offers an explicit email app action.
 
 4. **Start the local development server:**
    ```bash

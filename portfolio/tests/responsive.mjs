@@ -11,7 +11,7 @@ const routes = ['/', '/projects', '/projects/repograde', '/about', '/skills', '/
 const base = process.env.MOBILE_URL ?? 'http://127.0.0.1:4382';
 const output = process.env.MOBILE_OUTPUT ?? 'artifacts/mobile/verification';
 const audit = process.argv.includes('--audit');
-const widths = audit ? [320, 360, 375, 390, 412, 430, 599, 600, 768, 1024, 844] : [320, 360, 390, 430, 599, 768, 1024];
+const widths = audit ? [320, 360, 375, 390, 412, 430, 599, 600, 768, 1024, 844] : [320, 360, 390, 430, 599, 768, 844, 1024, 1280, 1440, 1920];
 const schemes = audit ? ['light'] : ['light', 'dark'];
 const seeds = audit ? [null] : [null, '#6142AE', '#006A60'];
 const introKey = 'meet-portfolio-intro-seen-v3';
@@ -248,7 +248,7 @@ try {
   for (const seed of seeds) for (const scheme of schemes) for (const width of widths) {
     const context = await browser.newContext({
       viewport: { width, height: width === 844 ? 390 : 820 },
-      isMobile: width !== 1024, hasTouch: width !== 1024,
+      isMobile: width < 1024, hasTouch: width < 1024,
       deviceScaleFactor: 1, reducedMotion: 'reduce', colorScheme: scheme,
     });
     const palette = seed ? { ...createDynamicColorRecord(seed), mode: 'seed' } : { mode: 'default' };

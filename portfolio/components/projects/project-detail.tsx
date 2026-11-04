@@ -17,6 +17,7 @@ function DetailSection({ id, title, children }: { id: string; title: string; chi
 
 export function ProjectDetail({ project, previous, next, className = "" }: { project: Project; previous: Project | null; next: Project | null; className?: string }) {
   const content = getProjectDetailContent(project);
+  const hasSectionIndex = content.sections.length > 1;
   const ideaNote = content.status === "concept" ? projectDetailCopy.conceptNote : content.status === "prototype" ? projectDetailCopy.prototypeNote : null;
   const accentStyle = projectAccentStyle(project.accentSeed);
 
@@ -33,7 +34,7 @@ export function ProjectDetail({ project, previous, next, className = "" }: { pro
       </SharedProjectElement>
     </header>
 
-    {content.sections.length ? <div className="detail-layout">
+    {content.sections.length ? <div className={hasSectionIndex ? "detail-layout" : "detail-layout detail-layout-single"}>
       <div className="detail-content">
         {content.overview ? <DetailSection id="project-overview" title={projectDetailCopy.overview}><p className="detail-overview"><TextGenerateEffect text={content.overview} delay={0.03} /></p></DetailSection> : null}
         {content.problem ? <DetailSection id="project-problem" title={projectDetailCopy.problem}><p>{content.problem}</p></DetailSection> : null}
@@ -58,7 +59,7 @@ export function ProjectDetail({ project, previous, next, className = "" }: { pro
           {ideaNote ? <p>{ideaNote}</p> : null}
         </div></DetailSection> : null}
       </div>
-      <aside className="detail-aside"><nav aria-label={projectDetailCopy.sectionNavigation}><p>{projectDetailCopy.onThisPage}</p><ul data-scroll-region>{content.sections.map((section) => <li key={section.id}><a href={`#${section.id}`}>{section.title}<span aria-hidden="true">↗</span></a></li>)}</ul></nav></aside>
+      {hasSectionIndex ? <aside className="detail-aside"><nav aria-label={projectDetailCopy.sectionNavigation}><p>{projectDetailCopy.onThisPage}</p><ul data-scroll-region>{content.sections.map((section) => <li key={section.id}><a href={`#${section.id}`}>{section.title}<span aria-hidden="true">↗</span></a></li>)}</ul></nav></aside> : null}
     </div> : null}
 
     {previous || next ? <nav className="detail-pagination" aria-label={projectDetailCopy.projectNavigation}>

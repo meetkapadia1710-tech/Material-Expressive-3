@@ -1,15 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import dynamic from "next/dynamic";
 import { useLanyardTheme } from "./lanyard-theme";
 import { Icon } from "@/components/icon";
 import { readMotionMilliseconds } from "./motion-tokens";
-
-const Lanyard = dynamic(() => import("./Lanyard"), {
-  ssr: false,
-  loading: () => <div className="intro-loader-lanyard-placeholder" aria-hidden="true" />,
-});
 
 const progressDurationMs = 1100;
 const holdAfterCompleteMs = 250;
@@ -18,17 +12,19 @@ function expressiveEase(t: number): number {
   return 1 - Math.pow(1 - t, 2.6);
 }
 
+function IntroPass() {
+  const { frontImage } = useLanyardTheme();
+  // The theme artwork is an inline SVG. The interactive WebGL pass opens from Home on demand.
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img className="intro-loader-pass" src={frontImage} width={512} height={720} alt="" />;
+}
+
 export function IntroLoader() {
   const [progress, setProgress] = useState(0);
   const [isReady, setIsReady] = useState(false);
-  const isReadyRef = useRef(false);
+  const [finished, setFinished] = useState(false);
   const skipRef = useRef<HTMLButtonElement>(null);
   const dismissRef = useRef<((urgent?: boolean) => void) | null>(null);
-  const lanyardTheme = useLanyardTheme();
-
-  useEffect(() => {
-    isReadyRef.current = isReady;
-  }, [isReady]);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -49,6 +45,7 @@ export function IntroLoader() {
     };
 
     const finish = () => {
+      setFinished(true);
       try {
         sessionStorage.setItem("meet-portfolio-intro-seen-v3", "true");
       } catch {}
@@ -85,7 +82,6 @@ export function IntroLoader() {
         progressTimer = requestAnimationFrame(tick);
       } else {
         setIsReady(true);
-        isReadyRef.current = true;
         autoDismissTimer = window.setTimeout(() => {
           dismiss(false);
         }, holdAfterCompleteMs);
@@ -127,28 +123,7 @@ export function IntroLoader() {
 
       <div className="intro-loader-content">
         <div className="intro-loader-lanyard-wrapper">
-          {progress > 0 && <Lanyard
-            frontImage={lanyardTheme.frontImage}
-            backImage={lanyardTheme.backImage}
-            strapImage={lanyardTheme.strapImage}
-            imageFit="cover"
-            cardColor={lanyardTheme.cardColor}
-            orientation="portrait"
-            finish="glossy"
-            cornerRadius={0.3}
-            size={0.6}
-            anchor="center"
-            strapLength={0.5}
-            strapColor={lanyardTheme.strapColor}
-            strapWidth={0.65}
-            metal="silver"
-            gravity={1}
-            damping={0.5}
-            elasticity={0.5}
-            breeze={0.5}
-            interactive
-            intro
-          />}
+          {progress > 0 && !finished && <IntroPass />}
         </div>
 
         <div className="intro-loader-meta" aria-hidden="true">
@@ -169,7 +144,7 @@ export function IntroLoader() {
 
           <span className="intro-loader-caption">
             <Icon name="spark" />
-            <span>{isReady ? "Ready · Swing card or press Enter" : "Initialising Material 3 Expressive..."}</span>
+            <span>{isReady ? "Ready · Press Enter" : "Initialising Material 3 Expressive..."}</span>
           </span>
         </div>
       </div>

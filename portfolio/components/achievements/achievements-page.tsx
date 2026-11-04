@@ -114,9 +114,11 @@ function AchievementSection({ id, title, children }: { id: string; title: string
 export function AchievementsPage({
   data = achievementsData,
   className = "",
+  children,
 }: {
   data?: AchievementsData;
   className?: string;
+  children?: ReactNode;
 }) {
   const content = getAchievementsContent(data);
   const hasContent =
@@ -125,6 +127,13 @@ export function AchievementsPage({
     content.certifications.length ||
     content.profiles.length ||
     content.topics.length;
+  const sectionIds = [
+    content.experience.length && "achievement-experience",
+    content.hackathons.length && "achievement-hackathons",
+    content.certifications.length && "achievement-certifications",
+    (content.profiles.length || content.topics.length) && "achievement-coding",
+    children && "achievement-github",
+  ].filter((id): id is string => typeof id === "string");
 
   return (
     <article className={`page-width ${className}`}>
@@ -150,7 +159,7 @@ export function AchievementsPage({
       </header>
 
       {/* Sticky Section Navigation & Fluid Scroll Progress Indicator */}
-      <AchievementsScrollNav />
+      {sectionIds.length > 1 ? <AchievementsScrollNav sectionIds={sectionIds} /> : null}
 
       {/* 1. Experience Timeline Section */}
       {content.experience.length ? (
@@ -259,6 +268,7 @@ export function AchievementsPage({
           <p>{copy.empty.description}</p>
         </div>
       ) : null}
+      {children}
     </article>
   );
 }

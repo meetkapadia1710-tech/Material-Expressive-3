@@ -68,7 +68,6 @@ export function renderOgImage(data: OgPreviewData): ImageResponse {
             borderRadius: "36px",
             padding: "48px 56px",
             position: "relative",
-            zIndex: 1,
           }}
         >
           {/* Header Row: Brand Mark + Eyebrow */}

@@ -47,22 +47,31 @@ export async function getLeetCodeStats(username = "Code-Hacker_17", request: typ
 
     if (!res.ok) return null;
     const json = await res.json();
+    if (json?.errors?.length) return null;
     const acNum = json?.data?.matchedUser?.submitStats?.acSubmissionNum;
-    if (!Array.isArray(acNum)) return null;
+    const submissions = json?.data?.recentAcSubmissionList;
+    if (!Array.isArray(acNum) || !Array.isArray(submissions)) return null;
 
-    const findCount = (diff: string) =>
-      acNum.find((item: { difficulty: string; count: number }) => item.difficulty.toLowerCase() === diff.toLowerCase())?.count ?? 0;
+    const findCount = (difficulty: string): number | undefined => {
+      const count = acNum.find((item) => typeof item?.difficulty === "string" &&
+        item.difficulty.toLowerCase() === difficulty)?.count;
+      return Number.isSafeInteger(count) && count >= 0 ? count : undefined;
+    };
 
     const total = findCount("all");
     const easy = findCount("easy");
     const medium = findCount("medium");
     const hard = findCount("hard");
+    if (total === undefined || easy === undefined || medium === undefined || hard === undefined || easy + medium + hard > total) return null;
 
-    const recent: LeetCodeSubmission[] = (json?.data?.recentAcSubmissionList || []).map((sub: { title: string; titleSlug?: string; slug?: string; timestamp: string }) => ({
-      title: sub.title,
-      titleSlug: sub.titleSlug || sub.slug || "",
-      timestamp: sub.timestamp,
-    }));
+    const recent: LeetCodeSubmission[] = [];
+    for (const submission of submissions) {
+      const titleSlug = submission?.titleSlug ?? submission?.slug;
+      if (typeof submission?.title !== "string" || !submission.title.trim() ||
+          typeof titleSlug !== "string" || !/^[a-z\d-]+$/.test(titleSlug) ||
+          typeof submission.timestamp !== "string" || !/^\d+$/.test(submission.timestamp)) return null;
+      recent.push({ title: submission.title, titleSlug, timestamp: submission.timestamp });
+    }
 
     return {
       total,

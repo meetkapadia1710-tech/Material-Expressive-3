@@ -290,6 +290,14 @@
   }
 }
 
+.copyError {
+  color: var(--color-on-error-container);
+  background: var(--color-error-container);
+  border-radius: var(--shape-medium);
+  padding: 12px 16px;
+  font: var(--type-body-medium);
+}
+
 /* Clean Print Optimization (@media print) */
 @media print {
   @page {
@@ -299,19 +307,29 @@
   :global(.site-header),
   :global(.site-footer),
   :global(.skip-link),
+  :global(.intro-loader),
   :global(.toast-region),
   :global(nav),
   :global(.mobile-bottom-bar),
-  .actionToolbar {
+  .actionToolbar, .copyError {
     display: none !important;
   }
-  body, :global(html), :global(#main-content) {
+  :global(body), :global(html), :global(#main-content), :global(.site-shell) {
+    color-scheme: light;
     background: #ffffff !important;
     color: #111111 !important;
     padding: 0 !important;
     margin: 0 !important;
   }
+  .resumeContainer {
+    width: 100%;
+    padding: 0;
+  }
   .sheet {
+    --color-on-surface: #111;
+    --color-on-surface-variant: #333;
+    --color-primary: #222;
+    --color-outline-variant: #aaa;
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
@@ -328,6 +346,7 @@
     font-size: 13px !important;
   }
   .sectionTitle {
+    break-after: avoid;
     color: #1a1a1a !important;
     border-bottom: 1.5px solid #222222 !important;
   }
@@ -341,10 +360,10 @@
     background: #fafafa !important;
   }
   .entry {
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
-  .section {
-    page-break-inside: avoid;
+  .entryList li, .metricCard {
+    break-inside: avoid;
   }
 }
 

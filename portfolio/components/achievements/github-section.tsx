@@ -1,7 +1,7 @@
 import { getGitHubStats } from "@/lib/github";
 import { getGitHubCalendar } from "@/lib/github-calendar";
 import { interfaceCopy } from "@/content/interface";
-import { githubFallbackStats, githubFallbackCalendar } from "@/content/github-fallback";
+import { githubFallbackStats } from "@/content/github-fallback";
 import { GitHubHeatmap } from "./github-heatmap";
 
 const copy = interfaceCopy.github;
@@ -22,8 +22,6 @@ export async function GitHubSection() {
   ]);
 
   const stats = liveStats ?? githubFallbackStats;
-  const calendarData = liveCalendar ?? githubFallbackCalendar;
-  const isCached = !liveStats && !liveCalendar;
 
   return (
     <section
@@ -34,19 +32,19 @@ export async function GitHubSection() {
     >
       <div className="github-heading-row">
         <h2 id="github-heading">{copy.title}</h2>
-        {isCached ? (
+        {!liveStats ? (
           <span className="github-cached-pill">
-            <span className="cached-dot" /> Cached snapshot
+            <span className="cached-dot" /> Repository reference data
           </span>
         ) : (
-          <span className="github-live-pill" title="Revalidated hourly via GitHub API">
-            <span className="live-dot" /> GitHub Sync • Hourly
+          <span className="github-live-pill" title="Repository data is revalidated daily">
+            <span className="live-dot" /> Repository data from GitHub
           </span>
         )}
       </div>
 
       {/* Interactive 52-Week Contribution Heatmap & Streaks */}
-      <GitHubHeatmap initialData={calendarData} initialLive={Boolean(liveCalendar)} />
+      <GitHubHeatmap initialData={liveCalendar} />
 
       {/* Languages & Recent Repositories */}
       <div className="github-secondary-grid">

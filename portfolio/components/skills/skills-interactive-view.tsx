@@ -224,18 +224,30 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
               }}
               aria-hidden="true"
             />
-            {VIEW_MODES.map(({ value, label }) => (
+            {VIEW_MODES.map(({ value, label }, index) => (
               <button
                 key={value}
                 type="button"
                 role="radio"
                 aria-checked={viewMode === value}
+                tabIndex={viewMode === value ? 0 : -1}
                 ref={(el) => {
                   if (el) vmButtonRefs.current.set(value, el);
                   else vmButtonRefs.current.delete(value);
                 }}
                 className={`skills-mode-pill${viewMode === value ? " skills-mode-pill-active" : ""}`}
                 onClick={(event) => { setViewMode(value); event.currentTarget.scrollIntoView({ block: "nearest", inline: "nearest" }); }}
+                onKeyDown={(event) => {
+                  const { key } = event;
+                  const step = key === "ArrowRight" || key === "ArrowDown" ? 1
+                    : key === "ArrowLeft" || key === "ArrowUp" ? -1 : 0;
+                  if (!step) return;
+                  event.preventDefault();
+                  const next = VIEW_MODES[(index + step + VIEW_MODES.length) % VIEW_MODES.length];
+                  const nextButton = vmButtonRefs.current.get(next.value);
+                  nextButton?.focus({ preventScroll: true });
+                  nextButton?.click();
+                }}
               >
                 {label}
               </button>
@@ -244,11 +256,10 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
         </div>
 
         {/* Category Pills Bar */}
-        <div className="skills-category-pills" data-scroll-region role="tablist" aria-label="Skill categories">
+        <div className="skills-category-pills" data-scroll-region role="group" aria-label="Skill categories">
           <button
             type="button"
-            role="tab"
-            aria-selected={selectedCategory === "all"}
+            aria-pressed={selectedCategory === "all"}
             className={`skills-cat-pill${selectedCategory === "all" ? " skills-cat-pill-active" : ""}`}
             onClick={(event) => { setSelectedCategory("all"); event.currentTarget.scrollIntoView({ block: "nearest", inline: "nearest" }); }}
           >
@@ -265,8 +276,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
               <button
                 key={cat.id}
                 type="button"
-                role="tab"
-                aria-selected={isSelected}
+                aria-pressed={isSelected}
                 className={`skills-cat-pill${isSelected ? " skills-cat-pill-active" : ""}`}
                 onClick={(event) => { setSelectedCategory(cat.id); event.currentTarget.scrollIntoView({ block: "nearest", inline: "nearest" }); }}
               >

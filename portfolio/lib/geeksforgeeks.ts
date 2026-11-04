@@ -18,16 +18,16 @@ export async function getGFGStats(username = "meetkapa9w1y", request: typeof fet
     if (!res.ok) return null;
     const text = await res.text();
 
-    const scoreMatch = text.match(/score\\":(\d+)/i) || text.match(/"score":(\d+)/i);
-    const problemsMatch = text.match(/total_problems_solved\\":(\d+)/i) || text.match(/"total_problems_solved":(\d+)/i);
-    const rankMatch = text.match(/institute_rank\\":(\d+)/i) || text.match(/"institute_rank":(\d+)/i);
+    const scoreMatch = text.match(/"score\\?":\s*(\d+)(?=\s*[,}])/i);
+    const problemsMatch = text.match(/"total_problems_solved\\?":\s*(\d+)(?=\s*[,}])/i);
+    const rankMatch = text.match(/"institute_rank\\?":\s*(\d+)(?=\s*[,}])/i);
 
-    return {
-      username,
-      score: scoreMatch ? parseInt(scoreMatch[1], 10) : 327,
-      problemsSolved: problemsMatch ? parseInt(problemsMatch[1], 10) : 111,
-      instituteRank: rankMatch ? parseInt(rankMatch[1], 10) : 304,
-    };
+    if (!scoreMatch || !problemsMatch || !rankMatch) return null;
+    const score = Number(scoreMatch[1]);
+    const problemsSolved = Number(problemsMatch[1]);
+    const instituteRank = Number(rankMatch[1]);
+    if (![score, problemsSolved, instituteRank].every(Number.isSafeInteger)) return null;
+    return { username, score, problemsSolved, instituteRank };
   } catch {
     return null;
   }

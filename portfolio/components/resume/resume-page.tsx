@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { profile } from "@/content/profile";
 import { links } from "@/content/links";
@@ -15,17 +15,23 @@ import styles from "./resume-page.module.css";
 
 export function ResumePage() {
   const notify = useToast();
-  const [copied, setCopied] = useState(false);
+  const [copyStatus, setCopyStatus] = useState<"idle" | "pending" | "copied" | "failed">("idle");
+  const copied = copyStatus === "copied";
+
+  useEffect(() => {
+    if (!copied) return;
+    const timeout = window.setTimeout(() => setCopyStatus("idle"), 2500);
+    return () => window.clearTimeout(timeout);
+  }, [copied]);
 
   const handlePrint = () => {
     window.print();
   };
 
   const handleCopyText = async () => {
-    // Instant optimistic tactile & visual response (0ms)
-    setCopied(true);
+    if (copyStatus === "pending" || copied) return;
+    setCopyStatus("pending");
     playTactileSound("click");
-    notify("Plain text resume copied to clipboard!");
     const textResume = `MEET KAPADIA
 Ahmedabad, Gujarat, India | meetkapadia1710@gmail.com
 GitHub: https://github.com/meetkapadia1710-tech | LinkedIn: https://www.linkedin.com/in/meet-kapadia17
@@ -74,12 +80,8 @@ SKILLS
 • Systems & Tools: Git, GitHub Actions, Vercel, Turborepo, Linux/WSL`;
 
     const success = await copyToClipboard(textResume);
-    if (!success) {
-      setCopied(false);
-      notify("Failed to copy resume text");
-    } else {
-      setTimeout(() => setCopied(false), 2500);
-    }
+    setCopyStatus(success ? "copied" : "failed");
+    if (success) notify("Plain text resume copied to clipboard!");
   };
 
   const flagshipProjects = projects.filter(
@@ -102,6 +104,7 @@ SKILLS
             onClick={handleCopyText}
             className={`${styles.actionButton} ${copied ? styles.actionButtonCopied : ""}`}
             aria-label={copied ? "Copied to Clipboard!" : "Copy ATS Text from resume"}
+            aria-disabled={copyStatus === "pending"}
           >
             <Icon name={copied ? "check" : "copy"} />
             <span>{copied ? "Copied to Clipboard!" : "Copy ATS Text"}</span>
@@ -114,6 +117,9 @@ SKILLS
           </button>
         </div>
       </div>
+      {copyStatus === "failed" ? (
+        <p className={styles.copyError} role="alert">Could not copy the résumé. Try again or use Print / Save PDF.</p>
+      ) : null}
 
       {/* Printable Sheet */}
       <article className={styles.sheet}>

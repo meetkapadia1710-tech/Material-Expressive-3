@@ -735,6 +735,7 @@
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
+  text-decoration: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   transition:
@@ -1420,6 +1421,7 @@
   margin-bottom: 60px;
   scroll-margin-top: 100px;
 }
+.page :global(.github-section) { width: 100%; margin-top: 68px; margin-bottom: 48px; }
 :global(.github-heading-row) { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
 :global(.github-heading-row) h2 { font: var(--type-achievement-section); letter-spacing: -0.045em; margin: 0; color: var(--color-on-surface); }
 :global(.github-live-pill) { display: inline-flex; align-items: center; gap: 6px; font: var(--type-label-small); font-weight: 600; padding: 4px 12px; border-radius: 999px; background: var(--color-secondary-container); color: var(--color-on-secondary-container); border: 1px solid var(--color-secondary); }
@@ -1458,10 +1460,10 @@
 /* Grid Layout */
 :global(.heatmap-scroll-area) { width: 100%; overflow-x: auto; padding-bottom: 8px; }
 :global(.heatmap-grid-wrapper) { min-width: 880px; display: flex; flex-direction: column; gap: 10px; }
-:global(.heatmap-months-row) { display: flex; height: 18px; }
+:global(.heatmap-months-row) { display: flex; gap: 10px; height: 18px; }
 :global(.day-spacer) { width: 32px; flex-shrink: 0; }
-:global(.months-track) { position: relative; flex-grow: 1; height: 100%; }
-:global(.month-label) { position: absolute; font: var(--type-label-small); color: var(--color-on-surface-variant); font-weight: 500; transform: translateX(-50%); }
+:global(.months-track) { position: relative; flex: none; height: 100%; }
+:global(.month-label) { position: absolute; font: var(--type-label-small); color: var(--color-on-surface-variant); font-weight: 500; white-space: nowrap; }
 :global(.heatmap-body) { display: flex; gap: 10px; align-items: flex-start; }
 :global(.heatmap-day-labels) { width: 32px; display: flex; flex-direction: column; gap: 3.5px; flex-shrink: 0; }
 :global(.day-name) { font-size: var(--type-label-tiny-size, 10px); color: var(--color-on-surface-variant); height: 12px; line-height: 12px; text-align: left; }
@@ -1550,9 +1552,6 @@
 .page :global(.leetcode-segmented-group) > button { flex: none; }
 .page :global(.leetcode-donut-wrapper) { width: min(170px, 100%); height: auto; aspect-ratio: 1; }
 :global(.heatmap-scroll-hint) { display: none; margin: 0; font: var(--type-label-medium); color: var(--color-on-surface-variant); }
-:global(.heatmap-date-lookup) { display: flex; flex-wrap: wrap; gap: var(--control-gap); align-items: center; color: var(--color-on-surface-variant); }
-:global(.heatmap-date-lookup) input { min-width: 0; max-width: 100%; background: var(--color-surface-container); color: var(--color-on-surface); border: 1px solid var(--color-outline); border-radius: var(--shape-medium); padding: 8px; }
-:global(.heatmap-date-lookup) output { flex-basis: 100%; font: var(--type-body-medium); }
 :global(.heatmap-card) { container-type: inline-size; }
 @container (width < 880px) {
   :global(.heatmap-scroll-hint) { display: block; }

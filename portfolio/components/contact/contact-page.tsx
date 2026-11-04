@@ -8,6 +8,7 @@ import { HighlightText } from "@/components/ui/highlight-text";
 import { LiveStatusCard } from "./live-status-card";
 import { links } from "@/content/links";
 import { contactCopy as copy } from "@/content/contact";
+import { contactLimits, normalizeContact, validateContact, type ContactErrors, type ContactField, type ContactValues } from "@/lib/contact-validation";
 import styles from "./contact-page.module.css";
 
 interface TopicOption {
@@ -49,37 +50,16 @@ const TOPICS: readonly TopicOption[] = [
   },
 ] as const;
 
-type Field = "name" | "email" | "subject" | "message";
-type Values = Record<Field, string>;
-type Errors = Partial<Record<Field, string>>;
-
-const fields: { name: Field; label: string; placeholder: string; type?: string; maxLength: number; multiline?: boolean }[] = [
-  { name: "name", label: copy.name, placeholder: copy.namePlaceholder, maxLength: 100 },
-  { name: "email", label: "Your email", placeholder: "you@example.com", type: "email", maxLength: 120 },
-  { name: "subject", label: copy.subject, placeholder: copy.subjectPlaceholder, maxLength: 160 },
-  { name: "message", label: copy.message, placeholder: copy.messagePlaceholder, maxLength: 5000, multiline: true },
+const fields: { name: ContactField; label: string; placeholder: string; type?: string; multiline?: boolean }[] = [
+  { name: "name", label: copy.name, placeholder: copy.namePlaceholder },
+  { name: "email", label: "Your email", placeholder: "you@example.com", type: "email" },
+  { name: "subject", label: copy.subject, placeholder: copy.subjectPlaceholder },
+  { name: "message", label: copy.message, placeholder: copy.messagePlaceholder, multiline: true },
 ];
 
-function validate(values: Values): Errors {
-  const errors: Errors = {};
-  const name = values.name.trim();
-  const email = values.email.trim();
-  const subject = values.subject.trim();
-  const message = values.message.trim();
-  if (!name) errors.name = copy.errors.nameRequired;
-  else if (name.length > 100) errors.name = copy.errors.nameTooLong;
-  if (!email) errors.email = "Enter your email address.";
-  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = "Enter a valid email address.";
-  if (!subject) errors.subject = copy.errors.subjectRequired;
-  else if (subject.length > 160) errors.subject = copy.errors.subjectTooLong;
-  if (!message) errors.message = copy.errors.messageRequired;
-  else if (message.length > 5000) errors.message = copy.errors.messageTooLong;
-  return errors;
-}
-
 function ContactForm() {
-  const [values, setValues] = useState<Values>({ name: "", email: "", subject: "", message: "" });
-  const [errors, setErrors] = useState<Errors>({});
+  const [values, setValues] = useState<ContactValues>({ name: "", email: "", subject: "", message: "" });
+  const [errors, setErrors] = useState<ContactErrors>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
@@ -123,7 +103,8 @@ function ContactForm() {
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const nextErrors = validate(values);
+    if (submitting) return;
+    const nextErrors = validateContact(values);
     setErrors(nextErrors);
     const firstInvalid = fields.find((field) => nextErrors[field.name]);
     if (firstInvalid) {
@@ -135,78 +116,41 @@ function ContactForm() {
     setServerError(null);
 
     try {
-      let key = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
-      if (!key) {
-        try {
-          const configRes = await fetch("/api/contact");
-          if (configRes.ok) {
-            const configData = await configRes.json();
-            key = configData.key || "";
-          }
-        } catch {
-          // Proceed to check key
-        }
-      }
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        signal: AbortSignal.timeout(12_000),
+        body: JSON.stringify({
+          ...normalizeContact(values),
+          botcheck: botcheck || undefined,
+        }),
+      });
 
-      if (key) {
-        const res = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            access_key: key,
-            name: values.name.trim(),
-            email: values.email.trim(),
-            subject: `[Portfolio Contact] ${values.subject.trim()}`,
-            message: values.message.trim(),
-            botcheck: botcheck || undefined,
-            from_name: `${values.name.trim()} via Meet's Portfolio`,
-          }),
-        });
-
-        const data = await res.json();
-        if (data.success) {
-          setSubmitted(true);
-          notify("Message delivered directly to Meet's inbox!");
-          setValues({ name: "", email: "", subject: "", message: "" });
-          return;
-        }
-      }
-
-      // Fallback to mailto if Web3Forms key is not yet configured or requested
-      const email = links.email.value;
-      if (email) {
-        const body = `Name: ${values.name.trim()}\nEmail: ${values.email.trim()}\n\n${values.message.trim()}`;
-        const mailto = `mailto:${email}?subject=${encodeURIComponent(values.subject.trim())}&body=${encodeURIComponent(body)}`;
-        notify(copy.opening);
-        window.location.href = mailto;
+      const data = await res.json().catch(() => null);
+      if (res.ok && data?.success === true) {
+        setSubmitted(true);
+        notify("Message delivered directly to Meet's inbox!");
+        setValues({ name: "", email: "", subject: "", message: "" });
+      } else if (res.status === 503) {
+        setServerError("Online delivery is currently unavailable. Your draft is still here. You can open it in your email app below.");
       } else {
-        setServerError("Unable to send message.");
+        setServerError("Your message could not be sent. Try again or open your draft in your email app below.");
       }
     } catch {
-      const email = links.email.value;
-      if (email) {
-        const body = `Name: ${values.name.trim()}\nEmail: ${values.email.trim()}\n\n${values.message.trim()}`;
-        const mailto = `mailto:${email}?subject=${encodeURIComponent(values.subject.trim())}&body=${encodeURIComponent(body)}`;
-        notify(copy.opening);
-        window.location.href = mailto;
-      } else {
-        setServerError("Failed to connect. Please send an email directly.");
-      }
+      setServerError("Unable to connect. Your draft is still here. Try again or open it in your email app below.");
     } finally {
       setSubmitting(false);
     }
   }
 
-  const handleMailtoDirect = () => {
-    const email = links.email.value;
-    if (!email) return;
-    const body = `Name: ${values.name.trim()}\nEmail: ${values.email.trim()}\n\n${values.message.trim()}`;
-    const mailto = `mailto:${email}?subject=${encodeURIComponent(values.subject.trim() || "Portfolio Inquiry")}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-  };
+  const email = links.email.value;
+  const emailBody = `Name: ${values.name.trim()}\nEmail: ${values.email.trim()}\n\n${values.message.trim()}`;
+  const draftLink = email
+    ? `mailto:${email}?subject=${encodeURIComponent(values.subject.trim() || "Portfolio Inquiry")}&body=${encodeURIComponent(emailBody)}`
+    : null;
 
   return <form className={styles.form} onSubmit={submit} noValidate>
     <div className={styles.formHeading}>
@@ -225,8 +169,6 @@ function ContactForm() {
       tabIndex={-1}
       autoComplete="off"
     />
-
-    {serverError ? <p className={styles.serverError} role="alert">{serverError}</p> : null}
 
     {submitted ? (
       <div className={styles.successState}>
@@ -297,15 +239,16 @@ function ContactForm() {
             <label htmlFor={id}>{field.label}</label>
             {field.multiline
               ? <>
-                  <textarea id={id} name={field.name} rows={6} maxLength={field.maxLength} placeholder={dynamicPlaceholder} value={values[field.name]} aria-invalid={Boolean(error)} aria-describedby={error ? errorId : undefined} onChange={(event) => { setValues((current) => ({ ...current, [field.name]: event.target.value })); if (error) setErrors((current) => ({ ...current, [field.name]: undefined })); }} />
+                  <textarea id={id} name={field.name} rows={6} maxLength={contactLimits[field.name]} placeholder={dynamicPlaceholder} value={values[field.name]} aria-invalid={Boolean(error)} aria-describedby={error ? errorId : undefined} onChange={(event) => { setValues((current) => ({ ...current, [field.name]: event.target.value })); if (error) setErrors((current) => ({ ...current, [field.name]: undefined })); }} />
                   <span className={styles.characterCounter} aria-live="polite">
-                    {field.maxLength - values[field.name].length} characters left
+                    {contactLimits[field.name] - values[field.name].length} characters left
                   </span>
                 </>
-              : <input id={id} name={field.name} type={field.type ?? "text"} autoComplete={field.name === "name" ? "name" : field.name === "email" ? "email" : "off"} maxLength={field.maxLength} placeholder={dynamicPlaceholder} value={values[field.name]} aria-invalid={Boolean(error)} aria-describedby={error ? errorId : undefined} onChange={(event) => { setValues((current) => ({ ...current, [field.name]: event.target.value })); if (error) setErrors((current) => ({ ...current, [field.name]: undefined })); }} />}
+              : <input id={id} name={field.name} type={field.type ?? "text"} autoComplete={field.name === "name" ? "name" : field.name === "email" ? "email" : "off"} maxLength={contactLimits[field.name]} placeholder={dynamicPlaceholder} value={values[field.name]} aria-invalid={Boolean(error)} aria-describedby={error ? errorId : undefined} onChange={(event) => { setValues((current) => ({ ...current, [field.name]: event.target.value })); if (error) setErrors((current) => ({ ...current, [field.name]: undefined })); }} />}
             {error ? <p className={styles.error} id={errorId} role="alert">{error}</p> : null}
           </div>;
         })}
+        {serverError ? <p className={styles.serverError} role="alert">{serverError}</p> : null}
         <div className={styles.submitRow}>
           <button className="button button-primary" type="submit" disabled={submitting}>
             {submitting ? (
@@ -320,15 +263,14 @@ function ContactForm() {
               </>
             )}
           </button>
-          <button
-            type="button"
+          {draftLink ? <a
+            href={draftLink}
             className={styles.mailtoFallbackButton}
-            onClick={handleMailtoDirect}
             title="Open in your default email client"
           >
             <span>Or open email app</span>
             <Icon name="arrow-up-right" />
-          </button>
+          </a> : null}
         </div>
       </>
     )}

@@ -105,7 +105,7 @@
 }
 .page :global(.about-principle-icon) svg { width: 19px; height: 19px; }
 
-.page :global(.about-principle-card) h4 {
+.page :global(.about-principle-card) h3 {
   margin: 0 0 8px;
   font-family: var(--display);
   font-size: 1.05rem;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { interfaceCopy as copy } from "@/content/interface";
 import { projectCatalogCopy } from "@/content/projects";
 import type { Project } from "@/content/types";
@@ -15,7 +15,10 @@ const initialFilters: ProjectFilters = { category: ALL_PROJECTS, status: ALL_PRO
 
 export function ProjectCatalog({ entries, accentStyles = {} }: { entries: readonly Project[]; accentStyles?: Record<string, CSSProperties> }) {
   const [filters, setFilters] = useState<ProjectFilters>(initialFilters);
-  const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [preview, setPreview] = useState<{ project: Project; trigger: HTMLButtonElement } | null>(null);
+  const openPreview = useCallback((project: Project, trigger: HTMLButtonElement) => {
+    setPreview({ project, trigger });
+  }, []);
   const filterDialog = useRef<HTMLDialogElement>(null);
   const [query, setQuery] = useState("");
   const [ready, setReady] = useState(false);
@@ -146,12 +149,13 @@ export function ProjectCatalog({ entries, accentStyles = {} }: { entries: readon
     <div id="project-results">
       {visible.length ? projectGroupOrder.map((group) => groups[group].length ? <section className={styles.projectGroup} key={group} id={`projects-${group}`} aria-labelledby={`projects-${group}-heading`}>
         <header className={styles.groupHeader}><div><h2 id={`projects-${group}-heading`}>{projectCatalogCopy.groups[group].title}</h2><p>{projectCatalogCopy.groups[group].description}</p></div><span className={styles.groupCount}>{projectCatalogCopy.groupCountLabel(groups[group].length)}</span></header>
-        <div className={`${styles.grid}${group === "explorations" ? ` ${styles.ideaGrid}` : ""}`}>{groups[group].map((project) => <CatalogCard key={project.slug} project={project} accentStyle={accentStyles[project.slug]} onExpand={setActiveProject} />)}</div>
+        <div className={`${styles.grid}${group === "explorations" ? ` ${styles.ideaGrid}` : ""}`}>{groups[group].map((project) => <CatalogCard key={project.slug} project={project} accentStyle={accentStyles[project.slug]} onExpand={openPreview} />)}</div>
       </section> : null) : <div className={styles.empty}><Icon name="spark" /><h2>{copy.emptyTitle}</h2><p>{copy.emptyDescription}</p><button type="button" className="button button-primary" onClick={clearAll}>{copy.clearFilters}</button></div>}
     </div>
     <ExpandableProjectModal
-      project={activeProject}
-      onClose={() => setActiveProject(null)}
+      project={preview?.project ?? null}
+      trigger={preview?.trigger ?? null}
+      onClose={() => setPreview(null)}
     />
   </>;
 }

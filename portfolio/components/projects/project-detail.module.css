@@ -14,6 +14,7 @@
 .page :global(.detail-review) { color: var(--color-on-surface-variant); font-size: var(--type-label-medium-size); font-weight: 650; margin: 16px 0 0; }
 .page :global(.detail-layout) { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 90px; align-items: start; margin-top: 42px; }
 .page :global(.detail-content) { min-width: 0; }
+.page :global(.detail-layout.detail-layout-single) { grid-template-columns: minmax(0, 70ch); }
 .page :global(.detail-section) { margin-bottom: 45px; scroll-margin-top: 35px; }
 .page :global(.detail-section) h2 { font: var(--type-title-large); letter-spacing: -.045em; margin: 0 0 18px; }
 .page :global(.detail-section) p { color: var(--color-on-surface-variant); font-size: var(--type-body-medium-size); line-height: 1.85; white-space: pre-line; overflow-wrap: anywhere; margin: 0; }

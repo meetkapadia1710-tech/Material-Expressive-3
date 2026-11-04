@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboa
 import { useRouter } from "next/navigation";
 import { interfaceCopy as copy } from "@/content/interface";
 import { navigation } from "@/content/profile";
-import { projectCatalogCopy, projects } from "@/content/projects";
+import { getPublicProjects, projectCatalogCopy } from "@/content/projects";
 import { links } from "@/content/links";
 import { useToast, toggleThemeChoice } from "@/components/interface-controls";
 import { Icon } from "@/components/icon";
@@ -95,7 +95,7 @@ function Highlight({ text, query }: { text: string; query: string }) {
 
 function getBaseItems(): CommandItem[] {
   const pages: CommandItem[] = navigation.map((page) => ({ id: `page:${page.href}`, label: page.label, detail: page.href, group: "Pages", href: page.href }));
-  const projectItems: CommandItem[] = projects.toSorted((a, b) => a.order - b.order).map((project) => ({
+  const projectItems: CommandItem[] = getPublicProjects().map((project) => ({
     id: `project:${project.slug}`,
     label: project.name,
     detail: project.verification === "unverified" ? projectCatalogCopy.reviewLabel : project.category ?? project.status ?? "",
@@ -151,9 +151,15 @@ export default function CommandPalette({ open, onDismiss }: { open: boolean; onD
     inputRef.current?.focus();
     try {
       const saved: unknown = JSON.parse(localStorage.getItem(RECENT_KEY) ?? "[]");
-      setRecentIds(Array.isArray(saved) ? saved.filter((id): id is string => typeof id === "string").slice(0, 5) : []);
+      const validIds = Array.isArray(saved)
+        ? saved.filter((id): id is string => typeof id === "string" && byId.has(id)).slice(0, 5)
+        : [];
+      setRecentIds(validIds);
+      if (Array.isArray(saved) && validIds.length !== saved.length) {
+        localStorage.setItem(RECENT_KEY, JSON.stringify(validIds));
+      }
     } catch { setRecentIds([]); }
-  }, [open]);
+  }, [open, byId]);
 
   const groups = useMemo(() => {
     const recent = recentIds.map((id) => byId.get(id)).filter((item): item is CommandItem => Boolean(item)).map((item) => ({ ...item, group: "Recent" as const }));
@@ -203,8 +209,6 @@ export default function CommandPalette({ open, onDismiss }: { open: boolean; onD
     if (!flatItems.length) return;
     if (event.key === "ArrowDown") { event.preventDefault(); setActiveIndex((index) => (index + 1) % flatItems.length); }
     if (event.key === "ArrowUp") { event.preventDefault(); setActiveIndex((index) => (index - 1 + flatItems.length) % flatItems.length); }
-    if (event.key === "Home") { event.preventDefault(); setActiveIndex(0); }
-    if (event.key === "End") { event.preventDefault(); setActiveIndex(flatItems.length - 1); }
     if (event.key === "Enter" && activeItem) {
       event.preventDefault();
       dialogRef.current?.close();

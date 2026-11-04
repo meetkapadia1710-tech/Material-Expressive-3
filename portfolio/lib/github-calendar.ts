@@ -14,6 +14,9 @@ export interface GitHubCalendarData {
   monthLabels: { month: string; weekIndex: number }[];
 }
 
+const dayMs = 86_400_000;
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
 export async function getGitHubCalendar(username = "meetkapadia1710-tech", request: typeof fetch = fetch): Promise<GitHubCalendarData | null> {
   try {
     const res = await request(`https://github.com/users/${username}/contributions`, {
@@ -21,91 +24,72 @@ export async function getGitHubCalendar(username = "meetkapadia1710-tech", reque
       next: { revalidate: 3600 },
       signal: AbortSignal.timeout(8000),
     });
-
     if (!res.ok) return null;
     const html = await res.text();
 
-    const totalMatch = html.match(/([\d,]+)\s+contributions\s+in\s+the\s+last\s+year/i);
-    const totalContributions = totalMatch ? parseInt(totalMatch[1].replace(/,/g, ""), 10) : 683;
-
-    const dayRegex = /<td[^>]*data-date="(\d{4}-\d{2}-\d{2})"[^>]*id="([^"]+)"[^>]*data-level="(\d+)"/g;
-    const daysMap = new Map<string, CalendarDay>();
-    let m: RegExpExecArray | null;
-    while ((m = dayRegex.exec(html)) !== null) {
-      daysMap.set(m[2], {
-        id: m[2],
-        date: m[1],
-        level: parseInt(m[3], 10),
-        count: 0,
-      });
-    }
-
-    const tipRegex = /<tool-tip[^>]*for="([^"]+)"[^>]*>([\s\S]*?)<\/tool-tip>/g;
-    while ((m = tipRegex.exec(html)) !== null) {
-      const day = daysMap.get(m[1]);
-      if (day) {
-        const text = m[2].trim();
-        const countMatch = text.match(/^(\d+)\s+contribution/);
-        day.count = countMatch ? parseInt(countMatch[1], 10) : 0;
+    const counts = new Map<string, number>();
+    for (const [, id, label] of html.matchAll(/<tool-tip\b[^>]*\bfor="([^"]+)"[^>]*>([\s\S]*?)<\/tool-tip>/g)) {
+      const text = label.trim();
+      if (/^no contributions?\b/i.test(text)) counts.set(id, 0);
+      else {
+        const count = text.match(/^(\d{1,3}(?:,\d{3})+|\d+)\s+contributions?\b/i);
+        if (count) counts.set(id, Number(count[1].replaceAll(",", "")));
       }
     }
 
-    const days = [...daysMap.values()].sort((a, b) => a.date.localeCompare(b.date));
-    if (days.length === 0) return null;
-
-    let currentStreak = 0;
-    let longestStreak = 0;
-    let tempStreak = 0;
-    let maxDay = { date: "", count: 0 };
-
-    for (let i = 0; i < days.length; i++) {
-      const d = days[i];
-      if (d.count > maxDay.count) {
-        maxDay = { date: d.date, count: d.count };
-      }
-      if (d.count > 0) {
-        tempStreak++;
-        if (tempStreak > longestStreak) longestStreak = tempStreak;
-      } else {
-        tempStreak = 0;
-      }
+    const days: CalendarDay[] = [];
+    for (const [cell] of html.matchAll(/<td\b[^>]*\bdata-date="[^"]+"[^>]*>/g)) {
+      const date = cell.match(/\bdata-date="(\d{4}-\d{2}-\d{2})"/)?.[1];
+      const id = cell.match(/\sid="([^"]+)"/)?.[1];
+      const level = cell.match(/\bdata-level="([0-4])"/)?.[1];
+      const count = id ? counts.get(id) : undefined;
+      if (!date || !id || level === undefined || count === undefined || !Number.isSafeInteger(count)) return null;
+      if ((level === "0") !== (count === 0)) return null;
+      days.push({ id, date, level: Number(level), count });
     }
 
-    for (let i = days.length - 1; i >= 0; i--) {
-      if (days[i].count > 0) currentStreak++;
-      else if (i === days.length - 1) continue;
-      else break;
-    }
+    days.sort((a, b) => a.date.localeCompare(b.date));
+    if (!days.length) return null;
 
     const weeks: CalendarDay[][] = [];
-    for (let i = 0; i < days.length; i += 7) {
-      weeks.push(days.slice(i, i + 7));
-    }
-
-    // Determine month labels across the 53 weeks
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    const monthLabels: { month: string; weekIndex: number }[] = [];
+    const monthLabels: GitHubCalendarData["monthLabels"] = [];
     let lastMonth = -1;
+    let previousDate: number | undefined;
+    let totalContributions = 0;
+    let currentStreak = 0;
+    let longestStreak = 0;
+    let maxDay = { date: days[0].date, count: 0 };
 
-    for (let w = 0; w < weeks.length; w++) {
-      const firstDayOfWeek = weeks[w][0];
-      if (firstDayOfWeek) {
-        const mIdx = new Date(firstDayOfWeek.date + "T00:00:00Z").getUTCMonth();
-        if (mIdx !== lastMonth) {
-          monthLabels.push({ month: monthNames[mIdx], weekIndex: w });
-          lastMonth = mIdx;
+    for (const day of days) {
+      const date = new Date(day.date + "T00:00:00Z");
+      const timestamp = date.getTime();
+      if (!Number.isFinite(timestamp) || date.toISOString().slice(0, 10) !== day.date) return null;
+      if (previousDate !== undefined && timestamp - previousDate !== dayMs) return null;
+      previousDate = timestamp;
+
+      if (!weeks.length || date.getUTCDay() === 0) {
+        weeks.push([]);
+        const month = date.getUTCMonth();
+        if (month !== lastMonth) {
+          monthLabels.push({ month: monthNames[month], weekIndex: weeks.length - 1 });
+          lastMonth = month;
         }
+      }
+      weeks.at(-1)?.push(day);
+
+      totalContributions += day.count;
+      if (day.count > maxDay.count) maxDay = { date: day.date, count: day.count };
+      if (day.count > 0) {
+        currentStreak++;
+        longestStreak = Math.max(longestStreak, currentStreak);
+      } else if (day !== days.at(-1)) {
+        // The latest day can still receive contributions.
+        currentStreak = 0;
       }
     }
 
-    return {
-      totalContributions,
-      currentStreak,
-      longestStreak,
-      maxDay,
-      weeks,
-      monthLabels,
-    };
+    if (!Number.isSafeInteger(totalContributions)) return null;
+    return { totalContributions, currentStreak, longestStreak, maxDay, weeks, monthLabels };
   } catch {
     return null;
   }

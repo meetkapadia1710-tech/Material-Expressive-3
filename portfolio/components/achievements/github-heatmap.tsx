@@ -2,12 +2,10 @@
 
 import { useEffect, useMemo, useRef, useState, type PointerEvent } from "react";
 import type { GitHubCalendarData } from "@/lib/github-calendar";
-import { githubFallbackCalendar } from "@/content/github-fallback";
 import { Icon } from "@/components/icon";
 
 interface GitHubHeatmapProps {
-  initialData?: GitHubCalendarData;
-  initialLive?: boolean;
+  initialData: GitHubCalendarData | null;
 }
 
 function formatDate(dateStr: string): string {
@@ -25,34 +23,30 @@ const cellStep = 15.5;
 const chartHeight = 6 * cellStep + cellSize;
 const dayNames = ["", "Mon", "", "Wed", "", "Fri", ""];
 
-export function GitHubHeatmap({ initialData = githubFallbackCalendar, initialLive = false }: GitHubHeatmapProps) {
-  const [data, setData] = useState<GitHubCalendarData>(initialData);
+export function GitHubHeatmap({ initialData }: GitHubHeatmapProps) {
+  const [data, setData] = useState(initialData);
   const [hoveredDay, setHoveredDay] = useState<{ date: string; count: number; x: number; y: number } | null>(null);
-  const [isLive, setIsLive] = useState(initialLive);
-  const [lookupDate, setLookupDate] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const region = scrollRef.current;
     if (!region) return;
     region.scrollLeft = region.scrollWidth - region.clientWidth;
-  }, []);
+  }, [data]);
 
-  const days = useMemo(() => data.weeks.flat(), [data.weeks]);
-  const chartWidth = Math.max(0, data.weeks.length - 1) * cellStep + cellSize;
+  const chartWidth = Math.max(0, (data?.weeks.length ?? 0) - 1) * cellStep + cellSize;
   const chartPaths = useMemo(() => {
     const levels = Array.from({ length: 5 }, () => "");
-    data.weeks.forEach((week, column) => week.forEach((day, row) => {
+    data?.weeks.forEach((week, column) => week.forEach((day) => {
       const x = column * cellStep + 1;
-      const y = row * cellStep + 1;
+      const y = new Date(day.date + "T00:00:00Z").getUTCDay() * cellStep + 1;
       levels[day.level] += `M${x + 2} ${y}h6q2 0 2 2v6q0 2-2 2h-6q-2 0-2-2v-6q0-2 2-2z`;
     }));
     return levels;
-  }, [data.weeks]);
-  const lookup = lookupDate ? days.find((day) => day.date === lookupDate) : undefined;
+  }, [data]);
 
   useEffect(() => {
-    if (initialLive) return;
+    if (initialData) return;
     let cancelled = false;
     async function fetchCalendar() {
       try {
@@ -61,9 +55,8 @@ export function GitHubHeatmap({ initialData = githubFallbackCalendar, initialLiv
         const live = await res.json();
         if (cancelled || !live?.weeks?.length) return;
         setData(live);
-        setIsLive(true);
       } catch {
-        // Fallback already rendered
+        // Keep the unavailable state when the refresh fails.
       }
     }
 
@@ -71,7 +64,7 @@ export function GitHubHeatmap({ initialData = githubFallbackCalendar, initialLiv
     return () => {
       cancelled = true;
     };
-  }, [initialLive]);
+  }, [initialData]);
 
   function showHoveredDay(event: PointerEvent<SVGSVGElement>) {
     if (event.pointerType !== "mouse") return;
@@ -80,7 +73,9 @@ export function GitHubHeatmap({ initialData = githubFallbackCalendar, initialLiv
     const y = (event.clientY - bounds.top) * chartHeight / bounds.height;
     const column = Math.floor(x / cellStep);
     const row = Math.floor(y / cellStep);
-    const day = x % cellStep < cellSize && y % cellStep < cellSize ? data.weeks[column]?.[row] : null;
+    const day = x % cellStep < cellSize && y % cellStep < cellSize
+      ? data?.weeks[column]?.find((item) => new Date(item.date + "T00:00:00Z").getUTCDay() === row)
+      : null;
     if (!day) {
       if (hoveredDay) setHoveredDay(null);
       return;
@@ -93,6 +88,17 @@ export function GitHubHeatmap({ initialData = githubFallbackCalendar, initialLiv
     });
   }
 
+  if (!data) {
+    return (
+      <div className="heatmap-card">
+        <h3>Continuous Contribution Heatmap</h3>
+        <div className="heatmap-scroll-area" role="region" aria-label="Contribution calendar">
+          <p role="status">GitHub contribution data is currently unavailable.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="github-heatmap-container" aria-label="GitHub Contribution Heatmap">
       {/* Metrics Row */}
@@ -100,7 +106,7 @@ export function GitHubHeatmap({ initialData = githubFallbackCalendar, initialLiv
         <div className="heatmap-metric-card">
           <span className="metric-label">Contributions</span>
           <strong className="metric-value">{data.totalContributions}</strong>
-          <span className="metric-sub">Past 365 days</span>
+          <span className="metric-sub">Calendar period</span>
         </div>
 
         <div className="heatmap-metric-card">
@@ -137,9 +143,9 @@ export function GitHubHeatmap({ initialData = githubFallbackCalendar, initialLiv
             </span>
             <h3>Continuous Contribution Heatmap</h3>
           </div>
-          <span className="heatmap-live-badge" title={isLive ? "Synchronized hourly with GitHub activity" : "Cached snapshot"}>
-            <span className={`live-pulse-dot ${isLive ? "pulse-active" : ""}`} />
-            {isLive ? "GitHub Sync • Hourly" : "Cached Snapshot"}
+          <span className="heatmap-live-badge" title="Calendar data is revalidated hourly">
+            <span className="live-pulse-dot pulse-active" />
+            Calendar data from GitHub
           </span>
         </div>
 
@@ -149,12 +155,12 @@ export function GitHubHeatmap({ initialData = githubFallbackCalendar, initialLiv
             {/* Months Header */}
             <div className="heatmap-months-row">
               <div className="day-spacer" />
-              <div className="months-track">
+              <div className="months-track" style={{ width: chartWidth }}>
                 {data.monthLabels.map((item, idx) => (
                   <span
                     key={`${item.month}-${idx}`}
                     className="month-label"
-                    style={{ left: `${(item.weekIndex / data.weeks.length) * 100}%` }}
+                    style={{ left: item.weekIndex * cellStep }}
                   >
                     {item.month}
                   </span>
@@ -200,14 +206,6 @@ export function GitHubHeatmap({ initialData = githubFallbackCalendar, initialLiv
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="heatmap-date-lookup">
-          <label htmlFor="heatmap-date">Look up a day</label>
-          <input id="heatmap-date" type="date" min={days[0]?.date} max={days.at(-1)?.date} value={lookupDate} onChange={(event) => setLookupDate(event.target.value)} />
-          <output htmlFor="heatmap-date" aria-live="polite">
-            {lookupDate && (lookup ? `${lookup.count} contributions on ${formatDate(lookup.date)}` : "No calendar data for this date.")}
-          </output>
         </div>
 
         {/* Floating Tooltip */}

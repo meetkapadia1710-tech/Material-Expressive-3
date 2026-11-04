@@ -67,7 +67,7 @@ app/                         Next.js App Router pages, layouts, and API routes
   achievements/page.tsx      Achievements, coding profiles and certifications
   resume/page.tsx            ATS-friendly digital resume viewer
   contact/page.tsx           Contact route with live IST clock & Web3Forms
-  api/contact/route.ts       Server-side proxy and key configuration route
+  api/contact/route.ts       Server-side contact submission and availability
   globals.css                Shared Material 3 tokens, colors & typography
 components/                  Reusable UI components
   contact/                   Contact page, LiveStatusCard, and M3 Topic Cards
@@ -106,12 +106,11 @@ All content is managed through typed TypeScript modules in `content/`:
 For web form submissions on `/contact`, create `.env.local`:
 
 ```env
-# Web3Forms Access Key (free from https://web3forms.com)
-NEXT_PUBLIC_WEB3FORMS_KEY=your_key_here
+# Server-only Web3Forms access key
 WEB3FORMS_ACCESS_KEY=your_key_here
-````
+```
 
-All `.env*` files are strictly excluded in `.gitignore` to prevent secret leaks.
+Remove any legacy `NEXT_PUBLIC_WEB3FORMS_KEY` deployment setting. The browser submits to `/api/contact`. Web3Forms requires a paid subscription and a provider-allowlisted server IP for server-side delivery. The form retains the draft and offers explicit email recovery when delivery is unavailable. [Web3Forms troubleshooting](https://docs.web3forms.com/getting-started/troubleshooting)
 
 
 ## 📄 License

@@ -6,7 +6,7 @@ import styles from "@/components/projects/project-catalog.module.css";
 import { pageCopy } from "@/content/profile";
 import { projects, projectCatalogCopy } from "@/content/projects";
 import { projectAccentStyle } from "@/lib/project-accent";
-export const metadata = { title: pageCopy.projects.title };
+export const metadata = { alternates: { canonical: "/projects" }, title: pageCopy.projects.title, description: projectCatalogCopy.collectionLabel };
 const accentStyles = Object.fromEntries(projects.flatMap((project) => {
   const style = projectAccentStyle(project.accentSeed);
   return style ? [[project.slug, style]] : [];

@@ -4,6 +4,7 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import { leetCodeStats, type LeetCodeBreakdown, type LeetCodeSubmissionItem } from "@/content/achievements";
 import { Icon } from "@/components/icon";
 import { useCountUp } from "@/components/motion/use-count-up";
+import type { LeetCodeLiveStats } from "@/lib/leetcode";
 
 interface LeetCodeWidgetProps {
   stats?: LeetCodeBreakdown;
@@ -26,6 +27,27 @@ function formatRelativeTime(timestamp: string): string {
   if (diffDays < 30) return `${diffDays}d ago`;
   const date = new Date(ts * 1000);
   return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+}
+
+function LeetCodeCenterCount({ target }: { target: number }) {
+  const countRef = useRef<HTMLSpanElement>(null);
+  const [visible, setVisible] = useState(false);
+  const count = useCountUp(target, 600, visible);
+
+  useEffect(() => {
+    const element = countRef.current;
+    if (!element || !("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+        observer.disconnect();
+      }
+    });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
+  return <span ref={countRef} className="leetcode-center-count tabular-nums">{count}</span>;
 }
 
 export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className = "" }: LeetCodeWidgetProps) {
@@ -62,8 +84,8 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
       try {
         const res = await fetch("/api/leetcode");
         if (!res.ok) return;
-        const live = await res.json();
-        if (cancelled || !live?.total) return;
+        const live: LeetCodeLiveStats | null = await res.json();
+        if (cancelled || !live || !Number.isSafeInteger(live.total) || live.total < 0 || !Array.isArray(live.recent)) return;
 
         setCurrentStats((prev) => ({
           ...prev,
@@ -72,7 +94,7 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
           easy: live.easy,
           medium: live.medium,
           hard: live.hard,
-          recentSubmissions: live.recent?.length ? live.recent : prev.recentSubmissions,
+          recentSubmissions: live.recent,
         }));
         setIsLiveSync(true);
       } catch {
@@ -98,7 +120,6 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
       ? stats.hard.count
       : stats.total;
 
-  const animatedCenterCount = useCountUp(targetCount, 600, true);
 
   // SVG Geometry for Expressive Donut Progress Ring
   const radius = 54;
@@ -106,9 +127,10 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
 
   // Gap between segments in arc length
   const gap = 8;
-  const easyLen = Math.max(0, (stats.easy.count / stats.total) * circumference - gap);
-  const medLen = Math.max(0, (stats.medium.count / stats.total) * circumference - gap);
-  const hardLen = Math.max(0, (stats.hard.count / stats.total) * circumference - gap);
+  const arcLength = (count: number) => stats.total > 0 ? Math.max(0, (count / stats.total) * circumference - gap) : 0;
+  const easyLen = arcLength(stats.easy.count);
+  const medLen = arcLength(stats.medium.count);
+  const hardLen = arcLength(stats.hard.count);
 
   const easyOffset = -gap / 2;
   const medOffset = -(easyLen + gap + gap / 2);
@@ -185,7 +207,7 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
           ref={groupRef}
           className="leetcode-segmented-group"
           data-scroll-region
-          role="tablist"
+          role="radiogroup"
           aria-label="Difficulty Filter"
           data-active-segment={activeSegment}
           onKeyDown={handleKeyDown}
@@ -208,8 +230,9 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
                 else buttonRefs.current.delete(seg.id);
               }}
               type="button"
-              role="tab"
-              aria-selected={activeSegment === seg.id}
+              role="radio"
+              aria-checked={activeSegment === seg.id}
+              tabIndex={activeSegment === seg.id ? 0 : -1}
               className={`segmented-button segment-${seg.id} ${activeSegment === seg.id ? "is-selected" : ""}`}
               onClick={() => setActiveSegment(seg.id)}
             >
@@ -283,7 +306,7 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
 
             {/* Focal Center Count with Tabular Emphasized Digits */}
             <div className="leetcode-donut-center" aria-hidden="true">
-              <span className="leetcode-center-count tabular-nums">{animatedCenterCount}</span>
+              <LeetCodeCenterCount target={targetCount} />
               <span className="leetcode-center-label">
                 {activeSegment === "all" ? "Solved" : `${activeSegment.toUpperCase()}`}
               </span>
@@ -466,7 +489,7 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
           </div>
           <div className="leetcode-recent-list" role="list">
             {recentList.slice(0, 10).map((item) => (
-              <div key={item.titleSlug} className="leetcode-recent-item m3-list-item" role="listitem">
+              <div key={`${item.titleSlug}-${item.timestamp}`} className="leetcode-recent-item m3-list-item" role="listitem">
                 <div className="leetcode-recent-info">
                   <div className="recent-leading-shape leetcode-recent-status" aria-hidden="true">
                     <span className="recent-status-icon">✓</span>

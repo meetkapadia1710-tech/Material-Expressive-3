@@ -55,7 +55,7 @@ function CommandPaletteController() {
 
   return <>
     <button ref={triggerRef} type="button" className="command-trigger" aria-label={interfaceCopy.command.triggerLabel} aria-keyshortcuts="Control+K Meta+K" onClick={openPalette}>
-      <Icon name="search" /><span>{interfaceCopy.command.trigger}</span><kbd>{interfaceCopy.command.shortcut}</kbd>
+      <Icon name="search" /><span>{interfaceCopy.command.trigger}</span><kbd aria-hidden="true" data-shortcut={interfaceCopy.command.shortcut} />
     </button>
     {paletteRequested ? <Suspense fallback={null}><CommandPalette open={paletteOpen} onDismiss={closePalette} /></Suspense> : null}
   </>;

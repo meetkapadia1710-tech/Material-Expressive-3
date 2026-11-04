@@ -247,6 +247,7 @@ export function HomePage() {
                   type="button"
                   className="home-filter-chip"
                   data-active={isActive}
+                  aria-pressed={isActive}
                   onClick={() => setActiveCategory(cat)}
                 >
                   <span>{label}</span>

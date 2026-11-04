@@ -1,5 +1,4 @@
 import type { GitHubStats } from "@/lib/github";
-import type { GitHubCalendarData } from "@/lib/github-calendar";
 
 export const githubFallbackStats: GitHubStats = {
   publicRepos: 18,
@@ -64,49 +63,3 @@ export const githubFallbackStats: GitHubStats = {
     ["2026-11", 7],
   ],
 };
-
-// Generate realistic 53-week fallback calendar
-function generateFallbackCalendar(): GitHubCalendarData {
-  const weeks: GitHubCalendarData["weeks"] = [];
-  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const monthLabels: { month: string; weekIndex: number }[] = [];
-  let lastMonth = -1;
-
-  const startDate = new Date("2025-11-02T00:00:00Z");
-
-  for (let w = 0; w < 53; w++) {
-    const week: GitHubCalendarData["weeks"][0] = [];
-    for (let d = 0; d < 7; d++) {
-      const cur = new Date(startDate.getTime() + (w * 7 + d) * 86400000);
-      const dateStr = cur.toISOString().slice(0, 10);
-      const mIdx = cur.getUTCMonth();
-      if (d === 0 && mIdx !== lastMonth) {
-        monthLabels.push({ month: monthNames[mIdx], weekIndex: w });
-        lastMonth = mIdx;
-      }
-      // Synthetic realistic activity
-      const isWeekend = d === 0 || d === 6;
-      const count = (w > 28 && w < 42) ? (isWeekend ? 3 : 6) : ((w + d) % 5 === 0 ? 2 : 0);
-      const level = count === 0 ? 0 : count > 5 ? 4 : count > 3 ? 3 : count > 1 ? 2 : 1;
-
-      week.push({
-        id: `fb-day-${w}-${d}`,
-        date: dateStr,
-        level,
-        count,
-      });
-    }
-    weeks.push(week);
-  }
-
-  return {
-    totalContributions: 683,
-    currentStreak: 6,
-    longestStreak: 10,
-    maxDay: { date: "2026-06-10", count: 86 },
-    weeks,
-    monthLabels,
-  };
-}
-
-export const githubFallbackCalendar: GitHubCalendarData = generateFallbackCalendar();

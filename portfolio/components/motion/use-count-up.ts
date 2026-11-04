@@ -9,7 +9,9 @@ export function useCountUp(target: number, duration: number = 800, enabled: bool
   useEffect(() => {
     if (!enabled) return;
 
-    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (motionPreference.matches || target === 0) {
+      setCurrent(target);
       return;
     }
 
@@ -35,9 +37,18 @@ export function useCountUp(target: number, duration: number = 800, enabled: bool
       }
     };
 
+    const stopForReducedMotion = () => {
+      if (!motionPreference.matches) return;
+      cancelAnimationFrame(animId);
+      setCurrent(target);
+    };
+    motionPreference.addEventListener("change", stopForReducedMotion);
     animId = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(animId);
+    return () => {
+      cancelAnimationFrame(animId);
+      motionPreference.removeEventListener("change", stopForReducedMotion);
+    };
   }, [target, duration, enabled]);
 
-  return current;
+  return enabled ? current : target;
 }
