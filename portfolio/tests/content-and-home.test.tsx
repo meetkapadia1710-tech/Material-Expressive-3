@@ -11,7 +11,7 @@ import { skills } from "../content/skills";
 import { hackathons, codingProfiles } from "../content/achievements";
 
 test("featured order and links preserve the supplied selection", () => {
-  assert.deepEqual(getFeaturedProjects().map((p) => p.slug), ["repograde", "hindsight", "playhub", "bd-buildcon-bhumi-developers", "api-traffic-optimizer"]);
+  assert.deepEqual(getFeaturedProjects().map((p) => p.slug), ["repograde", "hindsight", "playhub", "bd-buildcon-bhumi-developers", "api-traffic-optimizer", "meetos"]);
   assert.equal(new Set(projects.map((p) => p.slug)).size, projects.length);
   for (const p of getFeaturedProjects()) assert.equal(getProjectBySlug(p.slug)?.name, p.name);
 });
@@ -33,10 +33,13 @@ test("unknown and unverified fields remain explicit", () => {
   assert.equal(profile.education.cgpaScale, null);
   assert.equal(links.geeksforgeeks.verification, "provided");
   assert.equal(links.resume.verification, "unverified");
-  assert.equal(projects.filter((p) => p.repoUrl !== null).length, 5);
-  assert.equal(projects.filter((p) => p.liveUrl !== null).length, 2);
+  assert.equal(projects.filter((p) => p.repoUrl !== null).length, 6);
+  assert.equal(projects.filter((p) => p.liveUrl !== null).length, 5);
   assert.equal(projects.filter((p) => p.media !== null).length, 4);
-  assert.ok(projects.every((p) => p.challenges === null));
+  assert.equal(getProjectBySlug("repograde")?.repoUrl, null);
+  assert.equal(getProjectBySlug("wanderstay")?.repoUrl, null);
+  assert.equal(getProjectBySlug("meetos")?.repoUrl, null);
+  assert.deepEqual(projects.filter((p) => p.challenges !== null).map((p) => p.slug), ["meetos"]);
   assert.equal(getProjectBySlug("hindsight")?.status, null);
   assert.equal(codingProfiles.find((p) => p.id === "geeksforgeeks")?.rating, 327);
 });

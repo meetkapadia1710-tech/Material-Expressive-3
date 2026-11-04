@@ -52,6 +52,16 @@ test("either reflection field can render independently", () => {
   assert.ok(challengesOnly.includes('id="project-reflection"') && !challengesOnly.includes(`<h3>${projectDetailCopy.lessons}</h3>`));
 });
 
+test("the optimizer shows measured results with their test conditions and trade-offs", () => {
+  const html = render(getProjectBySlug("api-traffic-optimizer")!);
+  assert.ok(html.includes('href="#project-benchmark"'));
+  assert.ok(html.includes('id="project-benchmark"'));
+  for (const detail of ["1,608 HTTP requests", "fixed 50 ms", "96.67%", "30.15%", "HTTP 503", "local synthetic workload"]) {
+    assert.ok(html.includes(detail));
+  }
+  assert.ok(!render(getProjectBySlug("meetos")!).includes('id="project-benchmark"'));
+});
+
 test("concepts and prototypes explicitly remain unfinished on detail pages", () => {
   const concept = render(getProjectBySlug("peer-skill-swap")!);
   assert.ok(concept.includes(projectDetailCopy.conceptNote) && concept.includes('id="project-status"'));
@@ -65,7 +75,8 @@ test("previous and next follow public order, do not wrap, and exclude review-onl
   assert.equal(getAdjacentProjects("repograde").next?.slug, "hindsight");
   assert.equal(getAdjacentProjects("hindsight").previous?.slug, "repograde");
   assert.equal(getAdjacentProjects("hindsight").next?.slug, "playhub");
-  assert.equal(getAdjacentProjects("receipt-scanner").next, null);
+  assert.equal(getAdjacentProjects("receipt-scanner").next?.slug, "meetos");
+  assert.equal(getAdjacentProjects("meetos").next, null);
   assert.deepEqual(getAdjacentProjects("missing"), { previous: null, next: null });
   assert.deepEqual(getAdjacentProjects("agrisetu", projects), { previous: null, next: null });
   const publicSlugs = new Set(getPublicProjects().map((p) => p.slug));

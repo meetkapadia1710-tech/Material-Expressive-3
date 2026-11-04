@@ -5,7 +5,7 @@ import Link from "next/link";
 import { profile } from "@/content/profile";
 import { links } from "@/content/links";
 import { experience, certifications, codingProfiles, leetCodeStats } from "@/content/achievements";
-import { projects } from "@/content/projects";
+import { getPublicProjects, meetOSProject } from "@/content/projects";
 import { skillCategories } from "@/content/skills";
 import { Icon } from "@/components/icon";
 import { useToast } from "@/components/interface-controls";
@@ -62,6 +62,11 @@ Hindsight (FastAPI, Python, Supermemory Local, Ollama, pywin32, Pillow, SQLite)
 PlayHub / PickleRage (React 19, TypeScript, Capacitor Android, Tailwind CSS, Firebase, Leaflet)
 • Multi-tier sports court booking platform for Cricket and Pickleball supporting customer, owner, and admin roles.
 
+${meetOSProject.name} (${meetOSProject.stack.join(", ")})
+• ${meetOSProject.tagline}
+${meetOSProject.features.slice(0, 2).map((feature) => `• ${feature}`).join("\n")}
+• Live demo: ${meetOSProject.liveUrl}
+
 PROBLEM SOLVING & COMPETITIVE PROGRAMMING
 • LeetCode: 763+ Solved (371 Easy, 337 Medium, 55 Hard). Focused on Dynamic Programming, Sliding Window, Graphs, and Monotonic Stacks.
 • CodeChef: 1462 Rating (neat_otters_97).
@@ -84,8 +89,8 @@ SKILLS
     if (success) notify("Plain text resume copied to clipboard!");
   };
 
-  const flagshipProjects = projects.filter(
-    (p) => p.slug === "repograde" || p.slug === "hindsight" || p.slug === "playhub"
+  const flagshipProjects = getPublicProjects().filter(
+    (p) => ["repograde", "hindsight", "playhub", meetOSProject.slug].includes(p.slug)
   );
 
   return (

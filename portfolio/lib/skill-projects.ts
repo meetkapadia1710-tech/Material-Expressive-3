@@ -1,11 +1,12 @@
-export interface SkillProjectLink {
-  slug: string;
-  name: string;
-  category: string;
-  tagline: string;
-  status: string;
-  liveUrl: string | null;
-  repoUrl: string | null;
+import { projects } from "@/content/projects";
+import type { Project } from "@/content/types";
+
+export type SkillProjectLink = Pick<Project, "slug" | "name" | "category" | "tagline" | "status" | "liveUrl" | "repoUrl" | "visibility">;
+
+function linkProject(slug: string): SkillProjectLink {
+  const project = projects.find((entry) => entry.slug === slug);
+  if (!project) throw new Error(`Unknown project slug: ${slug}`);
+  return project;
 }
 
 export interface SkillDetail {
@@ -47,18 +48,18 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "AI/ML Systems & Asynchronous Backends",
     description: "Used to develop asynchronous microservices, local LLM inference gateways, and computer vision / memory agents.",
     projects: [
-      { slug: "hindsight", name: "Hindsight", category: "AI memory agent", tagline: "Autonomous background agent converting desktop visual context into structured memory.", status: "prototype", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/hindsight" },
+      linkProject("hindsight"),
     ],
-    highlights: ["Asynchronous FastAPI & Uvicorn streaming", "Local Ollama deepseek-r1:8b orchestration", "PIL & PyWin32 desktop visual context capture"],
+    highlights: ["Asynchronous FastAPI & Uvicorn streaming", "Local inference with Ollama", "PIL & PyWin32 desktop visual context capture"],
   },
   "JavaScript": {
     name: "JavaScript",
     role: "Dynamic Web Engineering & Event Loop Mastery",
     description: "Full-stack language used across SPAs, browser extensions, real-time WebSockets, and Node.js backend runtimes.",
     projects: [
-      { slug: "hindsight", name: "Hindsight", category: "AI memory agent", tagline: "Autonomous background agent converting desktop visual context into structured memory.", status: "prototype", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/hindsight" },
-      { slug: "wanderstay", name: "WanderStay", category: "Full-stack web application", tagline: "Vacation rental marketplace with listing discovery, reviews, and bookings.", status: "shipped", liveUrl: "https://wanderstay.onrender.com", repoUrl: "https://github.com/meetkapadia1710-tech/WanderStay" },
-      { slug: "mann-beauty-studio", name: "Mann Beauty Studio", category: "Client PWA & booking", tagline: "Salon booking PWA with offline catalog, appointment booking, and owner dashboard.", status: "shipped", liveUrl: "https://mannbeautystudio.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/mann-beauty-studio" },
+      linkProject("hindsight"),
+      linkProject("wanderstay"),
+      linkProject("mann-beauty-studio"),
     ],
     highlights: ["Event loop mechanics & asynchronous microtasks", "DOM mutation optimization & fluid canvas animations", "PWA service worker caching & offline sync"],
   },
@@ -67,10 +68,11 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Type-Safe Production Architecture",
     description: "Primary language for modern production engineering. Enforces compile-time guarantees, discriminated unions, and strict generic interfaces across web and mobile platforms.",
     projects: [
-      { slug: "repograde", name: "RepoGrade", category: "Developer tooling", tagline: "Scores and rates GitHub repos and generates READMEs grounded in the actual code.", status: "shipped", liveUrl: "https://repo-grade-web.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/RepoGrade" },
-      { slug: "playhub", name: "PlayHub (PickleRage)", category: "Mobile app & community", tagline: "Cross-platform mobile court booking app with court locator and slot reservations.", status: "shipped", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/pickle-rage" },
-      { slug: "bd-buildcon", name: "BD Buildcon LLP & Bhumi Developers", category: "Production web platform", tagline: "Commercial real estate site with 3D master plans, unit filters, and inquiry pipeline.", status: "shipped", liveUrl: "https://bhumidevelopers.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/bd-buildcon" },
-      { slug: "mann-beauty-studio", name: "Mann Beauty Studio", category: "Client PWA & booking", tagline: "Salon booking PWA with offline catalog, appointment booking, and owner dashboard.", status: "shipped", liveUrl: "https://mannbeautystudio.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/mann-beauty-studio" },
+      linkProject("repograde"),
+      linkProject("meetos"),
+      linkProject("playhub"),
+      linkProject("bd-buildcon-bhumi-developers"),
+      linkProject("mann-beauty-studio"),
     ],
     highlights: ["Strict compiler configurations & zero 'any' policy", "Exhaustive pattern matching with discriminated unions", "Type-safe database schemas with Drizzle ORM"],
   },
@@ -79,8 +81,8 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "High-Throughput Systems & CLI Tooling",
     description: "Systems programming language used for CLI tools, AST code parsing, concurrent worker pools, and Unix shell implementations.",
     projects: [
-      { slug: "repograde", name: "RepoGrade", category: "Developer tooling", tagline: "Scores and rates GitHub repos and generates READMEs grounded in the actual code.", status: "shipped", liveUrl: "https://repo-grade-web.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/RepoGrade" },
-      { slug: "nexshell", name: "NexShell", category: "CLI systems tooling", tagline: "Custom Unix shell in Go with command execution, pipelines, and signal dispatch.", status: "shipped", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/NexShell" },
+      linkProject("repograde"),
+      linkProject("nexshell"),
     ],
     highlights: ["Custom Unix shell with I/O redirection & pipelines", "Tree-sitter AST parsing for multi-language code analysis", "Goroutine channel concurrency with context cancellation"],
   },
@@ -91,9 +93,10 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Component-Driven Declarative Interfaces",
     description: "Core frontend library for architecting reactive client applications, custom hooks, and mobile interfaces via Capacitor.",
     projects: [
-      { slug: "playhub", name: "PlayHub (PickleRage)", category: "Mobile app & community", tagline: "Cross-platform mobile court booking app with court locator and slot reservations.", status: "shipped", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/pickle-rage" },
-      { slug: "bd-buildcon", name: "BD Buildcon LLP & Bhumi Developers", category: "Production web platform", tagline: "Commercial real estate site with 3D master plans, unit filters, and inquiry pipeline.", status: "shipped", liveUrl: "https://bhumidevelopers.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/bd-buildcon" },
-      { slug: "mann-beauty-studio", name: "Mann Beauty Studio", category: "Client PWA & booking", tagline: "Salon booking PWA with offline catalog, appointment booking, and owner dashboard.", status: "shipped", liveUrl: "https://mannbeautystudio.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/mann-beauty-studio" },
+      linkProject("meetos"),
+      linkProject("playhub"),
+      linkProject("bd-buildcon-bhumi-developers"),
+      linkProject("mann-beauty-studio"),
     ],
     highlights: ["React 19 hooks & transition actions", "Custom fluid motion & spring physics listeners", "Cross-platform mobile architecture with Capacitor"],
   },
@@ -102,8 +105,9 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Full-Stack React Framework & SSR / ISR",
     description: "Production framework powering scalable web platforms with Turbopack, App Router, Static Site Generation, and Edge Middleware.",
     projects: [
-      { slug: "repograde", name: "RepoGrade", category: "Developer tooling", tagline: "Scores and rates GitHub repos and generates READMEs grounded in the actual code.", status: "shipped", liveUrl: "https://repo-grade-web.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/RepoGrade" },
-      { slug: "bd-buildcon", name: "BD Buildcon LLP & Bhumi Developers", category: "Production web platform", tagline: "Commercial real estate site with 3D master plans, unit filters, and inquiry pipeline.", status: "shipped", liveUrl: "https://bhumidevelopers.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/bd-buildcon" },
+      linkProject("repograde"),
+      linkProject("meetos"),
+      linkProject("bd-buildcon-bhumi-developers"),
     ],
     highlights: ["App Router architecture with React Server Components", "Incremental Static Regeneration (ISR) with background caching", "Dynamic API route handlers with automated revalidation"],
   },
@@ -112,9 +116,10 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Utility-First Responsive Styling",
     description: "Utility CSS framework providing design token consistency, mobile-first responsive layouts, and zero-runtime CSS footprint.",
     projects: [
-      { slug: "playhub", name: "PlayHub (PickleRage)", category: "Mobile app & community", tagline: "Cross-platform mobile court booking app with court locator and slot reservations.", status: "shipped", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/pickle-rage" },
-      { slug: "bd-buildcon", name: "BD Buildcon LLP & Bhumi Developers", category: "Production web platform", tagline: "Commercial real estate site with 3D master plans, unit filters, and inquiry pipeline.", status: "shipped", liveUrl: "https://bhumidevelopers.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/bd-buildcon" },
-      { slug: "mann-beauty-studio", name: "Mann Beauty Studio", category: "Client PWA & booking", tagline: "Salon booking PWA with offline catalog, appointment booking, and owner dashboard.", status: "shipped", liveUrl: "https://mannbeautystudio.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/mann-beauty-studio" },
+      linkProject("meetos"),
+      linkProject("playhub"),
+      linkProject("bd-buildcon-bhumi-developers"),
+      linkProject("mann-beauty-studio"),
     ],
     highlights: ["Design token binding with CSS custom properties", "Container queries & adaptive viewport layouts", "Purged production stylesheets under 15KB"],
   },
@@ -123,8 +128,9 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Expressive Physics-Based Animation",
     description: "Declarative spring animation library powering gesture tracking, layout transitions, and fluid interactive feedback.",
     projects: [
-      { slug: "bd-buildcon", name: "BD Buildcon LLP & Bhumi Developers", category: "Production web platform", tagline: "Commercial real estate site with 3D master plans, unit filters, and inquiry pipeline.", status: "shipped", liveUrl: "https://bhumidevelopers.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/bd-buildcon" },
-      { slug: "mann-beauty-studio", name: "Mann Beauty Studio", category: "Client PWA & booking", tagline: "Salon booking PWA with offline catalog, appointment booking, and owner dashboard.", status: "shipped", liveUrl: "https://mannbeautystudio.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/mann-beauty-studio" },
+      linkProject("meetos"),
+      linkProject("bd-buildcon-bhumi-developers"),
+      linkProject("mann-beauty-studio"),
     ],
     highlights: ["Spring-damped physics with stiffness/damping tuning", "AnimatePresence layout morphing on filter updates", "Respects prefers-reduced-motion accessibility preferences"],
   },
@@ -133,7 +139,7 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Declarative 3D WebGL Visualization",
     description: "Three.js React renderer powering interactive 3D viewports, spatial master plans, and dynamic color-responsive canvas effects.",
     projects: [
-      { slug: "bd-buildcon", name: "BD Buildcon LLP & Bhumi Developers", category: "Production web platform", tagline: "Commercial real estate site with 3D master plans, unit filters, and inquiry pipeline.", status: "shipped", liveUrl: "https://bhumidevelopers.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/bd-buildcon" },
+      linkProject("bd-buildcon-bhumi-developers"),
     ],
     highlights: ["Interactive 3D real estate master plan with camera orbits", "Shader-level performance optimization on mobile", "Powers the interactive 3D canvas on this portfolio"],
   },
@@ -144,8 +150,8 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Asynchronous Server Runtimes",
     description: "Non-blocking I/O runtime powering full-stack web platforms, REST APIs, background job workers, and monorepo developer tooling.",
     projects: [
-      { slug: "wanderstay", name: "WanderStay", category: "Full-stack web application", tagline: "Vacation rental marketplace with listing discovery, reviews, and bookings.", status: "shipped", liveUrl: "https://wanderstay.onrender.com", repoUrl: "https://github.com/meetkapadia1710-tech/WanderStay" },
-      { slug: "repograde", name: "RepoGrade", category: "Developer tooling", tagline: "Scores and rates GitHub repos and generates READMEs grounded in the actual code.", status: "shipped", liveUrl: "https://repo-grade-web.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/RepoGrade" },
+      linkProject("wanderstay"),
+      linkProject("repograde"),
     ],
     highlights: ["Asynchronous event-driven architecture", "Turborepo monorepo orchestration", "Inngest durable background execution"],
   },
@@ -154,7 +160,7 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "RESTful HTTP Middleware Framework",
     description: "Lightweight web framework providing routing, session handling, authentication middleware, and REST API controllers.",
     projects: [
-      { slug: "wanderstay", name: "WanderStay", category: "Full-stack web application", tagline: "Vacation rental marketplace with listing discovery, reviews, and bookings.", status: "shipped", liveUrl: "https://wanderstay.onrender.com", repoUrl: "https://github.com/meetkapadia1710-tech/WanderStay" },
+      linkProject("wanderstay"),
     ],
     highlights: ["Custom error-handling middleware chains", "Passport.js local & OAuth session strategies", "REST API resource controllers with Mongoose"],
   },
@@ -170,7 +176,7 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "High-Performance Asynchronous Python APIs",
     description: "Async Python web framework built on Starlette and Pydantic with automated OpenAPI docs and streaming support.",
     projects: [
-      { slug: "hindsight", name: "Hindsight", category: "AI memory agent", tagline: "Autonomous background agent converting desktop visual context into structured memory.", status: "prototype", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/hindsight" },
+      linkProject("hindsight"),
     ],
     highlights: ["Server-Sent Events (SSE) token streaming from local LLMs", "Strict Pydantic request/response payload validation", "Zero-cloud local inference proxy architecture"],
   },
@@ -179,8 +185,8 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Architectural API Pattern",
     description: "Stateless client-server architecture with semantic HTTP methods, JSON content negotiation, and idempotent endpoints.",
     projects: [
-      { slug: "hindsight", name: "Hindsight", category: "AI memory agent", tagline: "Autonomous background agent converting desktop visual context into structured memory.", status: "prototype", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/hindsight" },
-      { slug: "wanderstay", name: "WanderStay", category: "Full-stack web application", tagline: "Vacation rental marketplace with listing discovery, reviews, and bookings.", status: "shipped", liveUrl: "https://wanderstay.onrender.com", repoUrl: "https://github.com/meetkapadia1710-tech/WanderStay" },
+      linkProject("hindsight"),
+      linkProject("wanderstay"),
     ],
     highlights: ["Idempotent PUT/DELETE and query-filtered GET endpoints", "Consistent HTTP status code contracts (200, 201, 400, 401, 404, 500)", "Structured pagination, filtering, and error payloads"],
   },
@@ -189,8 +195,8 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Stateless Cryptographic Authentication",
     description: "JSON Web Tokens with HMAC SHA-256 signing for stateless session management, role-based access control, and API authorization.",
     projects: [
-      { slug: "repograde", name: "RepoGrade", category: "Developer tooling", tagline: "Scores and rates GitHub repos and generates READMEs grounded in the actual code.", status: "shipped", liveUrl: "https://repo-grade-web.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/RepoGrade" },
-      { slug: "wanderstay", name: "WanderStay", category: "Full-stack web application", tagline: "Vacation rental marketplace with listing discovery, reviews, and bookings.", status: "shipped", liveUrl: "https://wanderstay.onrender.com", repoUrl: "https://github.com/meetkapadia1710-tech/WanderStay" },
+      linkProject("repograde"),
+      linkProject("wanderstay"),
     ],
     highlights: ["Short-lived access tokens with rotating refresh tokens", "Stateless authorization header verification", "Auth.js OAuth token integration"],
   },
@@ -199,7 +205,7 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Real-Time Bi-Directional Event Streams",
     description: "Full-duplex WebSocket communication with automated fallback to HTTP long-polling for real-time messaging and notifications.",
     projects: [
-      { slug: "wanderstay", name: "WanderStay", category: "Full-stack web application", tagline: "Vacation rental marketplace with listing discovery, reviews, and bookings.", status: "shipped", liveUrl: "https://wanderstay.onrender.com", repoUrl: "https://github.com/meetkapadia1710-tech/WanderStay" },
+      linkProject("wanderstay"),
     ],
     highlights: ["Sub-50ms room-based chat broadcasting", "Heartbeat monitoring with automatic reconnection", "Connection state recovery across network drops"],
   },
@@ -210,8 +216,8 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Relational ACID Database Engine",
     description: "Advanced open-source relational database. Utilized for 3NF normalized schemas, JSONB columns, foreign key cascades, and composite indexing.",
     projects: [
-      { slug: "repograde", name: "RepoGrade", category: "Developer tooling", tagline: "Scores and rates GitHub repos and generates READMEs grounded in the actual code.", status: "shipped", liveUrl: "https://repo-grade-web.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/RepoGrade" },
-      { slug: "learnflex", name: "LearnFlex", category: "EdTech web application", tagline: "Adaptive learning platform with modular course paths and student analytics.", status: "shipped", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/learnflex" },
+      linkProject("repograde"),
+      linkProject("learnflex"),
     ],
     highlights: ["Normalized 3NF table design with composite unique indexes", "Serverless PostgreSQL pooling via Neon", "Declarative schema migrations via Drizzle ORM"],
   },
@@ -227,7 +233,7 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Document-Oriented NoSQL Store",
     description: "Schema-flexible document database utilized for rapid prototyping, polymorphic data models, and nested listing records.",
     projects: [
-      { slug: "wanderstay", name: "WanderStay", category: "Full-stack web application", tagline: "Vacation rental marketplace with listing discovery, reviews, and bookings.", status: "shipped", liveUrl: "https://wanderstay.onrender.com", repoUrl: "https://github.com/meetkapadia1710-tech/WanderStay" },
+      linkProject("wanderstay"),
     ],
     highlights: ["Mongoose ODM schema validation and virtual properties", "Geospatial indexing for location-based listing queries", "Aggregation pipelines for analytical review calculations"],
   },
@@ -236,8 +242,8 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Cloud BaaS & Real-Time Data Sync",
     description: "Google cloud infrastructure providing Firestore real-time synchronization, phone/email auth, and file storage for mobile apps.",
     projects: [
-      { slug: "playhub", name: "PlayHub (PickleRage)", category: "Mobile app & community", tagline: "Cross-platform mobile court booking app with court locator and slot reservations.", status: "shipped", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/pickle-rage" },
-      { slug: "mann-beauty-studio", name: "Mann Beauty Studio", category: "Client PWA & booking", tagline: "Salon booking PWA with offline catalog, appointment booking, and owner dashboard.", status: "shipped", liveUrl: "https://mannbeautystudio.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/mann-beauty-studio" },
+      linkProject("playhub"),
+      linkProject("mann-beauty-studio"),
     ],
     highlights: ["Firestore live listeners for real-time slot reservation sync", "Firebase Authentication rules & security enforcement", "Cloud Storage for mobile media uploads"],
   },
@@ -253,7 +259,7 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Zero-Overhead SQL TypeScript ORM",
     description: "Lightweight, type-safe SQL query builder and schema declaration framework matching relational PostgreSQL semantics.",
     projects: [
-      { slug: "repograde", name: "RepoGrade", category: "Developer tooling", tagline: "Scores and rates GitHub repos and generates READMEs grounded in the actual code.", status: "shipped", liveUrl: "https://repo-grade-web.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/RepoGrade" },
+      linkProject("repograde"),
     ],
     highlights: ["Zero-runtime overhead with direct SQL translation", "Declarative migration generation with drizzle-kit", "Type-safe relational joins and audit cascade rules"],
   },
@@ -264,7 +270,7 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Multimodal Foundation Model Orchestration",
     description: "Deep integration with Google Gemini 2.0 / 1.5 models for automated code summarization, README synthesis, and semantic analysis.",
     projects: [
-      { slug: "repograde", name: "RepoGrade", category: "Developer tooling", tagline: "Scores and rates GitHub repos and generates READMEs grounded in the actual code.", status: "shipped", liveUrl: "https://repo-grade-web.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/RepoGrade" },
+      linkProject("repograde"),
     ],
     highlights: ["Structured JSON schema output enforcement", "Repository codebase summarization with AST context", "Few-shot prompt engineering for accurate grading"],
   },
@@ -280,7 +286,7 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Local Edge LLM Runtime",
     description: "Local model execution runtime ensuring 100% data privacy and offline capability with DeepSeek-R1 and Llama architectures.",
     projects: [
-      { slug: "hindsight", name: "Hindsight", category: "AI memory agent", tagline: "Autonomous background agent converting desktop visual context into structured memory.", status: "prototype", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/hindsight" },
+      linkProject("hindsight"),
     ],
     highlights: ["Local inference with zero cloud data transmission", "DeepSeek-R1:8b distilled reasoning model orchestration", "NDJSON streaming response parser in Python"],
   },
@@ -289,8 +295,8 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Retrieval-Augmented Generation Pipelines",
     description: "Grounds generative AI models in factual external data using vector similarity, chunking strategies, and semantic context injection.",
     projects: [
-      { slug: "repograde", name: "RepoGrade", category: "Developer tooling", tagline: "Scores and rates GitHub repos and generates READMEs grounded in the actual code.", status: "shipped", liveUrl: "https://repo-grade-web.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/RepoGrade" },
-      { slug: "hindsight", name: "Hindsight", category: "AI memory agent", tagline: "Autonomous background agent converting desktop visual context into structured memory.", status: "prototype", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/hindsight" },
+      linkProject("repograde"),
+      linkProject("hindsight"),
     ],
     highlights: ["Chunking & overlap strategies for source code and documents", "Context window budgeting to avoid hallucination", "Grounded README generation from real repository ASTs"],
   },
@@ -338,8 +344,8 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Distributed Version Control System",
     description: "Core version control toolchain: branching strategies, interactive rebasing, merge conflict resolution, and commit hygiene.",
     projects: [
-      { slug: "repograde", name: "RepoGrade", category: "Developer tooling", tagline: "Scores and rates GitHub repos and generates READMEs grounded in the actual code.", status: "shipped", liveUrl: "https://repo-grade-web.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/RepoGrade" },
-      { slug: "hindsight", name: "Hindsight", category: "AI memory agent", tagline: "Autonomous background agent converting desktop visual context into structured memory.", status: "prototype", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/hindsight" },
+      linkProject("repograde"),
+      linkProject("hindsight"),
     ],
     highlights: ["Atomic commit discipline with descriptive semantics", "Trunk-based development & feature branch workflows", "Git plumbing inspection (blobs, trees, commit SHAs)"],
   },
@@ -348,7 +354,7 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Continuous Integration & Deployment (CI/CD)",
     description: "Automated workflow pipelines executing linting, TypeScript verification, unit tests, and automated releases on pull requests.",
     projects: [
-      { slug: "repograde", name: "RepoGrade", category: "Developer tooling", tagline: "Scores and rates GitHub repos and generates READMEs grounded in the actual code.", status: "shipped", liveUrl: "https://repo-grade-web.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/RepoGrade" },
+      linkProject("repograde"),
     ],
     highlights: ["Multi-step test execution matrices", "Automated npm release & Vercel deployment hooks", "Secret management & security auditing"],
   },
@@ -357,8 +363,9 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Edge Hosting & Production Cloud Infrastructure",
     description: "Primary cloud deployment platform utilizing Edge Middleware, global CDN caching, and automated preview deployments.",
     projects: [
-      { slug: "repograde", name: "RepoGrade", category: "Developer tooling", tagline: "Scores and rates GitHub repos and generates READMEs grounded in the actual code.", status: "shipped", liveUrl: "https://repo-grade-web.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/RepoGrade" },
-      { slug: "bd-buildcon", name: "BD Buildcon LLP & Bhumi Developers", category: "Production web platform", tagline: "Commercial real estate site with 3D master plans, unit filters, and inquiry pipeline.", status: "shipped", liveUrl: "https://bhumidevelopers.vercel.app", repoUrl: "https://github.com/meetkapadia1710-tech/bd-buildcon" },
+      linkProject("repograde"),
+      linkProject("meetos"),
+      linkProject("bd-buildcon-bhumi-developers"),
     ],
     highlights: ["Zero-configuration Next.js Turbopack build pipelines", "Global edge caching with sub-50ms TTFB", "Custom domain DNS routing & automated SSL"],
   },
@@ -411,7 +418,7 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "Operating Systems Architecture",
     description: "Computer science degree foundation: process scheduling, threads, virtual memory paging, concurrency primitives, and file system layouts.",
     projects: [
-      { slug: "nexshell", name: "NexShell", category: "CLI systems tooling", tagline: "Custom Unix shell in Go with command execution, pipelines, and signal dispatch.", status: "shipped", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/NexShell" },
+      linkProject("nexshell"),
     ],
     highlights: ["Process lifecycle, fork/exec, and signal handling", "Virtual memory translation & page replacement algorithms", "Deadlock conditions and mutual exclusion (mutexes, semaphores)"],
   },
@@ -485,7 +492,7 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
     role: "High-Throughput Concurrent Systems Engineering",
     description: "Deep exploration of CSP (Communicating Sequential Processes) concurrency: buffered channels, select multiplexing, sync.Pool, and race conditions.",
     projects: [
-      { slug: "nexshell", name: "NexShell", category: "CLI systems tooling", tagline: "Custom Unix shell in Go with command execution, pipelines, and signal dispatch.", status: "shipped", liveUrl: null, repoUrl: "https://github.com/meetkapadia1710-tech/NexShell" },
+      linkProject("nexshell"),
     ],
     highlights: ["Goroutine worker pool architecture with bounded queues", "Atomic memory operations & lock-free data structures", "Zero-allocation buffer pools with sync.Pool"],
   },

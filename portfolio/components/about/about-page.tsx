@@ -75,7 +75,7 @@ export function AboutPage({ className = "" }: { className?: string }) {
           <ol className="about-education-list">
             {/* 1. IIIT Vadodara (Most Recent Higher Education) */}
             <li className="about-education-card is-current">
-              <div className="about-edu-leading" aria-hidden="true">
+              <div className="about-edu-header">
                 <MorphingShape
                   className="about-edu-shape"
                   shape="roundedSquare"
@@ -84,30 +84,26 @@ export function AboutPage({ className = "" }: { className?: string }) {
                 >
                   <Icon name="school" />
                 </MorphingShape>
+                <span className="about-year-range">{education.startYear}–{education.endYear}</span>
               </div>
 
               <div className="about-edu-main">
-                <div className="about-edu-header">
-                  <span className="about-year-range">{education.startYear}–{education.endYear}</span>
-                </div>
                 <h3>{education.institution}</h3>
                 <p className="about-degree">{education.degree}<span aria-hidden="true"> · </span>{education.field}</p>
               </div>
 
               {education.cgpa !== null ? (
-                <div className="about-edu-score">
-                  <dl className="about-cgpa">
-                    <dt>{aboutCopy.cgpaLabel}</dt>
-                    <dd>{education.cgpa}{education.cgpaScale !== null ? <span> / {education.cgpaScale}</span> : null}</dd>
-                  </dl>
-                </div>
+                <dl className="about-edu-score">
+                  <dt className="about-score-label">{aboutCopy.cgpaLabel}</dt>
+                  <dd>{education.cgpa}{education.cgpaScale !== null ? <span> / {education.cgpaScale}</span> : null}</dd>
+                </dl>
               ) : null}
             </li>
 
             {/* 2 & 3. Secondary & Higher Secondary Schools */}
             {aboutCopy.schools.map((school) => (
               <li key={school.id} className="about-education-card">
-                <div className="about-edu-leading" aria-hidden="true">
+                <div className="about-edu-header">
                   <MorphingShape
                     className="about-edu-shape"
                     shape={school.shape}
@@ -116,12 +112,10 @@ export function AboutPage({ className = "" }: { className?: string }) {
                   >
                     <Icon name={school.icon} />
                   </MorphingShape>
+                  <span className="about-year-range">{school.yearLabel}</span>
                 </div>
 
                 <div className="about-edu-main">
-                  <div className="about-edu-header">
-                    <span className="about-year-range">{school.yearLabel}</span>
-                  </div>
                   <h3>{school.institution}</h3>
                   <p className="about-degree">
                     {school.qualification}<span aria-hidden="true"> · </span>{school.classLevel}
@@ -129,10 +123,9 @@ export function AboutPage({ className = "" }: { className?: string }) {
                 </div>
 
                 <div className="about-edu-score">
-                  <div className="about-score-stat">
-                    <span className="sr-only">{school.screenReaderText}</span>
-                    <span className="about-score-value" aria-hidden="true">{school.score}</span>
-                  </div>
+                  <span className="sr-only">{school.screenReaderText}</span>
+                  <span className="about-score-label" aria-hidden="true">Score</span>
+                  <span className="about-score-value" aria-hidden="true">{school.score}</span>
                 </div>
               </li>
             ))}
@@ -320,9 +313,9 @@ export function AboutPage({ className = "" }: { className?: string }) {
             <div className="about-panel-header">
               <div className="about-section-heading">
                 <span aria-hidden="true"><Icon name="layers" /></span>
-                <h2 id="about-next-heading">{aboutCopy.nextTitle}</h2>
+                <h2 id="about-next-heading">{aboutCopy.learntTitle}</h2>
               </div>
-              <span className="about-panel-caption">Upcoming research interests</span>
+              <span className="about-panel-caption">{aboutCopy.learntCaption}</span>
             </div>
             <ul className="about-topic-list">
               {aboutCopy.exploreItems.map((item) => (

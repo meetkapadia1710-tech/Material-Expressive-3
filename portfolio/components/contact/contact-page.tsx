@@ -48,6 +48,13 @@ const TOPICS: readonly TopicOption[] = [
     subject: "Feedback & Ideas for RepoGrade",
     placeholder: "Share your thoughts, suggestions, feature ideas, or issues with RepoGrade AST code scoring...",
   },
+  {
+    id: "meetos",
+    iconName: "lightbulb",
+    label: "Feedback on MeetOS",
+    subject: "Feedback & Ideas for MeetOS",
+    placeholder: "Tell me what worked well on the MeetOS desktop and where you got stuck.",
+  },
 ] as const;
 
 const fields: { name: ContactField; label: string; placeholder: string; type?: string; multiline?: boolean }[] = [
@@ -83,20 +90,13 @@ function ContactForm() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
-      const topicParam = params.get("topic");
-      const projectParam = params.get("project");
-      if (topicParam) {
-        const match = TOPICS.find((t) => t.id === topicParam.toLowerCase());
-        if (match) {
-          setSelectedTopic(match.id);
-          setValues((prev) => ({ ...prev, subject: match.subject }));
-        }
-      } else if (projectParam && projectParam.toLowerCase() === "repograde") {
-        const match = TOPICS.find((t) => t.id === "repograde");
-        if (match) {
-          setSelectedTopic(match.id);
-          setValues((prev) => ({ ...prev, subject: match.subject }));
-        }
+      const topicParam = params.get("topic")?.toLowerCase();
+      const projectParam = params.get("project")?.toLowerCase();
+      const projectTopic = projectParam === "repograde" || projectParam === "meetos" ? projectParam : null;
+      const match = TOPICS.find((topic) => topic.id === (topicParam || projectTopic));
+      if (match) {
+        setSelectedTopic(match.id);
+        setValues((prev) => ({ ...prev, subject: match.subject }));
       }
     }
   }, []);

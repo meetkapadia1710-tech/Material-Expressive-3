@@ -13,13 +13,6 @@ export const githubFallbackStats: GitHubStats = {
   ],
   recent: [
     {
-      name: "RepoGrade",
-      html_url: "https://github.com/meetkapadia1710-tech/RepoGrade",
-      language: "TypeScript",
-      updated_at: "2026-11-01T20:00:00Z",
-      pushed_at: "2026-11-01T20:00:00Z",
-    },
-    {
       name: "Hindsight",
       html_url: "https://github.com/meetkapadia1710-tech/Hindsight",
       language: "Python",
@@ -34,18 +27,18 @@ export const githubFallbackStats: GitHubStats = {
       pushed_at: "2026-08-15T12:00:00Z",
     },
     {
-      name: "BD-Buildcon",
-      html_url: "https://github.com/meetkapadia1710-tech/BD-Buildcon",
-      language: "JavaScript",
-      updated_at: "2026-07-20T10:00:00Z",
-      pushed_at: "2026-07-20T10:00:00Z",
+      name: "BD_Buildcon",
+      html_url: "https://github.com/meetkapadia1710-tech/BD_Buildcon",
+      language: "TypeScript",
+      updated_at: "2026-07-31T19:18:26Z",
+      pushed_at: "2026-07-31T19:18:22Z",
     },
     {
-      name: "PickleRage-App",
-      html_url: "https://github.com/meetkapadia1710-tech/PickleRage-App",
+      name: "PickleRage_Booking",
+      html_url: "https://github.com/meetkapadia1710-tech/PickleRage_Booking",
       language: "TypeScript",
-      updated_at: "2026-06-10T14:00:00Z",
-      pushed_at: "2026-06-10T14:00:00Z",
+      updated_at: "2026-06-26T09:47:09Z",
+      pushed_at: "2026-06-26T09:47:05Z",
     },
   ],
   activity: [

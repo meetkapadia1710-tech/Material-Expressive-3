@@ -33,10 +33,10 @@ The project goes beyond typical static portfolios by treating the developer port
 * **Curated Toolkits**: Instant preview of core programming languages, database architectures, and systems fundamentals.
 
 ### 2. Projects Catalog & Case Studies (`/projects` & `/projects/[slug]`)
-* **Catalog Exploration**: Complete directory of 20 engineering projects grouped into *Featured*, *More Projects*, and *Explorations & Ideas*.
+* **Catalog Exploration**: Complete directory of 21 engineering projects grouped into *Featured*, *More Projects*, and *Explorations & Ideas*.
 * **Custom M3 Select Controls**: Custom floating surface dropdowns with 20px corner radii, spring-rotating chevrons, and full WAI-ARIA 1.2 listbox keyboard accessibility.
 * **Multi-Filter Intersection**: Simultaneous filtering across technical categories and development statuses (*Shipped*, *In Progress*, *Concept*, *Prototype*).
-* **Static Case Studies (SSG)**: 15 statically generated detail routes (`/projects/[slug]`) featuring problem statements, technical architecture, challenges, and lessons learned.
+* **Static Case Studies (SSG)**: 16 statically generated detail routes (`/projects/[slug]`) featuring problem statements, technical architecture, challenges, and lessons learned.
 * **Dynamic OpenGraph Cards**: Automated social sharing image generation via `@vercel/og` Edge runtime for every project slug.
 
 ### 3. Digital Resume (`/resume`)
@@ -49,7 +49,7 @@ The project goes beyond typical static portfolios by treating the developer port
   * Context-aware daytime/nighttime availability indicator (*Active hours* vs *Resting hours*).
   * Prominent availability signal: `Open to SDE & Full-Stack Internships (2026–2027)`.
 * **💼 Material 3 Expressive Inquiry Topic Cards**:
-  * Balanced 2×2 grid of suggestion cards with custom SVG stroked iconography (`SDE / Internship`, `Project Collaboration`, `Tech Chat`, `Feedback on RepoGrade`).
+  * Topic cards for internships, collaboration, tech chats, and feedback on RepoGrade and MeetOS.
   * One-tap auto-fill: sets the subject line and tailors the message placeholder guide.
   * URL query parameter pre-fill support (`/contact?topic=internship` or `/contact?project=repograde`).
 * **✉️ Direct Web Form Delivery**:

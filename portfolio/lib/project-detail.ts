@@ -12,6 +12,7 @@ export function getProjectDetailContent(project: Project) {
     role: nonEmptyText(project.role),
     stack: (project.stack ?? []).map((item) => item.trim()).filter(Boolean),
     features: (project.features ?? []).map((item) => item.trim()).filter(Boolean),
+    benchmark: project.benchmark,
     media: (project.media ?? []).filter((item) => item.src.trim()).map((item) => ({ ...item, src: item.src.trim(), alt: item.alt.trim() })),
     challenges: nonEmptyText(project.challenges),
     lessons: nonEmptyText(project.lessons),
@@ -26,6 +27,7 @@ export function getProjectDetailContent(project: Project) {
   if (content.role) sections.push({ id: "project-role", title: projectDetailCopy.role });
   if (content.stack.length) sections.push({ id: "project-stack", title: projectDetailCopy.stack });
   if (content.features.length) sections.push({ id: "project-features", title: projectDetailCopy.features });
+  if (content.benchmark) sections.push({ id: "project-benchmark", title: projectDetailCopy.benchmark });
   if (content.media.length) sections.push({ id: "project-media", title: projectDetailCopy.media });
   if (content.challenges || content.lessons) sections.push({ id: "project-reflection", title: projectDetailCopy.reflection });
   if (content.repoUrl || content.liveUrl) sections.push({ id: "project-links", title: projectDetailCopy.links });

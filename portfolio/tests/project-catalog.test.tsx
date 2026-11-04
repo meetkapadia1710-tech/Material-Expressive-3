@@ -7,7 +7,8 @@ test("every supplied project appears exactly once in the three groups", () => {
   const groups = groupProjects(projects);
   assert.equal(groups.featured.length, 5);
   assert.equal(groups.more.length, 3);
-  assert.equal(groups.explorations.length, 12);
+  assert.equal(groups.explorations.length, 13);
+  assert.ok(groups.explorations.some((p) => p.slug === "api-traffic-optimizer"));
   const grouped = Object.values(groups).flat();
   assert.equal(grouped.length, projects.length);
   assert.equal(new Set(grouped.map((p) => p.slug)).size, projects.length);
@@ -24,10 +25,10 @@ test("category and status filters intersect rather than overwrite each other", (
 
 test("missing values are filterable without inventing a category or status", () => {
   assert.equal(filterProjects(projects, { category: WITHOUT_VALUE, status: "concept" }).length, 7);
-  assert.equal(filterProjects(projects, { category: ALL_PROJECTS, status: WITHOUT_VALUE }).length, 6);
+  assert.equal(filterProjects(projects, { category: ALL_PROJECTS, status: WITHOUT_VALUE }).length, 5);
   assert.ok(filterProjects(projects, { category: ALL_PROJECTS, status: WITHOUT_VALUE }).every((p) => p.status === null));
   assert.ok(!getProjectCategories(projects).includes("null"));
-  assert.equal(getProjectCategories(projects).length, 8);
+  assert.equal(getProjectCategories(projects).length, 9);
 });
 
 test("prototype/concept classification takes priority over a future featured flag", () => {

@@ -67,6 +67,10 @@
   gap: 10px;
 }
 
+.topicCard:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .topicCard {
   display: flex;
   align-items: center;

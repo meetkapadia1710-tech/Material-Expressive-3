@@ -31,6 +31,11 @@ export interface Project {
   role: string | null;
   stack: readonly string[] | null;
   features: readonly string[] | null;
+  benchmark?: {
+    methodology: string;
+    findings: readonly { workload: string; result: string }[];
+    limitations: string;
+  };
   repoUrl: string | null;
   liveUrl: string | null;
   media: readonly ProjectMedia[] | null;

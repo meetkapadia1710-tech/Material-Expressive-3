@@ -41,6 +41,16 @@ export function ProjectDetail({ project, previous, next, className = "" }: { pro
         {content.role ? <DetailSection id="project-role" title={projectDetailCopy.role}><p>{content.role}</p></DetailSection> : null}
         {content.stack.length ? <DetailSection id="project-stack" title={projectDetailCopy.stack}><ul className="detail-stack">{content.stack.map((tool, index) => <li key={`${tool}-${index}`}>{tool}</li>)}</ul></DetailSection> : null}
         {content.features.length ? <DetailSection id="project-features" title={projectDetailCopy.features}><ul className="detail-features">{content.features.map((feature, index) => <li key={index}><span aria-hidden="true"><Icon name="arrow-up-right" /></span><p>{feature}</p></li>)}</ul></DetailSection> : null}
+        {content.benchmark ? <DetailSection id="project-benchmark" title={projectDetailCopy.benchmark}>
+          <p>{content.benchmark.methodology}</p>
+          <dl className="detail-benchmark-findings">
+            {content.benchmark.findings.map(({ workload, result }) => <div key={workload}>
+              <dt>{workload}</dt>
+              <dd><p>{result}</p></dd>
+            </div>)}
+          </dl>
+          <p>{content.benchmark.limitations}</p>
+        </DetailSection> : null}
         {content.media.length ? <DetailSection id="project-media" title={projectDetailCopy.media}><div className="detail-media">{content.media.map((item, index) => <figure key={`${item.src}-${index}`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           {item.kind === "image" ? item.width && item.height ? <Image src={item.src} alt={item.alt} width={item.width} height={item.height} sizes="(width < 600px) calc(100dvw - 32px), (width < 840px) calc(100dvw - 48px), 860px" unoptimized={!item.src.startsWith("https://raw.githubusercontent.com/meetkapadia1710-tech/")} loading="lazy" /> : <img src={item.src} alt={item.alt} loading="lazy" decoding="async" className="detail-media-placeholder" /> : <><video controls preload="metadata" aria-label={item.alt || undefined}><source src={item.src} /><a href={item.src}>{projectDetailCopy.videoFallback}</a></video>{item.alt ? <figcaption>{item.alt}</figcaption> : null}</>}

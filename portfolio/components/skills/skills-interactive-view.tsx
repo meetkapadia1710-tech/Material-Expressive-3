@@ -2,6 +2,7 @@
 
 import { useState, useId, useMemo, useEffect, useRef, useLayoutEffect, useCallback } from "react";
 import Link from "next/link";
+import { projectCatalogCopy } from "@/content/projects";
 import type { SkillCategory, SkillItem } from "@/content/types";
 import { groupSkillItems } from "@/lib/skill-groups";
 import { getSkillDetail, type SkillDetail } from "@/lib/skill-projects";
@@ -432,7 +433,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
             {activeSkill.projects.length > 0 ? (
               <>
                 <h4 className="skill-modal-section-title">
-                  Shipped Projects Implementing {activeSkill.name} ({activeSkill.projects.length})
+                  Projects Using {activeSkill.name} ({activeSkill.projects.length})
                 </h4>
                 <div className="skill-modal-projects-list">
                   {activeSkill.projects.map((proj) => (
@@ -442,21 +443,23 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
                       data-project-slug={proj.slug}
                     >
                       <div className="skill-modal-card-top">
-                        <span className="skill-modal-card-cat">{proj.category}</span>
-                        <span className="skill-modal-card-status">{proj.status}</span>
+                        {proj.category ? <span className="skill-modal-card-cat">{proj.category}</span> : null}
+                        {proj.status ? <span className="skill-modal-card-status">{projectCatalogCopy.statusLabels[proj.status]}</span> : null}
                       </div>
                       <h4 className="skill-modal-card-title">{proj.name}</h4>
                       <p className="skill-modal-card-tagline">{proj.tagline}</p>
 
                       <div className="skill-modal-links-row">
-                        <Link
-                          href={`/projects/${proj.slug}`}
-                          className="skill-modal-details-link"
-                          onClick={dismissSkill}
-                        >
-                          <span>View Project Details</span>
-                          <span className="skill-modal-arrow" aria-hidden="true">→</span>
-                        </Link>
+                        {proj.visibility === "public" ? (
+                          <Link
+                            href={`/projects/${proj.slug}`}
+                            className="skill-modal-details-link"
+                            onClick={dismissSkill}
+                          >
+                            <span>View Project Details</span>
+                            <span className="skill-modal-arrow" aria-hidden="true">→</span>
+                          </Link>
+                        ) : null}
                         {proj.repoUrl ? (
                           <a
                             href={proj.repoUrl}
