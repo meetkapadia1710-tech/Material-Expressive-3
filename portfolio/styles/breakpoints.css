@@ -1,0 +1,5 @@
+@custom-media --compact (width < 600px);
+@custom-media --medium (600px <= width < 840px);
+@custom-media --expanded (width >= 840px);
+@custom-media --below-expanded (width < 840px);
+@custom-media --short-window (height < 480px);

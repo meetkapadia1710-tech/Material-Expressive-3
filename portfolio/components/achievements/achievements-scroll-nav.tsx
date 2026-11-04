@@ -312,6 +312,7 @@ export function AchievementsScrollNav() {
         <div
           ref={groupRef}
           className="achievements-segmented-group"
+          data-scroll-region
           role="tablist"
           aria-orientation="horizontal"
           onKeyDown={handleKeyDown}

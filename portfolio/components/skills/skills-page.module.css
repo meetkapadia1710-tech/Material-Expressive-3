@@ -71,7 +71,8 @@
   display: flex;
   align-items: center;
   flex: 1 1 360px;
-  min-width: 240px;
+  min-width: 0;
+  gap: var(--control-gap);
 }
 
 .page :global(.skills-search-icon) {
@@ -86,8 +87,8 @@
 
 .page :global(.skills-search-input) {
   width: 100%;
-  height: 46px;
-  padding: 0 42px 0 46px;
+  height: var(--touch-target);
+  padding: 0 12px 0 46px;
   background: var(--color-surface-container-high);
   border: 1px solid var(--color-outline-variant);
   border-radius: 999px;
@@ -109,10 +110,9 @@
 }
 
 .page :global(.skills-search-clear) {
-  position: absolute;
-  right: 12px;
-  width: 26px;
-  height: 26px;
+  flex: none;
+  width: var(--touch-target);
+  height: var(--touch-target);
   border-radius: 50%;
   background: var(--color-surface-container);
   border: 1px solid var(--color-outline-variant);
@@ -124,11 +124,13 @@
   transition: all var(--motion-duration-fast, 150ms) ease;
 }
 
-.page :global(.skills-search-clear:hover) {
-  color: var(--color-on-surface);
-  background: var(--color-surface-container-highest);
-  border-color: var(--color-outline);
-  transform: scale(1.05);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.skills-search-clear:hover) {
+    color: var(--color-on-surface);
+    background: var(--color-surface-container-highest);
+    border-color: var(--color-outline);
+    transform: scale(1.05);
+  }
 }
 
 /* Connected Button Group for Competency Matrix — M3 segmented group with shared indicator */
@@ -142,6 +144,9 @@
   border-radius: 999px;
   border: 1px solid var(--color-outline-variant);
   flex-shrink: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
 /* Shared sliding indicator — same pattern as achievements nav */
@@ -161,11 +166,13 @@
 
 .page :global(.skills-mode-pill) {
   position: relative;
+  flex: none;
   z-index: 2;
   background: transparent;
   border: none;
   border-radius: 999px;
   padding: 7px 16px;
+  min-block-size: 44px;
   font: var(--type-label-medium);
   font-weight: 550;
   color: var(--color-on-surface-variant);
@@ -178,8 +185,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.page :global(.skills-mode-pill:hover) {
-  color: var(--color-on-surface);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.skills-mode-pill:hover) {
+    color: var(--color-on-surface);
+  }
 }
 
 .page :global(.skills-mode-pill:active) {
@@ -215,13 +224,14 @@
 
 .page :global(.skills-cat-pill) {
   display: inline-flex;
+  flex: none;
   align-items: center;
   gap: 6px;
   background: var(--color-surface-container-high);
   border: 1px solid var(--color-outline-variant);
   border-radius: 999px;
   padding: 8px 16px;
-  min-height: 38px;
+  min-block-size: 44px;
   font: var(--type-label-medium);
   color: var(--color-on-surface-variant);
   cursor: pointer;
@@ -236,11 +246,13 @@
     box-shadow var(--motion-duration-short2, 150ms) ease;
 }
 
-.page :global(.skills-cat-pill:hover) {
-  border-color: var(--color-outline);
-  color: var(--color-on-surface);
-  background: var(--color-surface-container-highest);
-  transform: translateY(-1px);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.skills-cat-pill:hover) {
+    border-color: var(--color-outline);
+    color: var(--color-on-surface);
+    background: var(--color-surface-container-highest);
+    transform: translateY(-1px);
+  }
 }
 
 .page :global(.skills-cat-pill:active) {
@@ -348,35 +360,26 @@
   list-style: none;
 }
 
-/* Explicit cursor and user-select for all skill items */
-.page :global(.skills-practice) li {
+.page :global(.skills-practice) li,
+.page :global(.skill-item-interactive) {
   font: var(--type-body-medium);
   color: var(--default-skills-list, var(--color-on-surface));
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--control-gap);
+  min-width: 0;
   padding: 7px 14px;
   background: var(--color-surface-container);
   border: 1px solid var(--color-outline-variant);
-  border-radius: 999px;
-  cursor: pointer;
-  user-select: none;
-  transition: all var(--motion-duration-fast, 150ms) ease;
+  border-radius: var(--shape-full);
 }
-
-.page :global(.skills-practice) li *,
-.page :global(.skill-item-interactive),
-.page :global(.skill-item-interactive *) {
-  cursor: pointer;
-}
-
-.page :global(.skills-practice) li:hover,
-.page :global(.skill-item-interactive:hover) {
-  background: var(--color-surface-container-high);
-  border-color: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  cursor: pointer;
+.page :global(.skills-practice) li:has(> button) { padding: 0; border: 0; background: transparent; }
+.page :global(.skill-item-interactive) { font: inherit; min-width: var(--touch-target); min-height: var(--touch-target); max-width: 100%; cursor: pointer; text-align: start; }
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.skill-item-interactive:hover) {
+    background: var(--color-surface-container-high);
+    border-color: var(--color-primary);
+  }
 }
 
 .page :global(.skill-project-indicator) {
@@ -441,34 +444,26 @@
 }
 
 /* "Skills in Action" Modal / Review Dialog */
-.page :global(.skill-modal-backdrop) {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  cursor: pointer;
+.page :global(.skill-modal-content)::backdrop {
+  background: color-mix(in srgb, var(--color-scrim) 65%, transparent);
 }
 
-.page :global(.skill-modal-content) {
+.page :global(.skill-modal-content):modal {
+  color: var(--color-on-surface);
   background: var(--color-surface-container-low);
   border: 1px solid var(--color-outline-variant);
   border-radius: var(--radius-extra-large, 28px);
-  max-width: min(780px, 94vw);
-  width: 100%;
-  max-height: 88vh;
+  max-width: 780px;
+  width: calc(100% - 2 * var(--page-inset));
+  overscroll-behavior: contain;
+  max-height: 88dvh;
   overflow-y: auto;
-  overflow-x: hidden;
+
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
   padding: clamp(24px, 4vw, 36px);
   box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.45);
-  animation: modalEnter 260ms cubic-bezier(0.2, 0, 0, 1);
+  animation: modalEnter var(--motion-duration-navigation) var(--spring);
   cursor: default;
 }
 
@@ -526,11 +521,13 @@
               color var(--motion-duration-fast, 150ms) ease;
 }
 
-.page :global(.skill-modal-close:hover) {
-  background: var(--color-primary-container);
-  color: var(--color-on-primary-container);
-  border-color: var(--color-primary);
-  transform: rotate(90deg) scale(1.05);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.skill-modal-close:hover) {
+    background: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+    border-color: var(--color-primary);
+    transform: rotate(90deg) scale(1.05);
+  }
 }
 
 .page :global(.skill-modal-close:active) {
@@ -624,7 +621,6 @@
               background-color var(--motion-duration-fast, 180ms) ease;
 }
 
-.page :global(.skill-modal-project-card:hover),
 .page :global(.skill-modal-project-card:focus-visible) {
   transform: translateY(-2px);
   border-color: var(--color-primary);
@@ -632,6 +628,17 @@
   background: var(--color-surface-container-high);
   box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.2), 0 0 16px color-mix(in srgb, var(--color-primary) 15%, transparent);
   outline: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.skill-modal-project-card:hover) {
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+    border-radius: 24px 14px 24px 14px;
+    background: var(--color-surface-container-high);
+    box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.2), 0 0 16px color-mix(in srgb, var(--color-primary) 15%, transparent);
+    outline: none;
+  }
 }
 
 .page :global(.skill-modal-project-card:active) {
@@ -644,8 +651,10 @@
   transition: transform var(--motion-duration-fast, 180ms) var(--spring);
 }
 
-.page :global(.skill-modal-project-card:hover) :global(.skill-modal-arrow) {
-  transform: translateX(4px);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.skill-modal-project-card:hover) :global(.skill-modal-arrow) {
+    transform: translateX(4px);
+  }
 }
 
 .page :global(.skill-modal-card-top) {
@@ -714,10 +723,12 @@
               color var(--motion-duration-fast, 150ms) ease;
 }
 
-.page :global(.skill-modal-details-link:hover) {
-  background: var(--color-primary);
-  color: var(--color-on-primary);
-  transform: translateY(-1px);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.skill-modal-details-link:hover) {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    transform: translateY(-1px);
+  }
 }
 
 .page :global(.skill-modal-repo-link) {
@@ -734,9 +745,11 @@
   transition: color var(--motion-duration-fast, 150ms) ease, background-color var(--motion-duration-fast, 150ms) ease;
 }
 
-.page :global(.skill-modal-repo-link:hover) {
-  color: var(--color-primary);
-  background: var(--color-surface-container-high);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.skill-modal-repo-link:hover) {
+    color: var(--color-primary);
+    background: var(--color-surface-container-high);
+  }
 }
 
 /* ==========================================================================
@@ -795,12 +808,14 @@
               box-shadow var(--motion-duration-fast, 180ms) ease;
 }
 
-.page :global(.craftsmanship-toggle-button:hover) {
-  border-color: var(--color-primary);
-  background: var(--color-primary-container);
-  color: var(--color-on-primary-container);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px color-mix(in srgb, var(--color-primary) 20%, transparent);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.craftsmanship-toggle-button:hover) {
+    border-color: var(--color-primary);
+    background: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
 }
 
 .page :global(.craftsmanship-toggle-button:active) {
@@ -857,9 +872,11 @@
   user-select: none;
 }
 
-.page :global(.craftsmanship-tab:hover) {
-  border-color: var(--color-outline);
-  color: var(--color-on-surface);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.craftsmanship-tab:hover) {
+    border-color: var(--color-outline);
+    color: var(--color-on-surface);
+  }
 }
 
 .page :global(.craftsmanship-tab.craftsmanship-tab-active) {
@@ -953,11 +970,13 @@
   transition: all var(--motion-duration-fast, 150ms) ease;
 }
 
-.page :global(.craftsmanship-copy-button:hover) {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  background: var(--color-surface-container-highest);
-  transform: translateY(-1px);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.craftsmanship-copy-button:hover) {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-surface-container-highest);
+    transform: translateY(-1px);
+  }
 }
 
 .page :global(.craftsmanship-copy-button:active) {
@@ -989,7 +1008,7 @@
 }
 
 .page :global(.craftsmanship-token-comment) {
-  color: var(--color-outline);
+  color: var(--color-on-surface-variant);
   font-style: italic;
 }
 
@@ -1009,7 +1028,7 @@
 .page :global(.craftsmanship-line-number) {
   width: 36px;
   padding-right: 18px;
-  color: var(--color-outline);
+  color: var(--color-on-surface-variant);
   text-align: right;
   user-select: none;
   flex-shrink: 0;
@@ -1092,9 +1111,11 @@
   transition: transform 150ms var(--spring), border-color 150ms ease;
 }
 
-.page :global(.roadmap-card:hover) {
-  transform: translateY(-2px);
-  border-color: var(--color-outline);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.roadmap-card:hover) {
+    transform: translateY(-2px);
+    border-color: var(--color-outline);
+  }
 }
 
 .page :global(.roadmap-card-top) {
@@ -1188,14 +1209,14 @@
 }
 
 /* Responsive Breakpoints */
-@media (max-width: 1000px) {
+@media (--below-expanded) {
   .page :global(.skills-category) { grid-template-columns: 185px minmax(0, 1fr); gap: 34px; }
   .page :global(.skills-practice) ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .page :global(.skills-practice-mixed) ul { grid-template-columns: minmax(0, 1fr); }
   .page :global(.roadmap-grid) { grid-template-columns: minmax(0, 1fr); }
 }
 
-@media (max-width: 720px) {
+@media (--below-expanded) {
   .page { padding-top: 44px; }
   .page :global(.skills-page-header) { margin-bottom: 28px; }
   .page :global(.skills-page-header) h1 { font-size: var(--type-headline-large-size); }
@@ -1209,9 +1230,27 @@
   .page :global(.roadmap-container) { padding: 24px 18px; margin-top: 50px; border-radius: 20px; }
 }
 
-@media (max-width: 480px) {
+@media (--compact) {
   .page :global(.skills-practice-mixed) { grid-template-columns: minmax(0, 1fr); gap: 26px; }
   .page :global(.skills-practice) ul { gap: 11px 18px; }
   .page :global(.skills-practice-mixed) ul { grid-template-columns: minmax(0, 1fr); }
   .page :global(.craftsmanship-code-line) { font-size: var(--type-label-small-size); }
+}
+.page :global(.skills-search-field) input { min-width: 0; font-size: max(1rem, 16px); }
+@media (--compact) {
+  .page { padding-top: 32px; }
+  .page :global(.skills-toolbar) { position: static; backdrop-filter: none; box-shadow: none; }
+  .page :global(.skills-toolbar-top) { display: grid; min-width: 0; grid-template-columns: minmax(0, 1fr); gap: var(--control-gap); }
+  .page :global(.skills-view-mode-group) { width: 100%; }
+  .page :global(.skills-mode-pill) { flex-grow: 1; padding-inline: 3px; }
+  .page :global(.skills-practice) ul { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (--short-window) {
+  .page :global(.skills-toolbar) { position: static; }
+}
+
+.page :global(.skill-modal-links-row) a { min-height: var(--touch-target); }
+@media (--compact) {
+  .page :global(.skill-modal-content):modal { inset: auto 0 0; width: 100%; margin: 0; max-height: calc(100dvh - var(--safe-top)); padding: 16px var(--page-inset) calc(16px + var(--safe-bottom)); border-radius: var(--shape-extra-large) var(--shape-extra-large) 0 0; }
 }

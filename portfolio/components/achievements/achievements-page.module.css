@@ -53,13 +53,15 @@
     background-color var(--motion-duration-short2) ease;
 }
 
-.page :global(.achievement-card:hover),
-.page :global(.achievement-hackathon-card:hover),
-.page :global(.certification-card:hover) {
-  transform: translateY(-3px);
-  border-radius: 32px 20px 32px 20px;
-  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.1);
-  background: var(--color-surface-container);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.achievement-card:hover),
+  .page :global(.achievement-hackathon-card:hover),
+  .page :global(.certification-card:hover) {
+    transform: translateY(-3px);
+    border-radius: 32px 20px 32px 20px;
+    box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.1);
+    background: var(--color-surface-container);
+  }
 }
 
 .page :global(.achievement-card:focus-visible),
@@ -69,15 +71,19 @@
   outline-offset: 4px;
 }
 
-.page :global(.achievement-card.tone-secondary:hover),
-.page :global(.achievement-hackathon-card.tone-secondary:hover) {
-  border-color: var(--color-secondary);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.achievement-card.tone-secondary:hover),
+  .page :global(.achievement-hackathon-card.tone-secondary:hover) {
+    border-color: var(--color-secondary);
+  }
 }
 
-.page :global(.achievement-card.tone-tertiary:hover),
-.page :global(.achievement-hackathon-card.tone-tertiary:hover),
-.page :global(.certification-card:hover) {
-  border-color: var(--color-tertiary);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.achievement-card.tone-tertiary:hover),
+  .page :global(.achievement-hackathon-card.tone-tertiary:hover),
+  .page :global(.certification-card:hover) {
+    border-color: var(--color-tertiary);
+  }
 }
 
 /* Subgrid Fallback for browsers without subgrid support */
@@ -148,7 +154,7 @@
   background: var(--color-surface-container-high);
   color: var(--color-on-surface-variant);
   font-family: var(--code);
-  font-size: 11px;
+  font-size: var(--type-label-small-size);
   letter-spacing: 0.02em;
   border: 1px solid var(--color-outline-variant);
 }
@@ -168,9 +174,11 @@
     transform var(--motion-duration-short2) var(--spring);
 }
 
-.page :global(.achievement-id-copy-btn:hover) {
-  color: var(--color-primary);
-  transform: scale(1.15);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.achievement-id-copy-btn:hover) {
+    color: var(--color-primary);
+    transform: scale(1.15);
+  }
 }
 
 .page :global(.achievement-copy-icon) {
@@ -192,9 +200,6 @@
   line-height: 1.3;
   margin: 0;
   color: var(--color-on-surface);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
@@ -224,9 +229,6 @@
   line-height: 1.55;
   color: var(--color-on-surface-variant);
   margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
@@ -288,9 +290,14 @@
   transition: transform var(--motion-duration-short3) var(--spring);
 }
 
-.page :global(.about-timeline-item):hover :global(.about-timeline-node-shape),
 .page :global(.about-timeline-item):focus-within :global(.about-timeline-node-shape) {
   transform: scale(1.15);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-timeline-item):hover :global(.about-timeline-node-shape) {
+    transform: scale(1.15);
+  }
 }
 
 .page :global(.about-timeline-item):active :global(.about-timeline-node-shape) {
@@ -357,10 +364,12 @@
     background-color var(--motion-duration-short2) ease;
 }
 
-.page :global(.about-timeline-card):hover {
-  transform: translateY(-3px);
-  border-radius: 32px 20px 32px 20px;
-  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.1);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-timeline-card):hover {
+    transform: translateY(-3px);
+    border-radius: 32px 20px 32px 20px;
+    box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .page :global(.about-timeline-card):active {
@@ -368,16 +377,22 @@
   border-radius: 20px 28px 20px 28px;
 }
 
-.page :global(.about-timeline-item.tone-secondary) :global(.about-timeline-card):hover {
-  border-color: var(--color-secondary);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-timeline-item.tone-secondary) :global(.about-timeline-card):hover {
+    border-color: var(--color-secondary);
+  }
 }
 
-.page :global(.about-timeline-item.tone-tertiary) :global(.about-timeline-card):hover {
-  border-color: var(--color-tertiary);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-timeline-item.tone-tertiary) :global(.about-timeline-card):hover {
+    border-color: var(--color-tertiary);
+  }
 }
 
-.page :global(.about-timeline-item.tone-primary) :global(.about-timeline-card):hover {
-  border-color: var(--color-primary);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-timeline-item.tone-primary) :global(.about-timeline-card):hover {
+    border-color: var(--color-primary);
+  }
 }
 
 /* Card Header & Chips */
@@ -564,7 +579,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 44px;
+  min-height: var(--touch-target);
   padding: 0 16px;
   border-radius: 9999px;
   font-size: 13px;
@@ -585,14 +600,16 @@
     box-shadow var(--motion-duration-short2) ease;
 }
 
-.page :global(.about-doc-chip.is-link):hover,
-.page :global(.achievement-doc-chip.is-link):hover {
-  background: var(--color-secondary-container);
-  color: var(--color-on-secondary-container);
-  border-color: var(--color-secondary);
-  transform: translateY(-2px);
-  border-radius: 14px 22px 14px 22px;
-  box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--color-secondary) 22%, transparent);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-doc-chip.is-link):hover,
+  .page :global(.achievement-doc-chip.is-link):hover {
+    background: var(--color-secondary-container);
+    color: var(--color-on-secondary-container);
+    border-color: var(--color-secondary);
+    transform: translateY(-2px);
+    border-radius: 14px 22px 14px 22px;
+    box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--color-secondary) 22%, transparent);
+  }
 }
 
 .page :global(.about-doc-chip.is-link):active,
@@ -615,10 +632,12 @@
   cursor: default;
 }
 
-.page :global(.about-doc-chip.is-static):hover,
-.page :global(.achievement-doc-chip.is-static):hover {
-  background: var(--color-surface-container-high);
-  border-color: var(--color-outline);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-doc-chip.is-static):hover,
+  .page :global(.achievement-doc-chip.is-static):hover {
+    background: var(--color-surface-container-high);
+    border-color: var(--color-outline);
+  }
 }
 
 .page :global(.doc-chip-lead-icon) {
@@ -706,7 +725,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 44px;
+  min-height: var(--touch-target);
   padding: 0 16px;
   border-radius: 9999px;
   border: none;
@@ -723,8 +742,10 @@
     transform var(--motion-duration-short2) var(--spring);
 }
 
-.page :global(.nav-segment-button:hover) {
-  color: var(--color-on-surface);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.nav-segment-button:hover) {
+    color: var(--color-on-surface);
+  }
 }
 
 .page :global(.nav-segment-button:active) {
@@ -800,12 +821,14 @@
     background-color var(--motion-duration-short2) ease;
 }
 
-.page :global(.certification-card:hover) {
-  transform: translateY(-3px);
-  border-radius: 32px 20px 32px 20px;
-  border-color: var(--color-tertiary);
-  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.1);
-  background: var(--color-surface-container);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.certification-card:hover) {
+    transform: translateY(-3px);
+    border-radius: 32px 20px 32px 20px;
+    border-color: var(--color-tertiary);
+    box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.1);
+    background: var(--color-surface-container);
+  }
 }
 
 .page :global(.certification-leading-cluster),
@@ -872,7 +895,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 44px;
+  min-height: var(--touch-target);
   padding: 0 18px;
   border-radius: 9999px;
   background: var(--color-primary-container);
@@ -887,9 +910,11 @@
     background-color var(--motion-duration-short2) ease;
 }
 
-.page :global(.credential-view-btn:hover) {
-  transform: translateY(-2px);
-  border-radius: 14px 22px 14px 22px;
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.credential-view-btn:hover) {
+    transform: translateY(-2px);
+    border-radius: 14px 22px 14px 22px;
+  }
 }
 
 .page :global(.credential-view-btn:active) {
@@ -902,10 +927,12 @@
 }
 
 /* Certificate Modal */
-:global(.cert-modal-backdrop) { position: fixed; inset: 0; z-index: 1000; background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(8px); display: grid; place-items: center; padding: 20px; animation: certFadeIn 0.2s cubic-bezier(0.2, 0, 0, 1); }
-:global(.cert-modal-dialog) { position: relative; width: 100%; max-width: 580px; max-height: 90vh; overflow-y: auto; background: var(--color-surface-container-low); border: 1px solid var(--color-outline-variant); border-radius: 28px; padding: 36px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35); display: flex; flex-direction: column; gap: 24px; outline: none; animation: certScaleIn 0.25s cubic-bezier(0.2, 0, 0, 1); }
-:global(.cert-modal-close) { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; background: var(--color-surface-container-high); border: 1px solid var(--color-outline-variant); color: var(--color-on-surface); display: grid; place-items: center; cursor: pointer; transition: background var(--motion-duration-short2) var(--spring); }
-:global(.cert-modal-close:hover) { background: var(--color-surface-container-highest); }
+:global(.cert-modal-dialog)::backdrop { background: color-mix(in srgb, var(--color-scrim) 65%, transparent); }
+:global(.cert-modal-dialog):modal { position: fixed; width: calc(100% - 2 * var(--page-inset)); max-width: 580px; max-height: 90dvh; overflow-y: auto; overscroll-behavior: contain; color: var(--color-on-surface); background: var(--color-surface-container-low); border: 1px solid var(--color-outline-variant); border-radius: var(--shape-extra-large); padding: 32px; box-shadow: 0 20px 40px color-mix(in srgb, var(--color-shadow) 35%, transparent); display: flex; flex-direction: column; gap: 16px; outline: none; animation: certScaleIn var(--motion-duration-navigation) var(--spring); }
+:global(.cert-modal-close) { position: absolute; top: 20px; right: 20px; width: var(--touch-target); height: var(--touch-target); border-radius: var(--shape-full); background: var(--color-surface-container-high); border: 1px solid var(--color-outline-variant); color: var(--color-on-surface); display: grid; place-items: center; cursor: pointer; transition: background var(--motion-duration-short2) var(--spring); }
+@media (hover: hover) and (pointer: fine) {
+  :global(.cert-modal-close:hover) { background: var(--color-surface-container-highest); }
+}
 :global(.cert-modal-close svg) { width: 20px; height: 20px; }
 :global(.cert-modal-header) { display: flex; flex-direction: column; gap: 12px; padding-right: 40px; }
 :global(.cert-modal-badges) { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
@@ -925,9 +952,13 @@
 :global(.cert-actions-group) { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
 :global(.cert-action-buttons) { display: flex; flex-direction: column; gap: 10px; }
 :global(.cert-primary-link) { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--color-primary); color: var(--color-on-primary); padding: 12px 20px; border-radius: 12px; font-size: var(--type-label-medium-size); font-weight: 600; text-decoration: none; transition: opacity var(--motion-duration-short2) var(--spring); }
-:global(.cert-primary-link:hover) { opacity: 0.9; }
+@media (hover: hover) and (pointer: fine) {
+  :global(.cert-primary-link:hover) { opacity: 0.9; }
+}
 :global(.cert-secondary-link) { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--color-surface-container-high); border: 1px solid var(--color-outline-variant); color: var(--color-on-surface); padding: 10px 18px; border-radius: 12px; font-size: var(--type-label-medium-size); text-decoration: none; transition: background var(--motion-duration-short2) var(--spring); }
-:global(.cert-secondary-link:hover) { background: var(--color-surface-container-highest); }
+@media (hover: hover) and (pointer: fine) {
+  :global(.cert-secondary-link:hover) { background: var(--color-surface-container-highest); }
+}
 :global(.cert-static-doc) { font-size: var(--type-label-medium-size); color: var(--color-on-surface-variant); padding: 8px 12px; background: var(--color-surface-container); border-radius: 8px; }
 
 @keyframes certFadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -940,10 +971,12 @@
 .page :global(.honors-header) h2 { font: var(--type-achievement-section); letter-spacing: -0.045em; margin: 0; color: var(--color-on-surface); }
 .page :global(.honors-grid) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .page :global(.honor-card) { background: var(--color-surface-container-low); border: 1px solid var(--color-outline-variant); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px; transition: transform var(--motion-duration-short3) var(--spring); }
-.page :global(.honor-card):hover { transform: translateY(-3px); }
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.honor-card):hover { transform: translateY(-3px); }
+}
 .page :global(.honor-card-top) { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
-.page :global(.honor-category) { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-on-surface-variant); font-weight: 600; }
-.page :global(.honor-badge) { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--color-tertiary-container); color: var(--color-on-tertiary-container); }
+.page :global(.honor-category) { font-size: var(--type-label-small-size); text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-on-surface-variant); font-weight: 600; }
+.page :global(.honor-badge) { font-size: var(--type-label-small-size); font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--color-tertiary-container); color: var(--color-on-tertiary-container); }
 .page :global(.honor-card) h3 { font: var(--type-title-medium); margin: 0; color: var(--color-on-surface); }
 .page :global(.honor-org) { font-size: var(--type-label-medium-size); color: var(--color-primary); margin: 0; font-weight: 500; }
 .page :global(.honor-desc) { font-size: var(--type-body-supporting-size); line-height: 1.6; color: var(--color-on-surface-variant); margin: 0; }
@@ -1011,7 +1044,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  min-height: 36px;
+  min-height: var(--touch-target);
   padding: 0 14px;
   border-radius: 9999px;
   border: none;
@@ -1029,9 +1062,11 @@
     transform var(--motion-duration-short2) var(--spring);
 }
 
-.page :global(.segmented-button:hover),
-.page :global(.leetcode-filter-btn:hover) {
-  color: var(--color-on-surface);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.segmented-button:hover),
+  .page :global(.leetcode-filter-btn:hover) {
+    color: var(--color-on-surface);
+  }
 }
 
 .page :global(.segmented-button:active),
@@ -1127,8 +1162,7 @@
 .page :global(.leetcode-donut-wrapper) { position: relative; width: 170px; height: 170px; display: grid; place-items: center; }
 .page :global(.leetcode-donut-svg) { width: 100%; height: 100%; transform: rotate(-90deg); }
 .page :global(.leetcode-donut-track) { fill: none; stroke: var(--color-surface-container-highest); stroke-width: 14; }
-.page :global(.leetcode-donut-segment) { fill: none; stroke-width: 14; cursor: pointer; outline: none; transition: opacity var(--motion-duration-short3) var(--spring), stroke-width var(--motion-duration-short3) var(--spring); }
-.page :global(.leetcode-donut-segment:hover) { stroke-width: 16; }
+.page :global(.leetcode-donut-segment) { fill: none; stroke-width: 14; outline: none; transition: opacity var(--motion-duration-short3) var(--spring), stroke-width var(--motion-duration-short3) var(--spring); }
 .page :global(.segment-easy) { stroke: var(--color-tertiary); }
 .page :global(.segment-medium) { stroke: var(--color-primary); }
 .page :global(.segment-hard) { stroke: var(--color-error); }
@@ -1140,7 +1174,9 @@
 .page :global(.leetcode-summary-caption) { font-size: var(--type-label-medium-size); color: var(--color-on-surface-variant); line-height: 1.5; margin: 0; min-height: 48px; }
 .page :global(.leetcode-bars-col) { display: flex; flex-direction: column; gap: 16px; }
 .page :global(.leetcode-bar-card) { background: var(--color-surface-container); border: 1px solid var(--color-outline-variant); border-radius: 16px; padding: 16px 20px; cursor: pointer; display: flex; flex-direction: column; gap: 10px; transition: transform var(--motion-duration-short3) var(--spring), border-color var(--motion-duration-short3) var(--spring), background-color var(--motion-duration-short3) var(--spring); }
-.page :global(.leetcode-bar-card:hover) { transform: translateY(-2px); border-color: var(--color-primary); }
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.leetcode-bar-card:hover) { transform: translateY(-2px); border-color: var(--color-primary); }
+}
 .page :global(.bar-card-selected) { border-color: var(--color-primary); background: var(--color-surface-container-high); }
 .page :global(.leetcode-bar-header) { display: flex; align-items: center; justify-content: space-between; }
 .page :global(.leetcode-bar-label-group) { display: flex; align-items: center; gap: 10px; }
@@ -1149,7 +1185,7 @@
 .page :global(.dot-medium) { background: var(--color-primary); }
 .page :global(.dot-hard) { background: var(--color-error); }
 .page :global(.leetcode-bar-difficulty) { font-weight: 600; font-size: var(--type-label-medium-size); color: var(--color-on-surface); }
-.page :global(.leetcode-badge-sweetspot) { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--color-primary-container); color: var(--color-on-primary-container); letter-spacing: 0.02em; }
+.page :global(.leetcode-badge-sweetspot) { font-size: var(--type-label-small-size); font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--color-primary-container); color: var(--color-on-primary-container); letter-spacing: 0.02em; }
 .page :global(.leetcode-bar-metrics) { display: flex; align-items: baseline; gap: 8px; }
 .page :global(.leetcode-bar-metrics strong) { font-size: 18px; font-weight: 700; color: var(--color-on-surface); }
 .page :global(.leetcode-bar-pct) { font-size: var(--type-label-small-size); color: var(--color-on-surface-variant); }
@@ -1185,10 +1221,17 @@
   min-height: 0;
   box-sizing: border-box;
 }
-.page :global(.leetcode-pattern-card:hover), .page :global(.pattern-card-hovered), .page :global(.pattern-card-active) {
+.page :global(.pattern-card-hovered), .page :global(.pattern-card-active) {
   transform: translateY(-2px);
   border-color: var(--color-primary);
   background: var(--color-surface-container-high);
+}
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.leetcode-pattern-card:hover) {
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+    background: var(--color-surface-container-high);
+  }
 }
 .page :global(.pattern-card-active) { box-shadow: 0 0 0 1px var(--color-primary); }
 .page :global(.leetcode-pattern-top) { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
@@ -1201,16 +1244,18 @@
   border-radius: 6px;
   background: var(--color-primary-container);
   color: var(--color-on-primary-container);
-  font-size: 11px;
+  font-size: var(--type-label-small-size);
   font-weight: 700;
   font-family: var(--display);
   letter-spacing: -0.02em;
   flex-shrink: 0;
 }
 .page :global(.pattern-shape-badge) { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: var(--color-primary-container); color: var(--color-on-primary-container); border-radius: 6px; flex-shrink: 0; transition: transform var(--motion-duration-short2) var(--spring); }
-.page :global(.pattern-shape-badge:hover) { transform: scale(1.08); }
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.pattern-shape-badge:hover) { transform: scale(1.08); }
+}
 .page :global(.leetcode-pattern-tag) {
-  font-size: 11px;
+  font-size: var(--type-label-small-size);
   font-weight: 600;
   padding: 2px 8px;
   border-radius: 999px;
@@ -1219,7 +1264,7 @@
   border: 1px solid var(--color-outline-variant);
   white-space: nowrap;
 }
-.page :global(.leetcode-pattern-index) { font-size: 11px; font-weight: 700; font-family: var(--display); letter-spacing: -0.02em; color: var(--color-on-primary-container); }
+.page :global(.leetcode-pattern-index) { font-size: var(--type-label-small-size); font-weight: 700; font-family: var(--display); letter-spacing: -0.02em; color: var(--color-on-primary-container); }
 .page :global(.leetcode-pattern-title) { font: var(--type-title-small); font-size: 13px; font-weight: 700; line-height: 1.35; margin: 0; color: var(--color-on-surface); }
 .page :global(.leetcode-pattern-desc) { font-size: 12px; line-height: 1.45; color: var(--color-on-surface-variant); margin: 0; }
 
@@ -1234,15 +1279,19 @@
 .page :global(.leetcode-recent-count) { font-size: var(--type-label-small-size); color: var(--color-on-surface-variant); }
 .page :global(.leetcode-recent-list) { display: flex; flex-direction: column; gap: 8px; }
 .page :global(.leetcode-recent-item) { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 16px; border-radius: 12px; background: var(--color-surface-container); border: 1px solid var(--color-outline-variant); text-decoration: none; color: inherit; transition: transform var(--motion-duration-short2) var(--spring), border-color var(--motion-duration-short2) var(--spring), background-color var(--motion-duration-short2) var(--spring); }
-.page :global(.leetcode-recent-item:hover) { transform: translateX(4px); border-color: var(--color-primary); background: var(--color-surface-container-high); }
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.leetcode-recent-item:hover) { transform: translateX(4px); border-color: var(--color-primary); background: var(--color-surface-container-high); }
+}
 .page :global(.leetcode-recent-info) { display: flex; align-items: center; gap: 10px; min-width: 0; }
-.page :global(.leetcode-recent-status), .page :global(.recent-leading-shape) { width: 22px; height: 22px; border-radius: 6px; background: var(--color-tertiary-container); color: var(--color-on-tertiary-container); display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+.page :global(.leetcode-recent-status), .page :global(.recent-leading-shape) { width: 22px; height: 22px; border-radius: 6px; background: var(--color-tertiary-container); color: var(--color-on-tertiary-container); display: inline-flex; align-items: center; justify-content: center; font-size: var(--type-label-small-size); font-weight: 700; flex-shrink: 0; }
 .page :global(.recent-status-icon) { line-height: 1; }
-.page :global(.leetcode-recent-title) { font-size: var(--type-label-medium-size); font-weight: 500; color: var(--color-on-surface); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.page :global(.leetcode-recent-title) { font-size: var(--type-label-medium-size); font-weight: 500; color: var(--color-on-surface); overflow-wrap: anywhere; }
 .page :global(.leetcode-recent-meta) { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .page :global(.leetcode-recent-time) { font-size: var(--type-label-small-size); color: var(--color-on-surface-variant); }
-.page :global(.leetcode-recent-icon), .page :global(.recent-link-button) { width: 26px; height: 26px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; background: var(--color-surface-container-high); border: 1px solid var(--color-outline-variant); color: var(--color-primary); text-decoration: none; transition: all var(--motion-duration-short2) var(--spring); }
-.page :global(.recent-link-button:hover) { background: var(--color-primary); color: var(--color-on-primary); border-color: var(--color-primary); transform: scale(1.05); }
+.page :global(.leetcode-recent-icon), .page :global(.recent-link-button) { width: var(--touch-target); height: var(--touch-target); flex: none; border-radius: var(--shape-small); display: inline-flex; align-items: center; justify-content: center; background: var(--color-surface-container-high); border: 1px solid var(--color-outline-variant); color: var(--color-primary); text-decoration: none; transition: all var(--motion-duration-short2) var(--spring); }
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.recent-link-button:hover) { background: var(--color-primary); color: var(--color-on-primary); border-color: var(--color-primary); transform: scale(1.05); }
+}
 .page :global(.recent-link-button svg) { width: 14px; height: 14px; }
 
 .page :global(.coding-profile-grid) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
@@ -1255,10 +1304,12 @@
   min-width: 0;
   transition: transform var(--motion-duration-short3) var(--spring), border-color var(--motion-duration-short3) var(--spring), background-color var(--motion-duration-short3) var(--spring);
 }
-.page :global(.coding-profile:hover) {
-  border-color: var(--color-primary);
-  background: var(--color-surface-container);
-  transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.coding-profile:hover) {
+    border-color: var(--color-primary);
+    background: var(--color-surface-container);
+    transform: translateY(-2px);
+  }
 }
 .page :global(.coding-profile-header) {
   display: flex;
@@ -1284,7 +1335,7 @@
   border-radius: 10px;
   background: var(--color-primary-container);
   color: var(--color-on-primary-container);
-  font-size: 11px;
+  font-size: var(--type-label-small-size);
   font-weight: 800;
   letter-spacing: 0.04em;
   font-family: var(--display);
@@ -1292,8 +1343,10 @@
   border: 1px solid var(--color-outline-variant);
 }
 .page :global(.coding-profile) h3 { font: var(--type-entry-heading); letter-spacing: -.035em; margin: 0; }
-.page :global(.coding-profile) h3 a { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; color: var(--color-on-surface); }
-.page :global(.coding-profile) h3 a:hover { color: var(--color-primary); }
+.page :global(.coding-profile) h3 a { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: var(--touch-target); color: var(--color-on-surface); }
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.coding-profile) h3 a:hover { color: var(--color-primary); }
+}
 .page :global(.coding-profile) h3 svg { width: 20px; height: 20px; color: var(--color-primary); }
 .page :global(.coding-handle) { color: var(--default-achievement-profile-handle, var(--color-on-surface-variant)); font-size: var(--type-label-medium-size); line-height: 1.7; margin: 6px 0 0; overflow-wrap: anywhere; }
 .page :global(.coding-metrics) { display: flex; flex-wrap: wrap; gap: 24px; margin: 30px 0 0; }
@@ -1310,7 +1363,7 @@
 .page :global(.achievements-empty) h2 { font: var(--type-achievement-empty-heading); letter-spacing: -.04em; margin: 20px 0 12px; }
 .page :global(.achievements-empty) p { color: var(--color-on-surface-variant); font-size: var(--type-body-medium-size); line-height: 1.8; margin: 0; }
 
-@media (max-width: 1000px) {
+@media (--below-expanded) {
   .page :global(.achievement-hackathons-grid),
   .page :global(.achievement-certification-list) { grid-template-columns: minmax(0, 1fr); }
   .page :global(.achievement-certification-list) h3 { font-size: 22px; }
@@ -1320,7 +1373,7 @@
   .page :global(.leetcode-pattern-grid), .page :global(.leetcode-patterns-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-@media (max-width: 720px) {
+@media (--below-expanded) {
   .page { padding-top: 44px; }
   .page :global(.achievements-header) { padding-right: 0; margin-bottom: 36px; }
   .page :global(.achievements-header) h1 { font-size: 43px; }
@@ -1335,13 +1388,13 @@
   }
   .page :global(.achievements-nav-pill) {
     max-width: calc(100% - 20px);
-    mask-image: linear-gradient(to right, transparent, black 14px, black calc(100% - 14px), transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 14px, black calc(100% - 14px), transparent);
+    mask-image: linear-gradient(to left, transparent, var(--color-scrim) 14px);
+    -webkit-mask-image: linear-gradient(to left, transparent, var(--color-scrim) 14px);
   }
   .page :global(.nav-segment-button) {
     padding: 0 13px;
     font-size: 12px;
-    min-height: 44px;
+    min-height: var(--touch-target);
   }
   .page :global(.achievement-grid), .page :global(.coding-profile-grid), .page :global(.achievement-hackathons-grid) { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .page :global(.achievement-entry), .page :global(.achievement-experience-list) :global(.achievement-entry) { padding: 26px; }
@@ -1353,7 +1406,7 @@
   .page :global(.leetcode-pattern-grid), .page :global(.leetcode-patterns-grid) { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 380px) {
+@media (--compact) {
   .page :global(.achievements-header) h1 { font-size: 38px; }
   .page :global(.achievement-entry), .page :global(.achievement-experience-list) :global(.achievement-entry) { padding: 22px; }
   .page :global(.problem-solving-topics) ul { grid-template-columns: minmax(0, 1fr); }
@@ -1377,7 +1430,9 @@
 /* Heatmap Metrics Row */
 :global(.heatmap-metrics-row) { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-bottom: 20px; }
 :global(.heatmap-metric-card) { background: var(--color-surface-container-low); border: 1px solid var(--color-outline-variant); border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 4px; transition: transform var(--motion-duration-short3) var(--spring); }
-:global(.heatmap-metric-card:hover) { transform: translateY(-2px); }
+@media (hover: hover) and (pointer: fine) {
+  :global(.heatmap-metric-card:hover) { transform: translateY(-2px); }
+}
 :global(.heatmap-metric-card .metric-label) { font-size: var(--type-label-small-size); text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-on-surface-variant); font-weight: 600; }
 :global(.heatmap-metric-card .metric-value) { font: var(--type-headline-medium); font-weight: 700; letter-spacing: -0.04em; color: var(--color-on-surface); line-height: 1.1; margin: 4px 0; }
 :global(.heatmap-metric-card .streak-unit) { font: var(--type-label-large); font-weight: 500; color: var(--color-on-surface-variant); }
@@ -1402,7 +1457,7 @@
 
 /* Grid Layout */
 :global(.heatmap-scroll-area) { width: 100%; overflow-x: auto; padding-bottom: 8px; }
-:global(.heatmap-grid-wrapper) { min-width: 820px; display: flex; flex-direction: column; gap: 10px; }
+:global(.heatmap-grid-wrapper) { min-width: 880px; display: flex; flex-direction: column; gap: 10px; }
 :global(.heatmap-months-row) { display: flex; height: 18px; }
 :global(.day-spacer) { width: 32px; flex-shrink: 0; }
 :global(.months-track) { position: relative; flex-grow: 1; height: 100%; }
@@ -1410,48 +1465,37 @@
 :global(.heatmap-body) { display: flex; gap: 10px; align-items: flex-start; }
 :global(.heatmap-day-labels) { width: 32px; display: flex; flex-direction: column; gap: 3.5px; flex-shrink: 0; }
 :global(.day-name) { font-size: var(--type-label-tiny-size, 10px); color: var(--color-on-surface-variant); height: 12px; line-height: 12px; text-align: left; }
-:global(.heatmap-weeks) { display: flex; gap: 3.5px; flex-grow: 1; }
-:global(.heatmap-week-col) { display: flex; flex-direction: column; gap: 3.5px; }
-:global(.heatmap-day-cell) {
-  width: 12px;
-  height: 12px;
-  border-radius: 2.5px;
-  cursor: pointer;
-  transition: transform 0.12s var(--spring, ease), outline 0.12s ease;
-  box-sizing: border-box;
-}
-:global(.heatmap-day-cell:hover) {
-  transform: scale(1.35);
-  z-index: 2;
-  outline: 1.5px solid var(--color-primary);
-}
+:global(.heatmap-weeks) { display: block; flex: none; }
+:global(.heatmap-weeks) path { fill: var(--heatmap-fill); stroke: var(--heatmap-border); stroke-width: 1; }
 
 /* Heatmap color scales - accessible ramp derived from Material 3 green tonal palette */
 :global(.level-0) {
-  background: var(--github-heatmap-level-0, var(--color-surface-container-high));
-  border: 1px solid var(--github-heatmap-level-0-border, var(--color-outline-variant));
+  --heatmap-fill: var(--github-heatmap-level-0, var(--color-surface-container-high));
+  --heatmap-border: var(--github-heatmap-level-0-border, var(--color-outline-variant));
 }
 :global(.level-1) {
-  background: var(--github-heatmap-level-1);
-  border: 1px solid var(--github-heatmap-level-1-border);
+  --heatmap-fill: var(--github-heatmap-level-1);
+  --heatmap-border: var(--github-heatmap-level-1-border);
 }
 :global(.level-2) {
-  background: var(--github-heatmap-level-2);
-  border: 1px solid var(--github-heatmap-level-2-border);
+  --heatmap-fill: var(--github-heatmap-level-2);
+  --heatmap-border: var(--github-heatmap-level-2-border);
 }
 :global(.level-3) {
-  background: var(--github-heatmap-level-3);
-  border: 1px solid var(--github-heatmap-level-3-border);
+  --heatmap-fill: var(--github-heatmap-level-3);
+  --heatmap-border: var(--github-heatmap-level-3-border);
 }
 :global(.level-4) {
-  background: var(--github-heatmap-level-4);
-  border: 1px solid var(--github-heatmap-level-4-border);
+  --heatmap-fill: var(--github-heatmap-level-4);
+  --heatmap-border: var(--github-heatmap-level-4-border);
   box-shadow: 0 0 8px color-mix(in srgb, var(--github-heatmap-level-4) 45%, transparent);
 }
 
 :global(.heatmap-footer) { display: flex; align-items: center; justify-content: space-between; font: var(--type-label-small); color: var(--color-on-surface-variant); margin-top: 10px; }
 :global(.heatmap-legend) { display: flex; align-items: center; gap: 4px; }
 :global(.legend-cell) {
+  background: var(--heatmap-fill);
+  border: 1px solid var(--heatmap-border);
   width: 12px;
   height: 12px;
   border-radius: 2.5px;
@@ -1490,7 +1534,53 @@
 :global(.github-repo-lang) { font: var(--type-label-small); padding: 2px 7px; border-radius: 6px; background: var(--color-surface-container-high); color: var(--color-on-surface-variant); }
 :global(.github-recent-item time) { font: var(--type-label-small); color: var(--color-on-surface-variant); flex-shrink: 0; }
 
-@media (max-width: 900px) {
+@media (--below-expanded) {
   :global(.heatmap-metrics-row) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   :global(.github-secondary-grid) { grid-template-columns: 1fr; }
 }
+
+.page :global(.platform-action-button) { min-width: var(--touch-target); min-height: var(--touch-target); }
+.page :global(.achievement-card), .page :global(.certification-card), .page :global(.achievement-hackathon-card) { grid-template-columns: minmax(0, 1fr); }
+.page :global(.achievement-card-footer), .page :global(.achievement-doc-item), .page :global(.github-heatmap-container) { min-width: 0; }
+.page :global(.achievement-doc-chip) { min-height: var(--touch-target); max-width: 100%; }
+.page :global(.doc-chip-label) { white-space: normal; }
+.page :global(.achievement-id-chip) { max-width: 100%; min-width: 0; }
+.page :global(.achievement-id-copy-btn) { flex: none; }
+.page :global(.leetcode-segmented-group) { max-width: 100%; overflow-x: auto; scrollbar-width: none; gap: var(--control-gap); padding-inline-end: 14px; }
+.page :global(.leetcode-segmented-group) > button { flex: none; }
+.page :global(.leetcode-donut-wrapper) { width: min(170px, 100%); height: auto; aspect-ratio: 1; }
+:global(.heatmap-scroll-hint) { display: none; margin: 0; font: var(--type-label-medium); color: var(--color-on-surface-variant); }
+:global(.heatmap-date-lookup) { display: flex; flex-wrap: wrap; gap: var(--control-gap); align-items: center; color: var(--color-on-surface-variant); }
+:global(.heatmap-date-lookup) input { min-width: 0; max-width: 100%; background: var(--color-surface-container); color: var(--color-on-surface); border: 1px solid var(--color-outline); border-radius: var(--shape-medium); padding: 8px; }
+:global(.heatmap-date-lookup) output { flex-basis: 100%; font: var(--type-body-medium); }
+:global(.heatmap-card) { container-type: inline-size; }
+@container (width < 880px) {
+  :global(.heatmap-scroll-hint) { display: block; }
+}
+@media (--below-expanded) {
+  .page :global(.leetcode-segmented-group) { mask-image: linear-gradient(to left, transparent, var(--color-scrim) 10px); }
+}
+@media (--compact) {
+  .page { padding-top: 32px; }
+  .page :global(.achievements-header) h1 { font: var(--type-achievement-display); }
+  .page :global(.achievement-card), .page :global(.certification-card), .page :global(.achievement-hackathon-card) { grid-row: auto; grid-template-rows: auto; padding: 16px; }
+  .page :global(.achievements-nav-wrapper) { top: var(--safe-top); }
+  .page :global(.achievements-nav-pill) { backdrop-filter: none; box-shadow: none; }
+  .page :global(.nav-segment-button) { min-height: var(--touch-target); }
+  .page :global(.leetcode-main-layout) { grid-template-columns: minmax(0, 1fr); justify-items: stretch; }
+  .page :global(.leetcode-widget) { padding: 16px; }
+  :global(.heatmap-card), :global(.heatmap-metric-card) { padding: 12px; }
+  :global(.heatmap-metrics-row) { gap: 8px; }
+  :global(.cert-modal-dialog):modal { inset: auto 0 0; margin: 0 auto; width: 100%; padding: 16px var(--page-inset) calc(16px + var(--safe-bottom)); max-height: calc(100dvh - var(--safe-top)); border-radius: var(--shape-extra-large) var(--shape-extra-large) 0 0; }
+  :global(.cert-modal-close) { position: static; align-self: end; }
+}
+
+.page :global(.achievements-segmented-group) { gap: var(--control-gap); }
+.page :global(.nav-segment-button) { flex: none; }
+.page :global(.achievement-id-chip) { font-size: var(--type-label-small-size); }
+
+@media (--short-window) {
+  .page :global(.achievements-nav-wrapper) { position: static; }
+}
+
+:global(.cert-action-buttons) a { min-height: var(--touch-target); }

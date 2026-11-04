@@ -64,13 +64,14 @@ function CommandPaletteController() {
 export function SiteNavigation() {
   return (
     <header className="site-header">
-      <Link className="brand" href="/" aria-label={siteCopy.homeLinkLabel}>
+      <Link className="brand" href="/" title={siteCopy.homeLinkLabel}>
         <span className="brand-mark" aria-hidden="true">{profile.initials}<span /></span>
         <span className="brand-name">{profile.displayName}<span aria-hidden="true">.</span></span>
+        <span className="sr-only"> home</span>
       </Link>
       <div className="navigation-tools">
         <NavigationLinks />
-        <ColorSeedPicker />
+        <div className="header-palette"><ColorSeedPicker /></div>
         <CommandPaletteController />
       </div>
       <ThemeToggle />

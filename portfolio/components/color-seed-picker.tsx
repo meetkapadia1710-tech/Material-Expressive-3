@@ -17,7 +17,7 @@ function onSeedColor(seed: string) {
   return brightness > 0.179 ? "#1B1B1F" : "#FFFFFF";
 }
 
-export function ColorSeedPicker() {
+export function ColorSeedPicker({ inline = false }: { inline?: boolean } = {}) {
   const rootRef = useRef<HTMLDetailsElement>(null);
   const swatchRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const latestRequest = useRef(0);
@@ -109,7 +109,7 @@ export function ColorSeedPicker() {
   const firstRadioIndex = checkedIndex > 0 ? checkedIndex : 0;
   const selectDefault = () => void reset();
 
-  return <details ref={rootRef} className={styles.control}>
+  return <details ref={rootRef} className={inline ? `${styles.control} ${styles.inline}` : styles.control}>
     <summary className={styles.trigger} aria-label={`${interfaceCopy.colors.label}: ${paletteMode === "default" ? interfaceCopy.colors.default : seed}`} title={`${interfaceCopy.colors.label}: ${paletteMode === "default" ? interfaceCopy.colors.default : seed}`}>
       <Icon name="palette" />
     </summary>

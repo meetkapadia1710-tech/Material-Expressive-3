@@ -41,21 +41,27 @@
 .page :global(.detail-aside) nav > p { margin: 0 0 14px; font-size: var(--type-label-small-size); text-transform: uppercase; letter-spacing: .07em; color: var(--color-on-surface-variant); font-weight: 650; }
 .page :global(.detail-aside) ul { list-style: none; margin: 0; padding: 0; }
 .page :global(.detail-aside) a { display: flex; justify-content: space-between; align-items: center; min-height: 48px; gap: 12px; font-size: var(--type-label-medium-size); color: var(--color-on-surface-variant); padding: 8px 0; }
-.page :global(.detail-aside) a:hover { color: var(--color-primary); }
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.detail-aside) a:hover { color: var(--color-primary); }
+}
 .page :global(.detail-aside) a > span { color: var(--color-primary); }
 .page :global(.detail-pagination) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding-top: 30px; border-top: 1px solid var(--color-outline-variant); margin-top: 18px; }
 .page :global(.detail-pagination) > a { display: flex; flex-direction: column; justify-content: center; gap: 17px; min-height: 145px; padding: 28px; background: var(--color-primary-container); color: var(--color-on-primary-container); border-radius: 26px; transition: transform var(--motion-duration-pagination) var(--spring); }
-.page :global(.detail-pagination) > a:hover { background: var(--color-primary); color: var(--color-on-primary); border-radius: 18px; }
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.detail-pagination) > a:hover { background: var(--color-primary); color: var(--color-on-primary); border-radius: 18px; }
+}
 .page :global(.detail-pagination) :global(.detail-next) { grid-column: 2; background: var(--color-secondary-container); color: var(--color-on-secondary-container); }
-.page :global(.detail-pagination) :global(.detail-next):hover { background: var(--color-secondary); color: var(--color-on-secondary); }
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.detail-pagination) :global(.detail-next):hover { background: var(--color-secondary); color: var(--color-on-secondary); }
+}
 .page :global(.detail-direction) { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: var(--type-label-small-size); color: inherit; }
 .page :global(.detail-previous) :global(.detail-direction) { flex-direction: row-reverse; }
 .page :global(.detail-previous) svg { transform: rotate(180deg); }
 .page :global(.detail-direction) svg { width: 18px; height: 18px; }
 .page :global(.detail-neighbor-name) { font: var(--type-project-neighbor); letter-spacing: -.04em; overflow-wrap: anywhere; }
 
-@media (max-width: 1000px) { .page :global(.detail-layout) { gap: 42px; grid-template-columns: minmax(0, 1fr) 200px; } }
-@media (max-width: 760px) {
+@media (--below-expanded) { .page :global(.detail-layout) { gap: 42px; grid-template-columns: minmax(0, 1fr) 200px; } }
+@media (--below-expanded) {
   .page { padding-top: 22px; }
   .page :global(.detail-header) { padding: 28px 85px 32px 0; }
   .page :global(.detail-header) h1 { font-size: 45px; }
@@ -73,9 +79,9 @@
   .page :global(.detail-pagination) > a { padding: 22px; min-height: 135px; }
   .page :global(.detail-neighbor-name) { font-size: 20px; }
 }
-@media (max-width: 480px) {
+@media (--compact) {
   .page :global(.detail-header) { padding-right: 0; }
-  .page :global(.detail-header) h1 { font-size: 40px; }
+  .page :global(.detail-header) h1 { font: var(--type-display-small); }
   .page :global(.detail-header-art) { display: none; }
   .page :global(.detail-header) :global(.eyebrow) { flex-wrap: wrap; font-size: var(--type-label-tiny-size); }
   .page :global(.detail-features) li { padding: 20px 18px; gap: 12px; }
@@ -84,3 +90,13 @@
   .page :global(.detail-pagination) :global(.detail-next) { grid-column: auto; }
   .page :global(.detail-pagination) > a { min-height: 110px; gap: 12px; }
 }
+
+@media (--compact) {
+  .page :global(.detail-aside) ul { flex-wrap: nowrap; overflow-x: auto; gap: var(--control-gap); padding: 4px 12px 4px 4px; mask-image: linear-gradient(to left, transparent, var(--color-scrim) 12px); }
+  .page :global(.detail-aside) li { flex: none; }
+  .page :global(.detail-aside) a { padding-inline: 12px; background: var(--color-surface-container-high); border-radius: var(--shape-full); }
+  .page :global(.detail-aside) a:focus-visible { outline-offset: -3px; }
+  .page :global(.detail-section) p { line-height: 1.5; }
+}
+
+.page :global(.detail-media-placeholder), .page :global(.detail-media) video { aspect-ratio: 16 / 9; }

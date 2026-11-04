@@ -9,10 +9,12 @@
   transition: all var(--motion-duration-fast) var(--spring);
 }
 
-.card:hover {
-  border-color: var(--color-primary);
-  background: var(--color-surface-container-high);
-  transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    border-color: var(--color-primary);
+    background: var(--color-surface-container-high);
+    transform: translateY(-2px);
+  }
 }
 
 .headerRow {
@@ -203,7 +205,7 @@
   height: 16px;
 }
 
-@media (max-width: 560px) {
+@media (--compact) {
   .card {
     padding: 20px;
     border-radius: 24px 24px 40px 24px;

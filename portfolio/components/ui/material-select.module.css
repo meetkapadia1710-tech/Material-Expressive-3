@@ -38,9 +38,11 @@
     transform var(--motion-duration-fast) var(--spring);
 }
 
-.trigger:hover {
-  border-color: var(--color-primary);
-  background-color: var(--color-surface-container-low);
+@media (hover: hover) and (pointer: fine) {
+  .trigger:hover {
+    border-color: var(--color-primary);
+    background-color: var(--color-surface-container-low);
+  }
 }
 
 .trigger:focus-visible {
@@ -55,9 +57,8 @@
 }
 
 .selectedText {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  white-space: normal;
   flex: 1;
 }
 
@@ -81,7 +82,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  max-height: min(300px, 60vh);
+  max-height: min(300px, 60dvh);
   overflow-y: auto;
   overscroll-behavior: contain;
   padding: 6px 0;
@@ -129,7 +130,8 @@
   justify-content: space-between;
   gap: 12px;
   width: calc(100% - 12px);
-  margin: 2px 6px;
+  min-block-size: var(--touch-target);
+  margin: 4px 6px;
   padding: 10px 14px;
   border: none;
   border-radius: 12px;
@@ -138,6 +140,7 @@
   font: 500 13.5px/1.4 var(--body);
   text-align: left;
   cursor: pointer;
+  touch-action: manipulation;
   outline: none;
   transition:
     background-color var(--motion-duration-fast) var(--spring),
@@ -145,11 +148,18 @@
     transform var(--motion-duration-fast) var(--spring);
 }
 
-.menuOption:hover,
 .menuOptionHighlighted {
   background: color-mix(in srgb, var(--color-primary) 10%, transparent);
   color: var(--color-primary);
   transform: translateX(2px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .menuOption:hover {
+    background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+    color: var(--color-primary);
+    transform: translateX(2px);
+  }
 }
 
 .menuOptionSelected {
@@ -158,16 +168,21 @@
   font-weight: 650;
 }
 
-.menuOptionSelected:hover,
 .menuOptionSelected.menuOptionHighlighted {
   background: color-mix(in srgb, var(--color-primary-container) 90%, var(--color-primary));
   color: var(--color-on-primary-container);
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .menuOptionSelected:hover {
+    background: color-mix(in srgb, var(--color-primary-container) 90%, var(--color-primary));
+    color: var(--color-on-primary-container);
+  }
+}
+
 .optionLabel {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .optionCheck {
@@ -196,3 +211,6 @@
   pointer-events: none;
 }
 
+@media (--compact) {
+  .menu { position: static; max-height: min(240px, 45dvh); margin-block-start: 8px; backdrop-filter: none; }
+}

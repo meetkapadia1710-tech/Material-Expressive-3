@@ -2,7 +2,9 @@
 .page :global(.about-header) { position: relative; padding: 0 160px 0 0; margin-bottom: 38px; min-height: 130px; }
 .page :global(.about-header) h1 { font: var(--type-about-display); letter-spacing: -.065em; margin: 0; }
 .page :global(.about-header-art) { position: absolute; right: 16px; top: 0; width: 120px; height: 120px; border-radius: 50% 36px 50% 36px; background: var(--color-secondary); color: var(--color-on-secondary); display: grid; place-items: center; transform: rotate(-10deg); transition: transform var(--motion-duration-standard) var(--spring); }
-.page :global(.about-header-art):hover { transform: rotate(5deg) scale(1.05); }
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-header-art):hover { transform: rotate(5deg) scale(1.05); }
+}
 .page :global(.about-header-art) svg { width: 60px; height: 60px; color: var(--color-on-secondary); }
 
 /* 1. Bio & Engineering Principles (M3 Expressive Surfaces & Multi-tone Accents) */
@@ -46,9 +48,11 @@
   padding: 22px;
   transition: transform var(--motion-duration-card) var(--spring), border-color var(--motion-duration-fast) ease, box-shadow var(--motion-duration-fast) ease;
 }
-.page :global(.about-principle-card):hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.16);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-principle-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.16);
+  }
 }
 .page :global(.about-principle-card.tone-primary) {
   border-left: 3px solid var(--color-primary);
@@ -62,10 +66,18 @@
 .page :global(.about-principle-card.tone-accent) {
   border-left: 3px solid color-mix(in srgb, var(--color-primary) 55%, var(--color-tertiary));
 }
-.page :global(.about-principle-card.tone-primary):hover { border-color: var(--color-primary); }
-.page :global(.about-principle-card.tone-secondary):hover { border-color: var(--color-secondary); }
-.page :global(.about-principle-card.tone-tertiary):hover { border-color: var(--color-tertiary); }
-.page :global(.about-principle-card.tone-accent):hover { border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-tertiary)); }
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-principle-card.tone-primary):hover { border-color: var(--color-primary); }
+}
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-principle-card.tone-secondary):hover { border-color: var(--color-secondary); }
+}
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-principle-card.tone-tertiary):hover { border-color: var(--color-tertiary); }
+}
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-principle-card.tone-accent):hover { border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-tertiary)); }
+}
 
 .page :global(.about-principle-icon) {
   width: 40px;
@@ -141,10 +153,12 @@
   color: var(--color-on-surface);
   transition: transform var(--motion-duration-fast) var(--spring), border-color var(--motion-duration-fast) ease, color var(--motion-duration-fast) ease;
 }
-.page :global(.about-tooling-pills) li:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-tooling-pills) li:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
 }
 
 /* 2. Education & Experience Grid */
@@ -214,12 +228,14 @@
     background-color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-education-card):hover {
-  transform: translateY(-3px);
-  border-radius: 28px 16px 28px 16px;
-  border-color: var(--color-tertiary);
-  box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.1), 0 0 18px color-mix(in srgb, var(--color-tertiary) 14%, transparent);
-  background: var(--color-surface-container);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-education-card):hover {
+    transform: translateY(-3px);
+    border-radius: 28px 16px 28px 16px;
+    border-color: var(--color-tertiary);
+    box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.1), 0 0 18px color-mix(in srgb, var(--color-tertiary) 14%, transparent);
+    background: var(--color-surface-container);
+  }
 }
 
 .page :global(.about-education-card):active {
@@ -249,8 +265,10 @@
   transition: transform var(--motion-duration-card) var(--spring);
 }
 
-.page :global(.about-education-card):hover :global(.about-edu-shape) {
-  transform: scale(1.1) rotate(4deg);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-education-card):hover :global(.about-edu-shape) {
+    transform: scale(1.1) rotate(4deg);
+  }
 }
 
 .page :global(.about-edu-shape) svg {
@@ -323,11 +341,13 @@
   transition: transform var(--motion-duration-fast) var(--spring), background-color var(--motion-duration-fast) ease, border-color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-education-card):hover :global(.about-score-stat) {
-  background: var(--color-tertiary-container);
-  color: var(--color-on-tertiary-container);
-  border-color: var(--color-tertiary);
-  transform: scale(1.05);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-education-card):hover :global(.about-score-stat) {
+    background: var(--color-tertiary-container);
+    color: var(--color-on-tertiary-container);
+    border-color: var(--color-tertiary);
+    transform: scale(1.05);
+  }
 }
 
 .page :global(.about-score-value) {
@@ -351,9 +371,11 @@
   transition: transform var(--motion-duration-fast) var(--spring), border-color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-education-card):hover :global(.about-cgpa) {
-  border-color: var(--color-tertiary);
-  transform: scale(1.05);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-education-card):hover :global(.about-cgpa) {
+    border-color: var(--color-tertiary);
+    transform: scale(1.05);
+  }
 }
 
 .page :global(.about-cgpa) dt {
@@ -381,7 +403,7 @@
   opacity: 0.75;
 }
 
-@media (max-width: 600px) {
+@media (--compact) {
   .page :global(.about-education-card) {
     flex-direction: column;
     align-items: flex-start;
@@ -438,9 +460,14 @@
   height: 34px;
 }
 
-.page :global(.about-timeline-item):hover :global(.about-timeline-node-shape),
 .page :global(.about-timeline-item):focus-within :global(.about-timeline-node-shape) {
   transform: scale(1.15);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-timeline-item):hover :global(.about-timeline-node-shape) {
+    transform: scale(1.15);
+  }
 }
 
 .page :global(.about-timeline-item):active :global(.about-timeline-node-shape) {
@@ -516,10 +543,12 @@
 }
 
 /* Corner radius morph on hover and press */
-.page :global(.about-timeline-card):hover {
-  transform: translateY(-3px);
-  border-radius: 36px 18px 36px 18px;
-  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.1);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-timeline-card):hover {
+    transform: translateY(-3px);
+    border-radius: 36px 18px 36px 18px;
+    box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .page :global(.about-timeline-card):active {
@@ -527,16 +556,22 @@
   border-radius: 20px 32px 20px 32px;
 }
 
-.page :global(.about-timeline-item.tone-secondary) :global(.about-timeline-card):hover {
-  border-color: var(--color-secondary);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-timeline-item.tone-secondary) :global(.about-timeline-card):hover {
+    border-color: var(--color-secondary);
+  }
 }
 
-.page :global(.about-timeline-item.tone-tertiary) :global(.about-timeline-card):hover {
-  border-color: var(--color-tertiary);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-timeline-item.tone-tertiary) :global(.about-timeline-card):hover {
+    border-color: var(--color-tertiary);
+  }
 }
 
-.page :global(.about-timeline-item.tone-primary) :global(.about-timeline-card):hover {
-  border-color: var(--color-primary);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-timeline-item.tone-primary) :global(.about-timeline-card):hover {
+    border-color: var(--color-primary);
+  }
 }
 
 /* Card Header */
@@ -678,11 +713,13 @@
     color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-doc-chip.is-link):hover {
-  background: var(--color-primary-container);
-  color: var(--color-on-primary-container);
-  border-color: var(--color-primary);
-  transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-doc-chip.is-link):hover {
+    background: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+  }
 }
 
 .page :global(.about-doc-chip.is-link):active {
@@ -694,10 +731,12 @@
   outline-offset: 2px;
 }
 
-.page :global(.about-doc-chip.is-static):hover {
-  background: var(--color-surface-container-high);
-  border-color: var(--color-outline);
-  transform: translateY(-1px);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-doc-chip.is-static):hover {
+    background: var(--color-surface-container-high);
+    border-color: var(--color-outline);
+    transform: translateY(-1px);
+  }
 }
 
 .page :global(.about-doc-tag) {
@@ -744,17 +783,19 @@
     color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-timeline-tag):hover {
-  transform: translateY(-1px);
-  color: var(--color-on-surface);
-  background: var(--color-surface-container-high);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-timeline-tag):hover {
+    transform: translateY(-1px);
+    color: var(--color-on-surface);
+    background: var(--color-surface-container-high);
+  }
 }
 
 /* 3. Campus Communities Bento (Unified M3 Expressive Architecture) */
 .page :global(.about-campus) {
   margin-top: 56px;
   content-visibility: auto;
-  contain-intrinsic-size: 1px 360px;
+  contain-intrinsic-block-size: auto 360px;
 }
 
 .page :global(.about-campus-grid) {
@@ -783,12 +824,14 @@
     background-color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-campus-card):hover {
-  transform: translateY(-3px);
-  border-radius: 36px 18px 36px 18px;
-  border-color: var(--color-primary);
-  background: var(--color-surface-container);
-  box-shadow: 0 12px 28px -6px color-mix(in srgb, var(--color-primary) 14%, transparent);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-campus-card):hover {
+    transform: translateY(-3px);
+    border-radius: 36px 18px 36px 18px;
+    border-color: var(--color-primary);
+    background: var(--color-surface-container);
+    box-shadow: 0 12px 28px -6px color-mix(in srgb, var(--color-primary) 14%, transparent);
+  }
 }
 
 .page :global(.about-campus-card):active {
@@ -816,8 +859,10 @@
   transition: transform var(--motion-duration-fast) var(--spring), background-color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-campus-card):hover :global(.about-campus-shape) {
-  transform: scale(1.08);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-campus-card):hover :global(.about-campus-shape) {
+    transform: scale(1.08);
+  }
 }
 
 .page :global(.about-campus-shape) svg {
@@ -877,7 +922,7 @@
   gap: 24px;
   margin-top: 52px;
   content-visibility: auto;
-  contain-intrinsic-size: 1px 360px;
+  contain-intrinsic-block-size: auto 360px;
   align-items: stretch;
 }
 
@@ -947,12 +992,20 @@
     box-shadow var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-topic-item):hover,
 .page :global(.about-topic-item):focus-visible {
   transform: translateX(4px);
   background: var(--color-surface-container-high);
   border-color: var(--color-primary);
   box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--color-primary) 14%, transparent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-topic-item):hover {
+    transform: translateX(4px);
+    background: var(--color-surface-container-high);
+    border-color: var(--color-primary);
+    box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--color-primary) 14%, transparent);
+  }
 }
 
 .page :global(.about-topic-item):focus-visible {
@@ -978,8 +1031,10 @@
   transition: transform var(--motion-duration-fast) var(--spring), background-color var(--motion-duration-fast) ease;
 }
 
-.page :global(.about-topic-item):hover :global(.about-topic-shape) {
-  transform: scale(1.12);
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.about-topic-item):hover :global(.about-topic-shape) {
+    transform: scale(1.12);
+  }
 }
 
 .page :global(.about-topic-shape.tone-secondary) {
@@ -1044,7 +1099,7 @@
 }
 
 /* Responsive Media Queries */
-@media (max-width: 1000px) {
+@media (--below-expanded) {
   .page :global(.about-background-grid) {
     gap: 28px;
     grid-template-columns: 1fr;
@@ -1064,7 +1119,7 @@
   .page :global(.about-campus-grid) { grid-template-columns: 1fr; gap: 14px; }
   .page :global(.about-section-heading) h2 { font-size: 24px; }
 }
-@media (max-width: 760px) {
+@media (--below-expanded) {
   .page { padding-top: 44px; }
   .page :global(.about-header) { padding-right: 90px; margin-bottom: 26px; min-height: 90px; }
   .page :global(.about-header) h1 { font-size: 52px; }
@@ -1081,14 +1136,25 @@
   .page :global(.about-learning-grid) { grid-template-columns: 1fr; gap: 20px; margin-top: 36px; }
   .page :global(.about-learning), .page :global(.about-next) { padding: 24px; }
 }
-@media (max-width: 440px) {
+@media (--compact) {
   .page :global(.about-learning-grid) h2 { white-space: normal; }
 }
-@media (max-width: 380px) {
-  .page :global(.about-header) { padding-right: 0; }
+@media (--compact) {
+  .page { padding-top: 32px; }
+  .page :global(.about-header) { min-height: 0; padding-right: 0; }
   .page :global(.about-header-art) { display: none; }
-  .page :global(.about-header) h1 { font-size: 48px; }
+  .page :global(.about-header) h1 { font: var(--type-about-display); }
   .page :global(.about-bio) { padding: 22px; }
   .page :global(.about-education-card) { padding: 22px; }
   .page :global(.about-learning), .page :global(.about-next) { padding: 22px; }
+}
+
+@media (--compact) {
+  .page :global(.about-bio) > p { line-height: 1.5; }
+  .page :global(.about-timeline-item) { gap: 8px; }
+  .page :global(.about-timeline-card-body) { padding: 16px; }
+}
+
+@media (--compact) {
+  .page :global(.about-campus), .page :global(.about-learning-grid) { content-visibility: visible; }
 }

@@ -34,7 +34,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
   const vmGroupRef = useRef<HTMLDivElement>(null);
   const vmButtonRefs = useRef<Map<ViewMode, HTMLButtonElement>>(new Map());
 
-  const containerRef = useRef<HTMLDivElement>(null);
+  const skillDialog = useRef<HTMLDialogElement>(null);
   const searchInputId = useId();
 
   // Update sliding indicator position
@@ -148,68 +148,28 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
     return filteredCategories.reduce((acc, cat) => acc + cat.handsOn.length + cat.learningStudy.length, 0);
   }, [filteredCategories]);
 
-  // Handle modal escape key and scroll lock
   useEffect(() => {
-    if (!activeSkill) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActiveSkill(null);
-    };
-    const prevBodyOverflow = document.body.style.overflow;
-    const prevHtmlOverflow = document.documentElement.style.overflow;
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.body.style.overflow = prevBodyOverflow;
-      document.documentElement.style.overflow = prevHtmlOverflow;
-      window.removeEventListener("keydown", handleKeyDown);
-    };
+    const dialog = skillDialog.current;
+    if (activeSkill && !dialog?.open) dialog?.showModal();
   }, [activeSkill]);
 
-  // Client-side enhancement: decorate skill <li> with project indicators and interactive styling
-  useEffect(() => {
-    if (!containerRef.current) return;
-    const items = containerRef.current.querySelectorAll<HTMLLIElement>(".skills-practice li");
-    items.forEach((li) => {
-      const skillName = (li.childNodes[0]?.textContent || li.textContent || "").trim();
-      const detail = getSkillDetail(skillName);
-      if (detail) {
-        li.classList.add("skill-item-interactive");
-        const projectCount = detail.projects.length;
-        if (projectCount > 0) {
-          li.setAttribute("title", `Click to view ${projectCount} project(s) using ${skillName}`);
-          if (!li.querySelector(".skill-project-indicator")) {
-            const indicator = document.createElement("span");
-            indicator.className = "skill-project-indicator";
-            indicator.textContent = ` ↗ ${projectCount}`;
-            indicator.setAttribute("aria-hidden", "true");
-            li.appendChild(indicator);
-          }
-        } else {
-          li.setAttribute("title", `Click to view technical overview of ${skillName}`);
-        }
-      }
-    });
-  }, [filteredCategories]);
+  function dismissSkill() {
+    skillDialog.current?.close();
+    setActiveSkill(null);
+  }
 
-  // Event delegation for clicking a skill
-  const handleListClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const target = e.target as HTMLElement;
-    const li = target.closest("li");
-    if (!li) return;
-
-    const textNode = li.childNodes[0];
-    const skillName = (textNode?.textContent || li.textContent || "").trim();
-    if (!skillName) return;
-
-    const detail = getSkillDetail(skillName);
-    if (detail) {
-      setActiveSkill(detail);
-    }
-  };
+  function skillItem(name: string, index: number) {
+    const detail = getSkillDetail(name);
+    return <li key={`${name}-${index}`}>
+      {detail ? <button type="button" className="skill-item-interactive" aria-haspopup="dialog" onClick={() => setActiveSkill(detail)}>
+        {name}
+        {detail.projects.length > 0 && <span className="skill-project-indicator" aria-hidden="true">↗ {detail.projects.length}</span>}
+      </button> : name}
+    </li>;
+  }
 
   return (
-    <div className="skills-interactive-container" ref={containerRef}>
+    <div className="skills-interactive-container">
       {/* Sticky Search & Filter Toolbar */}
       <div className="skills-toolbar">
         <div className="skills-toolbar-top">
@@ -226,7 +186,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
             <input
               id={searchInputId}
               type="search"
-              placeholder="Filter skills or linked projects (e.g. FastAPI, Drizzle, Graph, Go)..."
+              placeholder="Filter skills or projects"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               className="skills-search-input"
@@ -251,6 +211,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
           <div
             ref={vmGroupRef}
             className="skills-view-mode-group"
+            data-scroll-region
             role="radiogroup"
             aria-label="Competency matrix filter"
           >
@@ -274,7 +235,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
                   else vmButtonRefs.current.delete(value);
                 }}
                 className={`skills-mode-pill${viewMode === value ? " skills-mode-pill-active" : ""}`}
-                onClick={() => setViewMode(value)}
+                onClick={(event) => { setViewMode(value); event.currentTarget.scrollIntoView({ block: "nearest", inline: "nearest" }); }}
               >
                 {label}
               </button>
@@ -283,13 +244,13 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
         </div>
 
         {/* Category Pills Bar */}
-        <div className="skills-category-pills" role="tablist" aria-label="Skill categories">
+        <div className="skills-category-pills" data-scroll-region role="tablist" aria-label="Skill categories">
           <button
             type="button"
             role="tab"
             aria-selected={selectedCategory === "all"}
             className={`skills-cat-pill${selectedCategory === "all" ? " skills-cat-pill-active" : ""}`}
-            onClick={() => setSelectedCategory("all")}
+            onClick={(event) => { setSelectedCategory("all"); event.currentTarget.scrollIntoView({ block: "nearest", inline: "nearest" }); }}
           >
             {selectedCategory === "all" ? (
               <svg className="skills-check-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -307,7 +268,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
                 role="tab"
                 aria-selected={isSelected}
                 className={`skills-cat-pill${isSelected ? " skills-cat-pill-active" : ""}`}
-                onClick={() => setSelectedCategory(cat.id)}
+                onClick={(event) => { setSelectedCategory(cat.id); event.currentTarget.scrollIntoView({ block: "nearest", inline: "nearest" }); }}
               >
                 {isSelected ? (
                   <svg className="skills-check-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -342,7 +303,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
       </div>
 
       {/* Render Filtered Category Sections with Event Delegation for Cross-Linking */}
-      <div className="skills-category-list" onClick={handleListClick}>
+      <div className="skills-category-list">
         {filteredCategories.map((category) => {
           return (
             <section
@@ -359,9 +320,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
                     <div className="skills-practice" data-practice="hands-on">
                       <h3>{groupLabels.handsOn}</h3>
                       <ul>
-                        {category.handsOn.map((item, index) => (
-                          <li key={`${item.name}-${index}`}>{item.name}</li>
-                        ))}
+                        {category.handsOn.map((item, index) => skillItem(item.name, index))}
                       </ul>
                     </div>
                   ) : null}
@@ -370,9 +329,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
                     <div className="skills-practice" data-practice="learning-study">
                       <h3>{groupLabels.learningStudy}</h3>
                       <ul>
-                        {category.learningStudy.map((item, index) => (
-                          <li key={`${item.name}-${index}`}>{item.name}</li>
-                        ))}
+                        {category.learningStudy.map((item, index) => skillItem(item.name, index))}
                       </ul>
                     </div>
                   ) : null}
@@ -415,19 +372,17 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
 
       {/* "Skills in Action" Cross-Link Modal / Drawer */}
       {activeSkill ? (
-        <div
-          className="skill-modal-backdrop"
-          onClick={() => setActiveSkill(null)}
+        <dialog
+          ref={skillDialog}
+          className="skill-modal-content"
+          aria-labelledby="skill-modal-title"
           data-lenis-prevent="true"
+          onCancel={(event) => { event.preventDefault(); dismissSkill(); }}
+          onClick={(event) => { if (event.target === event.currentTarget) {
+            const box = event.currentTarget.getBoundingClientRect();
+            if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dismissSkill();
+          } }}
         >
-          <div
-            className="skill-modal-content"
-            onClick={(e) => e.stopPropagation()}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="skill-modal-title"
-            data-lenis-prevent="true"
-          >
             <div className="skill-modal-header">
               <div>
                 <p className="eyebrow">{activeSkill.role}</p>
@@ -438,7 +393,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
               <button
                 type="button"
                 className="skill-modal-close"
-                onClick={() => setActiveSkill(null)}
+                onClick={dismissSkill}
                 aria-label="Close skill modal"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -475,27 +430,6 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
                       key={proj.slug}
                       className="skill-modal-project-card"
                       data-project-slug={proj.slug}
-                      role="button"
-                      tabIndex={0}
-                      onClick={(e) => {
-                        const target = e.target as HTMLElement;
-                        if (target.closest(".skill-modal-repo-link")) return;
-                        const link = e.currentTarget.querySelector<HTMLAnchorElement>(".skill-modal-details-link");
-                        if (link && target !== link && !link.contains(target)) {
-                          setActiveSkill(null);
-                          link.click();
-                        }
-                      }}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          const link = e.currentTarget.querySelector<HTMLAnchorElement>(".skill-modal-details-link");
-                          if (link) {
-                            setActiveSkill(null);
-                            link.click();
-                          }
-                        }
-                      }}
                     >
                       <div className="skill-modal-card-top">
                         <span className="skill-modal-card-cat">{proj.category}</span>
@@ -508,10 +442,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
                         <Link
                           href={`/projects/${proj.slug}`}
                           className="skill-modal-details-link"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setActiveSkill(null);
-                          }}
+                          onClick={dismissSkill}
                         >
                           <span>View Project Details</span>
                           <span className="skill-modal-arrow" aria-hidden="true">→</span>
@@ -522,7 +453,6 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
                             target="_blank"
                             rel="noreferrer"
                             className="skill-modal-repo-link"
-                            onClick={(e) => e.stopPropagation()}
                           >
                             Source Code ↗
                           </a>
@@ -533,8 +463,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
                 </div>
               </>
             ) : null}
-          </div>
-        </div>
+        </dialog>
       ) : null}
     </div>
   );

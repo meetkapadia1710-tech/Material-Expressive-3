@@ -189,6 +189,7 @@ export function MaterialSelect({
           ref={listboxRef}
           id={listboxId}
           role="listbox"
+          data-scroll-region
           aria-labelledby={labelId}
           className={styles.menu}
           tabIndex={-1}

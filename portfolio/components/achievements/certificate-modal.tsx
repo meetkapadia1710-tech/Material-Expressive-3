@@ -10,51 +10,34 @@ interface CertificateModalProps {
 }
 
 export function CertificateModal({ certificate, onClose }: CertificateModalProps) {
-  const modalRef = useRef<HTMLDivElement>(null);
-
+  const modalRef = useRef<HTMLDialogElement>(null);
   useEffect(() => {
-    if (!certificate) return;
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-
-    modalRef.current?.focus();
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = originalOverflow;
-    };
-  }, [certificate, onClose]);
+    const modal = modalRef.current;
+    if (certificate && !modal?.open) modal?.showModal();
+  }, [certificate]);
 
   if (!certificate) return null;
 
+  function dismiss() {
+    modalRef.current?.close();
+    onClose();
+  }
+
   return (
-    <div
-      className="cert-modal-backdrop"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-      role="presentation"
-    >
-      <div
+      <dialog
         ref={modalRef}
         className="cert-modal-dialog"
-        role="dialog"
-        aria-modal="true"
         aria-labelledby="cert-modal-title"
-        tabIndex={-1}
+        onCancel={(event) => { event.preventDefault(); dismiss(); }}
+        onClick={(event) => { if (event.target === event.currentTarget) {
+          const box = event.currentTarget.getBoundingClientRect();
+          if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dismiss();
+        } }}
       >
         <button
           type="button"
           className="cert-modal-close"
-          onClick={onClose}
+          onClick={dismiss}
           aria-label="Close credential details"
         >
           <Icon name="close" />
@@ -146,7 +129,6 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
             </div>
           ) : null}
         </div>
-      </div>
-    </div>
+      </dialog>
   );
 }

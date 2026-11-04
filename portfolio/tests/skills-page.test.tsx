@@ -5,16 +5,21 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { SkillsPage } from "../components/skills/skills-page";
 import { skillCategories, skills, skillsPageCopy } from "../content/skills";
 import type { SkillCategory } from "../content/types";
+import { getSkillDetail } from "../lib/skill-projects";
 import { groupSkillItems } from "../lib/skill-groups";
 
 test("every content item appears once under its category, without losing the legacy string view", () => {
   const html = renderToStaticMarkup(<SkillsPage />);
   assert.equal((html.match(/<section\b/g) ?? []).length, skillCategories.length);
+  const rows = [...html.matchAll(/<li>(?:<button[^>]*>)?([^<]+)/g)].map((match) => match[1]);
   assert.equal(new Set(skillCategories.map((category) => category.id)).size, skillCategories.length);
   for (const category of skillCategories) {
     assert.ok(html.includes(`id="skills-${category.id}-heading"`));
     assert.deepEqual(skills.find((group) => group.id === category.id)?.items, category.items.map((item) => item.name));
-    for (const item of category.items) assert.equal(html.split(`<li>${item.name}</li>`).length - 1, 1);
+    for (const item of category.items) {
+      assert.equal(rows.filter((name) => name === item.name).length, 1);
+      if (getSkillDetail(item.name)) assert.ok(html.includes(`aria-haspopup="dialog">${item.name}`));
+    }
   }
 });
 

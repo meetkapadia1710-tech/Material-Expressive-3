@@ -18,63 +18,29 @@ export function ShortcutsModal({
   singleKeyShortcutsEnabled,
   onToggleSingleKeyShortcuts,
 }: ShortcutsModalProps) {
-  const dialogRef = useRef<HTMLDivElement>(null);
-  const previouslyFocusedRef = useRef<HTMLElement | null>(null);
-
+  const dialogRef = useRef<HTMLDialogElement>(null);
   useEffect(() => {
-    if (open) {
-      previouslyFocusedRef.current = document.activeElement as HTMLElement;
-      dialogRef.current?.focus();
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-      previouslyFocusedRef.current?.focus();
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    const dialog = dialogRef.current;
+    if (open && !dialog?.open) dialog?.showModal();
   }, [open]);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (!open) return;
-      if (e.key === "Escape") {
-        e.preventDefault();
-        onClose();
-      }
-      // Trap Tab focus inside the dialog
-      if (e.key === "Tab" && dialogRef.current) {
-        const focusables = dialogRef.current.querySelectorAll<HTMLElement>(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-        );
-        if (focusables.length === 0) return;
-        const first = focusables[0];
-        const last = focusables[focusables.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [open, onClose]);
 
   if (!open) return null;
 
+  function dismiss() {
+    dialogRef.current?.close();
+    onClose();
+  }
+
   return (
-    <div className={styles.scrim} onClick={onClose} aria-hidden="true">
-      <div
+      <dialog
         ref={dialogRef}
-        role="dialog"
-        aria-modal="true"
         aria-labelledby="shortcuts-dialog-title"
-        tabIndex={-1}
         className={styles.dialog}
-        onClick={(e) => e.stopPropagation()}
+        onCancel={(event) => { event.preventDefault(); dismiss(); }}
+        onClick={(event) => { if (event.target === event.currentTarget) {
+          const box = event.currentTarget.getBoundingClientRect();
+          if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dismiss();
+        } }}
       >
         <div className={styles.header}>
           <div className={styles.titleGroup}>
@@ -91,7 +57,7 @@ export function ShortcutsModal({
           <button
             type="button"
             className={styles.closeBtn}
-            onClick={onClose}
+            onClick={dismiss}
             aria-label="Close shortcuts dialog"
           >
             <Icon name="close" />
@@ -137,8 +103,7 @@ export function ShortcutsModal({
             );
           })}
         </div>
-      </div>
-    </div>
+      </dialog>
   );
 }
 

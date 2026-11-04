@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
+import { sharedProjectMotionQuery } from "./shared-project-element";
 import type Lenis from "lenis";
 import { readMotionMilliseconds, readMotionValue } from "./motion-tokens";
 import { registerViewTransition, skipActiveViewTransition } from "./view-transition-coordinator";
@@ -47,7 +48,7 @@ function routeTitle(path: string) {
 // and the observer never removes it from the accessibility tree.
 function Reveal({ pathname }: { pathname: string }) {
   useEffect(() => {
-    const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+    const reduced = matchMedia("(prefers-reduced-motion: reduce), (pointer: coarse)");
     if (reduced.matches || !("IntersectionObserver" in window)) return;
     const seen = new WeakSet<Element>();
     const animations = new Map<Element, Animation[]>();
@@ -219,7 +220,7 @@ export function MotionRuntime() {
       sendIntent(currentPath, target.pathname, shared);
       if (shared) routeRoot.dataset.projectOrigin = projectCollectionOrigin(currentPath) ?? "";
 
-      const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const reduced = matchMedia("(prefers-reduced-motion: reduce), (pointer: coarse)").matches;
       if (!shared && !reduced && supportsViewTransitions()) {
         const pathChange = waitForPath(target.pathname);
         const started = runNativeTransition(async () => {
@@ -238,7 +239,7 @@ export function MotionRuntime() {
       const target = new URL(link.href);
       if (target.origin !== window.location.origin || target.pathname === activePath.current) return;
 
-      const canShare = matchMedia("(min-width: 481px) and (pointer: fine) and (hover: hover) and (prefers-reduced-motion: no-preference)").matches;
+      const canShare = matchMedia(sharedProjectMotionQuery).matches;
       const shared = link.hasAttribute("data-project-transition") && canShare && /^\/projects\/[^/]+\/?$/.test(target.pathname);
       routeScrollPositions.current.set(activePath.current, window.scrollY);
       historyNavigation.current = false;
@@ -268,13 +269,13 @@ export function MotionRuntime() {
       const to = window.location.pathname;
       routeScrollPositions.current.set(from, window.scrollY);
       historyNavigation.current = true;
-      const canShare = matchMedia("(min-width: 481px) and (pointer: fine) and (hover: hover) and (prefers-reduced-motion: no-preference)").matches;
+      const canShare = matchMedia(sharedProjectMotionQuery).matches;
       const pair = isProjectCollectionDetailPair(from, to);
       const enteringDetail = pair && projectCollectionOrigin(from) !== null;
       if (canShare && enteringDetail) routeRoot.dataset.projectOrigin = projectCollectionOrigin(from) ?? "";
       const sharedProjectNavigation = canShare && pair && (enteringDetail || routeRoot.dataset.projectOrigin === projectCollectionOrigin(to));
       sendIntent(from, to, sharedProjectNavigation);
-      if (sharedProjectNavigation || matchMedia("(prefers-reduced-motion: reduce)").matches || !supportsViewTransitions()) return;
+      if (sharedProjectNavigation || matchMedia("(prefers-reduced-motion: reduce), (pointer: coarse)").matches || !supportsViewTransitions()) return;
       const pathChange = waitForPath(to);
       runNativeTransition(() => pathChange);
     };
@@ -392,7 +393,7 @@ export function MotionRuntime() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     const conn = (navigator as unknown as { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
-    if (conn?.saveData || conn?.effectiveType === "2g" || conn?.effectiveType === "slow-2g") return;
+    if (matchMedia("(pointer: coarse)").matches || conn?.saveData || conn?.effectiveType === "2g" || conn?.effectiveType === "slow-2g") return;
 
     const routesToPrefetch = navigation.map((item) => item.href);
     let currentIndex = 0;

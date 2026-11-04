@@ -1,5 +1,5 @@
 .dialog {
-  width: min(680px, calc(100vw - 32px));
+  width: min(680px, calc(100% - 2 * var(--page-inset)));
   max-height: min(78dvh, 760px);
   padding: 0;
   border: 1px solid var(--color-outline);
@@ -16,8 +16,10 @@
 .searchRow input { flex: 1; min-width: 0; min-height: 50px; border: 0; outline: 0; background: transparent; color: var(--color-on-surface); font: var(--type-body-large); }
 .searchRow input::placeholder { color: var(--color-on-surface-variant); }
 .searchRow kbd { color: var(--color-on-surface-variant); font: var(--type-label-small); white-space: nowrap; }
-.closeButton { width: 44px; height: 44px; border: 0; border-radius: 50%; color: var(--color-on-surface-variant); background: transparent; font-size: 26px; cursor: pointer; }
-.closeButton:hover { color: var(--color-on-surface); background: var(--color-primary-container); }
+.closeButton { width: var(--touch-target); height: var(--touch-target); flex: none; border: 0; border-radius: 50%; color: var(--color-on-surface-variant); background: transparent; font-size: 26px; cursor: pointer; }
+@media (hover: hover) and (pointer: fine) {
+  .closeButton:hover { color: var(--color-on-surface); background: var(--color-primary-container); }
+}
 .closeButton:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
 .resultCount { margin: 0; padding: 12px 24px 6px; color: var(--color-on-surface-variant); font-size: var(--type-label-small-size); }
 .results { max-height: min(62dvh, 600px); padding: 0 12px 16px; overflow-y: auto; overscroll-behavior: contain; }
@@ -35,10 +37,24 @@
 .option mark { color: var(--color-on-secondary); background: var(--color-secondary); border-radius: 3px; }
 .empty { margin: 0; padding: 34px 20px 38px; color: var(--color-on-surface-variant); text-align: center; font: var(--type-body-medium); }
 
-@media (max-width: 560px) {
-  .dialog { width: calc(100vw - 20px); border-radius: 24px; }
-  .searchRow { min-height: 70px; gap: 10px; padding-inline: 16px; }
-  .searchRow input { font-size: var(--type-body-medium-size); }
+@media (--compact) {
+  .dialog:modal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    inset: var(--visual-top, 0px) 0 auto;
+    width: 100%;
+    height: var(--visual-height, 100dvh);
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: var(--safe-top) var(--safe-right) var(--safe-bottom) var(--safe-left);
+    border: 0;
+    border-radius: 0;
+  }
+  .searchRow { flex: none; min-height: 64px; gap: 8px; padding: 8px var(--layout-margin); }
+  .searchRow input { font: var(--type-body-large); }
   .searchRow > kbd { display: none; }
-  .results { max-height: 65dvh; }
+  .results { flex: 1; min-height: 0; max-height: none; }
+  .option { margin-block-end: var(--control-gap); }
 }

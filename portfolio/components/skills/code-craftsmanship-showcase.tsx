@@ -311,7 +311,7 @@ export function CodeCraftsmanshipShowcase() {
             <div className="craftsmanship-collapse-inner">
               <div className="craftsmanship-viewer">
                 {/* Tabs */}
-                <div className="craftsmanship-tab-bar" role="tablist" aria-label="Code snippet tabs">
+                <div className="craftsmanship-tab-bar" data-scroll-region role="tablist" aria-label="Code snippet tabs">
                   {snippets.map((snippet) => {
                     const selected = snippet.id === activeTab;
                     return (
@@ -369,7 +369,7 @@ export function CodeCraftsmanshipShowcase() {
                         type="button"
                         className="craftsmanship-copy-button"
                         onClick={handleCopy}
-                        aria-label={`Copy ${activeSnippet.filename} code`}
+                        aria-label={copied ? "Copied!" : `Copy Code from ${activeSnippet.filename}`}
                       >
                         {copied ? (
                           <>
@@ -391,7 +391,7 @@ export function CodeCraftsmanshipShowcase() {
                     </div>
 
                     <div className="craftsmanship-code-wrapper">
-                      <pre className="craftsmanship-pre">
+                      <pre className="craftsmanship-pre" data-scroll-region tabIndex={0} aria-label={`${activeSnippet.filename} source code`}>
                         <code>
                           {activeSnippet.code.split("\n").map((line, idx) => (
                             <div key={idx} className="craftsmanship-code-line">

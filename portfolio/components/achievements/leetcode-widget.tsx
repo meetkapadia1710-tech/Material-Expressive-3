@@ -184,6 +184,7 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
         <div
           ref={groupRef}
           className="leetcode-segmented-group"
+          data-scroll-region
           role="tablist"
           aria-label="Difficulty Filter"
           data-active-segment={activeSegment}
@@ -251,9 +252,6 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
                 strokeLinecap="round"
                 strokeDasharray={`${easyLen} ${circumference}`}
                 strokeDashoffset={easyOffset}
-                onClick={() => setActiveSegment(activeSegment === "easy" ? "all" : "easy")}
-                style={{ outline: "none", cursor: "pointer" }}
-                aria-label={`Easy: ${stats.easy.count} solved (${stats.easy.percentage}%)`}
               />
               {/* Medium Arc Segment */}
               <circle
@@ -267,9 +265,6 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
                 strokeLinecap="round"
                 strokeDasharray={`${medLen} ${circumference}`}
                 strokeDashoffset={medOffset}
-                onClick={() => setActiveSegment(activeSegment === "medium" ? "all" : "medium")}
-                style={{ outline: "none", cursor: "pointer" }}
-                aria-label={`Medium: ${stats.medium.count} solved (${stats.medium.percentage}%)`}
               />
               {/* Hard Arc Segment */}
               <circle
@@ -283,9 +278,6 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
                 strokeLinecap="round"
                 strokeDasharray={`${hardLen} ${circumference}`}
                 strokeDashoffset={hardOffset}
-                onClick={() => setActiveSegment(activeSegment === "hard" ? "all" : "hard")}
-                style={{ outline: "none", cursor: "pointer" }}
-                aria-label={`Hard: ${stats.hard.count} solved (${stats.hard.percentage}%)`}
               />
             </svg>
 

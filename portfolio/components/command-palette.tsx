@@ -82,7 +82,15 @@ function Highlight({ text, query }: { text: string; query: string }) {
     matched.add(found);
     cursor = found + 1;
   }
-  return <>{Array.from(text).map((character, index) => matched.has(index) ? <mark key={index}>{character}</mark> : <span key={index}>{character}</span>)}</>;
+  if (matched.size === 0) return text;
+  const chunks: { text: string; highlight: boolean }[] = [];
+  for (const [index, character] of Array.from(text).entries()) {
+    const highlight = matched.has(index);
+    const last = chunks.at(-1);
+    if (last?.highlight === highlight) last.text += character;
+    else chunks.push({ text: character, highlight });
+  }
+  return <>{chunks.map((chunk, index) => chunk.highlight ? <mark key={index}>{chunk.text}</mark> : chunk.text)}</>;
 }
 
 function getBaseItems(): CommandItem[] {
@@ -115,6 +123,23 @@ export default function CommandPalette({ open, onDismiss }: { open: boolean; onD
   const [recentIds, setRecentIds] = useState<string[]>([]);
   const baseItems = useMemo(() => getBaseItems(), []);
   const byId = useMemo(() => new Map(baseItems.map((item) => [item.id, item])), [baseItems]);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    const viewport = window.visualViewport;
+    if (!open || !dialog || !viewport) return;
+    const sync = () => {
+      dialog.style.setProperty("--visual-height", `${viewport.height}px`);
+      dialog.style.setProperty("--visual-top", `${viewport.offsetTop}px`);
+    };
+    sync();
+    viewport.addEventListener("resize", sync);
+    viewport.addEventListener("scroll", sync);
+    return () => {
+      viewport.removeEventListener("resize", sync);
+      viewport.removeEventListener("scroll", sync);
+    };
+  }, [open]);
 
   useEffect(() => {
     if (!open) {
@@ -201,7 +226,7 @@ export default function CommandPalette({ open, onDismiss }: { open: boolean; onD
   let optionIndex = 0;
   return <dialog ref={dialogRef} className={styles.dialog} aria-modal="true" aria-labelledby="command-palette-title" onCancel={(event) => { event.preventDefault(); event.currentTarget.close(); onDismiss(); }} onClose={onDismiss} onClick={(event) => { if (event.target === event.currentTarget) { event.currentTarget.close(); onDismiss(); } }}>
     <h2 id="command-palette-title" className="sr-only">{copy.command.title}</h2>
-    <div className={styles.searchRow}><Icon name="search" /><input ref={inputRef} role="combobox" aria-label={copy.command.placeholder} aria-autocomplete="list" aria-expanded="true" aria-controls="command-palette-list" aria-activedescendant={activeItem ? itemId(activeItem) : undefined} value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={onKeyDown} placeholder={copy.command.placeholder} autoComplete="off" /><kbd>ESC</kbd><button type="button" className={styles.closeButton} aria-label="Close command palette" onClick={(event) => { event.currentTarget.closest("dialog")?.close(); onDismiss(); }}>×</button></div>
+    <div className={styles.searchRow}><Icon name="search" /><input ref={inputRef} inputMode="search" role="combobox" aria-label={copy.command.placeholder} aria-autocomplete="list" aria-expanded="true" aria-controls="command-palette-list" aria-activedescendant={activeItem ? itemId(activeItem) : undefined} value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={onKeyDown} placeholder={copy.command.placeholder} autoComplete="off" /><kbd>ESC</kbd><button type="button" className={styles.closeButton} aria-label="Close command palette" onClick={(event) => { event.currentTarget.closest("dialog")?.close(); onDismiss(); }}>×</button></div>
     <p className={styles.resultCount} role="status" aria-live="polite" aria-atomic="true">{copy.command.resultCount(flatItems.length)}</p>
     <div className={styles.results}>
       <div id="command-palette-list" role="listbox" aria-label={copy.command.title} aria-activedescendant={activeItem ? itemId(activeItem) : undefined}>

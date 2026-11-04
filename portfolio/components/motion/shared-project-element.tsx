@@ -1,23 +1,26 @@
 "use client";
 
-import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import { LayoutGroup, motion } from "framer-motion";
 import { readMotionBezier, readMotionMilliseconds } from "./motion-tokens";
 
-export function ProjectTransitionGroup({ children }: { children: ReactNode }) {
-  return <LayoutGroup id="portfolio-project-transition">{children}</LayoutGroup>;
-}
+const SharedMotionContext = createContext(false);
+export const sharedProjectMotionQuery = "(width >= 600px) and (pointer: fine) and (hover: hover) and (prefers-reduced-motion: no-preference)";
 
-export function useSharedProjectTransitionEnabled() {
-  const [finePointer, setFinePointer] = useState(true);
+export function ProjectTransitionGroup({ children }: { children: ReactNode }) {
+  const [enabled, setEnabled] = useState(false);
   useEffect(() => {
-    const query = matchMedia("(min-width: 481px) and (pointer: fine) and (hover: hover) and (prefers-reduced-motion: no-preference)");
-    const update = () => setFinePointer(query.matches);
+    const query = matchMedia(sharedProjectMotionQuery);
+    const update = () => setEnabled(query.matches);
     update();
     query.addEventListener("change", update);
     return () => query.removeEventListener("change", update);
   }, []);
-  return finePointer;
+  return <SharedMotionContext.Provider value={enabled}><LayoutGroup id="portfolio-project-transition">{children}</LayoutGroup></SharedMotionContext.Provider>;
+}
+
+export function useSharedProjectTransitionEnabled() {
+  return useContext(SharedMotionContext);
 }
 
 export type ProjectTransitionScope = "home" | "catalog" | "detail";
@@ -41,11 +44,18 @@ type SharedProjectElementProps = {
 
 export function SharedProjectElement({ slug, scope, element, as = "div", className, style, "data-project-accent": projectAccent, ariaHidden, children }: SharedProjectElementProps) {
   const enabled = useSharedProjectTransitionEnabled();
-  const sharedProps = {
+  const attributes = {
     className,
     style,
     "data-project-accent": projectAccent,
     "aria-hidden": ariaHidden || undefined,
+  };
+  if (!enabled) {
+    const Element = as;
+    return <Element {...attributes}>{children}</Element>;
+  }
+  const sharedProps = {
+    ...attributes,
     layoutId: sharedProjectLayoutId(scope, slug, element, enabled),
     transition: {
       layout: {

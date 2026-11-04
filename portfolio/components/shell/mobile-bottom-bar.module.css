@@ -7,30 +7,21 @@
   z-index: 95;
   background: var(--color-surface-container);
   border-top: 1px solid var(--color-outline-variant);
-  box-shadow: 0 -2px 14px rgba(0, 0, 0, 0.08);
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-  transform: translateY(0);
-  transition: transform var(--motion-duration-navigation, 250ms) var(--spring);
+  box-shadow: 0 -2px 14px color-mix(in srgb, var(--color-shadow) 8%, transparent);
+  padding: 0 var(--safe-right) var(--safe-bottom) var(--safe-left);
 }
 
-.barHidden {
-  transform: translateY(100%);
-}
-
-@media (min-width: 600px) {
-  .bottomBar {
-    display: none !important;
-  }
+@media (--medium), (--expanded) {
+  .bottomBar { display: none; }
 }
 
 .barInner {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--control-gap);
   align-items: center;
-  justify-content: space-around;
-  height: 80px;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 4px;
+  min-height: var(--bottom-bar-height);
+  padding-inline: 8px;
 }
 
 .navItem {
@@ -38,8 +29,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1;
-  min-height: 48px;
+  min-inline-size: 0;
+  min-height: var(--touch-target);
   background: transparent;
   border: none;
   color: var(--color-on-surface-variant);
@@ -51,8 +42,10 @@
   outline: none;
 }
 
-.navItem:hover {
-  color: var(--color-on-surface);
+@media (hover: hover) and (pointer: fine) {
+  .navItem:hover {
+    color: var(--color-on-surface);
+  }
 }
 
 .navItem:focus-visible {
@@ -64,7 +57,7 @@
   position: relative;
   display: grid;
   place-items: center;
-  width: 64px;
+  width: min(56px, 100%);
   height: 32px;
   margin-bottom: 4px;
 }
@@ -103,7 +96,7 @@
 }
 
 .itemLabel {
-  font-size: 11.5px;
+  font-size: var(--type-label-small-size);
   font-weight: 550;
   letter-spacing: 0.02em;
   line-height: 1;
@@ -117,38 +110,25 @@
 }
 
 /* Modal Bottom Sheet */
-.scrim {
-  position: fixed;
-  inset: 0;
-  z-index: 150;
-  background: color-mix(in srgb, var(--color-scrim, #000000) 45%, transparent);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  animation: fadeIn 0.2s cubic-bezier(0.2, 0, 0, 1);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+.sheet::backdrop { background: color-mix(in srgb, var(--color-scrim) 45%, transparent); }
 
 .sheet {
-  position: relative;
+  position: fixed;
+  inset: auto 0 0;
+  margin: 0 auto;
   width: 100%;
   max-width: 600px;
-  max-height: 85vh;
+  max-height: calc(100dvh - var(--safe-top));
+  overscroll-behavior: contain;
   overflow-y: auto;
   background: var(--color-surface-container-low);
-  border-top-left-radius: 28px;
-  border-top-right-radius: 28px;
+  border-radius: var(--shape-extra-large) var(--shape-extra-large) 0 0;
   border: 1px solid var(--color-outline-variant);
   border-bottom: none;
-  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.25);
-  padding: 0 20px calc(24px + env(safe-area-inset-bottom, 0px));
+  box-shadow: 0 -8px 32px color-mix(in srgb, var(--color-shadow) 25%, transparent);
+  padding: 0 var(--page-inset) calc(16px + var(--safe-bottom));
   outline: none;
-  animation: slideUp 0.28s cubic-bezier(0.38, 1.21, 0.22, 1);
+  animation: slideUp var(--motion-duration-navigation) var(--spring);
 }
 
 @keyframes slideUp {
@@ -189,8 +169,9 @@
 .closeButton {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  flex: none;
   border-radius: 50%;
   background: var(--color-surface-container-high);
   border: 1px solid var(--color-outline-variant);
@@ -199,8 +180,10 @@
   transition: background var(--motion-duration-fast, 180ms) ease;
 }
 
-.closeButton:hover {
-  background: var(--color-surface-container-highest);
+@media (hover: hover) and (pointer: fine) {
+  .closeButton:hover {
+    background: var(--color-surface-container-highest);
+  }
 }
 
 .sheetContent {
@@ -245,11 +228,18 @@
               background var(--motion-duration-fast, 180ms) ease;
 }
 
-.sheetNavLink:hover,
 .sheetNavActive {
   background: var(--color-surface-container-high);
   border-color: var(--color-primary);
   transform: translateY(-2px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sheetNavLink:hover {
+    background: var(--color-surface-container-high);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+  }
 }
 
 .sheetNavIcon {
@@ -276,11 +266,8 @@
 }
 
 .sheetNavSub {
-  font-size: 11px;
+  font-size: var(--type-label-small-size);
   color: var(--color-on-surface-variant);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   margin-top: 2px;
 }
 
@@ -305,14 +292,16 @@
   transition: all var(--motion-duration-fast, 180ms) ease;
 }
 
-.actionChip:hover {
-  background: var(--color-primary-container);
-  color: var(--color-on-primary-container);
-  border-color: var(--color-primary);
+@media (hover: hover) and (pointer: fine) {
+  .actionChip:hover {
+    background: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+    border-color: var(--color-primary);
+  }
 }
 
 .chipKbd {
-  font-size: 10px;
+  font-size: var(--type-label-small-size);
   font-family: inherit;
   padding: 2px 6px;
   border-radius: 6px;
@@ -359,7 +348,7 @@
 }
 
 .soundDesc {
-  font-size: 11px;
+  font-size: var(--type-label-small-size);
   color: var(--color-on-surface-variant);
   margin: 2px 0 0;
   line-height: 1.3;
@@ -370,7 +359,7 @@
   position: relative;
   display: inline-block;
   width: 52px;
-  height: 32px;
+  height: var(--touch-target);
   flex-shrink: 0;
   cursor: pointer;
 }
@@ -384,7 +373,7 @@
 
 .switchTrack {
   position: absolute;
-  inset: 0;
+  inset: 8px 0;
   background: var(--color-surface-container-highest);
   border: 2px solid var(--color-outline);
   border-radius: 9999px;
@@ -417,9 +406,8 @@
 }
 
 .appearanceRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  justify-items: start;
   gap: 12px;
   padding: 10px 14px;
   border-radius: 18px;
@@ -433,3 +421,12 @@
   align-items: center;
 }
 
+
+@media (--compact) {
+  .destinationsGrid { grid-template-columns: 1fr; }
+}
+.m3Switch:focus-within .switchTrack { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+
+@media (--compact) {
+  :global(html:has(main form :is(input, textarea):focus)) .bottomBar { visibility: hidden; }
+}

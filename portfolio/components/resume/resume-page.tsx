@@ -101,7 +101,7 @@ SKILLS
             type="button"
             onClick={handleCopyText}
             className={`${styles.actionButton} ${copied ? styles.actionButtonCopied : ""}`}
-            aria-label={copied ? "Resume text copied to clipboard" : "Copy ATS-formatted resume text"}
+            aria-label={copied ? "Copied to Clipboard!" : "Copy ATS Text from resume"}
           >
             <Icon name={copied ? "check" : "copy"} />
             <span>{copied ? "Copied to Clipboard!" : "Copy ATS Text"}</span>

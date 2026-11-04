@@ -46,7 +46,7 @@ export async function GitHubSection() {
       </div>
 
       {/* Interactive 52-Week Contribution Heatmap & Streaks */}
-      <GitHubHeatmap initialData={calendarData} />
+      <GitHubHeatmap initialData={calendarData} initialLive={Boolean(liveCalendar)} />
 
       {/* Languages & Recent Repositories */}
       <div className="github-secondary-grid">
@@ -83,7 +83,7 @@ export async function GitHubSection() {
       </div>
 
       {/* Accessible data table for screen readers and search crawlers */}
-      <table className="sr-only">
+      <div className="sr-only"><table>
         <caption>{copy.activity}</caption>
         <thead>
           <tr>
@@ -99,7 +99,7 @@ export async function GitHubSection() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table></div>
     </section>
   );
 }

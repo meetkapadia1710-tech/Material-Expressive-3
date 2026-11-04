@@ -126,8 +126,8 @@ export function IntroLoader() {
       </span>
 
       <div className="intro-loader-content">
-        <div style={{ width: "100%", height: "600px" }} className="intro-loader-lanyard-wrapper">
-          <Lanyard
+        <div className="intro-loader-lanyard-wrapper">
+          {progress > 0 && <Lanyard
             frontImage={lanyardTheme.frontImage}
             backImage={lanyardTheme.backImage}
             strapImage={lanyardTheme.strapImage}
@@ -148,7 +148,7 @@ export function IntroLoader() {
             breeze={0.5}
             interactive
             intro
-          />
+          />}
         </div>
 
         <div className="intro-loader-meta" aria-hidden="true">

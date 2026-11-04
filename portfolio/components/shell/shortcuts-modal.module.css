@@ -1,25 +1,10 @@
-.scrim {
+.dialog::backdrop { background: color-mix(in srgb, var(--color-scrim) 50%, transparent); }
+
+.dialog:modal {
   position: fixed;
-  inset: 0;
-  z-index: 200;
-  background: color-mix(in srgb, var(--color-scrim, #000000) 50%, transparent);
-  backdrop-filter: blur(8px);
-  display: grid;
-  place-items: center;
-  padding: 16px;
-  animation: fadeIn 0.2s cubic-bezier(0.2, 0, 0, 1);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.dialog {
-  position: relative;
-  width: 100%;
+  width: calc(100% - 2 * var(--page-inset));
   max-width: 540px;
-  max-height: 90vh;
+  max-height: 90dvh;
   overflow-y: auto;
   background: var(--color-surface-container-high);
   border: 1px solid var(--color-outline-variant);
@@ -30,7 +15,7 @@
   flex-direction: column;
   gap: 20px;
   outline: none;
-  animation: dialogScaleIn 0.25s cubic-bezier(0.38, 1.21, 0.22, 1);
+  animation: dialogScaleIn var(--motion-duration-navigation) var(--spring);
 }
 
 @keyframes dialogScaleIn {
@@ -44,14 +29,15 @@
   }
 }
 
-@media (max-width: 599px) {
-  .dialog {
-    max-width: 100%;
+@media (--compact) {
+  .dialog:modal {
+    width: 100%;
+    max-width: none;
     height: 100%;
-    max-height: 100vh;
+    max-height: 100dvh;
     border-radius: 0;
     border: none;
-    padding: 24px 20px calc(24px + env(safe-area-inset-bottom, 0px));
+    padding: max(16px, var(--safe-top)) var(--page-inset) max(16px, var(--safe-bottom));
   }
 }
 
@@ -112,8 +98,10 @@
   transition: background var(--motion-duration-fast, 180ms) ease;
 }
 
-.closeBtn:hover {
-  background: var(--color-surface-container-highest);
+@media (hover: hover) and (pointer: fine) {
+  .closeBtn:hover {
+    background: var(--color-surface-container-highest);
+  }
 }
 
 .closeBtn svg {
@@ -146,7 +134,7 @@
 }
 
 .wcagDesc {
-  font-size: 11.5px;
+  font-size: var(--type-label-small-size);
   color: var(--color-on-surface-variant);
   line-height: 1.35;
 }
@@ -267,3 +255,7 @@
   letter-spacing: 0.02em;
 }
 
+
+.closeBtn { flex: none; }
+.titleGroup { min-width: 0; }
+.dialog { overscroll-behavior: contain; }

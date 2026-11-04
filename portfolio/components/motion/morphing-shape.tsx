@@ -4,42 +4,13 @@ import { useState, type CSSProperties, type ReactNode } from "react";
 
 export type ShapeName = "roundedSquare" | "circle" | "scalloped" | "blob" | "clover" | "diamond";
 
-const POINT_COUNT = 32;
-
-function polygon(shape: ShapeName) {
-  const points = Array.from({ length: POINT_COUNT }, (_, index) => {
-    const angle = (index / POINT_COUNT) * Math.PI * 2 - Math.PI / 2;
-    if (shape === "roundedSquare") {
-      const exponent = 0.52;
-      const x = Math.sign(Math.cos(angle)) * Math.pow(Math.abs(Math.cos(angle)), exponent);
-      const y = Math.sign(Math.sin(angle)) * Math.pow(Math.abs(Math.sin(angle)), exponent);
-      return `${((x + 1) * 50).toFixed(2)}% ${((y + 1) * 50).toFixed(2)}%`;
-    }
-    if (shape === "diamond") {
-      const rotated = angle + Math.PI / 4;
-      const exponent = 0.58;
-      const rx = Math.sign(Math.cos(rotated)) * Math.pow(Math.abs(Math.cos(rotated)), exponent);
-      const ry = Math.sign(Math.sin(rotated)) * Math.pow(Math.abs(Math.sin(rotated)), exponent);
-      const rotX = (rx - ry) / Math.SQRT2;
-      const rotY = (rx + ry) / Math.SQRT2;
-      return `${((rotX * 0.42 + 0.5) * 100).toFixed(2)}% ${((rotY * 0.42 + 0.5) * 100).toFixed(2)}%`;
-    }
-    let radius = 0.5;
-    if (shape === "scalloped") radius = 0.45 + 0.05 * Math.cos(index * Math.PI);
-    if (shape === "blob") radius = 0.47 + 0.045 * Math.sin(angle * 3 + 0.4) + 0.025 * Math.sin(angle * 5 - 0.7);
-    if (shape === "clover") radius = 0.43 + 0.06 * Math.cos(angle * 4);
-    return `${(50 + Math.cos(angle) * radius * 100).toFixed(2)}% ${(50 + Math.sin(angle) * radius * 100).toFixed(2)}%`;
-  });
-  return `polygon(${points.join(",")})`;
-}
-
 const shapes: Record<ShapeName, string> = {
-  roundedSquare: polygon("roundedSquare"),
-  circle: polygon("circle"),
-  scalloped: polygon("scalloped"),
-  blob: polygon("blob"),
-  clover: polygon("clover"),
-  diamond: polygon("diamond"),
+  roundedSquare: "var(--shape-polygon-rounded-square)",
+  circle: "var(--shape-polygon-circle)",
+  scalloped: "var(--shape-polygon-scalloped)",
+  blob: "var(--shape-polygon-blob)",
+  clover: "var(--shape-polygon-clover)",
+  diamond: "var(--shape-polygon-diamond)",
 };
 
 type MorphingShapeProps = {

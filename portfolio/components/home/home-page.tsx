@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { links } from "@/content/links";
 import { homeCopy, profile, siteCopy } from "@/content/profile";
@@ -27,14 +27,16 @@ export function HomePage() {
   const [inspectBadge, setInspectBadge] = useState<boolean>(false);
   const lanyardTheme = useLanyardTheme();
 
+  const badgeDialog = useRef<HTMLDialogElement>(null);
   useEffect(() => {
-    if (!inspectBadge) return;
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setInspectBadge(false);
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    const dialog = badgeDialog.current;
+    if (inspectBadge && !dialog?.open) dialog?.showModal();
   }, [inspectBadge]);
+
+  function closeBadge() {
+    badgeDialog.current?.close();
+    setInspectBadge(false);
+  }
 
   const categories = useMemo(() => {
     const cats = new Set<string>();
@@ -92,7 +94,7 @@ export function HomePage() {
             <Link
               className="button button-secondary hero-resume-btn"
               href="/resume"
-              aria-label="View Meet Kapadia's Resume and Credentials"
+              aria-label={`${homeCopy.resumeCta.label}, Meet Kapadia's resume and credentials`}
             >
               <Icon name="file" />
               <span>{homeCopy.resumeCta.label}</span>
@@ -133,7 +135,7 @@ export function HomePage() {
 
         <div className="hero-aside">
           <div className="hero-art-frame">
-            <div className="hero-art" aria-hidden="true">
+            <div className="hero-art" data-decoration aria-hidden="true">
               <span className="art-caption top-caption"><span />{homeCopy.illustration.topLabel}</span>
               <div className="bloom"><span /><span /><span /><span /><span /><span /><span /><span /></div>
               <div className="art-message">
@@ -291,7 +293,7 @@ export function HomePage() {
 
       <section className="contact-section page-width section-space" aria-labelledby="contact-heading">
         <div className="contact-panel">
-          <span className="contact-flower" aria-hidden="true">✳</span>
+          <div className="contact-decoration" data-decoration aria-hidden="true"><span className="contact-flower">✳</span></div>
           <p className="eyebrow">{homeCopy.contact.eyebrow}</p>
           <h2 id="contact-heading">
             Something <HighlightText text="thoughtful" highlightColor="linear-gradient(120deg, color-mix(in srgb, var(--color-primary-container) 95%, transparent) 0%, color-mix(in srgb, var(--color-primary) 18%, transparent) 100%)" /> starts with a conversation.
@@ -327,17 +329,16 @@ export function HomePage() {
 
       {/* 3D Lanyard Pass Interactive Modal */}
       {inspectBadge ? (
-        <div
-          className="lanyard-inspect-overlay"
-          role="dialog"
-          aria-modal="true"
+        <dialog
+          ref={badgeDialog}
+          className="lanyard-inspect-dialog"
           aria-labelledby="lanyard-modal-title"
-          onClick={() => setInspectBadge(false)}
+          onCancel={(event) => { event.preventDefault(); closeBadge(); }}
+          onClick={(event) => { if (event.target === event.currentTarget) {
+            const box = event.currentTarget.getBoundingClientRect();
+            if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) closeBadge();
+          } }}
         >
-          <div
-            className="lanyard-inspect-dialog"
-            onClick={(e) => e.stopPropagation()}
-          >
             <header className="lanyard-inspect-header">
               <div>
                 <h2 id="lanyard-modal-title">Meet Kapadia · M3 Interactive Pass</h2>
@@ -346,13 +347,13 @@ export function HomePage() {
               <button
                 type="button"
                 className="lanyard-inspect-close"
-                onClick={() => setInspectBadge(false)}
+                onClick={closeBadge}
                 aria-label="Close 3D badge viewer"
               >
                 <Icon name="close" />
               </button>
             </header>
-            <div className="lanyard-inspect-canvas-wrapper" style={{ width: "100%", height: "480px" }}>
+            <div className="lanyard-inspect-canvas-wrapper">
               <Lanyard
                 frontImage={lanyardTheme.frontImage}
                 backImage={lanyardTheme.backImage}
@@ -378,12 +379,11 @@ export function HomePage() {
             </div>
             <footer className="lanyard-inspect-footer">
               <span><Icon name="spark" /> Material 3 Expressive Physical Motion</span>
-              <button type="button" className="button button-secondary" onClick={() => setInspectBadge(false)}>
+              <button type="button" className="button button-secondary" onClick={closeBadge}>
                 Close Viewer
               </button>
             </footer>
-          </div>
-        </div>
+        </dialog>
       ) : null}
     </>
   );

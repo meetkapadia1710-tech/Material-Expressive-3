@@ -1,0 +1,26 @@
+name: Responsive layout
+
+on: [push, pull_request]
+
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: portfolio
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: portfolio/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      - run: npm run test:responsive
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: responsive-measurements
+          path: portfolio/artifacts/mobile/verification/

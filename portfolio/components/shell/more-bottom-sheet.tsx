@@ -30,46 +30,29 @@ export function MoreBottomSheet({
   onToggleSound,
 }: MoreBottomSheetProps) {
   const pathname = usePathname();
-  const sheetRef = useRef<HTMLDivElement>(null);
-  const previouslyFocusedRef = useRef<HTMLElement | null>(null);
-
+  const sheetRef = useRef<HTMLDialogElement>(null);
   useEffect(() => {
-    if (open) {
-      previouslyFocusedRef.current = document.activeElement as HTMLElement;
-      sheetRef.current?.focus();
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-      previouslyFocusedRef.current?.focus();
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    const sheet = sheetRef.current;
+    if (open && !sheet?.open) sheet?.showModal();
   }, [open]);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && open) {
-        e.preventDefault();
-        onClose();
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [open, onClose]);
 
   if (!open) return null;
 
+  function dismiss() {
+    sheetRef.current?.close();
+    onClose();
+  }
+
   return (
-    <div className={styles.scrim} onClick={onClose} aria-hidden="true">
-      <div
+      <dialog
         ref={sheetRef}
-        role="dialog"
-        aria-modal="true"
         aria-labelledby="more-sheet-title"
-        tabIndex={-1}
         className={styles.sheet}
-        onClick={(e) => e.stopPropagation()}
+        onCancel={(event) => { event.preventDefault(); dismiss(); }}
+        onClick={(event) => { if (event.target === event.currentTarget) {
+          const box = event.currentTarget.getBoundingClientRect();
+          if (event.clientY < box.top || event.clientX < box.left || event.clientX > box.right) dismiss();
+        } }}
       >
         <div className={styles.handleContainer}>
           <div className={styles.dragHandle} aria-hidden="true" />
@@ -82,7 +65,7 @@ export function MoreBottomSheet({
           <button
             type="button"
             className={styles.closeButton}
-            onClick={onClose}
+            onClick={dismiss}
             aria-label="Close menu"
           >
             <Icon name="close" />
@@ -97,7 +80,7 @@ export function MoreBottomSheet({
               <Link
                 href="/skills"
                 className={`${styles.sheetNavLink} ${pathname === "/skills" ? styles.sheetNavActive : ""}`}
-                onClick={onClose}
+                onClick={dismiss}
               >
                 <span className={styles.sheetNavIcon}>
                   <Icon name="code" />
@@ -111,7 +94,7 @@ export function MoreBottomSheet({
               <Link
                 href="/contact"
                 className={`${styles.sheetNavLink} ${pathname === "/contact" ? styles.sheetNavActive : ""}`}
-                onClick={onClose}
+                onClick={dismiss}
               >
                 <span className={styles.sheetNavIcon}>
                   <Icon name="mail" />
@@ -119,6 +102,19 @@ export function MoreBottomSheet({
                 <div className={styles.sheetNavMeta}>
                   <span className={styles.sheetNavText}>Contact</span>
                   <span className={styles.sheetNavSub}>Get in touch or start a project</span>
+                </div>
+              </Link>
+
+              <Link
+                href="/resume"
+                className={`${styles.sheetNavLink} ${pathname === "/resume" ? styles.sheetNavActive : ""}`}
+                aria-current={pathname === "/resume" ? "page" : undefined}
+                onClick={dismiss}
+              >
+                <span className={styles.sheetNavIcon}><Icon name="file" /></span>
+                <div className={styles.sheetNavMeta}>
+                  <span className={styles.sheetNavText}>Resume</span>
+                  <span className={styles.sheetNavSub}>Experience and credentials</span>
                 </div>
               </Link>
             </div>
@@ -133,7 +129,7 @@ export function MoreBottomSheet({
                   type="button"
                   className={styles.actionChip}
                   onClick={() => {
-                    onClose();
+                    dismiss();
                     onOpenCommandPalette();
                   }}
                 >
@@ -148,7 +144,7 @@ export function MoreBottomSheet({
                   type="button"
                   className={styles.actionChip}
                   onClick={() => {
-                    onClose();
+                    dismiss();
                     onOpenShortcuts();
                   }}
                 >
@@ -163,7 +159,7 @@ export function MoreBottomSheet({
                   type="button"
                   className={`${styles.actionChip} ${styles.installChip}`}
                   onClick={() => {
-                    onClose();
+                    dismiss();
                     onTriggerInstall();
                   }}
                 >
@@ -206,12 +202,11 @@ export function MoreBottomSheet({
                 <ThemeToggle />
               </div>
               <div className={styles.colorPickerWrap}>
-                <ColorSeedPicker />
+                <ColorSeedPicker inline />
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </dialog>
   );
 }

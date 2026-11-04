@@ -42,7 +42,7 @@ export function ProjectDetail({ project, previous, next, className = "" }: { pro
         {content.features.length ? <DetailSection id="project-features" title={projectDetailCopy.features}><ul className="detail-features">{content.features.map((feature, index) => <li key={index}><span aria-hidden="true"><Icon name="arrow-up-right" /></span><p>{feature}</p></li>)}</ul></DetailSection> : null}
         {content.media.length ? <DetailSection id="project-media" title={projectDetailCopy.media}><div className="detail-media">{content.media.map((item, index) => <figure key={`${item.src}-${index}`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          {item.kind === "image" ? item.width && item.height ? <Image src={item.src} alt={item.alt} width={item.width} height={item.height} sizes="(max-width: 720px) 100vw, 800px" unoptimized loading="lazy" /> : <img src={item.src} alt={item.alt} loading="lazy" decoding="async" /> : <><video controls preload="metadata" aria-label={item.alt || undefined}><source src={item.src} /><a href={item.src}>{projectDetailCopy.videoFallback}</a></video>{item.alt ? <figcaption>{item.alt}</figcaption> : null}</>}
+          {item.kind === "image" ? item.width && item.height ? <Image src={item.src} alt={item.alt} width={item.width} height={item.height} sizes="(width < 600px) calc(100dvw - 32px), (width < 840px) calc(100dvw - 48px), 860px" unoptimized={!item.src.startsWith("https://raw.githubusercontent.com/meetkapadia1710-tech/")} loading="lazy" /> : <img src={item.src} alt={item.alt} loading="lazy" decoding="async" className="detail-media-placeholder" /> : <><video controls preload="metadata" aria-label={item.alt || undefined}><source src={item.src} /><a href={item.src}>{projectDetailCopy.videoFallback}</a></video>{item.alt ? <figcaption>{item.alt}</figcaption> : null}</>}
         </figure>)}</div></DetailSection> : null}
         {content.challenges || content.lessons ? <DetailSection id="project-reflection" title={projectDetailCopy.reflection}>
           {content.challenges ? <div className="detail-reflection"><h3>{projectDetailCopy.challenges}</h3><p>{content.challenges}</p></div> : null}
@@ -58,7 +58,7 @@ export function ProjectDetail({ project, previous, next, className = "" }: { pro
           {ideaNote ? <p>{ideaNote}</p> : null}
         </div></DetailSection> : null}
       </div>
-      <aside className="detail-aside"><nav aria-label={projectDetailCopy.sectionNavigation}><p>{projectDetailCopy.onThisPage}</p><ul>{content.sections.map((section) => <li key={section.id}><a href={`#${section.id}`}>{section.title}<span aria-hidden="true">↗</span></a></li>)}</ul></nav></aside>
+      <aside className="detail-aside"><nav aria-label={projectDetailCopy.sectionNavigation}><p>{projectDetailCopy.onThisPage}</p><ul data-scroll-region>{content.sections.map((section) => <li key={section.id}><a href={`#${section.id}`}>{section.title}<span aria-hidden="true">↗</span></a></li>)}</ul></nav></aside>
     </div> : null}
 
     {previous || next ? <nav className="detail-pagination" aria-label={projectDetailCopy.projectNavigation}>

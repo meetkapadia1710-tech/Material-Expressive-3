@@ -24,9 +24,9 @@
   --type-title-medium-size: 20px;
   --type-title-small: 650 17px/1.4 var(--display);
   --type-title-small-size: 17px;
-  --type-body-large: 400 16px/1.7 var(--body);
+  --type-body-large: 400 16px/1.5 var(--body);
   --type-body-large-size: 16px;
-  --type-body-medium: 400 15px/1.7 var(--body);
+  --type-body-medium: 400 15px/1.5 var(--body);
   --type-body-medium-size: 15px;
   --type-body-small: 400 13px/1.6 var(--body);
   --type-body-small-size: 13px;
@@ -34,8 +34,8 @@
   --type-label-large-size: 14px;
   --type-label-medium: 600 12px/1.5 var(--body);
   --type-label-medium-size: 12px;
-  --type-label-small: 600 11px/1.5 var(--body);
-  --type-label-small-size: 11px;
+  --type-label-small: 600 12px/1.5 var(--body);
+  --type-label-small-size: 12px;
   --type-label-tiny-size: 10px;
   --type-body-supporting-size: 14px;
   --type-body-editorial-size: 17px;
@@ -67,4 +67,30 @@
   --type-academic-metric: 600 38px/1 var(--display);
   --type-detail-status: 650 18px/1.5 var(--display);
   --type-project-neighbor: 600 23px/1.3 var(--display);
+}
+
+@media (--compact) {
+  :root {
+    --type-display-large-size: clamp(3.25rem, 13vw, 5rem);
+    --type-display-large: 650 var(--type-display-large-size)/1 var(--display);
+    --type-display-medium-size: clamp(2.5rem, 9vw, 3.625rem);
+    --type-display-medium: 600 var(--type-display-medium-size)/1.08 var(--display);
+    --type-display-small-size: clamp(2.25rem, 8vw, 2.875rem);
+    --type-display-small: 600 var(--type-display-small-size)/1.12 var(--display);
+    --type-headline-large-size: clamp(1.75rem, 6vw, 2.125rem);
+    --type-headline-large: 600 var(--type-headline-large-size)/1.15 var(--display);
+    --type-headline-medium-size: clamp(1.625rem, 5vw, 1.875rem);
+    --type-headline-medium: 600 var(--type-headline-medium-size)/1.2 var(--display);
+    --type-contact-display: var(--type-display-small);
+    --type-about-display: var(--type-display-small);
+    --type-achievement-display: var(--type-display-small);
+    --type-placeholder-display: var(--type-display-small);
+    --type-title-large-size: clamp(1.375rem, 4.7vw, 1.6875rem);
+    --type-title-large: 600 var(--type-title-large-size)/1.25 var(--display);
+    --type-body-medium-size: 1rem;
+    --type-body-medium: 400 var(--type-body-medium-size)/1.5 var(--body);
+    --type-body-supporting-size: 1rem;
+    --type-project-copy-size: 1rem;
+    --type-label-tiny-size: .75rem;
+  }
 }

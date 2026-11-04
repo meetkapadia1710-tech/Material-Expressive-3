@@ -12,13 +12,17 @@
 .emailAddress { display: inline-block; margin-bottom: 14px; font: var(--type-contact-email); letter-spacing: -.03em; overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: .18em; }
 .emailCard :global(.copy-email) { display: flex; }
 .emailCard :global(.copy-email) :global(.button-secondary) { color: var(--color-on-primary-container); border-color: var(--color-on-primary-container); }
-.emailCard :global(.copy-email) :global(.button-secondary):hover { color: var(--color-on-primary); background: var(--color-primary); }
+@media (hover: hover) and (pointer: fine) {
+  .emailCard :global(.copy-email) :global(.button-secondary):hover { color: var(--color-on-primary); background: var(--color-primary); }
+}
 .socialCard { padding: 24px 26px; border-radius: 28px; background: var(--color-surface-container); }
 .socialCard h2 { margin: 0 0 12px; font: var(--type-contact-subheading); letter-spacing: -.04em; }
 .socialCard ul { list-style: none; padding: 0; margin: 0; }
 .socialCard li + li { border-top: 1px solid var(--color-outline); }
 .socialCard li a { display: grid; grid-template-columns: minmax(72px, .7fr) minmax(0, 1.3fr) 18px; gap: 12px; min-height: 48px; align-items: center; font-size: var(--type-body-small-size); font-weight: 600; }
-.socialCard li a:hover { color: var(--color-primary); }
+@media (hover: hover) and (pointer: fine) {
+  .socialCard li a:hover { color: var(--color-primary); }
+}
 .socialValue { color: var(--color-on-surface-variant); font-weight: 450; overflow-wrap: anywhere; }
 .socialCard li svg { width: 16px; height: 16px; }
 .form { display: flex; flex-direction: column; gap: 18px; min-width: 0; padding: 32px; border: 1px solid var(--color-outline); border-radius: 32px; background: var(--color-surface); height: 100%; }
@@ -80,10 +84,12 @@
   position: relative;
 }
 
-.topicCard:hover {
-  background: var(--color-surface-container-high);
-  border-color: var(--color-primary);
-  transform: translateY(-1px);
+@media (hover: hover) and (pointer: fine) {
+  .topicCard:hover {
+    background: var(--color-surface-container-high);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+  }
 }
 
 .topicCardSelected {
@@ -93,9 +99,11 @@
   box-shadow: 0 2px 10px color-mix(in srgb, var(--color-primary) 15%, transparent);
 }
 
-.topicCardSelected:hover {
-  background: var(--color-secondary-container);
-  border-color: var(--color-primary);
+@media (hover: hover) and (pointer: fine) {
+  .topicCardSelected:hover {
+    background: var(--color-secondary-container);
+    border-color: var(--color-primary);
+  }
 }
 
 .topicIconTile {
@@ -141,7 +149,7 @@
   height: 15px;
 }
 
-@media (max-width: 640px) {
+@media (--compact) {
   .topicGrid {
     grid-template-columns: 1fr;
     gap: 8px;
@@ -161,9 +169,11 @@
 .spinner { width: 16px; height: 16px; border: 2px solid color-mix(in srgb, currentColor 30%, transparent); border-top-color: currentColor; border-radius: 50%; animation: spin 0.8s linear infinite; display: inline-block; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .mailtoFallbackButton { display: inline-flex; align-items: center; gap: 6px; background: transparent; border: none; color: var(--color-on-surface-variant); font-size: var(--type-label-small-size); font-weight: 550; cursor: pointer; padding: 8px 14px; border-radius: 9999px; transition: all var(--motion-duration-fast) var(--spring); }
-.mailtoFallbackButton:hover { color: var(--color-primary); background: var(--color-surface-container-high); }
+@media (hover: hover) and (pointer: fine) {
+  .mailtoFallbackButton:hover { color: var(--color-primary); background: var(--color-surface-container-high); }
+}
 .mailtoFallbackButton svg { width: 14px; height: 14px; }
-.honeypot { position: absolute; opacity: 0; pointer-events: none; left: -9999px; width: 1px; height: 1px; }
+.form .honeypot { position: absolute; clip-path: inset(50%); pointer-events: none; width: 1px; height: 1px; min-height: 0; padding: 0; border: 0; }
 .successState { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 28px 16px; gap: 14px; }
 .successIcon { width: 56px; height: 56px; border-radius: 20px; background: var(--color-primary-container); color: var(--color-on-primary-container); display: grid; place-items: center; }
 .successIcon svg { width: 28px; height: 28px; }
@@ -171,16 +181,39 @@
 .successState p { color: var(--color-on-surface-variant); font-size: var(--type-body-small-size); line-height: 1.6; max-width: 44ch; margin: 0; }
 .serverError { color: var(--color-error); font-size: var(--type-body-small-size); margin: 0; padding: 10px 14px; border-radius: 12px; background: color-mix(in srgb, var(--color-error) 10%, transparent); }
 .resumeCard { padding: 26px 28px; border-radius: 28px; background: var(--color-surface-container-low); border: 1px solid var(--color-outline-variant); display: flex; flex-direction: column; gap: 10px; transition: all var(--motion-duration-fast) var(--spring); }
-.resumeCard:hover { border-color: var(--color-primary); background: var(--color-surface-container); transform: translateY(-2px); }
+@media (hover: hover) and (pointer: fine) {
+  .resumeCard:hover { border-color: var(--color-primary); background: var(--color-surface-container); transform: translateY(-2px); }
+}
 .resumeIcon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 15px; background: var(--color-tertiary-container); color: var(--color-on-tertiary-container); }
 .resumeIcon svg { width: 20px; height: 20px; }
 .resumeSummary { margin: 0; font-size: var(--type-body-small-size); line-height: 1.6; color: var(--color-on-surface-variant); }
-.resumeLink { display: inline-flex; align-items: center; gap: 8px; color: var(--color-primary); font-size: var(--type-label-medium-size); font-weight: 600; text-decoration: none; margin-top: 4px; }
-.resumeLink:hover { text-decoration: underline; text-underline-offset: 4px; }
+.resumeLink { min-height: var(--touch-target); display: inline-flex; align-items: center; gap: 8px; color: var(--color-primary); font-size: var(--type-label-medium-size); font-weight: 600; text-decoration: none; margin-top: 4px; }
+@media (hover: hover) and (pointer: fine) {
+  .resumeLink:hover { text-decoration: underline; text-underline-offset: 4px; }
+}
 .resumeLink svg { width: 16px; height: 16px; transition: transform 0.2s var(--spring); }
-.resumeLink:hover svg { transform: translateX(3px); }
+@media (hover: hover) and (pointer: fine) {
+  .resumeLink:hover svg { transform: translateX(3px); }
+}
 .form > button { justify-self: start; }
 .form > button svg { width: 17px; height: 17px; }
 
-@media (max-width: 800px) { .layout { grid-template-columns: 1fr; } .aside { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; } }
-@media (max-width: 560px) { .page { padding-top: 44px; } .intro { padding-bottom: 34px; } .description { font-size: var(--type-body-medium-size); } .aside { grid-template-columns: 1fr; } .emailCard { border-radius: 26px 26px 56px 26px; } .form { padding: 24px 20px; border-radius: 26px; } .formHeading { gap: 12px; } .socialCard { padding: 23px 20px; } }
+@media (--below-expanded) { .layout { grid-template-columns: 1fr; } .aside { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; } }
+@media (--compact) { .page { padding-top: 44px; } .intro { padding-bottom: 34px; } .description { font-size: var(--type-body-medium-size); } .aside { grid-template-columns: 1fr; } .emailCard { border-radius: 26px 26px 56px 26px; } .form { padding: 24px 20px; border-radius: 26px; } .formHeading { gap: 12px; } .socialCard { padding: 23px 20px; } }
+
+@media (--compact) {
+  .page { padding-top: 32px; }
+  .form { grid-row: 1; padding: 16px; border-radius: var(--shape-extra-large); }
+  .form input:not(.honeypot), .form textarea { font-size: max(1rem, 16px); scroll-margin-block: 16px; }
+  .submitRow > button, .form > button { width: 100%; justify-content: center; }
+  .socialCard li a { grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; }
+  .socialValue { grid-row: 2; overflow-wrap: anywhere; }
+  .socialCard li a > svg { grid-column: 2; grid-row: 1 / span 2; }
+}
+
+.emailAddress { display: inline-flex; min-height: var(--touch-target); align-items: center; }
+
+@media (--expanded) {
+  .layout > .form { grid-row: 1; grid-column: 2; }
+  .layout > .aside { grid-row: 1; grid-column: 1; }
+}

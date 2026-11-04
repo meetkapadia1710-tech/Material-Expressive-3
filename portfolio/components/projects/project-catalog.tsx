@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { interfaceCopy as copy } from "@/content/interface";
 import { projectCatalogCopy } from "@/content/projects";
 import type { Project } from "@/content/types";
@@ -16,6 +16,7 @@ const initialFilters: ProjectFilters = { category: ALL_PROJECTS, status: ALL_PRO
 export function ProjectCatalog({ entries, accentStyles = {} }: { entries: readonly Project[]; accentStyles?: Record<string, CSSProperties> }) {
   const [filters, setFilters] = useState<ProjectFilters>(initialFilters);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const filterDialog = useRef<HTMLDialogElement>(null);
   const [query, setQuery] = useState("");
   const [ready, setReady] = useState(false);
   useEffect(() => {
@@ -49,6 +50,31 @@ export function ProjectCatalog({ entries, accentStyles = {} }: { entries: readon
       : []),
   ];
 
+  const activeCount = Number(filters.category !== ALL_PROJECTS) + Number(filters.status !== ALL_PROJECTS);
+  const filterFields = (suffix = "") => <>
+        <div className={styles.filterField}>
+          <MaterialSelect
+            id={`project-category${suffix}`}
+            label={projectCatalogCopy.filters.category}
+            value={filters.category}
+            onChange={(category) => setFilters((current) => ({ ...current, category }))}
+            options={categoryOptions}
+            ariaControls="project-results"
+          />
+        </div>
+        <div className={styles.filterField}>
+          <MaterialSelect
+            id={`project-status${suffix}`}
+            label={projectCatalogCopy.filters.status}
+            value={filters.status}
+            onChange={(status) => setFilters((current) => ({ ...current, status: status as ProjectFilters["status"] }))}
+            options={statusOptions}
+            ariaControls="project-results"
+          />
+        </div>
+    <button className={styles.clearButton} type="button" disabled={!filtered} onClick={clearAll}>{projectCatalogCopy.filters.clear}</button>
+  </>;
+
   return <>
     <div className={styles.filterPanel} role="group" aria-label={projectCatalogCopy.filters.label}>
       <div className={styles.selectFields}>
@@ -78,34 +104,22 @@ export function ProjectCatalog({ entries, accentStyles = {} }: { entries: readon
             ) : null}
           </div>
         </div>
-        <div className={styles.filterField}>
-          <MaterialSelect
-            id="project-category"
-            label={projectCatalogCopy.filters.category}
-            value={filters.category}
-            onChange={(category) => setFilters((current) => ({ ...current, category }))}
-            options={categoryOptions}
-            ariaControls="project-results"
-          />
-        </div>
-        <div className={styles.filterField}>
-          <MaterialSelect
-            id="project-status"
-            label={projectCatalogCopy.filters.status}
-            value={filters.status}
-            onChange={(status) => setFilters((current) => ({ ...current, status: status as ProjectFilters["status"] }))}
-            options={statusOptions}
-            ariaControls="project-results"
-          />
-        </div>
+        <div className={styles.desktopFilters}>{filterFields()}</div>
       </div>
-      <button className={styles.clearButton} type="button" disabled={!filtered} onClick={clearAll}>{projectCatalogCopy.filters.clear}</button>
+      <button className={styles.filtersTrigger} type="button" aria-haspopup="dialog" onClick={() => filterDialog.current?.showModal()}>
+        Filters {activeCount > 0 && <span aria-label={`${activeCount} active filters`}>{activeCount}</span>}
+      </button>
     </div>
+    <dialog ref={filterDialog} className="adaptive-sheet" aria-labelledby="project-filters-heading">
+      <header><h2 id="project-filters-heading">Filters</h2><button type="button" className="button button-secondary" onClick={() => filterDialog.current?.close()}>Done</button></header>
+      <div className={styles.sheetFields}>{filterFields("-sheet")}</div>
+    </dialog>
 
     {/* Quick Status Pill Bar */}
-    <div className={styles.quickChips} role="toolbar" aria-label="Quick status filter chips">
+    <div className={styles.quickChips} data-scroll-region role="toolbar" aria-label="Quick status filter chips">
       <button
         type="button"
+        aria-pressed={filters.status === ALL_PROJECTS}
         className={`${styles.chip} ${filters.status === ALL_PROJECTS ? styles.chipActive : ""}`}
         onClick={() => setFilters((prev) => ({ ...prev, status: ALL_PROJECTS }))}
       >
@@ -115,6 +129,7 @@ export function ProjectCatalog({ entries, accentStyles = {} }: { entries: readon
         <button
           key={status}
           type="button"
+          aria-pressed={filters.status === status}
           className={`${styles.chip} ${filters.status === status ? styles.chipActive : ""}`}
           onClick={() => setFilters((prev) => ({ ...prev, status: status as ProjectFilters["status"] }))}
         >
@@ -125,7 +140,7 @@ export function ProjectCatalog({ entries, accentStyles = {} }: { entries: readon
 
     <div className={styles.resultSummary}>
       <p role="status" aria-live="polite" aria-atomic="true">{projectCatalogCopy.resultsLabel(visible.length, entries.length)}</p>
-      {visible.length ? <nav className={styles.groupNavigation} aria-label={projectCatalogCopy.groupNavigationLabel}>{projectGroupOrder.filter((group) => groups[group].length).map((group) => <a key={group} href={`#projects-${group}`}>{projectCatalogCopy.groups[group].title}<span aria-hidden="true">↘</span></a>)}</nav> : null}
+      {visible.length ? <nav className={styles.groupNavigation} data-scroll-region aria-label={projectCatalogCopy.groupNavigationLabel}>{projectGroupOrder.filter((group) => groups[group].length).map((group) => <a key={group} href={`#projects-${group}`}>{projectCatalogCopy.groups[group].title}<span aria-hidden="true">↘</span></a>)}</nav> : null}
     </div>
 
     <div id="project-results">

@@ -14,7 +14,7 @@ export const projects: readonly Project[] = [
     stack: ["Next.js 15", "TypeScript", "Go", "PostgreSQL", "Drizzle", "Upstash Redis", "Auth.js", "Inngest", "Gemini API", "tree-sitter", "Turborepo", "Plasmo"],
     features: ["GitHub repository scoring and ratings", "README generation grounded in the actual code", "Web app, browser extension, and GitHub Action in a Turborepo monorepo"],
     media: [
-      { kind: "image", src: "https://repo-grade-web.vercel.app/api/badge/meetkapadia1710-tech/RepoGrade", alt: "RepoGrade live health score badge" },
+      { kind: "image", src: "https://repo-grade-web.vercel.app/api/badge/meetkapadia1710-tech/RepoGrade", alt: "RepoGrade live health score badge", width: 130, height: 20 },
     ],
     repoUrl: "https://github.com/meetkapadia1710-tech/RepoGrade", liveUrl: "https://repo-grade-web.vercel.app", featured: true, order: 1,
   },
@@ -31,8 +31,8 @@ export const projects: readonly Project[] = [
     stack: ["React 19", "TypeScript", "Capacitor Android", "Tailwind CSS", "Leaflet", "Firebase", "Motion", "Vite", "Vitest"],
     features: ["Cricket and Pickleball court booking", "Customer, owner, and admin roles"],
     media: [
-      { kind: "image", src: "https://raw.githubusercontent.com/meetkapadia1710-tech/PickleRage_Booking/main/photos/court%201.jpeg", alt: "PickleRage venue court 1" },
-      { kind: "image", src: "https://raw.githubusercontent.com/meetkapadia1710-tech/PickleRage_Booking/main/photos/court%202.jpeg", alt: "PickleRage venue court 2" },
+      { kind: "image", src: "https://raw.githubusercontent.com/meetkapadia1710-tech/PickleRage_Booking/main/photos/court%201.jpeg", alt: "PickleRage venue court 1", width: 1280, height: 720 },
+      { kind: "image", src: "https://raw.githubusercontent.com/meetkapadia1710-tech/PickleRage_Booking/main/photos/court%202.jpeg", alt: "PickleRage venue court 2", width: 1280, height: 720 },
     ],
     repoUrl: "https://github.com/meetkapadia1710-tech/PickleRage_Booking", featured: true, order: 3,
   },
@@ -41,7 +41,7 @@ export const projects: readonly Project[] = [
     tagline: "Two production corporate websites built during my internship.", status: "shipped", role: "Web Development Intern",
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React"],
     media: [
-      { kind: "image", src: "https://raw.githubusercontent.com/meetkapadia1710-tech/BD_Buildcon/main/public/new-hero-image.webp", alt: "BD Buildcon hero preview showcasing industrial infrastructure" },
+      { kind: "image", src: "https://raw.githubusercontent.com/meetkapadia1710-tech/BD_Buildcon/main/public/new-hero-image.webp", alt: "BD Buildcon hero preview showcasing industrial infrastructure", width: 1536, height: 1024 },
     ],
     repoUrl: "https://github.com/meetkapadia1710-tech/BD_Buildcon", liveUrl: "https://bd-buildcon.vercel.app", featured: true, order: 4,
   },
@@ -62,7 +62,7 @@ export const projects: readonly Project[] = [
     stack: ["React 19", "TypeScript", "Vite PWA", "Firebase", "Zustand", "Tailwind CSS", "Framer Motion", "SheetJS"],
     features: ["Loyalty PWA", "Staff attendance management"],
     media: [
-      { kind: "image", src: "https://raw.githubusercontent.com/meetkapadia1710-tech/Attendance-Manager/main/src/assets/hero.png", alt: "Mann Beauty Studio Attendance Manager hero banner" },
+      { kind: "image", src: "https://raw.githubusercontent.com/meetkapadia1710-tech/Attendance-Manager/main/src/assets/hero.png", alt: "Mann Beauty Studio Attendance Manager hero banner", width: 343, height: 361 },
     ],
     repoUrl: "https://github.com/meetkapadia1710-tech/Attendance-Manager", featured: false, order: 7,
   },

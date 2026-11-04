@@ -38,11 +38,13 @@
   transition: all var(--motion-duration-fast) ease;
 }
 
-.actionButton:hover {
-  background: var(--color-primary-container);
-  color: var(--color-on-primary-container);
-  border-color: var(--color-primary);
-  transform: translateY(-1px);
+@media (hover: hover) and (pointer: fine) {
+  .actionButton:hover {
+    background: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+  }
 }
 
 .actionButtonCopied {
@@ -59,9 +61,11 @@
   border-color: var(--color-primary);
 }
 
-.actionButtonPrimary:hover {
-  background: var(--color-primary-container);
-  color: var(--color-on-primary-container);
+@media (hover: hover) and (pointer: fine) {
+  .actionButtonPrimary:hover {
+    background: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+  }
 }
 
 /* Printable Sheet */
@@ -123,9 +127,11 @@
   text-decoration: none;
 }
 
-.contactItem:hover {
-  color: var(--color-primary);
-  text-decoration: underline;
+@media (hover: hover) and (pointer: fine) {
+  .contactItem:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
 }
 
 /* Section styling */
@@ -204,7 +210,7 @@
 }
 
 .tag {
-  font-size: 11px;
+  font-size: var(--type-label-small-size);
   font-weight: 600;
   padding: 3px 8px;
   background: var(--color-surface-container);
@@ -270,7 +276,7 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (--below-expanded) {
   .sheet {
     padding: 32px 24px;
     border-radius: 20px;
@@ -342,3 +348,10 @@
   }
 }
 
+
+@media screen {
+  .contactItem { min-height: var(--touch-target); }
+}
+@media (--compact) {
+  .contactItem { min-width: 0; overflow-wrap: anywhere; }
+}

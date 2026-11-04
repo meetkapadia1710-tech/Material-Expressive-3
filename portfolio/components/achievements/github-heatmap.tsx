@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type PointerEvent } from "react";
 import type { GitHubCalendarData } from "@/lib/github-calendar";
 import { githubFallbackCalendar } from "@/content/github-fallback";
 import { Icon } from "@/components/icon";
 
 interface GitHubHeatmapProps {
   initialData?: GitHubCalendarData;
+  initialLive?: boolean;
 }
 
 function formatDate(dateStr: string): string {
@@ -19,12 +20,39 @@ function formatDate(dateStr: string): string {
   }
 }
 
-export function GitHubHeatmap({ initialData = githubFallbackCalendar }: GitHubHeatmapProps) {
+const cellSize = 12;
+const cellStep = 15.5;
+const chartHeight = 6 * cellStep + cellSize;
+const dayNames = ["", "Mon", "", "Wed", "", "Fri", ""];
+
+export function GitHubHeatmap({ initialData = githubFallbackCalendar, initialLive = false }: GitHubHeatmapProps) {
   const [data, setData] = useState<GitHubCalendarData>(initialData);
   const [hoveredDay, setHoveredDay] = useState<{ date: string; count: number; x: number; y: number } | null>(null);
-  const [isLive, setIsLive] = useState(false);
+  const [isLive, setIsLive] = useState(initialLive);
+  const [lookupDate, setLookupDate] = useState("");
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const region = scrollRef.current;
+    if (!region) return;
+    region.scrollLeft = region.scrollWidth - region.clientWidth;
+  }, []);
+
+  const days = useMemo(() => data.weeks.flat(), [data.weeks]);
+  const chartWidth = Math.max(0, data.weeks.length - 1) * cellStep + cellSize;
+  const chartPaths = useMemo(() => {
+    const levels = Array.from({ length: 5 }, () => "");
+    data.weeks.forEach((week, column) => week.forEach((day, row) => {
+      const x = column * cellStep + 1;
+      const y = row * cellStep + 1;
+      levels[day.level] += `M${x + 2} ${y}h6q2 0 2 2v6q0 2-2 2h-6q-2 0-2-2v-6q0-2 2-2z`;
+    }));
+    return levels;
+  }, [data.weeks]);
+  const lookup = lookupDate ? days.find((day) => day.date === lookupDate) : undefined;
+
+  useEffect(() => {
+    if (initialLive) return;
     let cancelled = false;
     async function fetchCalendar() {
       try {
@@ -43,9 +71,27 @@ export function GitHubHeatmap({ initialData = githubFallbackCalendar }: GitHubHe
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [initialLive]);
 
-  const dayNames = ["", "Mon", "", "Wed", "", "Fri", ""];
+  function showHoveredDay(event: PointerEvent<SVGSVGElement>) {
+    if (event.pointerType !== "mouse") return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) * chartWidth / bounds.width;
+    const y = (event.clientY - bounds.top) * chartHeight / bounds.height;
+    const column = Math.floor(x / cellStep);
+    const row = Math.floor(y / cellStep);
+    const day = x % cellStep < cellSize && y % cellStep < cellSize ? data.weeks[column]?.[row] : null;
+    if (!day) {
+      if (hoveredDay) setHoveredDay(null);
+      return;
+    }
+    if (hoveredDay?.date === day.date) return;
+    setHoveredDay({
+      date: day.date, count: day.count,
+      x: Math.max(100, Math.min(innerWidth - 100, event.clientX)),
+      y: bounds.top + row * cellStep,
+    });
+  }
 
   return (
     <div className="github-heatmap-container" aria-label="GitHub Contribution Heatmap">
@@ -89,7 +135,7 @@ export function GitHubHeatmap({ initialData = githubFallbackCalendar }: GitHubHe
             <span className="heatmap-eyebrow">
               <Icon name="github" className="heatmap-icon" /> Commit Activity Calendar
             </span>
-            <h4>Continuous Contribution Heatmap</h4>
+            <h3>Continuous Contribution Heatmap</h3>
           </div>
           <span className="heatmap-live-badge" title={isLive ? "Synchronized hourly with GitHub activity" : "Cached snapshot"}>
             <span className={`live-pulse-dot ${isLive ? "pulse-active" : ""}`} />
@@ -97,7 +143,8 @@ export function GitHubHeatmap({ initialData = githubFallbackCalendar }: GitHubHe
           </span>
         </div>
 
-        <div className="heatmap-scroll-area">
+        <p className="heatmap-scroll-hint" id="heatmap-scroll-hint">Scroll horizontally to see earlier weeks.</p>
+        <div ref={scrollRef} className="heatmap-scroll-area" data-scroll-region onScroll={() => { if (hoveredDay) setHoveredDay(null); }} tabIndex={0} role="region" aria-label="Contribution calendar" aria-describedby="heatmap-scroll-hint">
           <div className="heatmap-grid-wrapper">
             {/* Months Header */}
             <div className="heatmap-months-row">
@@ -126,32 +173,17 @@ export function GitHubHeatmap({ initialData = githubFallbackCalendar }: GitHubHe
                 ))}
               </div>
 
-              {/* 53 Columns */}
-              <div className="heatmap-weeks">
-                {data.weeks.map((week, wIdx) => (
-                  <div key={wIdx} className="heatmap-week-col">
-                    {week.map((day) => (
-                      <div
-                        key={day.id || day.date}
-                        className={`heatmap-day-cell level-${day.level}`}
-                        onMouseEnter={(e) => {
-                          const rect = e.currentTarget.getBoundingClientRect();
-                          setHoveredDay({
-                            date: day.date,
-                            count: day.count,
-                            x: rect.left + rect.width / 2,
-                            y: rect.top,
-                          });
-                        }}
-                        onMouseLeave={() => setHoveredDay(null)}
-                        role="gridcell"
-                        aria-label={`${day.count} contributions on ${formatDate(day.date)}`}
-                        tabIndex={0}
-                      />
-                    ))}
-                  </div>
-                ))}
-              </div>
+              <svg
+                className="heatmap-weeks"
+                width={chartWidth}
+                height={chartHeight}
+                viewBox={`0 0 ${chartWidth} ${chartHeight}`}
+                aria-hidden="true"
+                onPointerMove={showHoveredDay}
+                onPointerLeave={() => setHoveredDay(null)}
+              >
+                {chartPaths.map((path, level) => <path key={level} className={`level-${level}`} d={path} />)}
+              </svg>
             </div>
 
             {/* Legend */}
@@ -168,6 +200,14 @@ export function GitHubHeatmap({ initialData = githubFallbackCalendar }: GitHubHe
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="heatmap-date-lookup">
+          <label htmlFor="heatmap-date">Look up a day</label>
+          <input id="heatmap-date" type="date" min={days[0]?.date} max={days.at(-1)?.date} value={lookupDate} onChange={(event) => setLookupDate(event.target.value)} />
+          <output htmlFor="heatmap-date" aria-live="polite">
+            {lookupDate && (lookup ? `${lookup.count} contributions on ${formatDate(lookup.date)}` : "No calendar data for this date.")}
+          </output>
         </div>
 
         {/* Floating Tooltip */}

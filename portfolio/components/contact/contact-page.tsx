@@ -221,6 +221,7 @@ function ContactForm() {
       value={botcheck}
       onChange={(e) => setBotcheck(e.target.value)}
       className={styles.honeypot}
+      aria-hidden="true"
       tabIndex={-1}
       autoComplete="off"
     />
@@ -344,6 +345,7 @@ export function ContactPage() {
       <p className={styles.description}>{copy.description}</p>
     </header>
     <div className={styles.layout}>
+      <ContactForm />
       <aside className={styles.aside} aria-label="Contact details and social profiles">
         <LiveStatusCard />
         <div className={styles.emailCard}>
@@ -369,7 +371,6 @@ export function ContactPage() {
           })}</ul>
         </nav>
       </aside>
-      <ContactForm />
     </div>
   </article>;
 }
