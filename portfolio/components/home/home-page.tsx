@@ -6,6 +6,7 @@ import { links } from "@/content/links";
 import { homeCopy, profile, siteCopy } from "@/content/profile";
 import { getCurrentlyBuildingProject, getFeaturedProjects, getProjectBySlug } from "@/content/projects";
 import { skills } from "@/content/skills";
+import type { LeetCodeStats } from "@/lib/leetcode";
 import { Icon } from "../icon";
 import { MorphingShape } from "../motion/morphing-shape";
 import dynamic from "next/dynamic";
@@ -21,7 +22,7 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { SVGMaskEffectDemo } from "@/components/ui/svg-mask-effect";
 import { ProjectCard } from "./project-card";
 
-export function HomePage() {
+export function HomePage({ leetCodeStats = null }: { leetCodeStats?: LeetCodeStats | null } = {}) {
   const featured = getFeaturedProjects();
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [inspectBadge, setInspectBadge] = useState<boolean>(false);
@@ -259,11 +260,25 @@ export function HomePage() {
         <div className="impact-grid">
           <div className="impact-card">
             <span className="impact-icon" aria-hidden="true"><Icon name="code" /></span>
-            <div className="impact-data">
-              <span className="impact-value">650<span className="impact-plus">+</span></span>
-              <span className="impact-label">LeetCode Problems</span>
-            </div>
-            <span className="impact-tag">DSA & System Design Mastery</span>
+            {leetCodeStats ? (
+              <>
+                <div className="impact-data">
+                  <span className="impact-value tabular-nums">{leetCodeStats.totalDisplay}</span>
+                  <span className="impact-label">LeetCode Problems</span>
+                </div>
+                <span className="impact-tag">
+                  {leetCodeStats.easy.count} Easy · {leetCodeStats.medium.count} Med · {leetCodeStats.hard.count} Hard
+                </span>
+              </>
+            ) : (
+              <>
+                <div className="impact-data">
+                  <span className="impact-value">DSA</span>
+                  <span className="impact-label">LeetCode Practice</span>
+                </div>
+                <span className="impact-tag">DSA &amp; System Design Mastery</span>
+              </>
+            )}
           </div>
           <div className="impact-card">
             <span className="impact-icon" aria-hidden="true"><Icon name="layers" /></span>

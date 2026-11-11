@@ -8,9 +8,9 @@
   margin-top: 44px;
   padding-top: 30px;
   border-top: 1px solid var(--default-achievement-divider, var(--color-outline-variant));
-  scroll-margin-top: 100px;
+  scroll-margin-top: var(--achievements-scroll-offset, 112px);
 }
-.page :global(.achievement-section) > h2 { font: var(--type-achievement-section); letter-spacing: -.045em; margin: 0 0 26px; max-width: 26ch; }
+.page :global(.achievement-section) > h2 { font: var(--type-achievement-section); letter-spacing: -.045em; margin: 0 0 26px; max-width: 26ch; scroll-margin-top: var(--achievements-scroll-offset, 112px); }
 .page :global(.achievement-entry) { min-width: 0; padding: 28px; background: var(--color-surface-container-lowest); border: 1px solid var(--default-achievement-card-outline, var(--color-outline-variant)); border-radius: 25px; }
 .page :global(.achievement-entry) h3 { font: var(--type-entry-heading); letter-spacing: -.035em; margin: 0 0 12px; overflow-wrap: anywhere; }
 .page :global(.achievement-date) { font-size: var(--type-label-medium-size); color: var(--default-achievement-date, var(--color-on-surface-variant)); margin: 0 0 18px; }
@@ -1179,15 +1179,15 @@
   .page :global(.leetcode-bar-card:hover) { transform: translateY(-2px); border-color: var(--color-primary); }
 }
 .page :global(.bar-card-selected) { border-color: var(--color-primary); background: var(--color-surface-container-high); }
-.page :global(.leetcode-bar-header) { display: flex; align-items: center; justify-content: space-between; }
-.page :global(.leetcode-bar-label-group) { display: flex; align-items: center; gap: 10px; }
+.page :global(.leetcode-bar-header) { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; min-width: 0; }
+.page :global(.leetcode-bar-label-group) { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; min-width: 0; flex: 1 1 160px; }
 .page :global(.leetcode-dot) { width: 10px; height: 10px; border-radius: 50%; }
 .page :global(.dot-easy) { background: var(--color-tertiary); }
 .page :global(.dot-medium) { background: var(--color-primary); }
 .page :global(.dot-hard) { background: var(--color-error); }
 .page :global(.leetcode-bar-difficulty) { font-weight: 600; font-size: var(--type-label-medium-size); color: var(--color-on-surface); }
-.page :global(.leetcode-badge-sweetspot) { font-size: var(--type-label-small-size); font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--color-primary-container); color: var(--color-on-primary-container); letter-spacing: 0.02em; }
-.page :global(.leetcode-bar-metrics) { display: flex; align-items: baseline; gap: 8px; }
+.page :global(.leetcode-badge-sweetspot) { font-size: var(--type-label-small-size); font-weight: 600; line-height: 1.35; padding: 3px 10px; border-radius: 999px; background: var(--color-primary-container); color: var(--color-on-primary-container); letter-spacing: 0.02em; max-width: 100%; overflow-wrap: anywhere; }
+.page :global(.leetcode-bar-metrics) { display: flex; align-items: baseline; gap: 8px; flex: none; margin-left: auto; }
 .page :global(.leetcode-bar-metrics strong) { font-size: 18px; font-weight: 700; color: var(--color-on-surface); }
 .page :global(.leetcode-bar-pct) { font-size: var(--type-label-small-size); color: var(--color-on-surface-variant); }
 .page :global(.leetcode-progress-track) { height: 8px; background: var(--color-surface-container-highest); border-radius: 999px; overflow: hidden; }
@@ -1380,9 +1380,9 @@
   .page :global(.achievements-header) h1 { font-size: 43px; }
   .page :global(.achievements-header-art) { display: none; }
   .page :global(.achievements-header) > p:last-of-type { font-size: var(--type-body-medium-size); }
-  .page :global(.achievement-section) { margin-top: 34px; padding-top: 26px; scroll-margin-top: 80px; }
+  .page :global(.achievement-section) { margin-top: 34px; padding-top: 26px; scroll-margin-top: var(--achievements-scroll-offset, 96px); }
   .page :global(.achievement-section) > h2 { margin-bottom: 22px; }
-  :global(.github-section) { scroll-margin-top: 80px; }
+  :global(.github-section) { scroll-margin-top: var(--achievements-scroll-offset, 96px); }
   .page :global(.achievements-nav-wrapper) {
     top: 12px;
     margin-bottom: 24px;
@@ -1419,7 +1419,7 @@
   padding-top: 36px;
   border-top: 1px solid var(--default-achievement-divider, var(--color-outline-variant));
   margin-bottom: 60px;
-  scroll-margin-top: 100px;
+  scroll-margin-top: var(--achievements-scroll-offset, 112px);
 }
 .page :global(.github-section) { width: 100%; margin-top: 68px; margin-bottom: 48px; }
 :global(.github-heading-row) { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
@@ -1541,7 +1541,133 @@
   :global(.github-secondary-grid) { grid-template-columns: 1fr; }
 }
 
-.page :global(.platform-action-button) { min-width: var(--touch-target); min-height: var(--touch-target); }
+.page :global(.coding-profile-link) {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  cursor: pointer;
+}
+.page :global(.coding-profile-link:focus-visible) {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 4px;
+}
+.page :global(.coding-profile-leading) {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.page :global(.platform-signature-shape) {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+.page :global(.platform-meta) {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.page :global(.platform-action-button) {
+  position: relative;
+  min-width: var(--touch-target);
+  min-height: var(--touch-target);
+  width: var(--touch-target);
+  height: var(--touch-target);
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  background: var(--color-surface-container-high);
+  border: 1px solid var(--color-outline-variant);
+  color: var(--color-primary);
+  transition:
+    transform var(--motion-duration-short2) var(--spring),
+    background-color var(--motion-duration-short2) ease,
+    color var(--motion-duration-short2) ease,
+    border-color var(--motion-duration-short2) ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.coding-profile-link:hover .platform-action-button),
+  .page :global(.coding-profile-link:focus-visible .platform-action-button) {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    border-color: var(--color-primary);
+    transform: translate(2px, -2px);
+  }
+}
+.page :global(.coding-status-row) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.page :global(.coding-source-badge) {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font: var(--type-label-small);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.page :global(.coding-source-live) {
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+.page :global(.coding-source-cache),
+.page :global(.coding-source-manual) {
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
+  border: 1px solid var(--color-outline-variant);
+}
+.page :global(.leetcode-live-badge.is-live-source) {
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  border-color: var(--color-secondary);
+}
+.page :global(.leetcode-live-badge.is-cache-source) {
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
+}
+.page :global(.live-pulse-dot.is-cached-dot) {
+  background: var(--color-on-surface-variant);
+  box-shadow: none;
+}
+.page :global(.leetcode-refresh-button) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: var(--touch-target);
+  min-height: var(--touch-target);
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--color-outline-variant);
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface);
+  font: var(--type-label-small);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--motion-duration-short2) ease, border-color var(--motion-duration-short2) ease;
+}
+.page :global(.leetcode-refresh-button:disabled) {
+  opacity: 0.6;
+  cursor: wait;
+}
+@media (hover: hover) and (pointer: fine) {
+  .page :global(.leetcode-refresh-button:hover:not(:disabled)) {
+    background: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+    border-color: var(--color-primary);
+  }
+}
 .page :global(.achievement-card), .page :global(.certification-card), .page :global(.achievement-hackathon-card) { grid-template-columns: minmax(0, 1fr); }
 .page :global(.achievement-card-footer), .page :global(.achievement-doc-item), .page :global(.github-heatmap-container) { min-width: 0; }
 .page :global(.achievement-doc-chip) { min-height: var(--touch-target); max-width: 100%; }

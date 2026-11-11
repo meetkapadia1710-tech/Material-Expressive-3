@@ -1,5 +1,6 @@
 import { projects } from "@/content/projects";
 import type { Project } from "@/content/types";
+import type { LeetCodeStats } from "@/lib/leetcode";
 
 export type SkillProjectLink = Pick<Project, "slug" | "name" | "category" | "tagline" | "status" | "liveUrl" | "repoUrl" | "visibility">;
 
@@ -32,9 +33,9 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
   "C++": {
     name: "C++",
     role: "High-Performance Algorithms & Competitive Programming",
-    description: "Primary language for algorithmic competitions and technical interviews. Standard Template Library (STL) mastery across 760+ solved challenges on LeetCode.",
+    description: "Primary language for algorithmic competitions and technical interviews using the C++ Standard Template Library (STL).",
     projects: [],
-    highlights: ["763 LeetCode problems solved (371 Easy, 337 Medium, 55 Hard)", "Custom comparator heaps, segment trees, and disjoint-set unions", "Zero-overhead abstractions & template metaprogramming"],
+    highlights: ["Standard Template Library algorithms & containers", "Custom comparator heaps, segment trees, and disjoint-set unions", "Zero-overhead abstractions & template metaprogramming"],
   },
   "Java": {
     name: "Java",
@@ -402,9 +403,9 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
   "DSA": {
     name: "DSA",
     role: "Data Structures & Algorithms Mastery",
-    description: "Rigorous algorithmic problem solving spanning trees, graphs, dynamic programming, heaps, and two-pointer techniques across 763 LeetCode problems.",
+    description: "Rigorous algorithmic problem solving spanning trees, graphs, dynamic programming, heaps, and two-pointer techniques.",
     projects: [],
-    highlights: ["763 problems solved (371 Easy, 337 Medium, 55 Hard)", "Time & space complexity asymptotic analysis", "Sliding window, monotonic stack, and union-find patterns"],
+    highlights: ["Algorithmic problem solving across LeetCode", "Time & space complexity asymptotic analysis", "Sliding window, monotonic stack, and union-find patterns"],
   },
   "OOP": {
     name: "OOP",
@@ -498,8 +499,27 @@ export const skillDetailsMap: Record<string, SkillDetail> = {
   },
 };
 
-export function getSkillDetail(skillName: string): SkillDetail | null {
-  return skillDetailsMap[skillName] ?? null;
+export function getSkillDetail(skillName: string, leetCodeStats?: LeetCodeStats | null): SkillDetail | null {
+  const base = skillDetailsMap[skillName];
+  if (!base) return null;
+  if (!leetCodeStats || (skillName !== "C++" && skillName !== "DSA")) {
+    return base;
+  }
+
+  const statHighlight = `${leetCodeStats.totalDisplay} LeetCode problems solved (${leetCodeStats.easy.count} Easy, ${leetCodeStats.medium.count} Medium, ${leetCodeStats.hard.count} Hard)`;
+  if (skillName === "C++") {
+    return {
+      ...base,
+      description: `Primary language for algorithmic competitions and technical interviews using the C++ Standard Template Library (STL) across ${leetCodeStats.totalDisplay} solved LeetCode challenges.`,
+      highlights: [statHighlight, ...(base.highlights?.slice(1) ?? [])],
+    };
+  }
+
+  return {
+    ...base,
+    description: `Rigorous algorithmic problem solving spanning trees, graphs, dynamic programming, heaps, and two-pointer techniques across ${leetCodeStats.totalDisplay} LeetCode problems.`,
+    highlights: [statHighlight, ...(base.highlights?.slice(1) ?? [])],
+  };
 }
 
 export function getProjectsForSkill(skillName: string): SkillProjectLink[] {

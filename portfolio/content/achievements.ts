@@ -100,15 +100,40 @@ export interface CodingProfile {
   problemsQualifier: "+" | null;
   rating: number | null;
   updatedAt: string | null;
+  checkedAt?: string | null;
+  fetchedAt?: string | null;
+  source?: "live" | "cache" | "manual";
   verification: Verification;
   visibility: Visibility;
 }
 
-// Editable, user-supplied snapshots. No scraping or inferred timestamps.
+export interface CodeChefManualSnapshot {
+  handle: string;
+  rating: number;
+  highestRating: number;
+  stars: number;
+  division: string;
+  checkedAt: string;
+}
+
+/**
+ * Manual platform entry (CodeChef provides no unauthenticated public API).
+ * Live-API platforms (LeetCode, GeeksforGeeks, GitHub) leave numeric stats null here
+ * so every UI surface reads exclusively from the single-source data modules.
+ */
+export const codeChefManualSnapshot: CodeChefManualSnapshot = {
+  handle: "neat_otters_97",
+  rating: 1462,
+  highestRating: 1475,
+  stars: 2,
+  division: "Div 3",
+  checkedAt: "2026-11-11",
+};
+
 export const codingProfiles: readonly CodingProfile[] = [
-  { id: "leetcode", linkId: "leetcode", handle: "Code-Hacker_17", problemsSolved: 763, problemsQualifier: null, rating: null, updatedAt: null, verification: "provided", visibility: "public" },
-  { id: "codechef", linkId: "codechef", handle: "neat_otters_97", problemsSolved: null, problemsQualifier: null, rating: 1462, updatedAt: null, verification: "provided", visibility: "public" },
-  { id: "geeksforgeeks", linkId: "geeksforgeeks", handle: "meetkapa9w1y", problemsSolved: 111, problemsQualifier: "+", rating: 327, updatedAt: null, verification: "provided", visibility: "public" },
+  { id: "leetcode", linkId: "leetcode", handle: "Code-Hacker_17", problemsSolved: null, problemsQualifier: null, rating: null, updatedAt: null, source: "live", verification: "provided", visibility: "public" },
+  { id: "codechef", linkId: "codechef", handle: codeChefManualSnapshot.handle, problemsSolved: null, problemsQualifier: null, rating: codeChefManualSnapshot.rating, updatedAt: codeChefManualSnapshot.checkedAt, checkedAt: codeChefManualSnapshot.checkedAt, source: "manual", verification: "provided", visibility: "public" },
+  { id: "geeksforgeeks", linkId: "geeksforgeeks", handle: "meetkapa9w1y", problemsSolved: null, problemsQualifier: null, rating: null, updatedAt: null, source: "live", verification: "provided", visibility: "public" },
 ];
 
 export const problemSolvingTopics: readonly string[] = [
@@ -132,41 +157,31 @@ export interface LeetCodeSubmissionItem {
   timestamp: string;
 }
 
+export interface LeetCodePatternItem {
+  title: string;
+  subtitle: string;
+  tag: string;
+}
+
 export interface LeetCodeBreakdown {
   total: number;
   totalDisplay: string;
   easy: { count: number; percentage: number };
-  medium: { count: number; percentage: number; highlight?: string };
+  medium: { count: number; percentage: number; tagLabel: string; highlight?: string };
   hard: { count: number; percentage: number };
-  patterns: readonly { title: string; subtitle: string; tag: string }[];
+  patterns: readonly LeetCodePatternItem[];
   recentSubmissions?: readonly LeetCodeSubmissionItem[];
+  fetchedAt?: string;
+  source?: "live" | "cache";
+  provenance?: string;
 }
 
-export const leetCodeStats: LeetCodeBreakdown = {
-  total: 763,
-  totalDisplay: "763",
-  easy: { count: 371, percentage: 48.6 },
-  medium: { count: 337, percentage: 44.2, highlight: "The sweet spot for technical interviews" },
-  hard: { count: 55, percentage: 7.2 },
-  patterns: [
-    { title: "Sliding Window", subtitle: "Dynamic arrays, two pointers & sub-array optimizations", tag: "Array / Two Pointers" },
-    { title: "Dynamic Programming", subtitle: "Memoization, bottom-up tabulations & state transitions", tag: "Optimal Substructure" },
-    { title: "Monotonic Stacks", subtitle: "Next greater element, histogram areas & O(n) bounds", tag: "O(n) Range Queries" },
-    { title: "Graph DFS/BFS", subtitle: "Connected components, shortest paths & topological orders", tag: "Traversal & Cycles" },
-  ],
-  recentSubmissions: [
-    { title: "Minimum Moves to Equal Array Elements", titleSlug: "minimum-moves-to-equal-array-elements", timestamp: "1793535839" },
-    { title: "Twisted Mirror Path Count", titleSlug: "twisted-mirror-path-count", timestamp: "1793481572" },
-    { title: "Shortest Path With At Most K Consecutive Identical Characters", titleSlug: "shortest-path-with-at-most-k-consecutive-identical-characters", timestamp: "1793392999" },
-    { title: "Difference Between Peaks and Valleys", titleSlug: "difference-between-peaks-and-valleys", timestamp: "1793308194" },
-    { title: "Minimum XOR Path in a Grid", titleSlug: "minimum-xor-path-in-a-grid", timestamp: "1793218638" },
-    { title: "Binary Digit Score", titleSlug: "binary-digit-score", timestamp: "1793127327" },
-    { title: "Create Grid With Exactly One Path", titleSlug: "create-grid-with-exactly-one-path", timestamp: "1793111822" },
-    { title: "Count Islands With Total Value Divisible by K", titleSlug: "count-islands-with-total-value-divisible-by-k", timestamp: "1793052804" },
-    { title: "Number of Closed Islands", titleSlug: "number-of-closed-islands", timestamp: "1793052139" },
-    { title: "Binary Search Tree Iterator", titleSlug: "binary-search-tree-iterator", timestamp: "1793048556" },
-  ],
-};
+export const leetCodePatterns: readonly LeetCodePatternItem[] = [
+  { title: "Sliding Window", subtitle: "Dynamic arrays, two pointers & sub-array optimizations", tag: "Array / Two Pointers" },
+  { title: "Dynamic Programming", subtitle: "Memoization, bottom-up tabulations & state transitions", tag: "Optimal Substructure" },
+  { title: "Monotonic Stacks", subtitle: "Next greater element, histogram areas & O(n) bounds", tag: "O(n) Range Queries" },
+  { title: "Graph DFS/BFS", subtitle: "Connected components, shortest paths & topological orders", tag: "Traversal & Cycles" },
+];
 
 export interface HonorItem {
   id: string;

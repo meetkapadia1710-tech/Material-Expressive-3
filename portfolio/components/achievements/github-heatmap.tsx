@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState, type PointerEvent } from "react";
-import type { GitHubCalendarData } from "@/lib/github-calendar";
+import type { GitHubCalendarData, GitHubCalendarWithMeta } from "@/lib/github-calendar";
+import { formatAsOfDateTime } from "@/lib/coding-stats-core";
 import { Icon } from "@/components/icon";
 
+type CalendarInput = GitHubCalendarData | GitHubCalendarWithMeta;
+
 interface GitHubHeatmapProps {
-  initialData: GitHubCalendarData | null;
+  initialData: CalendarInput | null;
 }
 
 function formatDate(dateStr: string): string {
@@ -143,9 +146,20 @@ export function GitHubHeatmap({ initialData }: GitHubHeatmapProps) {
             </span>
             <h3>Continuous Contribution Heatmap</h3>
           </div>
-          <span className="heatmap-live-badge" title="Calendar data is revalidated hourly">
-            <span className="live-pulse-dot pulse-active" />
-            Calendar data from GitHub
+          <span
+            className="heatmap-live-badge"
+            title={
+              "source" in data && data.source === "cache"
+                ? "Showing last cached GitHub calendar snapshot"
+                : "Calendar data is revalidated hourly"
+            }
+          >
+            <span
+              className={`live-pulse-dot ${"source" in data && data.source === "cache" ? "is-cached-dot" : "pulse-active"}`}
+            />
+            {"source" in data && data.source === "cache" && "fetchedAt" in data
+              ? `Cached · As of ${formatAsOfDateTime(data.fetchedAt)}`
+              : "Calendar data from GitHub"}
           </span>
         </div>
 

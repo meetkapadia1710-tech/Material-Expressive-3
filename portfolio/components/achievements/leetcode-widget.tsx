@@ -1,20 +1,31 @@
 "use client";
 
 import { useEffect, useState, useRef, useCallback } from "react";
-import { leetCodeStats, type LeetCodeBreakdown, type LeetCodeSubmissionItem } from "@/content/achievements";
+import type { LeetCodeBreakdown, LeetCodeSubmissionItem } from "@/content/achievements";
+import {
+  assertDevCodingStatProvenance,
+  formatAsOfDateTime,
+  formatRelativeAge,
+} from "@/lib/coding-stats-core";
 import { Icon } from "@/components/icon";
 import { useCountUp } from "@/components/motion/use-count-up";
-import type { LeetCodeLiveStats } from "@/lib/leetcode";
 
 interface LeetCodeWidgetProps {
-  stats?: LeetCodeBreakdown;
+  stats: LeetCodeBreakdown | null;
+  onRefresh?: () => void;
+  isRefreshing?: boolean;
+  syncNote?: string | null;
   className?: string;
 }
 
-function formatRelativeTime(timestamp: string): string {
+function formatRelativeTime(timestamp: string, nowMs: number | null): string {
   const ts = parseInt(timestamp, 10);
   if (isNaN(ts)) return "Recently";
-  const now = Math.floor(Date.now() / 1000);
+  const date = new Date(ts * 1000);
+  const stableDate = date.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "Asia/Kolkata" });
+  if (nowMs === null) return stableDate;
+
+  const now = Math.floor(nowMs / 1000);
   const diffSec = Math.max(0, now - ts);
   const diffHours = Math.floor(diffSec / 3600);
   const diffDays = Math.floor(diffHours / 24);
@@ -25,8 +36,7 @@ function formatRelativeTime(timestamp: string): string {
   }
   if (diffDays === 1) return "Yesterday";
   if (diffDays < 30) return `${diffDays}d ago`;
-  const date = new Date(ts * 1000);
-  return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  return stableDate;
 }
 
 function LeetCodeCenterCount({ target }: { target: number }) {
@@ -50,16 +60,31 @@ function LeetCodeCenterCount({ target }: { target: number }) {
   return <span ref={countRef} className="leetcode-center-count tabular-nums">{count}</span>;
 }
 
-export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className = "" }: LeetCodeWidgetProps) {
-  const [currentStats, setCurrentStats] = useState<LeetCodeBreakdown>(initialStats);
+export function LeetCodeWidget({
+  stats,
+  onRefresh,
+  isRefreshing = false,
+  syncNote = null,
+  className = "",
+}: LeetCodeWidgetProps) {
   const [activeSegment, setActiveSegment] = useState<"all" | "easy" | "medium" | "hard">("all");
   const [activePattern, setActivePattern] = useState<number | null>(null);
-  const [isLiveSync, setIsLiveSync] = useState(false);
+  const [nowMs, setNowMs] = useState<number | null>(null);
 
   // M3 Shared Sliding Indicator state and refs
   const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>({ left: 0, width: 0 });
   const groupRef = useRef<HTMLDivElement>(null);
   const buttonRefs = useRef<Map<string, HTMLButtonElement>>(new Map());
+
+  if (stats) {
+    assertDevCodingStatProvenance(stats, "LeetCodeWidget");
+  }
+
+  useEffect(() => {
+    setNowMs(Date.now());
+    const timer = window.setInterval(() => setNowMs(Date.now()), 60_000);
+    return () => window.clearInterval(timer);
+  }, [stats?.fetchedAt]);
 
   const updateIndicator = useCallback(() => {
     const btn = buttonRefs.current.get(activeSegment);
@@ -76,58 +101,32 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
     const handleResize = () => updateIndicator();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [updateIndicator]);
+  }, [updateIndicator, stats?.total, stats?.easy.count, stats?.medium.count, stats?.hard.count]);
 
-  useEffect(() => {
-    let cancelled = false;
-    async function fetchLiveLeetCode() {
-      try {
-        const res = await fetch("/api/leetcode");
-        if (!res.ok) return;
-        const live: LeetCodeLiveStats | null = await res.json();
-        if (cancelled || !live || !Number.isSafeInteger(live.total) || live.total < 0 || !Array.isArray(live.recent)) return;
+  if (!stats) {
+    return null;
+  }
 
-        setCurrentStats((prev) => ({
-          ...prev,
-          total: live.total,
-          totalDisplay: `${live.total}`,
-          easy: live.easy,
-          medium: live.medium,
-          hard: live.hard,
-          recentSubmissions: live.recent,
-        }));
-        setIsLiveSync(true);
-      } catch {
-        // Graceful fallback to static props
-      }
-    }
-
-    fetchLiveLeetCode();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  const stats = currentStats;
+  // Single-source bucket totals guarantee card, ring, filter chips, and bars never diverge.
+  const bucketTotal = stats.easy.count + stats.medium.count + stats.hard.count;
+  const totalCount = bucketTotal > 0 || stats.total === 0 ? bucketTotal : stats.total;
+  const totalDisplay = `${totalCount}`;
 
   // Active target count for animated focal number
   const targetCount =
     activeSegment === "easy"
       ? stats.easy.count
       : activeSegment === "medium"
-      ? stats.medium.count
-      : activeSegment === "hard"
-      ? stats.hard.count
-      : stats.total;
-
+        ? stats.medium.count
+        : activeSegment === "hard"
+          ? stats.hard.count
+          : totalCount;
 
   // SVG Geometry for Expressive Donut Progress Ring
   const radius = 54;
   const circumference = 2 * Math.PI * radius; // ~339.292
-
-  // Gap between segments in arc length
   const gap = 8;
-  const arcLength = (count: number) => stats.total > 0 ? Math.max(0, (count / stats.total) * circumference - gap) : 0;
+  const arcLength = (count: number) => (totalCount > 0 ? Math.max(0, (count / totalCount) * circumference - gap) : 0);
   const easyLen = arcLength(stats.easy.count);
   const medLen = arcLength(stats.medium.count);
   const hardLen = arcLength(stats.hard.count);
@@ -145,18 +144,30 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
       case "hard":
         return `Hard: ${stats.hard.count} problems (${stats.hard.percentage}%) — advanced constraint bounding, complex graph modeling & competitive dynamic programming.`;
       default:
-        return `${stats.totalDisplay} solved problems verified across core algorithmic patterns with verified clean execution.`;
+        return `${totalDisplay} solved problems across Easy (${stats.easy.count}), Medium (${stats.medium.count}), and Hard (${stats.hard.count}) buckets.`;
     }
   };
 
   const recentList: readonly LeetCodeSubmissionItem[] = stats.recentSubmissions ?? [];
 
   const segments = [
-    { id: "all" as const, label: `All (${stats.totalDisplay})`, dotClass: "" },
+    { id: "all" as const, label: `All (${totalDisplay})`, dotClass: "" },
     { id: "easy" as const, label: `Easy (${stats.easy.count})`, dotClass: "dot-easy" },
     { id: "medium" as const, label: `Med (${stats.medium.count})`, dotClass: "dot-medium" },
     { id: "hard" as const, label: `Hard (${stats.hard.count})`, dotClass: "dot-hard" },
   ];
+
+  const isLive = stats.source === "live";
+  const ageLabel =
+    stats.source === "cache"
+      ? stats.fetchedAt
+        ? `Cached · As of ${formatAsOfDateTime(stats.fetchedAt)}`
+        : "Cached"
+      : stats.fetchedAt
+        ? nowMs !== null
+          ? `Synced · ${formatRelativeAge(stats.fetchedAt, nowMs)}`
+          : `Synced · As of ${formatAsOfDateTime(stats.fetchedAt)}`
+        : "Synced · Hourly";
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     const ids: Array<"all" | "easy" | "medium" | "hard"> = ["all", "easy", "medium", "hard"];
@@ -184,7 +195,7 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
 
   return (
     <div className={`leetcode-widget ${className}`} aria-label="Interactive LeetCode Problem Solving Breakdown">
-      {/* Widget Header with Sync Assist Chip */}
+      {/* Widget Header with Truthful Sync Status Chip */}
       <div className="leetcode-header">
         <div className="leetcode-header-title">
           <div className="leetcode-eyebrow-row">
@@ -192,12 +203,24 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
               <Icon name="code" className="leetcode-icon-inline" /> Problem Solving Analytics
             </span>
             <span
-              className="leetcode-live-badge m3-assist-chip"
+              className={`leetcode-live-badge m3-assist-chip ${isLive ? "is-live-source" : "is-cache-source"}`}
               title="Hourly synchronization with LeetCode GraphQL API (3600s cache)"
             >
-              <span className={`live-pulse-dot ${isLiveSync ? "pulse-active" : ""}`} />
-              <span>{isLiveSync ? "LeetCode Sync • Hourly" : "Verified Snapshot"}</span>
+              <span className={`live-pulse-dot ${isLive ? "pulse-active" : "is-cached-dot"}`} aria-hidden="true" />
+              <span suppressHydrationWarning>{syncNote ?? ageLabel}</span>
             </span>
+            {onRefresh ? (
+              <button
+                type="button"
+                className="leetcode-refresh-button m3-assist-chip"
+                onClick={onRefresh}
+                disabled={isRefreshing}
+                aria-label={isRefreshing ? "Refreshing coding statistics" : "Refresh coding statistics"}
+              >
+                <Icon name="spark" className="leetcode-icon-inline" />
+                <span>{isRefreshing ? "Syncing…" : "Refresh"}</span>
+              </button>
+            ) : null}
           </div>
           <h3>LeetCode Problem Distribution</h3>
         </div>
@@ -212,7 +235,6 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
           data-active-segment={activeSegment}
           onKeyDown={handleKeyDown}
         >
-          {/* Shared sliding active indicator */}
           <span
             className={`leetcode-segmented-indicator indicator-${activeSegment}`}
             style={{
@@ -250,12 +272,11 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
             <svg
               className="leetcode-donut-svg"
               viewBox="0 0 140 140"
-              aria-label={`Donut chart showing ${stats.totalDisplay} solved: ${stats.easy.count} Easy, ${stats.medium.count} Medium, ${stats.hard.count} Hard`}
+              aria-label={`Donut chart showing ${totalDisplay} solved: ${stats.easy.count} Easy, ${stats.medium.count} Medium, ${stats.hard.count} Hard`}
               role="img"
               focusable={false}
               style={{ outline: "none", border: "none" }}
             >
-              {/* Background Track Ring */}
               <circle
                 className="leetcode-donut-track"
                 cx="70"
@@ -263,7 +284,6 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
                 r={radius}
                 strokeWidth="12"
               />
-              {/* Easy Arc Segment */}
               <circle
                 className={`leetcode-donut-segment segment-easy ${
                   activeSegment === "easy" || activeSegment === "all" ? "segment-active" : "segment-dimmed"
@@ -276,7 +296,6 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
                 strokeDasharray={`${easyLen} ${circumference}`}
                 strokeDashoffset={easyOffset}
               />
-              {/* Medium Arc Segment */}
               <circle
                 className={`leetcode-donut-segment segment-medium ${
                   activeSegment === "medium" || activeSegment === "all" ? "segment-active" : "segment-dimmed"
@@ -289,7 +308,6 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
                 strokeDasharray={`${medLen} ${circumference}`}
                 strokeDashoffset={medOffset}
               />
-              {/* Hard Arc Segment */}
               <circle
                 className={`leetcode-donut-segment segment-hard ${
                   activeSegment === "hard" || activeSegment === "all" ? "segment-active" : "segment-dimmed"
@@ -304,7 +322,6 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
               />
             </svg>
 
-            {/* Focal Center Count with Tabular Emphasized Digits */}
             <div className="leetcode-donut-center" aria-hidden="true">
               <LeetCodeCenterCount target={targetCount} />
               <span className="leetcode-center-label">
@@ -362,7 +379,7 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
               <div className="leetcode-bar-label-group">
                 <span className="leetcode-dot dot-medium" aria-hidden="true" />
                 <span className="leetcode-bar-difficulty">Medium</span>
-                <span className="leetcode-badge-sweetspot">Interview Sweet Spot</span>
+                <span className="leetcode-badge-sweetspot">{stats.medium.tagLabel}</span>
               </div>
               <div className="leetcode-bar-metrics">
                 <strong className="tabular-nums">{stats.medium.count}</strong>
@@ -436,7 +453,7 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
           </tr>
           <tr>
             <th scope="row">Total</th>
-            <td>{stats.totalDisplay}</td>
+            <td>{totalDisplay}</td>
             <td>100%</td>
           </tr>
         </tbody>
@@ -480,11 +497,11 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
         </div>
       ) : null}
 
-      {/* Recently Solved Questions List (M3 List with Leading Status Shape) */}
+      {/* Recently Solved Questions List */}
       {recentList.length ? (
         <div className="leetcode-recent-section">
           <div className="leetcode-recent-header">
-            <h4>10 recent accepted submissions</h4>
+            <h4>Recent accepted submissions</h4>
             <span className="leetcode-recent-count recent-subtitle">Latest accepted algorithmic solutions</span>
           </div>
           <div className="leetcode-recent-list" role="list">
@@ -497,7 +514,9 @@ export function LeetCodeWidget({ stats: initialStats = leetCodeStats, className 
                   <span className="leetcode-recent-title recent-title">{item.title}</span>
                 </div>
                 <div className="leetcode-recent-meta">
-                  <span className="leetcode-recent-time recent-time">{formatRelativeTime(item.timestamp)}</span>
+                  <span className="leetcode-recent-time recent-time" suppressHydrationWarning>
+                    {formatRelativeTime(item.timestamp, nowMs)}
+                  </span>
                   <a
                     href={`https://leetcode.com/problems/${item.titleSlug}`}
                     target="_blank"

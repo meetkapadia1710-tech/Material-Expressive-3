@@ -11,7 +11,7 @@ const sectionDestinations: { id: string; label: string; icon: IconName }[] = [
   { id: "achievement-github", label: "GitHub Activity", icon: "github" },
 ];
 
-const headingGap = 16;
+const headingGap = 24;
 const landingTolerance = 12;
 const scrollKeys = new Set(["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End", " "]);
 
@@ -118,11 +118,19 @@ export function AchievementsScrollNav({ sectionIds }: { sectionIds: readonly str
     };
     const measure = () => {
       const nav = wrapper.current;
-      if (nav) {
-        const style = getComputedStyle(nav);
-        const stickyHeight = style.position === "sticky" ? nav.offsetHeight + (parseFloat(style.top) || 0) : 0;
-        activationLine.current = stickyHeight + headingGap;
-      }
+      const header = document.querySelector<HTMLElement>(".site-header");
+      const headerStyle = header ? getComputedStyle(header) : null;
+      const headerBottom =
+        header && headerStyle && (headerStyle.position === "sticky" || headerStyle.position === "fixed")
+          ? Math.max(0, header.getBoundingClientRect().bottom)
+          : 0;
+      const navStyle = nav ? getComputedStyle(nav) : null;
+      const stickyHeight =
+        nav && navStyle?.position === "sticky" ? nav.offsetHeight + (parseFloat(navStyle.top) || 0) : 0;
+      const offset = Math.ceil(Math.max(headerBottom, stickyHeight) + headingGap);
+      activationLine.current = offset;
+      document.documentElement.style.setProperty("--achievements-scroll-offset", `${offset}px`);
+      document.documentElement.style.scrollPaddingTop = `${offset}px`;
       requestTrack();
     };
     const onHash = () => {
@@ -146,6 +154,8 @@ export function AchievementsScrollNav({ sectionIds }: { sectionIds: readonly str
     return () => {
       cancelAnimationFrame(frame);
       clearPending();
+      document.documentElement.style.removeProperty("--achievements-scroll-offset");
+      document.documentElement.style.scrollPaddingTop = "";
       observer.disconnect();
       window.removeEventListener("resize", measure);
       window.removeEventListener("scroll", requestTrack);

@@ -5,8 +5,8 @@ import { achievementsData, getAchievementsContent, type AchievementsData } from 
 import { Icon } from "@/components/icon";
 import { MorphingShape } from "@/components/motion/morphing-shape";
 import { CertificationsList } from "./certifications-list";
-import { LeetCodeWidget } from "./leetcode-widget";
-import { PlatformProfileCard } from "./platform-profile-card";
+import type { CodingStatsBundle } from "@/lib/coding-stats";
+import { CodingProfilesSection } from "./coding-profiles-section";
 import { DocumentChips } from "./document-chips";
 import { AchievementsScrollNav } from "./achievements-scroll-nav";
 import { AchievementCard } from "./achievement-card";
@@ -113,14 +113,16 @@ function AchievementSection({ id, title, children }: { id: string; title: string
 
 export function AchievementsPage({
   data = achievementsData,
+  codingStats,
   className = "",
   children,
 }: {
   data?: AchievementsData;
+  codingStats?: CodingStatsBundle | null;
   className?: string;
   children?: ReactNode;
 }) {
-  const content = getAchievementsContent(data);
+  const content = getAchievementsContent(data, codingStats);
   const hasContent =
     content.experience.length ||
     content.hackathons.length ||
@@ -209,31 +211,19 @@ export function AchievementsPage({
       {/* 4. Coding Profiles and Problem Solving */}
       {content.profiles.length || content.topics.length ? (
         <AchievementSection id="achievement-coding" title={copy.codingTitle}>
-          {content.profiles.length ? (
-            <div className="coding-profile-grid">
-              {content.profiles.map((profile) => (
-                <PlatformProfileCard
-                  key={profile.id}
-                  profile={profile}
-                  labels={{
-                    problemsLabel: copy.problemsLabel,
-                    ratingLabel: copy.ratingLabel,
-                    scoreLabel: copy.scoreLabel,
-                    updatedLabel: copy.updatedLabel,
-                  }}
-                />
-              ))}
-            </div>
-          ) : null}
-
-          {/* Interactive LeetCode Breakdown & Algorithmic Patterns Widget */}
-          {content.profiles.some(
-            (p) => p.id === "leetcode" && p.problemsSolved !== 123 && (p.problemsSolved ?? 0) >= 650
-          ) ? (
-            <div data-platform-scheme="leetcode" className="leetcode-widget-wrapper">
-              <LeetCodeWidget />
-            </div>
-          ) : null}
+          {/* Synchronized Coding Profiles & LeetCode Breakdown Widget */}
+          <CodingProfilesSection
+            codingProfiles={data.codingProfiles}
+            links={data.links}
+            initialCodingStats={codingStats}
+            labels={{
+              problemsLabel: copy.problemsLabel,
+              ratingLabel: copy.ratingLabel,
+              scoreLabel: copy.scoreLabel,
+              updatedLabel: copy.updatedLabel,
+            }}
+            enableClientSync={codingStats !== undefined}
+          />
 
           {/* DSA and Systems Topics Chips */}
           {content.topics.length ? (

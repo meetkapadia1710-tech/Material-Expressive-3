@@ -8,6 +8,7 @@ import { navigation, profile, siteCopy } from "@/content/profile";
 import { interfaceCopy } from "@/content/interface";
 import { Icon } from "@/components/icon";
 import { ColorSeedPicker } from "@/components/color-seed-picker";
+import type { CodingSearchEntry } from "@/lib/coding-stats";
 import { motion } from "framer-motion";
 import { readMotionBezier, readMotionMilliseconds } from "@/components/motion/motion-tokens";
 
@@ -36,7 +37,7 @@ const NavigationLinks = memo(function NavigationLinks() {
   </nav>;
 });
 
-function CommandPaletteController() {
+function CommandPaletteController({ codingEntries = [] }: { codingEntries?: readonly CodingSearchEntry[] }) {
   const [paletteRequested, setPaletteRequested] = useState(false);
   const [paletteOpen, setPaletteOpen] = useState(false);
   const openPalette = useCallback(() => {
@@ -69,11 +70,11 @@ function CommandPaletteController() {
     }}>
       <Icon name="search" /><span>{interfaceCopy.command.trigger}</span><kbd aria-hidden="true" data-shortcut={interfaceCopy.command.shortcut} />
     </button>
-    {paletteRequested ? <Suspense fallback={null}><CommandPalette open={paletteOpen} onDismiss={closePalette} /></Suspense> : null}
+    {paletteRequested ? <Suspense fallback={null}><CommandPalette open={paletteOpen} onDismiss={closePalette} codingEntries={codingEntries} /></Suspense> : null}
   </>;
 }
 
-export function SiteNavigation() {
+export function SiteNavigation({ codingEntries = [] }: { codingEntries?: readonly CodingSearchEntry[] } = {}) {
   return (
     <header className="site-header">
       <Link className="brand" href="/" title={siteCopy.homeLinkLabel}>
@@ -84,7 +85,7 @@ export function SiteNavigation() {
       <div className="navigation-tools">
         <NavigationLinks />
         <div className="header-palette"><ColorSeedPicker /></div>
-        <CommandPaletteController />
+        <CommandPaletteController codingEntries={codingEntries} />
       </div>
       <ThemeToggle />
     </header>

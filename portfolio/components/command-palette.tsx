@@ -10,6 +10,7 @@ import { useToast, toggleThemeChoice } from "@/components/interface-controls";
 import { Icon } from "@/components/icon";
 import { copyToClipboard } from "@/lib/clipboard";
 import { playTactileSound } from "@/lib/sound-engine";
+import type { CodingSearchEntry } from "@/lib/coding-stats";
 import styles from "./command-palette.module.css";
 
 type GroupName = "Recent" | "Pages" | "Projects" | "Actions";
@@ -93,8 +94,16 @@ function Highlight({ text, query }: { text: string; query: string }) {
   return <>{chunks.map((chunk, index) => chunk.highlight ? <mark key={index}>{chunk.text}</mark> : chunk.text)}</>;
 }
 
-function getBaseItems(): CommandItem[] {
+function getBaseItems(codingEntries: readonly CodingSearchEntry[] = []): CommandItem[] {
   const pages: CommandItem[] = navigation.map((page) => ({ id: `page:${page.href}`, label: page.label, detail: page.href, group: "Pages", href: page.href }));
+  const statItems: CommandItem[] = codingEntries.map((entry) => ({
+    id: entry.id,
+    label: entry.label,
+    detail: entry.detail,
+    group: "Pages",
+    href: entry.href,
+    searchText: entry.searchText,
+  }));
   const projectItems: CommandItem[] = getPublicProjects().map((project) => ({
     id: `project:${project.slug}`,
     label: project.name,
@@ -110,10 +119,18 @@ function getBaseItems(): CommandItem[] {
     ...(links.resume.href ? [{ id: "action:resume", label: copy.command.openResume, detail: links.resume.verification === "unverified" ? copy.command.unverified : links.resume.value ?? "", group: "Actions" as const, href: links.resume.href, external: true }] : []),
     { id: "action:theme", label: copy.command.toggleTheme, detail: "", group: "Actions", action: "toggle-theme" },
   ];
-  return [...pages, ...projectItems, ...actions];
+  return [...pages, ...statItems, ...projectItems, ...actions];
 }
 
-export default function CommandPalette({ open, onDismiss }: { open: boolean; onDismiss: () => void }) {
+export default function CommandPalette({
+  open,
+  onDismiss,
+  codingEntries = [],
+}: {
+  open: boolean;
+  onDismiss: () => void;
+  codingEntries?: readonly CodingSearchEntry[];
+}) {
   const notify = useToast();
   const router = useRouter();
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -122,7 +139,7 @@ export default function CommandPalette({ open, onDismiss }: { open: boolean; onD
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const [recentIds, setRecentIds] = useState<string[]>([]);
-  const baseItems = useMemo(() => getBaseItems(), []);
+  const baseItems = useMemo(() => getBaseItems(codingEntries), [codingEntries]);
   const byId = useMemo(() => new Map(baseItems.map((item) => [item.id, item])), [baseItems]);
 
   useLayoutEffect(() => {

@@ -9,6 +9,7 @@ import { homeCopy, profile } from "../content/profile";
 import { links } from "../content/links";
 import { skills } from "../content/skills";
 import { hackathons, codingProfiles } from "../content/achievements";
+import { buildLeetCodeStats } from "../lib/leetcode";
 
 test("featured order and links preserve the supplied selection", () => {
   assert.deepEqual(getFeaturedProjects().map((p) => p.slug), ["repograde", "hindsight", "playhub", "bd-buildcon-bhumi-developers", "api-traffic-optimizer", "meetos"]);
@@ -41,11 +42,26 @@ test("unknown and unverified fields remain explicit", () => {
   assert.equal(getProjectBySlug("meetos")?.repoUrl, null);
   assert.deepEqual(projects.filter((p) => p.challenges !== null).map((p) => p.slug), ["meetos"]);
   assert.equal(getProjectBySlug("hindsight")?.status, null);
-  assert.equal(codingProfiles.find((p) => p.id === "geeksforgeeks")?.rating, 327);
+  assert.equal(codingProfiles.find((p) => p.id === "leetcode")?.problemsSolved, null);
+  assert.equal(codingProfiles.find((p) => p.id === "geeksforgeeks")?.problemsSolved, null);
+  assert.equal(codingProfiles.find((p) => p.id === "geeksforgeeks")?.rating, null);
+  assert.equal(codingProfiles.find((p) => p.id === "codechef")?.source, "manual");
+  assert.ok(codingProfiles.find((p) => p.id === "codechef")?.checkedAt);
 });
 
 test("Home uses content, the project scroll target, all featured routes and skill categories", () => {
-  const html = renderToStaticMarkup(<HomePage />);
+  const sampleLeetCode = buildLeetCodeStats({
+    username: "Code-Hacker_17",
+    easy: 372,
+    medium: 340,
+    hard: 56,
+    recent: [],
+    fetchedAt: "2026-11-11T10:00:00.000Z",
+    source: "live",
+  });
+  const html = renderToStaticMarkup(<HomePage leetCodeStats={sampleLeetCode} />);
+  assert.ok(html.includes(">768<"));
+  assert.ok(!html.includes("650+"));
   assert.ok(html.includes('href="#selected-projects"'));
   assert.ok(html.includes('id="selected-projects"'));
   assert.ok(html.includes(profile.headline));

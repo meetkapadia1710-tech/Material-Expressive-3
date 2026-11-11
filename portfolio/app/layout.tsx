@@ -12,6 +12,9 @@ import { ProjectTransitionGroup } from "@/components/motion/shared-project-eleme
 import { RouteTransitionContent } from "@/components/motion/route-transition-content";
 import { IntroLoader } from "@/components/motion/intro-loader";
 import { AppShellClientControls } from "@/components/shell/app-shell-controls";
+import { extractCommandCodingItems, getCodingStats } from "@/lib/coding-stats";
+
+export const revalidate = 3600;
 
 const displayFont = localFont({ src: "../node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2", variable: "--font-display-local", display: "swap", weight: "200 800" });
 const bodyFont = localFont({ src: "../node_modules/@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2", variable: "--font-body-local", display: "swap", weight: "100 1000" });
@@ -31,12 +34,15 @@ export const viewport: Viewport = {
   interactiveWidget: "resizes-content",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const codingStats = await getCodingStats();
+  const codingEntries = extractCommandCodingItems(codingStats);
+
   return <html suppressHydrationWarning lang="en" data-color-palette="default" className={`${displayFont.variable} ${bodyFont.variable}`}>
     <head>
       <script dangerouslySetInnerHTML={{ __html: themeBootstrapScript }} />
       <script dangerouslySetInnerHTML={{ __html: introGateScript }} />
     </head>
-    <body suppressHydrationWarning><ProjectTransitionGroup><ToastProvider><MotionRuntime /><IntroLoader /><a href="#main-content" className="skip-link">{siteCopy.skipLink}</a><div className="site-shell"><SiteNavigation /><main id="main-content" tabIndex={-1} suppressHydrationWarning><RouteTransitionContent>{children}</RouteTransitionContent></main><SiteFooter /></div><AppShellClientControls /></ToastProvider></ProjectTransitionGroup></body>
+    <body suppressHydrationWarning><ProjectTransitionGroup><ToastProvider><MotionRuntime /><IntroLoader /><a href="#main-content" className="skip-link">{siteCopy.skipLink}</a><div className="site-shell"><SiteNavigation codingEntries={codingEntries} /><main id="main-content" tabIndex={-1} suppressHydrationWarning><RouteTransitionContent>{children}</RouteTransitionContent></main><SiteFooter /></div><AppShellClientControls /></ToastProvider></ProjectTransitionGroup></body>
   </html>;
 }

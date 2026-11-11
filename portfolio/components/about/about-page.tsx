@@ -1,9 +1,16 @@
+import type { LeetCodeStats } from "@/lib/leetcode";
 import { aboutCopy, pageCopy, profile } from "@/content/profile";
 import { skills } from "@/content/skills";
 import { Icon } from "@/components/icon";
 import { MorphingShape } from "@/components/motion/morphing-shape";
 
-export function AboutPage({ className = "" }: { className?: string }) {
+export function AboutPage({
+  className = "",
+  leetCodeStats = null,
+}: {
+  className?: string;
+  leetCodeStats?: LeetCodeStats | null;
+}) {
   const education = profile.education;
   const learning = skills.find((group) => group.id === "learning");
 
@@ -41,7 +48,11 @@ export function AboutPage({ className = "" }: { className?: string }) {
           <div className="about-principle-card tone-accent">
             <div className="about-principle-icon" aria-hidden="true"><Icon name="monitor" /></div>
             <h3>Deep Fundamentals</h3>
-            <p>Strong DSA base (650+ LeetCode) married to modern web frameworks, system design, and database engineering.</p>
+            <p>
+              {leetCodeStats
+                ? `Strong DSA base (${leetCodeStats.totalDisplay} LeetCode solved: ${leetCodeStats.easy.count} Easy, ${leetCodeStats.medium.count} Medium, ${leetCodeStats.hard.count} Hard) married to modern web frameworks, system design, and database engineering.`
+                : "Strong DSA and algorithmic fundamentals married to modern web frameworks, system design, and database engineering."}
+            </p>
           </div>
         </div>
 

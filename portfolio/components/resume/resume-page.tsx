@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { profile } from "@/content/profile";
 import { links } from "@/content/links";
-import { experience, certifications, codingProfiles, leetCodeStats } from "@/content/achievements";
+import { experience, certifications } from "@/content/achievements";
+import { buildResumeCodingLines } from "@/lib/coding-stats-core";
+import type { CodingStatsBundle } from "@/lib/coding-stats";
 import { getPublicProjects, meetOSProject } from "@/content/projects";
 import { skillCategories } from "@/content/skills";
 import { Icon } from "@/components/icon";
@@ -13,10 +15,13 @@ import { copyToClipboard } from "@/lib/clipboard";
 import { playTactileSound } from "@/lib/sound-engine";
 import styles from "./resume-page.module.css";
 
-export function ResumePage() {
+export function ResumePage({ codingStats = null }: { codingStats?: CodingStatsBundle | null } = {}) {
   const notify = useToast();
   const [copyStatus, setCopyStatus] = useState<"idle" | "pending" | "copied" | "failed">("idle");
   const copied = copyStatus === "copied";
+  const lc = codingStats?.leetcode ?? null;
+  const cc = codingStats?.codechef ?? null;
+  const gfg = codingStats?.geeksforgeeks ?? null;
 
   useEffect(() => {
     if (!copied) return;
@@ -32,10 +37,12 @@ export function ResumePage() {
     if (copyStatus === "pending" || copied) return;
     setCopyStatus("pending");
     playTactileSound("click");
+    const { headerLine: lcLine, sectionText: cpLines } = buildResumeCodingLines(codingStats);
+
     const textResume = `MEET KAPADIA
 ${profile.location.label} | meetkapadia1710@gmail.com
 GitHub: https://github.com/meetkapadia1710-tech | LinkedIn: https://www.linkedin.com/in/meet-kapadia17
-LeetCode: https://leetcode.com/u/Code-Hacker_17/ (763+ solved, 337 Medium)
+${lcLine}
 
 EDUCATION
 Indian Institute of Information Technology Vadodara (IIIT Vadodara)
@@ -68,9 +75,7 @@ ${meetOSProject.features.slice(0, 2).map((feature) => `• ${feature}`).join("\n
 • Live demo: ${meetOSProject.liveUrl}
 
 PROBLEM SOLVING & COMPETITIVE PROGRAMMING
-• LeetCode: 763+ Solved (371 Easy, 337 Medium, 55 Hard). Focused on Dynamic Programming, Sliding Window, Graphs, and Monotonic Stacks.
-• CodeChef: 1462 Rating (neat_otters_97).
-• GeeksforGeeks: 111+ Solved, 327 Score (meetkapa9w1y).
+${cpLines}
 
 CERTIFICATIONS
 • NVIDIA Deep Learning Institute: Fundamentals of Deep Learning (Credential: iCYD7o4TQD2sk23TRgpwJA)
@@ -227,18 +232,38 @@ SKILLS
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Problem Solving & Competitive Programming</h2>
           <div className={styles.metricsGrid}>
-            <div className={styles.metricCard}>
-              <span className={styles.metricValue}>{leetCodeStats.total}+</span>
-              <span className={styles.metricLabel}>LeetCode Solved ({leetCodeStats.medium.count} Medium, {leetCodeStats.hard.count} Hard)</span>
-            </div>
-            <div className={styles.metricCard}>
-              <span className={styles.metricValue}>{codingProfiles.find((p) => p.id === "codechef")?.rating ?? 1462}</span>
-              <span className={styles.metricLabel}>CodeChef Peak Rating (neat_otters_97)</span>
-            </div>
-            <div className={styles.metricCard}>
-              <span className={styles.metricValue}>111+ / 327</span>
-              <span className={styles.metricLabel}>GeeksforGeeks Solved / Score (meetkapa9w1y)</span>
-            </div>
+            {lc ? (
+              <div className={styles.metricCard}>
+                <span className={styles.metricValue}>{lc.totalDisplay}</span>
+                <span className={styles.metricLabel}>
+                  LeetCode Solved ({lc.easy.count} Easy, {lc.medium.count} Medium, {lc.hard.count} Hard)
+                </span>
+              </div>
+            ) : null}
+            {cc ? (
+              <div className={styles.metricCard}>
+                <span className={styles.metricValue}>{cc.rating}</span>
+                <span className={styles.metricLabel}>
+                  CodeChef Rating ({cc.handle} · Manual, {cc.checkedAt})
+                </span>
+              </div>
+            ) : null}
+            {gfg ? (
+              <div className={styles.metricCard}>
+                <span className={styles.metricValue}>
+                  {gfg.problemsSolved} / {gfg.score}
+                </span>
+                <span className={styles.metricLabel}>
+                  GeeksforGeeks Solved / Score ({gfg.username})
+                </span>
+              </div>
+            ) : null}
+            {!lc && !cc && !gfg ? (
+              <div className={styles.metricCard}>
+                <span className={styles.metricValue}>—</span>
+                <span className={styles.metricLabel}>Coding platform metrics temporarily unavailable</span>
+              </div>
+            ) : null}
           </div>
         </section>
 

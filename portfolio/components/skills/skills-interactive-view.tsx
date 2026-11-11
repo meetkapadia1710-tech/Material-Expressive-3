@@ -6,6 +6,7 @@ import { projectCatalogCopy } from "@/content/projects";
 import type { SkillCategory, SkillItem } from "@/content/types";
 import { groupSkillItems } from "@/lib/skill-groups";
 import { getSkillDetail, type SkillDetail } from "@/lib/skill-projects";
+import type { LeetCodeStats } from "@/lib/leetcode";
 import { MorphingShape } from "@/components/motion/morphing-shape";
 
 interface SkillsInteractiveViewProps {
@@ -14,6 +15,7 @@ interface SkillsInteractiveViewProps {
     handsOn: string;
     learningStudy: string;
   };
+  leetCodeStats?: LeetCodeStats | null;
 }
 
 type ViewMode = "all" | "hands-on" | "study";
@@ -24,7 +26,7 @@ const VIEW_MODES: { value: ViewMode; label: string }[] = [
   { value: "study", label: "Theoretical Foundations" },
 ];
 
-export function SkillsInteractiveView({ categories, groupLabels }: SkillsInteractiveViewProps) {
+export function SkillsInteractiveView({ categories, groupLabels, leetCodeStats = null }: SkillsInteractiveViewProps) {
   const [query, setQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [viewMode, setViewMode] = useState<ViewMode>("all");
@@ -123,7 +125,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
             if (!cleanQuery) return true;
             const matchesName = item.name.toLowerCase().includes(cleanQuery);
             const matchesCategory = category.name.toLowerCase().includes(cleanQuery);
-            const detail = getSkillDetail(item.name);
+            const detail = getSkillDetail(item.name, leetCodeStats);
             const matchesRole = detail?.role.toLowerCase().includes(cleanQuery) ?? false;
             const matchesProjects = detail?.projects.some((p) => p.name.toLowerCase().includes(cleanQuery)) ?? false;
 
@@ -143,7 +145,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
         };
       })
       .filter((c): c is NonNullable<typeof c> => c !== null);
-  }, [categories, selectedCategory, viewMode, cleanQuery]);
+  }, [categories, selectedCategory, viewMode, cleanQuery, leetCodeStats]);
 
   const totalMatchingSkills = useMemo(() => {
     return filteredCategories.reduce((acc, cat) => acc + cat.handsOn.length + cat.learningStudy.length, 0);
@@ -160,7 +162,7 @@ export function SkillsInteractiveView({ categories, groupLabels }: SkillsInterac
   }
 
   function skillItem(name: string, index: number) {
-    const detail = getSkillDetail(name);
+    const detail = getSkillDetail(name, leetCodeStats);
     return <li key={`${name}-${index}`}>
       {detail ? <button type="button" className="skill-item-interactive" aria-haspopup="dialog" onClick={() => setActiveSkill(detail)}>
         {name}

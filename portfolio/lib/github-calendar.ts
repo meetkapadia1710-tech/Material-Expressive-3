@@ -1,3 +1,12 @@
+import {
+  CODING_STATS_PROVENANCE,
+  CODING_STATS_REVALIDATE_SECONDS,
+  stampCodingStat,
+  type CodingStatsSource,
+  type ProvenanceStamped,
+} from "./coding-stats-core";
+import { getLastGoodCachedStat, setLastGoodCachedStat } from "./coding-stats-cache";
+
 export interface CalendarDay {
   id: string;
   date: string;
@@ -12,18 +21,35 @@ export interface GitHubCalendarData {
   maxDay: { date: string; count: number };
   weeks: CalendarDay[][];
   monthLabels: { month: string; weekIndex: number }[];
+  fetchedAt?: string;
+  source?: Exclude<CodingStatsSource, "manual">;
+  provenance?: typeof CODING_STATS_PROVENANCE;
+}
+
+export interface GitHubCalendarWithMeta extends Omit<GitHubCalendarData, "provenance">, ProvenanceStamped {
+  fetchedAt: string;
+  source: Exclude<CodingStatsSource, "manual">;
+  revalidateSeconds: typeof CODING_STATS_REVALIDATE_SECONDS;
 }
 
 const dayMs = 86_400_000;
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-export async function getGitHubCalendar(username = "meetkapadia1710-tech", request: typeof fetch = fetch): Promise<GitHubCalendarData | null> {
+export async function getGitHubCalendar(
+  username = "meetkapadia1710-tech",
+  request: typeof fetch = fetch,
+  options: { bypassCache?: boolean } = {},
+): Promise<GitHubCalendarData | null> {
   try {
-    const res = await request(`https://github.com/users/${username}/contributions`, {
+    const fetchInit: RequestInit & { next?: { revalidate: number; tags: string[] } } = {
       headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" },
-      next: { revalidate: 3600 },
       signal: AbortSignal.timeout(8000),
-    });
+      ...(options.bypassCache
+        ? { cache: "no-store" as const }
+        : { next: { revalidate: CODING_STATS_REVALIDATE_SECONDS, tags: ["coding-stats", "github-calendar"] } }),
+    };
+
+    const res = await request(`https://github.com/users/${username}/contributions`, fetchInit);
     if (!res.ok) return null;
     const html = await res.text();
 
@@ -95,3 +121,32 @@ export async function getGitHubCalendar(username = "meetkapadia1710-tech", reque
   }
 }
 
+export async function getCachedGitHubCalendar(options: {
+  username?: string;
+  request?: typeof fetch;
+  forceRefresh?: boolean;
+} = {}): Promise<GitHubCalendarWithMeta | null> {
+  const username = options.username ?? "meetkapadia1710-tech";
+  const cacheKey = `github-calendar:${username}`;
+  const raw = await getGitHubCalendar(username, options.request ?? fetch, {
+    bypassCache: options.forceRefresh,
+  });
+
+  if (raw) {
+    const live: GitHubCalendarWithMeta = stampCodingStat({
+      ...raw,
+      fetchedAt: new Date().toISOString(),
+      source: "live" as const,
+      revalidateSeconds: CODING_STATS_REVALIDATE_SECONDS,
+    });
+    setLastGoodCachedStat(cacheKey, live);
+    return live;
+  }
+
+  const cached = getLastGoodCachedStat<GitHubCalendarWithMeta>(cacheKey);
+  if (!cached) return null;
+  return stampCodingStat({
+    ...cached,
+    source: "cache" as const,
+  });
+}

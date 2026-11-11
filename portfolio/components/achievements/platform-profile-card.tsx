@@ -1,6 +1,13 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import type { CodingProfile } from "@/content/achievements";
+import {
+  assertDevCodingStatProvenance,
+  formatAsOfDate,
+  formatAsOfDateTime,
+  formatRelativeAge,
+} from "@/lib/coding-stats-core";
 import { Icon } from "@/components/icon";
 import { MorphingShape, type ShapeName } from "@/components/motion/morphing-shape";
 
@@ -47,7 +54,7 @@ export function PlatformProfileCard({
   profile,
   labels,
 }: {
-  profile: CodingProfile & { href?: string | null; label?: string };
+  profile: CodingProfile & { href?: string | null; label?: string; provenance?: string };
   labels: {
     problemsLabel: string;
     ratingLabel: string;
@@ -55,6 +62,18 @@ export function PlatformProfileCard({
     updatedLabel: string;
   };
 }) {
+  const [nowMs, setNowMs] = useState<number | null>(null);
+
+  useEffect(() => {
+    setNowMs(Date.now());
+    const timer = window.setInterval(() => setNowMs(Date.now()), 60_000);
+    return () => window.clearInterval(timer);
+  }, [profile.fetchedAt, profile.updatedAt]);
+
+  if (profile.provenance) {
+    assertDevCodingStatProvenance(profile, `PlatformProfileCard(${profile.id})`);
+  }
+
   const cfg = platformConfigs[profile.id] ?? {
     shape: "roundedSquare" as ShapeName,
     hoverShape: "circle" as ShapeName,
@@ -63,22 +82,63 @@ export function PlatformProfileCard({
     badgeLabel: profile.label ?? profile.id,
   };
 
-  const primaryNumber = profile.problemsSolved !== null ? profile.problemsSolved : profile.rating;
+  const title = profile.label ?? cfg.badgeLabel;
+  const timestampIso = profile.source === "manual" ? (profile.checkedAt ?? profile.updatedAt) : (profile.fetchedAt ?? profile.updatedAt);
 
-  const metricLabel = profile.problemsSolved !== null
-    ? labels.problemsLabel
-    : profile.linkId === "geeksforgeeks"
-    ? labels.scoreLabel
-    : labels.ratingLabel;
+  const renderStatus = () => {
+    if (profile.source === "manual") {
+      const checkedDate = formatAsOfDate(timestampIso);
+      return (
+        <p className="coding-updated coding-status-row">
+          <span className="coding-source-badge coding-source-manual">Manual</span>
+          {timestampIso ? (
+            <time dateTime={timestampIso}>Checked {checkedDate}</time>
+          ) : null}
+        </p>
+      );
+    }
 
-  return (
-    <article
-      className="coding-profile m3-platform-card"
-      data-platform-scheme={profile.id}
-      tabIndex={0}
-      aria-label={`${profile.label ?? profile.id} profile: ${primaryNumber ?? ""} ${metricLabel}`}
-    >
-      {/* Top row: Signature leading shape + identity + trailing icon action */}
+    if (profile.source === "cache" && timestampIso) {
+      return (
+        <p className="coding-updated coding-status-row">
+          <span className="coding-source-badge coding-source-cache">Cached</span>
+          <time dateTime={timestampIso}>As of {formatAsOfDateTime(timestampIso)}</time>
+        </p>
+      );
+    }
+
+    if (timestampIso) {
+      const isIsoTimestamp = timestampIso.includes("T");
+      const label = isIsoTimestamp && nowMs !== null
+        ? formatRelativeAge(timestampIso, nowMs)
+        : isIsoTimestamp
+          ? `As of ${formatAsOfDateTime(timestampIso)}`
+          : `${labels.updatedLabel} ${timestampIso}`;
+      return (
+        <p className="coding-updated coding-status-row">
+          {profile.source === "live" ? (
+            <span className="coding-source-badge coding-source-live">Live</span>
+          ) : null}
+          <time dateTime={timestampIso} suppressHydrationWarning>
+            {label}
+          </time>
+        </p>
+      );
+    }
+
+    if (profile.problemsSolved === null && profile.rating === null) {
+      return (
+        <p className="coding-updated coding-status-row">
+          <span>Stats temporarily unavailable</span>
+        </p>
+      );
+    }
+
+    return null;
+  };
+
+  const innerContent = (
+    <>
       <div className="coding-profile-header">
         <div className="coding-profile-leading">
           <MorphingShape
@@ -93,41 +153,25 @@ export function PlatformProfileCard({
             </span>
           </MorphingShape>
           <div className="platform-meta">
-            <h3>
-              {profile.href ? (
-                <a href={profile.href} target="_blank" rel="noopener noreferrer">
-                  {profile.label ?? cfg.badgeLabel}
-                  <Icon name="arrow-up-right" />
-                </a>
-              ) : (
-                profile.label ?? cfg.badgeLabel
-              )}
-            </h3>
+            <h3>{title}</h3>
             {profile.handle ? <p className="coding-handle">@{profile.handle}</p> : null}
           </div>
         </div>
 
         {profile.href ? (
-          <a
-            href={profile.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="platform-action-button"
-            aria-label={`Open ${profile.label ?? cfg.badgeLabel} profile (external)`}
-          >
+          <span className="platform-action-button" aria-hidden="true">
             <span className="action-state-layer" />
             <Icon name="arrow-up-right" />
-          </a>
+          </span>
         ) : null}
       </div>
 
-      {/* Primary & supporting metrics */}
       {profile.problemsSolved !== null || profile.rating !== null ? (
         <dl className="coding-metrics">
           {profile.problemsSolved !== null ? (
             <div>
               <dt>{labels.problemsLabel}</dt>
-              <dd>
+              <dd className="tabular-nums">
                 {profile.problemsSolved}
                 {profile.problemsQualifier}
               </dd>
@@ -136,18 +180,37 @@ export function PlatformProfileCard({
           {profile.rating !== null ? (
             <div>
               <dt>{profile.linkId === "geeksforgeeks" ? labels.scoreLabel : labels.ratingLabel}</dt>
-              <dd>{profile.rating}</dd>
+              <dd className="tabular-nums">{profile.rating}</dd>
             </div>
           ) : null}
         </dl>
       ) : null}
 
-      {profile.updatedAt ? (
-        <p className="coding-updated">
-          {labels.updatedLabel}{" "}
-          <time dateTime={profile.updatedAt}>{profile.updatedAt}</time>
-        </p>
-      ) : null}
+      {renderStatus()}
+      {profile.href ? <span className="sr-only">, opens in a new tab</span> : null}
+    </>
+  );
+
+  if (profile.href) {
+    return (
+      <a
+        href={profile.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="coding-profile m3-platform-card coding-profile-link"
+        data-platform-scheme={profile.id}
+      >
+        {innerContent}
+      </a>
+    );
+  }
+
+  return (
+    <article
+      className="coding-profile m3-platform-card"
+      data-platform-scheme={profile.id}
+    >
+      {innerContent}
     </article>
   );
 }

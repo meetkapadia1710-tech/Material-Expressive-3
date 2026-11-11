@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { MobileBottomBar } from "./mobile-bottom-bar";
 import { ShortcutsModal } from "./shortcuts-modal";
+import { SwRegistrar } from "./sw-registrar";
 import { playTactileSound, type SoundKind } from "@/lib/sound-engine";
 import { toggleThemeChoice } from "@/components/interface-controls";
 
@@ -129,6 +130,7 @@ export function AppShellClientControls() {
 
   return (
     <>
+      <SwRegistrar />
       <MobileBottomBar
         onOpenShortcuts={handleOpenShortcuts}
         onOpenCommandPalette={handleOpenCommandPalette}
