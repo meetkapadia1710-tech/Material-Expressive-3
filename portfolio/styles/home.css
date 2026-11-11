@@ -1,7 +1,33 @@
 .hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; padding-block: 62px 76px; align-items: center; }
 .hero .eyebrow { margin-bottom: 12px; }
+.hero-eyebrow {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  min-width: 0;
+  max-width: 100%;
+}
+.hero-greeting-part {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
 .tiny-spark { color: var(--color-primary); font-size: 22px; line-height: 1; }
-.location { margin-left: auto; text-transform: none; letter-spacing: 0; font-weight: 450; color: var(--color-on-surface-variant); font-size: var(--type-label-medium-size); }
+.location {
+  margin-left: auto;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 450;
+  color: var(--color-on-surface-variant);
+  font-size: var(--type-label-medium-size);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
 .hero-name { font: var(--type-display-large); letter-spacing: -.085em; margin: 0 0 25px -6px; }
 .hero-name > span { color: var(--color-primary); }
 .hero h1 { font: var(--type-headline-medium); letter-spacing: -.055em; max-width: 23ch; margin: 0 0 22px; }
@@ -149,8 +175,8 @@
   .hero-name { font-size: var(--type-display-large-size); margin: 0 0 12px; }
   .hero h1 { font: var(--type-headline-large); margin-block: 0 16px; }
   .hero-description { font-size: var(--type-body-supporting-size); line-height: 1.5; }
-  .hero .eyebrow { flex-wrap: wrap; }
-  .location { margin-left: 0; }
+  .hero .eyebrow, .hero-eyebrow { flex-wrap: wrap; gap: 4px 12px; }
+  .location { margin-left: 0; flex-basis: 100%; width: 100%; font-size: var(--type-label-small-size); }
   .hero-labels { gap: 6px; }
   .hero-labels li { font-size: var(--type-label-tiny-size); padding: 7px 9px; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: var(--control-gap); }
@@ -187,122 +213,312 @@
 
 /* --- Home Page Enhancement Styles --- */
 
-/* Hero Live Status Pill - M3 Expressive Assist Chip */
-.hero-status-pill {
+/* Material 3 Expressive "Currently Building" Banner (Compact Tonal Card) */
+
+@keyframes hero-building-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-building-banner {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 4px 6px 4px 4px;
-  border-radius: 9999px;
-  background: var(--color-surface-container-low);
+  padding: 6px 6px 6px 8px;
+  min-height: var(--touch-target);
+  border-radius: var(--shape-large);
+  background: var(--color-surface-container-high);
   border: 1px solid var(--color-outline-variant);
   color: var(--color-on-surface);
-  width: fit-content;
-  max-width: 100%;
-  margin-bottom: 22px;
   text-decoration: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  width: fit-content;
+  max-width: min(100%, 540px);
+  margin-bottom: 22px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  isolation: isolate;
+  animation: hero-building-entrance var(--motion-duration-reveal) var(--motion-project-spatial-easing) both;
+  animation-delay: 80ms;
   transition:
-    background-color var(--motion-duration-short2) var(--spring),
-    border-color var(--motion-duration-short2) var(--spring),
-    box-shadow var(--motion-duration-short2) var(--spring),
-    transform var(--motion-duration-short2) var(--spring);
+    transform var(--motion-duration-standard) var(--spring),
+    border-radius var(--motion-duration-standard) var(--spring),
+    border-color var(--motion-duration-standard) var(--spring),
+    box-shadow var(--motion-duration-standard) var(--spring),
+    background-color var(--motion-duration-standard) var(--spring);
 }
+
+/* State layer overlay */
+.hero-building-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--motion-duration-fast) var(--motion-project-effects-easing);
+  z-index: 0;
+}
+
 @media (hover: hover) and (pointer: fine) {
-  .hero-status-pill:hover {
-    background: var(--color-surface-container);
-    border-color: var(--color-primary);
+  .hero-building-banner:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px -2px color-mix(in srgb, var(--color-primary) 18%, transparent);
+    border-radius: var(--shape-extra-large);
+    border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-outline-variant));
+    box-shadow: 0 4px 16px -2px color-mix(in srgb, var(--color-primary) 14%, transparent);
+  }
+  .hero-building-banner:hover::before {
+    opacity: 0.08;
   }
 }
-.hero-status-pill:active {
+
+.hero-building-banner:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  transform: translateY(-2px);
+  border-radius: var(--shape-extra-large);
+}
+.hero-building-banner:focus-visible::before {
+  opacity: 0.10;
+}
+
+.hero-building-banner:active {
   transform: translateY(0);
 }
-.hero-status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 5px 12px 5px 10px;
-  border-radius: 9999px;
-  background: var(--color-primary-container);
-  color: var(--color-on-primary-container);
-  font-family: var(--body);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  flex-shrink: 0;
-  transition: background-color var(--motion-duration-short2) var(--spring);
+.hero-building-banner:active::before {
+  opacity: 0.12;
 }
-.hero-status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-primary) 40%, transparent);
-  animation: hero-status-pulse 2.2s infinite cubic-bezier(0.4, 0, 0.2, 1);
-  flex-shrink: 0;
-}
-@keyframes hero-status-pulse {
-  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-primary) 45%, transparent); }
-  65% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-primary) 0%, transparent); }
-  100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-primary) 0%, transparent); }
-}
-.hero-status-tag {
-  line-height: 1;
-}
-.hero-status-content {
-  display: inline-flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 6px;
-  min-width: 0;
-}
-.hero-status-project {
-  font-family: var(--display);
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--color-on-surface);
-  line-height: 1.2;
-}
-.hero-status-desc {
-  font-family: var(--body);
-  font-size: 0.8125rem;
-  font-weight: 450;
-  color: var(--color-on-surface-variant);
-  line-height: 1.2;
-}
-.hero-status-action {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--color-surface-container-high);
-  color: var(--color-on-surface-variant);
+
+/* Leading Expressive Shape & Beacon */
+.hero-building-leading {
+  position: relative;
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  margin-left: 2px;
-  transition:
-    background-color var(--motion-duration-short2) var(--spring),
-    color var(--motion-duration-short2) var(--spring),
-    transform var(--motion-duration-short2) var(--spring);
+  width: 40px;
+  height: 40px;
+  z-index: 1;
 }
-.hero-status-action svg {
-  width: 13px;
-  height: 13px;
+
+.hero-building-shape {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  transition: clip-path var(--motion-duration-fast) var(--spring);
 }
-@media (hover: hover) and (pointer: fine) {
-  .hero-status-pill:hover .hero-status-action {
-    background: var(--color-primary);
-    color: var(--color-on-primary);
-    transform: translate(1px, -1px);
+
+.hero-building-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-on-primary-container);
+}
+
+/* Pulsing live beacon */
+.hero-building-pulse {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: 2px solid var(--color-surface-container-high);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-primary) 50%, transparent);
+  animation: hero-building-pulse-anim 2s infinite var(--motion-project-effects-easing);
+  pointer-events: none;
+}
+
+@keyframes hero-building-pulse-anim {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-primary) 50%, transparent);
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-primary) 0%, transparent);
+    opacity: 0.85;
+  }
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-primary) 0%, transparent);
+    opacity: 1;
   }
 }
+
+/* Text Hierarchy */
+.hero-building-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  gap: 2px;
+}
+
+.hero-building-label {
+  font-family: var(--body);
+  font-size: var(--type-label-tiny-size);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+  line-height: 1.2;
+}
+
+.hero-building-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+}
+
+.hero-building-name {
+  font-family: var(--display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.hero-building-desc {
+  font-family: var(--body);
+  font-size: var(--type-body-small-size);
+  font-weight: 450;
+  color: var(--color-on-surface-variant);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.hero-building-desc::before {
+  content: "•";
+  margin-right: 6px;
+  color: var(--color-outline);
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+/* Trailing Icon Button Affordance (48px touch target, 36px visual) */
+.hero-building-trailing {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.hero-building-arrow-box {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--shape-full);
+  background: var(--color-surface-container);
+  color: var(--color-on-surface-variant);
+  display: grid;
+  place-items: center;
+  transition:
+    transform var(--motion-duration-fast) var(--spring),
+    background-color var(--motion-duration-fast) var(--motion-project-effects-easing),
+    color var(--motion-duration-fast) var(--motion-project-effects-easing),
+    border-radius var(--motion-duration-fast) var(--spring);
+}
+
+.hero-building-arrow {
+  width: 15px;
+  height: 15px;
+  transition: transform var(--motion-duration-fast) var(--spring);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-building-banner:hover .hero-building-arrow-box {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    border-radius: var(--shape-small);
+  }
+  .hero-building-banner:hover .hero-building-arrow {
+    transform: translate(2px, -2px);
+  }
+}
+
+.hero-building-banner:focus-visible .hero-building-arrow-box {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: var(--shape-small);
+}
+.hero-building-banner:focus-visible .hero-building-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Static banner state when project has no page */
+.hero-building-banner--static {
+  cursor: default;
+  pointer-events: none;
+  padding-right: 14px;
+}
+.hero-building-banner--static::before {
+  display: none;
+}
+
+/* Mobile & Compact Screen Responsive Rules */
 @media (--compact) {
-  .hero-status-pill {
-    gap: 8px;
-    padding: 4px 6px 4px 4px;
+  .hero-building-banner {
+    width: 100%;
+    max-width: 100%;
+    gap: 10px;
+    padding: 6px 4px 6px 8px;
+  }
+  .hero-building-desc {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Reduced Motion and Coarse Pointer */
+@media (prefers-reduced-motion: reduce) {
+  .hero-building-banner {
+    animation: none;
+    transition: background-color var(--motion-duration-fast) ease, border-color var(--motion-duration-fast) ease;
+  }
+  .hero-building-banner:hover,
+  .hero-building-banner:focus-visible {
+    transform: none;
+    border-radius: var(--shape-large);
+  }
+  .hero-building-pulse {
+    animation: none;
+    box-shadow: none;
+  }
+  .hero-building-arrow,
+  .hero-building-arrow-box {
+    transition: background-color var(--motion-duration-fast) ease, color var(--motion-duration-fast) ease;
+  }
+  .hero-building-banner:hover .hero-building-arrow,
+  .hero-building-banner:focus-visible .hero-building-arrow {
+    transform: none;
+  }
+  .hero-building-banner:hover .hero-building-arrow-box,
+  .hero-building-banner:focus-visible .hero-building-arrow-box {
+    border-radius: var(--shape-full);
+  }
+}
+
+@media (pointer: coarse) {
+  .hero-building-pulse {
+    animation: none;
   }
 }
 
@@ -577,7 +793,7 @@
   .lanyard-inspect-footer { flex-wrap: wrap; }
 }
 
-.hero-status-pill, .project-title-link, .project-action-link, .hero-badge-trigger {
+.hero-building-banner, .hero-status-pill, .project-title-link, .project-action-link, .hero-badge-trigger {
   min-block-size: var(--touch-target);
 }
 .project-action-link { min-inline-size: var(--touch-target); }

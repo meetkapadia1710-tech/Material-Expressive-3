@@ -34,7 +34,7 @@ export const projects: readonly Project[] = [
     status: "shipped", statusDetail: "Live on Vercel.",
     stack: ["Next.js 15", "TypeScript", "Go", "PostgreSQL", "Drizzle", "Upstash Redis", "Auth.js", "Inngest", "Gemini API", "tree-sitter", "Turborepo", "Plasmo"],
     features: ["Letter grades across six repository health dimensions", "Documentation drift checks and code-grounded README generation", "Shareable report cards and embeddable badges", "GitHub Action for pull request scoring and a browser extension for inline grades"],
-    liveUrl: "https://repo-grade-web.vercel.app", featured: true, order: 1,
+    liveUrl: "https://repo-grade-web.vercel.app", featured: true, currentlyBuilding: true, order: 1,
   },
   {
     ...provided, slug: "hindsight", name: "Hindsight", category: "Local AI",
@@ -147,6 +147,10 @@ export function getFeaturedProjects(): Project[] {
 
 export function getProjectBySlug(slug: string): Project | null {
   return getPublicProjects().find((project) => project.slug === slug) ?? null;
+}
+
+export function getCurrentlyBuildingProject(): Project | null {
+  return getPublicProjects().find((project) => project.currentlyBuilding) ?? null;
 }
 
 // Copy for /projects only. Project facts above remain the source of truth.

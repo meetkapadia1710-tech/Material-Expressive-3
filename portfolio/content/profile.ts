@@ -1,4 +1,4 @@
-import type { PageCopy } from "./types";
+import type { AvailabilityConfig, PageCopy } from "./types";
 
 export const profile = {
   name: "Meet Kapadia",
@@ -18,6 +18,24 @@ export const profile = {
   },
   heroLabels: ["Computer Science @ IIIT Vadodara", "Full-Stack Development", "Backend & Databases", "AI/ML Exploration"],
   internshipTarget: "Targeting SDE and full-stack engineering internships.",
+  availability: {
+    open: true,
+    statusLabel: "Open to SDE & Full-Stack Internships",
+    accessibleStatusLabel: "Open to SDE and full-stack internships, 2026 to 2027",
+    period: "2026–2027",
+    periodAccessibleLabel: "2026 to 2027",
+    timeZone: "Asia/Kolkata",
+    timeZoneAbbr: "IST",
+    timeZoneOffset: "UTC+5:30",
+    regionLabel: "Local time in India",
+    schedule: {
+      startHour: 9,
+      endHour: 22,
+      activeStatus: "Online now",
+      restingStatus: "Resting hours (Replies morning IST)",
+    },
+    responseCommitment: "Typical response time: within 24 hours",
+  } satisfies AvailabilityConfig,
   campus: ["9bit Technical Community", "Dot Design Club", "Obscura Photography Club"],
   portrait: null as { src: string; alt: string } | null,
   phone: null as string | null,

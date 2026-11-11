@@ -5,7 +5,7 @@ import Link from "next/link";
 import { CopyEmail, useToast } from "@/components/interface-controls";
 import { Icon, type IconName } from "@/components/icon";
 import { HighlightText } from "@/components/ui/highlight-text";
-import { LiveStatusCard } from "./live-status-card";
+import { LiveStatusCard } from "@/components/ui/live-status-card";
 import { links } from "@/content/links";
 import { contactCopy as copy } from "@/content/contact";
 import { contactLimits, normalizeContact, validateContact, type ContactErrors, type ContactField, type ContactValues } from "@/lib/contact-validation";

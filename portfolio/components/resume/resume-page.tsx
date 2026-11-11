@@ -33,7 +33,7 @@ export function ResumePage() {
     setCopyStatus("pending");
     playTactileSound("click");
     const textResume = `MEET KAPADIA
-Ahmedabad, Gujarat, India | meetkapadia1710@gmail.com
+${profile.location.label} | meetkapadia1710@gmail.com
 GitHub: https://github.com/meetkapadia1710-tech | LinkedIn: https://www.linkedin.com/in/meet-kapadia17
 LeetCode: https://leetcode.com/u/Code-Hacker_17/ (763+ solved, 337 Medium)
 

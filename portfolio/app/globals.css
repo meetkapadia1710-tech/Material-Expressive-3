@@ -5,6 +5,7 @@
 @import "../styles/shapes.css";
 @import "../styles/pointer.css";
 @import "../styles/home.css";
+@import "../styles/live-status-card.css";
 
 :root {
   --display: var(--font-display-local), "Manrope Variable", sans-serif;
@@ -148,11 +149,11 @@ svg { flex-shrink: 0; }
 .shape-morph-button:focus-visible:not([data-selected="true"]) { clip-path: var(--morph-focus); }
 .shape-morph-button:active { clip-path: var(--morph-press); }
 .shape-morph-button[data-selected="true"] { clip-path: var(--morph-selected); }
-.project-card:focus-within .shape-morph, .card:focus-within .shape-morph, .headerArt:focus-within .shape-morph { clip-path: var(--morph-hover); }
+.project-card:focus-within .shape-morph, .card:focus-within .shape-morph, .headerArt:focus-within .shape-morph, .hero-building-banner:focus-visible .shape-morph, .hero-building-banner:focus-within .shape-morph { clip-path: var(--morph-focus); }
 @media (hover: hover) and (pointer: fine) {
-  .project-card:hover .shape-morph, .card:hover .shape-morph, .headerArt:hover .shape-morph { clip-path: var(--morph-hover); }
+  .project-card:hover .shape-morph, .card:hover .shape-morph, .headerArt:hover .shape-morph, .hero-building-banner:hover .shape-morph { clip-path: var(--morph-hover); }
 }
-.project-card:active .shape-morph, .card:active .shape-morph { clip-path: var(--morph-press); }
+.project-card:active .shape-morph, .card:active .shape-morph, .hero-building-banner:active .shape-morph { clip-path: var(--morph-press); }
 .copy-email input, input[type="search"] { min-height: 48px; padding: 10px 16px; border: 1px solid var(--color-on-surface-variant); border-radius: 16px; color: var(--color-on-surface); background: var(--color-surface); max-width: 100%; font: inherit; }
 .site-header { flex-wrap: wrap; }
 .copy-email { display: inline-flex; flex-wrap: wrap; gap: 12px; align-items: center; }

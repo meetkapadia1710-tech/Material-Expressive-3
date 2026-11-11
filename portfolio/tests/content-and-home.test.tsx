@@ -58,6 +58,52 @@ test("Home uses content, the project scroll target, all featured routes and skil
   assert.ok(html.includes('href="/skills"'));
   assert.ok(html.includes('href="mailto:meetkapadia1710@gmail.com"'));
   assert.ok(!html.includes("Agrisetu") && !html.includes("Adobe") && !html.includes("null"));
+
+  // Phase 41: Currently building banner in Material 3 Expressive
+  assert.ok(html.includes('class="hero-building-banner"'));
+  assert.ok(html.includes('aria-label="Currently building RepoGrade, AST code scoring &amp; ratings. Open project."'));
+  assert.ok(html.includes('class="hero-building-leading"'));
+  assert.ok(html.includes('class="hero-building-pulse"'));
+  assert.ok(html.includes('class="hero-building-label"'));
+  assert.ok(html.includes('Currently building</span>'));
+  assert.ok(html.includes('class="hero-building-name"'));
+  assert.ok(html.includes('RepoGrade</strong>'));
+  assert.ok(html.includes('class="hero-building-desc"'));
+  assert.ok(html.includes('class="hero-building-trailing"'));
+  // Ensure no nested buttons or links inside the banner link
+  const bannerLinkMatch = html.match(/<a[^>]*class="hero-building-banner"[^>]*>([\s\S]*?)<\/a>/);
+  assert.ok(bannerLinkMatch, "Banner must render as an <a> link");
+  assert.ok(!bannerLinkMatch[1].includes("<a "), "Banner link must not contain nested <a> links");
+  assert.ok(!bannerLinkMatch[1].includes("<button"), "Banner link must not contain nested <button> elements");
+
+  // Greeting row with responsive location
+  assert.ok(html.includes('class="eyebrow hero-eyebrow"'));
+  assert.ok(html.includes('class="hero-greeting-part"'));
+  assert.ok(html.includes(profile.location.label));
+});
+
+test("Currently building banner handles static projects and empty states gracefully", () => {
+  // Static banner verification when project has no page
+  const staticBannerHtml = renderToStaticMarkup(
+    <div
+      className="hero-building-banner hero-building-banner--static"
+      role="status"
+      aria-label="Currently building ConceptX, In early design."
+    >
+      <span className="hero-building-text">
+        <span className="hero-building-label">Currently building</span>
+        <span className="hero-building-heading">
+          <strong className="hero-building-name">ConceptX</strong>
+          <span className="hero-building-separator" aria-hidden="true">•</span>
+          <span className="hero-building-desc">In early design</span>
+        </span>
+      </span>
+    </div>
+  );
+  assert.ok(staticBannerHtml.includes('hero-building-banner--static'));
+  assert.ok(staticBannerHtml.includes('role="status"'));
+  assert.ok(!staticBannerHtml.includes("<a "));
+  assert.ok(!staticBannerHtml.includes("hero-building-trailing"));
 });
 
 test("a card with unknown optional fields renders only its known identity and detail link", () => {

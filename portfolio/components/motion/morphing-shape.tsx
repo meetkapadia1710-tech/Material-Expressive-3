@@ -23,6 +23,7 @@ type MorphingShapeProps = {
   pressShape?: ShapeName;
   selectedShape?: ShapeName;
   morphOnView?: boolean;
+  morphed?: boolean;
   interactive?: boolean;
   label?: string;
 };
@@ -37,6 +38,7 @@ export function MorphingShape({
   pressShape = "scalloped",
   selectedShape = "blob",
   morphOnView = false,
+  morphed = false,
   interactive = false,
   label = "Change decorative shape",
 }: MorphingShapeProps) {
@@ -55,5 +57,5 @@ export function MorphingShape({
     return <button type="button" className={classes} style={style} aria-label={label} aria-pressed={selected} data-selected={selected || undefined} onClick={() => setSelected((current) => !current)}>{children}</button>;
   }
 
-  return <span className={classes} style={style} aria-hidden="true" data-morph-in-view={morphOnView || undefined}>{children}</span>;
+  return <span className={classes} style={style} aria-hidden="true" data-morph-in-view={morphOnView || undefined} data-morphed={morphed ? "true" : undefined}>{children}</span>;
 }

@@ -31,6 +31,7 @@ export interface Project {
   role: string | null;
   stack: readonly string[] | null;
   features: readonly string[] | null;
+  currentlyBuilding?: boolean;
   benchmark?: {
     methodology: string;
     findings: readonly { workload: string; result: string }[];
@@ -90,4 +91,25 @@ export interface PageCopy {
   eyebrow: string;
   title: string;
   description: string | null;
+}
+
+export interface AvailabilitySchedule {
+  startHour: number;
+  endHour: number;
+  activeStatus: string;
+  restingStatus: string;
+}
+
+export interface AvailabilityConfig {
+  open: boolean;
+  statusLabel: string;
+  accessibleStatusLabel: string;
+  period: string;
+  periodAccessibleLabel: string;
+  timeZone: string;
+  timeZoneAbbr: string;
+  timeZoneOffset: string;
+  regionLabel: string;
+  schedule: AvailabilitySchedule;
+  responseCommitment: string;
 }

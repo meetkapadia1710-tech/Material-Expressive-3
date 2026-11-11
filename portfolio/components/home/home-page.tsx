@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { links } from "@/content/links";
 import { homeCopy, profile, siteCopy } from "@/content/profile";
-import { getFeaturedProjects } from "@/content/projects";
+import { getCurrentlyBuildingProject, getFeaturedProjects, getProjectBySlug } from "@/content/projects";
 import { skills } from "@/content/skills";
 import { Icon } from "../icon";
 import { MorphingShape } from "../motion/morphing-shape";
@@ -51,27 +51,98 @@ export function HomePage() {
     return featured.filter((p) => p.category === activeCategory);
   }, [featured, activeCategory]);
 
+  const currentlyBuildingProject = getCurrentlyBuildingProject();
+  const rawBuildingStatus = homeCopy.buildingStatus;
+
+  const buildingStatus = useMemo(() => {
+    if (!rawBuildingStatus && !currentlyBuildingProject) return null;
+    const project = currentlyBuildingProject?.name ?? rawBuildingStatus?.project;
+    if (!project) return null;
+    const tag = rawBuildingStatus?.tag || "Currently building";
+    const desc = rawBuildingStatus?.desc ?? currentlyBuildingProject?.tagline ?? "";
+    let href: string | null = null;
+    if (currentlyBuildingProject) {
+      const publicProject = getProjectBySlug(currentlyBuildingProject.slug);
+      if (publicProject && publicProject.visibility === "public") {
+        href = `/projects/${currentlyBuildingProject.slug}`;
+      }
+    } else if (rawBuildingStatus?.href) {
+      href = rawBuildingStatus.href;
+    }
+    return { tag, project, desc, href };
+  }, [rawBuildingStatus, currentlyBuildingProject]);
+
   return (
     <>
       <section className="hero page-width" aria-labelledby="hero-heading">
         <div className="hero-copy">
-          <Link href={homeCopy.buildingStatus.href} className="hero-status-pill">
-            <span className="hero-status-badge">
-              <span className="hero-status-dot" aria-hidden="true" />
-              <span className="hero-status-tag">{homeCopy.buildingStatus.tag}</span>
-            </span>
-            <span className="hero-status-content">
-              <strong className="hero-status-project">{homeCopy.buildingStatus.project}</strong>
-              <span className="hero-status-desc">{homeCopy.buildingStatus.desc}</span>
-            </span>
-            <span className="hero-status-action" aria-hidden="true">
-              <Icon name="arrow-up-right" />
-            </span>
-          </Link>
+          {buildingStatus ? (
+            buildingStatus.href ? (
+              <Link
+                href={buildingStatus.href}
+                className="hero-building-banner"
+                aria-label={`${buildingStatus.tag} ${buildingStatus.project}, ${buildingStatus.desc}. Open project.`}
+              >
+                <span className="hero-building-leading" aria-hidden="true">
+                  <MorphingShape
+                    className="hero-building-shape"
+                    shape="roundedSquare"
+                    hoverShape="scalloped"
+                    focusShape="blob"
+                    pressShape="circle"
+                  >
+                    <Icon name="code" className="hero-building-icon" />
+                  </MorphingShape>
+                  <span className="hero-building-pulse" />
+                </span>
+                <span className="hero-building-text">
+                  <span className="hero-building-label">{buildingStatus.tag}</span>{" "}
+                  <span className="hero-building-heading">
+                    <strong className="hero-building-name">{buildingStatus.project}</strong>{" "}
+                    {buildingStatus.desc ? (
+                      <span className="hero-building-desc" data-intentional-truncation>{buildingStatus.desc}</span>
+                    ) : null}
+                  </span>
+                </span>
+                <span className="hero-building-trailing" aria-hidden="true">
+                  <span className="hero-building-arrow-box">
+                    <Icon name="arrow-up-right" className="hero-building-arrow" />
+                  </span>
+                </span>
+              </Link>
+            ) : (
+              <div
+                className="hero-building-banner hero-building-banner--static"
+                role="status"
+                aria-label={`${buildingStatus.tag} ${buildingStatus.project}, ${buildingStatus.desc}.`}
+              >
+                <span className="hero-building-leading" aria-hidden="true">
+                  <MorphingShape
+                    className="hero-building-shape"
+                    shape="roundedSquare"
+                  >
+                    <Icon name="code" className="hero-building-icon" />
+                  </MorphingShape>
+                  <span className="hero-building-pulse" />
+                </span>
+                <span className="hero-building-text">
+                  <span className="hero-building-label">{buildingStatus.tag}</span>{" "}
+                  <span className="hero-building-heading">
+                    <strong className="hero-building-name">{buildingStatus.project}</strong>{" "}
+                    {buildingStatus.desc ? (
+                      <span className="hero-building-desc" data-intentional-truncation>{buildingStatus.desc}</span>
+                    ) : null}
+                  </span>
+                </span>
+              </div>
+            )
+          ) : null}
 
-          <p className="eyebrow">
-            <span className="tiny-spark" aria-hidden="true">✳</span>
-            {homeCopy.eyebrow}
+          <p className="eyebrow hero-eyebrow">
+            <span className="hero-greeting-part">
+              <span className="tiny-spark" aria-hidden="true">✳</span>
+              {homeCopy.eyebrow}
+            </span>
             <span className="location">{profile.location.label}</span>
           </p>
           <p className="hero-name">{profile.displayName}<span aria-hidden="true">.</span></p>
